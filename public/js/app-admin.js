@@ -734,6 +734,20 @@ window.AppAdmin = (() => {
       refreshAdminWorkboard();
     }
 
+    async function loadAdminComments() {
+      if (!state.session.authenticated) return;
+      state.adminCommentsResponse = await ApiService.getAdminComments({
+        page: state.adminCommentsPage || 1,
+        limit: 10,
+        status: UI.qs('#adminCommentsStatus')?.value || '',
+        guide: UI.qs('#adminCommentsGuide')?.value || '',
+        user: UI.qs('#adminCommentsUser')?.value || '',
+        from: UI.qs('#adminCommentsFrom')?.value || ''
+      });
+      state.adminCommentsPage = state.adminCommentsResponse.pagination?.page || 1;
+      UI.renderAdminComments?.(state.adminCommentsResponse);
+    }
+
     async function loadAdminBetaMetrics() {
       if (!state.session.authenticated) return;
       state.adminBetaMetrics = await ApiService.getAdminBetaMetrics();
@@ -763,7 +777,7 @@ window.AppAdmin = (() => {
         return;
       }
       await loadGames();
-      await Promise.all([loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
+      await Promise.all([loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminComments(), loadAdminBetaMetrics()]);
       UI.showView('admin');
       refreshAdminWorkboard();
       refreshEditorialQuality(UI, state, collectGameFormPayload);
@@ -975,7 +989,7 @@ window.AppAdmin = (() => {
       UI.qs('#passwordForm')?.addEventListener('submit', handlePasswordChange);
       UI.qs('#adminRefreshBtn')?.addEventListener('click', async () => {
         await loadGames({ force: true });
-        await Promise.all([loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminBetaMetrics()]);
+        await Promise.all([loadAdminSummary(), loadAdminGames(), loadAdminFeedback(), loadAdminComments(), loadAdminBetaMetrics()]);
         refreshAdminWorkboard();
         UI.showToast('Catálogo administrativo atualizado.', 'success');
       });
@@ -993,6 +1007,62 @@ window.AppAdmin = (() => {
         if (!pageButton) return;
         state.adminFeedbackPage = Number(pageButton.dataset.feedbackPage || 1);
         await loadAdminFeedback();
+      });
+      UI.qs('#adminCommentsRefreshBtn')?.addEventListener('click', async () => {
+        state.adminCommentsPage = 1;
+        await loadAdminComments();
+        UI.showToast('Comentários atualizados.', 'success');
+      });
+      ['#adminCommentsStatus', '#adminCommentsGuide', '#adminCommentsUser', '#adminCommentsFrom'].forEach(selector => {
+        UI.qs(selector)?.addEventListener('change', async () => {
+          state.adminCommentsPage = 1;
+          await loadAdminComments();
+        });
+      });
+      ['#adminCommentsGuide', '#adminCommentsUser'].forEach(selector => {
+        UI.qs(selector)?.addEventListener('input', async event => {
+          if (event.target.value && event.target.value.length < 3) return;
+          state.adminCommentsPage = 1;
+          await loadAdminComments();
+        });
+      });
+      UI.qs('#adminCommentsPanel')?.addEventListener('click', async event => {
+        const pageButton = event.target.closest('[data-comments-page]');
+        if (pageButton) {
+          state.adminCommentsPage = Number(pageButton.dataset.commentsPage || 1);
+          await loadAdminComments();
+          return;
+        }
+
+        const actionButton = event.target.closest('[data-comment-action]');
+        if (!actionButton) return;
+        const id = actionButton.dataset.commentId;
+        const action = actionButton.dataset.commentAction;
+        if (!id || !action) return;
+        try {
+          actionButton.disabled = true;
+          if (action === 'approve') await ApiService.approveAdminComment(id, { moderation_note: 'Aprovado pela moderação.' });
+          if (action === 'hide') {
+            const hiddenReason = window.prompt('Motivo para ocultar:', 'Ocultado pela moderação.');
+            if (hiddenReason === null) {
+              actionButton.disabled = false;
+              return;
+            }
+            await ApiService.hideAdminComment(id, { hidden_reason: hiddenReason, moderation_note: 'Ocultado pela moderação.' });
+          }
+          if (action === 'delete') {
+            if (!window.confirm('Excluir este comentário? A remoção será registrada como soft delete.')) {
+              actionButton.disabled = false;
+              return;
+            }
+            await ApiService.deleteAdminComment(id, { moderation_note: 'Excluído pela moderação.' });
+          }
+          await loadAdminComments();
+          UI.showToast('Comentário atualizado.', 'success');
+        } catch (error) {
+          actionButton.disabled = false;
+          UI.showToast(error.message || 'Não foi possível moderar o comentário.', 'error');
+        }
       });
       UI.qs('#cancelGameFormBtn')?.addEventListener('click', () => {
         UI.toggleGameForm(false);
@@ -1097,6 +1167,7 @@ window.AppAdmin = (() => {
       loadAdminGames,
       loadAdminSummary,
       loadAdminFeedback,
+      loadAdminComments,
       loadAdminBetaMetrics,
       openFormPreview,
       openAdminPanel,

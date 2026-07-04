@@ -64,6 +64,7 @@ window.AppGuideController = (() => {
         storageLabel: isAccountLibrary?.() ? 'Salvo na conta' : 'Salvo neste navegador',
         activeGuideTab: state.activeGuideTab || 'summary'
       });
+      window.AppGuideComments?.renderForGuide?.(state.currentGame, state.userSession);
       state.checklistDensity = UI.applyChecklistDensity?.(state.checklistDensity) || state.checklistDensity;
       UI.setPageMeta(state.currentGame);
       navigate('guide', { ...options, game: state.currentGame, skipHistory: options.skipHistory });
@@ -366,6 +367,7 @@ window.AppGuideController = (() => {
         'first-pending': 'checklist',
         risks: 'summary',
         attention: 'details',
+        comments: 'details',
         missables: 'summary',
         online: 'summary',
         dlc: 'summary',
@@ -400,6 +402,7 @@ window.AppGuideController = (() => {
         attention: '#guideEditorialNotesPanel',
         faq: '#guideEditorialNotesPanel',
         feedback: '#guideFeedbackSlot',
+        comments: '#guideCommentsPanel',
         related: '#guideRelatedPanel',
         'first-pending': '[data-next-focus="true"]'
       };

@@ -536,6 +536,67 @@ window.UIAdminRender = (() => {
     `;
   }
 
+  function renderAdminComments(response = {}) {
+    const target = qs('#adminCommentsList');
+    const summary = qs('#adminCommentsSummary');
+    const paginationTarget = qs('#adminCommentsPagination');
+    if (!target) return;
+
+    const items = Array.isArray(response.items) ? response.items : [];
+    const pagination = response.pagination || {};
+    if (summary) summary.textContent = items.length
+      ? `${pagination.total || 0} comentário(s) para moderação.`
+      : 'Nenhum comentário encontrado para os filtros atuais.';
+
+    if (!items.length) {
+      target.innerHTML = `
+        <div class="admin-empty-state">
+          <strong>Nenhum comentário para moderar</strong>
+          <p>Comentários enviados nos guias aparecem aqui como pendentes antes de ficarem públicos.</p>
+        </div>`;
+      if (paginationTarget) paginationTarget.innerHTML = '';
+      return;
+    }
+
+    target.innerHTML = items.map(item => {
+      const status = item.status || 'pending';
+      const author = item.author?.display_name || item.author?.username || 'Usuário Atlas';
+      const guideLabel = item.guide_name || item.guide_slug || 'Guia';
+      const isDeleted = status === 'deleted';
+      return `
+        <article class="admin-comment-card admin-comment-card--${escapeAttribute(status)}">
+          <div class="admin-feedback-card__head">
+            <div>
+              <span class="atlas-tag atlas-tag--soft">${escapeHtml(statusLabel(status))}</span>
+              <strong>${escapeHtml(guideLabel)}</strong>
+            </div>
+            <time datetime="${escapeAttribute(item.created_at || '')}">${escapeHtml(formatFeedbackDate(item.created_at || item.createdAt))}</time>
+          </div>
+          <p>${escapeHtml(item.body || '')}</p>
+          <div class="admin-feedback-card__meta">
+            <span>${escapeHtml(author)}</span>
+            <span>${escapeHtml(item.guide_slug || '')}</span>
+            ${item.hidden_reason ? `<span>Motivo: ${escapeHtml(item.hidden_reason)}</span>` : ''}
+            ${item.moderation_note ? `<span>Nota: ${escapeHtml(item.moderation_note)}</span>` : ''}
+          </div>
+          <div class="admin-comment-card__actions">
+            <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-comment-action="approve" data-comment-id="${escapeAttribute(String(item.id))}" ${status === 'approved' || isDeleted ? 'disabled' : ''}><i class="fas fa-check"></i><span>Aprovar</span></button>
+            <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-comment-action="hide" data-comment-id="${escapeAttribute(String(item.id))}" ${status === 'hidden' || isDeleted ? 'disabled' : ''}><i class="fas fa-eye-slash"></i><span>Ocultar</span></button>
+            <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact admin-danger-action" data-comment-action="delete" data-comment-id="${escapeAttribute(String(item.id))}" ${isDeleted ? 'disabled' : ''}><i class="fas fa-trash"></i><span>Excluir</span></button>
+          </div>
+        </article>`;
+    }).join('');
+
+    if (!paginationTarget) return;
+    const currentPage = Number(pagination.page || 1);
+    const totalPages = Number(pagination.totalPages || 1);
+    paginationTarget.innerHTML = `
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-comments-page="${Math.max(currentPage - 1, 1)}" ${currentPage <= 1 ? 'disabled' : ''}>Anterior</button>
+      <span class="text-sm text-white/55">Página ${escapeHtml(String(currentPage))} de ${escapeHtml(String(totalPages))}</span>
+      <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-comments-page="${Math.min(currentPage + 1, totalPages)}" ${currentPage >= totalPages ? 'disabled' : ''}>Próxima</button>
+    `;
+  }
+
   function renderMetricEmpty() {
     return `
       <div class="admin-empty-state admin-empty-state--compact">
@@ -786,6 +847,7 @@ window.UIAdminRender = (() => {
     renderAdminQuality,
     renderAdminGames,
     renderAdminFeedback,
+    renderAdminComments,
     renderAdminBetaMetrics,
     setAdminState,
     openAdminModal,

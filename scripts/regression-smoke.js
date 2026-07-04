@@ -155,6 +155,7 @@ function assertHtmlLoadsModules(relPath) {
       '/js/app-view-bindings.js',
       '/js/app-search-view.js',
       '/js/app-guide-view.js',
+      '/js/app-guide-comments.js',
       '/js/app-public-nav.js',
       '/js/app-library-controller.js',
       '/js/app-guide-controller.js',
@@ -241,6 +242,7 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="gameCoverageLevel"'), 'public/admin.html precisa editar nivel de cobertura');
     assert(html.includes('id="gameIsVerified"'), 'public/admin.html precisa editar verificacao manual');
     assert(html.includes('id="adminFeedbackPanel"'), 'public/admin.html precisa listar feedbacks enviados');
+    assert(html.includes('id="adminCommentsPanel"'), 'public/admin.html precisa listar comentarios para moderacao');
   }
 }
 

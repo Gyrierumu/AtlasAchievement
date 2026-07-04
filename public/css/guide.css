@@ -553,6 +553,104 @@
   min-height: 44px;
 }
 
+#view-guide .atlas-guide-comments {
+  display: grid;
+  gap: 18px;
+}
+
+#view-guide .atlas-guide-comments__head,
+#view-guide .atlas-guide-comment-form__actions,
+#view-guide .atlas-guide-comment-form__meta,
+#view-guide .atlas-guide-comments__login-cta,
+#view-guide .atlas-guide-comment__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#view-guide .atlas-guide-comments__head {
+  align-items: flex-start;
+}
+
+#view-guide .atlas-guide-comment-form,
+#view-guide .atlas-guide-comments__list {
+  display: grid;
+  gap: 12px;
+}
+
+#view-guide .atlas-guide-comment-input {
+  min-height: 116px;
+  resize: vertical;
+}
+
+#view-guide .atlas-guide-comment-form__meta {
+  color: rgba(255, 255, 255, .56);
+  font-size: .83rem;
+}
+
+#view-guide .atlas-guide-comment-form__meta p {
+  margin: 0;
+}
+
+#view-guide .atlas-guide-comment-feedback {
+  min-height: 20px;
+  color: rgba(255, 255, 255, .58);
+  font-size: .86rem;
+}
+
+#view-guide .atlas-guide-comment-feedback.is-error {
+  color: #fecdd3;
+}
+
+#view-guide .atlas-guide-comment-feedback.is-success {
+  color: #bbf7d0;
+}
+
+#view-guide .atlas-guide-comments__login-cta,
+#view-guide .atlas-guide-comment {
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, .36);
+  padding: 14px;
+}
+
+#view-guide .atlas-guide-comments__login-cta p,
+#view-guide .atlas-guide-comment p {
+  margin: 0;
+  color: rgba(255, 255, 255, .74);
+  white-space: pre-line;
+}
+
+#view-guide .atlas-guide-comment__meta {
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+
+#view-guide .atlas-guide-comment__meta strong {
+  color: #fff;
+  font-size: .95rem;
+}
+
+#view-guide .atlas-guide-comment__meta time {
+  color: rgba(255, 255, 255, .46);
+  font-size: .82rem;
+}
+
+#view-guide .atlas-guide-comment__delete {
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  #view-guide .atlas-guide-comments__head,
+  #view-guide .atlas-guide-comment-form__actions,
+  #view-guide .atlas-guide-comment-form__meta,
+  #view-guide .atlas-guide-comments__login-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
 #view-guide .atlas-editorial-band__intro {
   gap: 12px;
   align-items: center;

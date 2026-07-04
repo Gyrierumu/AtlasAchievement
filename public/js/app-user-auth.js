@@ -242,6 +242,7 @@ window.AppUserAuth = (() => {
         await refreshAccountLibrary?.({ promptImport: true, silent: true });
         renderHeader(state);
         renderProfile(state);
+        window.AppGuideComments?.refreshCurrent?.({ resetSession: true });
         closeAuthModal();
         UI.showToast('Login realizado com sucesso.', 'success');
       } catch (error) {
@@ -267,6 +268,7 @@ window.AppUserAuth = (() => {
         await refreshAccountLibrary?.({ promptImport: true, silent: true });
         renderHeader(state);
         renderProfile(state);
+        window.AppGuideComments?.refreshCurrent?.({ resetSession: true });
         closeAuthModal();
         UI.showToast('Conta criada com sucesso.', 'success');
       } catch (error) {
@@ -283,6 +285,7 @@ window.AppUserAuth = (() => {
         restoreLocalLibrary?.();
         renderHeader(state);
         renderProfile(state);
+        window.AppGuideComments?.refreshCurrent?.({ resetSession: true });
         UI.showToast('Você saiu da conta.', 'success');
       } catch (error) {
         UI.showToast(error.message || 'Não foi possível sair.', 'error');

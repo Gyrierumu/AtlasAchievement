@@ -1131,6 +1131,7 @@ window.UIGuide = (() => {
       { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
       { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
       { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
+      { id: 'comments', icon: 'fa-comments', label: 'Comentários', action: 'comments', href: '#guideCommentsPanel' },
       { id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }
     ];
     return `

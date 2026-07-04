@@ -13,8 +13,10 @@ const gamesRoutes = require('./routes/games.routes');
 const feedbackRoutes = require('./routes/feedback.routes');
 const uploadsRoutes = require('./routes/uploads.routes');
 const analyticsRoutes = require('./routes/analytics.routes');
+const commentsRoutes = require('./routes/comments.routes');
 const errorHandler = require('./middleware/errorHandler');
 const gamesService = require('./services/games.service');
+const commentsService = require('./services/comments.service');
 const sharedEditorialModel = require('./shared/editorialModel');
 const sharedFeatureFlags = require('./shared/featureFlags');
 const sharedGuideViewModel = require('./shared/guideViewModel');
@@ -1346,6 +1348,63 @@ function renderGuideFeedbackCtaHtml(game = {}) {
     </section>`;
 }
 
+function formatCommentDateLabel(value = '') {
+  if (!value) return '';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value || '');
+  return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' }).format(date);
+}
+
+function renderGuideCommentsHtml(game = {}, commentsResponse = {}, actor = {}) {
+  const comments = Array.isArray(commentsResponse?.items) ? commentsResponse.items : [];
+  const isAuthenticated = Boolean(actor?.userId);
+  const slug = String(game?.slug || '').trim();
+  return `
+    <section id="guideCommentsPanel" class="atlas-guide-comments atlas-panel atlas-panel--support p-5 md:p-6" data-guide-comments data-guide-comments-slug="${escapeHtml(slug)}" aria-labelledby="guideCommentsTitle">
+      <div class="atlas-guide-comments__head">
+        <div>
+          <span class="atlas-section-kicker">Comunidade</span>
+          <h2 id="guideCommentsTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Comentários</h2>
+          <p class="text-white/58 mt-2 max-w-3xl">Use os comentários para tirar dúvidas, sugerir correções ou complementar dicas do guia.</p>
+        </div>
+        <span class="atlas-tag atlas-tag--soft" data-guide-comments-count>${escapeHtml(String(comments.length))}</span>
+      </div>
+      <div class="atlas-guide-comments__composer">
+        ${isAuthenticated ? `
+          <form class="atlas-guide-comment-form" data-guide-comment-form>
+            <label for="guideCommentBody" class="sr-only">Escrever comentário</label>
+            <textarea id="guideCommentBody" class="atlas-input atlas-guide-comment-input" name="body" maxlength="1000" minlength="2" rows="4" placeholder="Compartilhe uma dúvida ou dica sobre este guia." data-guide-comment-input></textarea>
+            <div class="atlas-guide-comment-form__meta">
+              <p>Comentários ofensivos, spam, spoilers sem aviso ou links suspeitos podem ser removidos.</p>
+              <span data-guide-comment-counter>0/1000</span>
+            </div>
+            <div class="atlas-guide-comment-form__actions">
+              <button type="submit" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-comment-submit><i class="fas fa-paper-plane" aria-hidden="true"></i><span>Enviar comentário</span></button>
+              <p class="atlas-guide-comment-feedback" role="status" aria-live="polite" data-guide-comment-feedback></p>
+            </div>
+          </form>
+        ` : `
+          <div class="atlas-guide-comments__login-cta">
+            <p>Entre na sua conta para comentar.</p>
+            <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-auth-open="login"><i class="fas fa-right-to-bracket" aria-hidden="true"></i><span>Entrar</span></button>
+          </div>
+        `}
+      </div>
+      <div class="atlas-guide-comments__list" data-guide-comments-list>
+        ${comments.length ? comments.map(comment => `
+          <article class="atlas-guide-comment" data-comment-id="${escapeHtml(String(comment.id || ''))}">
+            <div class="atlas-guide-comment__meta">
+              <strong>${escapeHtml(comment.author?.display_name || comment.author?.username || 'Usuário Atlas')}</strong>
+              <time datetime="${escapeHtml(comment.created_at || '')}">${escapeHtml(formatCommentDateLabel(comment.created_at))}</time>
+            </div>
+            <p>${escapeHtml(comment.body || '')}</p>
+            ${comment.can_delete ? `<button type="button" class="atlas-text-action atlas-guide-comment__delete" data-guide-comment-delete="${escapeHtml(String(comment.id || ''))}">Apagar</button>` : ''}
+          </article>
+        `).join('') : '<div class="atlas-inline-empty atlas-guide-comments__empty" data-guide-comments-empty>Ainda não há comentários neste guia. Seja o primeiro a comentar.</div>'}
+      </div>
+    </section>`;
+}
+
 function buildGuideViewModel(game, completedSource = [], options = {}) {
   return sharedGuideViewModel.buildGuideViewModel(game, completedSource, {
     ...options,
@@ -2124,6 +2183,7 @@ function renderGuideLayerNavHtml() {
     { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
     { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
     { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
+    { id: 'comments', icon: 'fa-comments', label: 'Comentários', action: 'comments', href: '#guideCommentsPanel' },
     { id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }
   ];
   return `
@@ -2209,7 +2269,7 @@ function renderGuideDecisionStackHtmlV2(game, viewModel) {
     ${renderGuideLayerNavHtml()}`;
 }
 
-function buildSsrGuideMarkup(game, relatedGames = []) {
+function buildSsrGuideMarkup(game, relatedGames = [], commentContext = {}) {
   const viewModel = buildGuideViewModel(game, []);
   const header = renderGuideHeaderHtml(game, viewModel);
   const decisionStack = renderGuideDecisionStackHtmlV2(game, viewModel);
@@ -2222,8 +2282,9 @@ function buildSsrGuideMarkup(game, relatedGames = []) {
   const editorialNotes = renderGuideEditorialNotesHtml(game, viewModel);
   const relatedOverview = renderGuideRelatedOverviewServer(game, relatedGames);
   const feedbackCta = renderGuideFeedbackCtaHtml(game);
+  const comments = renderGuideCommentsHtml(game, commentContext.comments, commentContext.actor);
 
-  return { header, decisionStack, summary, roadmap, sidebar, trophyList, editorialNotes, relatedOverview, feedbackCta, viewModel };
+  return { header, decisionStack, summary, roadmap, sidebar, trophyList, editorialNotes, relatedOverview, feedbackCta, comments, viewModel };
 }
 
 function applyTemplateDefaults(template) {
@@ -2254,6 +2315,7 @@ function applyTemplateDefaults(template) {
     .replace(/__SSR_TROPHY_LIST__/g, '')
     .replace(/__SSR_GUIDE_ROADMAP__/g, '')
     .replace(/__SSR_GUIDE_EDITORIAL_NOTES__/g, '')
+    .replace(/__GUIDE_COMMENTS__/g, '')
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, '')
     .replace(/__GUIDE_FEEDBACK_CTA__/g, '')
     .replace(/__CATALOG_TITLE__/g, 'Escolha sua próxima platina')
@@ -2348,7 +2410,9 @@ async function buildGamePageHtml(game, req) {
   const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
   const relatedPool = Array.isArray(relatedResponse?.items) ? relatedResponse.items : [];
   const relatedGames = buildRelatedGamesServer(game, relatedPool, 4);
-  const ssrMarkup = buildSsrGuideMarkup(game, relatedGames);
+  const actor = { userId: Number(req.session?.userId || 0), isAdmin: Boolean(req.session?.admin) };
+  const comments = await commentsService.getPublicComments(normalizedSlug || game.slug, actor);
+  const ssrMarkup = buildSsrGuideMarkup(game, relatedGames, { comments, actor });
   const viewModel = ssrMarkup.viewModel;
   const ssrTotal = Number(viewModel?.total || 0);
   const ssrProgressInitial = '0%';
@@ -2417,6 +2481,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__SSR_TROPHY_LIST__/g, ssrMarkup.trophyList)
     .replace(/__SSR_GUIDE_ROADMAP__/g, ssrMarkup.roadmap)
     .replace(/__SSR_GUIDE_EDITORIAL_NOTES__/g, ssrMarkup.editorialNotes)
+    .replace(/__GUIDE_COMMENTS__/g, ssrMarkup.comments)
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, ssrMarkup.relatedOverview)
     .replace(/__GUIDE_FEEDBACK_CTA__/g, ssrMarkup.feedbackCta)
     .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'guide', game: sanitizePublicGuideInitialStateGame(game) })))));
@@ -3531,6 +3596,10 @@ app.use('/api/feedback', requireCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
+app.use('/api/admin/comments', requireCsrf, commentsRoutes.adminRouter);
+app.use('/admin/comments', requireCsrf, commentsRoutes.adminRouter);
+app.use('/jogo/:slug/comments', requireCsrf, commentsRoutes.publicRouter);
+app.use('/comments', requireCsrf, commentsRoutes.commentRouter);
 
 app.get('/privacidade', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {

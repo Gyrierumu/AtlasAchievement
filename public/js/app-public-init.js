@@ -44,6 +44,7 @@ window.AppPublicInit = (() => {
     bindPublicNavigation({ UI, page, state, navigate, loadCatalogPage, loadGuideByName, loadGames, debouncedSearchGames, getCatalogFacetFromPath });
     bindAdminEvents();
     bindUserAuthEvents();
+    window.AppGuideComments?.bindGuideComments?.();
     bindPublicPopState({
       page,
       UI,

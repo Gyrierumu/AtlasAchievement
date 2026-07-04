@@ -85,6 +85,16 @@
         "type": "Chapter Select / Atenção"
       },
       {
+        "tip": "Não confunda platina com 100% da lista. Para a platina, siga os 51 troféus base. Os 20 troféus adicionais pertencem aos DLCs Versus, Lost in Nightmares e Desperate Escape e só são necessários se você quiser completar 100% da lista da PSN.",
+        "title": "Platina base x 100% PSN",
+        "type": "Escopo / DLC"
+      },
+      {
+        "tip": "Stockpile pode confundir porque as granadas também contam. Antes de concluir que o troféu bugou, confirme se você possui Hand Grenade, Incendiary Grenade, Flash Grenade e Proximity Bomb no inventário/estoque.",
+        "title": "Stockpile",
+        "type": "Armas / Checklist"
+      },
+      {
         "tip": "Matar Popokarimu antes de fugir no 4-1. Se fugir sem matar, repita o capítulo para registrar o tesouro.",
         "title": "Soul Gem",
         "type": "Tesouro / Capítulo 4-1"
@@ -131,7 +141,7 @@
       }
     ],
     "checklist": [
-      "Visão geral: confirmar 51 troféus da lista base, 0 perdíveis definitivos, 0 online obrigatório, 0 coop obrigatório e DLCs fora da platina.",
+      "Visão geral: confirmar 51 troféus da lista base para a platina. No PS4, a lista completa da PSN pode aparecer com 71 troféus por causa dos DLCs Versus, Lost in Nightmares e Desperate Escape; esses 20 troféus extras contam para 100% da lista, mas não são necessários para a platina.",
       "Requisitos especiais: Professional obrigatório; Amateur/Normal/Veteran por conclusão de capítulos; Seleção de Capítulos disponível para cleanup; grind de dinheiro e pontos de Bonus Features; rank S em todos os capítulos para figuras.",
       "Capítulo 1-1: sem emblemas BSAA; coletar Gold Ring do Executioner e Topaz (Marquise) se for farmar tesouros; usar a arena para Ride the Lightning, Stop, Drop, & Roll, Baptism by Fire, Meat Shower, A Cut Above, Gatling Gun, Longbow e headshots.",
       "Capítulo 1-2: 3 emblemas BSAA: varanda após o Majini sair das caixas, suportes da torre d'água no prédio da Alpha Team e parede vista pela cerca após usar a Furnace Key. Pegar Antique Clock na varanda, Ivory Relief do Cephalo e tesouros do prédio/furnace.",
@@ -141,15 +151,15 @@
       "Capítulo 3-1: 4 emblemas BSAA: pilar sob a cabana da ilha central, poste de energia visto do início, prateleira na fish farm noroeste e parte inferior da plataforma após abrir a porta das placas. Coletar Rocket Launcher, S&W M29, Chalice (Silver), Idol (Silver), Ceremonial Mask, Blue Enigma e ovos White/Brown/Gold na ilha das galinhas.",
       "Capítulo 3-2: 2 emblemas BSAA: atrás das tendas Tricell após a ponte e dentro da cabana depois que o timer do barco começa. Pegar tesouros da refinaria e usar Big Man Majini para The Works com parceiro humano ou IA sem arma forte.",
       "Capítulo 3-3: 1 emblema BSAA na lateral da ponte após o primeiro floodgate. Pegar Emerald (Marquise) na sala entre metralhadoras e revisar tesouros antes de sair de barco.",
-      "Capítulo 4-1: 3 emblemas BSAA: rocha perto da cachoeira após a primeira escada, ruínas distantes após a porta de pedra e parede acima da estátua verde. Farmar gemas, pegar Ruby (Oval), Ruby (Trilliant) e Soul Gem matando Popokarimu antes de fugir; bom capítulo para Stun Rod e Go into the Light.",
+      "Capítulo 4-1 / Chapter 4-1: 3 emblemas BSAA: rocha perto da cachoeira após a primeira escada, ruínas distantes após a porta de pedra e parede acima da estátua verde. ALERTA — Soul Gem: derrote Popokarimu na sala das estátuas em vez de apenas fugir/seguir pelo QTE. Ele solta o Soul Gem, necessário para They Belong in a Museum. Se passar direto, repita o Chapter 4-1 pelo Chapter Select.",
       "Capítulo 4-2: 1 emblema BSAA acima da porta na sala pequena atrás da estátua/esqueleto do terceiro puzzle de laser. Pegar Idol (Gold), Beetle (Gold), Diamond (Trilliant) e gemas do templo; revisar salas de lasers antes de encerrar.",
       "Capítulo 5-1: 1 emblema BSAA sob a ponte perto do jardim de flores, acima da água. Pegar Lion Hearts de Lickers, fazer Heart Stopper derrubando um Licker e finalizar no coração; bom farm de dinheiro quando o dano já estiver alto.",
       "Capítulo 5-2: 1 emblema BSAA dentro da lixeira após a segunda esteira. Pegar Dead Bride's Necklace e Power Stones dos Reapers; bom farm se você mata Reapers com Magnum/Rifle de forma consistente.",
-      "Capítulo 5-3: 3 emblemas BSAA: turbina direita no início, plataforma distante antes de ativar o elevador circular e poço do elevador na sala das ruínas. Pegar H&K PSG-1, Royal Necklace, Chalice (Gold), Sapphire (Marquise), gemas Brilliant/Oval e Heart of Africa após causar dano suficiente a Wesker; fazer Bad Blood e Masters of Removing.",
-      "Capítulo 6-1: 3 emblemas BSAA: topo do mastro distante, container norte que exige explosivo/dinamite e armário com vidro após Excella. Levar granada/proximity bomb; pegar Topaz (Oval), Jail Breaker e tesouros do navio.",
+      "Capítulo 5-3 / Chapter 5-3: 3 emblemas BSAA: turbina direita no início, plataforma distante antes de ativar o elevador circular e poço do elevador na sala das ruínas. ALERTA — Heart of Africa: durante a primeira luta contra Wesker, cause dano suficiente antes do limite da luta. Depois, colete o Heart of Africa entre as escadas antes de avançar na sequência. Se não aparecer ou você esquecer de pegar, repita o Chapter 5-3 pelo Chapter Select.",
+      "Capítulo 6-1 / Chapter 6-1: 3 emblemas BSAA: topo do mastro distante, BSAA Emblem escondido dentro de um contêiner no Ship Deck e armário com vidro após Excella. ALERTA — BSAA 6-1: leve explosivos, como Hand Grenade, Grenade Launcher ou Rocket Launcher, porque o emblema do contêiner é difícil/impossível de acertar normalmente. Se perder, repita o Chapter 6-1 pelo Chapter Select.",
       "Capítulo 6-2: sem emblemas; repetir com Rocket Launcher para pontos rápidos de Bonus Features e rank S quando estiver limpando figuras.",
-      "Capítulo 6-3: sem emblemas; pegar Lightning Hawk se faltou, Diamond (Marquise) na arena final e concluir a campanha; cuidado com ataque de morte instantânea de Wesker.",
-      "Armas para Stockpile: M92F, H&K P8, SIG P226, M93R, Ithaca M37, M3, Jail Breaker, Hydra, VZ61, AK-74, H&K MP5, SIG 556, S75, Dragunov SVD, H&K PSG-1, S&W M29, L. Hawk, S&W M500, Grenade Launcher, Rocket Launcher, Stun Rod, Gatling Gun, Longbow e Proximity Bomb.",
+      "Capítulo 6-3 / Chapter 6-3: sem emblemas. ALERTA — Diamond Marquise: durante a área final, atire na formação rochosa correta para criar acesso ao pequeno ponto onde fica o Diamond Marquise. Pegue antes de finalizar o capítulo. Se encerrar a luta sem coletar, repita o Chapter 6-3 pelo Chapter Select.",
+      "Armas/itens para Stockpile: obtenha M92F, H&K P8, SIG P226, M93R, Ithaca M37, M3, Jail Breaker, Hydra, VZ61, AK-74, H&K MP5, SIG 556, S75, Dragunov SVD, H&K PSG-1, S&W M29, L. Hawk, S&W M500, Grenade Launcher, Rocket Launcher, Stun Rod, Gatling Gun e Longbow. Além das armas principais e especiais, mantenha também no inventário/estoque pelo menos uma unidade de Hand Grenade, Incendiary Grenade, Flash Grenade e Proximity Bomb.",
       "Desbloqueios de armas especiais: M92F maximizada libera M93R; Ithaca M37 maximizada libera Hydra; S&W M29 maximizada libera S&W M500; VZ61 maximizada libera Gatling Gun; S75 maximizada libera Longbow.",
       "Rank S: observar tempo, precisão, inimigos derrotados e mortes. A rota segura é Amateur com arma infinita, precisão acima de 70%, zero deaths, capítulos rápidos e kills suficientes.",
       "Farm final: vender tesouros já registrados, repetir 4-1 por gemas, 5-1 por Lion Hearts, 5-2 por Power Stones e 6-2 por pontos de Bonus Features.",
@@ -235,7 +245,7 @@
       "Checklist tesouro 50/50 - Heart of Africa: 5-3, chão entre as escadas durante a luta contra Jill, se Wesker recuou por dano suficiente na luta anterior. Pré-requisito: causar dano alto em Wesker; alerta: se não aparecer, repita 5-3 preparado."
     ],
     "editorial_summary": [
-      "Visão geral da platina: este guia cobre a platina/lista base de Resident Evil 5 e não cobre 100% com DLCs/listas extras. A lista base tem 51 troféus, não exige online, não exige DLC e pode ser concluída solo com a IA ou em coop opcional. O núcleo é terminar todos os capítulos, destravar e vencer Professional, coletar 30 emblemas BSAA, registrar todos os 50 tesouros, obter e evoluir todas as armas, comprar figuras e limpar troféus situacionais.",
+      "Visão geral da platina: este guia cobre apenas a platina base de Resident Evil 5 no PS4. A lista completa da PSN pode aparecer com 71 troféus porque inclui DLCs/expansões, mas a platina exige somente os 51 troféus do jogo principal. Os troféus de Versus, Lost in Nightmares e Desperate Escape são extras, contam para 100% da lista e não são necessários para desbloquear a platina. O núcleo da lista base é terminar todos os capítulos, destravar e vencer Professional, coletar 30 emblemas BSAA, registrar todos os 50 tesouros, obter e evoluir todas as armas, comprar figuras e limpar troféus situacionais.",
       "Perdíveis e pontos de não retorno: não há perdíveis definitivos. A Seleção de Capítulos mantém inventário/progresso e permite voltar para qualquer capítulo. O que existe são janelas internas de capítulo, como Soul Gem em 4-1, Heart of Africa em 5-3, o emblema explosivo de 6-1 e o Diamond Marquise de 6-3. Se passar por uma dessas janelas, repita o capítulo específico; a platina não fica bloqueada.",
       "Roadmap recomendado: faça a primeira campanha em Normal ou Veteran, colete o que vier sem perfeccionismo, destrave Professional via Veteran, limpe emblemas/tesouros/armas/ranks S por Seleção de Capítulos, farme dinheiro, evolua armas-chave, compre figuras e só então finalize Professional. Essa ordem evita repetir Professional por falta de dano, repetir capítulos sem checklist e gastar dinheiro cedo em armas ruins.",
       "Checklist por capítulo: emblemas BSAA por capítulo: 1-1: 0, 1-2: 3, 2-1: 5, 2-2: 3, 2-3: 0, 3-1: 4, 3-2: 2, 3-3: 1, 4-1: 3, 4-2: 1, 5-1: 1, 5-2: 1, 5-3: 3, 6-1: 3, 6-2: 0, 6-3: 0. Use rifle com zoom para os distantes e leve explosivo para o emblema dentro do container em 6-1.",
@@ -268,7 +278,7 @@
         "question": "S rank precisa ser em uma dificuldade específica?"
       },
       {
-        "answer": "Take It to the Max, Stockpile, They’re ACTION Figures!, tesouros específicos e Professional. Resolva farm, armas e ranks S antes da run final.",
+        "answer": "Take It to the Max, Stockpile, They’re ACTION Figures!, tesouros específicos e Professional. Para Stockpile, confirme todas as armas e também Hand Grenade, Incendiary Grenade, Flash Grenade e Proximity Bomb no inventário/estoque antes de assumir bug.",
         "question": "O que costuma atrasar mais a platina?"
       },
       {
@@ -276,8 +286,8 @@
         "question": "Qual farm de dinheiro é melhor?"
       },
       {
-        "answer": "Não. Este guia cobre a lista base. Lost in Nightmares, Desperate Escape e Versus são listas extras separadas.",
-        "question": "Os DLCs contam para a platina?"
+        "answer": "Não. A platina base exige apenas os 51 troféus do jogo principal. No PS4, a lista pode mostrar 71 troféus porque inclui DLCs como Versus, Lost in Nightmares e Desperate Escape. Esses troféus contam para o 100% da lista, mas não bloqueiam a platina.",
+        "question": "Preciso fazer os DLCs para platinar Resident Evil 5?"
       },
       {
         "answer": "Não. Colete o que for natural, mas deixe perfeccionismo para Seleção de Capítulos. Isso evita reiniciar capítulos longos e mantém a primeira run fluida.",

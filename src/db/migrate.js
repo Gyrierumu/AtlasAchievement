@@ -377,6 +377,40 @@ async function ensureUserProgressTables() {
   `);
 }
 
+async function ensureGuideCommentTables() {
+  await exec(`
+    CREATE TABLE IF NOT EXISTS guide_comments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      guide_slug TEXT NOT NULL,
+      game_id INTEGER,
+      user_id INTEGER NOT NULL,
+      body TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'hidden', 'deleted')),
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      deleted_at TEXT,
+      hidden_reason TEXT,
+      moderation_note TEXT,
+      user_ip_hash TEXT,
+      user_agent_hash TEXT,
+      FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE SET NULL,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_guide_status ON guide_comments(guide_slug, status, created_at);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_user ON guide_comments(user_id);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_status_created ON guide_comments(status, created_at);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_game_id ON guide_comments(game_id);
+
+    CREATE TRIGGER IF NOT EXISTS trg_guide_comments_updated_at
+    AFTER UPDATE ON guide_comments
+    FOR EACH ROW
+    BEGIN
+      UPDATE guide_comments SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
+    END;
+  `);
+}
+
 async function backfillMissableTrophyFlags() {
   const missableCodes = [
     ...new Set(sampleGames.flatMap(game => (
@@ -1621,6 +1655,24 @@ async function migrate(options = {}) {
       UNIQUE (user_id, game_id, trophy_code)
     );
 
+    CREATE TABLE IF NOT EXISTS guide_comments (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      guide_slug TEXT NOT NULL,
+      game_id INTEGER,
+      user_id INTEGER NOT NULL,
+      body TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'hidden', 'deleted')),
+      created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+      deleted_at TEXT,
+      hidden_reason TEXT,
+      moderation_note TEXT,
+      user_ip_hash TEXT,
+      user_agent_hash TEXT,
+      FOREIGN KEY (game_id) REFERENCES games(id) ON DELETE SET NULL,
+      FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    );
+
     CREATE INDEX IF NOT EXISTS idx_sessions_expires_at ON sessions(expires_at);
     CREATE INDEX IF NOT EXISTS idx_guide_import_state_imported_at ON guide_import_state(imported_at);
     CREATE INDEX IF NOT EXISTS idx_feedbacks_created_at ON feedbacks(created_at);
@@ -1637,6 +1689,10 @@ async function migrate(options = {}) {
     CREATE INDEX IF NOT EXISTS idx_user_trophy_progress_game ON user_trophy_progress(game_id);
     CREATE INDEX IF NOT EXISTS idx_user_trophy_progress_trophy ON user_trophy_progress(trophy_code);
     CREATE INDEX IF NOT EXISTS idx_user_trophy_progress_user_game ON user_trophy_progress(user_id, game_id);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_guide_status ON guide_comments(guide_slug, status, created_at);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_user ON guide_comments(user_id);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_status_created ON guide_comments(status, created_at);
+    CREATE INDEX IF NOT EXISTS idx_guide_comments_game_id ON guide_comments(game_id);
 
     CREATE TRIGGER IF NOT EXISTS trg_games_updated_at
     AFTER UPDATE ON games
@@ -1672,6 +1728,13 @@ async function migrate(options = {}) {
     BEGIN
       UPDATE user_trophy_progress SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
     END;
+
+    CREATE TRIGGER IF NOT EXISTS trg_guide_comments_updated_at
+    AFTER UPDATE ON guide_comments
+    FOR EACH ROW
+    BEGIN
+      UPDATE guide_comments SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
+    END;
   `);
 
   const gameColumnChanges = await ensureGameColumns();
@@ -1679,6 +1742,7 @@ async function migrate(options = {}) {
   await backfillTrophyTypeAliases();
   await ensureUserTables();
   await ensureUserProgressTables();
+  await ensureGuideCommentTables();
   await mergeAstrosPlayroomDuplicates();
   await backfillMissableTrophyFlags();
   await backfillCoverImagesFromSeed();

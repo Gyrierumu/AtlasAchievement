@@ -1047,3 +1047,40 @@ body[data-page="admin"].atlas-admin-shell-locked #view-admin {
     margin-bottom: 8px;
   }
 }
+.admin-comments-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-comment-card {
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 8px;
+  background: rgba(255,255,255,.035);
+  padding: 16px;
+}
+
+.admin-comment-card--pending {
+  border-color: rgba(251, 191, 36, .26);
+}
+
+.admin-comment-card--approved {
+  border-color: rgba(34, 197, 94, .22);
+}
+
+.admin-comment-card--hidden,
+.admin-comment-card--deleted {
+  border-color: rgba(244, 63, 94, .22);
+}
+
+.admin-comment-card > p {
+  margin: 12px 0;
+  color: rgba(255,255,255,.75);
+  white-space: pre-line;
+}
+
+.admin-comment-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}

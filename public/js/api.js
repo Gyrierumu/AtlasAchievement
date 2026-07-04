@@ -91,6 +91,40 @@ window.ApiService = (() => {
     submitFeedback(payload) {
       return request('/api/feedback', { method: 'POST', body: JSON.stringify(payload) });
     },
+    getGuideComments(slug) {
+      return request(`/jogo/${encodeURIComponent(slug)}/comments`);
+    },
+    createGuideComment(slug, payload) {
+      return request(`/jogo/${encodeURIComponent(slug)}/comments`, {
+        method: 'POST',
+        headers: { 'X-Atlas-Auth-Scope': 'user' },
+        body: JSON.stringify({ ...payload, scope: 'user' })
+      });
+    },
+    deleteGuideComment(id, payload = {}) {
+      return request(`/comments/${encodeURIComponent(id)}`, {
+        method: 'DELETE',
+        headers: { 'X-Atlas-Auth-Scope': 'user' },
+        body: JSON.stringify({ ...payload, scope: 'user' })
+      });
+    },
+    getAdminComments(params = {}) {
+      const searchParams = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined && value !== null && value !== '') searchParams.set(key, String(value));
+      });
+      const query = searchParams.toString();
+      return request(`/api/admin/comments${query ? `?${query}` : ''}`);
+    },
+    approveAdminComment(id, payload = {}) {
+      return request(`/api/admin/comments/${encodeURIComponent(id)}/approve`, { method: 'POST', body: JSON.stringify(payload) });
+    },
+    hideAdminComment(id, payload = {}) {
+      return request(`/api/admin/comments/${encodeURIComponent(id)}/hide`, { method: 'POST', body: JSON.stringify(payload) });
+    },
+    deleteAdminComment(id, payload = {}) {
+      return request(`/api/admin/comments/${encodeURIComponent(id)}/delete`, { method: 'POST', body: JSON.stringify(payload) });
+    },
     getAdminFeedback(params = {}) {
       const searchParams = new URLSearchParams();
       Object.entries(params).forEach(([key, value]) => {

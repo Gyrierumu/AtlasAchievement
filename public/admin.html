@@ -46,6 +46,7 @@
         <a href="#adminEditorialQueuePanel">Fila editorial</a>
         <a href="#adminCatalogPanel">Jogos</a>
         <a href="#adminFeedbackPanel">Feedbacks</a>
+        <a href="#adminCommentsPanel">Comentários</a>
         <a href="#adminBetaMetricsPanel">Métricas</a>
         <a href="#adminSettingsPanel">Configurações</a>
       </nav>
@@ -142,6 +143,43 @@
         </div>
         <div id="adminFeedbackList" class="admin-feedback-list"></div>
         <div id="adminFeedbackPagination" class="flex flex-wrap items-center gap-3"></div>
+      </section>
+
+      <section id="adminCommentsPanel" class="atlas-panel p-5 md:p-6 space-y-4">
+        <div class="atlas-section-head">
+          <div>
+            <div class="atlas-eyebrow">Moderação</div>
+            <h2 class="text-[28px] md:text-[36px] leading-none font-extrabold tracking-tight">Comentários dos guias</h2>
+            <p id="adminCommentsSummary" class="text-sm text-white/55 mt-2">Carregando comentários.</p>
+          </div>
+          <button id="adminCommentsRefreshBtn" type="button" class="atlas-btn atlas-btn-secondary"><i class="fas fa-rotate-right"></i><span>Atualizar</span></button>
+        </div>
+        <div class="grid md:grid-cols-4 gap-3">
+          <label>
+            <span class="sr-only">Filtrar status dos comentários</span>
+            <select id="adminCommentsStatus" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+              <option value="">Pendentes, aprovados e ocultos</option>
+              <option value="pending">Pendentes</option>
+              <option value="approved">Aprovados</option>
+              <option value="hidden">Ocultos</option>
+              <option value="deleted">Excluídos</option>
+            </select>
+          </label>
+          <label>
+            <span class="sr-only">Filtrar por guia</span>
+            <input id="adminCommentsGuide" type="search" placeholder="Slug do guia" class="atlas-input min-h-[46px] h-[46px] py-3">
+          </label>
+          <label>
+            <span class="sr-only">Filtrar por usuário</span>
+            <input id="adminCommentsUser" type="search" placeholder="Usuário ou nome" class="atlas-input min-h-[46px] h-[46px] py-3">
+          </label>
+          <label>
+            <span class="sr-only">Filtrar por data inicial</span>
+            <input id="adminCommentsFrom" type="date" class="atlas-input min-h-[46px] h-[46px] py-3">
+          </label>
+        </div>
+        <div id="adminCommentsList" class="admin-comments-list"></div>
+        <div id="adminCommentsPagination" class="flex flex-wrap items-center gap-3"></div>
       </section>
 
       <section id="adminBetaMetricsPanel" class="atlas-panel p-5 md:p-6 space-y-5">
