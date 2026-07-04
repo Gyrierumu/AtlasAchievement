@@ -18,6 +18,10 @@
     system: { label: 'Sistema', tone: 'partial' }
   };
   const RESIDENT_EVIL_NON_COLLECTIBLE_IDS = new Set([
+    're5_recruit',
+    're5_soldier',
+    're5_veteran',
+    're5_war_hero',
     're1r_ghost_chance',
     're1r_cqc_ftw',
     're1r_dont_stop_running',

@@ -1273,6 +1273,13 @@
         tone: 'atlas-meta-signal--partial'
       };
     }
+    if (slug === 'resident-evil-5' && /versus/.test(normalized) && /lost in nightmares/.test(normalized) && /desperate escape/.test(normalized) && /51 trofeus|jogo principal/.test(normalized) && /71 trofeus|lista completa/.test(normalized)) {
+      return {
+        value: 'DLC não obrigatório',
+        detail: dlcText,
+        tone: 'atlas-meta-signal--complete'
+      };
+    }
     if (slug === 'persona-3-reload' && /episode aigis/.test(normalized) && /nao e necessario|nao e necessaria|nao entra|fica separado/.test(normalized)) {
       return {
         value: 'DLC não necessário',
