@@ -22,6 +22,45 @@
     're5_soldier',
     're5_veteran',
     're5_war_hero',
+    're5_ch1_1',
+    're5_ch1_2',
+    're5_ch2_1',
+    're5_ch2_2',
+    're5_ch2_3',
+    're5_ch3_1',
+    're5_ch3_2',
+    're5_ch3_3',
+    're5_ch4_1',
+    're5_ch4_2',
+    're5_ch5_1',
+    're5_ch5_2',
+    're5_ch5_3',
+    're5_ch6_1',
+    're5_ch6_2',
+    're5_ch6_3',
+    're5_friend_in_need',
+    're5_lifeguard',
+    're5_exploding_heads',
+    're5_cut_above',
+    're5_cattle_prod',
+    're5_crowd_control',
+    're5_bulls_eye',
+    're5_get_physical',
+    're5_the_works',
+    're5_lead_aspirin',
+    're5_fireworks',
+    're5_be_the_knife',
+    're5_meat_shower',
+    're5_go_into_the_light',
+    're5_ride_the_lightning',
+    're5_stop_drop_roll',
+    're5_baptism_by_fire',
+    're5_masters_of_removing',
+    're5_bad_blood',
+    're5_drive_by',
+    're5_egg_on_your_face',
+    're5_heart_stopper',
+    're5_who_do_you_trust',
     're1r_ghost_chance',
     're1r_cqc_ftw',
     're1r_dont_stop_running',
@@ -36,6 +75,42 @@
     're1r_that_was_nice',
     're1r_great_guy'
   ]);
+  const RESIDENT_EVIL_5_NON_STORY_IDS = new Set([
+    're5_egg_hunt',
+    're5_all_dressed_up',
+    're5_stockpile',
+    're5_take_it_to_the_max',
+    're5_museum',
+    're5_badge_of_honor',
+    're5_action_figures',
+    're5_friend_in_need',
+    're5_lifeguard',
+    're5_exploding_heads',
+    're5_cut_above',
+    're5_cattle_prod',
+    're5_crowd_control',
+    're5_bulls_eye',
+    're5_get_physical',
+    're5_the_works',
+    're5_lead_aspirin',
+    're5_fireworks',
+    're5_be_the_knife',
+    're5_meat_shower',
+    're5_go_into_the_light',
+    're5_ride_the_lightning',
+    're5_stop_drop_roll',
+    're5_baptism_by_fire',
+    're5_masters_of_removing',
+    're5_bad_blood',
+    're5_drive_by',
+    're5_egg_on_your_face',
+    're5_heart_stopper',
+    're5_who_do_you_trust'
+  ]);
+  const RESIDENT_EVIL_5_TAG_FIXES_BY_ID = {
+    re5_recruit: { add: ['difficulty'] },
+    re5_friend_in_need: { remove: ['collectible', 'difficulty', 'story'], add: ['grind', 'cleanup'] }
+  };
   const RESIDENT_EVIL_2_TAG_FIXES_BY_ID = {
     re2r_basics_survival: { remove: ['difficulty'] },
     re2r_hip_squares: { add: ['collectible'] },
@@ -277,7 +352,22 @@
     if (/\bruns?\b|campanha dedicada|multiplas campanhas|nova campanha|new game|ng\+|speedrun|sem usar|without|only|finais|final alternativo|backup/.test(text)) pushRiskTag(tags, 'run');
     if (RESIDENT_EVIL_RUN_RISK_IDS.has(trophyId)) pushRiskTag(tags, 'run');
     if (RESIDENT_EVIL_NON_COLLECTIBLE_IDS.has(trophyId)) {
-      return tags.filter(tag => tag.id !== 'collectible');
+      const fix = RESIDENT_EVIL_5_TAG_FIXES_BY_ID[trophyId];
+      const filtered = tags.filter(tag => tag.id !== 'collectible'
+        && !(RESIDENT_EVIL_5_NON_STORY_IDS.has(trophyId) && tag.id === 'story')
+        && !(fix?.remove || []).includes(tag.id));
+      (fix?.add || []).forEach(id => pushRiskTag(filtered, id));
+      return filtered;
+    }
+    if (RESIDENT_EVIL_5_NON_STORY_IDS.has(trophyId)) {
+      const storyIndex = tags.findIndex(tag => tag.id === 'story');
+      if (storyIndex >= 0) tags.splice(storyIndex, 1);
+    }
+    if (RESIDENT_EVIL_5_TAG_FIXES_BY_ID[trophyId]) {
+      const fix = RESIDENT_EVIL_5_TAG_FIXES_BY_ID[trophyId];
+      const filtered = tags.filter(tag => !(fix.remove || []).includes(tag.id));
+      (fix.add || []).forEach(id => pushRiskTag(filtered, id));
+      return filtered;
     }
     if (RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId]) {
       const fix = RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId];

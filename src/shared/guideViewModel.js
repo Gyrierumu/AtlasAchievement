@@ -109,6 +109,49 @@
   }
 
   const RESIDENT_EVIL_NON_COLLECTIBLE_IDS = new Set([
+    're5_recruit',
+    're5_soldier',
+    're5_veteran',
+    're5_war_hero',
+    're5_ch1_1',
+    're5_ch1_2',
+    're5_ch2_1',
+    're5_ch2_2',
+    're5_ch2_3',
+    're5_ch3_1',
+    're5_ch3_2',
+    're5_ch3_3',
+    're5_ch4_1',
+    're5_ch4_2',
+    're5_ch5_1',
+    're5_ch5_2',
+    're5_ch5_3',
+    're5_ch6_1',
+    're5_ch6_2',
+    're5_ch6_3',
+    're5_friend_in_need',
+    're5_lifeguard',
+    're5_exploding_heads',
+    're5_cut_above',
+    're5_cattle_prod',
+    're5_crowd_control',
+    're5_bulls_eye',
+    're5_get_physical',
+    're5_the_works',
+    're5_lead_aspirin',
+    're5_fireworks',
+    're5_be_the_knife',
+    're5_meat_shower',
+    're5_go_into_the_light',
+    're5_ride_the_lightning',
+    're5_stop_drop_roll',
+    're5_baptism_by_fire',
+    're5_masters_of_removing',
+    're5_bad_blood',
+    're5_drive_by',
+    're5_egg_on_your_face',
+    're5_heart_stopper',
+    're5_who_do_you_trust',
     're1r_ghost_chance',
     're1r_cqc_ftw',
     're1r_dont_stop_running',
@@ -139,6 +182,52 @@
     re1r_great_guy: [
       { id: 'run', label: 'Risco de run', tone: 'warning' }
     ]
+  };
+  const RESIDENT_EVIL_5_NON_STORY_IDS = new Set([
+    're5_egg_hunt',
+    're5_all_dressed_up',
+    're5_stockpile',
+    're5_take_it_to_the_max',
+    're5_museum',
+    're5_badge_of_honor',
+    're5_action_figures',
+    're5_friend_in_need',
+    're5_lifeguard',
+    're5_exploding_heads',
+    're5_cut_above',
+    're5_cattle_prod',
+    're5_crowd_control',
+    're5_bulls_eye',
+    're5_get_physical',
+    're5_the_works',
+    're5_lead_aspirin',
+    're5_fireworks',
+    're5_be_the_knife',
+    're5_meat_shower',
+    're5_go_into_the_light',
+    're5_ride_the_lightning',
+    're5_stop_drop_roll',
+    're5_baptism_by_fire',
+    're5_masters_of_removing',
+    're5_bad_blood',
+    're5_drive_by',
+    're5_egg_on_your_face',
+    're5_heart_stopper',
+    're5_who_do_you_trust'
+  ]);
+  const RESIDENT_EVIL_5_TAG_FIXES_BY_ID = {
+    re5_recruit: {
+      add: [
+        { id: 'difficulty', label: 'Dificuldade', tone: 'warning' }
+      ]
+    },
+    re5_friend_in_need: {
+      remove: ['collectible', 'difficulty', 'story'],
+      add: [
+        { id: 'grind', label: 'Grind', tone: 'warning' },
+        { id: 'cleanup', label: 'Cleanup', tone: 'neutral' }
+      ]
+    }
   };
   const RESIDENT_EVIL_2_TAG_FIXES_BY_ID = {
     re2r_basics_survival: { remove: ['difficulty'] },
@@ -247,8 +336,18 @@
     const slug = String(game?.slug || '').trim().toLowerCase();
     const trophyId = String(trophy?.id || '').trim();
     let nextTags = Array.isArray(tags) ? tags.slice() : [];
-    if (slug === 'resident-evil' && RESIDENT_EVIL_NON_COLLECTIBLE_IDS.has(trophyId)) {
+    if ((slug === 'resident-evil' || slug === 'resident-evil-5') && RESIDENT_EVIL_NON_COLLECTIBLE_IDS.has(trophyId)) {
       nextTags = nextTags.filter(tag => tag?.id !== 'collectible');
+    }
+    if (slug === 'resident-evil-5' && RESIDENT_EVIL_5_NON_STORY_IDS.has(trophyId)) {
+      nextTags = nextTags.filter(tag => tag?.id !== 'story');
+    }
+    if (slug === 'resident-evil-5' && RESIDENT_EVIL_5_TAG_FIXES_BY_ID[trophyId]) {
+      const fix = RESIDENT_EVIL_5_TAG_FIXES_BY_ID[trophyId];
+      nextTags = nextTags.filter(tag => !(fix.remove || []).includes(tag?.id));
+      (fix.add || []).forEach(tag => {
+        if (!nextTags.some(item => item?.id === tag.id)) nextTags.push(tag);
+      });
     }
     if (slug === 'resident-evil-2-remake' && RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId]) {
       const fix = RESIDENT_EVIL_2_TAG_FIXES_BY_ID[trophyId];
