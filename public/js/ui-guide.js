@@ -726,12 +726,14 @@ window.UIGuide = (() => {
   }
 
   function getPlatinumExtraCategoryPanelId(category = {}, index = 0) {
+    if (category.id === 'bsaa-emblems') return 'extras-bsaa-emblems';
+    if (category.id === 'treasures') return 'extras-tesouros';
     const key = String(category.id || category.name || `category-${index}`)
       .trim()
       .toLowerCase()
       .replace(/[^a-z0-9_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
-    return `guidePlatinumExtraCategory-${key || `category-${index}`}`;
+    return `extras-${key || `category-${index}`}`;
   }
 
   function sortPlatinumExtraItems(items = []) {
