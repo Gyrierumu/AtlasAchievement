@@ -1767,6 +1767,15 @@ function getPlatinumExtraCategoryTitle(category = {}) {
   return `${category.name || 'Categoria'}${total ? ` — ${total} itens` : ''}`;
 }
 
+function getPlatinumExtraCategoryPanelId(category = {}, index = 0) {
+  const key = String(category.id || category.name || `category-${index}`)
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return `guidePlatinumExtraCategory-${key || `category-${index}`}`;
+}
+
 function sortPlatinumExtraItems(items = []) {
   return [...items].sort((left, right) => Number(left?.number || 0) - Number(right?.number || 0));
 }
@@ -1833,15 +1842,22 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(extras.categories.length))} categoria(s)</span>
       </div>
       <div class="space-y-3">
-        ${extras.categories.map(category => `
-          <details class="atlas-panel atlas-panel--support p-4 md:p-5">
-            <summary class="cursor-pointer font-bold text-white">${escapeHtml(getPlatinumExtraCategoryTitle(category))}</summary>
+        ${extras.categories.map((category, index) => {
+          const panelId = getPlatinumExtraCategoryPanelId(category, index);
+          const title = getPlatinumExtraCategoryTitle(category);
+          return `
+          <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+            <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeHtml(panelId)}" aria-expanded="false" aria-controls="${escapeHtml(panelId)}">
+              <span>${escapeHtml(title)}</span>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div id="${escapeHtml(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true">
             ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
-            <div class="mt-4 space-y-4">
               ${renderPlatinumExtraCategoryItemsHtml(category)}
             </div>
-          </details>
-        `).join('')}
+          </article>
+        `;
+        }).join('')}
       </div>
     </section>`;
 }
