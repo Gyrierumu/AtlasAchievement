@@ -7,6 +7,7 @@ window.AppGuideView = (() => {
 
     const isExpanded = Boolean(expanded);
     content.classList.toggle('is-collapsed', !isExpanded);
+    content.hidden = !isExpanded;
     content.setAttribute('aria-hidden', isExpanded ? 'false' : 'true');
     button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
 

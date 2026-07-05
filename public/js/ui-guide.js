@@ -811,7 +811,7 @@ window.UIGuide = (() => {
                 <span>${escapeHtml(title)}</span>
                 <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </button>
-              <div id="${escapeAttribute(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true">
+              <div id="${escapeAttribute(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
               ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
                 ${renderPlatinumExtraCategoryItems(category)}
               </div>

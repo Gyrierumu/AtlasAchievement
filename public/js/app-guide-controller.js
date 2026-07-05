@@ -420,6 +420,7 @@ window.AppGuideController = (() => {
       if (sectionBody?.classList.contains('is-collapsed')) {
         const toggle = document.querySelector(`[data-guide-section-toggle="${sectionBody.id}"]`);
         sectionBody.classList.remove('is-collapsed');
+        sectionBody.hidden = false;
         sectionBody.setAttribute('aria-hidden', 'false');
         if (toggle) {
           toggle.setAttribute('aria-expanded', 'true');
