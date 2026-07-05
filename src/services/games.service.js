@@ -658,6 +658,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       : [],
     seo: seedGame?.seo && typeof seedGame.seo === 'object' ? { ...seedGame.seo } : (editorialSource.seo && typeof editorialSource.seo === 'object' ? { ...editorialSource.seo } : {}),
     quickDecision: seedGame?.quickDecision && typeof seedGame.quickDecision === 'object' ? { ...seedGame.quickDecision } : (editorialSource.quickDecision && typeof editorialSource.quickDecision === 'object' ? { ...editorialSource.quickDecision } : null),
+    platinumBaseChecklist: seedGame?.platinumBaseChecklist && typeof seedGame.platinumBaseChecklist === 'object'
+      ? JSON.parse(JSON.stringify(seedGame.platinumBaseChecklist))
+      : null,
     checklist: Array.isArray(seedGame?.checklist) ? seedGame.checklist.slice() : (Array.isArray(editorialSource.checklist) ? editorialSource.checklist.slice() : []),
     walkthrough: deserializeWalkthrough(Array.isArray(seedGame?.walkthrough) && seedGame.walkthrough.length
       ? seedGame.walkthrough

@@ -710,6 +710,100 @@ window.UIGuide = (() => {
       </ol>`;
   }
 
+  function getGuidePlatinumExtras(game = {}) {
+    const extras = game?.platinumBaseChecklist;
+    const categories = Array.isArray(extras?.categories)
+      ? extras.categories.filter(category => Array.isArray(category?.items) && category.items.length)
+      : [];
+    return categories.length ? { ...extras, categories } : null;
+  }
+
+  function getPlatinumExtraCategoryTitle(category = {}) {
+    const total = Number(category.total || category.items?.length || 0);
+    if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
+    if (category.id === 'treasures') return `Tesouros — ${total} tipos`;
+    return `${category.name || 'Categoria'}${total ? ` — ${total} itens` : ''}`;
+  }
+
+  function sortPlatinumExtraItems(items = []) {
+    return [...items].sort((left, right) => Number(left?.number || 0) - Number(right?.number || 0));
+  }
+
+  function groupPlatinumExtraItemsByChapter(items = []) {
+    return sortPlatinumExtraItems(items).reduce((groups, item) => {
+      const chapter = item?.chapter || 'Capítulo não informado';
+      if (!groups.has(chapter)) groups.set(chapter, []);
+      groups.get(chapter).push(item);
+      return groups;
+    }, new Map());
+  }
+
+  function renderPlatinumExtraItem(category = {}, item = {}) {
+    const number = String(item.number || '').padStart(2, '0');
+    const isTreasure = category.id === 'treasures';
+    const title = isTreasure
+      ? `Tesouro #${number}: ${item.name || 'Tesouro'} — ${item.chapter || 'Capítulo não informado'}`
+      : `BSAA Emblem #${number} — ${item.chapter || 'Capítulo não informado'}`;
+    const details = [
+      item.location ? `<p><strong>Local:</strong> ${escapeHtml(item.location)}</p>` : '',
+      item.note ? `<p><strong>Observação:</strong> ${escapeHtml(item.note)}</p>` : '',
+      item.relatedTrophy ? `<p><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</p>` : '',
+      isTreasure ? '<p><strong>Registro:</strong> Registre 1 unidade. Pode vender depois de registrado.</p>' : '',
+      item.repeatableViaChapterSelect ? '<p>Repetível via Seleção de Capítulos / Chapter Select.</p>' : '',
+      item.warning ? `<p><strong>Alerta:</strong> ${escapeHtml(item.warning)}</p>` : ''
+    ].filter(Boolean).join('');
+    return `
+      <li class="atlas-panel atlas-panel--quiet p-4 space-y-2">
+        <strong>${escapeHtml(title)}</strong>
+        <div class="text-sm text-white/70 space-y-1">${details}</div>
+      </li>`;
+  }
+
+  function renderPlatinumExtraCategoryItems(category = {}) {
+    const items = Array.isArray(category.items) ? category.items : [];
+    if (!items.length) return '<div class="atlas-inline-empty">Sem itens nesta categoria.</div>';
+    if (category.id === 'bsaa-emblems') {
+      const groups = groupPlatinumExtraItemsByChapter(items);
+      return Array.from(groups.entries()).map(([chapter, chapterItems]) => `
+        <section class="space-y-3">
+          <h4 class="text-base font-bold text-white">${escapeHtml(chapter)}</h4>
+          <ul class="space-y-3">
+            ${chapterItems.map(item => renderPlatinumExtraItem(category, item)).join('')}
+          </ul>
+        </section>
+      `).join('');
+    }
+    return `<ul class="space-y-3">${sortPlatinumExtraItems(items).map(item => renderPlatinumExtraItem(category, item)).join('')}</ul>`;
+  }
+
+  function renderGuidePlatinumExtrasPanel(game = {}) {
+    const extras = getGuidePlatinumExtras(game);
+    if (!extras) return '';
+    const intro = 'Esta aba reúne os checklists detalhados da platina base de Resident Evil 5. Use aqui para acompanhar emblemas BSAA, tesouros, armas, upgrades, ranks, ovos e troféus situacionais. DLCs ficam fora da platina base e devem ser tratados separadamente.';
+    return `
+      <section id="guidePlatinumExtrasPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <div class="atlas-eyebrow">Platina base</div>
+            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Extras da Platina</h2>
+            <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
+          </div>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(extras.categories.length))} categoria(s)</span>
+        </div>
+        <div class="space-y-3">
+          ${extras.categories.map(category => `
+            <details class="atlas-panel atlas-panel--support p-4 md:p-5">
+              <summary class="cursor-pointer font-bold text-white">${escapeHtml(getPlatinumExtraCategoryTitle(category))}</summary>
+              ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
+              <div class="mt-4 space-y-4">
+                ${renderPlatinumExtraCategoryItems(category)}
+              </div>
+            </details>
+          `).join('')}
+        </div>
+      </section>`;
+  }
+
   function renderWalkthroughList(items = []) {
     if (!Array.isArray(items) || !items.length) return '';
     return `<ul>${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
@@ -1124,16 +1218,18 @@ window.UIGuide = (() => {
       </section>`;
   }
 
-  function renderGuideLayerNav() {
+  function renderGuideLayerNav(game = {}) {
+    const hasPlatinumExtras = Boolean(getGuidePlatinumExtras(game));
     const items = [
       { id: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary', href: '#guideSummaryActions' },
       { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel' },
       { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
+      hasPlatinumExtras ? { id: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', href: '#guidePlatinumExtrasPanel' } : null,
       { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
       { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
       { id: 'comments', icon: 'fa-comments', label: 'Comentários', action: 'comments', href: '#guideCommentsPanel' },
       { id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }
-    ];
+    ].filter(Boolean);
     return `
       <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Seções do guia">
         ${items.map((item, index) => `
@@ -1214,7 +1310,7 @@ window.UIGuide = (() => {
 
   function renderGuideDecisionStackV2(game = {}, viewModel = {}) {
     return `
-      ${renderGuideLayerNav()}`;
+      ${renderGuideLayerNav(game)}`;
   }
 
   function renderGuideSidebarCompact(game = {}, viewModel = {}, context = {}) {
@@ -1554,6 +1650,7 @@ window.UIGuide = (() => {
     const trophiesEl = qs('#trophyList') || qs('#trophiesList') || qs('#guideTrophies');
     const summaryEl = qs('#guideSummarySlot');
     const roadmapEl = qs('#guideRoadmapSlot');
+    const platinumExtrasEl = qs('#guidePlatinumExtrasSlot');
     const relatedEl = qs('#guideRelatedOverview');
     const editorialNotesEl = qs('#guideEditorialNotes');
     const guideFeedbackEl = qs('#guideFeedbackSlot');
@@ -1654,6 +1751,10 @@ window.UIGuide = (() => {
 
     if (roadmapEl) {
       roadmapEl.innerHTML = renderGuideRoadmapPanel(viewModel);
+    }
+
+    if (platinumExtrasEl) {
+      platinumExtrasEl.innerHTML = renderGuidePlatinumExtrasPanel(game);
     }
 
     if (editorialNotesEl) {
