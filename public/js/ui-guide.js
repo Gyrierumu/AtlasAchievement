@@ -807,10 +807,12 @@ window.UIGuide = (() => {
             const title = getPlatinumExtraCategoryTitle(category);
             return `
             <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
-              <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeAttribute(panelId)}" aria-expanded="false" aria-controls="${escapeAttribute(panelId)}">
-                <span>${escapeHtml(title)}</span>
-                <i class="fas fa-chevron-down" aria-hidden="true"></i>
-              </button>
+              <h3>
+                <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeAttribute(panelId)}" aria-expanded="false" aria-controls="${escapeAttribute(panelId)}">
+                  <span>${escapeHtml(title)}</span>
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </h3>
               <div id="${escapeAttribute(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
               ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
                 ${renderPlatinumExtraCategoryItems(category)}
