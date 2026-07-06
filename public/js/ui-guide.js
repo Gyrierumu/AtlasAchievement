@@ -722,8 +722,8 @@ window.UIGuide = (() => {
     const total = Number(category.total || category.items?.length || 0);
     if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
     if (category.id === 'treasures') return `Tesouros — ${total} tipos`;
-    if (category.id === 'weapons-stockpile') return 'Armas e Stockpile';
-    if (category.id === 'upgrades-take-it-to-the-max') return 'Upgrades — Take It to the Max';
+    if (category.id === 'weapons-stockpile') return `Armas e Stockpile — ${total} itens`;
+    if (category.id === 'upgrades-take-it-to-the-max') return `Upgrades — Take It to the Max — ${total} armas`;
     return `${category.name || 'Categoria'}${total ? ` — ${total} itens` : ''}`;
   }
 
