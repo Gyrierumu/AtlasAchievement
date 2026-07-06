@@ -1764,6 +1764,8 @@ function getPlatinumExtraCategoryTitle(category = {}) {
   const total = Number(category.total || category.items?.length || 0);
   if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
   if (category.id === 'treasures') return `Tesouros — ${total} tipos`;
+  if (category.id === 'weapons-stockpile') return 'Armas e Stockpile';
+  if (category.id === 'upgrades-take-it-to-the-max') return 'Upgrades — Take It to the Max';
   return `${category.name || 'Categoria'}${total ? ` — ${total} itens` : ''}`;
 }
 
@@ -1791,13 +1793,27 @@ function groupPlatinumExtraItemsByChapter(items = []) {
   }, new Map());
 }
 
+function groupPlatinumExtraItemsByField(items = [], field = 'group') {
+  return sortPlatinumExtraItems(items).reduce((groups, item) => {
+    const group = item?.[field] || 'outros';
+    if (!groups.has(group)) groups.set(group, []);
+    groups.get(group).push(item);
+    return groups;
+  }, new Map());
+}
+
 function renderPlatinumExtraItemHtml(category = {}, item = {}) {
   const number = String(item.number || '').padStart(2, '0');
+  const isBsaa = category.id === 'bsaa-emblems';
   const isTreasure = category.id === 'treasures';
   const title = isTreasure
     ? `Tesouro #${number}: ${item.name || 'Tesouro'} — ${item.chapter || 'Capítulo não informado'}`
-    : `BSAA Emblem #${number} — ${item.chapter || 'Capítulo não informado'}`;
+    : isBsaa
+    ? `BSAA Emblem #${number} — ${item.chapter || 'Capítulo não informado'}`
+    : `${number}. ${item.name || 'Item'}`;
   const details = [
+    item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(item.type)}</p>` : '',
+    item.obtain ? `<p><strong>Como obter:</strong> ${escapeHtml(item.obtain)}</p>` : '',
     item.location ? `<p><strong>Local:</strong> ${escapeHtml(item.location)}</p>` : '',
     item.note ? `<p><strong>Observação:</strong> ${escapeHtml(item.note)}</p>` : '',
     item.relatedTrophy ? `<p><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</p>` : '',
@@ -1822,6 +1838,18 @@ function renderPlatinumExtraCategoryItemsHtml(category = {}) {
         <h4 class="text-base font-bold text-white">${escapeHtml(chapter)}</h4>
         <ul class="space-y-3">
           ${chapterItems.map(item => renderPlatinumExtraItemHtml(category, item)).join('')}
+        </ul>
+      </section>
+    `).join('');
+  }
+  if (category.groupBy) {
+    const groups = groupPlatinumExtraItemsByField(items, category.groupBy);
+    const labels = category.groupLabels || {};
+    return Array.from(groups.entries()).map(([group, groupItems]) => `
+      <section class="space-y-3">
+        <h4 class="text-base font-bold text-white">${escapeHtml(labels[group] || group)}</h4>
+        <ul class="space-y-3">
+          ${groupItems.map(item => renderPlatinumExtraItemHtml(category, item)).join('')}
         </ul>
       </section>
     `).join('');
@@ -1857,6 +1885,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
             </h3>
             <div id="${escapeHtml(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
             ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
+            ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
               ${renderPlatinumExtraCategoryItemsHtml(category)}
             </div>
           </article>
