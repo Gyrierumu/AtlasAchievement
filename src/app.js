@@ -1768,6 +1768,8 @@ function getPlatinumExtraCategoryTitle(category = {}) {
   if (category.id === 'upgrades-take-it-to-the-max') return `Upgrades — Take It to the Max — ${total} armas`;
   if (category.id === 'ranks-s-chapters') return `Ranks S — ${total} capítulos`;
   if (category.id === 'bonus-features-outfits-figures') return 'Bonus Features — trajes e figuras';
+  if (category.id === 'eggs-egg-hunt-egg-on-your-face') return 'Ovos — Egg Hunt e Egg on Your Face';
+  if (category.id === 'situational-trophies') return `Troféus situacionais — ${total} objetivos`;
   return `${category.name || 'Categoria'}${total ? ` — ${total} itens` : ''}`;
 }
 
@@ -1892,6 +1894,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
             ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
             ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
             ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
+            ${Array.isArray(category.checklist) && category.checklist.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">${escapeHtml(category.checklistTitle || 'Checklist')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-1">${category.checklist.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol></div>` : ''}
               ${renderPlatinumExtraCategoryItemsHtml(category)}
             </div>
           </article>
