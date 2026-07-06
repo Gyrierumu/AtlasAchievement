@@ -724,6 +724,8 @@ window.UIGuide = (() => {
     if (category.id === 'treasures') return `Tesouros — ${total} tipos`;
     if (category.id === 'weapons-stockpile') return `Armas e Stockpile — ${total} itens`;
     if (category.id === 'upgrades-take-it-to-the-max') return `Upgrades — Take It to the Max — ${total} armas`;
+    if (category.id === 'ranks-s-chapters') return `Ranks S — ${total} capítulos`;
+    if (category.id === 'bonus-features-outfits-figures') return 'Bonus Features — trajes e figuras';
     return `${category.name || 'Categoria'}${total ? ` — ${total} itens` : ''}`;
   }
 
@@ -770,11 +772,14 @@ window.UIGuide = (() => {
       ? `BSAA Emblem #${number} — ${item.chapter || 'Capítulo não informado'}`
       : `${number}. ${item.name || 'Item'}`;
     const details = [
+      item.description ? `<p>${escapeHtml(item.description)}</p>` : '',
       item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(item.type)}</p>` : '',
       item.obtain ? `<p><strong>Como obter:</strong> ${escapeHtml(item.obtain)}</p>` : '',
       item.location ? `<p><strong>Local:</strong> ${escapeHtml(item.location)}</p>` : '',
       item.note ? `<p><strong>Observação:</strong> ${escapeHtml(item.note)}</p>` : '',
       item.relatedTrophy ? `<p><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</p>` : '',
+      Array.isArray(item.checklist) && item.checklist.length ? `<div><strong>Checklist:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.checklist.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
+      Array.isArray(item.notes) && item.notes.length ? `<div><strong>Observações:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.notes.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
       isTreasure ? '<p><strong>Registro:</strong> Registre 1 unidade. Pode vender depois de registrado.</p>' : '',
       item.repeatableViaChapterSelect ? '<p>Repetível via Seleção de Capítulos / Chapter Select.</p>' : '',
       item.warning ? `<p><strong>Alerta:</strong> ${escapeHtml(item.warning)}</p>` : ''
@@ -818,7 +823,7 @@ window.UIGuide = (() => {
   function renderGuidePlatinumExtrasPanel(game = {}) {
     const extras = getGuidePlatinumExtras(game);
     if (!extras) return '';
-    const intro = 'Esta aba reúne os checklists detalhados da platina base de Resident Evil 5. Use aqui para acompanhar emblemas BSAA, tesouros, armas, upgrades, ranks, ovos e troféus situacionais. DLCs ficam fora da platina base e devem ser tratados separadamente.';
+    const intro = extras.introduction || 'Esta aba reúne os checklists detalhados da platina base. DLCs ficam fora da platina base e devem ser tratados separadamente.';
     return `
       <section id="guidePlatinumExtrasPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
         <div class="atlas-section-head atlas-section-head--compact">
@@ -844,6 +849,7 @@ window.UIGuide = (() => {
               <div id="${escapeAttribute(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
               ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
               ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
+              ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
                 ${renderPlatinumExtraCategoryItems(category)}
               </div>
             </article>
