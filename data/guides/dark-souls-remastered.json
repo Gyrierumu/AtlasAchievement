@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-80 horas considera run principal, NG+, NG++, armas raras, magias, milagres, piromancias, pactos e cleanup.",
     "time_sort_hours": 60,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Lista PlayStation de Dark Souls Remastered revisada com roadmap estruturado, 41 troféus EN/PT-BR, descrições PT-BR, flags offline/sem coop/sem DLC, FAQ, pontos de atenção, tags e checklist completo; validada para publicação.",
     "verification_status": "verified",
     "walkthrough": null
@@ -169,6 +169,7 @@
       "Avançar NG++ até o ponto necessário.",
       "Fazer cleanup final e liberar The Dark Soul."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Dark Souls Remastered é uma platina clássica de RPG de ação, focada em concluir a campanha, obter os dois finais, descobrir pactos, derrotar chefes opcionais, coletar todos os feitiços, milagres e piromancias, fazer todos os caminhos principais de reforço de arma e completar Knight’s Honor com todas as armas raras. A lista PSN tem 41 troféus, pode ser feita offline, não exige coop, não exige DLC separada e não possui troféu de dificuldade, mas exige planejamento de NPCs, pactos, almas de chefes e múltiplas runs até NG+ ou NG++.",
       "A ordem mais segura é fazer uma primeira campanha completa controlando NPCs, pactos, magias e almas de chefes, escolher um final, depois usar NG+ para o segundo final e avançar o suficiente em NG++ para fechar as armas raras restantes. O maior cuidado é não consumir almas de chefes necessárias para armas, não perder pactos sensíveis como Darkwraith e Blade of the Darkmoon, e acompanhar no checklist todos os feitiços, milagres, piromancias, upgrades e armas raras."

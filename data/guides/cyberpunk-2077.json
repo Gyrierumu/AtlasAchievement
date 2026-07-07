@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-80 horas considera campanha, questlines, limpeza de distritos, finais, colecionaveis e trofeus especificos.",
     "time_sort_hours": 60,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base de Cyberpunk 2077 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -215,6 +215,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Cyberpunk 2077 é uma platina longa, mas relativamente acessível, focada em concluir a história principal, liberar finais diferentes, terminar questlines de personagens importantes, completar gigs e delitos da NCPD por distrito, coletar itens de Johnny Silverhand, comprar veículos, instalar cyberware, encontrar murais de tarô, dataterms e resolver troféus misc de combate e build.",
       "A rota mais segura é fazer uma run principal completa, concluir Panam, Rogue, Kerry, Judy e River, salvar Takemura em Search and Destroy, coletar todos os itens de Johnny e criar saves manuais antes de Nocturne OP55N1 para testar finais diferentes.",

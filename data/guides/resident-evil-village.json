@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanha, NG+, upgrades, Village of Shadows, speedrun, restrições, coletáveis e Mercenaries base.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -152,6 +152,7 @@
       "Comprar e visualizar figuras e concept art na loja de extras.",
       "Conferir flags finais: onlineRequired false, coopRequired false, dlcRequired false e hasMissables true."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Resident Evil Village é uma platina de dificuldade alta moderada, estimada em 25-40 horas, focada em completar a campanha, dominar uma rota rápida, limpar colecionáveis e encarar The Mercenaries para Legendary Cowboy. A platina base não exige online, coop nem Winters' Expansion, mas cobra planejamento para não repetir mais runs do que o necessário.",
       "A rota mais segura é fazer uma primeira campanha completa coletando arquivos, Goats of Warding, receitas, tesouros, armas, upgrades e troféus situacionais; depois usar New Game+ e saves separados para Village of Shadows, rota rápida, limite de cura, limite de gastos e run de faca/combate corpo a corpo.",

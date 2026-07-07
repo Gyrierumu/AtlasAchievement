@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa de 100-150h considera menus, licencas, eventos, creditos, carros especificos, Sport Mode, distancia e cleanup.",
     "time_sort_hours": 100,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base de Gran Turismo 7 adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -178,6 +178,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Gran Turismo 7 é uma platina longa e focada em progressão, habilidade e grind. A lista tem 54 troféus, não possui perdíveis permanentes, não exige cooperação e não exige DLC, mas possui online obrigatório por causa do Sport Mode e dos troféus de distância com outros jogadores.",
       "A rota mais segura é completar os Menu Books do GT Café, liberar modos e circuitos, fazer licenças, avançar no Circuit Experience, acumular créditos, comprar carros específicos da Legend Cars para Three Legendary Cars, completar 50 corridas no Sport Mode, resolver os troféus de fotos, tuning, garagem e distância, e deixar Hard Work Pays Off e os grandes grinds para o cleanup. O maior risco não é perder troféus, mas subestimar tempo, créditos, rotação de carros lendários e requisitos online.",

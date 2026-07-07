@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-40 horas considera uma campanha normal, cleanup de itens/lore/familiaridade e uma run de desafio sem shell.",
     "time_sort_hours": 20,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia revisado para a lista base de 26 troféus; manter sem verified até confirmação manual de nomes PT-BR oficiais e detalhes de itens de Bars Tended.",
     "verification_status": "review",
     "walkthrough": null
@@ -122,6 +122,7 @@
       "Completar a campanha em Obsidian Dark Form",
       "Confirmar que The Virtuous Cycle não está no checklist obrigatório da platina base"
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [],
     "faq": [
       {

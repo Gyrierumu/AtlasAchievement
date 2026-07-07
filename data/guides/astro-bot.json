@@ -39,7 +39,7 @@
     "time_min_hours": 15,
     "time_reason": "A faixa de aproximadamente 15 horas considera história, coletáveis, Lost Galaxy e cleanup.",
     "time_sort_hours": 15,
-    "updated_at": "2026-07-06 00:22:36",
+    "updated_at": "2026-07-07 16:09:25",
     "verification_note": "Guia revisado editorialmente para a lista base.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -90,6 +90,7 @@
       "Resolver interações do Crash Site, como SingStars, Thaw, God of Thunder!, Let’s Twist Again e KO!.",
       "Confirmar que updates gratuitos, rankings online e speedruns extras não foram tratados como requisito da platina base."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [],
     "faq": [
       {

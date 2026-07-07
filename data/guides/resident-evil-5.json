@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
     "time_sort_hours": 35,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "verification_status": "verified",
     "walkthrough": null
@@ -132,7 +132,7 @@
       {
         "tip": "Parceiro humano facilita muito a cadeia de melee. Com IA, tire armas fortes dela para não matar o alvo antes do combo.",
         "title": "The Works",
-        "type": "Coop opcional / Situacional"
+        "type": "Parceiro opcional / Situacional"
       },
       {
         "tip": "Guarde White, Brown, Gold e Rotten Egg. Use o Rotten Egg em Majini fraco no 1-1 Amateur e não venda o primeiro antes do troféu.",
@@ -244,6 +244,362 @@
       "Checklist tesouro 49/50 - Soul Gem: 4-1, drop do Popokarimu se você matar o boss antes de fugir. Pré-requisito: ficar e matar; alerta: janela de capítulo, fugir não registra.",
       "Checklist tesouro 50/50 - Heart of Africa: 5-3, chão entre as escadas se você causou dano suficiente na primeira luta do capítulo. Pré-requisito: causar dano alto antes do limite; alerta: se não aparecer, repita 5-3 preparado."
     ],
+    "dlcCompletionGuide": {
+      "baseTrophies": 51,
+      "checklist": [
+        {
+          "name": "Army of One",
+          "notPlatinumBase": true,
+          "note": "Fazer boost 1v1 quando possível.",
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "PS4/Remaster: vencer 15 partidas em Slayers.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Grind"
+          ]
+        },
+        {
+          "name": "Eye of the Tiger",
+          "notPlatinumBase": true,
+          "note": "Fazer boost 1v1 quando possível.",
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "PS4/Remaster: vencer 15 partidas em Survivors.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Grind"
+          ]
+        },
+        {
+          "name": "The Team That Slays Together...",
+          "notPlatinumBase": true,
+          "note": "Exige parceiro/equipes; organizar 4 jogadores facilita muito.",
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "PS4/Remaster: vencer 15 partidas em Team Slayers.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Coop/Equipe",
+            "Grind"
+          ]
+        },
+        {
+          "name": "We Will Survive",
+          "notPlatinumBase": true,
+          "note": "Exige parceiro/equipes; organizar 4 jogadores facilita muito.",
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "PS4/Remaster: vencer 15 partidas em Team Survivors.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Coop/Equipe",
+            "Grind"
+          ]
+        },
+        {
+          "name": "Keep the Good Times Rolling",
+          "notPlatinumBase": true,
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "Fazer combo de 20 derrotas em Slayers.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus"
+          ],
+          "tip": "Pode ser combinado com o farm de vitórias em Slayers."
+        },
+        {
+          "name": "It Takes Two to Tango",
+          "notPlatinumBase": true,
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "Fazer combo de 40 derrotas em Team Slayers.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Equipe"
+          ],
+          "tip": "Fazer com parceiros organizados, mantendo o combo vivo entre eliminações."
+        },
+        {
+          "name": "It’s All About the Points",
+          "notPlatinumBase": true,
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "Marcar pelo menos 40.000 pontos em Survivors.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus"
+          ],
+          "tip": "Buscar durante as vitórias de Survivors; em boost, controlar eliminações e bônus."
+        },
+        {
+          "name": "There’s no “I” in Team",
+          "notPlatinumBase": true,
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "Marcar pelo menos 80.000 pontos em Team Survivors.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Equipe"
+          ],
+          "tip": "Fazer com equipe coordenada; combinar pontuação com vitórias."
+        },
+        {
+          "name": "Let’s Get This Party Started!",
+          "notPlatinumBase": true,
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "Desbloquear/comprar todos os personagens selecionáveis do Versus.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Grind"
+          ],
+          "tip": "Usar pontos do Bonus Features/Versus conforme a estrutura do jogo; conferir a loja antes de achar que bugou."
+        },
+        {
+          "name": "Bringing the Pain",
+          "notPlatinumBase": true,
+          "packageId": "versus",
+          "packageName": "Versus",
+          "requirement": "PS4/Remaster: derrotar 50 jogadores usando ataques físicos em Versus.",
+          "tags": [
+            "DLC",
+            "Online",
+            "Versus",
+            "Grind"
+          ],
+          "tip": "Enfraquecer o oponente até estado crítico/DYING e finalizar com ataque físico. Fazer durante o grind de vitórias.",
+          "warning": "Para PS4/Remaster, use 50 eliminações, não 100."
+        },
+        {
+          "name": "Must’ve Got Lost",
+          "note": "DLC de história separado; não conta para a platina base.",
+          "packageId": "lost-in-nightmares",
+          "packageName": "Lost in Nightmares"
+        },
+        {
+          "name": "It’s Just a Bad Dream!",
+          "note": "DLC de história separado; não conta para a platina base.",
+          "packageId": "lost-in-nightmares",
+          "packageName": "Lost in Nightmares"
+        },
+        {
+          "name": "Night Terrors",
+          "note": "Separar requisito de Professional do S rank.",
+          "packageId": "lost-in-nightmares",
+          "packageName": "Lost in Nightmares"
+        },
+        {
+          "name": "Kung Fu Fighting",
+          "note": "DLC de história separado; não conta para a platina base.",
+          "packageId": "lost-in-nightmares",
+          "packageName": "Lost in Nightmares"
+        },
+        {
+          "name": "Wish Upon a Star",
+          "note": "Destruir 18 Score Stars; não misturar com BSAA Emblems.",
+          "packageId": "lost-in-nightmares",
+          "packageName": "Lost in Nightmares"
+        },
+        {
+          "name": "Getaway",
+          "note": "DLC de história separado; não conta para a platina base.",
+          "packageId": "desperate-escape",
+          "packageName": "Desperate Escape"
+        },
+        {
+          "name": "The Great Escape",
+          "note": "DLC de história separado; não conta para a platina base.",
+          "packageId": "desperate-escape",
+          "packageName": "Desperate Escape"
+        },
+        {
+          "name": "Run the Gauntlet",
+          "note": "Separar requisito de Professional do S rank.",
+          "packageId": "desperate-escape",
+          "packageName": "Desperate Escape"
+        },
+        {
+          "name": "Way of the Warrior",
+          "note": "Derrotar 150 inimigos em uma jogada de Desperate Escape.",
+          "packageId": "desperate-escape",
+          "packageName": "Desperate Escape"
+        },
+        {
+          "name": "Shoot the Messenger",
+          "note": "Derrotar 3 Agitator Majini em uma jogada de Desperate Escape.",
+          "packageId": "desperate-escape",
+          "packageName": "Desperate Escape"
+        }
+      ],
+      "dlcTrophies": 20,
+      "introduction": "Esta seção é para quem quer o 100% da lista completa de Resident Evil 5. A platina base continua exigindo apenas os 51 troféus do jogo principal. Os troféus de Versus, Lost in Nightmares e Desperate Escape são extras de DLC: contam para 100% da lista, mas não são necessários para desbloquear a platina.",
+      "packages": [
+        {
+          "bestMoment": "Depois da platina base ou depois de montar a seção de DLCs/100%.",
+          "fullListRequired": true,
+          "id": "versus",
+          "introduction": "Versus é DLC/multiplayer competitivo e conta apenas para o 100% da lista completa. Ele não é necessário para a platina base. No PS4/Remaster, os troféus de vitórias pedem 15 vitórias por modo, e Bringing the Pain pede 50 eliminações com ataques físicos. Como depende de online/multiplayer, o ideal é fazer com boosting organizado.",
+          "mainRisks": [
+            "Grind de vitórias.",
+            "Organização de jogadores.",
+            "Servidores/atividade online."
+          ],
+          "name": "Versus",
+          "nature": "Online/multiplayer competitivo.",
+          "observation": "Exige online/multiplayer para o 100% completo, mas não para a platina base.",
+          "platinumRequired": false,
+          "recommendedBoostPlayers": [
+            "2 jogadores para Slayers/Survivors.",
+            "4 jogadores para Team Slayers/Team Survivors."
+          ],
+          "roadmap": [
+            {
+              "actions": [
+                "Confirmar personagens desbloqueados/comprados no Bonus Features.",
+                "Organizar 2 jogadores para modos solo e 4 jogadores para modos de equipe.",
+                "Separar sessão para vitórias e sessão para objetivos de pontuação/combo/físicos."
+              ],
+              "title": "Preparar o boost"
+            },
+            {
+              "actions": [
+                "Army of One: 15 vitórias em Slayers.",
+                "Eye of the Tiger: 15 vitórias em Survivors.",
+                "Aproveitar para Keep the Good Times Rolling, It’s All About the Points e Bringing the Pain."
+              ],
+              "title": "Fazer Slayers e Survivors"
+            },
+            {
+              "actions": [
+                "The Team That Slays Together...: 15 vitórias em Team Slayers.",
+                "We Will Survive: 15 vitórias em Team Survivors.",
+                "Aproveitar para It Takes Two to Tango e There’s no “I” in Team."
+              ],
+              "title": "Fazer Team Slayers e Team Survivors"
+            },
+            {
+              "actions": [
+                "Let’s Get This Party Started!: comprar/desbloquear todos os personagens selecionáveis do Versus.",
+                "Bringing the Pain: completar 50 eliminações com ataques físicos, se ainda faltar."
+              ],
+              "title": "Fechar personagens e eliminações físicas"
+            }
+          ],
+          "rules": [
+            "Versus é DLC e conta apenas para o 100% da lista completa.",
+            "Não dizer que Versus é necessário para platinar.",
+            "Online/multiplayer obrigatório apenas no bloco Versus, não no topo da platina base.",
+            "Use parceiro/equipe para Team Slayers e Team Survivors, sem marcar coop obrigatório na campanha.",
+            "Não misturar Mercenaries, Lost in Nightmares ou Desperate Escape nesta subseção."
+          ],
+          "subtitle": "Versus — 10 troféus",
+          "trophyCount": 10,
+          "versionAlert": "Guia PS4/Remaster: use 15 vitórias por modo e 50 eliminações físicas em Bringing the Pain. Não use 30 vitórias ou 100 eliminações como requisito principal desta versão."
+        },
+        {
+          "id": "lost-in-nightmares",
+          "mainRisks": [
+            "Professional",
+            "S rank",
+            "18 Score Stars"
+          ],
+          "name": "Lost in Nightmares",
+          "nature": "Episódio extra de história.",
+          "observation": "Pode ser tratado como DLC de história separado.",
+          "rules": [
+            "Marcar como DLC e não marcar como requisito da platina base.",
+            "Wish Upon a Star exige destruir 18 Score Stars.",
+            "Separar S rank de Professional quando aplicável.",
+            "Não misturar Score Stars com BSAA Emblems da platina base.",
+            "Não colocar Score Stars dentro de Extras da Platina."
+          ],
+          "trophyCount": 5
+        },
+        {
+          "id": "desperate-escape",
+          "mainRisks": [
+            "Professional",
+            "S rank",
+            "150 kills",
+            "3 Agitator Majini"
+          ],
+          "name": "Desperate Escape",
+          "nature": "Episódio extra de história.",
+          "observation": "Pode ser tratado como DLC de história separado.",
+          "rules": [
+            "Marcar como DLC e não marcar como requisito da platina base.",
+            "Way of the Warrior exige derrotar 150 inimigos em uma jogada de Desperate Escape.",
+            "Shoot the Messenger exige derrotar 3 Agitator Majini em uma jogada de Desperate Escape.",
+            "Separar S rank de Professional quando aplicável.",
+            "Não misturar objetivos de Desperate Escape com troféus situacionais da platina base."
+          ],
+          "trophyCount": 5
+        }
+      ],
+      "roadmap": [
+        {
+          "actions": [
+            "Concluir os 51 troféus do jogo principal antes de entrar nas DLCs.",
+            "Usar arsenal, experiência e domínio do jogo para facilitar as DLCs de história."
+          ],
+          "title": "Fechar a platina base primeiro"
+        },
+        {
+          "actions": [
+            "Concluir em qualquer dificuldade.",
+            "Pegar 18 Score Stars.",
+            "Buscar S rank.",
+            "Fechar Professional."
+          ],
+          "title": "Fazer Lost in Nightmares"
+        },
+        {
+          "actions": [
+            "Concluir em qualquer dificuldade.",
+            "Buscar S rank.",
+            "Fechar Professional.",
+            "Fazer Way of the Warrior e Shoot the Messenger."
+          ],
+          "title": "Fazer Desperate Escape"
+        },
+        {
+          "actions": [
+            "Recomendar boosting organizado.",
+            "Separar modos Slayers, Survivors, Team Slayers e Team Survivors.",
+            "Deixar claro que é online/multiplayer apenas para 100%, não para platina."
+          ],
+          "title": "Fazer Versus por último"
+        }
+      ],
+      "scopeNotes": [
+        "A platina base exige apenas os 51 troféus do jogo principal.",
+        "A lista completa pode aparecer com 71 troféus porque inclui DLCs.",
+        "Os 20 troféus extras de DLC contam para 100% da lista, mas não para a platina.",
+        "Versus, Lost in Nightmares e Desperate Escape ficam fora de Extras da Platina.",
+        "Extras da Platina continua sendo apenas para checklists detalhados da platina base.",
+        "DLCs não alteram o topo da platina base para online/coop obrigatório."
+      ],
+      "title": "DLCs e 100% da Lista",
+      "totalTrophies": 71
+    },
     "editorial_summary": [
       "Visão geral da platina: este guia cobre apenas a platina base de Resident Evil 5 no PS4. A lista completa da PSN pode aparecer com 71 troféus porque inclui DLCs/expansões, mas a platina exige somente os 51 troféus do jogo principal. Os troféus de Versus, Lost in Nightmares e Desperate Escape são extras, contam para 100% da lista e não são necessários para desbloquear a platina. O núcleo da lista base é terminar todos os capítulos, destravar e vencer Professional, coletar 30 emblemas BSAA, registrar todos os 50 tesouros, obter e evoluir todas as armas, comprar figuras e limpar troféus situacionais.",
       "Perdíveis e pontos de não retorno: não há perdíveis definitivos. A Seleção de Capítulos mantém inventário/progresso e permite voltar para qualquer capítulo. O que existe são janelas internas de capítulo, como Soul Gem em 4-1, Heart of Africa em 5-3, o emblema explosivo de 6-1 e o Diamond Marquise de 6-3. Se passar por uma dessas janelas, repita o capítulo específico; a platina não fica bloqueada.",
@@ -288,6 +644,42 @@
       {
         "answer": "Não. A platina base exige apenas os 51 troféus do jogo principal. No PS4, a lista pode mostrar 71 troféus porque inclui DLCs como Versus, Lost in Nightmares e Desperate Escape. Esses troféus contam para o 100% da lista, mas não bloqueiam a platina.",
         "question": "Preciso fazer os DLCs para platinar Resident Evil 5?"
+      },
+      {
+        "answer": "Porque a PSN inclui 51 troféus base + 20 troféus de DLC. A platina base continua presa aos 51 troféus do jogo principal.",
+        "question": "Por que a lista aparece com 71 troféus?"
+      },
+      {
+        "answer": "Não. Versus é DLC e conta apenas para o 100% da lista completa.",
+        "question": "Versus é obrigatório para a platina?"
+      },
+      {
+        "answer": "Não para a platina base. Online/multiplayer é obrigatório apenas para os troféus de Versus no 100% completo.",
+        "question": "Versus deixa o guia com online obrigatório?"
+      },
+      {
+        "answer": "15 vitórias em Slayers, 15 em Survivors, 15 em Team Slayers e 15 em Team Survivors.",
+        "question": "Quantas vitórias preciso no PS4?"
+      },
+      {
+        "answer": "No PS4/Remaster, use 50 eliminações físicas. 100 aparece em versões/listas antigas e não deve ser usado como requisito principal deste guia.",
+        "question": "Bringing the Pain pede 50 ou 100 eliminações?"
+      },
+      {
+        "answer": "Não de forma prática. Slayers/Survivors podem ser organizados com 2 jogadores; Team Slayers/Team Survivors precisam de equipe/parceiros, idealmente 4 jogadores.",
+        "question": "Dá para fazer tudo sozinho?"
+      },
+      {
+        "answer": "Não para a platina. Versus é obrigatório apenas para quem busca 100% da lista completa, porque seus troféus são DLC online/multiplayer.",
+        "question": "Versus é obrigatório?"
+      },
+      {
+        "answer": "Não. Lost in Nightmares e Desperate Escape são DLCs de história/pós-platina e contam só para o 100% da lista completa.",
+        "question": "Lost in Nightmares e Desperate Escape são da platina?"
+      },
+      {
+        "answer": "Não. Extras da Platina é só apoio detalhado para a platina base; Versus, Lost in Nightmares e Desperate Escape ficam separados em DLCs e 100% da Lista.",
+        "question": "Extras da Platina inclui DLC?"
       },
       {
         "answer": "Não. Colete o que for natural, mas deixe perfeccionismo para Seleção de Capítulos. Isso evita reiniciar capítulos longos e mantém a primeira run fluida.",

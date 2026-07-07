@@ -39,7 +39,7 @@
     "time_min_hours": 15,
     "time_reason": "15 a 25 horas considerando uma run planejada, Chapter Select, Perfect Crime, All Endings e cleanup de troféus de capítulo.",
     "time_sort_hours": 20,
-    "updated_at": "2026-07-06 00:22:40",
+    "updated_at": "2026-07-07 16:09:29",
     "verification_note": "Guia revisado para publicação: Heavy Rain com 57 troféus, distribuição 1/2/4/50, sem online, sem coop, sem DLC, sem dificuldade obrigatória e sem perdíveis permanentes com uso correto de Chapter Select.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -216,6 +216,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Heavy Rain é uma platina curta e fácil em habilidade, mas muito dependente de escolhas, finais e continuidade entre capítulos. A lista tem 57 troféus e não exige online, cooperação, DLC ou dificuldade específica. O maior cuidado é organizar as rotas de Perfect Crime, All Endings, Four Heroes, Trial Master e os troféus de capítulo para evitar repetir trechos mais do que o necessário.",
       "A rota mais segura é fazer uma primeira run planejada, salvando os personagens necessários para Four Heroes e Saved the Kid, pegando o máximo possível de troféus de capítulo, e depois usar Chapter Select para Perfect Crime, All Endings, Kamikaze, Nerd e outros troféus específicos. Não há perdíveis permanentes, mas alguns troféus exigem jogar a partir de um capítulo com salvamento ativo para que as consequências sejam registradas."

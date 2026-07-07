@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-60 horas considera história, exploração das regiões, coletáveis, Myths, side content, sistemas de combate e cleanup por Battle Scroll.",
     "time_sort_hours": 60,
-    "updated_at": "2026-07-06 00:22:38",
+    "updated_at": "2026-07-07 16:09:27",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -88,6 +88,7 @@
       "Fazer Teamwork com NPCs/Acolytes ou coop opcional, sem transformar isso em requisito obrigatório.",
       "Fazer cleanup final por free roam/Battle Scroll e conferir que DLCs futuras ficaram fora da platina base."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [],
     "faq": [
       {

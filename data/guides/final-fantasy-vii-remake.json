@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-80 horas considera campanha, chapter select, Hard Mode, coletaveis, minigames, combat simulator e cleanup.",
     "time_sort_hours": 60,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base de Final Fantasy VII Remake adicionada com checklist e roadmap completos, sem INTERmission/Yuffie; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -210,6 +210,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Final Fantasy VII Remake é uma platina longa e focada em conclusão: terminar a história, liberar Chapter Select, completar todas as side quests, coletar discos de música, desbloquear os 9 vestidos, concluir Battle Intel Reports, aprender Enemy Skills, vencer desafios de minigames e fechar todos os capítulos no Hard Mode.",
       "A platina base não exige online, cooperação ou INTERmission. A rota mais segura é fazer uma primeira run normal coletando o máximo possível, completar side quests e minigames, usar Chapter Select para rotas alternativas do Capítulo 9 e vestidos, preparar builds e manuscritos para o Hard Mode, derrotar Pride and Joy Prototype e então concluir todos os capítulos no Hard para Hardened Veteran.",

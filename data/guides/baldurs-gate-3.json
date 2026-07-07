@@ -39,7 +39,7 @@
     "time_min_hours": 120,
     "time_reason": "A faixa de 120-150 horas considera campanha longa, multiplas rotas, trofeus de escolhas, finais, companions e cleanup.",
     "time_sort_hours": 120,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista principal da platina de Baldur's Gate 3 adicionada com checklist e roadmap completos; Honour Mode/Foehammer ficou fora por ser grupo extra.",
     "verification_status": "review",
     "walkthrough": null
@@ -214,6 +214,7 @@
       "Revisar FAQ, decisão rápida, SEO e pontos de atenção antes de publicar.",
       "Comparar status editorial da página individual com o catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Baldur’s Gate 3 é uma das platinas mais longas e delicadas do catálogo, porque quase tudo depende de escolhas, companheiros, romances, rotas de história e decisões que podem bloquear troféus dezenas de horas antes do final. A platina principal exige planejamento desde o Ato I, saves manuais frequentes, atenção aos tieflings, Sazza, Karlach, Impulso Sombrio/Dark Urge, Bhaal, chefes específicos, leitura, multiclasse, finais e dificuldade Estrategista/Tactician.",
       "A rota mais segura é separar objetivos incompatíveis por jogada: uma campanha principal focada em salvar NPCs e resolver companheiros, uma rota Impulso Sombrio/Dark Urge com Bhaal para troféus específicos e uma campanha em Estrategista/Tactician. O jogo não exige online, cooperação ou DLC para a platina principal, e Ponta de lança/Foehammer fica separado como extra de Modo Honra/Honour Mode para 100%."

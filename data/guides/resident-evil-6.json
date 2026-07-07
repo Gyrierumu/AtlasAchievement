@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-60 horas considera quatro campanhas, chapter select, serpent emblems, Professional, cleanup e grind de skills/títulos.",
     "time_sort_hours": 40,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -164,6 +164,7 @@
       "Completar 150 medalhas e títulos restantes antes da platina.",
       "Manter Agent Hunt, Mercenaries e DLC fora do planejamento da platina base."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Resident Evil 6 é uma platina longa de campanha e cleanup, não uma platina de online. A lista base tem 51 troféus e pode ser feita solo/offline com IA, embora co-op humano ajude em combate e resgates.",
       "O caminho mais seguro é completar Leon, Chris, Jake e Ada em dificuldade baixa ou Normal, coletando Serpent Emblems e acumulando skill points. Depois, use chapter select para troféus situacionais e entre no Professional já com skills úteis.",

@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A estimativa de 70-130 horas varia conforme eficiência de ziplines, rotas, 5 estrelas, entregas premium, Memory Chips e cleanup online/social. Tempo ocioso de bots/espera não entra como base.",
     "time_sort_hours": 70,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado para a lista base PS4: 63 troféus, roadmap estruturado, resumo, flags, online assíncrono, sem perdíveis, checklist, FAQ, SEO e troféus EN/PT-BR. Mantido em revisão porque a suite global npm test falhou em dado de outro guia.",
     "verification_status": "verified",
     "walkthrough": null
@@ -104,6 +104,7 @@
       "Acalmar BB chorando até ele parar.",
       "Concluir cleanup final sem marcar nenhum troféu como perdível."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Death Stranding é uma platina longa, mas pouco difícil, focada em concluir a história, conectar instalações à UCA, maximizar todas as conexões, fazer Premium Deliveries com avaliação Legend of Legends, restaurar Memory Chips, fabricar equipamentos/estruturas e resolver troféus sociais online. Não há troféus perdíveis, coop obrigatório ou DLC obrigatória, mas há troféus online/assíncronos e Growth of a Legend exige entregas premium na dificuldade Hard.",
       "A ordem mais segura é avançar a história enquanto libera regiões, equipamentos, veículos e ziplines, depois usar o pós-game para montar uma rede eficiente de ziplines, elevar todas as instalações a 5 estrelas e cumprir as entregas premium por categoria. Deixe Memory Chips, fabricação completa, estruturas e troféus sociais para o cleanup, sempre acompanhando o checklist para não repetir entregas ou esquecer instalações opcionais."

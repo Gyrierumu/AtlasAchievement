@@ -39,7 +39,7 @@
     "time_min_hours": 2,
     "time_reason": "A faixa de 2-6 horas considera uma campanha completa com coletáveis, final secreto, ações opcionais e pequena limpeza por Chapter Select; precisa validar se updates alterarem rastreadores.",
     "time_sort_hours": 2,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Precisa revisão editorial final: lista recente, com Chapter Select, coletáveis críticos, coop opcional, solo e escopo de DLCs/Season Pass marcados para validação manual.",
     "verification_status": "review",
     "walkthrough": null
@@ -159,6 +159,7 @@
       "Conferir roadmap estruturado e ausência de labels internas ou objetos brutos no front.",
       "Conferir FAQ, decisão rápida, SEO, pontos de atenção e status consistente entre guia e catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "REANIMAL é uma platina muito curta e fácil, feita em cerca de 2 a 6 horas, com 32 troféus e sem requisitos de online, coop obrigatório, DLC ou dificuldade. Apesar de permitir coop local e online, a platina pode ser feita totalmente solo.",
       "O ponto central é controlar os coletáveis de uma única playthrough. Friends Reunited exige os 5 Coffins e o secret ending; Prayer for the Dying exige as 5 Hidden Statues; e Beneath the Mask depende das 18 Masks, incluindo a Sheep Mask ligada às Hidden Statues. Chapter Replay ajuda em misc e vários coletáveis, mas não resolve esses requisitos de run.",

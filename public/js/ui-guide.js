@@ -718,6 +718,14 @@ window.UIGuide = (() => {
     return categories.length ? { ...extras, categories } : null;
   }
 
+  function getGuideDlcCompletion(game = {}) {
+    const dlcGuide = game?.dlcCompletionGuide;
+    const packages = Array.isArray(dlcGuide?.packages) ? dlcGuide.packages.filter(item => item?.name) : [];
+    const checklist = Array.isArray(dlcGuide?.checklist) ? dlcGuide.checklist.filter(item => item?.name) : [];
+    if (!dlcGuide || !packages.length || !checklist.length) return null;
+    return { ...dlcGuide, packages, checklist };
+  }
+
   function getPlatinumExtraCategoryTitle(category = {}) {
     const total = Number(category.total || category.items?.length || 0);
     if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
@@ -858,6 +866,96 @@ window.UIGuide = (() => {
             </article>
           `;
           }).join('')}
+        </div>
+      </section>`;
+  }
+
+  function renderDlcChecklistGroups(dlcGuide = {}) {
+    const packagesById = new Map((dlcGuide.packages || []).map(item => [item.id, item]));
+    const groups = (dlcGuide.checklist || []).reduce((result, item) => {
+      const key = item.packageId || item.packageName || 'dlc';
+      if (!result.has(key)) result.set(key, []);
+      result.get(key).push(item);
+      return result;
+    }, new Map());
+    return Array.from(groups.entries()).map(([key, items]) => {
+      const pack = packagesById.get(key) || {};
+      const title = pack.subtitle || `${pack.name || items[0]?.packageName || 'DLC'} — ${items.length} troféus`;
+      return `
+      <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+          <h3 class="text-lg font-bold text-white">${escapeHtml(title)}</h3>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} troféu(s)</span>
+        </div>
+        ${pack.introduction ? `<p class="text-sm text-white/70">${escapeHtml(pack.introduction)}</p>` : ''}
+        ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
+        ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
+        ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Roadmap curto de ${escapeHtml(pack.name || 'DLC')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
+        <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
+          ${items.map(item => {
+            const details = [
+              item.requirement ? `<span><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</span>` : '',
+              Array.isArray(item.tags) && item.tags.length ? `<span><strong>Tag:</strong> ${item.tags.map(escapeHtml).join(', ')}</span>` : '',
+              item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
+              item.tip ? `<span><strong>Dica:</strong> ${escapeHtml(item.tip)}</span>` : '',
+              item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
+              item.notPlatinumBase ? '<span>Não marcar como platina base.</span>' : ''
+            ].filter(Boolean);
+            return `<li><strong class="text-white">${escapeHtml(item.name)}</strong>${details.length ? `<div class="mt-1 space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}</li>`;
+          }).join('')}
+        </ol>
+      </article>
+    `;
+    }).join('');
+  }
+
+  function renderGuideDlcCompletionPanel(game = {}) {
+    const dlcGuide = getGuideDlcCompletion(game);
+    if (!dlcGuide) return '';
+    const baseTrophies = Number(dlcGuide.baseTrophies || 51);
+    const dlcTrophies = Number(dlcGuide.dlcTrophies || 20);
+    const totalTrophies = Number(dlcGuide.totalTrophies || (baseTrophies + dlcTrophies));
+    const scopeNotes = Array.isArray(dlcGuide.scopeNotes) ? dlcGuide.scopeNotes : [];
+    const roadmap = Array.isArray(dlcGuide.roadmap) ? dlcGuide.roadmap : [];
+    return `
+      <section id="guideDlcCompletionPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <div class="atlas-eyebrow">Conteúdo pós-platina</div>
+            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(dlcGuide.title || 'DLCs e 100% da Lista')}</h2>
+            <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(dlcGuide.introduction || '')}</p>
+          </div>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(baseTrophies))} base + ${escapeHtml(String(dlcTrophies))} DLC = ${escapeHtml(String(totalTrophies))} totais</span>
+        </div>
+        ${scopeNotes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Separação de escopo</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${scopeNotes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
+        <div class="grid md:grid-cols-3 gap-4">
+          ${dlcGuide.packages.map(pack => `
+            <article class="atlas-panel atlas-panel--support p-4 space-y-3">
+              <div class="flex items-center justify-between gap-2">
+                <h3 class="text-lg font-bold text-white">${escapeHtml(pack.name)}</h3>
+                <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(pack.trophyCount || 0))} troféus</span>
+              </div>
+              <p class="text-sm text-white/70"><strong>Natureza:</strong> ${escapeHtml(pack.nature || '')}</p>
+              <p class="text-sm text-white/70"><strong>Observação:</strong> ${escapeHtml(pack.observation || '')}</p>
+              ${Array.isArray(pack.mainRisks) && pack.mainRisks.length ? `<div><div class="atlas-tip-label">Riscos principais</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.mainRisks.map(risk => `<li>${escapeHtml(risk)}</li>`).join('')}</ul></div>` : ''}
+              ${Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Regras</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
+            </article>
+          `).join('')}
+        </div>
+        ${roadmap.length ? `
+          <div class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-3">
+            <h3 class="text-lg font-bold text-white">Roadmap curto para 100% da lista completa</h3>
+            <ol class="text-sm text-white/72 list-decimal pl-5 space-y-3">
+              ${roadmap.map(step => `<li><strong class="text-white">${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-2 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}
+            </ol>
+          </div>
+        ` : ''}
+        <div class="space-y-3">
+          <div>
+            <div class="atlas-eyebrow">Checklist separado</div>
+            <h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>
+          </div>
+          ${renderDlcChecklistGroups(dlcGuide)}
         </div>
       </section>`;
   }
@@ -1278,11 +1376,13 @@ window.UIGuide = (() => {
 
   function renderGuideLayerNav(game = {}) {
     const hasPlatinumExtras = Boolean(getGuidePlatinumExtras(game));
+    const hasDlcCompletion = Boolean(getGuideDlcCompletion(game));
     const items = [
       { id: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary', href: '#guideSummaryActions' },
       { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel' },
       { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
       hasPlatinumExtras ? { id: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', href: '#guidePlatinumExtrasPanel' } : null,
+      hasDlcCompletion ? { id: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', href: '#guideDlcCompletionPanel' } : null,
       { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
       { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
       { id: 'comments', icon: 'fa-comments', label: 'Comentários', action: 'comments', href: '#guideCommentsPanel' },
@@ -1457,7 +1557,7 @@ window.UIGuide = (() => {
     const routeTrophies = explicitAttentionPoints.length
       ? explicitAttentionPoints
       : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-    const faqLimit = ['dead-space-remake', 'grand-theft-auto-v'].includes(normalizedSlug) ? 16 : (normalizedSlug === 'rise-of-the-ronin' ? 14 : (normalizedSlug === 'blasphemous' ? 13 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'hades', 'lies-of-p', 'life-is-strange-double-exposure', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'resident-evil-6', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['assassins-creed-origins', 'days-gone', 'disney-epic-mickey-rebrushed', 'hogwarts-legacy', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))))))));
+    const faqLimit = normalizedSlug === 'resident-evil-5' ? 19 : (['dead-space-remake', 'grand-theft-auto-v'].includes(normalizedSlug) ? 16 : (normalizedSlug === 'rise-of-the-ronin' ? 14 : (normalizedSlug === 'blasphemous' ? 13 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'hades', 'lies-of-p', 'life-is-strange-double-exposure', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'resident-evil-6', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['assassins-creed-origins', 'days-gone', 'disney-epic-mickey-rebrushed', 'hogwarts-legacy', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))))))));
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
@@ -1709,6 +1809,7 @@ window.UIGuide = (() => {
     const summaryEl = qs('#guideSummarySlot');
     const roadmapEl = qs('#guideRoadmapSlot');
     const platinumExtrasEl = qs('#guidePlatinumExtrasSlot');
+    const dlcCompletionEl = qs('#guideDlcCompletionSlot');
     const relatedEl = qs('#guideRelatedOverview');
     const editorialNotesEl = qs('#guideEditorialNotes');
     const guideFeedbackEl = qs('#guideFeedbackSlot');
@@ -1813,6 +1914,10 @@ window.UIGuide = (() => {
 
     if (platinumExtrasEl) {
       platinumExtrasEl.innerHTML = renderGuidePlatinumExtrasPanel(game);
+    }
+
+    if (dlcCompletionEl) {
+      dlcCompletionEl.innerHTML = renderGuideDlcCompletionPanel(game);
     }
 
     if (editorialNotesEl) {

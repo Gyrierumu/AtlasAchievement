@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-30 horas considera campanha, exploração, upgrades, bosses opcionais, side quests, amuletos, Soma Tree petals, Wak-Wak heads, Sand Jars e cleanup.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -112,6 +112,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Prince of Persia: The Lost Crown é uma platina de metroidvania direta, totalmente offline e sem troféus perdíveis. A lista base possui 31 troféus, não exige online, cooperação, dificuldade específica ou DLC, e pode ser concluída em uma única jogada. A campanha libera as habilidades principais de travessia e, depois da história, o jogador ainda pode retornar ao mapa em free roam para concluir side quests, coletáveis, upgrades e troféus misc.",
       "A estratégia mais segura é avançar primeiro pela história para desbloquear áreas e poderes, sem tentar limpar 100% de cada região na primeira visita. Depois, faça as 9 side quests, colete Wak-Wak Heads, Amulets, Amulet Holders, Sand Jars, Soma Tree Petals, Mystery Chests e Lost Warriors, e finalize upgrades de espada, arco e colar. Os 57 Lore Items não são necessários para a platina. O DLC Mask of Darkness é separado e não entra nos 31 troféus base."

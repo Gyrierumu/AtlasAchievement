@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-70 horas considera campanha, 2 runs com backup ou 3 sem backup, Records de NG+, gestos, coleções, armas e cleanup.",
     "time_sort_hours": 50,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base revisada sem Overture; finais, Records e NG+ reorganizados, ainda em revisão editorial até a validação final do render/PDF.",
     "verification_status": "review",
     "walkthrough": null
@@ -167,6 +167,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Lies of P tem 43 troféus offline, três finais e uma rota de platina que fica bem mais limpa com backup de save. Overture fica fora da lista base e não entra no planejamento da platina aqui.",
       "O maior risco está nos finais, Records, Golden Records, gestos, Cryptic Vessels, armas especiais e nas histórias de Venigni, Antonia, Geppetto, Eugenie, Alidoro e Sophia. Se a campanha for feita no automático, o retrabalho aparece no fim.",

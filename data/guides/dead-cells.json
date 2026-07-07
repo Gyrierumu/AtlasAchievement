@@ -39,7 +39,7 @@
     "time_min_hours": 60,
     "time_reason": "A faixa de 60-100 horas considera aprendizado de roguelite, runas, upgrades permanentes, blueprints, múltiplas vitórias, Boss Stem Cells, chefes sem dano e grande variação por habilidade.",
     "time_sort_hours": 60,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,6 +76,7 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "A platina de Dead Cells é baseada em repetição de runs, domínio de combate e progressão gradual de habilidade. A lista base não tem perdíveis definitivos, online ou coop obrigatório, mas exige consistência em biomas, chefes, Boss Stem Cells, objetivos de execução, blueprints e desafios específicos.",
       "A melhor rota é primeiro liberar runas, upgrades permanentes, frascos, armas úteis e caminhos principais. Depois, trabalhe chefes, rotas alternativas, Challenge Rift, Daily Challenge, objetivos de equipamento inicial e troféus ligados a biomas. Como quase tudo pode ser tentado novamente em runs futuras, o risco principal não é perder troféus para sempre, e sim desperdiçar tempo tentando objetivos difíceis cedo demais.",

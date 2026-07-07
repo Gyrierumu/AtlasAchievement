@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -76,6 +76,7 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "A platina de Resident Evil 2 Remake gira em torno de múltiplas campanhas com Leon e Claire, incluindo rotas complementares, objetivos de história, coletáveis e condições de execução. A lista base não exige online nem coop, mas pede organização para não misturar campanhas, personagens, arquivos, Mr. Raccoons, armas, upgrades, cofres, bolsas, finais e objetivos condicionais.",
       "O maior risco está nos perdíveis por run. Arquivos, Mr. Raccoons, itens de inventário, cofres, upgrades, armas, bolsas e eventos específicos podem exigir uma nova campanha se forem ignorados. Além disso, troféus de ranking, Hardcore, limite de passos, sem cura ou sem abrir o baú devem ser feitos em runs planejadas, porque quebrar a condição pode invalidar a tentativa.",

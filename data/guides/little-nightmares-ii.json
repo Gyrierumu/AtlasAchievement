@@ -39,7 +39,7 @@
     "time_min_hours": 6,
     "time_reason": "A faixa de 6-10 horas considera uma campanha completa, limpeza de Glitching Remains, chapéus e troféus opcionais por seleção de capítulos.",
     "time_sort_hours": 6,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial manual.",
     "verification_status": "review",
     "walkthrough": null
@@ -154,6 +154,7 @@
       "Conferir roadmap estruturado e ausência de objetos brutos ou labels internas no front.",
       "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Little Nightmares II é uma platina curta, simples e totalmente offline, focada em terminar os cinco capítulos, coletar Glitching Remains, pegar os chapéus necessários e resolver troféus misc por capítulo. A lista tem 35 troféus e não exige online, cooperação, DLC, dificuldade alta, speedrun ou run sem morrer.",
       "A rota mais segura é jogar acompanhando os 18 Glitching Remains — distribuídos em 4, 6, 4 e 4 nos quatro primeiros capítulos — e os chapéus da lista base. No More Remains e o secret ending dependem dos Glitching Remains; Half Hat, Far Ahead e How Do I Look? cobrem os chapéus. Chapter Select recupera qualquer item ou misc esquecido.",

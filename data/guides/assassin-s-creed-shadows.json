@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-75 horas considera campanha, 12 Onryo/Shinbakufu, side quests necessárias, Knowledge Rank, skills, contratos, coletáveis exigidos e cleanup.",
     "time_sort_hours": 50,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Checklist base em revisão com divergência publica entre fontes sobre distribuição de tipos; contagem total foi mantida e o guia não deve ser tratado como verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -190,6 +190,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Assassin’s Creed Shadows é uma platina longa, mas acessível, focada em concluir a campanha, derrotar os alvos principais, avançar nas linhas de Naoe e Yasuke, recrutar e treinar aliados, evoluir árvores de habilidades, melhorar ferramentas, completar atividades específicas e resolver alguns coletáveis selecionados.",
       "A rota mais segura é começar com Guided Exploration Mode desligado até desbloquear Scouting Mission, fazer saves manuais com frequência e manter o jogo conectado ao Animus Hub/servidores Ubisoft, já que os troféus dependem de sincronização online para aparecer. Não há troféus perdíveis reais, cooperação obrigatória ou DLC necessária para a platina base, mas a conexão é um ponto crítico: se o launcher ou os servidores falharem, troféus podem atrasar ou não registrar corretamente."

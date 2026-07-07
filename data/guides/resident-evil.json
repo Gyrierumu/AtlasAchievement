@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera múltiplas campanhas curtas, finais com Jill/Chris, armas infinitas, modos especiais e cleanup.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado editorialmente.",
     "verification_status": "verified",
     "walkthrough": null
@@ -76,6 +76,7 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Este guia de platina de Resident Evil foi pensado para quem quer completar a lista base do HD Remaster sem se perder entre múltiplas campanhas, personagens, finais e condições especiais. A rota prioriza primeiro entender a mansão, depois separar as runs de Jill e Chris, finais bons e ruins, resgates, modos de dificuldade e objetivos de execução.",
       "O maior cuidado está nos perdíveis por run: escolhas de personagem, salvamento de Barry, Rebecca, Jill ou Chris, finais específicos, mapa completo, restrições de arma, tempo de conclusão e campanha sem salvar. Nada é perdido definitivamente, mas misturar objetivos incompatíveis pode obrigar você a repetir uma campanha inteira.",

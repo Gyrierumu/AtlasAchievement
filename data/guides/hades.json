@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "70 a 100 horas considera aprendizado inicial, primeira clear, 10 clears da história, epílogo, relações com personagens, Fated List, recursos raros, Keepsakes no rank máximo, Heat e cleanup situacional.",
     "time_sort_hours": 70,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado com lista completa de troféus e dicas editoriais; manter como não verificado até checagem manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -163,6 +163,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Hades é uma platina baseada em progresso acumulado entre runs, longa para os padrões de roguelite. A lista base de PlayStation tem 50 troféus e pode ser concluída inteiramente em single-player, sem online, coop ou DLC obrigatória.",
       "Não há troféus perdíveis reais. O progresso continua no mesmo save, então diálogos, profecias, afinidade, pesca, boons, armas e condições do Pact podem ser retomados em novas tentativas. O planejamento serve para reduzir grind, não para evitar um bloqueio permanente.",

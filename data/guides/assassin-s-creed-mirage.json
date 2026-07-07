@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera campanha, contratos, coletáveis, exploração de territórios, upgrades, ferramentas e cleanup.",
     "time_sort_hours": 20,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -151,6 +151,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Assassin's Creed Mirage é uma platina curta e acessível para a série, totalmente single-player e sem troféus online, coop ou DLC obrigatórios. A lista base tem 51 troféus e gira em torno de concluir a história, resolver investigações, contratos, coletáveis, enigmas, equipamentos, upgrades, ferramentas e atividades de Bagdá. A dificuldade não bloqueia troféus, então a platina pode ser feita em dificuldade baixa.",
       "A rota mais segura é jogar a campanha normalmente enquanto desbloqueia ferramentas e habilidades, fazer contratos e atividades conforme aparecem, resolver coletáveis por distrito e deixar a limpeza final para o pós-jogo. O principal cuidado é garantir You Snooze, You Lose cedo, porque é o único troféu com risco real de oportunidade; o restante da platina é majoritariamente checklist e cleanup."

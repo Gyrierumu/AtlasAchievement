@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera primeira campanha, farm de pontos, dificuldades até Inferno, rank S e runs de restrição.",
     "time_sort_hours": 20,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -72,6 +72,7 @@
     "aliases": [],
     "attentionPoints": [],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Faça uma primeira campanha segura aprendendo rotas, Nemesis, puzzles, chefes, recursos e coletáveis antes de tentar rank, Inferno ou restrições de run.",
       "A platina de Resident Evil 3 Remake é mais curta que outros jogos da série, mas exige organização por causa de múltiplas runs, dificuldades superiores, coletáveis, records e objetivos condicionais. A lista base não exige online nem coop, mas pede domínio da campanha, boa gestão de recursos e rotas planejadas para reduzir repetição desnecessária.",

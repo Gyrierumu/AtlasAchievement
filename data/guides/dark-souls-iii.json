@@ -39,7 +39,7 @@
     "time_min_hours": 80,
     "time_reason": "A estimativa de 80-100 horas considera uma jornada completa, NG+, NG++, coleta de anéis, finais, gestos, magias, milagres, piromancias e farm de juramentos.",
     "time_sort_hours": 80,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia verificado para lista base PS4 com 43 trofeus, roadmap estruturado, flags offline/sem coop/sem DLC, EN/PT-BR e conteudo editorial forte.",
     "verification_status": "verified",
     "walkthrough": null
@@ -94,6 +94,7 @@
       "Conferir se cada troféu marcado como perdível depende de final, decisão irreversível, NPC, juramento ou questline.",
       "Conferir SEO, FAQ, decisão rápida, tags e pontos de atenção antes da revisão final."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Dark Souls III é uma platina longa e exigente, focada em completar a campanha, planejar três finais, avançar até NG++ para os anéis e resolver uma grande quantidade de colecionáveis ligados a magias, milagres, piromancias, gestos, infusões e juramentos. O online é opcional e pode reduzir bastante o farm dos itens de juramento, mas a platina continua possível offline com mais grind.",
       "A rota mais segura é fazer uma primeira jornada completa acompanhando NPCs, juramentos e gestos, preparar The Usurpation of Fire sem curar o Dark Sigil, coletar tudo que for possível antes do final e usar NG+/NG++ para finais restantes, anéis e limpeza. O principal cuidado é não quebrar questlines, não perder juramentos temporários e não consumir almas de chefes necessárias para magias, milagres ou piromancias."

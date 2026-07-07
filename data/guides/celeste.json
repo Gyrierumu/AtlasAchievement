@@ -39,7 +39,7 @@
     "time_min_hours": 8,
     "time_reason": "A faixa de 8-15 horas considera Assist Mode e foco direto. Sem assistências, o tempo pode subir bastante por causa de B-Sides, C-Sides, strawberries e execução.",
     "time_sort_hours": 15,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:25",
     "verification_note": "Guia de Celeste revisado com resumo da platina, PICO-8/Real Gamer no escopo base, descrições PT-BR, FAQ firme, tags de dificuldade/cleanup/coletáveis e 31 troféus conferidos; permanece em revisão até validação global sem falhas.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -153,6 +153,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Celeste é uma platina curta, single-player e sem troféus perdíveis, online, coop ou DLC obrigatória. A lista base gira em torno da campanha principal, Chapter Select, strawberries, Crystal Hearts, cassetes, B-Sides, C-Sides e o minigame PICO-8 exigido por Real Gamer. O Assist Mode pode ser usado sem invalidar a rota editorial do guia, então a dificuldade cadastrada pode ficar baixa para quem prioriza a platina, mas o desafio natural do jogo é bem maior sem assistências.",
       "A ordem mais segura é concluir a campanha, voltar por Chapter Select para strawberries, Crystal Hearts e cassetes, abrir e fechar os B-Sides, resolver os C-Sides, completar Celeste for PICO-8 e finalizar os troféus de cleanup. O principal cuidado é não confundir a platina PS4 base com Farewell, Golden Strawberries, Moon Berry ou objetivos extras que não fazem parte dos 31 troféus da lista base."

@@ -661,6 +661,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     platinumBaseChecklist: seedGame?.platinumBaseChecklist && typeof seedGame.platinumBaseChecklist === 'object'
       ? JSON.parse(JSON.stringify(seedGame.platinumBaseChecklist))
       : null,
+    dlcCompletionGuide: seedGame?.dlcCompletionGuide && typeof seedGame.dlcCompletionGuide === 'object'
+      ? JSON.parse(JSON.stringify(seedGame.dlcCompletionGuide))
+      : null,
     checklist: Array.isArray(seedGame?.checklist) ? seedGame.checklist.slice() : (Array.isArray(editorialSource.checklist) ? editorialSource.checklist.slice() : []),
     walkthrough: deserializeWalkthrough(Array.isArray(seedGame?.walkthrough) && seedGame.walkthrough.length
       ? seedGame.walkthrough

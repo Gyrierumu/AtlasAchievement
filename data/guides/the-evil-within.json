@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-50h com campanha inicial, limpeza por Chapter Select/NG+, upgrades, coletáveis, run de restrição/speedrun e AKUMU.",
     "time_sort_hours": 35,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia validado para a lista base PS3/PS4: 42 troféus, distribuição 1/4/9/28, 35-50h, 8.5/10, online 0, coop 0, missable 0, Chapter Select, New Game+ recomendado, DLC fora do escopo e quatro troféus de dificuldade.",
     "verification_status": "verified",
     "walkthrough": null
@@ -111,6 +111,7 @@
       "Finalizar AKUMU por último, com rotas e checkpoints conhecidos.",
       "Garantir que o filtro Dificuldade contenha apenas First Step into Darkness, Another Day on the Job, Master of Horror e You Asked For It."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Guia validado para The Evil Within base no PS3/PS4: 42 troféus, com distribuição 1 Platina, 4 Ouro, 9 Prata e 28 Bronze.",
       "Dificuldade editorial 8.5/10 e tempo estimado de 35-50h. A platina é totalmente offline, solo, sem troféus online, sem coop e sem DLC obrigatório.",

@@ -39,7 +39,7 @@
     "time_min_hours": 10,
     "time_reason": "A faixa de 10-15 horas considera campanha, coletáveis, Battleplex, armas, Challenge Mode curto para armas e cleanup.",
     "time_sort_hours": 10,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Precisa revisão editorial final: Extinction Event confirmado como principal ponto de atenção; revisar checklist completo antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -112,6 +112,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Ratchet & Clank: Rift Apart é uma platina curta, simples e totalmente offline. A lista base possui 47 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em cerca de 10 horas. A campanha pode ser jogada em qualquer dificuldade, e depois do final o jogador pode usar o free roam para retornar aos planetas e concluir coletáveis, armas, desafios e troféus misc.",
       "O único perdível real é Extinction Event, ligado a matar 5 Grunthors em Sargasso. O ideal é resolver esse troféu durante a campanha ou farmar o primeiro Grunthor repetidamente enquanto ainda há acesso. O restante pode ser feito no cleanup pós-história. A platina não exige todos os coletáveis do jogo nem terminar o Challenge Mode; o New Game+ só é necessário para comprar as 2 últimas armas e desbloquear Fully Stacked."

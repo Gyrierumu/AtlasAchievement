@@ -39,7 +39,7 @@
     "time_min_hours": 150,
     "time_reason": "A faixa de 150-200 horas considera campanha, regioes, side content, minigames, chapter select, Hard Mode, combat simulator e cleanup final.",
     "time_sort_hours": 150,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base de Final Fantasy VII Rebirth adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -211,6 +211,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Final Fantasy VII Rebirth é uma das platinas mais longas e exigentes do projeto, focada em praticamente 100% de conclusão: terminar a história, liberar Chapter Select, limpar World Intel, side quests, minigames, colecionáveis relevantes, Johnny's Treasure Trove, Combat Simulator, desafios Brutal/Legendary, Gilgamesh, Protorelics, piano, Queen's Blood relacionado a troféus e todos os capítulos no Hard Mode.",
       "A lista base tem 61 troféus, não exige online, cooperação ou DLC, e não possui perdíveis permanentes graças ao Chapter Select. A rota mais segura é fazer uma primeira run completa em dificuldade livre, avançar o máximo possível de World Intel e side content, usar o pós-jogo/Capítulo 13 para cleanup, fechar Johnny's Treasure Trove e Combat Simulator, liberar Gotterdammerung em Rulers of the Outer Worlds e então concluir todos os capítulos no Hard Mode.",

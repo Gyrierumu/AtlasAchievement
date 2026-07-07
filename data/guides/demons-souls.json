@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "40-70 horas dependendo de habilidade, build, online, controle de tendência, uso de backup e quantidade de runs para Boss Souls.",
     "time_sort_hours": 55,
-    "updated_at": "2026-07-06 00:22:38",
+    "updated_at": "2026-07-07 16:09:27",
     "verification_note": "Guia revisado para publicação: Demon's Souls Remake PS5 com 37 troféus, distribuição 1/5/9/22, online obrigatório, sem DLC, sem troféu de dificuldade e 16 perdíveis de run.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -210,6 +210,7 @@
       "Conferir FAQ, decisão rápida, SEO e pontos de atenção.",
       "Conferir se página individual e catálogo exibem o mesmo status editorial."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Demon's Souls Remake é uma platina Souls curta em número de troféus, mas muito delicada por World Tendency, Character Tendency, anéis, feitiços, milagres, Boss Souls e dois troféus online.",
       "A rota segura é jogar em Soul Form, morrer no Nexus depois de chefes, fazer Pure White antes de Pure Black, guardar Boss Souls e planejar NG+/NG++ conforme o uso de backup."

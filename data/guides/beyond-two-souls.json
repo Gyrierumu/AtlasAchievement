@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera campanha principal, Chapter Select, todos os finais, bonuses, Duo Mode e troféus condicionais.",
     "time_sort_hours": 20,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
     "verification_status": "review",
     "walkthrough": null
@@ -211,6 +211,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Beyond: Two Souls é uma platina fácil, mas exige planejamento porque vários troféus dependem de escolhas específicas, finais, personagens vivos ou mortos, ações de Aiden e uma run em Duo Mode.",
       "A maior parte dos troféus de capítulos pode ser recuperada por seleção de capítulos, mas finais e sobrevivência de personagens exigem continuidade correta a partir de Homeless/Desabrigada."

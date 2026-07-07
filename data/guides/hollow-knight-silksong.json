@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A estimativa de 70-100 horas considera aprendizado de Pharloom, 100%, cleanup, prática de chefes e rotas cronometradas.",
     "time_sort_hours": 70,
-    "updated_at": "2026-07-06 00:22:39",
+    "updated_at": "2026-07-07 16:09:28",
     "verification_note": "Guia verificado para a lista PSN base de 34 troféus: EN/PT-BR, descrições PT-BR, roadmap estruturado, flags offline/sem coop/sem DLC, sem perdíveis confirmados e rotas de 100%/speedrun documentadas.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -166,6 +166,7 @@
       "Conseguir 100% e terminar o jogo em menos de 30h.",
       "Fazer cleanup final e confirmar os 34 troféus da lista PSN base."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Hollow Knight: Silksong é uma platina exigente de metroidvania, focada em explorar Pharloom, derrotar chefes principais e opcionais, completar desejos, resgatar pulgas, adquirir ferramentas, Habilidades de Seda, Brasões, upgrades, mapas e estações, alcançar 100% de conclusão e ainda fazer rotas de velocidade para terminar o jogo em menos de 5h e fazer 100% em menos de 30h. A lista PSN tem 34 troféus, é totalmente offline, não exige coop nem DLC, e não possui perdíveis confirmados neste guia, mas exige domínio de combate, plataforma, exploração e planejamento de rotas.",
       "A ordem mais segura é fazer uma primeira campanha de exploração, aprendendo as áreas, chefes, habilidades de Hornet e requisitos de 100%, depois limpar ferramentas, upgrades, desejos, pulgas, mapas, Bellways, Ventrica Stations, mementos, finais necessários e chefes de Act 3. Deixe Speedrunner e Speed Completion para rotas separadas ou muito bem planejadas, porque os limites de 5h e 30h exigem conhecimento do mapa, movimentação eficiente e pouca perda de tempo."

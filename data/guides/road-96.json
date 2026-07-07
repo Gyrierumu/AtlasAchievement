@@ -39,7 +39,7 @@
     "time_min_hours": 6,
     "time_reason": "A faixa de 6-8 horas considera a campanha completa, 6 chegadas à Road 96, 18 fitas e cleanup leve por New Game+/nova campanha se faltar algo.",
     "time_sort_hours": 6,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Precisa revisão editorial final: validar oportunidades procedurais, New Game+, fitas e eventos de Zoe antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -111,6 +111,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Road 96 é uma platina curta, simples e totalmente offline, mas com atenção a troféus de capítulo e ações específicas. A lista base possui 12 troféus, não exige online, cooperação ou dificuldade específica, e normalmente pode ser concluída em uma campanha completa com os 6 adolescentes tentando chegar à fronteira de Petria. Como os encontros têm ordem semi-randômica, o guia deve orientar o jogador a aproveitar cada oportunidade de telefone, fitas/cassetes, eventos com Zoe e a chegada à Road 96.",
       "Os principais cuidados são Stone After Stone, por exigir colocar pedras no cairn em 3 chegadas diferentes à Road 96 antes da reta final; Cat Person e A Light in the Darkness, ligados ao capítulo Smells Like Teen Spirit; Homesick e Campaign Funder, feitos em cabines telefônicas; e Collect ’em All, que exige 18 fitas/cassetes, com progresso que pode carregar para New Game+. Road 96: Mile 0 é um jogo separado e não entra na platina base."

@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A estimativa de 70-100h segue fonte externa atual e considera campanha, conexões, S-ranks, infraestrutura, likes, online social e limpeza opcional.",
     "time_sort_hours": 70,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado para lista base PS5 com 55 troféus, EN/PT-BR, roadmap estruturado, resumo, tags, checklist, FAQ e SEO. Mantido em revisão até a validação completa do render e da suite global.",
     "verification_status": "verified",
     "walkthrough": null
@@ -118,6 +118,7 @@
       "Alcançar 80 km percorridos ao concluir um pedido.",
       "Fazer limpeza final sem marcar nenhum troféu como perdível."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Death Stranding 2: On the Beach é uma platina longa e organizada em torno de concluir os 16 episódios, conectar todas as instalações, maximizar níveis de conexão, completar pedidos padrão com rank S, restaurar infraestrutura, construir estruturas, trabalhar likes, animais, eventos opcionais e troféus sociais/online. A lista base tem 55 troféus no PS5, não deve ser misturada com o primeiro Death Stranding nem com Director's Cut, e não exige DLC, edição especial ou upgrade pago.",
       "A ordem mais segura é avançar a história liberando regiões, Q-pid, APAS, estruturas, estradas, minas, monotrilho e recursos de transporte; depois usar o pós-game para fechar instalações, pedidos padrão, likes, estruturas e objetivos opcionais. Deixe troféus de online social, animais, infraestrutura, lutas opcionais, pizzaiolo e limpeza de ações específicas para a reta final, sempre usando checklist para evitar repetir entregas ou esquecer instalações e eventos secundários."

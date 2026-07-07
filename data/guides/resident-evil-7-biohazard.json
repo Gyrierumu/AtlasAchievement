@@ -39,7 +39,7 @@
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera múltiplas campanhas, finais, coletáveis, Madhouse, speedrun e cleanup de troféus situacionais.",
     "time_sort_hours": 20,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -160,6 +160,7 @@
       "Resolver troféus situacionais de combate, furtividade, VHS, criação de itens, bloqueio e chefes.",
       "Conferir flags finais: online obrigatório, coop obrigatório e DLC exigida devem continuar falsos."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Resident Evil 7: Biohazard é uma platina de survival horror focada em múltiplas jogadas curtas, domínio da rota da casa Baker, colecionáveis e desafios de campanha. A platina base não exige online, coop nem DLC, mas cobra planejamento para os dois finais, todos os arquivos, Antique Coins, Mr. Everywhere, speedrun/rota rápida em menos de 4 horas, baú de itens limitado, poucas curas e Madhouse.",
       "A rota mais segura é fazer uma primeira campanha com exploração e colecionáveis, usar salvamentos manuais para finais e troféus situacionais, depois separar uma jogada rápida para Just Get Me Outta Here, Resource Manager e Walk it Off quando fizer sentido.",

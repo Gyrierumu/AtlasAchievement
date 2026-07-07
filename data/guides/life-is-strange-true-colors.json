@@ -39,7 +39,7 @@
     "time_min_hours": 10,
     "time_reason": "A faixa de 10-14 horas considera a campanha completa, todos os Memory Collectibles, objetivos opcionais curtos e cleanup por Chapter Select.",
     "time_sort_hours": 10,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
     "verification_status": "review",
     "walkthrough": null
@@ -171,6 +171,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Life is Strange: True Colors é uma platina curta, simples e focada em exploração leve. A lista tem 41 troféus: a maior parte vem de concluir os 5 capítulos, encontrar os 25 Memory Collectibles e completar 4 pequenas side quests. Não há troféus de dificuldade, não há cooperação, não há perdíveis permanentes e o Chapter Select permite recuperar qualquer memória ou side quest esquecida.",
       "O único cuidado técnico é Haven Historian: o troféu de encontrar todos os Memory Collectibles deve ser desbloqueado conectado à PSN/servidores do jogo. Por isso, a platina tem online técnico obrigatório, mas não é multiplayer nem coop. A rota mais segura é jogar normalmente usando um checklist de memórias por capítulo, fazer as side quests quando aparecerem e usar Chapter Select apenas para cleanup.",

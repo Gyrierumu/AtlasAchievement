@@ -39,7 +39,7 @@
     "time_min_hours": 250,
     "time_reason": "A faixa de 250-400+ horas considera campanha, High Rank, HR100, coroas pequenas e grandes, pesquisa, vida endêmica rara, arenas, monstros temperados, Elder Dragons e troféus online.",
     "time_sort_hours": 250,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Precisa revisão editorial final: escopo base/Iceborne e online/multiplayer registrados; revisar coroas, eventos e grind antes de selo verificado.",
     "verification_status": "review",
     "walkthrough": null
@@ -175,6 +175,7 @@
       "Conferir roadmap estruturado sem objetos brutos ou labels internas no front.",
       "Conferir FAQ, decisão rápida, SEO, pontos de atenção, filtros e status entre página e catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Monster Hunter: World é uma platina extremamente longa, dependente de endgame e grind, mas sem troféus perdíveis e sem requisito de dificuldade. A lista base tem 50 troféus e não exige Iceborne, porém exige online e multiplayer por SOS, quests multiplayer e Guild Cards.",
       "O grande gargalo é a caça às gold crowns: Miniature Crown Master e Giant Crown Master podem consumir centenas de horas por RNG. Silver crown não conta para Giant Crown Master. A rota mais segura combina crown hunting com HR100, 500 large monsters, captures, Elder Dragons, tempered monsters, investigations e research.",

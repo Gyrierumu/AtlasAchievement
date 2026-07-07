@@ -39,7 +39,7 @@
     "time_min_hours": 30,
     "time_reason": "A faixa de 30-40 horas considera campanha, exploração, coletáveis, upgrades, scans e cleanup por planeta.",
     "time_sort_hours": 30,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -144,6 +144,7 @@
       "Escanear inimigos novos e derrotar os 3 tipos de Bounty Hunters.",
       "Tratar bugs históricos como risco técnico, não como perdível."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Star Wars Jedi: Fallen Order é uma platina totalmente offline, sem troféus perdíveis e sem exigência de dificuldade. A lista base possui 40 troféus e pode ser concluída em uma única jogada, com free roam após a história para retornar aos planetas pela Mantis e finalizar coletáveis, exploração, inimigos, habilidades e troféus de combate. A campanha pode ser jogada em qualquer dificuldade, inclusive Story Mode, porque a dificuldade não afeta troféus.",
       "O maior trabalho da platina é o cleanup de exploração e coletáveis. Para concluir tudo, o jogador precisa abrir baús e Secrets, completar os holomapas do BD-1, encontrar sementes do terrário, Encrypted Logs, Force Echoes suficientes, escanear inimigos e derrotar os tipos de Bounty Hunters. O guia destaca que não há fast travel interno tradicional, então é melhor deixar o cleanup pesado para depois de liberar as habilidades principais. Também há alerta técnico sobre relatos históricos de bugs em Collector, Data Collector e Scum and Villainy."

@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A faixa de 50-70h considera história, exploração, colecionáveis, relacionamentos, Endless Tower, chefes opcionais, habilidades de Monoco, upgrades e grind até o nível 99.",
     "time_sort_hours": 50,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia publicado com cobertura forte, aguardando revisão editorial final para selo Verificado.",
     "verification_status": "verified",
     "walkthrough": null
@@ -112,6 +112,7 @@
       "Ver uma cena opcional no acampamento.",
       "Fazer o cleanup final dos 56 troféus da lista base."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Clair Obscur: Expedition 33 é uma platina de RPG relativamente acessível, focada em concluir a história, controlar poucos perdíveis, revisitar áreas no pós-game, derrotar chefes opcionais, completar relacionamentos, coletar diários, canções e Gestrais perdidos, vencer jogos Gestrais, concluir missões de Nevrons e finalizar troféus de combate/personagem. A lista base tem 56 troféus, é totalmente offline, não exige coop, não exige DLC e pode ser feita em uma jogada, mas há troféus sensíveis a interações/itens específicos durante a campanha.",
       "A ordem mais segura é avançar a história com atenção aos perdíveis do prólogo, atos intermediários e relacionamentos, depois usar o Act 3/pós-game para limpar áreas opcionais, chefes, colecionáveis, relacionamentos, nível 99 e desafios de combate. Não é necessário New Game+ para a platina, mas ele pode servir como rota de correção se algum perdível ou coletável for ignorado na primeira campanha."

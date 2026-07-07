@@ -39,7 +39,7 @@
     "time_min_hours": 50,
     "time_reason": "A estimativa de 50-70 horas considera campanha, exploração completa, finais com backup ou NG+, armas, ferramentas, chefes opcionais, Cálices e cleanup.",
     "time_sort_hours": 50,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia revisado para a lista base PS4: 34 troféus, roadmap estruturado, flags offline/sem DLC obrigatória e EN/PT-BR editorial. Mantido em revisão até validação final completa.",
     "verification_status": "verified",
     "walkthrough": null
@@ -84,6 +84,7 @@
       "Fazer cleanup antes de falar com Gehrman.",
       "Conferir flags: onlineRequired false, coopRequired false, dlcRequired false e perdíveis alinhados."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Bloodborne é uma platina difícil, mas direta para quem planeja os finais e não deixa opcionais para depois do chefe final. A rota segura é avançar pela campanha explorando áreas opcionais, reunir armas e ferramentas de caçador, preparar os três finais com backup de save ou múltiplas jogadas e deixar os Cálices para a etapa de grind e desafio.",
       "O principal cuidado é o ponto de não retorno no Hunter's Dream: após o final, o jogo entra em New Game+ automaticamente. Por isso, antes de falar com Gehrman, resolva áreas opcionais, colete ferramentas, confirme armas importantes e deixe os finais organizados.",

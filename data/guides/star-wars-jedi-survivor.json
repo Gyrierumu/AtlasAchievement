@@ -39,7 +39,7 @@
     "time_min_hours": 40,
     "time_reason": "A faixa de 40-50 horas considera campanha, exploração, scans, Jedi Chambers, Force Tears, perks, upgrades, bounties, fish, garden e cleanup por planeta.",
     "time_sort_hours": 40,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "verified",
     "walkthrough": null
@@ -147,6 +147,7 @@
       "Vencer Holotactics e equipar Perks em todos os slots.",
       "Finalizar combat/misc/customização sem marcar como Dificuldade."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Star Wars Jedi: Survivor e uma platina acessivel de acao-aventura, focada em campanha, exploracao metroidvania, cleanup por planeta e objetivos situacionais de combate. A lista base nao exige online, coop, New Game+ ou dificuldade especifica, entao o maior risco pratico e esquecer You've Got A Friend durante as janelas com companheiros.",
       "Resolva os assistes de Bode cedo e complete os de Merrin quando ela estiver disponivel; o restante pode ser organizado no free roam depois da historia. Use Map Upgrades, fast travel e o checklist para separar Priorite Shards, Jedi Chambers, Force Tears, bounties, scans, peixes, plantas, Cantina, Holotactics e lojas.",

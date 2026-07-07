@@ -39,7 +39,7 @@
     "time_min_hours": 6,
     "time_reason": "A faixa de 6-8 horas considera uma campanha com coletáveis, cleanup por Chapter Select e uma run dedicada de speedrun abaixo de 2 horas.",
     "time_sort_hours": 6,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Lista base adicionada por fontes públicas; aguarda validação editorial final.",
     "verification_status": "review",
     "walkthrough": null
@@ -164,6 +164,7 @@
       "Conferir se pagina individual e catalogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catalogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Stray é uma platina curta e acessivel, focada em concluir a história, pegar os coletáveis dos 12 capítulos e resolver ações específicas de gato, como miar, pular, dormir, arranhar objetos, interagir com robôs e completar desafios pontuais.",
       "A rota mais segura é fazer uma primeira jogada tranquila coletando memórias, bótons, partituras e scratches por capítulo, depois usar a seleção de capítulos para limpar qualquer troféu pendente e deixar I am Speed para uma segunda run dedicada. A platina não exige online, cooperação ou DLC. O principal cuidado é o speedrun de menos de 2 horas; os demais troféus podem ser refeitos com Chapter Select."

@@ -39,7 +39,7 @@
     "time_min_hours": 11,
     "time_reason": "A faixa de 11-15 horas considera campanha coop, 25 minigames e cleanup por Chapter Select.",
     "time_sort_hours": 11,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Precisa revisão editorial final: coop obrigatório, Friend’s Pass/trial e desbloqueio de troféus para os dois jogadores devem ser validados manualmente.",
     "verification_status": "review",
     "walkthrough": null
@@ -165,6 +165,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "It Takes Two é uma platina cooperativa curta e acessível, focada em concluir a campanha com uma segunda pessoa, encontrar todos os 25 minijogos e resolver ações específicas espalhadas pelos capítulos. O jogo não possui modo solo, então a cooperação é obrigatória do início ao fim, seja em tela dividida local ou online.",
       "A rota mais segura é jogar a história normalmente aproveitando os capítulos, interagindo com tudo que parecer opcional e jogando cada minijogo encontrado ao menos uma vez. Depois, use a seleção de capítulos para limpar troféus e minijogos pendentes. Não há perdíveis reais, online obrigatório ou DLC necessária para a platina base; o principal cuidado é manter um checklist dos minijogos e lembrar que alguns troféus exigem ações específicas de Cody, May ou dos dois jogadores."

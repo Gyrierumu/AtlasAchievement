@@ -39,7 +39,7 @@
     "time_min_hours": 10,
     "time_reason": "A faixa de 10-15 horas considera campanha coop, 12 Side Stories, 6 benches e cleanup por Chapter Select.",
     "time_sort_hours": 10,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Precisa revisão editorial final: coop obrigatório, Friend Pass, 12 Side Stories, 6 benches, autosave e Chapter Select devem ser validados manualmente.",
     "verification_status": "review",
     "walkthrough": null
@@ -111,6 +111,7 @@
       }
     ],
     "checklist": [],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Split Fiction é uma platina curta, cooperativa e totalmente baseada em capítulos. A lista base possui 21 troféus, não exige dificuldade específica e pode ser concluída em uma campanha coop de cerca de 10 horas. O jogo exige dois jogadores, seja em coop local/offline ou online, mas a platina não deve ser marcada como online obrigatória porque pode ser feita em couch co-op. O jogador usando Friend Pass não desbloqueia troféus; para troféus no perfil, a conta precisa estar jogando a versão que concede troféus.",
       "Não há perdíveis definitivos, pois os capítulos e checkpoints podem ser repetidos via Chapter Select. Ainda assim, quase todos os troféus são ações opcionais ou atividades específicas dentro de capítulos, então o guia deve tratar esses objetivos como semi-perdíveis de capítulo, recuperáveis no cleanup. O foco da platina é completar a história, finalizar as 12 Side Stories para Bookworms, sentar nos 6 benches para Sisters: A Tale Of Two Besties e limpar troféus misc de capítulo como Cold Potato, You Are Not a Robot, The Cake is Not a Lie e Snaaaaaaaaake."

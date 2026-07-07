@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa de 100-150 horas considera campanha, arcos de território, Wealth, Mysteries, Artifacts, Ordem dos Anciões, fishing, settlement, raids e cleanup.",
     "time_sort_hours": 100,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Guia público seed-managed com checklist base e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -183,6 +183,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Assassin’s Creed Valhalla é uma platina muito longa, mas acessível, focada em concluir a campanha, formar alianças na Inglaterra, eliminar a Order of the Ancients, evoluir Ravensthorpe e completar todos os territórios da lista base com Wealth, Mysteries e Artifacts.",
       "A rota mais segura é avançar pela história limpando cada região antes de seguir para a próxima, mantendo saves manuais no início de cada arco para evitar problemas com World Events ou Mysteries bugados. Não há troféus perdíveis reais, online obrigatório, cooperação ou DLC necessária para a platina base. O maior cuidado é Completionist All the Way!, que exige 100% dos territórios e transforma a platina em uma jornada de 120 horas ou mais."

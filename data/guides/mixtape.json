@@ -39,7 +39,7 @@
     "time_min_hours": 3,
     "time_reason": "A estimativa de 3-4h cobre uma jogada 100% pelos 30 capítulos e cleanup pontual pelo Chapter Select.",
     "time_sort_hours": 3,
-    "updated_at": "2026-07-06 00:22:35",
+    "updated_at": "2026-07-07 16:09:24",
     "verification_note": "Guia verificado para Mixtape PS5: 27 troféus, distribuição 1/6/12/8, 3-4h, dificuldade 3/10, 1 jogada, perdíveis 0, online 0, coop 0, dificuldade 0, DLC não necessário e cleanup por Chapter Select.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -147,6 +147,7 @@
       "Após os créditos, usar Chapter Select apenas para cleanup pontual.",
       "Conferir 27/27 troféus, online 0, coop 0, dificuldade 0, perdíveis 0 e DLC não necessário."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "Mixtape é uma platina curta, narrativa e totalmente offline. A lista PS5 possui 27 troféus, não exige online, cooperação ou dificuldade específica, e pode ser concluída em uma única jogada de cerca de 3–4 horas. O jogo é dividido em 30 capítulos, alternando entre memórias, diálogos, minigames e interações opcionais.\n\nNão há perdíveis definitivos, porque o Chapter Select permite repetir capítulos e limpar troféus esquecidos. O principal cuidado é o troféu Front To Back, que exige interagir com tudo nos quartos e esgotar conversas únicas com Cassandra e Slater. Ao usar Chapter Select, os indicadores visuais de interação podem resetar, mas o progresso já coletado continua salvo; isso pode confundir o rastreio. A rota ideal é seguir um walkthrough 100% desde o início, pegar todos os misc/minigames na primeira passagem e usar Chapter Select apenas para cleanup pontual.",
       "Os únicos pontos de atenção real são Front To Back, pela leitura visual confusa após Chapter Select, e alguns minigames de execução curta como Cone Island, Baby., And It’s Outta There! e Banned In Massachusetts."

@@ -39,7 +39,7 @@
     "time_min_hours": 70,
     "time_reason": "A faixa de 70-90 horas considera campanha, side content, Hunts, Trials, crafting, ability mastery e Final Fantasy Mode.",
     "time_sort_hours": 70,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base de Final Fantasy XVI adicionada com checklist e roadmap completos, sem Echoes of the Fallen ou The Rising Tide; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -152,6 +152,7 @@
       "Comprar o item de 36.000 gil para Eureka.",
       "Concluir New Game+ em Final Fantasy Mode."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "A platina de Final Fantasy XVI é longa, mas direta: complete a campanha, feche quests importantes, hunts, checklist do Hideaway e finalize uma segunda run em Final Fantasy Mode.",
       "O único risco permanente da lista base é Half Past Twilight, porque vender materiais únicos de Gotterdammerung pode bloquear o crafting. Echoes of the Fallen adiciona 6 troféus e The Rising Tide adiciona 13, mas nenhum deles é necessário para The Chronicler/O Cronista."

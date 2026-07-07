@@ -39,7 +39,7 @@
     "time_min_hours": 100,
     "time_reason": "A faixa de 100-150 horas considera campanha, Death March, Gwent, contratos, exploracao, side quests, cartas e cleanup.",
     "time_sort_hours": 100,
-    "updated_at": "2026-07-06 00:22:34",
+    "updated_at": "2026-07-07 16:09:23",
     "verification_note": "Lista base de The Witcher 3: Wild Hunt adicionada com checklist e roadmap completos; aguarda revisao editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -189,6 +189,7 @@
       "Conferir se página individual e catálogo exibem o mesmo status editorial.",
       "Conferir se flags do topo batem com filtros do catálogo."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [
       "The Witcher 3: Wild Hunt é uma platina longa e exigente, focada em terminar a história na dificuldade Marcha da Morte, controlar vários troféus perdíveis, coletar todas as cartas de Gwent da versão base, concluir contratos, corridas, lutas, questlines importantes e limpar troféus diversos de combate e exploração.",
       "A rota mais segura é começar a campanha diretamente em Marcha da Morte, nunca reduzir a dificuldade até o final da história e manter saves manuais antes de pontos críticos como Isle of Mists, High Stakes, Reason of State, questlines de Keira/Triss/Skellige e contratos específicos. A platina não exige online, cooperação ou DLC, mas exige planejamento: Gwent, Full Crew, Assassin of Kings e os troféus de competição/contratos são os maiores riscos editoriais."

@@ -39,7 +39,7 @@
     "time_min_hours": 3,
     "time_reason": "A faixa conservadora de 3-5 horas considera campanha, puzzle pieces, artefatos, Gatcha e troféus situacionais da lista base.",
     "time_sort_hours": 5,
-    "updated_at": "2026-07-06 00:22:42",
+    "updated_at": "2026-07-07 16:09:31",
     "verification_note": "Guia revisado para a lista base de 43 troféus da platina, separado dos troféus adicionais/Special Bots; manter sem verified até revisão manual final de localização PT-BR oficial.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -90,6 +90,7 @@
       "Separar Network Speed Run, add-ons e Special Bots da checklist da platina base.",
       "Confirmar que troféus extras/adicionais e Special Bots não foram misturados à platina base."
     ],
+    "dlcCompletionGuide": null,
     "editorial_summary": [],
     "faq": [
       {

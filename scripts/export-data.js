@@ -89,6 +89,7 @@ function getSeedExtrasBySlug() {
         ? guideViewModel.buildGuideQuickPlan(game, { roadmap: game.roadmap || [] })
         : [],
       quickDecision: game.quickDecision || null,
+      dlcCompletionGuide: game.dlcCompletionGuide || null,
       seo: game.seo || {},
       tags: game.tags || [],
       note: 'Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.'
