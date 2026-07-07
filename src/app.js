@@ -1933,6 +1933,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
       ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
       ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
       ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Roadmap curto de ${escapeHtml(pack.name || 'DLC')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
+      ${renderDlcPackageExtraListsHtml(pack)}
       <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
         ${items.map(item => {
           const details = [
@@ -1949,6 +1950,26 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
     </article>
   `;
   }).join('');
+}
+
+function renderDlcPackageExtraListsHtml(pack = {}) {
+  const lists = Array.isArray(pack.collectibleChecklists) ? pack.collectibleChecklists : [];
+  if (!lists.length) return '';
+  return lists.map(list => `
+    <div class="atlas-tip-box">
+      <div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>
+      ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
+      ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
+      ${Array.isArray(list.groups) && list.groups.length ? `<div class="mt-3 space-y-3">${list.groups.map(group => `
+        <div>
+          <h4 class="text-sm font-bold text-white">${escapeHtml(group.title || 'Área')}</h4>
+          <ol class="text-sm mt-2 list-decimal pl-5 space-y-1">
+            ${(Array.isArray(group.items) ? group.items : []).map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+          </ol>
+        </div>
+      `).join('')}</div>` : ''}
+    </div>
+  `).join('');
 }
 
 function renderGuideDlcCompletionPanelHtml(game = {}) {
@@ -1982,6 +2003,9 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
             <p class="text-sm text-white/70"><strong>Natureza:</strong> ${escapeHtml(pack.nature || '')}</p>
             ${pack.platinumRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para platina:</strong> ${pack.platinumRequired ? 'sim' : 'não'}</p>` : ''}
             ${pack.fullListRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para 100% da lista completa:</strong> ${pack.fullListRequired ? 'sim' : 'não'}</p>` : ''}
+            ${pack.onlineRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Online obrigatório:</strong> ${pack.onlineRequired ? 'sim' : 'não'}</p>` : ''}
+            ${pack.coopRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Coop obrigatório:</strong> ${pack.coopRequired ? 'sim' : 'não'}</p>` : ''}
+            ${pack.coopRecommended !== undefined ? `<p class="text-sm text-white/70"><strong>Coop recomendável:</strong> ${pack.coopRecommended ? 'sim' : 'não'}</p>` : ''}
             <p class="text-sm text-white/70"><strong>Observação:</strong> ${escapeHtml(pack.observation || '')}</p>
             ${Array.isArray(pack.mainRisks) && pack.mainRisks.length ? `<div><div class="atlas-tip-label">Riscos principais</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.mainRisks.map(risk => `<li>${escapeHtml(risk)}</li>`).join('')}</ul></div>` : ''}
             ${Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Regras</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
@@ -2434,11 +2458,11 @@ function renderGuideLayerNavHtml(game = {}) {
   const hasPlatinumExtras = Boolean(getGuidePlatinumExtras(game));
   const hasDlcCompletion = Boolean(getGuideDlcCompletion(game));
   const items = [
-    { id: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary', href: '#guideSummaryActions' },
-    { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel' },
-    { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
-    hasPlatinumExtras ? { id: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', href: '#guidePlatinumExtrasPanel' } : null,
-    hasDlcCompletion ? { id: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', href: '#guideDlcCompletionPanel' } : null,
+    { id: 'summary', tabTarget: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary', href: '#guideSummaryActions' },
+    { id: 'roadmap', tabTarget: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel' },
+    { id: 'checklist', tabTarget: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
+    hasPlatinumExtras ? { id: 'extras', tabTarget: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', href: '#guidePlatinumExtrasPanel' } : null,
+    hasDlcCompletion ? { id: 'dlcs', tabTarget: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', href: '#guideDlcCompletionPanel' } : null,
     { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
     { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
     { id: 'comments', icon: 'fa-comments', label: 'Comentários', action: 'comments', href: '#guideCommentsPanel' },
@@ -2447,7 +2471,7 @@ function renderGuideLayerNavHtml(game = {}) {
   return `
     <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Seções do guia">
       ${items.map((item, index) => `
-        <a class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" href="${escapeHtml(item.href)}" data-guide-action="${escapeHtml(item.action)}" data-guide-tab-button="${escapeHtml(item.id)}" aria-current="${index === 0 ? 'true' : 'false'}">
+        <a class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" href="${escapeHtml(item.href)}" data-guide-action="${escapeHtml(item.action)}"${item.tabTarget ? ` data-guide-tab-target="${escapeHtml(item.tabTarget)}"` : ''} data-guide-tab-button="${escapeHtml(item.id)}" aria-current="${index === 0 ? 'true' : 'false'}">
           <i class="fas ${escapeHtml(item.icon)}" aria-hidden="true"></i>
           <span>${escapeHtml(item.label)}</span>
         </a>

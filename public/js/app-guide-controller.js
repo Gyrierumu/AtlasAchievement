@@ -25,6 +25,35 @@ window.AppGuideController = (() => {
         && !window.location.hash;
     }
 
+    function resolveGuideTabFromHash(hash = window.location.hash) {
+      const rawHash = String(hash || '').replace(/^#/, '').trim();
+      if (!rawHash) return null;
+      let normalizedHash = rawHash.toLowerCase();
+      try {
+        normalizedHash = decodeURIComponent(rawHash).toLowerCase();
+      } catch (_error) {}
+      const tabByHash = {
+        guidesummaryactions: 'summary',
+        'guidetab-summary': 'summary',
+        summary: 'summary',
+        guideroadmappanel: 'roadmap',
+        'guidetab-roadmap': 'roadmap',
+        roadmap: 'roadmap',
+        guidechecklistpanel: 'checklist',
+        'guidetab-checklist': 'checklist',
+        checklist: 'checklist',
+        trophies: 'checklist',
+        guideplatinumextraspanel: 'extras',
+        'guidetab-extras': 'extras',
+        extras: 'extras',
+        guidedlccompletionpanel: 'dlcs',
+        'guidetab-dlcs': 'dlcs',
+        dlcs: 'dlcs',
+        dlc: 'dlcs'
+      };
+      return tabByHash[normalizedHash] || null;
+    }
+
     function resetGuideScrollAfterRender(options = {}) {
       if (!shouldResetGuideScroll(options)) return;
       const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
@@ -56,13 +85,15 @@ window.AppGuideController = (() => {
         limit: 4
       });
       if (!renderModel) return;
+      const hashGuideTab = !options.preserveChecklistState ? resolveGuideTabFromHash() : null;
+      const activeGuideTab = hashGuideTab || state.activeGuideTab || 'summary';
       UI.renderGuide(state.currentGame, {
         completedTrophies: renderModel.completedTrophies,
         isSaved: renderModel.isSaved,
         libraryEntry: renderModel.libraryEntry,
         relatedGames: renderModel.relatedGames,
         storageLabel: isAccountLibrary?.() ? 'Salvo na conta' : 'Salvo neste navegador',
-        activeGuideTab: state.activeGuideTab || 'summary'
+        activeGuideTab
       });
       window.AppGuideComments?.renderForGuide?.(state.currentGame, state.userSession);
       state.checklistDensity = UI.applyChecklistDensity?.(state.checklistDensity) || state.checklistDensity;
@@ -71,8 +102,8 @@ window.AppGuideController = (() => {
       if (!options.preserveChecklistState) {
         UI.clearTrophySearch();
         state.guideSearch = '';
-        state.activeGuideTab = 'summary';
-        UI.activateGuideTab?.('summary', { scroll: false });
+        state.activeGuideTab = activeGuideTab;
+        UI.activateGuideTab?.(activeGuideTab, { scroll: Boolean(hashGuideTab) });
       }
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');
@@ -364,6 +395,7 @@ window.AppGuideController = (() => {
         trophies: 'checklist',
         checklist: 'checklist',
         extras: 'extras',
+        dlcs: 'dlcs',
         search: 'checklist',
         'first-pending': 'checklist',
         risks: 'summary',
@@ -395,6 +427,7 @@ window.AppGuideController = (() => {
         quick: '#guidePlatinumSummaryPanel',
         roadmap: '#guideRoadmapPanel',
         extras: '#guidePlatinumExtrasPanel',
+        dlcs: '#guideDlcCompletionPanel',
         missables: '#guideQuickCard-missables',
         trophies: '#guideChecklistPanel',
         online: '#guideQuickCard-online',

@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
     "time_sort_hours": 35,
-    "updated_at": "2026-07-07 16:21:36",
+    "updated_at": "2026-07-07 21:16:39",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "verification_status": "verified",
     "walkthrough": null
@@ -286,7 +286,7 @@
             "DLC",
             "Online",
             "Versus",
-            "Coop/Equipe",
+            "Multiplayer em equipe",
             "Grind"
           ]
         },
@@ -301,7 +301,7 @@
             "DLC",
             "Online",
             "Versus",
-            "Coop/Equipe",
+            "Multiplayer em equipe",
             "Grind"
           ]
         },
@@ -390,63 +390,132 @@
         },
         {
           "name": "Must’ve Got Lost",
+          "notPlatinumBase": true,
           "note": "DLC de história separado; não conta para a platina base.",
           "packageId": "lost-in-nightmares",
-          "packageName": "Lost in Nightmares"
+          "packageName": "Lost in Nightmares",
+          "requirement": "Completar Lost in Nightmares em qualquer dificuldade.",
+          "tags": [
+            "DLC",
+            "História extra"
+          ]
         },
         {
           "name": "It’s Just a Bad Dream!",
-          "note": "DLC de história separado; não conta para a platina base.",
+          "notPlatinumBase": true,
+          "note": "Pode ser feito em dificuldade baixa; não exigir Professional.",
           "packageId": "lost-in-nightmares",
-          "packageName": "Lost in Nightmares"
+          "packageName": "Lost in Nightmares",
+          "requirement": "Completar Lost in Nightmares com rank S.",
+          "tags": [
+            "DLC",
+            "Rank S"
+          ]
         },
         {
           "name": "Night Terrors",
-          "note": "Separar requisito de Professional do S rank.",
+          "notPlatinumBase": true,
+          "note": "Professional é exigência da DLC, não da platina base.",
           "packageId": "lost-in-nightmares",
-          "packageName": "Lost in Nightmares"
+          "packageName": "Lost in Nightmares",
+          "requirement": "Completar Lost in Nightmares no Professional.",
+          "tags": [
+            "DLC",
+            "Dificuldade"
+          ]
         },
         {
           "name": "Kung Fu Fighting",
-          "note": "DLC de história separado; não conta para a platina base.",
+          "notPlatinumBase": true,
+          "note": "Parceiro humano facilita, mas não transformar em coop obrigatório.",
           "packageId": "lost-in-nightmares",
-          "packageName": "Lost in Nightmares"
+          "packageName": "Lost in Nightmares",
+          "requirement": "Causar dano suficiente a Wesker em Lost in Nightmares.",
+          "tags": [
+            "DLC",
+            "Situacional"
+          ],
+          "tip": "Manter distância, atirar para provocar a investida, esquivar no QTE e acertar ataque físico; repetir até o troféu desbloquear."
         },
         {
           "name": "Wish Upon a Star",
-          "note": "Destruir 18 Score Stars; não misturar com BSAA Emblems.",
+          "notPlatinumBase": true,
+          "note": "Tratar como checklist da DLC; não misturar com BSAA Emblems.",
           "packageId": "lost-in-nightmares",
-          "packageName": "Lost in Nightmares"
+          "packageName": "Lost in Nightmares",
+          "requirement": "Destruir as 18 Score Stars encontradas em Lost in Nightmares.",
+          "tags": [
+            "DLC",
+            "Coletável"
+          ],
+          "warning": "Faça as 18 Score Stars na mesma jogada para evitar falha de registro."
         },
         {
           "name": "Getaway",
+          "notPlatinumBase": true,
           "note": "DLC de história separado; não conta para a platina base.",
           "packageId": "desperate-escape",
-          "packageName": "Desperate Escape"
+          "packageName": "Desperate Escape",
+          "requirement": "Completar Desperate Escape em qualquer dificuldade.",
+          "tags": [
+            "DLC",
+            "História extra"
+          ],
+          "tip": "Fazer a primeira run em Amateur/Normal para aprender a rota."
         },
         {
           "name": "The Great Escape",
-          "note": "DLC de história separado; não conta para a platina base.",
+          "notPlatinumBase": true,
+          "note": "Pode ser feito em dificuldade baixa; não exigir Professional.",
           "packageId": "desperate-escape",
-          "packageName": "Desperate Escape"
+          "packageName": "Desperate Escape",
+          "requirement": "Completar Desperate Escape com rank S.",
+          "tags": [
+            "DLC",
+            "Rank S"
+          ],
+          "tip": "Buscar boa velocidade, muitas kills, pontuação alta e pouco dano."
         },
         {
           "name": "Run the Gauntlet",
-          "note": "Separar requisito de Professional do S rank.",
+          "notPlatinumBase": true,
+          "note": "Professional é exigência da DLC, não da platina base.",
           "packageId": "desperate-escape",
-          "packageName": "Desperate Escape"
+          "packageName": "Desperate Escape",
+          "requirement": "Completar Desperate Escape no Professional.",
+          "tags": [
+            "DLC",
+            "Dificuldade"
+          ],
+          "tip": "Parceiro humano ajuda, mas não transformar em coop obrigatório."
         },
         {
           "name": "Way of the Warrior",
-          "note": "Derrotar 150 inimigos em uma jogada de Desperate Escape.",
+          "notPlatinumBase": true,
+          "note": "Precisa ser em uma jogada, não acumulado entre runs.",
           "packageId": "desperate-escape",
-          "packageName": "Desperate Escape"
+          "packageName": "Desperate Escape",
+          "requirement": "Derrotar 150 inimigos em uma única jogada de Desperate Escape.",
+          "tags": [
+            "DLC",
+            "Grind/Combate"
+          ],
+          "tip": "Limpar áreas, atrasar avanço quando possível e usar a batalha final para acumular kills.",
+          "warning": "Em coop, garantir que as kills sejam feitas pelo jogador que busca o troféu; kills do parceiro podem não contar para esse jogador."
         },
         {
           "name": "Shoot the Messenger",
-          "note": "Derrotar 3 Agitator Majini em uma jogada de Desperate Escape.",
+          "notPlatinumBase": true,
+          "note": "Precisa matar os 3 Agitator Majini na mesma jogada.",
           "packageId": "desperate-escape",
-          "packageName": "Desperate Escape"
+          "packageName": "Desperate Escape",
+          "requirement": "Derrotar 3 Agitator Majini em uma única jogada de Desperate Escape.",
+          "tags": [
+            "DLC",
+            "Situacional"
+          ],
+          "tip": "Seguir uma run focada e limpar spawns/áreas antes de avançar.",
+          "warning": "Se um Agitator não aparecer ou escapar, reiniciar/repetir a run."
         }
       ],
       "dlcTrophies": 20,
@@ -515,42 +584,244 @@
           "versionAlert": "Guia PS4/Remaster: use 15 vitórias por modo e 50 eliminações físicas em Bringing the Pain. Requisitos maiores de versões antigas não são a regra principal desta versão."
         },
         {
+          "collectibleChecklists": [
+            {
+              "alerts": [
+                "Não chamar Score Stars de BSAA Emblems.",
+                "Não colocar Score Stars em Extras da Platina.",
+                "Fazer as 18 na mesma jogada.",
+                "Usar dificuldade baixa para facilitar.",
+                "Antes de descer para a prisão/celas, revisar as 11 primeiras estrelas da mansão.",
+                "Score Star #18 fica perto do fim; não encerrar a DLC antes de conferi-la.",
+                "Se Wish Upon a Star não desbloquear, repetir uma run focada somente nas 18 Score Stars."
+              ],
+              "groups": [
+                {
+                  "items": [
+                    "Score Star #01 — área inicial/entrada da mansão.",
+                    "Score Star #02 — hall principal / janela superior.",
+                    "Score Star #03 — lustre do hall principal.",
+                    "Score Star #04 — sala de jantar / área superior acessada por Jill.",
+                    "Score Star #05 — relógio de pêndulo na sala de jantar.",
+                    "Score Star #06 — banheiro / prateleira.",
+                    "Score Star #07 — corredor próximo ao quarto/diário.",
+                    "Score Star #08 — depósito / gaiola ou canto com caixas.",
+                    "Score Star #09 — sala da armadilha de teto com espinhos.",
+                    "Score Star #10 — teto da sala/alavanca que desativa a armadilha.",
+                    "Score Star #11 — antes ou logo após a queda para a área inferior, após uso do crank."
+                  ],
+                  "title": "Mansão Spencer"
+                },
+                {
+                  "items": [
+                    "Score Star #12 — cela próxima ao cadáver.",
+                    "Score Star #13 — cela com prateleira.",
+                    "Score Star #14 — área das celas, olhando para trás/parte alta.",
+                    "Score Star #15 — cela no andar superior.",
+                    "Score Star #16 — após o inimigo quebrar a parede, atrás das grades/cela."
+                  ],
+                  "title": "Prisão / Celas"
+                },
+                {
+                  "items": [
+                    "Score Star #17 — área dos crests / mecanismo do portão, atrás de grade/janela.",
+                    "Score Star #18 — área externa/final após a seção de armadilha, parede à esquerda depois do arco."
+                  ],
+                  "title": "Mansão revisitada / final"
+                }
+              ],
+              "introduction": "As Score Stars são coletáveis da DLC Lost in Nightmares. Elas não são BSAA Emblems e não contam para a platina base. Para Wish Upon a Star, destrua as 18 Score Stars em uma única jogada da DLC.",
+              "title": "Score Stars — 18 itens"
+            }
+          ],
+          "coopRecommended": true,
+          "coopRequired": false,
+          "fullListRequired": true,
           "id": "lost-in-nightmares",
+          "introduction": "Lost in Nightmares é uma DLC de história e conta apenas para o 100% da lista completa. Ela não é necessária para a platina base. O pacote tem 5 troféus: concluir a DLC, obter S rank, concluir no Professional, causar dano suficiente a Wesker e destruir as 18 Score Stars.",
           "mainRisks": [
             "Professional",
             "S rank",
             "18 Score Stars"
           ],
           "name": "Lost in Nightmares",
-          "nature": "Episódio extra de história.",
-          "observation": "Pode ser tratado como DLC de história separado.",
+          "nature": "DLC de história.",
+          "observation": "Obrigatório apenas para quem busca 100% da lista completa; nunca para a platina base.",
+          "onlineRequired": false,
+          "platinumRequired": false,
+          "roadmap": [
+            {
+              "actions": [
+                "Concluir a DLC para Must’ve Got Lost.",
+                "Aprender layout da mansão, puzzles, prisão/celas e confronto final.",
+                "Fazer Wish Upon a Star nesta run se for seguir a checklist das 18 Score Stars."
+              ],
+              "title": "Primeira run em Amateur/Normal"
+            },
+            {
+              "actions": [
+                "Destruir as 18 Score Stars de Lost in Nightmares na mesma jogada.",
+                "Não misturar com BSAA Emblems da campanha base.",
+                "Usar dificuldade baixa para facilitar.",
+                "Antes de descer para a prisão/celas, revisar as 11 primeiras estrelas da mansão por causa do ponto de não retorno."
+              ],
+              "title": "Run de Score Stars"
+            },
+            {
+              "actions": [
+                "Fazer It’s Just a Bad Dream!.",
+                "Pode ser em dificuldade baixa.",
+                "Priorizar tempo, precisão, inimigos mortos e dano recebido.",
+                "Não tratar o S rank como requisito de Professional."
+              ],
+              "title": "Run de S rank"
+            },
+            {
+              "actions": [
+                "Fazer Night Terrors.",
+                "Conhecer a rota antes de tentar.",
+                "Coop/parceiro humano pode ajudar, mas não é obrigatório.",
+                "Não tratar online como obrigatório."
+              ],
+              "title": "Run Professional"
+            },
+            {
+              "actions": [
+                "Causar dano suficiente a Wesker no confronto da mansão.",
+                "Pode ser tentado em dificuldade baixa.",
+                "Manter distância, atirar para provocar a investida, esquivar no QTE e aplicar ataque físico.",
+                "Com parceiro humano, sincronizar ataques físicos facilita.",
+                "Se falhar, repetir a DLC até o encontro com Wesker."
+              ],
+              "title": "Kung Fu Fighting"
+            }
+          ],
           "rules": [
-            "Marcar como DLC e não marcar como requisito da platina base.",
-            "Wish Upon a Star exige destruir 18 Score Stars.",
-            "Separar S rank de Professional quando aplicável.",
-            "Não misturar Score Stars com BSAA Emblems da platina base.",
+            "Lost in Nightmares é DLC e conta apenas para o 100% da lista completa.",
+            "Não dizer que Lost in Nightmares é necessário para platinar.",
+            "Professional é exigência da DLC, não da platina base.",
+            "Professional desta DLC não altera a dificuldade obrigatória da platina base.",
+            "S rank desta DLC não é o mesmo checklist de Ranks S dos 16 capítulos da campanha base.",
+            "Coop/parceiro humano pode ajudar em Professional e Kung Fu Fighting, mas não é obrigatório.",
+            "Score Stars são coletáveis da DLC; não são BSAA Emblems.",
             "Não colocar Score Stars dentro de Extras da Platina."
           ],
+          "subtitle": "Lost in Nightmares — 5 troféus",
           "trophyCount": 5
         },
         {
+          "collectibleChecklists": [
+            {
+              "alerts": [
+                "Não dizer que os 3 Agitator Majini contam para algum troféu da platina base.",
+                "Não misturar com inimigos situacionais da campanha base.",
+                "Não dizer que pode ser acumulado em runs diferentes.",
+                "Não dizer que online/coop é obrigatório.",
+                "Parceiro humano pode facilitar, mas não é requisito da platina base."
+              ],
+              "groups": [
+                {
+                  "items": [
+                    "Agitator Majini #1 — área inicial. Limpe os inimigos da primeira área antes de avançar; se correr direto para o objetivo, é fácil perder o spawn.",
+                    "Agitator Majini #2 — área das turrets / segunda grande área. Avance com calma, limpe inimigos e use as rocket turrets quando necessário antes de sair pelo portão/objetivo.",
+                    "Agitator Majini #3 — landing pad / confronto final. Aparece no trecho final após waves/bosses; mate bosses rapidamente e foque nele assim que aparecer."
+                  ],
+                  "title": "Alvos de Shoot the Messenger"
+                }
+              ],
+              "introduction": "Para Shoot the Messenger, derrote os 3 Agitator Majini em uma única jogada de Desperate Escape. Eles são alvos da DLC e não devem ser misturados com Majini da campanha base.",
+              "title": "Agitator Majini — 3 alvos"
+            },
+            {
+              "alerts": [
+                "Precisa ser uma única jogada.",
+                "Não é cumulativo entre runs.",
+                "Em coop, kills do parceiro podem atrapalhar a contagem individual.",
+                "Não confundir com troféus de kills da campanha base.",
+                "Não tratar como requisito da platina base."
+              ],
+              "groups": [
+                {
+                  "items": [
+                    "Use Amateur/Normal para reduzir risco enquanto acumula kills.",
+                    "Limpe áreas abertas e rooftops antes de avançar para o próximo objetivo.",
+                    "Não deixe o parceiro concentrar as kills se o troféu for para outro jogador.",
+                    "Use a batalha final no landing pad para completar a contagem antes de encerrar a DLC."
+                  ],
+                  "title": "Rota de contagem"
+                }
+              ],
+              "introduction": "Para Way of the Warrior, derrote 150 inimigos em uma única jogada de Desperate Escape. Em coop, deixe o jogador que precisa do troféu fazer a maior parte das kills. Use dificuldade baixa, limpe áreas antes de avançar e aproveite o final para completar a contagem.",
+              "title": "Way of the Warrior — 150 kills"
+            }
+          ],
+          "coopRecommended": true,
+          "coopRequired": false,
+          "fullListRequired": true,
           "id": "desperate-escape",
+          "introduction": "Desperate Escape é uma DLC de história e conta apenas para o 100% da lista completa. Ela não é necessária para a platina base. O pacote tem 5 troféus: concluir a DLC, obter S rank, concluir no Professional, derrotar 150 inimigos em uma única jogada e derrotar os 3 Agitator Majini em uma única jogada.",
           "mainRisks": [
             "Professional",
             "S rank",
-            "150 kills",
-            "3 Agitator Majini"
+            "150 kills em uma jogada",
+            "3 Agitator Majini em uma jogada"
           ],
           "name": "Desperate Escape",
-          "nature": "Episódio extra de história.",
-          "observation": "Pode ser tratado como DLC de história separado.",
+          "nature": "DLC de história / combate intenso.",
+          "observation": "Obrigatório apenas para quem busca 100% da lista completa; nunca para a platina base.",
+          "onlineRequired": false,
+          "platinumRequired": false,
+          "roadmap": [
+            {
+              "actions": [
+                "Concluir a DLC para Getaway.",
+                "Aprender a rota, spawns, áreas abertas, rooftops, turrets e final no landing pad.",
+                "Aproveitar para entender onde aparecem os Agitator Majini."
+              ],
+              "title": "Primeira run em Amateur/Normal"
+            },
+            {
+              "actions": [
+                "Fazer The Great Escape.",
+                "Pode ser em dificuldade baixa.",
+                "Priorizar tempo, kills, pontuação e pouco dano recebido.",
+                "Não tratar o S rank como requisito de Professional."
+              ],
+              "title": "Run de S rank"
+            },
+            {
+              "actions": [
+                "Fazer em dificuldade baixa para facilitar.",
+                "Derrotar 150 inimigos em uma única jogada.",
+                "Derrotar os 3 Agitator Majini na mesma jogada.",
+                "Limpar áreas antes de avançar para não perder spawns.",
+                "Em coop, deixar o jogador que busca Way of the Warrior fazer as kills importantes."
+              ],
+              "title": "Run focada em Way of the Warrior + Shoot the Messenger"
+            },
+            {
+              "actions": [
+                "Fazer Run the Gauntlet.",
+                "Usar rota conhecida e cautela nos bosses.",
+                "Parceiro humano ajuda, mas não é obrigatório.",
+                "Professional da DLC não muda a dificuldade/flags da platina base."
+              ],
+              "title": "Run Professional"
+            }
+          ],
           "rules": [
-            "Marcar como DLC e não marcar como requisito da platina base.",
+            "Desperate Escape é DLC e conta apenas para o 100% da lista completa.",
+            "Não dizer que Desperate Escape é necessário para platinar.",
+            "Professional é exigência da DLC, não da platina base.",
+            "S rank desta DLC não é o mesmo checklist de Ranks S dos 16 capítulos da campanha base.",
             "Way of the Warrior exige derrotar 150 inimigos em uma jogada de Desperate Escape.",
             "Shoot the Messenger exige derrotar 3 Agitator Majini em uma jogada de Desperate Escape.",
-            "Separar S rank de Professional quando aplicável.",
-            "Não misturar objetivos de Desperate Escape com troféus situacionais da platina base."
+            "Agitator Majini são alvos da DLC; não misturar com Majini comuns ou inimigos situacionais da campanha base.",
+            "Parceiro humano pode ajudar em Professional, S rank, Way of the Warrior e Shoot the Messenger, mas não é obrigatório.",
+            "Não misturar objetivos de Desperate Escape com troféus situacionais da platina base.",
+            "Não colocar objetivos de Desperate Escape dentro de Extras da Platina."
           ],
+          "subtitle": "Desperate Escape — 5 troféus",
           "trophyCount": 5
         }
       ],
@@ -664,6 +935,50 @@
       {
         "answer": "No PS4/Remaster, use 50 eliminações físicas. 100 aparece em versões/listas antigas e não deve ser usado como requisito principal deste guia.",
         "question": "Bringing the Pain pede 50 ou 100 eliminações?"
+      },
+      {
+        "answer": "Não. É DLC e conta apenas para o 100% da lista completa.",
+        "question": "Lost in Nightmares é obrigatório para a platina?"
+      },
+      {
+        "answer": "Não. Score Stars são coletáveis da DLC Lost in Nightmares; BSAA Emblems são da campanha base.",
+        "question": "Score Stars contam como BSAA Emblems?"
+      },
+      {
+        "answer": "Sim. Trate as 18 Score Stars como uma run única para evitar falha de registro.",
+        "question": "Wish Upon a Star precisa ser feito em uma única jogada?"
+      },
+      {
+        "answer": "Não. O S rank da DLC pode ser buscado separadamente em dificuldade baixa.",
+        "question": "S rank de Lost in Nightmares precisa ser no Professional?"
+      },
+      {
+        "answer": "Não. Night Terrors é exigência apenas do DLC/100% completo.",
+        "question": "Night Terrors muda a platina base para dificuldade obrigatória?"
+      },
+      {
+        "answer": "Não. É DLC e conta apenas para o 100% da lista completa.",
+        "question": "Desperate Escape é obrigatório para a platina?"
+      },
+      {
+        "answer": "Não. Run the Gauntlet é Professional apenas da DLC Desperate Escape.",
+        "question": "Run the Gauntlet muda a platina base para dificuldade obrigatória?"
+      },
+      {
+        "answer": "Não. O S rank da DLC pode ser buscado separadamente em dificuldade baixa.",
+        "question": "The Great Escape precisa ser no Professional?"
+      },
+      {
+        "answer": "Não. São 150 inimigos em uma única jogada de Desperate Escape.",
+        "question": "Way of the Warrior é acumulativo?"
+      },
+      {
+        "answer": "Não. Os 3 Agitator Majini precisam ser derrotados em uma única jogada.",
+        "question": "Shoot the Messenger é acumulativo?"
+      },
+      {
+        "answer": "Não como requisito. Parceiro humano pode facilitar, mas a platina base continua sem coop obrigatório.",
+        "question": "Preciso jogar online ou coop em Desperate Escape?"
       },
       {
         "answer": "Não de forma prática. Slayers/Survivors podem ser organizados com 2 jogadores; Team Slayers/Team Survivors precisam de equipe/parceiros, idealmente 4 jogadores.",
