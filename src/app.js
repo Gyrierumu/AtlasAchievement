@@ -1937,7 +1937,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
         ${items.map(item => {
           const details = [
             item.requirement ? `<span><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</span>` : '',
-            Array.isArray(item.tags) && item.tags.length ? `<span><strong>Tag:</strong> ${item.tags.map(escapeHtml).join(', ')}</span>` : '',
+            Array.isArray(item.tags) && item.tags.length ? `<span><strong>Tag/contexto:</strong> ${item.tags.map(escapeHtml).join(', ')}</span>` : '',
             item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
             item.tip ? `<span><strong>Dica:</strong> ${escapeHtml(item.tip)}</span>` : '',
             item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
@@ -1977,7 +1977,11 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
               <h3 class="text-lg font-bold text-white">${escapeHtml(pack.name)}</h3>
               <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(pack.trophyCount || 0))} troféus</span>
             </div>
+            <p class="text-sm text-white/70"><strong>Pacote:</strong> ${escapeHtml(pack.name || '')}</p>
+            <p class="text-sm text-white/70"><strong>Troféus:</strong> ${escapeHtml(String(pack.trophyCount || 0))}</p>
             <p class="text-sm text-white/70"><strong>Natureza:</strong> ${escapeHtml(pack.nature || '')}</p>
+            ${pack.platinumRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para platina:</strong> ${pack.platinumRequired ? 'sim' : 'não'}</p>` : ''}
+            ${pack.fullListRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para 100% da lista completa:</strong> ${pack.fullListRequired ? 'sim' : 'não'}</p>` : ''}
             <p class="text-sm text-white/70"><strong>Observação:</strong> ${escapeHtml(pack.observation || '')}</p>
             ${Array.isArray(pack.mainRisks) && pack.mainRisks.length ? `<div><div class="atlas-tip-label">Riscos principais</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.mainRisks.map(risk => `<li>${escapeHtml(risk)}</li>`).join('')}</ul></div>` : ''}
             ${Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Regras</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
