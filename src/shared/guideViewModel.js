@@ -4857,6 +4857,8 @@
   }
 
   function buildGuideQuickPlan(game = {}, viewModel = {}) {
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    const quickPlanLimit = normalizedSlug === 'resident-evil-5' ? 7 : 6;
     const explicitItems = Array.isArray(game?.quick_plan)
       ? game.quick_plan
       : Array.isArray(game?.quickPlan)
@@ -4867,7 +4869,7 @@
     const normalizedExplicit = explicitItems
       .map(normalizeQuickPlanItem)
       .filter(Boolean)
-      .slice(0, 6)
+      .slice(0, quickPlanLimit)
       .map((item, index) => ({ ...item, number: index + 1 }));
     if (normalizedExplicit.length >= 3) return normalizedExplicit;
 
@@ -4897,7 +4899,7 @@
     ].filter(Boolean);
     const merged = [...derived, ...fallback]
       .filter((item, index, items) => items.findIndex(other => other.title === item.title) === index)
-      .slice(0, 6)
+      .slice(0, quickPlanLimit)
       .map((item, index) => ({ ...item, number: index + 1 }));
     return merged.length >= 3 ? merged : fallback.map((item, index) => ({ ...item, number: index + 1 }));
   }
