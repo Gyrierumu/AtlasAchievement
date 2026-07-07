@@ -1942,7 +1942,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
             item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
             item.tip ? `<span><strong>Dica:</strong> ${escapeHtml(item.tip)}</span>` : '',
             item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
-            item.notPlatinumBase ? '<span>Não marcar como platina base.</span>' : ''
+            item.notPlatinumBase ? '<span>Este troféu pertence à DLC e conta apenas para o 100% da lista completa.</span>' : ''
           ].filter(Boolean);
           return `<li><strong class="text-white">${escapeHtml(item.name)}</strong>${details.length ? `<div class="mt-1 space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}</li>`;
         }).join('')}
@@ -2004,11 +2004,11 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
             ${pack.platinumRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para platina:</strong> ${pack.platinumRequired ? 'sim' : 'não'}</p>` : ''}
             ${pack.fullListRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para 100% da lista completa:</strong> ${pack.fullListRequired ? 'sim' : 'não'}</p>` : ''}
             ${pack.onlineRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Online obrigatório:</strong> ${pack.onlineRequired ? 'sim' : 'não'}</p>` : ''}
-            ${pack.coopRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Coop obrigatório:</strong> ${pack.coopRequired ? 'sim' : 'não'}</p>` : ''}
-            ${pack.coopRecommended !== undefined ? `<p class="text-sm text-white/70"><strong>Coop recomendável:</strong> ${pack.coopRecommended ? 'sim' : 'não'}</p>` : ''}
+            ${pack.coopRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Parceiro obrigatório:</strong> ${pack.coopRequired ? 'sim' : 'não'}</p>` : ''}
+            ${pack.coopRecommended !== undefined ? `<p class="text-sm text-white/70"><strong>Parceiro humano recomendado:</strong> ${pack.coopRecommended ? 'sim' : 'não'}</p>` : ''}
             <p class="text-sm text-white/70"><strong>Observação:</strong> ${escapeHtml(pack.observation || '')}</p>
             ${Array.isArray(pack.mainRisks) && pack.mainRisks.length ? `<div><div class="atlas-tip-label">Riscos principais</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.mainRisks.map(risk => `<li>${escapeHtml(risk)}</li>`).join('')}</ul></div>` : ''}
-            ${Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Regras</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
+            ${Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Observações importantes</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
           </article>
         `).join('')}
       </div>
