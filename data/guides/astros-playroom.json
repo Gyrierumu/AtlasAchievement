@@ -135,7 +135,9 @@
         "question": "O guia está verificado?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Jogue as fases principais explorando com calma, resgatando bots, pegando puzzle pieces e marcando pendências no checklist.",
       "recommendation": "Avance pelos quatro mundos principais, colete puzzle pieces e artefatos no caminho, depois use seleção de fases e PlayStation Labo para fechar a limpeza.",

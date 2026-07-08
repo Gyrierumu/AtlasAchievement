@@ -218,7 +218,9 @@
         "question": "Qual é o maior cuidado da platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a campanha na dificuldade que preferir, sincronize mirantes, compre habilidades úteis e guarde trinkets desde o início.",
       "recommendation": "A dificuldade é baixa; o tempo é longo, cerca de 50 a 70 horas.",

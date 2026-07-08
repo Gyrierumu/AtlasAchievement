@@ -211,7 +211,9 @@
         "question": "Days Gone Remastered muda a platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "avoidIf": "Quem quer uma platina curta ou sem grind de mundo aberto pode achar a rota cansativa.",
       "bestFor": "Jogadores que gostam de limpar mapa, evoluir personagem/moto e fazer cleanup metódico.",

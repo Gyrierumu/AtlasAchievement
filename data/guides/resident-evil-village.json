@@ -201,7 +201,9 @@
         "question": "O que mais costuma ser perdido na primeira campanha?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece com uma campanha completa focada em exploração, arquivos, Goats of Warding, receitas, tesouros e troféus situacionais, mantendo saves manuais antes de pontos importantes.",
       "mainRisk": "Legendary Cowboy é o maior gargalo da platina; Village of Shadows, colecionáveis por região e runs restritivas exigem planejamento separado.",

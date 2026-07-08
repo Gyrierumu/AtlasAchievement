@@ -210,7 +210,9 @@
         "question": "O jogo tem save manual?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece no Story Mode se quiser reduzir execução, acompanhe Xion e coletáveis desde a primeira visita.",
       "recommendation": "Boa escolha se você seguir roadmap desde cedo e separar jogo base de DLC/New Game+ DLC.",

@@ -138,7 +138,9 @@
         "question": "Os anéis de DLC contam para Master of Rings?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a primeira jornada acompanhando NPCs, juramentos e gestos desde o início. Entre nos juramentos assim que forem liberados, não cure o Dark Sigil se for fazer The Usurpation of Fire e não consuma almas de chefes antes de confirmar magias, milagres e piromancias.",
       "mainRisk": "O maior risco é quebrar questlines, perder Mound-makers ou Blade of the Darkmoon, gastar boss souls importantes e subestimar o farm de juramentos.",

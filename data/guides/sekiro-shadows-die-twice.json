@@ -245,7 +245,9 @@
         "question": "Gauntlets of Strength são necessários?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Faça a primeira run com checklist antes dos pontos críticos.",
       "methodology": "Este guia cobre os 34 troféus da lista base. Gauntlets of Strength, Reflections of Strength, skins e conteúdo de update ficam fora da platina. A rota considera backup save como ferramenta opcional para reduzir runs entre finais.",

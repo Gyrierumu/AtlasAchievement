@@ -181,7 +181,9 @@
         "question": "Posso usar os achievements da Steam/Epic?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece pela campanha e exploração de Gotham.",
       "recommendation": "Vale acompanhar se você gosta de mundo aberto LEGO, campanha leve, colecionáveis, desafios e cleanup. A platina tende a depender mais de completar Gotham e comprar/liberar recursos do que de dificuldade alta, mas o guia ainda precisa de validação final.",

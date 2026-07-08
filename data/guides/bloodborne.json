@@ -125,7 +125,9 @@
         "question": "Dá para platinar sem The Old Hunters?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Jogue a campanha explorando áreas opcionais e pare depois de Mergo's Wet Nurse antes de falar com Gehrman.",
       "recommendation": "Vale platinar Bloodborne se você gosta de soulslike exigente, exploração densa e chefes opcionais marcantes. A platina não exige online nem The Old Hunters, mas cobra planejamento para os três finais, atenção a armas e ferramentas de caçador e paciência nos Cálices até Yharnam, Pthumerian Queen. É uma platina justa e memorável, porém pouco indicada para quem não quer desafio, backup de save ou grind.",

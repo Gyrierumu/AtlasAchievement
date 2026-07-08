@@ -234,7 +234,9 @@
         "question": "Quais são os maiores riscos de retrabalho?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "difficulty": "Alta moderada, 7/10.",
       "dlc": "Não exige DLC separada; Crowns são conteúdo integrado em Scholar.",

@@ -163,7 +163,9 @@
         "question": "O jogo tem perdíveis definitivos?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "summary": "Platina coop de 10-15h e 3/10, sem online obrigatório, sem perdíveis definitivos e com cleanup por Chapter Select."
     },

@@ -119,7 +119,9 @@
         "question": "A DLC é necessária para a platina de Hades II?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Liberar sistemas persistentes e acompanhar a Fated List, não ler alertas de perdíveis.",
       "recommendation": "Comece pela Encruzilhada e pelos desbloqueios estruturais, avance Submundo e Superfície em paralelo quando possível e deixe Chaos Trials, vínculos, keepsakes, familiars, Kudos e epílogo para a limpeza planejada.",

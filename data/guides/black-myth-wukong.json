@@ -207,7 +207,9 @@
         "question": "Preciso completar tudo antes do NG+?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a campanha com checklist de perdíveis por capítulo e revise NPCs antes de avançar.",
       "recommendation": "Boa para quem aceita 100% completion, bosses opcionais, Journal, equipamentos, Spirits, Transformations, Curios, drinks, seeds e RNG.",

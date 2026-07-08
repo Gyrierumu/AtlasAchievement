@@ -159,7 +159,9 @@
         "question": "Qual é o maior desafio da platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece aprendendo o combate com uma shell confortável e controle Face Off, Seat of Infinity, lore e itens antes dos pontos críticos.",
       "recommendation": "Faça uma campanha normal de aprendizado e coleta, depois uma run dedicada combinando Forever Alone com Life is Suffering.",

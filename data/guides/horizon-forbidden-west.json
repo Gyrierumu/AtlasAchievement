@@ -286,7 +286,9 @@
         "question": "Dá para fazer cleanup depois da história?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece pela campanha abrindo o mapa com Tallnecks e escaneando toda machine nova com o Focus; antes de Singularity, confirme Specter e Specter Prime.",
       "mainRisk": "O principal cuidado é escanear Specter e Specter Prime na missão final Singularity e organizar Cauldrons, Hunting Grounds, Melee Pits, Rebel Camps, Arena, side quests específicas e cleanup sem transformar o guia em 100% com DLC.",

@@ -170,7 +170,9 @@
         "question": "AKUMU é obrigatório?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Inicie uma run de coleta em Casual/Survival, registre capítulos pendentes e guarde AKUMU para depois da limpeza.",
       "recommendation": "Vale para quem aceita checklist por capítulo e múltiplas runs. O jogo permite recuperar oportunidades, mas cobra execução.",

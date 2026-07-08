@@ -213,7 +213,9 @@
         "question": "Posso consumir almas de chefes?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Explore Lordran e prepare a primeira run. Comece uma campanha cuidadosa, explorando Lordran, entrando nos pactos disponíveis e guardando almas de chefes. Depois use o roadmap para separar finais, armas raras, feitiços, milagres, piromancias, upgrades e avanço em NG+/NG++.",
       "mainRisk": "O maior risco é Knight's Honor: consumir almas de chefes, perder armas de cauda ou ignorar armas raras pode empurrar a platina para outra run.",

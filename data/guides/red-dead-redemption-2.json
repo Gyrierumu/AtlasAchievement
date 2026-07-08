@@ -144,7 +144,9 @@
         "question": "Skin Deep e Zoologist são perdíveis?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Antes de avançar capítulos, confira missões opcionais de honra, atividades com companheiros, pedidos de itens e doações à caixa da gangue.",
       "recommendation": "Só entre se você aceitar uma checklist pesada offline e online. Controle os perdíveis durante a campanha, separe Gold Rush e animais em blocos próprios e deixe Red Dead Online como etapa dedicada.",

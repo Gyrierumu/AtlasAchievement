@@ -189,7 +189,9 @@
         "question": "Qual é a dificuldade da platina de Celeste?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Conclua a campanha e use Chapter Select para organizar coletas e lados alternativos.",
       "methodology": "O guia cobre os 31 troféus da lista PS4 base. Real Gamer/PICO-8 entra na platina; Farewell/Chapter 9, Golden Strawberries, Moon Berry e extras sem troféu ficam fora.",

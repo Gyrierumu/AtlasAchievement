@@ -168,7 +168,9 @@
         "question": "O RYNO é obrigatório?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "summary": "Platina curta de 10-15h e 2/10, totalmente offline, com 1 perdível real: Extinction Event. Faça a campanha, limpe planetas no free roam e use Challenge Mode apenas para comprar 2 armas."
     },

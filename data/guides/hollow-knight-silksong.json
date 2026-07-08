@@ -214,7 +214,9 @@
         "question": "Dá para continuar depois da história?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece por uma campanha de exploração, aprendendo Pharloom e coletando upgrades, ferramentas, Silk Skills, Crests, mapas e desejos.",
       "mainRisk": "As maiores barreiras são Completion, Speedrunner e Speed Completion; trate finais e Act 3 como rotas planejadas, não como perdíveis confirmados. Steel Soul fica fora da lista PSN base.",

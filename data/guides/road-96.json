@@ -159,7 +159,9 @@
         "question": "O jogo tem chapter select?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "summary": "Platina curta de 6-8h e 1/10, offline e sem coop, mas com perdíveis de oportunidade. Priorize Stone After Stone, Smells Like Teen Spirit, cabines telefônicas e fitas/cassetes."
     },

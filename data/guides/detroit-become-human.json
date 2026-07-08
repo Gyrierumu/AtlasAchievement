@@ -155,7 +155,9 @@
         "question": "O que mais dá trabalho?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "attention": "Não há online, coop, DLC ou bloqueio por dificuldade; o cuidado real é a persistência das escolhas pelo Chapter Select.",
       "avoid": "Evite se você quer uma platina linear sem guia ou sem repetir capítulos.",

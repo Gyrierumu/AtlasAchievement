@@ -270,7 +270,9 @@
         "question": "Complete Edition muda a platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a campanha explorando por região, ativando Tallnecks, comprando mapas de collectibles e completando side quests quando surgirem.",
       "mainRisk": "Organize side quests, aliados opcionais, Hunting Grounds, Cauldrons, Tallnecks, collectibles e machines para o cleanup não ficar cansativo.",

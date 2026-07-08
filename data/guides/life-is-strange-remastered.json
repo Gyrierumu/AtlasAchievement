@@ -266,7 +266,9 @@
         "question": "Posso pegar fotos que deixei passar?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Complete a história acompanhando as fotos opcionais por episódio.",
       "methodology": "Este guia cobre somente a lista individual PS4 de Life Is Strange Remastered, com 61 troféus: platina, 5 conclusões de episódio, 50 fotos opcionais e 5 troféus por completar todas as fotos de cada episódio.",

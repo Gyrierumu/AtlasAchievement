@@ -208,7 +208,9 @@
         "question": "Quanto tempo leva para platinar?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "difficulty": "3/10 com anéis de assistência; 5/10 sem anéis.",
       "dlc": "Echoes of the Fallen adiciona 6 troféus e The Rising Tide adiciona 13, mas nenhum deles é necessário para The Chronicler/O Cronista.",

@@ -158,7 +158,9 @@
         "question": "O que mais demora?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Jogue os episódios principais primeiro, liberando instalações, estruturas e rotas de transporte; depois feche conexões, rank S, likes, infraestrutura e eventos opcionais.",
       "recommendation": "Boa para quem gosta de logística, mundo aberto, tarefas de conexão, infraestrutura e limpeza metódica; ruim para quem quer platina rápida ou totalmente offline.",

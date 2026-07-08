@@ -264,7 +264,9 @@
         "question": "A versão de 2023 é a mesma de 2014?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece pela rota de Adyr sem purificar beacons e acompanhe NPCs, bosses, itens e requisitos online desde a primeira run.",
       "mainRisk": "Avançar a história sem validar beacons e questlines pode bloquear finais, NPCs, bosses e coleções até a run seguinte.",

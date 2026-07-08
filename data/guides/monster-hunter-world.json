@@ -232,7 +232,9 @@
         "question": "O que devo combinar com crown hunting?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "difficulty": "Moderada, cerca de 4/10; nenhuma dificuldade selecionável afeta troféus.",
       "dlc": "Iceborne possui lista e platina próprias e não é necessário.",

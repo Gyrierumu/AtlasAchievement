@@ -215,7 +215,9 @@
         "question": "O que mais causa retrabalho?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece pela primeira campanha aprendendo builds e deixe S Rank pesado para Mission Replay depois de liberar todas as missões.",
       "recommendation": "O maior desafio é The Perfect Mercenary, que exige S Rank em todas as missões; o maior risco de planejamento é repetir decisões e atrasar missões/finais de NG+ e NG++.",

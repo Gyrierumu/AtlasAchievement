@@ -193,7 +193,9 @@
         "question": "Preciso completar 100% do Compendium?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "summary": "Persona 3 Reload é uma platina longa, offline e de calendário: 49 troféus, 60-70h, 3/10, uma jogada com calendário 100%, oito riscos principais e Episode Aigis fora da lista base."
     },

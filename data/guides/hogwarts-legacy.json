@@ -221,7 +221,9 @@
         "question": "A escolha da casa muda a platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "avoidIf": "Quem não gosta de cleanup extenso, colecionáveis numerosos ou repetir a introdução com outras casas pode achar a platina cansativa.",
       "bestFor": "Jogadores que gostam de explorar Hogwarts, limpar mapa, completar coleções e acompanhar checklist por região.",

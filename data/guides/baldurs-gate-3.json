@@ -270,7 +270,9 @@
         "question": "O que pode estragar uma jogada?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "difficulty": "Alta.",
       "dlc": "A platina principal não exige DLC. Modo Honra/Honour Mode e Ponta de lança ficam separados como extra/100%.",

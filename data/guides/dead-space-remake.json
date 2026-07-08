@@ -257,7 +257,9 @@
         "question": "Qual é o maior gargalo?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "coopRequired": "Não",
       "difficulty": "6/10",

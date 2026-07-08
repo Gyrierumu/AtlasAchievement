@@ -207,7 +207,9 @@
         "question": "Discovery Tour App conta para a platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Avance a campanha até desbloquear ferramentas e resolva You Snooze, You Lose assim que tiver blowdart/dardo sonífero.",
       "recommendation": "A platina base não exige online, coop, DLC nem dificuldade alta.",

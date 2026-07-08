@@ -142,7 +142,9 @@
         "question": "Quais cuidados reduzem replay?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece com uma campanha de coleta e preparação, marcando tesouros, Clockwork Castellans, pedidos do Mercador e troféus de capítulo.",
       "recommendation": "Vale para quem aceita planejar saves, colecionáveis, pedidos do Mercador, runs S+, Professional e desafios de restrição sem depender de DLC paga.",

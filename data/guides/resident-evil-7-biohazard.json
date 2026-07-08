@@ -209,7 +209,9 @@
         "question": "A Gold Edition muda a platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece com uma campanha completa em Easy ou Normal focada em exploração, arquivos, Mr. Everywhere, Antique Coins da dificuldade normal e troféus situacionais.",
       "mainRisk": "Madhouse, Mad Pelicans, speedrun/rota rápida, Resource Manager, Walk it Off, finais e colecionáveis por região são os pontos que mais geram retrabalho.",

@@ -215,7 +215,9 @@
         "question": "Qual é o maior cuidado da platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a campanha na dificuldade que preferir, aceite contratos nos quadros de mensagens e resolva uma opção de romance cedo.",
       "recommendation": "A dificuldade é baixa a moderada; o tempo é longo, cerca de 60 a 70 horas.",

@@ -380,6 +380,12 @@ async function validateGuide(slug = '') {
     const chapterRoute = seedGame.chapterRouteGuide || {};
     const routeChapters = Array.isArray(chapterRoute.chapters) ? chapterRoute.chapters : [];
     const routeText = JSON.stringify(chapterRoute);
+    const professionalGuide = seedGame.professionalAiGuide || {};
+    const professionalBlocks = Array.isArray(professionalGuide.blocks) ? professionalGuide.blocks : [];
+    const professionalText = JSON.stringify(professionalGuide);
+    const farmGuide = seedGame.farmRoutesGuide || {};
+    const farmRoutes = Array.isArray(farmGuide.routes) ? farmGuide.routes : [];
+    const farmText = JSON.stringify(farmGuide);
     const roadmapText = viewModel.roadmapStages
       .map(step => [step.title, step.focus, step.objective, ...(step.actions || []), step.warning, step.result].join(' '))
       .join(' ');
@@ -408,6 +414,10 @@ async function validateGuide(slug = '') {
     assert.strictEqual(chapterRoute.title, 'Rota por Capítulo — Platina Base', 'Resident Evil 5 deve ter Rota por Capitulo da platina base');
     assert.strictEqual(routeChapters.length, 16, 'Rota por Capitulo de Resident Evil 5 deve manter 16 capitulos');
     assert.deepStrictEqual(routeChapters.map(item => item.chapter), ['Chapter 1-1', 'Chapter 1-2', 'Chapter 2-1', 'Chapter 2-2', 'Chapter 2-3', 'Chapter 3-1', 'Chapter 3-2', 'Chapter 3-3', 'Chapter 4-1', 'Chapter 4-2', 'Chapter 5-1', 'Chapter 5-2', 'Chapter 5-3', 'Chapter 6-1', 'Chapter 6-2', 'Chapter 6-3'], 'Rota por Capitulo de Resident Evil 5 deve cobrir os 16 capitulos base');
+    const chapter21Text = JSON.stringify(routeChapters.find(item => item.chapter === 'Chapter 2-1'));
+    const chapter22Text = JSON.stringify(routeChapters.find(item => item.chapter === 'Chapter 2-2'));
+    assert(chapter21Text.includes('Armas importantes: H&K MP5 e S75.'), 'Chapter 2-1 deve listar H&K MP5 e S75');
+    assert(chapter22Text.includes('Arma importante: Dragunov SVD.') && !chapter22Text.includes('S75'), 'Chapter 2-2 deve listar apenas Dragunov SVD como arma importante');
     routeChapters.forEach(chapter => {
       assert(Array.isArray(chapter.sections) && chapter.sections.length > 0 && chapter.sections.length <= 4, `${chapter.chapter} deve ter ate 4 blocos curtos`);
       chapter.sections.forEach(section => {
@@ -422,6 +432,47 @@ async function validateGuide(slug = '') {
     assert(routeText.includes('Heart of Africa') && routeText.includes('Bad Blood'), 'Chapter 5-3 deve preservar Heart of Africa e Bad Blood');
     assert(routeText.includes('exige explosivo'), 'Chapter 6-1 deve preservar alerta de explosivo');
     assert(routeText.includes('Diamond (Marquise)'), 'Chapter 6-3 deve preservar Diamond (Marquise)');
+    assert.strictEqual(professionalGuide.title, 'Professional e IA — Preparação para War Hero', 'Resident Evil 5 deve ter secao compacta de preparacao para War Hero');
+    assert.strictEqual(professionalBlocks.length, 6, 'Professional e IA de Resident Evil 5 deve manter no maximo 6 blocos principais');
+    assert.deepStrictEqual(professionalBlocks.map(block => block.title), ['Quando fazer', 'Como liberar', 'Loadout recomendado', 'IA / parceiro', 'Capítulos críticos', 'Checklist antes de iniciar War Hero'], 'Professional e IA deve manter os 6 blocos esperados');
+    const loadoutBlock = professionalBlocks.find(block => block.title === 'Loadout recomendado');
+    const checklistBlock = professionalBlocks.find(block => block.title === 'Checklist antes de iniciar War Hero');
+    const preRunGroup = checklistBlock?.groups?.find(group => group.title === 'Antes da run');
+    const reworkGroup = checklistBlock?.groups?.find(group => group.title === 'Erros que geram retrabalho');
+    assert((loadoutBlock?.items || []).length > 0 && loadoutBlock.items.length <= 6, 'Loadout de Professional deve ser curto');
+    assert.strictEqual((preRunGroup?.items || []).length, 8, 'Checklist antes de War Hero deve ter no maximo 8 itens');
+    assert.strictEqual((reworkGroup?.items || []).length, 5, 'Erros que geram retrabalho deve ter no maximo 5 itens');
+    assert(professionalText.includes('Chapter 2-3 — Ndesu/turret') && professionalText.includes('não depende do arsenal'), 'Professional e IA deve tratar Chapter 2-3 como trecho de turret');
+    assert(professionalText.includes('Confundir Rank S com Professional: são objetivos separados.'), 'Professional e IA nao deve confundir Rank S com Professional');
+    assert(professionalText.includes('Parceiro humano recomendado') && professionalText.includes('ajuda opcional, não requisito'), 'Professional e IA deve manter parceiro humano opcional');
+    ['Night Terrors', 'Run the Gauntlet', 'Lost in Nightmares', 'Desperate Escape', 'Versus', 'coop obrigatório', 'online obrigatório'].forEach(text => {
+      assert(!professionalText.includes(text), `Professional e IA nao deve misturar DLC ou requisito indevido: ${text}`);
+    });
+    assert.strictEqual(farmGuide.title, 'Rotas de Farm — dinheiro, pontos e upgrades', 'Resident Evil 5 deve ter secao compacta de Rotas de Farm');
+    assert(farmGuide.introduction.includes('não substitui Extras da Platina'), 'Rotas de Farm deve explicar que nao substitui Extras da Platina');
+    assert(farmRoutes.length >= 4 && farmRoutes.length <= 6, 'Rotas de Farm deve manter tabela curta de 4 a 6 rotas');
+    assert.deepStrictEqual(farmRoutes.map(route => route.route), [
+      'Chapter 4-1 — Caves',
+      'Chapter 5-1 — Lickers',
+      'Chapter 5-2 ou 5-3 — Reapers / Power Stones',
+      'Chapter 5-3 — Heart of Africa',
+      'Chapter 6-2 — Bonus Features',
+      'Run sub-5h — Infinite Rocket Launcher'
+    ], 'Rotas de Farm deve manter as 6 rotas esperadas');
+    farmRoutes.forEach(route => {
+      assert(Array.isArray(route.bestFor) && route.bestFor.length > 0 && route.bestFor.length <= 3, `${route.route} deve manter Melhor para compacto`);
+      assert(route.when && route.caution && route.note, `${route.route} deve preencher Quando usar, Cuidado e nota curta`);
+    });
+    ['Soul Gem', 'Lion Hearts', 'Power Stones', 'Heart of Africa', 'Exchange Points', 'Infinite Rocket Launcher'].forEach(text => {
+      assert(farmText.includes(text), `Rotas de Farm deve cobrir ${text}`);
+    });
+    assert(farmText.includes('Dinheiro da campanha compra armas e upgrades') && farmText.includes('pontos de Bonus Features/Exchange Points'), 'Rotas de Farm deve separar dinheiro de pontos de Bonus Features');
+    assert(farmText.includes('Mercenaries pode render pontos de Bonus Features') && farmText.includes('opcional') && farmText.includes('não é requisito'), 'Rotas de Farm deve tratar Mercenaries como opcional');
+    assert(farmText.includes('DLCs não entram nessa tabela de farm da platina base'), 'Rotas de Farm deve separar DLCs da tabela da platina base');
+    assert(farmText.includes('Não farme por farminho'), 'Rotas de Farm deve conter o texto curto obrigatorio');
+    ['Night Terrors', 'Run the Gauntlet', 'Lost in Nightmares', 'Desperate Escape', 'Versus', 'Checklist BSAA 01/30', 'Checklist tesouro 01/50', 'Checklist upgrade 01/18', 'Não transformar'].forEach(text => {
+      assert(!farmText.includes(text), `Rotas de Farm nao deve conter DLC, lista longa ou frase interna: ${text}`);
+    });
     ['BSAA Emblem #01', 'Checklist BSAA 01/30', 'Checklist tesouro 01/50', 'Score Star #01', 'Versus e um pacote DLC'].forEach(text => {
       assert(!roadmapText.includes(text), `Roadmap de Resident Evil 5 nao deve receber lista longa ou DLC: ${text}`);
     });
@@ -1204,8 +1255,14 @@ async function validateGuide(slug = '') {
       const roadmapPanelStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideRoadmapPanel"', roadmapSlotStart) : -1;
       const chapterRoutePanelStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideChapterRoutePanel"', roadmapSlotStart) : -1;
       const chapterRoutePanelEnd = chapterRoutePanelStart >= 0 ? html.indexOf('</section>', chapterRoutePanelStart) : -1;
+      const professionalPanelStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideProfessionalAiPanel"', roadmapSlotStart) : -1;
+      const professionalPanelEnd = professionalPanelStart >= 0 ? html.indexOf('</section>', professionalPanelStart) : -1;
       const roadmapPanelHtml = roadmapPanelStart >= 0 && checklistTabStart > roadmapPanelStart ? html.slice(roadmapPanelStart, checklistTabStart) : '';
       const chapterRoutePanelHtml = chapterRoutePanelStart >= 0 && chapterRoutePanelEnd > chapterRoutePanelStart ? html.slice(chapterRoutePanelStart, chapterRoutePanelEnd + '</section>'.length) : '';
+      const professionalPanelHtml = professionalPanelStart >= 0 && professionalPanelEnd > professionalPanelStart ? html.slice(professionalPanelStart, professionalPanelEnd + '</section>'.length) : '';
+      const farmPanelStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideFarmRoutesPanel"', roadmapSlotStart) : -1;
+      const farmPanelEnd = farmPanelStart >= 0 ? html.indexOf('</section>', farmPanelStart) : -1;
+      const farmPanelHtml = farmPanelStart >= 0 && farmPanelEnd > farmPanelStart ? html.slice(farmPanelStart, farmPanelEnd + '</section>'.length) : '';
       const extrasPanelHtml = html.match(/<section id="guidePlatinumExtrasPanel"[\s\S]*?<section id="guideDlcCompletionPanel"/)?.[0] || '';
       const dlcPanelHtml = html.match(/<section id="guideDlcCompletionPanel"[\s\S]*?<section id="guideEditorialNotesPanel"/)?.[0] || '';
       assert.strictEqual(apiGame.trophies.length, 51, 'API de Resident Evil 5 deve manter 51 trofeus da platina base');
@@ -1235,6 +1292,35 @@ async function validateGuide(slug = '') {
       });
       ['Versus', 'Lost in Nightmares', 'Desperate Escape', 'Score Star', 'Agitator Majini', 'Checklist BSAA 01/30', 'Checklist tesouro 01/50'].forEach(text => {
         assert(!chapterRoutePanelHtml.includes(text), `Rota por Capitulo nao deve exibir DLC ou lista longa: ${text}`);
+      });
+      assert.strictEqual(apiGame.professionalAiGuide?.blocks?.length, 6, 'API de Resident Evil 5 deve expor 6 blocos de Professional e IA');
+      assert(professionalPanelHtml.includes('Professional e IA') && professionalPanelHtml.includes('War Hero'), 'Resident Evil 5 deve renderizar painel Professional e IA');
+      assert.strictEqual((professionalPanelHtml.match(/data-guide-section-toggle="professional-ai-/g) || []).length, 6, 'Professional e IA deve renderizar 6 blocos recolhiveis');
+      ['Quando fazer', 'Como liberar', 'Loadout recomendado', 'IA / parceiro', 'Checklist antes de iniciar War Hero', 'Ndesu/turret'].forEach(text => {
+        assert(professionalPanelHtml.includes(text), `Professional e IA deve renderizar conteudo essencial: ${text}`);
+      });
+      assert(professionalPanelHtml.includes('Capítulos críticos') || professionalPanelHtml.includes('CapÃ­tulos crÃ­ticos'), 'Professional e IA deve renderizar Capitulos criticos');
+      assert(professionalPanelHtml.includes('Rank S com Professional: são objetivos separados') || professionalPanelHtml.includes('Rank S com Professional: sÃ£o objetivos separados'), 'Professional e IA deve separar Rank S de Professional');
+      ['Night Terrors', 'Run the Gauntlet', 'Lost in Nightmares', 'Desperate Escape', 'Versus', 'coop obrigatÃ³rio', 'online obrigatÃ³rio'].forEach(text => {
+        assert(!professionalPanelHtml.includes(text), `Professional e IA SSR nao deve misturar DLC ou requisito indevido: ${text}`);
+      });
+      assert.strictEqual(apiGame.farmRoutesGuide?.routes?.length, 6, 'API de Resident Evil 5 deve expor 6 Rotas de Farm');
+      assert(farmPanelHtml.includes('Rotas de Farm') && farmPanelHtml.includes('dinheiro, pontos e upgrades'), 'Resident Evil 5 deve renderizar painel Rotas de Farm');
+      assert.strictEqual((farmPanelHtml.match(/<tr class="align-top">/g) || []).length, 6, 'Rotas de Farm SSR deve renderizar 6 linhas de rota');
+      ['Rota', 'Melhor para', 'Quando usar', 'Cuidado'].forEach(text => {
+        assert(farmPanelHtml.includes(text), `Rotas de Farm SSR deve renderizar coluna ${text}`);
+      });
+      ['Chapter 4-1', 'Soul Gem', 'Chapter 5-1', 'Lion Hearts', 'Reapers / Power Stones', 'Heart of Africa', 'Chapter 6-2', 'Exchange Points', 'Run sub-5h', 'Infinite Rocket Launcher'].forEach(text => {
+        assert(farmPanelHtml.includes(text), `Rotas de Farm SSR deve renderizar ${text}`);
+      });
+      assert(farmPanelHtml.includes('Dinheiro da campanha compra armas e upgrades'), 'Rotas de Farm SSR deve explicar dinheiro da campanha');
+      assert(farmPanelHtml.includes('pontos de Bonus Features/Exchange Points'), 'Rotas de Farm SSR deve explicar pontos de Bonus Features');
+      assert(farmPanelHtml.includes('Mercenaries pode render pontos de Bonus Features'), 'Rotas de Farm SSR deve citar Mercenaries como opcional');
+      assert(farmPanelHtml.includes('opcional') && (farmPanelHtml.includes('não é requisito') || farmPanelHtml.includes('nÃ£o Ã© requisito')), 'Rotas de Farm SSR deve manter Mercenaries/Infinite Rocket opcionais');
+      assert(farmPanelHtml.includes('DLCs não entram nessa tabela de farm da platina base') || farmPanelHtml.includes('DLCs nÃ£o entram nessa tabela de farm da platina base'), 'Rotas de Farm SSR deve separar DLCs');
+      assert(farmPanelHtml.includes('Não farme por farminho') || farmPanelHtml.includes('NÃ£o farme por farminho'), 'Rotas de Farm SSR deve renderizar texto curto obrigatorio');
+      ['Night Terrors', 'Run the Gauntlet', 'Lost in Nightmares', 'Desperate Escape', 'Versus', 'Checklist BSAA 01/30', 'Checklist tesouro 01/50', 'Checklist upgrade 01/18', 'Não transformar', 'NÃ£o transformar'].forEach(text => {
+        assert(!farmPanelHtml.includes(text), `Rotas de Farm SSR nao deve conter DLC, lista longa ou frase interna: ${text}`);
       });
       assert(extrasPanelHtml.includes('Platina base'), 'Extras da Platina de Resident Evil 5 deve ser marcado como platina base');
       assert(extrasPanelHtml.includes('8 categoria(s)'), 'Extras da Platina de Resident Evil 5 deve renderizar 8 categorias');

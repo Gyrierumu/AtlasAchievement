@@ -175,7 +175,9 @@
         "question": "O Friend Pass libera troféus para os dois jogadores?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a campanha em coop local ou online e deixe o cleanup de eventos opcionais para a seleção de capítulos.",
       "recommendation": "A dificuldade é baixa, o tempo é curto e o risco é baixo porque não há perdíveis reais por causa da seleção de capítulos.",

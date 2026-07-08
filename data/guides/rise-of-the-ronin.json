@@ -212,7 +212,9 @@
         "question": "Existe versão PS4/autopop?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "coopRequired": "Não",
       "difficulty": "3/10",

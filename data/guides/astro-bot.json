@@ -115,7 +115,9 @@
         "question": "O que costuma faltar no cleanup?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece pelas nebulosas principais e colete o que estiver no caminho; não trate a primeira jogada como uma run de perdíveis.",
       "recommendation": "Avance a história primeiro, faça cleanup por seleção de fases, complete bots/peças/Lost Galaxy e deixe Gatcha Lab, Crash Site e o desafio da Estátua Dourada para a reta final.",

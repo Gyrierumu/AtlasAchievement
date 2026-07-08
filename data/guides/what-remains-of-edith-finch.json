@@ -105,7 +105,9 @@
         "question": "A DLC é necessária para a platina de What Remains of Edith Finch?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": null,
     "quick_plan": [
       {

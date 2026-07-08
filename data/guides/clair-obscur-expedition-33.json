@@ -156,7 +156,9 @@
         "question": "Qual é o maior desafio?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "attention": "Não há online, coop, DLC obrigatória, New Game+ obrigatório nem bloqueio por dificuldade; o cuidado real está nos 5 perdíveis e no cleanup.",
       "avoid": "Evite se você quer uma platina curta sem controle de perdíveis.",

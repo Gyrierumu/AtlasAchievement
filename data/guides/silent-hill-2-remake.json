@@ -233,7 +233,9 @@
         "question": "Silent Hill f entra neste guia?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece já com rota cronológica de Memos, Strange Photos e Glimpses of the Past; salve manualmente antes de áreas grandes e decisões.",
       "recommendation": "Boa para quem aceita seguir checklist desde o início. A execução é acessível, mas a rota cobra saves manuais e atenção aos pontos de não retorno.",

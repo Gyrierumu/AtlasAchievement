@@ -211,7 +211,9 @@
         "question": "Quanto tempo leva para platinar?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "difficulty": "Baixa, cerca de 2/10.",
       "dlc": "Nome’s Attic não é necessário para a platina base.",

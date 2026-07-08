@@ -228,7 +228,9 @@
         "question": "Quanto tempo leva para platinar?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "difficulty": "Muito baixa, cerca de 1/10.",
       "dlc": "Wavelengths não é necessário para a platina base.",

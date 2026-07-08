@@ -144,7 +144,9 @@
         "question": "Dá para continuar depois da história?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Jogue a história primeiro, priorizando desbloqueios, instalações e ziplines. Depois use o pós-game para 5 estrelas, Legend of Legends em Hard, Memory Chips e cleanup social.",
       "recommendation": "Boa para quem gosta de checklist, logística, ziplines, instalações e grind de mundo aberto; ruim para quem quer platina rápida ou totalmente offline.",

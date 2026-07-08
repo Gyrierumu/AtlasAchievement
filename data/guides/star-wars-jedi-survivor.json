@@ -204,7 +204,9 @@
         "question": "Star Wars Jedi: Fallen Order entra no guia?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Na campanha, resolva os 10 assists de Bode cedo e depois os 10 de Merrin.",
       "recommendation": "Boa para quem aceita cleanup alto/moderado e quer jogar tudo em Story Mode.",

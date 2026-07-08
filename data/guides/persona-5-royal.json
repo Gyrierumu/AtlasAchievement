@@ -228,7 +228,9 @@
         "question": "Todos os Will Seeds são necessários?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "summary": "Persona 5 Royal é uma platina longa, acessível e offline: 53 troféus, 100-130h, 2/10, uma jogada com rota correta, terceiro semestre via Maruki e sem NG+, Thieves Den ou DLC."
     },

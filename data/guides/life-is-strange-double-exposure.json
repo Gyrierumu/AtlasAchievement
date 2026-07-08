@@ -241,7 +241,9 @@
         "question": "Preciso comprar o Exclusive Cat Content para platinar?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece a primeira run escolhendo um destino Bay/Bae e mantendo checklist de cenas aberto.",
       "recommendation": "Vale platinar se você aceita repetir a campanha com o outro destino de Life is Strange e acompanhar coletáveis por capítulo. Evite apenas se não quer fazer segunda run ou revisar cenas com checklist.",

@@ -196,7 +196,7 @@
             {
               "items": [
                 "BSAA Emblems: 5.",
-                "Arma importante: H&K MP5.",
+                "Armas importantes: H&K MP5 e S75.",
                 "Tesouro de atenção: Ruby (Marquise)."
               ],
               "title": "Acompanhe"
@@ -221,7 +221,7 @@
             {
               "items": [
                 "BSAA Emblems: 3.",
-                "Armas importantes: S75 e Dragunov SVD.",
+                "Arma importante: Dragunov SVD.",
                 "Tesouros úteis: diamantes e Venom Fang."
               ],
               "title": "Acompanhe"
@@ -1432,7 +1432,169 @@
         "question": "Devo limpar tudo durante a primeira campanha?"
       }
     ],
+    "farmRoutesGuide": {
+      "introduction": "Use esta seção quando faltar dinheiro, pontos de Bonus Features ou upgrades. Ela não substitui Extras da Platina; serve para escolher a rota certa sem repetir capítulos aleatórios.",
+      "notes": [
+        "Dinheiro da campanha compra armas e upgrades; pontos de Bonus Features/Exchange Points compram figuras, costumes e Infinite Ammo.",
+        "Mercenaries pode render pontos de Bonus Features, mas é opcional e não é requisito da platina base.",
+        "DLCs não entram nessa tabela de farm da platina base.",
+        "Não farme por farminho: se você já comprou todas as armas, evoluiu os 18 upgrades e comprou figuras/costumes, siga para Professional e revisão final."
+      ],
+      "routes": [
+        {
+          "bestFor": [
+            "dinheiro geral",
+            "gemas",
+            "Soul Gem"
+          ],
+          "caution": "Soul Gem exige derrotar Popokarimu; se só fugir, perde o tesouro da run.",
+          "note": "Boa rota geral de dinheiro. Coleta gemas, tesouros e Soul Gem, mas não precisa virar farm obrigatório se o jogador já tem dinheiro suficiente.",
+          "route": "Chapter 4-1 — Caves",
+          "when": "Quando faltar dinheiro para upgrades e você quer uma rota segura com tesouros."
+        },
+        {
+          "bestFor": [
+            "Lion Hearts",
+            "dinheiro rápido com combate curto"
+          ],
+          "caution": "Heart Stopper exige ataque no coração do Licker; não confundir farm de dinheiro com o troféu situacional.",
+          "note": "Rota curta e boa para dinheiro quando o jogador já mata Lickers com facilidade.",
+          "route": "Chapter 5-1 — Lickers",
+          "when": "Quando já tiver dano alto e quiser farmar Lickers com segurança."
+        },
+        {
+          "bestFor": [
+            "Power Stones",
+            "dinheiro com inimigos de alto valor"
+          ],
+          "caution": "Reapers punem erro e podem causar morte rápida; não é a melhor rota para jogador despreparado.",
+          "note": "Use apenas quando já tiver dano alto. Se estiver sofrendo, volte para 4-1 ou 5-1.",
+          "route": "Chapter 5-2 ou 5-3 — Reapers / Power Stones",
+          "when": "Quando você mata Reapers rapidamente com Magnum/Rifle forte ou Infinite Ammo."
+        },
+        {
+          "bestFor": [
+            "dinheiro alto por run",
+            "Bad Blood / Heart of Africa"
+          ],
+          "caution": "Heart of Africa só aparece se causar dano suficiente em Wesker; não é farm para primeira campanha.",
+          "note": "Excelente se o jogador já domina o confronto com Wesker. Não vender como rota básica para iniciante.",
+          "route": "Chapter 5-3 — Heart of Africa",
+          "when": "Quando você já consegue causar dano suficiente a Wesker de forma consistente."
+        },
+        {
+          "bestFor": [
+            "Exchange Points / pontos de Bonus Features",
+            "compras de figuras/costumes",
+            "apoio para They’re ACTION Figures!"
+          ],
+          "caution": "É rota de pontos, não de dinheiro principal.",
+          "note": "Boa para comprar figuras, costumes e Infinite Ammo. Não confundir pontos de Bonus Features com dinheiro da campanha.",
+          "route": "Chapter 6-2 — Bonus Features",
+          "when": "Depois de ter Rocket Launcher/Infinite Rocket Launcher ou dano suficiente para limpar o capítulo rápido."
+        },
+        {
+          "bestFor": [
+            "facilitar Professional",
+            "acelerar S ranks",
+            "farm rápido de pontos"
+          ],
+          "caution": "É opcional; não trate como requisito obrigatório da platina.",
+          "note": "Se o jogador concluir a campanha com tempo total abaixo de 5 horas, a Infinite Rocket Launcher facilita muito o cleanup e War Hero. Tratar como atalho opcional, não como obrigação.",
+          "route": "Run sub-5h — Infinite Rocket Launcher",
+          "when": "Rota opcional depois de conhecer capítulos e ter armas infinitas/rota rápida."
+        }
+      ],
+      "title": "Rotas de Farm — dinheiro, pontos e upgrades"
+    },
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": {
+      "blocks": [
+        {
+          "text": "Deixe Professional para o final da platina base. Antes de começar, limpe emblemas, tesouros, Stockpile, upgrades, figuras, ovos e situacionais por Chapter Select. Entrar no Professional com armas fortes e rota conhecida economiza horas.",
+          "title": "Quando fazer"
+        },
+        {
+          "text": "Na campanha base, Professional normalmente fica disponível depois de concluir todos os capítulos no Veteran. Se ainda não aparecer, revise a Seleção de Capítulos e confirme se todos foram concluídos em Veteran ou dificuldade superior.",
+          "title": "Como liberar"
+        },
+        {
+          "items": [
+            "Magnum principal: L. Hawk / Lightning Hawk, S&W M29 ou S&W M500 com Infinite Ammo.",
+            "Rifle: H&K PSG-1 ou S75 para chefes e inimigos distantes.",
+            "Shotgun: Hydra, M3 ou Jail Breaker para controle de grupo.",
+            "Cura: First Aid Spray ou herbs nos dois inventários.",
+            "Defesa opcional: Melee Vest / Bulletproof Vest para mais segurança.",
+            "Rocket Launcher ou Infinite Rocket Launcher ajuda se já estiver liberado, mas não é requisito."
+          ],
+          "title": "Loadout recomendado"
+        },
+        {
+          "groups": [
+            {
+              "items": [
+                "Deixe First Aid Spray ou herbs com a IA.",
+                "Evite inventário cheio de armas fracas.",
+                "Não entregue uma arma cuja munição você não quer que ela gaste.",
+                "Fique perto para resgatar rapidamente.",
+                "Em objetivos situacionais, remova armas da IA se ela estiver matando inimigos cedo demais."
+              ],
+              "title": "Solo com IA"
+            },
+            {
+              "items": [
+                "É uma ajuda opcional, não requisito da platina.",
+                "Dividam funções: dano alto de um lado, cura e controle do outro.",
+                "Combinem resgates e QTEs antes das arenas críticas."
+              ],
+              "title": "Parceiro humano recomendado"
+            }
+          ],
+          "text": "Se jogar solo, trate a IA como suporte. Controle cura, munição e armas; em Professional, fique perto para resgates e evite deixá-la isolada em arenas perigosas.",
+          "title": "IA / parceiro"
+        },
+        {
+          "items": [
+            "Chapter 2-3 — Ndesu/turret: não depende do arsenal; treine em Veteran, priorize QTEs, barris e pontos fracos e evite superaquecer a arma.",
+            "Chapter 5-3 — Wesker/Jill: leve dano alto e cura; parceiro humano ajuda, mas não é obrigatório. Bad Blood e Heart of Africa podem ficar para um cleanup separado.",
+            "Chapter 6-2 — Uroboros/Aheri: o trecho curto pune erros no Professional; Rocket Launcher ajuda muito se estiver disponível.",
+            "Chapter 6-3 — Wesker final: entre com cura e dano alto e conheça os QTEs e a arena final.",
+            "Arenas com instant kill ou QTE: mantenha o parceiro perto, resgate rápido e limpe ameaças antes de avançar."
+          ],
+          "title": "Capítulos críticos"
+        },
+        {
+          "groups": [
+            {
+              "items": [
+                "Professional liberado na Seleção de Capítulos.",
+                "Pelo menos uma Magnum ou Rifle forte com Infinite Ammo.",
+                "Shotgun ou arma de controle de grupo pronta.",
+                "First Aid Sprays ou herbs nos dois inventários.",
+                "IA ou parceiro configurado.",
+                "Chapter 2-3 treinado em Veteran, se necessário.",
+                "Pendências de emblemas, tesouros, ovos, Stockpile e upgrades revisadas.",
+                "Conteúdo adicional fora da campanha base ignorado se o objetivo for apenas a platina."
+              ],
+              "title": "Antes da run"
+            },
+            {
+              "items": [
+                "Entrar no Professional antes de evoluir armas.",
+                "Dar armas demais para a IA e perder controle de munição e dano.",
+                "Confundir Rank S com Professional: são objetivos separados.",
+                "Tentar resolver todos os situacionais durante Professional.",
+                "Misturar conteúdo adicional com War Hero ou com a platina base."
+              ],
+              "title": "Erros que geram retrabalho"
+            }
+          ],
+          "title": "Checklist antes de iniciar War Hero"
+        }
+      ],
+      "introduction": "Use esta seção antes de iniciar War Hero. O objetivo é entrar no Professional com dano, cura e controle da IA suficientes para evitar tentativa e erro.",
+      "title": "Professional e IA — Preparação para War Hero"
+    },
     "quickDecision": {
       "firstAction": "Abra a campanha em Normal se for sua primeira vez ou Veteran se já conhece RE5. Marque emblemas, tesouros e armas desde o início, mas deixe a limpeza perfeita para depois.",
       "mainRisk": "O risco não é perder troféus permanentemente; é repetir capítulos por tesouros de janela interna, emblemas distantes, rank S mal planejado e dinheiro gasto em upgrades sem prioridade.",

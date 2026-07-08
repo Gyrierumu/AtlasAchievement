@@ -667,6 +667,12 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     chapterRouteGuide: seedGame?.chapterRouteGuide && typeof seedGame.chapterRouteGuide === 'object'
       ? JSON.parse(JSON.stringify(seedGame.chapterRouteGuide))
       : null,
+    professionalAiGuide: seedGame?.professionalAiGuide && typeof seedGame.professionalAiGuide === 'object'
+      ? JSON.parse(JSON.stringify(seedGame.professionalAiGuide))
+      : null,
+    farmRoutesGuide: seedGame?.farmRoutesGuide && typeof seedGame.farmRoutesGuide === 'object'
+      ? JSON.parse(JSON.stringify(seedGame.farmRoutesGuide))
+      : null,
     checklist: Array.isArray(seedGame?.checklist) ? seedGame.checklist.slice() : (Array.isArray(editorialSource.checklist) ? editorialSource.checklist.slice() : []),
     walkthrough: deserializeWalkthrough(Array.isArray(seedGame?.walkthrough) && seedGame.walkthrough.length
       ? seedGame.walkthrough

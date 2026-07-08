@@ -112,7 +112,9 @@
         "question": "O troféu Superior pode dar problema?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Conclua a campanha liberando distritos, atividades e recursos antes da limpeza do mapa.",
       "mainRisk": "Nao ha perdivel, online ou coop obrigatorio; o cuidado e nao transformar a limpeza de distritos em checklist solto.",

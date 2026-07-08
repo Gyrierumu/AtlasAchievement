@@ -218,7 +218,9 @@
         "question": "Qual a diferença entre base game e DLC no PS4?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Comece em Amateur ou Normal, jogue as quatro campanhas, marque Serpent Emblems por capítulo e guarde skill points para o Professional e Mad Skillz.",
       "recommendation": "É uma boa platina para fãs da série, mas não é indicada para quem busca uma experiência curta ou sem repetição de capítulos.",

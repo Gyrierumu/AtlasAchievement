@@ -124,7 +124,9 @@
         "question": "O que mais dá trabalho na platina?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "firstAction": "Estabilize recursos básicos, construa uma base funcional e avance a exploração marcando biomas, destroços e rotas profundas com beacons.",
       "recommendation": "Vale platinar Subnautica se você gosta de exploração subaquática, sobrevivência leve e progressão por descoberta. A platina não exige online, coop nem DLC, mas pede planejamento para expedições profundas, veículos, recursos, Aurora, instalações alienígenas e Man's Best Friend antes do lançamento final.",

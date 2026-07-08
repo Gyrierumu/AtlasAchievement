@@ -1820,6 +1820,123 @@ function renderGuideChapterRoutePanelHtml(game = {}) {
     </section>`;
 }
 
+function getGuideProfessionalAi(game = {}) {
+  const professionalGuide = game?.professionalAiGuide;
+  const blocks = Array.isArray(professionalGuide?.blocks)
+    ? professionalGuide.blocks.filter(block => block?.title && (block?.text || block?.items?.length || block?.groups?.length))
+    : [];
+  return blocks.length ? { ...professionalGuide, blocks } : null;
+}
+
+function renderGuideProfessionalAiPanelHtml(game = {}) {
+  const professionalGuide = getGuideProfessionalAi(game);
+  if (!professionalGuide) return '';
+  const intro = professionalGuide.introduction || 'Prepare arsenal, cura e parceiro antes de iniciar War Hero.';
+  return `
+    <section id="guideProfessionalAiPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+      <div class="atlas-section-head atlas-section-head--compact">
+        <div>
+          <div class="atlas-eyebrow">Platina base</div>
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(professionalGuide.title || 'Professional e IA — Preparação para War Hero')}</h2>
+          <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
+        </div>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(professionalGuide.blocks.length))} bloco(s)</span>
+      </div>
+      <div class="space-y-3">
+        ${professionalGuide.blocks.slice(0, 6).map((block, index) => {
+          const panelId = `professional-ai-${index + 1}`;
+          const groups = Array.isArray(block.groups) ? block.groups.filter(group => group?.title && Array.isArray(group?.items) && group.items.length).slice(0, 2) : [];
+          const items = Array.isArray(block.items) ? block.items.slice(0, 8) : [];
+          return `
+          <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+            <h3>
+              <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeHtml(panelId)}" aria-expanded="false" aria-controls="${escapeHtml(panelId)}">
+                <span>${escapeHtml(block.title)}</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </h3>
+            <div id="${escapeHtml(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
+              ${block.text ? `<p class="text-sm text-white/72">${escapeHtml(block.text)}</p>` : ''}
+              ${items.length ? `<ul class="text-sm text-white/72 list-disc pl-5 space-y-1">${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+              ${groups.length ? `
+                <div class="grid md:grid-cols-2 gap-4">
+                  ${groups.map(group => `
+                    <div class="space-y-2">
+                      <h4 class="text-sm font-bold text-white">${escapeHtml(group.title)}</h4>
+                      <ul class="text-sm text-white/72 list-disc pl-5 space-y-1">
+                        ${group.items.slice(0, 8).map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  `).join('')}
+                </div>` : ''}
+            </div>
+          </article>`;
+        }).join('')}
+      </div>
+    </section>`;
+}
+
+function getGuideFarmRoutes(game = {}) {
+  const farmGuide = game?.farmRoutesGuide;
+  const routes = Array.isArray(farmGuide?.routes)
+    ? farmGuide.routes.filter(route => route?.route && (route?.when || route?.caution || route?.bestFor?.length))
+    : [];
+  return routes.length ? { ...farmGuide, routes } : null;
+}
+
+function renderGuideFarmRoutesPanelHtml(game = {}) {
+  const farmGuide = getGuideFarmRoutes(game);
+  if (!farmGuide) return '';
+  const intro = farmGuide.introduction || 'Use esta seção para escolher uma rota curta de farm sem repetir capítulos aleatórios.';
+  const notes = Array.isArray(farmGuide.notes) ? farmGuide.notes.filter(Boolean).slice(0, 4) : [];
+  return `
+    <section id="guideFarmRoutesPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+      <div class="atlas-section-head atlas-section-head--compact">
+        <div>
+          <div class="atlas-eyebrow">Platina base</div>
+          <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(farmGuide.title || 'Rotas de Farm — dinheiro, pontos e upgrades')}</h2>
+          <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
+        </div>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(farmGuide.routes.length))} rota(s)</span>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[760px] text-sm">
+          <thead class="text-left text-white/72">
+            <tr>
+              <th class="py-3 pr-4 font-bold">Rota</th>
+              <th class="py-3 pr-4 font-bold">Melhor para</th>
+              <th class="py-3 pr-4 font-bold">Quando usar</th>
+              <th class="py-3 font-bold">Cuidado</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/10">
+            ${farmGuide.routes.slice(0, 6).map(route => `
+              <tr class="align-top">
+                <td class="py-4 pr-4 text-white font-bold">
+                  ${escapeHtml(route.route)}
+                  ${route.note ? `<p class="mt-2 text-xs font-normal text-white/58">${escapeHtml(route.note)}</p>` : ''}
+                </td>
+                <td class="py-4 pr-4 text-white/72">
+                  <ul class="list-disc pl-5 space-y-1">
+                    ${(Array.isArray(route.bestFor) ? route.bestFor : []).slice(0, 4).map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+                  </ul>
+                </td>
+                <td class="py-4 pr-4 text-white/72">${escapeHtml(route.when || '')}</td>
+                <td class="py-4 text-white/72">${escapeHtml(route.caution || '')}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>
+      ${notes.length ? `
+        <div class="atlas-panel atlas-panel--quiet p-4">
+          <ul class="text-sm text-white/72 list-disc pl-5 space-y-1">
+            ${notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}
+          </ul>
+        </div>` : ''}
+    </section>`;
+}
+
 function getPlatinumExtraCategoryTitle(category = {}) {
   const total = Number(category.total || category.items?.length || 0);
   if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
@@ -2608,7 +2725,7 @@ function buildSsrGuideMarkup(game, relatedGames = [], commentContext = {}) {
   const header = renderGuideHeaderHtml(game, viewModel);
   const decisionStack = renderGuideDecisionStackHtmlV2(game, viewModel);
   const summary = renderGuideSummaryPanelHtml(game, viewModel);
-  const roadmap = `${renderGuideRoadmapPanelHtml(viewModel)}${renderGuideChapterRoutePanelHtml(game)}`;
+  const roadmap = `${renderGuideRoadmapPanelHtml(viewModel)}${renderGuideChapterRoutePanelHtml(game)}${renderGuideProfessionalAiPanelHtml(game)}${renderGuideFarmRoutesPanelHtml(game)}`;
   const platinumExtras = renderGuidePlatinumExtrasPanelHtml(game);
   const dlcCompletion = renderGuideDlcCompletionPanelHtml(game);
   const sidebar = renderGuideSidebarHtml(game, viewModel);

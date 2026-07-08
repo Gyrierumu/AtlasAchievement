@@ -172,7 +172,9 @@
         "question": "Precisa completar 100% do mapa?"
       }
     ],
+    "farmRoutesGuide": null,
     "note": "Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.",
+    "professionalAiGuide": null,
     "quickDecision": {
       "summary": "Platina offline de 25-30h e 4/10, sem perdíveis, online, coop, dificuldade obrigatória ou DLC. Faça a campanha para liberar poderes, volte em free roam e feche side quests, coletáveis base, upgrades e misc sem misturar Mask of Darkness."
     },
