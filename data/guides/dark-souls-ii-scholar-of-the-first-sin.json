@@ -160,6 +160,7 @@
         "title": "NPCs podem empurrar outra run"
       }
     ],
+    "chapterRouteGuide": null,
     "checklist": [
       "Confirmar 38 troféus: 1 platina, 2 ouro, 23 prata e 12 bronze.",
       "Manter onlineRequired false, coopRequired false e dlcRequired false.",

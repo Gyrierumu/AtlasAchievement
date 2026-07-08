@@ -89,6 +89,7 @@ function getSeedExtrasBySlug() {
         ? guideViewModel.buildGuideQuickPlan(game, { roadmap: game.roadmap || [] })
         : [],
       quickDecision: game.quickDecision || null,
+      chapterRouteGuide: game.chapterRouteGuide || null,
       dlcCompletionGuide: game.dlcCompletionGuide || null,
       seo: game.seo || {},
       tags: game.tags || [],

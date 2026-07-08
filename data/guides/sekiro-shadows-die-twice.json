@@ -165,6 +165,7 @@
         "title": "Sem online/co-op"
       }
     ],
+    "chapterRouteGuide": null,
     "checklist": [
       "Confirmar 34 troféus da lista base.",
       "Confirmar onlineRequired false, coopRequired false e dlcRequired false.",

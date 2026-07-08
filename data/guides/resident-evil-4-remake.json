@@ -75,6 +75,7 @@
   "seedExtras": {
     "aliases": [],
     "attentionPoints": [],
+    "chapterRouteGuide": null,
     "checklist": [
       "Concluir a primeira campanha e guardar saves manuais em slots separados.",
       "Pegar tesouros da vila para Bandit.",

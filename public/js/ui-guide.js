@@ -726,6 +726,58 @@ window.UIGuide = (() => {
     return { ...dlcGuide, packages, checklist };
   }
 
+  function getGuideChapterRoute(game = {}) {
+    const routeGuide = game?.chapterRouteGuide;
+    const chapters = Array.isArray(routeGuide?.chapters)
+      ? routeGuide.chapters.filter(chapter => chapter?.chapter && Array.isArray(chapter?.sections) && chapter.sections.length)
+      : [];
+    return chapters.length ? { ...routeGuide, chapters } : null;
+  }
+
+  function renderGuideChapterRoutePanel(game = {}) {
+    const routeGuide = getGuideChapterRoute(game);
+    if (!routeGuide) return '';
+    const intro = routeGuide.introduction || 'Use esta rota como visÃ£o rÃ¡pida do que observar em cada capÃ­tulo. Ela nÃ£o substitui as listas completas de Extras da Platina.';
+    return `
+      <section id="guideChapterRoutePanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <div class="atlas-eyebrow">Platina base</div>
+            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(routeGuide.title || 'Rota por CapÃ­tulo â€” Platina Base')}</h2>
+            <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
+          </div>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(routeGuide.chapters.length))} capÃ­tulo(s)</span>
+        </div>
+        <div class="space-y-3">
+          ${routeGuide.chapters.map((chapter, index) => {
+            const panelId = `chapter-route-${String(chapter.chapter || index).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+            return `
+            <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+              <h3>
+                <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeAttribute(panelId)}" aria-expanded="${index === 0 ? 'true' : 'false'}" aria-controls="${escapeAttribute(panelId)}">
+                  <span>${escapeHtml(chapter.chapter)}</span>
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div id="${escapeAttribute(panelId)}" class="${index === 0 ? '' : 'is-collapsed '}space-y-3" data-guide-section-content aria-hidden="${index === 0 ? 'false' : 'true'}"${index === 0 ? '' : ' hidden'}>
+                ${chapter.note ? `<p class="text-sm text-white/62">${escapeHtml(chapter.note)}</p>` : ''}
+                <div class="grid md:grid-cols-2 gap-3">
+                  ${chapter.sections.map(section => `
+                    <div class="atlas-panel atlas-panel--quiet p-4 space-y-2">
+                      <h4 class="text-sm font-bold text-white">${escapeHtml(section.title || '')}</h4>
+                      <ul class="text-sm text-white/72 list-disc pl-5 space-y-1">
+                        ${(Array.isArray(section.items) ? section.items : []).slice(0, 5).map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+                      </ul>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </article>`;
+          }).join('')}
+        </div>
+      </section>`;
+  }
+
   function getPlatinumExtraCategoryTitle(category = {}) {
     const total = Number(category.total || category.items?.length || 0);
     if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
@@ -1937,7 +1989,7 @@ window.UIGuide = (() => {
     }
 
     if (roadmapEl) {
-      roadmapEl.innerHTML = renderGuideRoadmapPanel(viewModel);
+      roadmapEl.innerHTML = `${renderGuideRoadmapPanel(viewModel)}${renderGuideChapterRoutePanel(game)}`;
     }
 
     if (platinumExtrasEl) {

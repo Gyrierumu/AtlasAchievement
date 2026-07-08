@@ -140,6 +140,437 @@
         "type": "Ovos / RNG"
       }
     ],
+    "chapterRouteGuide": {
+      "chapters": [
+        {
+          "chapter": "Chapter 1-1",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: nenhum neste capítulo.",
+                "Tesouro de atenção: Topaz (Marquise) no fim da horda."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Meat Shower, Ride the Lightning e Stop, Drop, & Roll são convenientes na arena final."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Gatling Gun, Longbow, Stun Rod e headshots ficam melhores depois, com armas liberadas ou Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 1-2",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 3.",
+                "Tesouros úteis: Antique Clock e Ivory Relief."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "A Friend in Need, Lifeguard e ações simples de combate podem vir naturalmente."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Rank S e qualquer emblema esquecido podem ser limpos depois por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 2-1",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 5.",
+                "Arma importante: H&K MP5.",
+                "Tesouro de atenção: Ruby (Marquise)."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Fireworks e Be the Knife são boas tentativas aqui."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Ruby (Marquise) exige abrir barracas com explosivo; se passar, repita por Chapter Select."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 2-2",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 3.",
+                "Armas importantes: S75 e Dragunov SVD.",
+                "Tesouros úteis: diamantes e Venom Fang."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Fireworks pode ser tentado contra inimigos com explosivos."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Ranks S e tesouros do penhasco ficam mais fáceis com rota conhecida."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 2-3",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: nenhum neste capítulo.",
+                "Capítulo de turret, sem valor para armas infinitas."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Drive By: mire no motorista do caminhão blindado."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Treine Veteran/Professional depois se o trecho estiver travando a rota."
+              ],
+              "title": "Deixe para cleanup"
+            },
+            {
+              "items": [
+                "Este capítulo continua perigoso no Professional porque não depende do seu arsenal."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 3-1",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 4.",
+                "Armas importantes: Rocket Launcher e S&W M29.",
+                "Ovos: ilha das galinhas para White Egg, Brown Egg e Gold Egg."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Blue Enigma e exploração das ilhas ajudam tesouros e dinheiro."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Rotten Egg é farm posterior/RNG; não trate como drop garantido aqui."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 3-2",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 2.",
+                "Tesouros da refinaria e rota do barco entram no checklist de Extras."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "The Works é conveniente contra Big Man Majini com parceiro humano ou IA bem controlada."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Se o combo falhar, tire armas fortes da IA e repita por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            },
+            {
+              "items": [
+                "Um emblema fica durante o timer do barco; confira antes de sair da área."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 3-3",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 1.",
+                "Tesouro de atenção: Emerald (Marquise)."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "A rota curta ajuda a revisar tempo para Rank S depois."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Se esquecer o tesouro, repita o capítulo por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 4-1",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 3.",
+                "Tesouro crítico: Soul Gem.",
+                "Farm útil: aranhas para Cattle Prod e Go into the Light."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Go into the Light e Cattle Prod ficam práticos em dificuldade baixa."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Soul Gem exige derrotar Popokarimu antes de fugir; se passar, repita por Chapter Select."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 4-2",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 1.",
+                "Tesouros úteis: Idol (Gold), Beetle (Gold) e Diamond (Trilliant)."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Revise salas opcionais enquanto resolve os lasers."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Ranks S e tesouros esquecidos podem ser refeitos por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 5-1",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 1.",
+                "Farm útil: Lion Hearts dos Lickers."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Heart Stopper: derrube um Licker e finalize no coração."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Farm de dinheiro com Lickers fica melhor com dano alto."
+              ],
+              "title": "Deixe para cleanup"
+            },
+            {
+              "items": [
+                "Heart Stopper exige acertar o coração, não apenas matar o Licker com tiros."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 5-2",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 1.",
+                "Farm útil: Power Stones dos Reapers.",
+                "Tesouro útil: Dead Bride’s Necklace."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Use o capítulo para dinheiro quando já matar Reapers com segurança."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Ranks S e farm ficam mais confortáveis depois de upgrades fortes."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 5-3",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 3.",
+                "Tesouro crítico: Heart of Africa."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Bad Blood e Masters of Removing pertencem a este bloco de campanha."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Se faltar dano em Wesker ou o tesouro não aparecer, repita 5-3 por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            },
+            {
+              "items": [
+                "Heart of Africa e Bad Blood envolvem Wesker, mas não são o mesmo objetivo."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 6-1",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: 3.",
+                "Tesouro útil: Topaz (Oval)."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Revise estoque de granadas/Proximity Bomb para Stockpile quando estiver organizando inventário."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Emblemas distantes ficam mais seguros com rifle e calma por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            },
+            {
+              "items": [
+                "O BSAA Emblem dentro do container exige explosivo ou dinamite inimiga."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 6-2",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: nenhum neste capítulo.",
+                "Boa rota curta para pontos de Bonus Features."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Repetir com Rocket Launcher ajuda pontos e Rank S em dificuldade baixa."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Use depois para completar compras de figuras/costumes, não durante a primeira campanha."
+              ],
+              "title": "Deixe para cleanup"
+            }
+          ]
+        },
+        {
+          "chapter": "Chapter 6-3",
+          "sections": [
+            {
+              "items": [
+                "BSAA Emblems: nenhum neste capítulo.",
+                "Tesouro crítico: Diamond (Marquise)."
+              ],
+              "title": "Acompanhe"
+            },
+            {
+              "items": [
+                "Fechamento natural para War Hero quando Professional estiver preparado."
+              ],
+              "title": "Pode adiantar"
+            },
+            {
+              "items": [
+                "Se o Diamond (Marquise) ficar para trás, repita a arena final por Chapter Select."
+              ],
+              "title": "Deixe para cleanup"
+            },
+            {
+              "items": [
+                "Diamond (Marquise) fica na área final; pegue antes de concluir o capítulo."
+              ],
+              "title": "Alerta"
+            }
+          ]
+        }
+      ],
+      "introduction": "Use esta rota como visão rápida do que observar em cada capítulo. Ela não substitui as listas completas de Extras da Platina; serve para você saber quando abrir cada checklist e evitar retrabalho.",
+      "title": "Rota por Capítulo — Platina Base"
+    },
     "checklist": [
       "Visão geral: confirmar 51 troféus da lista base para a platina. No PS4, a lista completa da PSN pode aparecer com 71 troféus por causa dos DLCs Versus, Lost in Nightmares e Desperate Escape; esses 20 troféus extras contam para 100% da lista, mas não são necessários para a platina.",
       "Requisitos especiais: Professional obrigatório; Amateur/Normal/Veteran por conclusão de capítulos; Seleção de Capítulos disponível para cleanup; grind de dinheiro e pontos de Bonus Features; rank S em todos os capítulos para figuras.",
@@ -1036,7 +1467,7 @@
         "title": "Farm de dinheiro e upgrades"
       },
       {
-        "detail": "Use Extras da Platina para limpar ovos e troféus situacionais por Chapter Select.",
+        "detail": "Limpe ovos e troféus situacionais por Chapter Select antes da revisão final.",
         "number": 6,
         "title": "Troféus situacionais"
       },

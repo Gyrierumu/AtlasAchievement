@@ -75,6 +75,7 @@
   "seedExtras": {
     "aliases": [],
     "attentionPoints": [],
+    "chapterRouteGuide": null,
     "checklist": [
       "Concluir a rota do Submundo até Tartarus.",
       "Concluir a rota da Superfície até o Summit.",
