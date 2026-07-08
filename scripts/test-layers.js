@@ -431,6 +431,7 @@ async function validateGuide(slug = '') {
     assert.strictEqual(dlcPackagesById['lost-in-nightmares']?.roadmapTitle, 'Rota segura', 'Lost in Nightmares deve ter Rota segura');
     assert.strictEqual((dlcPackagesById['lost-in-nightmares']?.roadmap || []).length, 5, 'Lost in Nightmares deve manter 5 passos compactos');
     assert(dlcText.includes('Faça as 18 Score Stars em uma única jogada') && dlcText.includes('Score Stars não são BSAA Emblems') && dlcText.includes('Não exige Professional para S rank'), 'Lost in Nightmares deve separar Score Stars, BSAA, S rank e Professional');
+    assert(dlcText.includes('Parceiro humano pode ajudar em Professional e Kung Fu Fighting') && !dlcText.includes('Coop/parceiro humano pode ajudar'), 'Lost in Nightmares deve usar microcopy publica de parceiro humano');
     assert.strictEqual(dlcPackagesById['desperate-escape']?.roadmapTitle, 'Rota segura', 'Desperate Escape deve ter Rota segura');
     assert.strictEqual((dlcPackagesById['desperate-escape']?.roadmap || []).length, 4, 'Desperate Escape deve manter 4 passos compactos');
     assert(dlcText.includes('Derrotar 150 inimigos em uma única jogada') && dlcText.includes('Derrotar os 3 Agitator Majini na mesma jogada') && dlcText.includes('Jogando em dupla, o jogador que precisa do troféu deve fazer a maior parte das kills'), 'Desperate Escape deve tratar 150 kills e 3 Agitator na mesma run');
@@ -1338,6 +1339,9 @@ async function validateGuide(slug = '') {
       assert(html.includes('DLC não obrigatório') || html.includes('DLC nÃ£o obrigatÃ³rio'), 'Resident Evil 5 deve exibir DLC nao obrigatorio');
       assert(html.includes('Sem online obrigatório') || html.includes('Sem online obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem online obrigatorio');
       assert(html.includes('Sem coop obrigatório') || html.includes('Sem coop obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem coop obrigatorio');
+      assert(!guideScopedHtml.includes('atlas-trophy-youtube-link'), 'Resident Evil 5 nao deve renderizar buscas automaticas de video em todos os trofeus');
+      assert(!guideScopedHtml.includes('<span>YouTube</span>'), 'Resident Evil 5 nao deve exibir rotulo generico YouTube');
+      assert(!guideScopedHtml.includes('Concluir YouTube'), 'Resident Evil 5 nao deve exibir rotulo generico Concluir YouTube');
       assert.strictEqual((quickPlanHtml.match(/<li>/g) || []).length, 7, 'Plano rapido de Resident Evil 5 deve renderizar 7 etapas');
       assert(quickPlanHtml.includes('Professional e revisão final') || quickPlanHtml.includes('Professional e revisÃ£o final'), 'Plano rapido de Resident Evil 5 deve incluir etapa final Professional');
       assert(quickPlanHtml.includes('Complete todos os capítulos no Professional') || quickPlanHtml.includes('Complete todos os capÃ­tulos no Professional'), 'Plano rapido de Resident Evil 5 deve descrever Professional e revisao final');
@@ -1402,6 +1406,9 @@ async function validateGuide(slug = '') {
       assert(extrasPanelHtml.includes('BSAA Emblems') && extrasPanelHtml.includes('Tesouros') && extrasPanelHtml.includes('Troféus situacionais'), 'Extras da Platina de Resident Evil 5 deve manter categorias operacionais da base');
       assert(dlcPanelHtml.includes('DLCs e 100% da Lista'), 'Resident Evil 5 deve renderizar secao separada de DLCs e 100% da Lista');
       assert(dlcPanelHtml.includes('Versus') && dlcPanelHtml.includes('Lost in Nightmares') && dlcPanelHtml.includes('Desperate Escape'), 'Resident Evil 5 deve manter os 3 pacotes DLC separados');
+      assert(dlcPanelHtml.includes('Parceiro humano pode ajudar em Professional e Kung Fu Fighting') && !dlcPanelHtml.includes('Coop/parceiro humano pode ajudar'), 'DLCs SSR deve usar microcopy publica de parceiro humano em Lost in Nightmares');
+      assert(html.includes('Observações finais') || html.includes('ObservaÃ§Ãµes finais'), 'FAQ de Resident Evil 5 deve usar rotulo publico Observacoes finais');
+      assert(!guideScopedHtml.includes('Notas editoriais'), 'Resident Evil 5 nao deve exibir rotulo publico Notas editoriais');
       assert(dlcPanelHtml.includes('20 troféus') || dlcPanelHtml.includes('20 trofÃ©us'), 'DLCs de Resident Evil 5 devem manter total DLC de 20 trofeus');
       assert.strictEqual(apiGame.dlcCompletionGuide?.packages?.find(pack => pack.id === 'versus')?.roadmap?.length, 3, 'API de RE5 deve expor 3 sessoes de boost de Versus');
       assert(dlcPanelHtml.includes('Ordem recomendada para o 100% completo'), 'DLCs SSR deve renderizar ordem recomendada para 100% completo');

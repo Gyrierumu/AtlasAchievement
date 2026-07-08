@@ -841,7 +841,8 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
     : '';
   const toggleLabel = done ? 'Desmarcar' : 'Concluir';
   const toggleAria = `${toggleLabel} ${primaryName}`;
-  const youtubeSearchUrl = typeof sharedGuideViewModel.buildTrophyYoutubeSearchUrl === 'function'
+  const allowAutomaticYoutubeSearch = String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5';
+  const youtubeSearchUrl = allowAutomaticYoutubeSearch && typeof sharedGuideViewModel.buildTrophyYoutubeSearchUrl === 'function'
     ? sharedGuideViewModel.buildTrophyYoutubeSearchUrl(game?.name || game?.title || '', trophy)
     : '';
   const youtubeAriaLabel = typeof sharedGuideViewModel.buildTrophyYoutubeSearchAriaLabel === 'function'
@@ -1227,7 +1228,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
     <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6">
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
-          <span class="atlas-section-kicker">Notas editoriais</span>
+          <span class="atlas-section-kicker">${normalizedSlug === 'resident-evil-5' ? 'Observações finais' : 'Notas editoriais'}</span>
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2>
           <p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p>
         </div>
