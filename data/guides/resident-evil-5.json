@@ -675,6 +675,52 @@
       "Checklist tesouro 49/50 - Soul Gem: 4-1, drop do Popokarimu se você matar o boss antes de fugir. Pré-requisito: ficar e matar; alerta: janela de capítulo, fugir não registra.",
       "Checklist tesouro 50/50 - Heart of Africa: 5-3, chão entre as escadas se você causou dano suficiente na primeira luta do capítulo. Pré-requisito: causar dano alto antes do limite; alerta: se não aparecer, repita 5-3 preparado."
     ],
+    "commonMythsGuide": {
+      "introduction": "Use esta seção para evitar retrabalho. São confusões comuns de RE5 que parecem requisito de platina, mas muitas vezes são DLC, cleanup ou detalhe de checklist.",
+      "myths": [
+        {
+          "correction": "Não. Versus é DLC e conta apenas para o 100% da lista completa. A platina base continua nos 51 troféus do jogo principal.",
+          "myth": "Versus é obrigatório para platinar.",
+          "where": "DLCs e 100% da Lista > Versus."
+        },
+        {
+          "correction": "Não. 71 é a lista completa: 51 base + 20 DLC. A platina usa apenas os 51 troféus base.",
+          "myth": "A lista tem 71 troféus, então preciso fazer DLC para platinar.",
+          "where": "Resumo e DLCs e 100% da Lista."
+        },
+        {
+          "correction": "Não. Além das armas, revise Hand Grenade, Incendiary Grenade, Flash Grenade e Proximity Bomb. Esses itens são causa comum de Stockpile não desbloquear.",
+          "myth": "Stockpile é só comprar todas as armas.",
+          "where": "Extras da Platina > Armas e Stockpile."
+        },
+        {
+          "correction": "Precisa sim. Essas armas têm upgrades e contam depois de desbloqueadas/compradas. Gatling Gun, Longbow, Stun Rod, Grenade Launcher e Rocket Launcher não entram como upgrades tradicionais.",
+          "myth": "Take It to the Max não precisa de M93R, Hydra e S&W M500.",
+          "where": "Extras da Platina > Upgrades — Take It to the Max."
+        },
+        {
+          "correction": "Não. BSAA Emblems são da campanha base. Score Stars são coletáveis da DLC Lost in Nightmares e contam apenas para Wish Upon a Star.",
+          "myth": "Score Stars são BSAA Emblems.",
+          "where": "Extras da Platina > BSAA Emblems e DLCs e 100% da Lista > Lost in Nightmares."
+        },
+        {
+          "correction": "Não. Os S ranks podem ser buscados separadamente em dificuldade baixa. Professional é exigido para War Hero na campanha base e para troféus específicos das DLCs.",
+          "myth": "S rank precisa ser feito no Professional.",
+          "where": "Extras da Platina > Ranks S e Professional e IA — Preparação para War Hero."
+        },
+        {
+          "correction": "Não venda o primeiro Rotten Egg antes de concluir Egg Hunt e Egg on Your Face. Guarde pelo menos um para derrotar um Majini.",
+          "myth": "Rotten Egg pode ser vendido assim que pegar.",
+          "where": "Extras da Platina > Ovos — Egg Hunt e Egg on Your Face."
+        },
+        {
+          "correction": "Não. Night Terrors e Run the Gauntlet são Professional de DLCs. Eles contam para 100% completo, não alteram a platina base.",
+          "myth": "Professional das DLCs muda a platina base.",
+          "where": "DLCs e 100% da Lista > Lost in Nightmares / Desperate Escape."
+        }
+      ],
+      "title": "Mitos e erros comuns"
+    },
     "dlcCompletionGuide": {
       "baseTrophies": 51,
       "checklist": [
@@ -973,36 +1019,33 @@
           "roadmap": [
             {
               "actions": [
-                "Confirmar personagens desbloqueados/comprados no Bonus Features.",
-                "Organizar 2 jogadores para modos solo e 4 jogadores para modos de equipe.",
-                "Separar sessão para vitórias e sessão para objetivos de pontuação/combo/físicos."
+                "2 jogadores já ajudam nos modos solo.",
+                "Faça 15 vitórias em Slayers para Army of One.",
+                "Faça 15 vitórias em Survivors para Eye of the Tiger.",
+                "Aproveite para Keep the Good Times Rolling, It’s All About the Points e Bringing the Pain."
               ],
-              "title": "Preparar o boost"
+              "title": "Sessão 1 — Slayers / Survivors"
             },
             {
               "actions": [
-                "Army of One: 15 vitórias em Slayers.",
-                "Eye of the Tiger: 15 vitórias em Survivors.",
-                "Aproveitar para Keep the Good Times Rolling, It’s All About the Points e Bringing the Pain."
+                "Ideal com 4 jogadores.",
+                "Faça 15 vitórias em Team Slayers.",
+                "Faça 15 vitórias em Team Survivors.",
+                "Aproveite para It Takes Two to Tango e There’s no “I” in Team."
               ],
-              "title": "Fazer Slayers e Survivors"
+              "title": "Sessão 2 — Team Slayers / Team Survivors"
             },
             {
               "actions": [
-                "The Team That Slays Together...: 15 vitórias em Team Slayers.",
-                "We Will Survive: 15 vitórias em Team Survivors.",
-                "Aproveitar para It Takes Two to Tango e There’s no “I” in Team."
+                "Compre/desbloqueie todos os personagens do Versus.",
+                "Finalize Bringing the Pain com 50 eliminações físicas, se ainda faltar.",
+                "Confira se todos os 10 troféus do pacote desbloquearam."
               ],
-              "title": "Fazer Team Slayers e Team Survivors"
-            },
-            {
-              "actions": [
-                "Let’s Get This Party Started!: comprar/desbloquear todos os personagens selecionáveis do Versus.",
-                "Bringing the Pain: completar 50 eliminações com ataques físicos, se ainda faltar."
-              ],
-              "title": "Fechar personagens e eliminações físicas"
+              "title": "Sessão 3 — limpeza"
             }
           ],
+          "roadmapIntroduction": "Versus é o único bloco realmente online/multiplayer do 100% completo. Para reduzir tempo, organize sessões separadas para vitórias, pontuação, combos e ataques físicos.",
+          "roadmapTitle": "Rota de boost recomendada",
           "rules": [
             "Versus é DLC e conta apenas para o 100% da lista completa.",
             "Versus não é necessário para a platina base.",
@@ -1084,49 +1127,42 @@
             {
               "actions": [
                 "Concluir a DLC para Must’ve Got Lost.",
-                "Aprender layout da mansão, puzzles, prisão/celas e confronto final.",
-                "Fazer Wish Upon a Star nesta run se for seguir a checklist das 18 Score Stars."
+                "Aprender puzzles, mansão, prisão/celas e encontro com Wesker."
               ],
-              "title": "Primeira run em Amateur/Normal"
+              "title": "Run de reconhecimento"
             },
             {
               "actions": [
-                "Destruir as 18 Score Stars de Lost in Nightmares na mesma jogada.",
-                "Score Stars são separadas dos BSAA Emblems da campanha base.",
-                "Usar dificuldade baixa para facilitar.",
-                "Antes de descer para a prisão/celas, revisar as 11 primeiras estrelas da mansão por causa do ponto de não retorno."
+                "Faça as 18 Score Stars em uma única jogada.",
+                "Score Stars não são BSAA Emblems.",
+                "Revise o checklist de Score Stars antes de avançar para áreas sem retorno."
               ],
               "title": "Run de Score Stars"
             },
             {
               "actions": [
-                "Fazer It’s Just a Bad Dream!.",
-                "Pode ser em dificuldade baixa.",
-                "Priorizar tempo, precisão, inimigos mortos e dano recebido.",
-                "O S rank pode ser feito separado de Professional."
+                "Faça It’s Just a Bad Dream! em dificuldade baixa se quiser reduzir risco.",
+                "Não exige Professional para S rank."
               ],
               "title": "Run de S rank"
             },
             {
               "actions": [
-                "Fazer Night Terrors.",
-                "Conhecer a rota antes de tentar.",
-                "Coop/parceiro humano pode ajudar, mas não é obrigatório.",
-                "Online não é obrigatório para esta DLC."
+                "Faça Night Terrors separadamente.",
+                "Parceiro humano recomendado pode ajudar, mas não é obrigatório."
               ],
               "title": "Run Professional"
             },
             {
               "actions": [
-                "Causar dano suficiente a Wesker no confronto da mansão.",
-                "Pode ser tentado em dificuldade baixa.",
-                "Manter distância, atirar para provocar a investida, esquivar no QTE e aplicar ataque físico.",
-                "Com parceiro humano, sincronizar ataques físicos facilita.",
+                "Faça em dificuldade baixa se necessário.",
                 "Se falhar, repetir a DLC até o encontro com Wesker."
               ],
               "title": "Kung Fu Fighting"
             }
           ],
+          "roadmapIntroduction": "Lost in Nightmares fica mais limpo se você separar as metas: primeiro conhecer a DLC, depois fazer Score Stars, depois S rank e Professional.",
+          "roadmapTitle": "Rota segura",
           "rules": [
             "Lost in Nightmares é DLC e conta apenas para o 100% da lista completa.",
             "Lost in Nightmares não é necessário para a platina base.",
@@ -1206,40 +1242,38 @@
             {
               "actions": [
                 "Concluir a DLC para Getaway.",
-                "Aprender a rota, spawns, áreas abertas, rooftops, turrets e final no landing pad.",
-                "Aproveitar para entender onde aparecem os Agitator Majini."
+                "Aprender spawns, áreas abertas, turrets e final."
               ],
-              "title": "Primeira run em Amateur/Normal"
+              "title": "Run de reconhecimento"
             },
             {
               "actions": [
-                "Fazer The Great Escape.",
-                "Pode ser em dificuldade baixa.",
-                "Priorizar tempo, kills, pontuação e pouco dano recebido.",
-                "O S rank pode ser feito separado de Professional."
+                "Faça The Great Escape em dificuldade baixa.",
+                "Não exige Professional para S rank."
               ],
               "title": "Run de S rank"
             },
             {
               "actions": [
                 "Fazer em dificuldade baixa para facilitar.",
+                "Limpar áreas antes de avançar.",
                 "Derrotar 150 inimigos em uma única jogada.",
                 "Derrotar os 3 Agitator Majini na mesma jogada.",
-                "Limpar áreas antes de avançar para não perder spawns.",
-                "Jogando em dupla, deixe o jogador que busca Way of the Warrior fazer as kills importantes."
+                "Jogando em dupla, o jogador que precisa do troféu deve fazer a maior parte das kills."
               ],
-              "title": "Run focada em Way of the Warrior + Shoot the Messenger"
+              "title": "Run 150 kills + Agitator"
             },
             {
               "actions": [
-                "Fazer Run the Gauntlet.",
-                "Usar rota conhecida e cautela nos bosses.",
-                "Parceiro humano ajuda, mas não é obrigatório.",
+                "Faça Run the Gauntlet separadamente.",
+                "Parceiro humano pode ajudar, mas não é obrigatório.",
                 "Professional da DLC não muda a dificuldade/flags da platina base."
               ],
               "title": "Run Professional"
             }
           ],
+          "roadmapIntroduction": "Desperate Escape tem dois troféus que pedem run focada: Way of the Warrior e Shoot the Messenger. Faça uma jogada em dificuldade baixa só para 150 kills e 3 Agitator Majini antes de tentar Professional.",
+          "roadmapTitle": "Rota segura",
           "rules": [
             "Desperate Escape é DLC e conta apenas para o 100% da lista completa.",
             "Desperate Escape não é necessário para a platina base.",
@@ -1259,45 +1293,38 @@
       "roadmap": [
         {
           "actions": [
-            "Concluir os 51 troféus do jogo principal antes de entrar nas DLCs.",
-            "Usar arsenal, experiência e domínio do jogo para facilitar as DLCs de história."
+            "Conclua os 51 troféus do jogo principal antes de entrar nas DLCs."
           ],
-          "title": "Fechar a platina base primeiro"
+          "title": "Feche a platina base primeiro"
         },
         {
           "actions": [
-            "Concluir em qualquer dificuldade.",
-            "Pegar 18 Score Stars.",
-            "Buscar S rank.",
-            "Fechar Professional."
+            "Faça conclusão, 18 Score Stars, S rank e Night Terrors sem misturar com BSAA Emblems."
           ],
           "title": "Fazer Lost in Nightmares"
         },
         {
           "actions": [
-            "Concluir em qualquer dificuldade.",
-            "Buscar S rank.",
-            "Fechar Professional.",
-            "Fazer Way of the Warrior e Shoot the Messenger."
+            "Faça conclusão, S rank, 150 kills, 3 Agitator Majini e Run the Gauntlet em runs separadas quando precisar."
           ],
           "title": "Fazer Desperate Escape"
         },
         {
           "actions": [
-            "Recomendar boosting organizado.",
-            "Separar modos Slayers, Survivors, Team Slayers e Team Survivors.",
-            "Deixar claro que é online/multiplayer apenas para 100%, não para platina."
+            "Depende de online/multiplayer; organize boost depois que a platina base e as DLCs de história estiverem encaminhadas."
           ],
-          "title": "Fazer Versus por último"
+          "title": "Deixe Versus por último"
         }
       ],
+      "roadmapIntro": "Essa ordem mantém a platina base limpa e deixa o grind online para o final.",
+      "roadmapTitle": "Ordem recomendada para o 100% completo",
       "scopeNotes": [
         "A platina base exige apenas os 51 troféus do jogo principal.",
         "A lista completa pode aparecer com 71 troféus porque inclui DLCs.",
         "Os 20 troféus extras de DLC contam para 100% da lista, mas não para a platina.",
         "Versus, Lost in Nightmares e Desperate Escape ficam fora de Extras da Platina.",
         "Extras da Platina continua sendo apenas para checklists detalhados da platina base.",
-        "DLCs não alteram o topo da platina base para online/coop obrigatório."
+        "DLCs não alteram o topo da platina base para exigir online ou parceiro."
       ],
       "title": "DLCs e 100% da Lista",
       "totalTrophies": 71
@@ -1420,8 +1447,20 @@
         "question": "Versus é obrigatório?"
       },
       {
+        "answer": "Versus. Online/multiplayer é exigência do Versus para 100% completo, não da platina base.",
+        "question": "Qual DLC é online?"
+      },
+      {
+        "answer": "Versus pelo online/grind e Desperate Escape por 150 kills, 3 Agitator Majini e Professional.",
+        "question": "Qual DLC costuma dar mais trabalho?"
+      },
+      {
         "answer": "Não. Lost in Nightmares e Desperate Escape são DLCs de história/pós-platina e contam só para o 100% da lista completa.",
         "question": "Lost in Nightmares e Desperate Escape são da platina?"
+      },
+      {
+        "answer": "Não. Night Terrors e Run the Gauntlet são troféus de DLC.",
+        "question": "Professional das DLCs muda a platina?"
       },
       {
         "answer": "Não. Extras da Platina é só apoio detalhado para a platina base; Versus, Lost in Nightmares e Desperate Escape ficam separados em DLCs e 100% da Lista.",

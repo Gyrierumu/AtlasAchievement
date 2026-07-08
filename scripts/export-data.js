@@ -92,6 +92,7 @@ function getSeedExtrasBySlug() {
       chapterRouteGuide: game.chapterRouteGuide || null,
       professionalAiGuide: game.professionalAiGuide || null,
       farmRoutesGuide: game.farmRoutesGuide || null,
+      commonMythsGuide: game.commonMythsGuide || null,
       dlcCompletionGuide: game.dlcCompletionGuide || null,
       seo: game.seo || {},
       tags: game.tags || [],

@@ -895,6 +895,53 @@ window.UIGuide = (() => {
       </section>`;
   }
 
+  function getGuideCommonMyths(game = {}) {
+    const mythsGuide = game?.commonMythsGuide;
+    const myths = Array.isArray(mythsGuide?.myths)
+      ? mythsGuide.myths.filter(item => item?.myth && item?.correction && item?.where)
+      : [];
+    return myths.length ? { ...mythsGuide, myths } : null;
+  }
+
+  function renderGuideCommonMythsPanel(game = {}) {
+    const mythsGuide = getGuideCommonMyths(game);
+    if (!mythsGuide) return '';
+    const intro = mythsGuide.introduction || 'Use esta seção para evitar retrabalho antes de fechar a platina base.';
+    const myths = mythsGuide.myths.slice(0, 8);
+    return `
+      <section id="guideCommonMythsPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <div class="atlas-eyebrow">Platina base</div>
+            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(mythsGuide.title || 'Mitos e erros comuns')}</h2>
+            <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
+          </div>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(myths.length))} mito(s)</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          ${myths.map((item, index) => `
+            <article class="atlas-panel atlas-panel--support p-4 space-y-3">
+              <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>
+              <dl class="space-y-3 text-sm">
+                <div>
+                  <dt class="font-bold text-white">Mito</dt>
+                  <dd class="mt-1 text-white/72">${escapeHtml(item.myth)}</dd>
+                </div>
+                <div>
+                  <dt class="font-bold text-white">Correção</dt>
+                  <dd class="mt-1 text-white/72">${escapeHtml(item.correction)}</dd>
+                </div>
+                <div>
+                  <dt class="font-bold text-white">Onde conferir</dt>
+                  <dd class="mt-1 text-white/72">${escapeHtml(item.where)}</dd>
+                </div>
+              </dl>
+            </article>
+          `).join('')}
+        </div>
+      </section>`;
+  }
+
   function getPlatinumExtraCategoryTitle(category = {}) {
     const total = Number(category.total || category.items?.length || 0);
     if (category.id === 'bsaa-emblems') return `BSAA Emblems — ${total} itens`;
@@ -1050,6 +1097,7 @@ window.UIGuide = (() => {
     return Array.from(groups.entries()).map(([key, items]) => {
       const pack = packagesById.get(key) || {};
       const title = pack.subtitle || `${pack.name || items[0]?.packageName || 'DLC'} — ${items.length} troféus`;
+      const roadmapTitle = pack.roadmapTitle || `Roadmap curto de ${pack.name || 'DLC'}`;
       return `
       <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
@@ -1059,7 +1107,7 @@ window.UIGuide = (() => {
         ${pack.introduction ? `<p class="text-sm text-white/70">${escapeHtml(pack.introduction)}</p>` : ''}
         ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
         ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
-        ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Roadmap curto de ${escapeHtml(pack.name || 'DLC')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
+        ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">${escapeHtml(roadmapTitle)}</div>${pack.roadmapIntroduction ? `<p class="text-sm mt-2">${escapeHtml(pack.roadmapIntroduction)}</p>` : ''}<ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
         ${renderDlcPackageExtraLists(pack)}
         <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
           ${items.map(item => {
@@ -1141,7 +1189,8 @@ window.UIGuide = (() => {
         </div>
         ${roadmap.length ? `
           <div class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-3">
-            <h3 class="text-lg font-bold text-white">Roadmap curto para 100% da lista completa</h3>
+            <h3 class="text-lg font-bold text-white">${escapeHtml(dlcGuide.roadmapTitle || 'Roadmap curto para 100% da lista completa')}</h3>
+            ${dlcGuide.roadmapIntro ? `<p class="text-sm text-white/62">${escapeHtml(dlcGuide.roadmapIntro)}</p>` : ''}
             <ol class="text-sm text-white/72 list-decimal pl-5 space-y-3">
               ${roadmap.map(step => `<li><strong class="text-white">${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-2 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}
             </ol>
@@ -2106,7 +2155,7 @@ window.UIGuide = (() => {
     }
 
     if (roadmapEl) {
-      roadmapEl.innerHTML = `${renderGuideRoadmapPanel(viewModel)}${renderGuideChapterRoutePanel(game)}${renderGuideProfessionalAiPanel(game)}${renderGuideFarmRoutesPanel(game)}`;
+      roadmapEl.innerHTML = `${renderGuideRoadmapPanel(viewModel)}${renderGuideChapterRoutePanel(game)}${renderGuideProfessionalAiPanel(game)}${renderGuideFarmRoutesPanel(game)}${renderGuideCommonMythsPanel(game)}`;
     }
 
     if (platinumExtrasEl) {
