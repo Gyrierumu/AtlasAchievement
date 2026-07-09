@@ -1329,7 +1329,7 @@ function renderGuideRelatedCardsServer(relatedGames = []) {
             <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(card.time)}</span>
           </div>
           <div class="atlas-card__actions">
-            <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-home-game="${escapeHtml(game?.name || '')}" data-open-guide-card="${slug}">Abrir guia</a>
+            <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-home-game="${escapeHtml(game?.name || '')}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeHtml(card.name)}">Abrir guia de ${escapeHtml(card.name)}</a>
           </div>
         </div>
       </article>`;
@@ -3087,7 +3087,7 @@ function isIndexablePublicGuide(game = {}) {
 async function buildGamePageHtml(game, req) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const canonicalUrl = `${PRODUCTION_CANONICAL_ORIGIN}/jogo/${normalizedSlug || game.slug}`;
-  const relatedResponse = await gamesService.listGames({ page: 1, limit: 80, sort: 'recommended-desc' });
+  const relatedResponse = await gamesService.listGames({ page: 1, limit: 140, sort: 'recommended-desc' });
   const relatedPool = Array.isArray(relatedResponse?.items) ? relatedResponse.items : [];
   const relatedGames = buildRelatedGamesServer(game, relatedPool, 4);
   const actor = { userId: Number(req.session?.userId || 0), isAdmin: Boolean(req.session?.admin) };
@@ -3880,7 +3880,7 @@ function renderCatalogSeoCards(items = [], facetConfig = catalogFacetPageMap.all
             <div class="catalog-card__signals" aria-label="Riscos e requisitos da platina">${signalHtml}</div>
           </div>` : ''}
           <div class="catalog-card__actions">
-            <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}">Abrir guia</a>
+            <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}" aria-label="Abrir guia de ${name}">Abrir guia de ${name}</a>
           </div>
         </div>
       </article>`;

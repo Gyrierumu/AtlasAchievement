@@ -53,6 +53,106 @@
     return Number.isFinite(value) && value !== FALLBACK_TIME_VALUE;
   }
 
+  const FRANCHISE_GUIDE_CONFIGS = {
+    'resident-evil': {
+      key: 'resident-evil',
+      name: 'Resident Evil',
+      minRelatedGuides: 2,
+      slugs: [
+        'resident-evil',
+        'resident-evil-2-remake',
+        'resident-evil-3-remake',
+        'resident-evil-4-remake',
+        'resident-evil-5',
+        'resident-evil-6',
+        'resident-evil-7-biohazard',
+        'resident-evil-village',
+        'resident-evil-requiem'
+      ]
+    }
+  };
+
+  const FRANCHISE_BY_SLUG = Object.values(FRANCHISE_GUIDE_CONFIGS).reduce((map, config) => {
+    config.slugs.forEach((slug, index) => {
+      map[String(slug || '').trim().toLowerCase()] = { config, rank: index + 1 };
+    });
+    return map;
+  }, {});
+
+  function normalizeFranchiseKey(value = '') {
+    const key = String(value || '').trim().toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+    if (!key) return '';
+    const directConfig = FRANCHISE_GUIDE_CONFIGS[key];
+    if (directConfig) return directConfig.key;
+    const namedConfig = Object.values(FRANCHISE_GUIDE_CONFIGS)
+      .find(config => normalizeFranchiseKey(config.name) === key);
+    return namedConfig?.key || key;
+  }
+
+  function getGuideFranchiseConfig(game = {}) {
+    const explicitKey = normalizeFranchiseKey(game?.franchise || game?.series || game?.franchiseKey);
+    if (explicitKey && FRANCHISE_GUIDE_CONFIGS[explicitKey]) return FRANCHISE_GUIDE_CONFIGS[explicitKey];
+    return FRANCHISE_BY_SLUG[String(game?.slug || '').trim().toLowerCase()]?.config || null;
+  }
+
+  function getGuideFranchiseRank(game = {}) {
+    const slug = String(game?.slug || '').trim().toLowerCase();
+    const configured = FRANCHISE_BY_SLUG[slug];
+    if (configured) return configured.rank;
+    const config = getGuideFranchiseConfig(game);
+    const index = config?.slugs?.indexOf(slug) ?? -1;
+    return index >= 0 ? index + 1 : 999;
+  }
+
+  function isPublicFranchiseGuide(game = {}) {
+    const verificationStatus = String(game?.verification_status || game?.verificationStatus || '').trim().toLowerCase();
+    const editorialReviewStatus = String(game?.editorial_review_status || game?.editorialReviewStatus || game?.editorialStatus || '').trim().toLowerCase();
+    const editorialStatus = String(game?.editorial_status || game?.editorialStatus || '').trim().toLowerCase();
+    const coverage = String(game?.coverage_level || game?.coverageLevel || '').trim().toLowerCase();
+    const verified = game?.is_verified === true || game?.is_verified === 1 || verificationStatus === 'verified';
+    const published = !editorialStatus || editorialStatus === 'published' || editorialStatus === 'verified';
+    const reviewed = !editorialReviewStatus || editorialReviewStatus === 'verified';
+    const completeEnough = !coverage || coverage === 'strong' || coverage === 'complete';
+    return Boolean(game?.slug) && verified && published && reviewed && completeEnough;
+  }
+
+  function getFranchiseRelatedReason(candidate = {}, currentGame = {}) {
+    const config = getGuideFranchiseConfig(candidate) || getGuideFranchiseConfig(currentGame);
+    if (!config) return 'Guia da mesma franquia para continuar em uma lista próxima sem sair do mesmo universo.';
+    const candidateSlug = String(candidate?.slug || '').trim().toLowerCase();
+    const currentSlug = String(currentGame?.slug || '').trim().toLowerCase();
+    if (config.key === 'resident-evil' && candidateSlug === 'resident-evil-5') {
+      return 'Resident Evil 5 — guia de troféus PS4 com platina base, DLCs separadas e 100% da lista completa.';
+    }
+    if (config.key === 'resident-evil' && currentSlug === 'resident-evil-5') {
+      return 'Outro guia da franquia Resident Evil para comparar roadmap, escopo da platina e ritmo de cleanup.';
+    }
+    return `Guia relacionado da franquia ${config.name} para continuar por uma lista próxima sem sair do mesmo universo.`;
+  }
+
+  function buildRelatedFranchiseGuides(currentGame, pool = [], options = {}) {
+    const config = getGuideFranchiseConfig({ ...currentGame, franchise: options.franchise || currentGame?.franchise });
+    if (!config || !currentGame?.slug) return [];
+    const currentSlug = String(currentGame.slug || '').trim().toLowerCase();
+    const minRelatedGuides = Number(options.minRelatedGuides || config.minRelatedGuides || 2);
+    const limit = Number(options.limit || 4);
+    const related = (Array.isArray(pool) ? pool : [])
+      .filter(game => game && String(game.slug || '').trim().toLowerCase() !== currentSlug)
+      .filter(game => getGuideFranchiseConfig(game)?.key === config.key)
+      .filter(isPublicFranchiseGuide)
+      .sort((a, b) => getGuideFranchiseRank(a) - getGuideFranchiseRank(b) || String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR'));
+    if (related.length < minRelatedGuides) return [];
+    return related.slice(0, Math.max(0, limit)).map(game => ({
+      game,
+      badge: `Franquia ${config.name}`,
+      reason: getFranchiseRelatedReason(game, currentGame)
+    }));
+  }
+
   function buildStandardGameCardModel(game = {}, options = {}) {
     const fallbackImage = options.fallbackImage || '';
     const difficulty = game?.difficulty || '-';
@@ -126,10 +226,21 @@
         score -= Math.min(trophyGap, 80) * 0.45;
         if (roadmapCount > 0) score += 12;
         if (difficulty <= currentDifficulty + 1) score += 6;
+        const currentFranchise = getGuideFranchiseConfig(currentGame);
+        const candidateFranchise = getGuideFranchiseConfig(game);
+        const sameFranchise = Boolean(currentFranchise?.key && currentFranchise.key === candidateFranchise?.key);
+        if (sameFranchise) {
+          const rankGap = Math.abs(getGuideFranchiseRank(currentGame) - getGuideFranchiseRank(game));
+          score += 160 - Math.min(rankGap, 8) * 4;
+          if (String(game.slug || '').trim().toLowerCase() === 'resident-evil-5') score += 18;
+        }
 
         let badge = 'Ritmo parecido';
         let reason = 'Mantém dificuldade, checklist e tempo em uma faixa parecida para continuar sem mudar demais o ritmo.';
-        if (diffGap <= 1 && currentHasTime && hasTime && timeGap <= 10) {
+        if (sameFranchise) {
+          badge = `Franquia ${candidateFranchise.name}`;
+          reason = getFranchiseRelatedReason(game, currentGame);
+        } else if (diffGap <= 1 && currentHasTime && hasTime && timeGap <= 10) {
           badge = 'Próximo jogo ideal';
           reason = 'Muito próximo em dificuldade e duração. Boa sequência para manter o mesmo tipo de projeto.';
         } else if (difficulty < currentDifficulty && currentHasTime && hasTime && timeValue <= currentTime) {
@@ -208,6 +319,8 @@
     buildStandardGameCardModel,
     buildCompactGuideCardModel,
     buildRelatedGames,
+    buildRelatedFranchiseGuides,
+    getGuideFranchiseConfig,
     buildGuideComparisonModel,
     deriveSteamLibraryCover,
     getGameCoverImage,

@@ -533,47 +533,45 @@
   function isPublicGuideEligible(game = {}) {
     const text = value => String(value ?? '').replace(/\s+/g, ' ').trim();
     const normalized = value => text(value).toLowerCase();
+    const normalizedStatus = value => normalized(value)
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+    const isTruthyFlag = value => value === true
+      || value === 1
+      || normalized(value) === '1'
+      || normalized(value) === 'true';
+    const isVerifiedStatus = value => ['verified', 'verificado', 'published'].includes(normalizedStatus(value));
+    const isReviewStatus = value => /^(draft|rascunho|review|in_review|needs_review|revisao|em-revisao|em_revisao|pendente)$/.test(normalizedStatus(value).replace(/\s+/g, '_'));
     const verifiedFlag = game?.is_verified === true
       || game?.is_verified === 1
       || normalized(game?.is_verified) === '1'
       || normalized(game?.is_verified) === 'true';
+    const editorialStatus = normalizedStatus(game?.editorial_status || game?.editorialStatus || 'published');
+    const verificationStatus = game?.verification_status ?? game?.verificationStatus;
+    const reviewStatus = game?.editorial_review_status ?? game?.editorialReviewStatus;
+    const verifiedStatus = verifiedFlag
+      || isTruthyFlag(game?.isVerified)
+      || isVerifiedStatus(verificationStatus)
+      || isVerifiedStatus(reviewStatus)
+      || normalizedStatus(game?.editorialStatus) === 'verified';
+    const reviewMarker = isReviewStatus(editorialStatus)
+      || isReviewStatus(verificationStatus)
+      || isReviewStatus(reviewStatus)
+      || isReviewStatus(game?.status)
+      || isReviewStatus(game?.guide_status);
     const difficulty = Number(game?.difficulty);
     const time = text(game?.time);
-    const visibleText = [
-      game?.name,
-      time,
-      game?.runs_summary,
-      game?.missable_summary,
-      game?.online_summary,
-      game?.grind_summary,
-      game?.dlc_scope,
-      game?.difficulty_reason,
-      game?.time_reason,
-      game?.first_run_advice,
-      game?.cleanup_advice,
-      game?.before_you_start,
-      game?.best_for,
-      game?.avoid_if,
-      game?.verification_note,
-      ...(Array.isArray(game?.quality_warnings) ? game.quality_warnings : []),
-      ...(Array.isArray(game?.trophies) ? game.trophies.flatMap(trophy => [trophy?.name, trophy?.description, trophy?.tip]) : [])
-    ].map(text).filter(Boolean).join(' ');
     const invalidTime = !time
       || /em revis[aã]o|informa[cç][aã]o em revis[aã]o|a definir|indispon[ií]vel|^[-–—]$|^n\/?a$/i.test(time);
-    const hasPlaceholder = /\[object Object\]|\bNOME ORIGINAL\b|\bplaceholder\b|descri[cç][aã]o em revis[aã]o|conte[uú]do em revis[aã]o|informa[cç][aã]o em revis[aã]o|valida[cç][aã]o (?:editorial )?pendente|aguardando revis[aã]o|\ba definir\b/i.test(visibleText);
 
-    return normalized(game?.editorial_status || 'published') === 'published'
-      && verifiedFlag
-      && normalized(game?.verification_status) === 'verified'
-      && normalized(game?.editorial_review_status) === 'verified'
-      && normalized(game?.coverage_level) === 'complete'
-      && Number.isFinite(difficulty)
-      && difficulty > 0
-      && difficulty <= 10
+    const hasPublishedStatus = ['published', 'verified', 'verificado'].includes(editorialStatus);
+    const hasValidDifficulty = Number.isFinite(difficulty) && difficulty > 0 && difficulty <= 10;
+    const hasVisibleGuideShape = hasValidDifficulty
       && !invalidTime
       && getGameTotal(game) > 0
-      && getRoadmapCount(game) > 0
-      && !hasPlaceholder;
+      && getRoadmapCount(game) > 0;
+
+    return Boolean(hasPublishedStatus && verifiedStatus && !reviewMarker && hasVisibleGuideShape);
   }
 
   function isCatalogVerified(game = {}) {

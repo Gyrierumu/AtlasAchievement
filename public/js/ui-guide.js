@@ -2095,7 +2095,7 @@ window.UIGuide = (() => {
               <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model?.time || game?.time || 'Tempo não informado')}</span>
             </div>
             <div class="atlas-card__actions">
-              <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-home-game="${escapeAttribute(game?.name || '')}" data-open-guide-card="${slug}">Abrir guia</a>
+              <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-home-game="${escapeAttribute(game?.name || '')}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeAttribute(model?.name || game?.name || 'Jogo')}">Abrir guia de ${escapeHtml(model?.name || game?.name || 'Jogo')}</a>
             </div>
           </div>
         </article>`;

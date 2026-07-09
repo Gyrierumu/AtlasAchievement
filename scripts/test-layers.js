@@ -24,6 +24,10 @@ function loadGuideModel() {
   return require(path.join(ROOT, 'src/shared/guideViewModel'));
 }
 
+function loadCatalogModel() {
+  return require(path.join(ROOT, 'src/shared/catalogModel'));
+}
+
 function readProjectFile(relPath = '') {
   return fs.readFileSync(path.join(ROOT, relPath), 'utf8');
 }
@@ -78,6 +82,7 @@ function getGameBySlug(slug) {
 
 function validateData() {
   const sampleGames = loadSampleGames();
+  const cardModel = require(path.join(ROOT, 'src/shared/cardModel'));
   const slugs = new Set();
   const names = new Set();
 
@@ -108,6 +113,28 @@ function validateData() {
       assert(trophy.type, `${game.slug}/${trophy.id} deve ter type`);
     }
   }
+
+  const residentEvilGuide = sampleGames.find(game => game.slug === 'resident-evil');
+  const re5Related = cardModel.buildRelatedGames(residentEvilGuide, sampleGames, 4);
+  assert(
+    re5Related.some(item => item?.game?.slug === 'resident-evil-5' && /Resident Evil 5/i.test(item.reason || '')),
+    'Modelo de relacionados deve expor link natural para Resident Evil 5 em guias da franquia Resident Evil'
+  );
+  assert.strictEqual(
+    cardModel.getGuideFranchiseConfig(sampleGames.find(game => game.slug === 'resident-evil-5'))?.name,
+    'Resident Evil',
+    'Resident Evil 5 deve resolver metadado interno de franquia'
+  );
+  const residentEvilFranchiseRelated = cardModel.buildRelatedFranchiseGuides(residentEvilGuide, sampleGames, { franchise: 'Resident Evil' });
+  assert(
+    residentEvilFranchiseRelated.some(item => item?.game?.slug === 'resident-evil-5'),
+    'RelatedFranchiseGuides deve encontrar Resident Evil 5 quando houver guias publicados da franquia'
+  );
+  assert.strictEqual(
+    cardModel.buildRelatedFranchiseGuides(sampleGames.find(game => game.slug === 'resident-evil-5'), [sampleGames.find(game => game.slug === 'resident-evil-5')], { franchise: 'Resident Evil' }).length,
+    0,
+    'RelatedFranchiseGuides nao deve renderizar lista de franquia quando so houver o guia atual'
+  );
 
   console.log(`test:data passed (${sampleGames.length} jogos)`);
 }
@@ -303,6 +330,10 @@ function assertSeoHtml(html, { slug, name, baseUrl }) {
   assert(description && description.length >= 30 && description.includes(name), `${slug} deve ter meta description util`);
   assert(canonical === `${baseUrl}/jogo/${slug}` || canonical === `https://atlasachievement.com.br/jogo/${slug}`, `${slug} deve ter canonical correto`);
   assert(html.includes('<script type="application/ld+json" id="gameStructuredData">'), `${slug} deve ter JSON-LD`);
+}
+
+function isPublicCatalogGuideFixture(game = {}) {
+  return loadCatalogModel().isPublicGuideEligible(game);
 }
 
 function isIndexableGuideFixture(game = {}) {
@@ -2541,14 +2572,55 @@ async function validateSeo() {
 
     const publicCatalogResponse = await fetchJson(`${baseUrl}/api/games?limit=100&sort=updated-desc`);
     assert(publicCatalogResponse.items.length > 0, 'API publica deve manter guias verificados');
-    publicCatalogResponse.items.forEach(game => {
-      assert(isIndexableGuideFixture(game), `API publica nao deve listar guia incompleto ou em revisao: ${game.slug}`);
+    const publicCatalogTotalPages = Number(publicCatalogResponse.pagination?.totalPages || 1);
+    const publicCatalogItems = [...publicCatalogResponse.items];
+    for (let page = 2; page <= publicCatalogTotalPages; page += 1) {
+      const pageResponse = await fetchJson(`${baseUrl}/api/games?limit=100&sort=updated-desc&page=${page}`);
+      publicCatalogItems.push(...(pageResponse.items || []));
+    }
+    publicCatalogItems.forEach(game => {
+      assert(isPublicCatalogGuideFixture(game), `API publica nao deve listar guia em revisao: ${game.slug}`);
     });
     assert.strictEqual(
       Number(publicCatalogResponse.pagination?.total || 0),
-      publicCatalogResponse.items.length,
-      'total publico deve contar apenas guias elegiveis'
+      publicCatalogItems.length,
+      'total publico deve contar todos os guias verificados elegiveis ao catalogo visual'
     );
+    const expectedPublicCatalogTotal = loadSampleGames().filter(isPublicCatalogGuideFixture).length;
+    assert.strictEqual(
+      Number(publicCatalogResponse.pagination?.total || 0),
+      expectedPublicCatalogTotal,
+      'catalogo publico deve preservar todos os guias verificados do dataset, sem restringir a coverage complete'
+    );
+    assert(publicCatalogItems.some(game => game.slug === 'resident-evil-5'), 'API publica deve permitir descobrir Resident Evil 5');
+    assert(publicCatalogItems.some(game => game.slug === 'clair-obscur-expedition-33'), 'API publica nao deve esconder guia verificado com coverage strong');
+
+    const firstCatalogHtml = await fetchText(`${baseUrl}/catalogo`, { headers: { accept: 'text/html' } });
+    const catalogTotalPages = Number(firstCatalogHtml.match(/página\s+1\s+de\s+(\d+)/i)?.[1] || 1);
+    let re5CatalogCardHtml = '';
+    for (let page = 1; page <= catalogTotalPages; page += 1) {
+      const catalogHtml = page === 1
+        ? firstCatalogHtml
+        : await fetchText(`${baseUrl}/catalogo?page=${page}`, { headers: { accept: 'text/html' } });
+      if (catalogHtml.includes('href="/jogo/resident-evil-5"')) {
+        re5CatalogCardHtml = catalogHtml;
+        break;
+      }
+    }
+    assert(re5CatalogCardHtml, 'Catalogo SSR deve expor link rastreavel para Resident Evil 5');
+    assert(
+      /<a\b[^>]*href="\/jogo\/resident-evil-5"[^>]*aria-label="Abrir guia de Resident Evil 5"/.test(re5CatalogCardHtml),
+      'Link de catalogo para Resident Evil 5 deve ter href canonico e nome acessivel descritivo'
+    );
+    assert(re5CatalogCardHtml.includes('>Abrir guia de Resident Evil 5</a>'), 'Anchor de catalogo para Resident Evil 5 deve ter texto visivel descritivo');
+
+    const residentEvilHtml = await fetchText(`${baseUrl}/jogo/resident-evil`, { headers: { accept: 'text/html' } });
+    assert(
+      /<a\b[^>]*href="\/jogo\/resident-evil-5"[^>]*aria-label="Abrir guia de Resident Evil 5"/.test(residentEvilHtml),
+      'Guia Resident Evil deve linkar naturalmente para Resident Evil 5 em guias relacionados'
+    );
+    assert(residentEvilHtml.includes('>Abrir guia de Resident Evil 5</a>'), 'Anchor relacionado para Resident Evil 5 deve ter texto visivel descritivo');
+    assert(residentEvilHtml.includes('Resident Evil 5'), 'Relacionados de Resident Evil devem expor contexto visivel para o link de Resident Evil 5');
 
     for (const slug of seoSlugs) {
       const game = getGameBySlug(slug);

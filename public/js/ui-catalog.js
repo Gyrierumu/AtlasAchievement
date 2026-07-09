@@ -321,7 +321,7 @@ window.UICatalog = (() => {
               <div class="catalog-card__signals" aria-label="Riscos e requisitos da platina">${signalHtml}</div>
             </div>` : ''}
             <div class="catalog-card__actions">
-              <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}">Abrir guia</a>
+              <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeAttribute(model.name)}">Abrir guia de ${escapeHtml(model.name)}</a>
             </div>
           </div>
         </article>`;
