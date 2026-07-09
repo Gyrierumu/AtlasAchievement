@@ -435,6 +435,29 @@ async function validateGuide(slug = '') {
     assert.strictEqual(dlcPackagesById['desperate-escape']?.roadmapTitle, 'Rota segura', 'Desperate Escape deve ter Rota segura');
     assert.strictEqual((dlcPackagesById['desperate-escape']?.roadmap || []).length, 4, 'Desperate Escape deve manter 4 passos compactos');
     assert(dlcText.includes('Derrotar 150 inimigos em uma única jogada') && dlcText.includes('Derrotar os 3 Agitator Majini na mesma jogada') && dlcText.includes('Jogando em dupla, o jogador que precisa do troféu deve fazer a maior parte das kills'), 'Desperate Escape deve tratar 150 kills e 3 Agitator na mesma run');
+    const bsaaCategory = platinumCategories.find(category => category.id === 'bsaa-emblems');
+    const treasuresCategory = platinumCategories.find(category => category.id === 'treasures');
+    const emblem29 = (bsaaCategory?.items || []).find(item => item.number === 29);
+    const heartOfAfrica = (treasuresCategory?.items || []).find(item => item.name === 'Heart of Africa');
+    const scoreStarsChecklist = (dlcPackagesById['lost-in-nightmares']?.collectibleChecklists || []).find(item => item.title.includes('Score Stars'));
+    const agitatorChecklist = (dlcPackagesById['desperate-escape']?.collectibleChecklists || []).find(item => item.title.includes('Agitator Majini'));
+    const editorialVideoLinks = [
+      ...(bsaaCategory?.links || []),
+      ...(emblem29?.links || []),
+      ...(heartOfAfrica?.links || []),
+      ...(scoreStarsChecklist?.links || []),
+      ...(agitatorChecklist?.links || [])
+    ];
+    assert.deepStrictEqual(editorialVideoLinks.map(link => link.label), [
+      'Vídeo: BSAA Emblems — 30 localizações',
+      'Vídeo: BSAA Emblem #29 — Chapter 6-1',
+      'Vídeo: Heart of Africa — Chapter 5-3',
+      'Vídeo: Lost in Nightmares — 18 Score Stars',
+      'Vídeo: Desperate Escape — 3 Agitator Majini'
+    ], 'Resident Evil 5 deve manter somente os cinco links visuais prioritarios com rotulos claros');
+    assert(editorialVideoLinks.every(link => /^https:\/\/www\.youtube\.com\/watch\?v=/.test(link.url)), 'Links de video de Resident Evil 5 devem apontar para videos diretos');
+    assert(emblem29.links[0].url.includes('&t=520s'), 'BSAA Emblem #29 deve usar timestamp direto no emblema 29');
+    assert(!JSON.stringify(platinumCategories).includes('Score Stars') && !JSON.stringify(platinumCategories).includes('Agitator Majini'), 'Videos de DLC nao devem entrar em Extras da Platina');
     assert(dlcText.includes('Professional da DLC não muda a dificuldade/flags da platina base'), 'DLCs devem separar Professional da platina base');
     assert(re5FaqText.includes('Qual DLC é online?') && re5FaqText.includes('Qual DLC costuma dar mais trabalho?') && re5FaqText.includes('Professional das DLCs muda a platina?'), 'FAQ de RE5 deve cobrir micro-FAQ de DLC');
     ['30 vitórias', '100 eliminações', 'coop obrigatório', 'online obrigatório', 'Checklist Brutal', 'guia brutal', '100% da base', 'Checklist Completo', 'Não dizer', 'Não colocar', 'Não misturar', 'Não marcar', 'Não tratar', 'Não transformar'].forEach(text => {
@@ -1404,6 +1427,10 @@ async function validateGuide(slug = '') {
       assert(extrasPanelHtml.includes('Platina base'), 'Extras da Platina de Resident Evil 5 deve ser marcado como platina base');
       assert(extrasPanelHtml.includes('8 categoria(s)'), 'Extras da Platina de Resident Evil 5 deve renderizar 8 categorias');
       assert(extrasPanelHtml.includes('BSAA Emblems') && extrasPanelHtml.includes('Tesouros') && extrasPanelHtml.includes('Troféus situacionais'), 'Extras da Platina de Resident Evil 5 deve manter categorias operacionais da base');
+      ['Vídeo: BSAA Emblems — 30 localizações', 'Vídeo: BSAA Emblem #29 — Chapter 6-1', 'Vídeo: Heart of Africa — Chapter 5-3'].forEach(label => {
+        assert(extrasPanelHtml.includes(label), `Extras da Platina deve renderizar link claro: ${label}`);
+      });
+      assert(!extrasPanelHtml.includes('Vídeo: Lost in Nightmares') && !extrasPanelHtml.includes('Vídeo: Desperate Escape'), 'Extras da Platina nao deve receber links de DLC');
       assert(dlcPanelHtml.includes('DLCs e 100% da Lista'), 'Resident Evil 5 deve renderizar secao separada de DLCs e 100% da Lista');
       assert(dlcPanelHtml.includes('Versus') && dlcPanelHtml.includes('Lost in Nightmares') && dlcPanelHtml.includes('Desperate Escape'), 'Resident Evil 5 deve manter os 3 pacotes DLC separados');
       assert(dlcPanelHtml.includes('Parceiro humano pode ajudar em Professional e Kung Fu Fighting') && !dlcPanelHtml.includes('Coop/parceiro humano pode ajudar'), 'DLCs SSR deve usar microcopy publica de parceiro humano em Lost in Nightmares');
@@ -1420,6 +1447,12 @@ async function validateGuide(slug = '') {
       assert(dlcPanelHtml.includes('18 Score Stars') && dlcPanelHtml.includes('BSAA Emblems'), 'DLCs SSR deve separar Score Stars de BSAA Emblems');
       assert(dlcPanelHtml.includes('150 inimigos em uma') || dlcPanelHtml.includes('150 kills'), 'DLCs SSR deve manter 150 kills em uma jogada');
       assert(dlcPanelHtml.includes('3 Agitator Majini'), 'DLCs SSR deve manter 3 Agitator Majini');
+      assert(dlcPanelHtml.includes('Vídeo: Lost in Nightmares — 18 Score Stars'), 'Lost in Nightmares deve renderizar link claro de Score Stars');
+      assert(dlcPanelHtml.includes('Vídeo: Desperate Escape — 3 Agitator Majini'), 'Desperate Escape deve renderizar link claro de Agitator Majini');
+      assert.strictEqual((guideScopedHtml.match(/<a href="https:\/\/www\.youtube\.com\/watch\?v=/g) || []).length, 5, 'Resident Evil 5 deve manter exatamente cinco links de video editoriais');
+      ['>YouTube<', '>Concluir YouTube<', '>Ver vídeo<', '>Vídeo:<'].forEach(label => {
+        assert(!guideScopedHtml.includes(label), `Resident Evil 5 nao deve renderizar rotulo generico: ${label}`);
+      });
       ['30 vitórias', '30 vitÃ³rias', '100 eliminações', '100 eliminaÃ§Ãµes'].forEach(text => {
         assert(!dlcPanelHtml.includes(text), `DLCs SSR nao deve usar requisito antigo: ${text}`);
       });

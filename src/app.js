@@ -2031,6 +2031,14 @@ function groupPlatinumExtraItemsByField(items = [], field = 'group') {
   }, new Map());
 }
 
+function renderEditorialLinksHtml(links = []) {
+  const safeLinks = Array.isArray(links)
+    ? links.filter(link => link?.label && /^https?:\/\//i.test(String(link?.url || '').trim())).slice(0, 3)
+    : [];
+  if (!safeLinks.length) return '';
+  return `<div class="atlas-trophy-critical-guide__links">${safeLinks.map(link => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`).join('')}</div>`;
+}
+
 function renderPlatinumExtraItemHtml(category = {}, item = {}) {
   const number = String(item.number || '').padStart(2, '0');
   const isBsaa = category.id === 'bsaa-emblems';
@@ -2051,7 +2059,8 @@ function renderPlatinumExtraItemHtml(category = {}, item = {}) {
     Array.isArray(item.notes) && item.notes.length ? `<div><strong>Observações:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.notes.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
     isTreasure ? '<p><strong>Registro:</strong> Registre 1 unidade. Pode vender depois de registrado.</p>' : '',
     item.repeatableViaChapterSelect ? '<p>Repetível via Seleção de Capítulos / Chapter Select.</p>' : '',
-    item.warning ? `<p><strong>Alerta:</strong> ${escapeHtml(item.warning)}</p>` : ''
+    item.warning ? `<p><strong>Alerta:</strong> ${escapeHtml(item.warning)}</p>` : '',
+    renderEditorialLinksHtml(item.links)
   ].filter(Boolean).join('');
   return `
     <li class="atlas-panel atlas-panel--quiet p-4 space-y-2">
@@ -2120,6 +2129,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
             ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
             ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
             ${Array.isArray(category.checklist) && category.checklist.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">${escapeHtml(category.checklistTitle || 'Checklist')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-1">${category.checklist.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol></div>` : ''}
+            ${renderEditorialLinksHtml(category.links)}
               ${renderPlatinumExtraCategoryItemsHtml(category)}
             </div>
           </article>
@@ -2177,6 +2187,7 @@ function renderDlcPackageExtraListsHtml(pack = {}) {
     <div class="atlas-tip-box">
       <div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>
       ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
+      ${renderEditorialLinksHtml(list.links)}
       ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
       ${Array.isArray(list.groups) && list.groups.length ? `<div class="mt-3 space-y-3">${list.groups.map(group => `
         <div>
