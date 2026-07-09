@@ -305,6 +305,38 @@ function assertSeoHtml(html, { slug, name, baseUrl }) {
   assert(html.includes('<script type="application/ld+json" id="gameStructuredData">'), `${slug} deve ter JSON-LD`);
 }
 
+function isIndexableGuideFixture(game = {}) {
+  const text = value => String(value ?? '').replace(/\s+/g, ' ').trim();
+  const time = text(game.time);
+  const difficulty = Number(game.difficulty);
+  const trophies = Array.isArray(game.trophies) ? game.trophies : [];
+  const roadmap = Array.isArray(game.roadmap) ? game.roadmap : [];
+  const coreText = [
+    game.name,
+    time,
+    game.runs_summary,
+    game.missable_summary,
+    game.online_summary,
+    game.dlc_scope,
+    game.before_you_start,
+    ...trophies.flatMap(trophy => [trophy?.name, trophy?.description, trophy?.tip])
+  ].map(text).filter(Boolean).join(' ');
+
+  return text(game.editorial_status || 'published').toLowerCase() === 'published'
+    && Boolean(game.is_verified)
+    && text(game.verification_status).toLowerCase() === 'verified'
+    && text(game.editorial_review_status).toLowerCase() === 'verified'
+    && text(game.coverage_level).toLowerCase() === 'complete'
+    && Number.isFinite(difficulty)
+    && difficulty > 0
+    && difficulty <= 10
+    && Boolean(time)
+    && !/em revis[aã]o|a definir|indispon[ií]vel|^[-–—]$|^n\/?a$/i.test(time)
+    && trophies.length > 0
+    && roadmap.length > 0
+    && !/\[object Object\]|\bNOME ORIGINAL\b|\bplaceholder\b|descri[cç][aã]o em revis[aã]o|conte[uú]do em revis[aã]o|\ba definir\b/i.test(coreText);
+}
+
 function assertNoRequiemInternalCopy(html = '', options = {}) {
   const forbidden = [
     'Não marcar DLC como obrigatória sem fonte',
@@ -561,6 +593,7 @@ async function validateGuide(slug = '') {
       assert(!roadmapText.includes(text), `Roadmap de Resident Evil 5 nao deve receber lista longa ou DLC: ${text}`);
     });
     assert(roadmapText.includes('Extras da Platina'), 'Roadmap de Resident Evil 5 deve apontar listas longas da platina base para Extras da Platina');
+    assert(roadmapText.includes('para o checklist detalhado da platina base, abra Extras da Platina') && !roadmapText.includes('para a lista completa, abra Extras da Platina'), 'Roadmap de Resident Evil 5 deve evitar confundir Extras da Platina com a lista completa de 71 trofeus');
     assert(roadmapText.includes('Use Rotas de Farm para escolher entre dinheiro, Lion Hearts, Power Stones e pontos de Bonus Features sem repetir capítulos aleatórios.'), 'Roadmap de Resident Evil 5 deve apontar para Rotas de Farm na etapa de farm');
     ['Checklist completo', 'Checklist Brutal', 'guia brutal', '100% da base', 'NOME ORIGINAL', '[object Object]', 'Não dizer', 'Não colocar', 'Não misturar', 'Não marcar', 'Não tratar', 'Não transformar'].forEach(text => {
       assert(!re5Text.includes(text), `Resident Evil 5 seed nao deve conter texto publico/internal incorreto: ${text}`);
@@ -1334,7 +1367,10 @@ async function validateGuide(slug = '') {
     }
     if (slug === 'resident-evil-5') {
       const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
-      const quickPlanHtml = html.match(/<div class="atlas-guide-quick-plan"[\s\S]*?<\/ol><\/div>/)?.[0] || '';
+      const guideControllerSource = readProjectFile('public/js/app-guide-controller.js');
+      const layerNavHtml = html.match(/<nav id="guideLayerNav"[\s\S]*?<\/nav>/)?.[0] || '';
+      const quickPlanHtml = html.match(/<div id="guideQuickPlan" class="atlas-guide-quick-plan"[\s\S]*?<\/ol><\/div>/)?.[0] || '';
+      const usagePanelHtml = html.match(/<section id="guideUsagePanel"[\s\S]*?<\/section>/)?.[0] || '';
       const roadmapSlotStart = html.indexOf('<div id="guideRoadmapSlot">');
       const checklistTabStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideTab-checklist"', roadmapSlotStart) : -1;
       const roadmapPanelStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideRoadmapPanel"', roadmapSlotStart) : -1;
@@ -1362,6 +1398,40 @@ async function validateGuide(slug = '') {
       assert(html.includes('DLC não obrigatório') || html.includes('DLC nÃ£o obrigatÃ³rio'), 'Resident Evil 5 deve exibir DLC nao obrigatorio');
       assert(html.includes('Sem online obrigatório') || html.includes('Sem online obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem online obrigatorio');
       assert(html.includes('Sem coop obrigatório') || html.includes('Sem coop obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem coop obrigatorio');
+      [
+        ['Roadmap', 'data-guide-tab-target="roadmap"', 'data-guide-action="roadmap"', 'href="#guideRoadmapPanel"'],
+        ['Checklist', 'data-guide-tab-target="checklist"', 'data-guide-action="trophies"', 'href="#guideChecklistPanel"'],
+        ['Extras da Platina', 'data-guide-tab-target="extras"', 'data-guide-action="extras"', 'href="#guidePlatinumExtrasPanel"'],
+        ['DLCs e 100% da Lista', 'data-guide-tab-target="dlcs"', 'data-guide-action="dlcs"', 'href="#guideDlcCompletionPanel"']
+      ].forEach(([label, tabTarget, action, href]) => {
+        const linkHtml = layerNavHtml.match(new RegExp(`<a[^>]*${tabTarget}[^>]*>[\\s\\S]*?<span>${label}<\\/span>[\\s\\S]*?<\\/a>`))?.[0] || '';
+        assert(linkHtml.includes(action) && linkHtml.includes(href), `Navegacao de Resident Evil 5 deve abrir a secao correta: ${label}`);
+      });
+      ['roadmap', 'checklist', 'extras', 'dlcs'].forEach(tab => {
+        assert(guideScopedHtml.includes(`id="guideTab-${tab}"`) && guideScopedHtml.includes(`data-guide-tab-panel="${tab}"`), `Resident Evil 5 deve manter painel unico para a aba ${tab}`);
+      });
+      assert.strictEqual((guideScopedHtml.match(/id="guideTab-(?:roadmap|checklist|extras|dlcs)"/g) || []).length, 4, 'Abas principais de Resident Evil 5 nao devem colidir em IDs');
+      assert(usagePanelHtml.includes('Como usar este guia') && usagePanelHtml.includes('Se você quer... abra...'), 'Resident Evil 5 deve renderizar placa curta de navegacao');
+      assert.strictEqual((usagePanelHtml.match(/<li>/g) || []).length, 3, 'Como usar este guia deve manter somente tres orientacoes');
+      assert.strictEqual((usagePanelHtml.match(/<tr>/g) || []).length, 10, 'Tabela Se voce quer deve manter cabecalho e nove destinos');
+      [
+        ['Roadmap', 'roadmap', '#guideRoadmapPanel'],
+        ['Plano rápido', 'quick', '#guideQuickPlan'],
+        ['Checklist da platina base', 'trophies', '#guideChecklistPanel'],
+        ['Extras da Platina', 'extras', '#guidePlatinumExtrasPanel'],
+        ['Rota por Capítulo', 'chapter-route', '#guideChapterRoutePanel'],
+        ['Professional e IA', 'professional', '#guideProfessionalAiPanel'],
+        ['Rotas de Farm', 'farm', '#guideFarmRoutesPanel'],
+        ['Mitos e erros comuns', 'myths', '#guideCommonMythsPanel'],
+        ['DLCs e 100% da Lista', 'dlcs', '#guideDlcCompletionPanel']
+      ].forEach(([label, action, href]) => {
+        assert(usagePanelHtml.includes(`data-guide-action="${action}"`) && usagePanelHtml.includes(`href="${href}"`) && usagePanelHtml.includes(`>${label}</a>`), `Como usar este guia deve apontar corretamente para ${label}`);
+      });
+      assert(usagePanelHtml.includes('Depois da platina, abra DLCs e 100% da Lista.'), 'Como usar este guia deve tratar DLCs como pos-platina');
+      assert.strictEqual((guideScopedHtml.match(/id="guideQuickPlan"/g) || []).length, 1, 'Plano rapido deve ter ancora unica');
+      ['#guideQuickPlan', '#guideChapterRoutePanel', '#guideProfessionalAiPanel', '#guideFarmRoutesPanel', '#guideCommonMythsPanel'].forEach(selector => {
+        assert(guideControllerSource.includes(selector), `Controlador de navegacao deve reconhecer o destino ${selector}`);
+      });
       assert(!guideScopedHtml.includes('atlas-trophy-youtube-link'), 'Resident Evil 5 nao deve renderizar buscas automaticas de video em todos os trofeus');
       assert(!guideScopedHtml.includes('<span>YouTube</span>'), 'Resident Evil 5 nao deve exibir rotulo generico YouTube');
       assert(!guideScopedHtml.includes('Concluir YouTube'), 'Resident Evil 5 nao deve exibir rotulo generico Concluir YouTube');
@@ -2374,10 +2444,12 @@ async function validateGuide(slug = '') {
 async function validateSeo() {
   const sampleGames = loadSampleGames();
   const seoSlugs = sampleGames
-    .filter(game => ['published', 'review'].includes(String(game.editorial_status || 'published')))
+    .filter(isIndexableGuideFixture)
     .slice(0, 12)
     .map(game => game.slug);
-  if (!seoSlugs.includes('resident-evil-requiem')) seoSlugs.push('resident-evil-requiem');
+  const noindexGame = sampleGames.find(game => game?.slug && !isIndexableGuideFixture(game));
+  assert(seoSlugs.length > 0, 'deve haver guias completos e verificados para indexacao');
+  assert(noindexGame, 'deve haver ao menos um guia incompleto ou em revisao para validar noindex');
 
   await withTempApp(async ({ baseUrl }) => {
     const sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
@@ -2385,16 +2457,75 @@ async function validateSeo() {
     assert(sitemap.includes('<urlset'), 'sitemap deve ter urlset');
     assert(sitemap.includes(`<loc>${baseUrl}/</loc>`), 'sitemap deve incluir home');
     assert(sitemap.includes(`<loc>${baseUrl}/catalogo</loc>`), 'sitemap deve incluir catalogo');
+    ['/sobre', '/contato', '/privacidade', '/termos', '/comece-aqui'].forEach(pathName => {
+      assert(sitemap.includes(`<loc>${baseUrl}${pathName}</loc>`), `sitemap deve incluir ${pathName}`);
+    });
+    ['/biblioteca', '/perfil', '/admin', '/login', '/feedback'].forEach(pathName => {
+      assert(!sitemap.includes(`<loc>${baseUrl}${pathName}</loc>`), `sitemap nao deve incluir ${pathName}`);
+    });
 
     for (const slug of seoSlugs) {
       const game = getGameBySlug(slug);
-      assert(sitemap.includes(`<loc>${baseUrl}/jogo/${slug}</loc>`) || ['resident-evil-requiem'].includes(slug), `sitemap deve incluir ${slug}`);
+      assert(sitemap.includes(`<loc>${baseUrl}/jogo/${slug}</loc>`), `sitemap deve incluir ${slug}`);
       const html = await fetchText(`${baseUrl}/jogo/${slug}`, { headers: { accept: 'text/html' } });
       assertSeoHtml(html, { slug, name: game.name, baseUrl });
+      assert(!getMeta(html, 'robots'), `${slug} completo e verificado nao deve receber noindex`);
+      assert(html.includes('id="view-guide"'), `${slug} deve manter apenas a view do guia`);
+      ['view-home', 'view-catalog', 'view-seo-page', 'view-library', 'view-profile', 'feedbackModal', 'userAuthModal'].forEach(id => {
+        assert(!html.includes(`id="${id}"`), `${slug} nao deve carregar ${id} no HTML inicial`);
+      });
+      ['Carregando guia,', 'Carregando checklist', 'Carregando biblioteca'].forEach(text => {
+        assert(!html.includes(text), `${slug} indexavel nao deve carregar texto generico: ${text}`);
+      });
     }
+
+    const noindexUrl = `${baseUrl}/jogo/${noindexGame.slug}`;
+    const noindexResponse = await fetch(noindexUrl, { headers: { accept: 'text/html' }, signal: AbortSignal.timeout(30000) });
+    assert(noindexResponse.ok, `${noindexUrl} deveria responder 2xx`);
+    const noindexHtml = await noindexResponse.text();
+    assert.strictEqual(getMeta(noindexHtml, 'robots'), 'noindex,follow', `${noindexGame.slug} deve receber meta noindex,follow`);
+    assert.strictEqual(noindexResponse.headers.get('x-robots-tag'), 'noindex, follow', `${noindexGame.slug} deve receber X-Robots-Tag`);
+    assert(!sitemap.includes(`<loc>${baseUrl}/jogo/${noindexGame.slug}</loc>`), `${noindexGame.slug} nao deve entrar no sitemap`);
+    assertSeoHtml(noindexHtml, { slug: noindexGame.slug, name: noindexGame.name, baseUrl });
+
+    const institutionalRoutes = {
+      '/contato': 'Contato',
+      '/privacidade': 'Política de Privacidade',
+      '/termos': 'Termos de Uso',
+      '/sobre': 'Sobre o AtlasAchievement'
+    };
+    for (const [pathName, heading] of Object.entries(institutionalRoutes)) {
+      const html = await fetchText(`${baseUrl}${pathName}`, { headers: { accept: 'text/html' } });
+      assert.strictEqual(getCanonical(html), `${baseUrl}${pathName}`, `${pathName} deve ter canonical proprio`);
+      assert(!getMeta(html, 'robots'), `${pathName} deve continuar indexavel`);
+      assert(html.includes(`<h1>${heading}</h1>`), `${pathName} deve expor seu conteudo principal`);
+      assert(html.includes('id="view-seo-page"'), `${pathName} deve manter a view editorial`);
+      ['view-home', 'view-catalog', 'view-library', 'view-guide', 'view-profile', 'feedbackModal', 'userAuthModal'].forEach(id => {
+        assert(!html.includes(`id="${id}"`), `${pathName} nao deve carregar ${id}`);
+      });
+      ['Carregando guia,', 'Carregando checklist', 'Carregando biblioteca'].forEach(text => {
+        assert(!html.includes(text), `${pathName} nao deve carregar texto generico: ${text}`);
+      });
+    }
+
+    const aboutHtml = await fetchText(`${baseUrl}/sobre`);
+    ['Como os guias são produzidos', 'O que significa “Verificado”', 'Platina base, DLCs e 100%', 'Correções e atualização', 'Marcas e independência editorial'].forEach(text => {
+      assert(aboutHtml.includes(text), `/sobre deve explicar: ${text}`);
+    });
+
+    const libraryResponse = await fetch(`${baseUrl}/biblioteca`, { headers: { accept: 'text/html' }, signal: AbortSignal.timeout(30000) });
+    assert(libraryResponse.ok, '/biblioteca deveria responder 2xx');
+    const libraryHtml = await libraryResponse.text();
+    assert.strictEqual(getCanonical(libraryHtml), `${baseUrl}/biblioteca`, '/biblioteca deve ter canonical proprio');
+    assert.strictEqual(getMeta(libraryHtml, 'robots'), 'noindex,follow', '/biblioteca deve receber meta noindex,follow');
+    assert.strictEqual(libraryResponse.headers.get('x-robots-tag'), 'noindex, follow', '/biblioteca deve receber X-Robots-Tag');
+    assert(libraryHtml.includes('id="view-library"'), '/biblioteca deve manter apenas a view funcional');
+    ['view-home', 'view-catalog', 'view-seo-page', 'view-guide', 'view-profile', 'feedbackModal', 'userAuthModal'].forEach(id => {
+      assert(!libraryHtml.includes(`id="${id}"`), `/biblioteca nao deve carregar ${id}`);
+    });
   });
 
-  console.log(`test:seo passed (${seoSlugs.length} paginas de jogo + sitemap)`);
+  console.log(`test:seo passed (${seoSlugs.length} guias indexaveis + noindex + rotas isoladas + sitemap)`);
 }
 
 async function main() {

@@ -2763,7 +2763,7 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
   return `
     <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
       <div>
-        ${quickPlanItems.length ? `<div class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
+        ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
         <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
         ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
@@ -2772,6 +2772,42 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
         <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
         <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
         <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
+      </div>
+    </section>`;
+}
+
+function renderGuideUsagePanelHtml(game = {}) {
+  if (String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5') return '';
+  const rows = [
+    ['Ver a ordem ideal da platina', 'Roadmap', 'roadmap', '#guideRoadmapPanel'],
+    ['Seguir uma versão resumida', 'Plano rápido', 'quick', '#guideQuickPlan'],
+    ['Marcar os 51 troféus base', 'Checklist da platina base', 'trophies', '#guideChecklistPanel'],
+    ['Conferir listas detalhadas da platina', 'Extras da Platina', 'extras', '#guidePlatinumExtrasPanel'],
+    ['Saber o que observar por capítulo', 'Rota por Capítulo', 'chapter-route', '#guideChapterRoutePanel'],
+    ['Preparar War Hero/Professional', 'Professional e IA', 'professional', '#guideProfessionalAiPanel'],
+    ['Escolher onde farmar dinheiro/pontos', 'Rotas de Farm', 'farm', '#guideFarmRoutesPanel'],
+    ['Evitar erros comuns', 'Mitos e erros comuns', 'myths', '#guideCommonMythsPanel'],
+    ['Fazer 100% com DLCs', 'DLCs e 100% da Lista', 'dlcs', '#guideDlcCompletionPanel']
+  ];
+  return `
+    <section id="guideUsagePanel" class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4" aria-labelledby="guideUsageTitle">
+      <div>
+        <div class="atlas-eyebrow">Navegação rápida</div>
+        <h2 id="guideUsageTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Como usar este guia</h2>
+      </div>
+      <ul class="text-sm text-white/72 list-disc pl-5 space-y-1">
+        <li>Quer só platinar? Siga Roadmap, Plano rápido, Checklist da platina base e Extras da Platina.</li>
+        <li>Quer evitar retrabalho? Use Rota por Capítulo, Professional e IA, Rotas de Farm e Mitos e erros comuns.</li>
+        <li>Quer o 100% completo? Depois da platina, abra DLCs e 100% da Lista.</li>
+      </ul>
+      <div class="overflow-x-auto">
+        <h3 class="text-base font-bold text-white mb-2">Se você quer... abra...</h3>
+        <table class="w-full min-w-[560px] text-sm">
+          <thead class="text-left text-white/72"><tr><th class="py-2 pr-4 font-bold">Se você quer...</th><th class="py-2 font-bold">Abra...</th></tr></thead>
+          <tbody class="divide-y divide-white/10">
+            ${rows.map(([goal, label, action, href]) => `<tr><td class="py-2 pr-4 text-white/72">${escapeHtml(goal)}</td><td class="py-2"><a class="text-atlas-300 font-bold hover:text-white" href="${escapeHtml(href)}" data-guide-action="${escapeHtml(action)}">${escapeHtml(label)}</a></td></tr>`).join('')}
+          </tbody>
+        </table>
       </div>
     </section>`;
 }
@@ -2785,7 +2821,7 @@ function buildSsrGuideMarkup(game, relatedGames = [], commentContext = {}) {
   const viewModel = buildGuideViewModel(game, []);
   const header = renderGuideHeaderHtml(game, viewModel);
   const decisionStack = renderGuideDecisionStackHtmlV2(game, viewModel);
-  const summary = renderGuideSummaryPanelHtml(game, viewModel);
+  const summary = `${renderGuideSummaryPanelHtml(game, viewModel)}${renderGuideUsagePanelHtml(game)}`;
   const roadmap = `${renderGuideRoadmapPanelHtml(viewModel)}${renderGuideChapterRoutePanelHtml(game)}${renderGuideProfessionalAiPanelHtml(game)}${renderGuideFarmRoutesPanelHtml(game)}${renderGuideCommonMythsPanelHtml(game)}`;
   const platinumExtras = renderGuidePlatinumExtrasPanelHtml(game);
   const dlcCompletion = renderGuideDlcCompletionPanelHtml(game);
@@ -2899,25 +2935,69 @@ function removeElementById(html = '', tagName = 'section', id = '') {
 }
 
 function stripGuidePageUnusedDom(html = '') {
+  return removeElementById(stripPageUnusedDom(html, 'view-guide'), 'div', 'loading');
+}
+
+function stripHomePageUnusedDom(html = '') {
+  return stripPageUnusedDom(html, 'view-home');
+}
+
+function stripPageUnusedDom(html = '', activeViewId = '') {
   let next = html;
-  ['view-home', 'view-catalog', 'view-seo-page', 'view-library', 'view-profile'].forEach(id => {
-    next = removeElementById(next, 'section', id);
-  });
-  ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
+  ['view-home', 'view-catalog', 'view-seo-page', 'view-library', 'view-guide', 'view-profile']
+    .filter(id => id !== activeViewId)
+    .forEach(id => {
+      next = removeElementById(next, 'section', id);
+    });
+  ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal', 'guideQuickDock'].forEach(id => {
     next = removeElementById(next, 'div', id);
   });
   return next;
 }
 
-function stripHomePageUnusedDom(html = '') {
-  let next = html;
-  ['view-catalog', 'view-seo-page', 'view-library', 'view-profile'].forEach(id => {
-    next = removeElementById(next, 'section', id);
-  });
-  ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal'].forEach(id => {
-    next = removeElementById(next, 'div', id);
-  });
-  return next;
+function normalizeGuideQualityText(value = '') {
+  return String(value ?? '').replace(/\s+/g, ' ').trim();
+}
+
+function isIndexablePublicGuide(game = {}) {
+  const editorialStatus = normalizeGuideQualityText(game.editorial_status || 'published').toLowerCase();
+  const verificationStatus = normalizeGuideQualityText(game.verification_status).toLowerCase();
+  const reviewStatus = normalizeGuideQualityText(game.editorial_review_status).toLowerCase();
+  const coverageLevel = normalizeGuideQualityText(game.coverage_level).toLowerCase();
+  const difficulty = Number(game.difficulty);
+  const time = normalizeGuideQualityText(game.time);
+  const trophyCount = Array.isArray(game.trophies)
+    ? game.trophies.length
+    : Number(game.trophy_count || game.total_trophies || 0);
+  const roadmapCount = Array.isArray(game.roadmap)
+    ? game.roadmap.length
+    : Number(game.roadmap_count || 0);
+  const verified = Boolean(game.is_verified)
+    && verificationStatus === 'verified'
+    && reviewStatus === 'verified';
+  const visibleCoreText = [
+    game.name,
+    time,
+    game.runs_summary,
+    game.missable_summary,
+    game.online_summary,
+    game.dlc_scope,
+    game.before_you_start,
+    ...(Array.isArray(game.trophies) ? game.trophies.flatMap(trophy => [trophy?.name, trophy?.description, trophy?.tip]) : [])
+  ].map(normalizeGuideQualityText).filter(Boolean).join(' ');
+  const hasPlaceholder = /\[object Object\]|\bNOME ORIGINAL\b|\bplaceholder\b|descri[cç][aã]o em revis[aã]o|conte[uú]do em revis[aã]o|\ba definir\b/i.test(visibleCoreText);
+  const invalidTime = !time || /em revis[aã]o|a definir|indispon[ií]vel|^[-–—]$|^n\/?a$/i.test(time);
+
+  return editorialStatus === 'published'
+    && verified
+    && coverageLevel === 'complete'
+    && Number.isFinite(difficulty)
+    && difficulty > 0
+    && difficulty <= 10
+    && !invalidTime
+    && trophyCount > 0
+    && roadmapCount > 0
+    && !hasPlaceholder;
 }
 
 async function buildGamePageHtml(game, req) {
@@ -2970,11 +3050,14 @@ async function buildGamePageHtml(game, req) {
       ]
     }, ...buildGuideFaqStructuredData(canonicalUrl, viewModel)]
   });
+  const robotsMeta = isIndexablePublicGuide(game)
+    ? ''
+    : '<meta name="robots" content="noindex,follow">';
 
   return stripGuidePageUnusedDom(prioritizeGuideViewHtml(applyTemplateDefaults(publicIndexTemplate
     .replace(/__PAGE_TITLE__/g, escapeHtml(title))
     .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(description))
-    .replace(/__ROBOTS_META__/g, '')
+    .replace(/__ROBOTS_META__/g, robotsMeta)
     .replace(/__PAGE_OG_TYPE__/g, 'article')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
     .replace(/__PAGE_OG_IMAGE__/g, escapeHtml(image))
@@ -3079,7 +3162,10 @@ async function buildStaticPublicPageHtml(req, pageConfig = {}) {
     );
   }
 
-  return html;
+  const activeViewId = activeView === 'library'
+    ? 'view-library'
+    : (activeView === 'profile' ? 'view-profile' : 'view-home');
+  return stripPageUnusedDom(html, activeViewId);
 }
 
 function buildStartHereStructuredData(origin, canonicalUrl) {
@@ -3154,7 +3240,7 @@ function renderStartHerePageContent() {
 async function buildStartHerePageHtml(req) {
   const origin = getPublicOrigin(req);
   const canonicalUrl = buildPublicUrl(req, '/comece-aqui');
-  return applyTemplateDefaults(publicIndexTemplate
+  return stripPageUnusedDom(applyTemplateDefaults(publicIndexTemplate
     .replace(/__PAGE_TITLE__/g, 'Comece por aqui | AtlasAchievement')
     .replace(/__PAGE_DESCRIPTION__/g, 'Aprenda como começar a platinar jogos com guias em português, roadmap, checklist, troféus perdíveis, online obrigatório e recomendações para iniciantes.')
     .replace(/__ROBOTS_META__/g, '')
@@ -3166,7 +3252,7 @@ async function buildStartHerePageHtml(req) {
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
     .replace(/__SEO_VIEW_CLASS__/g, '')
     .replace(/__SEO_PAGE_CONTENT__/g, renderStartHerePageContent())
-    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'seo', path: '/comece-aqui' })));
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'seo', path: '/comece-aqui' }))), 'view-seo-page');
 }
 
 function renderOrganicListNotice(items = []) {
@@ -3308,7 +3394,7 @@ async function buildPrivacyPolicyPageHtml(req) {
 }
 
 function finalizeInstitutionalPageHtml(html = '') {
-  return String(html || '')
+  return stripPageUnusedDom(String(html || ''), 'view-seo-page')
     .replace('Algumas informações podem estar em revisão.', 'Algumas informações podem ser atualizadas.');
 }
 
@@ -3387,34 +3473,44 @@ function renderAboutPageContent() {
       ${buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Sobre' }])}
       <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">SOBRE</span>
       <h1>Sobre o AtlasAchievement</h1>
-      <p>O AtlasAchievement é um projeto brasileiro criado para ajudar jogadores a conquistarem troféus, conquistas e platinas com mais organização, clareza e segurança.</p>
+      <p>O AtlasAchievement é um projeto editorial brasileiro de guias de troféus, conquistas e platinas. Seu propósito é transformar listas extensas em rotas claras, com contexto suficiente para o jogador decidir antes de começar e evitar retrabalho durante a campanha.</p>
     </section>
 
     <section class="atlas-start-here-grid" aria-label="Sobre o AtlasAchievement">
       <article class="atlas-panel atlas-panel--support atlas-start-here-block">
-        <h2>Missão</h2>
-        <p>O objetivo do site é oferecer guias de troféus, roadmaps de platina, checklists, alertas de perdíveis, filtros por dificuldade, tempo, online, coop e DLC, além de informações úteis para jogadores iniciantes e caçadores experientes.</p>
+        <h2>Propósito editorial</h2>
+        <p>Os guias organizam dificuldade, tempo estimado, número de jogadas, troféus perdíveis, requisitos online ou cooperativos, roadmap e checklist. A prioridade é explicar decisões, riscos e ordem de execução, não apenas repetir a lista de troféus do jogo.</p>
       </article>
       <article class="atlas-panel atlas-panel--support atlas-start-here-block">
-        <h2>Para quem é feito</h2>
-        <p>O AtlasAchievement é feito para caçadores de troféus, jogadores que querem platinar, quem quer saber tempo e dificuldade antes de começar, quem deseja evitar perder troféus e quem gosta de organizar progresso.</p>
+        <h2>Como os guias são produzidos</h2>
+        <p>Cada guia é estruturado a partir do escopo da lista, dos requisitos dos troféus e da rota recomendada. A revisão editorial confere contagens, pré-requisitos, perdíveis, online, coop, estimativas, etapas do roadmap e coerência entre os alertas e as dicas individuais.</p>
       </article>
     </section>
 
     <section class="atlas-panel atlas-panel--support atlas-start-here-block">
-      <h2>O que torna o AtlasAchievement diferente</h2>
-      <p>O projeto combina guias em português do Brasil, foco em platina, organização por filtros, checklist, roadmap, FAQ, pontos de atenção, guias verificados quando aplicável e linguagem prática. A ideia é ajudar você a decidir melhor antes de começar e acompanhar a rota com menos retrabalho.</p>
+      <h2>O que significa “Verificado”</h2>
+      <p>O selo “Verificado” indica que o guia passou pela revisão editorial do AtlasAchievement e teve seus campos essenciais conferidos: escopo, contagens, dificuldade, tempo, requisitos, roadmap e conteúdo dos troféus. Guias ainda em revisão ou com cobertura incompleta permanecem fora da indexação até atenderem a esses critérios.</p>
     </section>
 
     <section class="atlas-panel atlas-panel--support atlas-start-here-block">
-      <h2>Compromisso editorial</h2>
-      <p>O AtlasAchievement busca clareza e precisão. Ainda assim, informações sobre jogos podem mudar por patches, DLCs, diferenças de plataforma ou novas descobertas da comunidade. Por isso, os guias podem ser revisados com o tempo, e o feedback dos usuários ajuda a melhorar correções, alertas e explicações.</p>
+      <h2>Platina base, DLCs e 100%</h2>
+      <p>A platina base considera somente os requisitos da lista principal. Troféus de DLC são apresentados separadamente e não são tratados como obrigatórios para obter a platina. Quando o guia aborda 100% da lista, isso é sinalizado como um objetivo adicional, com o conteúdo extra separado da rota base.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Correções e atualização</h2>
+      <p>Jogos podem mudar com patches, novas versões e diferenças de plataforma. Correções são recebidas pela página de contato ou pelo e-mail <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a>. Para facilitar a validação, informe jogo, plataforma, troféu, versão e a fonte ou situação observada.</p>
+    </section>
+
+    <section class="atlas-panel atlas-panel--support atlas-start-here-block">
+      <h2>Marcas e independência editorial</h2>
+      <p>O AtlasAchievement é um projeto independente. Nomes de jogos, plataformas, personagens, imagens e marcas citadas pertencem aos respectivos titulares e são usados com finalidade informativa, editorial e de referência. A presença de um jogo no site não implica patrocínio ou vínculo com sua publicadora.</p>
     </section>
 
     <section class="atlas-panel atlas-panel--flat atlas-start-here-cta">
       <div>
-        <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">EM EVOLUÇÃO</span>
-        <p class="text-white/65 mt-2">O AtlasAchievement ainda está em evolução, mas a proposta é construir uma das melhores bases brasileiras para quem quer jogar melhor, se organizar e conquistar mais platinas. Para falar com o projeto, escreva para <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a>.</p>
+        <span class="atlas-section-kicker" style="${INSTITUTIONAL_KICKER_STYLE}">CONTATO EDITORIAL</span>
+        <p class="text-white/65 mt-2">Para sugerir um jogo, apontar uma correção ou falar sobre o conteúdo editorial, escreva para <a href="mailto:${INSTITUTIONAL_EMAIL}" class="atlas-text-action">${INSTITUTIONAL_EMAIL}</a>.</p>
       </div>
       <a href="/contato" class="atlas-btn atlas-btn-primary"><i class="fas fa-envelope" aria-hidden="true"></i> Falar com o projeto</a>
     </section>`;
@@ -3436,8 +3532,8 @@ function renderContactPageContent() {
       </article>
       <article class="atlas-panel atlas-panel--support atlas-start-here-block">
         <h2>Feedback do site</h2>
-        <p>Você também pode usar o formulário de feedback já disponível no AtlasAchievement para reportar bugs, erros em guias, sugestões e pedidos de novos jogos.</p>
-        <p class="mt-3"><button type="button" data-feedback-open class="atlas-btn atlas-btn-secondary"><i class="fas fa-comment-dots" aria-hidden="true"></i> Enviar feedback</button></p>
+        <p>Para reportar bugs, erros em guias, sugestões e pedidos de novos jogos, envie uma mensagem com o endereço da página e uma descrição objetiva do que encontrou.</p>
+        <p class="mt-3"><a href="mailto:${INSTITUTIONAL_EMAIL}?subject=Feedback%20AtlasAchievement" class="atlas-btn atlas-btn-secondary"><i class="fas fa-comment-dots" aria-hidden="true"></i> Enviar feedback por e-mail</a></p>
       </article>
     </section>
 
@@ -3491,17 +3587,18 @@ async function buildOrganicListPageHtml(req, config) {
   const canonicalUrl = buildPublicUrl(req, config.path);
   const allItems = await listAllHomeGames();
   const items = allItems
-    .filter(game => game?.slug && config.matches(game))
+    .filter(game => game?.slug && isIndexablePublicGuide(game) && config.matches(game))
     .sort(config.sort || compareOrganicByDifficultyThenTime);
   const structuredData = buildCatalogStructuredData(origin, canonicalUrl, {
     name: config.name,
     description: config.description
   }, items, items.length);
+  const robotsMeta = items.length >= 3 ? '' : '<meta name="robots" content="noindex,follow">';
 
-  return applyTemplateDefaults(publicIndexTemplate
+  return stripPageUnusedDom(applyTemplateDefaults(publicIndexTemplate
     .replace(/__PAGE_TITLE__/g, escapeHtml(config.title))
     .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(config.description))
-    .replace(/__ROBOTS_META__/g, '')
+    .replace(/__ROBOTS_META__/g, robotsMeta)
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
     .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
@@ -3539,7 +3636,7 @@ async function buildOrganicListPageHtml(req, config) {
       page: 'seo-list',
       path: config.path,
       catalog: { pagination: { total: items.length, totalPages: 1, page: 1 } }
-    })));
+    }))), 'view-catalog');
 }
 
 function getCatalogFacetCount(facetConfigOrId, facetCounts = {}) {
@@ -3811,17 +3908,19 @@ async function buildEditorialCollectionPageHtml(req, collectionSlug) {
   const canonicalUrl = buildPublicUrl(req, config.path);
   const response = await gamesService.listGames({ facet: 'all', sort: 'recommended-desc', page: 1, limit: 100 });
   const allItems = Array.isArray(response?.items) ? response.items : [];
-  const items = buildEditorialCollectionItems(collectionSlug, allItems);
+  const items = buildEditorialCollectionItems(collectionSlug, allItems.filter(isIndexablePublicGuide));
   const structuredData = buildEditorialCollectionStructuredData(origin, canonicalUrl, config, items);
+  const robotsMeta = items.length >= 3 ? '' : '<meta name="robots" content="noindex,follow">';
   const relatedLinks = Object.entries(editorialCollectionPageMap)
     .filter(([slug]) => slug !== collectionSlug)
     .map(([, item]) => `<a href="${escapeHtml(item.path)}" class="atlas-related-pill"><span>${escapeHtml(item.name)}</span><small>Coleção editorial</small></a>`)
     .join('');
   const introBody = `${config.introBody} Use os cards abaixo para comparar apenas jogos que se encaixam nesta seleção, com tempo, dificuldade, roadmap e risco visíveis antes do clique.`;
 
-  return applyTemplateDefaults(publicIndexTemplate
+  return stripPageUnusedDom(applyTemplateDefaults(publicIndexTemplate
     .replace(/__PAGE_TITLE__/g, escapeHtml(config.title))
     .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(config.description))
+    .replace(/__ROBOTS_META__/g, robotsMeta)
     .replace(/__PAGE_OG_TYPE__/g, 'website')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
     .replace(/__PAGE_OG_IMAGE__/g, resolveMetaImage(origin))
@@ -3845,7 +3944,7 @@ async function buildEditorialCollectionPageHtml(req, collectionSlug) {
     .replace(/__CATALOG_VERIFICATION_NOTICE__/g, renderCatalogVerificationNotice(items))
     .replace(/__CATALOG_SSR_LIST__/g, renderCatalogSeoCards(items))
     .replace(/__CATALOG_SSR_PAGINATION__/g, renderCatalogPaginationHtml({ total: items.length, totalPages: 1, page: 1 }))
-    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'catalog', facet: 'all', catalog: { pagination: { total: items.length, totalPages: 1, page: 1 } } })));
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'catalog', facet: 'all', catalog: { pagination: { total: items.length, totalPages: 1, page: 1 } } }))), 'view-catalog');
 }
 
 async function buildCatalogPageHtml(req, facetSlug = null) {
@@ -3884,9 +3983,11 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
   const catalogStarterPicks = (facetConfig?.serviceFacet || 'all') === 'all' ? renderCatalogStarterPicksHtml(starterPickItems) : '';
   const catalogSsrList = renderCatalogSeoCards(items, facetConfig, facetCounts);
   const catalogVerificationNotice = renderCatalogVerificationNotice(items);
-  const robotsMeta = isEmptyCollection ? '<meta name="robots" content="noindex,follow">' : '';
+  const robotsMeta = !isCatalogRoot && total < 3
+    ? '<meta name="robots" content="noindex,follow">'
+    : '';
 
-  return applyTemplateDefaults(publicIndexTemplate
+  return stripPageUnusedDom(applyTemplateDefaults(publicIndexTemplate
     .replace(/__PAGE_TITLE__/g, escapeHtml(title))
     .replace(/__PAGE_DESCRIPTION__/g, escapeHtml(description))
     .replace(/__ROBOTS_META__/g, robotsMeta)
@@ -3918,7 +4019,7 @@ async function buildCatalogPageHtml(req, facetSlug = null) {
       page: 'catalog',
       facet: facetConfig?.serviceFacet || 'all',
       catalog: { pagination: catalogResponse.pagination, facetCounts }
-    })));
+    }))), 'view-catalog');
 }
 
 fs.mkdirSync(env.uploadDir, { recursive: true });
@@ -4049,6 +4150,10 @@ app.get('/robots.txt', (req, res) => {
     'Disallow: /api/',
     'Disallow: /biblioteca',
     'Disallow: /perfil',
+    'Disallow: /conta',
+    'Disallow: /login',
+    'Disallow: /editor',
+    'Disallow: /feedback',
     `Sitemap: ${sitemapUrl}`,
     ''
   ].join('\n'));
@@ -4067,32 +4172,37 @@ app.get('/sitemap.xml', async (req, res, next) => {
       page += 1;
     } while (page <= totalPages);
 
+    const indexableGames = allGames.filter(isIndexablePublicGuide);
     const facetCounts = await gamesService.getCatalogFacetCounts();
     const facetUrls = Object.entries(catalogFacetPageMap)
       .filter(([facetSlug]) => facetSlug !== 'all')
-      .filter(([, facet]) => getCatalogFacetCount(facet, facetCounts) > 0)
+      .filter(([, facet]) => getCatalogFacetCount(facet, facetCounts) >= 3)
       .map(([, facet]) => ({
         loc: buildPublicUrl(req, facet.path),
         lastmod: new Date().toISOString()
       }));
-    const editorialUrls = Object.values(editorialCollectionPageMap)
-      .map(item => ({ loc: buildPublicUrl(req, item.path), lastmod: new Date().toISOString() }));
-    const organicSeoUrls = [
+    const editorialUrls = Object.entries(editorialCollectionPageMap)
+      .filter(([slug]) => buildEditorialCollectionItems(slug, indexableGames).length >= 3)
+      .map(([, item]) => ({ loc: buildPublicUrl(req, item.path), lastmod: new Date().toISOString() }));
+    const institutionalUrls = [
       '/sobre',
       '/contato',
       '/privacidade',
       '/termos',
-      '/comece-aqui',
-      ...Object.values(organicSeoListPageMap).map(item => item.path)
+      '/comece-aqui'
     ].map(pathName => ({ loc: buildPublicUrl(req, pathName), lastmod: new Date().toISOString() }));
+    const organicSeoUrls = Object.values(organicSeoListPageMap)
+      .filter(config => indexableGames.filter(game => game?.slug && config.matches(game)).length >= 3)
+      .map(item => ({ loc: buildPublicUrl(req, item.path), lastmod: new Date().toISOString() }));
 
     const urls = [
       { loc: buildPublicUrl(req, '/'), lastmod: new Date().toISOString() },
       { loc: buildPublicUrl(req, '/catalogo'), lastmod: new Date().toISOString() },
       ...facetUrls,
       ...editorialUrls,
+      ...institutionalUrls,
       ...organicSeoUrls,
-      ...allGames.map(game => ({
+      ...indexableGames.map(game => ({
         loc: buildPublicUrl(req, `/jogo/${game.slug}`),
         lastmod: game.updated_at || game.created_at || new Date().toISOString()
       }))
@@ -4230,6 +4340,9 @@ app.get('/jogo/:slug', setHtmlRouteCacheHeaders, async (req, res, next) => {
       return res.redirect(301, `/jogo/${game.canonical_slug}`);
     }
 
+    if (!isIndexablePublicGuide(game)) {
+      res.setHeader('X-Robots-Tag', 'noindex, follow');
+    }
     res.send(await buildGamePageHtml(game, req));
   } catch (error) {
     next(error);

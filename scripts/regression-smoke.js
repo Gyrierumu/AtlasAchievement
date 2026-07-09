@@ -12859,54 +12859,44 @@ async function assertBackendEditorialConsistency() {
     assert(sitemap.includes('<urlset'), 'sitemap deve conter urlset');
     assert(sitemap.includes(`<loc>${baseUrl}/</loc>`), 'sitemap deve incluir home');
     assert(sitemap.includes(`<loc>${baseUrl}/catalogo</loc>`), 'sitemap deve incluir catalogo');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/elden-ring</loc>`), 'sitemap deve incluir jogo publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/ghost-of-tsushima</loc>`), 'sitemap deve incluir Ghost of Tsushima publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/horizon-zero-dawn</loc>`), 'sitemap deve incluir Horizon Zero Dawn publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/horizon-forbidden-west</loc>`), 'sitemap deve incluir Horizon Forbidden West publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/mortal-shell</loc>`), 'sitemap deve incluir Mortal Shell publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/star-wars-jedi-fallen-order</loc>`), 'sitemap deve incluir Star Wars Jedi Fallen Order publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/nioh-3</loc>`), 'sitemap deve incluir Nioh 3 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/resident-evil-requiem</loc>`), 'sitemap deve incluir Resident Evil Requiem publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/ratchet-and-clank-rift-apart</loc>`), 'sitemap deve incluir Ratchet & Clank publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/returnal</loc>`), 'sitemap deve incluir Returnal publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/demons-souls</loc>`), "sitemap deve incluir Demon's Souls publicado");
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/dark-souls-remastered</loc>`), 'sitemap deve incluir Dark Souls Remastered publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/dark-souls-ii-scholar-of-the-first-sin</loc>`), 'sitemap deve incluir Dark Souls II Scholar publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/dark-souls-iii</loc>`), 'sitemap deve incluir Dark Souls III publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/bloodborne</loc>`), 'sitemap deve incluir Bloodborne publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/sekiro-shadows-die-twice</loc>`), 'sitemap deve incluir Sekiro publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/armored-core-vi-fires-of-rubicon</loc>`), 'sitemap deve incluir Armored Core VI publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/lies-of-p</loc>`), 'sitemap deve incluir Lies of P publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/lords-of-the-fallen</loc>`), 'sitemap deve incluir Lords of the Fallen publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/death-stranding</loc>`), 'sitemap deve incluir Death Stranding publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/death-stranding-2-on-the-beach</loc>`), 'sitemap deve incluir Death Stranding 2 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/days-gone</loc>`), 'sitemap deve incluir Days Gone publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/gran-turismo-7</loc>`), 'sitemap deve incluir Gran Turismo 7 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/final-fantasy-vii-remake</loc>`), 'sitemap deve incluir Final Fantasy VII Remake publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/final-fantasy-vii-rebirth</loc>`), 'sitemap deve incluir Final Fantasy VII Rebirth publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/final-fantasy-xvi</loc>`), 'sitemap deve incluir Final Fantasy XVI publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/persona-5-royal</loc>`), 'sitemap deve incluir Persona 5 Royal publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/persona-3-reload</loc>`), 'sitemap deve incluir Persona 3 Reload publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/metaphor-refantazio</loc>`), 'sitemap deve incluir Metaphor publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/the-witcher-3-wild-hunt</loc>`), 'sitemap deve incluir The Witcher 3 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/cyberpunk-2077</loc>`), 'sitemap deve incluir Cyberpunk 2077 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/baldurs-gate-3</loc>`), 'sitemap deve incluir Baldur\'s Gate 3 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/dragons-dogma-2</loc>`), 'sitemap deve incluir Dragon\'s Dogma 2 publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/marvels-spider-man</loc>`), "sitemap deve incluir Marvel's Spider-Man publicado");
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/marvels-spider-man-miles-morales</loc>`), 'sitemap deve incluir Miles Morales publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/marvels-spider-man-2</loc>`), "sitemap deve incluir Marvel's Spider-Man 2 publicado");
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/god-of-war</loc>`), 'sitemap deve incluir God of War (2018) publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/god-of-war-ragnarok</loc>`), 'sitemap deve incluir God of War Ragnarök publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/the-last-of-us-part-i</loc>`), 'sitemap deve incluir The Last of Us Part I publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/the-last-of-us-part-ii</loc>`), 'sitemap deve incluir The Last of Us Part II publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/hades-ii</loc>`), 'sitemap deve incluir Hades II publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/astro-bot</loc>`), 'sitemap deve incluir Astro Bot publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/astros-playroom</loc>`), "sitemap deve incluir Astro's Playroom publicado");
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/uncharted-legacy-of-thieves-collection</loc>`), 'sitemap deve incluir Uncharted Legacy of Thieves publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/prince-of-persia-the-lost-crown</loc>`), 'sitemap deve incluir Prince of Persia publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/the-evil-within</loc>`), 'sitemap deve incluir The Evil Within publicado');
-    assert(sitemap.includes(`<loc>${baseUrl}/jogo/avatar-frontiers-of-pandora</loc>`), 'sitemap deve incluir Avatar Frontiers of Pandora publicado');
-    assert(!sitemap.includes('/jogo/resident-evil-5'), 'sitemap nao deve incluir jogos em draft');
+    [
+      'horizon-zero-dawn',
+      'horizon-forbidden-west',
+      'mortal-shell',
+      'star-wars-jedi-fallen-order',
+      'ratchet-and-clank-rift-apart',
+      'returnal',
+      'demons-souls',
+      'dark-souls-ii-scholar-of-the-first-sin',
+      'lies-of-p',
+      'gran-turismo-7',
+      'final-fantasy-vii-remake',
+      'final-fantasy-vii-rebirth',
+      'final-fantasy-xvi',
+      'persona-5-royal',
+      'persona-3-reload',
+      'metaphor-refantazio',
+      'cyberpunk-2077',
+      'baldurs-gate-3',
+      'dragons-dogma-2',
+      'marvels-spider-man',
+      'marvels-spider-man-miles-morales',
+      'marvels-spider-man-2',
+      'prince-of-persia-the-lost-crown',
+      'the-evil-within',
+      'avatar-frontiers-of-pandora'
+    ].forEach(slug => {
+      assert(sitemap.includes(`<loc>${baseUrl}/jogo/${slug}</loc>`), `sitemap deve incluir guia completo e verificado: ${slug}`);
+    });
+    [
+      'elden-ring',
+      'ghost-of-tsushima',
+      'resident-evil-5',
+      'resident-evil-requiem',
+      'nioh-3'
+    ].forEach(slug => {
+      assert(!sitemap.includes(`/jogo/${slug}`), `sitemap nao deve incluir guia incompleto, em revisao ou draft: ${slug}`);
+    });
     assert(sitemap.includes('/catalogo/dificuldade-baixa'), 'sitemap deve incluir colecao de dificuldade baixa com Astro Bot');
     assert(sitemap.includes('/catalogo/ate-15-horas'), 'sitemap deve incluir colecao de tempo com jogo encontrado por fallback');
     if (Number(publicLargeAfterDraft.pagination?.total || 0) === 0) {

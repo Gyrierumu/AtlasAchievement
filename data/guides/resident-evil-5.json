@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
     "time_sort_hours": 35,
-    "updated_at": "2026-07-07 22:00:52",
+    "updated_at": "2026-07-09 09:50:53",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "verification_status": "verified",
     "walkthrough": null
@@ -1665,7 +1665,7 @@
         "title": "Desbloqueie Professional e prepare o arsenal"
       },
       {
-        "detail": "Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum; para a lista completa, abra Extras da Platina.",
+        "detail": "Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum; para o checklist detalhado da platina base, abra Extras da Platina.",
         "number": 3,
         "title": "Limpeza de emblemas BSAA e tesouros"
       },

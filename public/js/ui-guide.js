@@ -1710,7 +1710,7 @@ window.UIGuide = (() => {
     return `
       <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
         <div>
-          ${quickPlanItems.length ? `<div class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
+          ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
           <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-5">Resumo da platina</h2>
           ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-3 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
@@ -1719,6 +1719,42 @@ window.UIGuide = (() => {
           <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
           <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
           <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
+        </div>
+      </section>`;
+  }
+
+  function renderGuideUsagePanel(game = {}) {
+    if (String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5') return '';
+    const rows = [
+      ['Ver a ordem ideal da platina', 'Roadmap', 'roadmap', '#guideRoadmapPanel'],
+      ['Seguir uma versão resumida', 'Plano rápido', 'quick', '#guideQuickPlan'],
+      ['Marcar os 51 troféus base', 'Checklist da platina base', 'trophies', '#guideChecklistPanel'],
+      ['Conferir listas detalhadas da platina', 'Extras da Platina', 'extras', '#guidePlatinumExtrasPanel'],
+      ['Saber o que observar por capítulo', 'Rota por Capítulo', 'chapter-route', '#guideChapterRoutePanel'],
+      ['Preparar War Hero/Professional', 'Professional e IA', 'professional', '#guideProfessionalAiPanel'],
+      ['Escolher onde farmar dinheiro/pontos', 'Rotas de Farm', 'farm', '#guideFarmRoutesPanel'],
+      ['Evitar erros comuns', 'Mitos e erros comuns', 'myths', '#guideCommonMythsPanel'],
+      ['Fazer 100% com DLCs', 'DLCs e 100% da Lista', 'dlcs', '#guideDlcCompletionPanel']
+    ];
+    return `
+      <section id="guideUsagePanel" class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4" aria-labelledby="guideUsageTitle">
+        <div>
+          <div class="atlas-eyebrow">Navegação rápida</div>
+          <h2 id="guideUsageTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Como usar este guia</h2>
+        </div>
+        <ul class="text-sm text-white/72 list-disc pl-5 space-y-1">
+          <li>Quer só platinar? Siga Roadmap, Plano rápido, Checklist da platina base e Extras da Platina.</li>
+          <li>Quer evitar retrabalho? Use Rota por Capítulo, Professional e IA, Rotas de Farm e Mitos e erros comuns.</li>
+          <li>Quer o 100% completo? Depois da platina, abra DLCs e 100% da Lista.</li>
+        </ul>
+        <div class="overflow-x-auto">
+          <h3 class="text-base font-bold text-white mb-2">Se você quer... abra...</h3>
+          <table class="w-full min-w-[560px] text-sm">
+            <thead class="text-left text-white/72"><tr><th class="py-2 pr-4 font-bold">Se você quer...</th><th class="py-2 font-bold">Abra...</th></tr></thead>
+            <tbody class="divide-y divide-white/10">
+              ${rows.map(([goal, label, action, href]) => `<tr><td class="py-2 pr-4 text-white/72">${escapeHtml(goal)}</td><td class="py-2"><a class="text-atlas-300 font-bold hover:text-white" href="${escapeAttribute(href)}" data-guide-action="${escapeAttribute(action)}">${escapeHtml(label)}</a></td></tr>`).join('')}
+            </tbody>
+          </table>
         </div>
       </section>`;
   }
@@ -2098,7 +2134,7 @@ window.UIGuide = (() => {
       sidebarEl.innerHTML = renderGuideSidebarCompact(game, viewModel, { guideMeta, isSaved, libraryEntry, storageLabel });
     }
     if (summaryEl) {
-      summaryEl.innerHTML = renderGuideSummaryPanel(game, viewModel);
+      summaryEl.innerHTML = `${renderGuideSummaryPanel(game, viewModel)}${renderGuideUsagePanel(game)}`;
     }
     if (trophiesEl) {
       trophiesEl.innerHTML = viewModel.trophies.length

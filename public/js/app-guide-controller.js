@@ -392,6 +392,10 @@ window.AppGuideController = (() => {
         summary: 'summary',
         quick: 'summary',
         roadmap: 'roadmap',
+        'chapter-route': 'roadmap',
+        professional: 'roadmap',
+        farm: 'roadmap',
+        myths: 'roadmap',
         trophies: 'checklist',
         checklist: 'checklist',
         extras: 'extras',
@@ -412,8 +416,11 @@ window.AppGuideController = (() => {
       const nextTab = tabByAction[action] || 'checklist';
       state.activeGuideTab = nextTab;
       UI.activateGuideTab?.(nextTab, { scroll: false });
+      const navAction = ['chapter-route', 'professional', 'farm', 'myths'].includes(action)
+        ? 'roadmap'
+        : (action === 'quick' ? 'summary' : action);
       document.querySelectorAll('#guideLayerNav [data-guide-action]').forEach(link => {
-        const selected = (link.dataset.guideAction || '') === action;
+        const selected = (link.dataset.guideAction || '') === navAction;
         link.classList.toggle('is-active', selected);
         link.setAttribute('aria-current', selected ? 'true' : 'false');
       });
@@ -424,8 +431,12 @@ window.AppGuideController = (() => {
       const map = {
         header: '#guideHeader',
         summary: '#guideSummaryActions',
-        quick: '#guidePlatinumSummaryPanel',
+        quick: '#guideQuickPlan',
         roadmap: '#guideRoadmapPanel',
+        'chapter-route': '#guideChapterRoutePanel',
+        professional: '#guideProfessionalAiPanel',
+        farm: '#guideFarmRoutesPanel',
+        myths: '#guideCommonMythsPanel',
         extras: '#guidePlatinumExtrasPanel',
         dlcs: '#guideDlcCompletionPanel',
         missables: '#guideQuickCard-missables',
