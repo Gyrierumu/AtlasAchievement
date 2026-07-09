@@ -43,14 +43,10 @@ window.UICatalog = (() => {
   function renderVerificationNotice(items = []) {
     const target = qs('#catalogVerificationNotice');
     if (!target) return;
-    const count = items.reduce((total, game) => {
-      const statusBadge = typeof sharedCard.buildStandardGameCardModel === 'function'
-        ? sharedCard.buildStandardGameCardModel(game).statusBadge
-        : getEditorialBadge(game);
-      return total + (isUnverifiedBadge(statusBadge) ? 1 : 0);
-    }, 0);
-    target.innerHTML = count > 1
-      ? `<i class="fas fa-circle-info" aria-hidden="true"></i><span>${escapeHtml(`${count} guias em revisão editorial`)}</span>`
+    const count = items.filter(game => typeof sharedCatalog.isPublicGuideEligible !== 'function' || sharedCatalog.isPublicGuideEligible(game)).length;
+    const label = count === 1 ? '1 guia verificado' : `${count} guias verificados`;
+    target.innerHTML = count
+      ? `<i class="fas fa-circle-check" aria-hidden="true"></i><span>${escapeHtml(label)}</span>`
       : '';
   }
 
@@ -402,8 +398,7 @@ window.UICatalog = (() => {
         'grind-present',
         'dlc-base',
         'chapter-select',
-        'editorial-verified',
-        'editorial-review'
+        'editorial-verified'
       ];
       const buildChipConfigs = facetIds => facetIds
         .map(id => catalogFacetMeta[id])

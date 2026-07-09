@@ -530,8 +530,54 @@
     return !noChapterSelect && /chapter select|selecao de capitulo|selecao de capitulos|selecionar capitulo|selecionar capitulos|collectible mode/.test(text);
   }
 
+  function isPublicGuideEligible(game = {}) {
+    const text = value => String(value ?? '').replace(/\s+/g, ' ').trim();
+    const normalized = value => text(value).toLowerCase();
+    const verifiedFlag = game?.is_verified === true
+      || game?.is_verified === 1
+      || normalized(game?.is_verified) === '1'
+      || normalized(game?.is_verified) === 'true';
+    const difficulty = Number(game?.difficulty);
+    const time = text(game?.time);
+    const visibleText = [
+      game?.name,
+      time,
+      game?.runs_summary,
+      game?.missable_summary,
+      game?.online_summary,
+      game?.grind_summary,
+      game?.dlc_scope,
+      game?.difficulty_reason,
+      game?.time_reason,
+      game?.first_run_advice,
+      game?.cleanup_advice,
+      game?.before_you_start,
+      game?.best_for,
+      game?.avoid_if,
+      game?.verification_note,
+      ...(Array.isArray(game?.quality_warnings) ? game.quality_warnings : []),
+      ...(Array.isArray(game?.trophies) ? game.trophies.flatMap(trophy => [trophy?.name, trophy?.description, trophy?.tip]) : [])
+    ].map(text).filter(Boolean).join(' ');
+    const invalidTime = !time
+      || /em revis[aã]o|informa[cç][aã]o em revis[aã]o|a definir|indispon[ií]vel|^[-–—]$|^n\/?a$/i.test(time);
+    const hasPlaceholder = /\[object Object\]|\bNOME ORIGINAL\b|\bplaceholder\b|descri[cç][aã]o em revis[aã]o|conte[uú]do em revis[aã]o|informa[cç][aã]o em revis[aã]o|valida[cç][aã]o (?:editorial )?pendente|aguardando revis[aã]o|\ba definir\b/i.test(visibleText);
+
+    return normalized(game?.editorial_status || 'published') === 'published'
+      && verifiedFlag
+      && normalized(game?.verification_status) === 'verified'
+      && normalized(game?.editorial_review_status) === 'verified'
+      && normalized(game?.coverage_level) === 'complete'
+      && Number.isFinite(difficulty)
+      && difficulty > 0
+      && difficulty <= 10
+      && !invalidTime
+      && getGameTotal(game) > 0
+      && getRoadmapCount(game) > 0
+      && !hasPlaceholder;
+  }
+
   function isCatalogVerified(game = {}) {
-    return getEditorialTrustStatus(game) === 'verified';
+    return isPublicGuideEligible(game);
   }
 
   function isCatalogInReview(game = {}) {
@@ -1154,6 +1200,7 @@
     getRoadmapCount,
     hasGuideRisk,
     getCatalogDecisionSignals,
+    isPublicGuideEligible,
     isCatalogVerified,
     isCatalogInReview,
     hasCatalogEditorialStatus,

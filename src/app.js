@@ -325,7 +325,7 @@ function resolveMetaImage(origin, imagePath) {
 
 function resolveGuideMetaImage(game = {}) {
   const publicOrigin = PRODUCTION_CANONICAL_ORIGIN;
-  return resolveMetaImage(publicOrigin, firstSeoText(game?.cover_image, game?.image));
+  return resolveMetaImage(publicOrigin, firstSeoText(game?.image, game?.cover_image));
 }
 
 
@@ -562,6 +562,9 @@ function firstSeoText(...values) {
 
 function buildGameSeoTitle(game = {}) {
   const name = String(game?.name || 'Jogo').trim() || 'Jogo';
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+    return 'Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement';
+  }
   return `${name} – Guia de platina e troféus`;
 }
 
@@ -604,6 +607,9 @@ function hasMissablesForSeo(game = {}) {
 
 function buildGameSeoDescription(game = {}) {
   const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+    return 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.';
+  }
   const parts = [];
   const time = String(game?.time || '').trim();
   const difficulty = Number(game?.difficulty || 0);
@@ -1616,6 +1622,10 @@ function renderGuideHeaderHtml(game, viewModel) {
   const routeModel = buildGuideHeroRouteModel(game, viewModel);
   const primaryAction = buildGuideHeroPrimaryAction(viewModel);
   const scopeModel = viewModel.scopeModel || {};
+  const isResidentEvil5 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
+  const subtitle = isResidentEvil5
+    ? 'Guia de platina e troféus de Resident Evil 5 no PS4, com roadmap e checklist dos 51 troféus base. DLCs não obrigatórias ficam na seção DLCs e 100% da Lista; Extras da Platina detalha a lista base.'
+    : (scopeModel.subtitle || 'Guia de troféus e roadmap da platina');
   return `
     <section class="atlas-panel atlas-panel--primary atlas-guide-hero p-5 md:p-6">
       <div class="atlas-guide-hero__layout">
@@ -1626,7 +1636,7 @@ function renderGuideHeaderHtml(game, viewModel) {
           </div>
           <h1>${escapeHtml(buildGameGuideH1(game))}</h1>
           ${renderEditorialTrustHtml(game, viewModel)}
-          <p class="atlas-guide-hero__subtitle">${escapeHtml(scopeModel.subtitle || 'Guia de troféus e roadmap da platina')}</p>
+          <p class="atlas-guide-hero__subtitle">${escapeHtml(subtitle)}</p>
           <p class="atlas-guide-hero__summary" hidden>${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
           <div class="atlas-guide-start-card">
             <div>
@@ -2763,7 +2773,7 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
   return `
     <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
       <div>
-        ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina"><div class="atlas-eyebrow">Plano rápido</div><ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
+        ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina">${normalizedSlug === 'resident-evil-5' ? '<h2>Plano rápido</h2>' : '<div class="atlas-eyebrow">Plano rápido</div>'}<ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
         <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
         ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
@@ -2855,8 +2865,11 @@ function applyTemplateDefaults(template) {
     .replace(/__CATALOG_BREADCRUMBS__/g, '')
     .replace(/__GUIDE_BREADCRUMBS__/g, '')
     .replace(/__GUIDE_COLLECTION_LINKS__/g, '')
+    .replace(/__GUIDE_CHECKLIST_TITLE__/g, 'Checklist de troféus')
     .replace(/__ROBOTS_META__/g, '')
     .replace(/__PAGE_OG_TYPE__/g, 'website')
+    .replace(/__PAGE_OG_IMAGE_WIDTH__/g, '1200')
+    .replace(/__PAGE_OG_IMAGE_HEIGHT__/g, '630')
     .replace(/__HAS_SSR_GAME__/g, 'false')
     .replace(/__SSR_GUIDE_HEADER__/g, '')
     .replace(/__SSR_GUIDE_DECISION_STACK__/g, '')
@@ -2952,6 +2965,9 @@ function stripPageUnusedDom(html = '', activeViewId = '') {
   ['feedbackModal', 'userAuthModal', 'libraryImportModal', 'adminModal', 'guideQuickDock'].forEach(id => {
     next = removeElementById(next, 'div', id);
   });
+  if (activeViewId !== 'view-guide') {
+    next = removeElementById(next, 'nav', 'guideQuickDock');
+  }
   return next;
 }
 
@@ -2960,6 +2976,7 @@ function normalizeGuideQualityText(value = '') {
 }
 
 function isIndexablePublicGuide(game = {}) {
+  if (!sharedCatalogModel.isPublicGuideEligible(game)) return false;
   const editorialStatus = normalizeGuideQualityText(game.editorial_status || 'published').toLowerCase();
   const verificationStatus = normalizeGuideQualityText(game.verification_status).toLowerCase();
   const reviewStatus = normalizeGuideQualityText(game.editorial_review_status).toLowerCase();
@@ -3023,6 +3040,14 @@ async function buildGamePageHtml(game, req) {
   const description = buildGameSeoDescription(game);
   const image = resolveGuideMetaImage(game);
   const guideCollections = classifyGameCollections(game, game.trophies || []);
+  const guideCollectionLinks = normalizedSlug === 'resident-evil-5'
+    ? [{
+        path: '/jogo/resident-evil-6',
+        label: 'Guia de Resident Evil 6',
+        reason: 'Compare a continuação da franquia e planeje outra platina de ação cooperativa.',
+        actionLabel: 'Abrir guia'
+      }, ...guideCollections.collectionLinks]
+    : guideCollections.collectionLinks;
   const structuredData = safeJsonForHtml({
     '@context': 'https://schema.org',
     '@graph': [{
@@ -3041,7 +3066,33 @@ async function buildGamePageHtml(game, req) {
         name: 'AtlasAchievement',
         url: PRODUCTION_CANONICAL_ORIGIN
       }
-    }, {
+    }, ...(normalizedSlug === 'resident-evil-5' ? [{
+      '@type': 'TechArticle',
+      headline: 'Resident Evil 5 — Guia de platina e troféus',
+      description,
+      image: [image],
+      datePublished: String(game.created_at || '').slice(0, 10),
+      dateModified: String(game.updated_at || game.last_reviewed_at || '').slice(0, 10),
+      inLanguage: 'pt-BR',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl
+      },
+      author: {
+        '@type': 'Organization',
+        name: 'AtlasAchievement',
+        url: PRODUCTION_CANONICAL_ORIGIN
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'AtlasAchievement',
+        url: PRODUCTION_CANONICAL_ORIGIN
+      },
+      about: {
+        '@type': 'VideoGame',
+        name: 'Resident Evil 5'
+      }
+    }] : []), {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Início', item: `${PRODUCTION_CANONICAL_ORIGIN}/` },
@@ -3061,13 +3112,16 @@ async function buildGamePageHtml(game, req) {
     .replace(/__PAGE_OG_TYPE__/g, 'article')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
     .replace(/__PAGE_OG_IMAGE__/g, escapeHtml(image))
+    .replace(/__PAGE_OG_IMAGE_WIDTH__/g, normalizedSlug === 'resident-evil-5' ? '460' : '1200')
+    .replace(/__PAGE_OG_IMAGE_HEIGHT__/g, normalizedSlug === 'resident-evil-5' ? '215' : '630')
     .replace(/__PAGE_JSON_LD__/g, structuredData)
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
     .replace(/__CATALOG_HEADING_TAG__/g, 'h2')
     .replace(/__GUIDE_VIEW_CLASS__/g, normalizedSlug === 'resident-evil-6' ? 'atlas-guide--resident-evil-6' : (normalizedSlug === 'lego-batman-legacy-of-the-dark-knight' ? 'atlas-guide--lego-batman-legacy-of-the-dark-knight' : (normalizedSlug === 'lies-of-p' ? 'atlas-guide--lies-of-p' : '')))
     .replace(/__GUIDE_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]))
-    .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollections.collectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="atlas-card atlas-card--minimal atlas-related-collection"><div class="atlas-card__body"><strong class="atlas-card__title">${escapeHtml(item.label)}</strong><span class="atlas-card__reason">${escapeHtml(item.reason)}</span><span class="atlas-card__link">Abrir coleção</span></div></a>`).join(''))
+    .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="atlas-card atlas-card--minimal atlas-related-collection"><div class="atlas-card__body"><strong class="atlas-card__title">${escapeHtml(item.label)}</strong><span class="atlas-card__reason">${escapeHtml(item.reason)}</span><span class="atlas-card__link">${escapeHtml(item.actionLabel || 'Abrir coleção')}</span></div></a>`).join(''))
+    .replace(/__GUIDE_CHECKLIST_TITLE__/g, normalizedSlug === 'resident-evil-5' ? 'Checklist da platina base' : 'Checklist de troféus')
     .replace(/__GUIDE_CONTENT_CLASS__/g, '')
     .replace(/__GUIDE_PROGRESS_INITIAL__/g, escapeHtml(ssrProgressInitial))
     .replace(/__GUIDE_COUNTER_INITIAL__/g, escapeHtml(ssrCounterInitial))
@@ -3257,13 +3311,13 @@ async function buildStartHerePageHtml(req) {
 
 function renderOrganicListNotice(items = []) {
   if (items.length >= 6) return '';
-  return '<div class="atlas-seo-list-note"><strong>Ainda estamos expandindo esta lista.</strong> Veja também o catálogo completo.</div>';
+  return '<div class="atlas-seo-list-note"><strong>Seleção editorial com critérios conservadores.</strong> Veja também o catálogo completo.</div>';
 }
 
 function renderOrganicListFinalCta() {
   return `
     <section class="atlas-seo-final-cta">
-      <p>Quer comparar com todos os jogos publicados, incluindo listas longas, online, coop e guias em revisão?</p>
+      <p>Quer comparar todos os guias verificados, incluindo listas longas, online e coop?</p>
       <a href="/catalogo" class="atlas-btn atlas-btn-primary"><i class="fas fa-compass"></i> Ver catálogo completo</a>
     </section>`;
 }
@@ -3661,13 +3715,10 @@ function getCatalogStatusBadge(statusBadge = {}, game = {}) {
 }
 
 function renderCatalogVerificationNotice(items = []) {
-  const count = (Array.isArray(items) ? items : []).reduce((total, game) => {
-    const statusBadge = sharedCardModel.buildStandardGameCardModel(game).statusBadge;
-    return total + (isCatalogUnverifiedBadge(statusBadge) ? 1 : 0);
-  }, 0);
-  return count > 1
-    ? `<i class="fas fa-circle-info" aria-hidden="true"></i><span>${escapeHtml(`${count} guias em revisão editorial`)}</span>`
-    : '';
+  const count = (Array.isArray(items) ? items : []).filter(sharedCatalogModel.isPublicGuideEligible).length;
+  if (!count) return '';
+  const label = count === 1 ? '1 guia verificado' : `${count} guias verificados`;
+  return `<i class="fas fa-circle-check" aria-hidden="true"></i><span>${escapeHtml(label)}</span>`;
 }
 
 function getCatalogRelatedFacets(facetConfig, facetCounts = {}, options = {}) {

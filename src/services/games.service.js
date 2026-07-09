@@ -5,6 +5,7 @@ const { slugifyGameName, getCanonicalGameSlug, buildSlugVariant } = require('../
 const { formatTimeMetadata } = require('../utils/time');
 const editorialModel = require('../shared/editorialModel');
 const guideModel = require('../shared/guideViewModel');
+const catalogModel = require('../shared/catalogModel');
 const sampleGames = require('../data/sampleGames');
 
 const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
@@ -1377,30 +1378,51 @@ async function listGames(options = {}) {
     GROUP BY g.id, g.name, g.slug, g.difficulty, g.time, g.time_min_hours, g.time_max_hours, g.time_sort_hours, g.time_bucket, g.missable, g.guide_runs, g.guide_online, g.guide_grind, g.guide_dlc, g.guide_ideal, g.guide_avoid, g.guide_best_moment, g.runs_summary, g.missable_summary, g.online_summary, g.grind_summary, g.dlc_scope, g.difficulty_reason, g.time_reason, g.first_run_advice, g.cleanup_advice, g.before_you_start, g.best_for, g.avoid_if, g.verification_status, g.editorial_status, g.coverage_level, g.is_verified, g.verification_note, g.editorial_review_status, g.last_reviewed_at, g.editorial_notes, g.quality_warnings, g.reviewed_by, g.image, g.cover_image, g.created_at, g.updated_at
   )`;
 
-  const totalRow = await get(
-    `${baseCte}
-     SELECT COUNT(*) AS total
-     FROM game_stats
-     ${scopedWhereSql}`,
-    params
-  );
+  let items;
+  let total;
+  let totalPages;
+  let safePage;
 
-  const total = Number(totalRow?.total || 0);
-  const totalPages = Math.max(Math.ceil(total / safeLimit), 1);
-  const safePage = total > 0 ? Math.min(requestedPage, totalPages) : 1;
-  const offset = (safePage - 1) * safeLimit;
-
-  const rows = await all(
-    `${baseCte}
-     SELECT *
-     FROM game_stats
-     ${scopedWhereSql}
-     ORDER BY ${orderBy}
-     LIMIT ? OFFSET ?`,
-    [...params, safeLimit, offset]
-  );
-
-  const items = rows.map(normalizeListRow);
+  if (!includeDrafts) {
+    const rows = await all(
+      `${baseCte}
+       SELECT *
+       FROM game_stats
+       ${scopedWhereSql}
+       ORDER BY ${orderBy}`,
+      params
+    );
+    const eligibleItems = rows
+      .map(normalizeListRow)
+      .filter(catalogModel.isPublicGuideEligible);
+    total = eligibleItems.length;
+    totalPages = Math.max(Math.ceil(total / safeLimit), 1);
+    safePage = total > 0 ? Math.min(requestedPage, totalPages) : 1;
+    const offset = (safePage - 1) * safeLimit;
+    items = eligibleItems.slice(offset, offset + safeLimit);
+  } else {
+    const totalRow = await get(
+      `${baseCte}
+       SELECT COUNT(*) AS total
+       FROM game_stats
+       ${scopedWhereSql}`,
+      params
+    );
+    total = Number(totalRow?.total || 0);
+    totalPages = Math.max(Math.ceil(total / safeLimit), 1);
+    safePage = total > 0 ? Math.min(requestedPage, totalPages) : 1;
+    const offset = (safePage - 1) * safeLimit;
+    const rows = await all(
+      `${baseCte}
+       SELECT *
+       FROM game_stats
+       ${scopedWhereSql}
+       ORDER BY ${orderBy}
+       LIMIT ? OFFSET ?`,
+      [...params, safeLimit, offset]
+    );
+    items = rows.map(normalizeListRow);
+  }
 
   return {
     items,

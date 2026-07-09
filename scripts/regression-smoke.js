@@ -192,7 +192,8 @@ function assertHtmlLoadsModules(relPath) {
   assert.deepStrictEqual(scriptPaths, expectedScripts, `${relPath} precisa carregar apenas os scripts esperados, na ordem correta`);
 
   if (relPath === 'public/index.html') {
-    assert(scripts.includes('/js/ui-guide.js?v=re5-extras-phase6-20260706'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do resumo de guias');
+    assert(scripts.includes('/js/ui-formatters.js?v=re5-seo-phase24-20260709'), 'public/index.html deve versionar ui-formatters.js para evitar metadados antigos do RE5');
+    assert(scripts.includes('/js/ui-guide.js?v=re5-seo-phase24-20260709'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do guia RE5');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');

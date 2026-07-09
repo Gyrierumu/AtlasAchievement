@@ -311,6 +311,8 @@ function isIndexableGuideFixture(game = {}) {
   const difficulty = Number(game.difficulty);
   const trophies = Array.isArray(game.trophies) ? game.trophies : [];
   const roadmap = Array.isArray(game.roadmap) ? game.roadmap : [];
+  const trophyCount = trophies.length || Number(game.trophy_count || game.total_trophies || 0);
+  const roadmapCount = roadmap.length || Number(game.roadmap_count || 0);
   const coreText = [
     game.name,
     time,
@@ -332,8 +334,8 @@ function isIndexableGuideFixture(game = {}) {
     && difficulty <= 10
     && Boolean(time)
     && !/em revis[aã]o|a definir|indispon[ií]vel|^[-–—]$|^n\/?a$/i.test(time)
-    && trophies.length > 0
-    && roadmap.length > 0
+    && trophyCount > 0
+    && roadmapCount > 0
     && !/\[object Object\]|\bNOME ORIGINAL\b|\bplaceholder\b|descri[cç][aã]o em revis[aã]o|conte[uú]do em revis[aã]o|\ba definir\b/i.test(coreText);
 }
 
@@ -1367,6 +1369,15 @@ async function validateGuide(slug = '') {
     }
     if (slug === 'resident-evil-5') {
       const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');
+      const structuredData = JSON.parse(html.match(/<script type="application\/ld\+json" id="gameStructuredData">([\s\S]*?)<\/script>/)?.[1] || '{}');
+      const structuredGraph = Array.isArray(structuredData?.['@graph']) ? structuredData['@graph'] : [];
+      const techArticle = structuredGraph.find(item => item?.['@type'] === 'TechArticle');
+      const breadcrumbSchema = structuredGraph.find(item => item?.['@type'] === 'BreadcrumbList');
+      const mainText = (html.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '')
+        .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
       const guideControllerSource = readProjectFile('public/js/app-guide-controller.js');
       const layerNavHtml = html.match(/<nav id="guideLayerNav"[\s\S]*?<\/nav>/)?.[0] || '';
       const quickPlanHtml = html.match(/<div id="guideQuickPlan" class="atlas-guide-quick-plan"[\s\S]*?<\/ol><\/div>/)?.[0] || '';
@@ -1394,6 +1405,42 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.dlcRequired, false, 'API de Resident Evil 5 deve manter DLC nao obrigatoria explicita');
       assert.strictEqual(apiGame.onlineRequired, false, 'API de Resident Evil 5 deve manter online 0 explicito');
       assert.strictEqual(apiGame.coopRequired, false, 'API de Resident Evil 5 deve manter coop 0 explicito');
+      assert.strictEqual(getTitle(html), 'Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement', 'Resident Evil 5 deve usar title SEO especifico');
+      assert.strictEqual(getMeta(html, 'description'), 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.', 'Resident Evil 5 deve usar meta description especifica');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/resident-evil-5', 'Resident Evil 5 deve usar canonical de producao');
+      assert(!getMeta(html, 'robots'), 'Resident Evil 5 verificado nao deve receber noindex');
+      assert.strictEqual((html.match(/<h1\b/gi) || []).length, 1, 'Resident Evil 5 deve manter H1 unico');
+      [
+        'Roadmap',
+        'Rota por Capítulo — Platina Base',
+        'Professional e IA — Preparação para War Hero',
+        'Rotas de Farm — dinheiro, pontos e upgrades',
+        'Plano rápido',
+        'Checklist da platina base',
+        'Mitos e erros comuns',
+        'Extras da Platina',
+        'DLCs e 100% da Lista',
+        'Perguntas frequentes'
+      ].forEach(heading => {
+        assert(html.includes(`<h2`) && new RegExp(`<h2[^>]*>${heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}<\\/h2>`).test(html), `Resident Evil 5 deve manter H2 principal: ${heading}`);
+      });
+      assert(techArticle, 'Resident Evil 5 deve expor TechArticle no JSON-LD');
+      assert.strictEqual(techArticle.headline, 'Resident Evil 5 — Guia de platina e troféus', 'TechArticle deve ter headline fiel');
+      assert.strictEqual(techArticle.mainEntityOfPage?.['@id'], 'https://atlasachievement.com.br/jogo/resident-evil-5', 'TechArticle deve apontar para canonical');
+      assert.strictEqual(techArticle.publisher?.name, 'AtlasAchievement', 'TechArticle deve identificar publisher');
+      assert(/^\d{4}-\d{2}-\d{2}$/.test(techArticle.dateModified || ''), 'TechArticle deve expor dateModified valido');
+      assert.deepStrictEqual(
+        breadcrumbSchema?.itemListElement?.map(item => item.name),
+        ['Início', 'Catálogo', 'Resident Evil 5'],
+        'BreadcrumbList deve representar Inicio, Catalogo e Resident Evil 5'
+      );
+      assert(html.includes('property="og:image" content="https://cdn.cloudflare.steamstatic.com/steam/apps/21690/header.jpg"'), 'Open Graph de Resident Evil 5 deve usar imagem horizontal');
+      assert(html.includes('property="og:image:width" content="460"') && html.includes('property="og:image:height" content="215"'), 'Open Graph deve declarar dimensoes reais da imagem');
+      assert(html.includes('name="twitter:card" content="summary_large_image"'), 'Resident Evil 5 deve manter Twitter Card grande');
+      assert(/<img[^>]+alt="Capa de Resident Evil 5"[^>]+width="600"[^>]+height="900"/.test(html), 'Capa de Resident Evil 5 deve ter alt e dimensoes definidos');
+      ['resident evil 5', 'guia de platina e troféus', 'ps4', '51 troféus base', 'dlcs não obrigatórias', 'roadmap', 'extras da platina', 'checklist'].forEach(text => {
+        assert(mainText.slice(0, 500).toLowerCase().includes(text), `Primeiros 500 caracteres devem sinalizar: ${text}`);
+      });
       assert(html.includes('51 troféus') || html.includes('51 trofÃ©us'), 'Resident Evil 5 deve exibir 51 trofeus no topo');
       assert(html.includes('DLC não obrigatório') || html.includes('DLC nÃ£o obrigatÃ³rio'), 'Resident Evil 5 deve exibir DLC nao obrigatorio');
       assert(html.includes('Sem online obrigatório') || html.includes('Sem online obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem online obrigatorio');
@@ -1435,6 +1482,12 @@ async function validateGuide(slug = '') {
       assert(!guideScopedHtml.includes('atlas-trophy-youtube-link'), 'Resident Evil 5 nao deve renderizar buscas automaticas de video em todos os trofeus');
       assert(!guideScopedHtml.includes('<span>YouTube</span>'), 'Resident Evil 5 nao deve exibir rotulo generico YouTube');
       assert(!guideScopedHtml.includes('Concluir YouTube'), 'Resident Evil 5 nao deve exibir rotulo generico Concluir YouTube');
+      assert(!guideScopedHtml.includes('para a lista completa, abra Extras da Platina'), 'Extras da Platina nao deve ser chamado de lista completa');
+      assert(guideScopedHtml.includes('para o checklist detalhado da platina base, abra Extras da Platina'), 'Roadmap deve usar microcopy precisa para Extras da Platina');
+      assert(html.includes('/jogo/resident-evil-6'), 'Resident Evil 5 deve manter link interno natural para guia relacionado da franquia');
+      const re5Sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
+      assert(re5Sitemap.includes('<loc>https://atlasachievement.com.br/jogo/resident-evil-5</loc>') || re5Sitemap.includes(`<loc>${baseUrl}/jogo/resident-evil-5</loc>`), 'Sitemap deve incluir canonical de Resident Evil 5');
+      assert(/resident-evil-5<\/loc><lastmod>2026-07-09T/.test(re5Sitemap), 'Sitemap deve usar updated_at de Resident Evil 5 como lastmod');
       assert.strictEqual((quickPlanHtml.match(/<li>/g) || []).length, 7, 'Plano rapido de Resident Evil 5 deve renderizar 7 etapas');
       assert(quickPlanHtml.includes('Professional e revisão final') || quickPlanHtml.includes('Professional e revisÃ£o final'), 'Plano rapido de Resident Evil 5 deve incluir etapa final Professional');
       assert(quickPlanHtml.includes('Complete todos os capítulos no Professional') || quickPlanHtml.includes('Complete todos os capÃ­tulos no Professional'), 'Plano rapido de Resident Evil 5 deve descrever Professional e revisao final');
@@ -2464,6 +2517,17 @@ async function validateSeo() {
       assert(!sitemap.includes(`<loc>${baseUrl}${pathName}</loc>`), `sitemap nao deve incluir ${pathName}`);
     });
 
+    const publicCatalogResponse = await fetchJson(`${baseUrl}/api/games?limit=100&sort=updated-desc`);
+    assert(publicCatalogResponse.items.length > 0, 'API publica deve manter guias verificados');
+    publicCatalogResponse.items.forEach(game => {
+      assert(isIndexableGuideFixture(game), `API publica nao deve listar guia incompleto ou em revisao: ${game.slug}`);
+    });
+    assert.strictEqual(
+      Number(publicCatalogResponse.pagination?.total || 0),
+      publicCatalogResponse.items.length,
+      'total publico deve contar apenas guias elegiveis'
+    );
+
     for (const slug of seoSlugs) {
       const game = getGameBySlug(slug);
       assert(sitemap.includes(`<loc>${baseUrl}/jogo/${slug}</loc>`), `sitemap deve incluir ${slug}`);
@@ -2506,6 +2570,7 @@ async function validateSeo() {
       ['Carregando guia,', 'Carregando checklist', 'Carregando biblioteca'].forEach(text => {
         assert(!html.includes(text), `${pathName} nao deve carregar texto generico: ${text}`);
       });
+      assert(!html.includes('id="guideQuickDock"'), `${pathName} nao deve carregar dock funcional de guia`);
     }
 
     const aboutHtml = await fetchText(`${baseUrl}/sobre`);
@@ -2523,6 +2588,24 @@ async function validateSeo() {
     ['view-home', 'view-catalog', 'view-seo-page', 'view-guide', 'view-profile', 'feedbackModal', 'userAuthModal'].forEach(id => {
       assert(!libraryHtml.includes(`id="${id}"`), `/biblioteca nao deve carregar ${id}`);
     });
+    assert(!libraryHtml.includes('Carregando biblioteca'), '/biblioteca nao deve expor estado de carregamento no HTML inicial');
+    assert(!libraryHtml.includes('id="guideQuickDock"'), '/biblioteca nao deve carregar dock funcional de guia');
+
+    const publicListingRoutes = [
+      '/catalogo',
+      '/platinas-faceis',
+      '/platinas-para-iniciantes',
+      '/colecoes/platinas-rapidas'
+    ];
+    for (const pathName of publicListingRoutes) {
+      const html = await fetchText(`${baseUrl}${pathName}`, { headers: { accept: 'text/html' } });
+      assert(html.includes('id="view-catalog"'), `${pathName} deve manter somente a view de listagem`);
+      assert(!html.includes('id="guideQuickDock"'), `${pathName} nao deve carregar dock funcional de guia`);
+      ['guias em revisão editorial', 'Em revisão', 'Informação em revisão', 'Carregando', '-/10'].forEach(text => {
+        assert(!html.includes(text), `${pathName} nao deve expor sinal publico de baixo valor: ${text}`);
+      });
+      assert(/guia(?:s)? verificado(?:s)?/.test(html), `${pathName} deve contar apenas guias verificados`);
+    }
   });
 
   console.log(`test:seo passed (${seoSlugs.length} guias indexaveis + noindex + rotas isoladas + sitemap)`);

@@ -2,6 +2,19 @@
 
 Data da validação: 9 de julho de 2026.
 
+## Segunda auditoria
+
+Após a primeira correção, a política de elegibilidade também foi aplicada à API pública usada pela hidratação, busca, catálogo, coleções, destaques e recomendações. O conjunto público caiu de 105 registros para 58 guias publicados, verificados e completos; os 47 restantes não aparecem em nenhuma listagem pública.
+
+Também foram corrigidos:
+
+- contadores públicos, que agora exibem somente “X guias verificados”;
+- remoção do dock “Atalhos/Progresso do guia” de todas as páginas que não são guias;
+- remoção de “Carregando biblioteca...” do HTML inicial;
+- remoção do filtro público “Em revisão”;
+- remoção de textos que sugeriam catálogo ou listas ainda em expansão;
+- testes das rotas institucionais, catálogo, listas orgânicas, coleção, biblioteca, guia verificado e guia em revisão.
+
 ## Resultado
 
 O HTML SSR foi isolado por rota. Páginas institucionais, catálogo, biblioteca, perfil e guias não entregam mais as demais views ocultas da SPA nem os modais globais. Guias indexáveis também não entregam os textos genéricos de carregamento.
