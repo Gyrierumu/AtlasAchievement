@@ -48,10 +48,53 @@ window.AppGuideController = (() => {
         extras: 'extras',
         guidedlccompletionpanel: 'dlcs',
         'guidetab-dlcs': 'dlcs',
+        're5-versus-dlc': 'dlcs',
+        're5-lost-in-nightmares-score-stars': 'dlcs',
+        're5-desperate-escape-agitator-majini': 'dlcs',
         dlcs: 'dlcs',
         dlc: 'dlcs'
       };
       return tabByHash[normalizedHash] || null;
+    }
+
+    function getDecodedHashId(hash = window.location.hash) {
+      const rawHash = String(hash || '').replace(/^#/, '').trim();
+      if (!rawHash) return '';
+      try {
+        return decodeURIComponent(rawHash);
+      } catch (_error) {
+        return rawHash;
+      }
+    }
+
+    function expandCollapsedGuideAncestor(element) {
+      const sectionBody = element?.matches?.('[data-guide-section-content]')
+        ? element
+        : element?.querySelector?.('[data-guide-section-content]') || element?.closest?.('[data-guide-section-content]');
+      if (!sectionBody?.classList?.contains('is-collapsed')) return;
+      const toggle = document.querySelector(`[data-guide-section-toggle="${sectionBody.id}"]`);
+      sectionBody.classList.remove('is-collapsed');
+      sectionBody.hidden = false;
+      sectionBody.setAttribute('aria-hidden', 'false');
+      if (!toggle) return;
+      toggle.setAttribute('aria-expanded', 'true');
+      const label = toggle.querySelector('[data-toggle-label]');
+      if (label) label.textContent = toggle.dataset.expandedLabel || 'Ocultar detalhes';
+      const icon = toggle.querySelector('i');
+      if (icon) {
+        icon.classList.add('fa-chevron-up');
+        icon.classList.remove('fa-chevron-down');
+      }
+    }
+
+    function scrollCurrentGuideHashTarget() {
+      const targetId = getDecodedHashId();
+      if (!targetId) return;
+      const element = document.getElementById(targetId);
+      if (!element) return;
+      expandCollapsedGuideAncestor(element);
+      const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      element.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
 
     function resetGuideScrollAfterRender(options = {}) {
@@ -104,6 +147,11 @@ window.AppGuideController = (() => {
         state.guideSearch = '';
         state.activeGuideTab = activeGuideTab;
         UI.activateGuideTab?.(activeGuideTab, { scroll: Boolean(hashGuideTab) });
+        if (hashGuideTab) {
+          const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
+          schedule(() => scrollCurrentGuideHashTarget());
+          window.setTimeout(scrollCurrentGuideHashTarget, 120);
+        }
       }
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');

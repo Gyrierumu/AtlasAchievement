@@ -30,6 +30,41 @@ window.AppGuideView = (() => {
     setGuideSectionExpanded(button, expanded);
   }
 
+  function getGuideTabFromHashLink(hash = '') {
+    const id = String(hash || '').replace(/^#/, '').trim().toLowerCase();
+    const tabByHash = {
+      're5-versus-dlc': 'dlcs',
+      're5-lost-in-nightmares-score-stars': 'dlcs',
+      're5-desperate-escape-agitator-majini': 'dlcs'
+    };
+    return tabByHash[id] || '';
+  }
+
+  function scrollGuideHashTarget(hash = '') {
+    const rawId = String(hash || '').replace(/^#/, '').trim();
+    if (!rawId) return;
+    let targetId = rawId;
+    try {
+      targetId = decodeURIComponent(rawId);
+    } catch (_error) {}
+    const element = document.getElementById(targetId);
+    if (!element) return;
+    const sectionBody = element.matches?.('[data-guide-section-content]')
+      ? element
+      : element.querySelector?.('[data-guide-section-content]') || element.closest?.('[data-guide-section-content]');
+    if (sectionBody?.classList.contains('is-collapsed')) {
+      const toggle = document.querySelector(`[data-guide-section-toggle="${sectionBody.id}"]`);
+      if (toggle) setGuideSectionExpanded(toggle, true);
+      else {
+        sectionBody.classList.remove('is-collapsed');
+        sectionBody.hidden = false;
+        sectionBody.setAttribute('aria-hidden', 'false');
+      }
+    }
+    const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    element.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+  }
+
   function bindGuideInteractions({ UI, state, toggleTrophy, focusGuideAction, handleGuideQuickDockClick }) {
     const getVisibleFilterButtons = () => UI.qsa('.filter-btn').filter(item => item.offsetParent !== null);
     state.checklistDensity = UI.applyChecklistDensity?.(state.checklistDensity || UI.getChecklistDensityPreference?.()) || 'comfortable';
@@ -126,6 +161,23 @@ window.AppGuideView = (() => {
       if (sectionToggle) {
         event.preventDefault();
         toggleGuideSection(sectionToggle);
+        return;
+      }
+
+      const guideHashLink = event.target.closest('a[href^="#"]');
+      const guideHash = guideHashLink?.getAttribute('href') || '';
+      const guideHashTab = getGuideTabFromHashLink(guideHash);
+      if (guideHashTab) {
+        event.preventDefault();
+        state.activeGuideTab = guideHashTab;
+        UI.activateGuideTab?.(guideHashTab, { scroll: false });
+        if (window.history?.pushState) {
+          window.history.pushState(null, '', guideHash);
+        } else {
+          window.location.hash = guideHash;
+        }
+        window.requestAnimationFrame?.(() => scrollGuideHashTarget(guideHash)) || window.setTimeout(() => scrollGuideHashTarget(guideHash), 0);
+        window.setTimeout(() => scrollGuideHashTarget(guideHash), 120);
         return;
       }
 

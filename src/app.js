@@ -1264,7 +1264,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
             <summary><span>FAQ</span><small>${escapeHtml(String(faqItems.length || 0))}</small></summary>
             <div class="atlas-editorial-notes__column">
             <div class="atlas-faq-list">
-              ${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${escapeHtml(item.answer)}</p></article>`).join('')}
+              ${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswerHtml(item, normalizedSlug)}</p></article>`).join('')}
             </div>
             </div>
           </details>
@@ -1956,6 +1956,21 @@ function getGuideCommonMyths(game = {}) {
   return myths.length ? { ...mythsGuide, myths } : null;
 }
 
+function renderGuideAnchorLinkHtml(label = '', href = '') {
+  return `<a class="text-atlas-300 font-bold hover:text-white" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
+}
+
+function renderResidentEvil5MythWhereHtml(where = '') {
+  const text = String(where || '').trim();
+  if (text === 'DLCs e 100% da Lista > Versus.') {
+    return `${renderGuideAnchorLinkHtml('DLCs e 100% da Lista > Versus', '#re5-versus-dlc')}.`;
+  }
+  if (text === 'Extras da Platina > BSAA Emblems e DLCs e 100% da Lista > Lost in Nightmares.') {
+    return `${escapeHtml('Extras da Platina > BSAA Emblems')} e ${renderGuideAnchorLinkHtml('DLCs e 100% da Lista > Lost in Nightmares — Score Stars', '#re5-lost-in-nightmares-score-stars')}.`;
+  }
+  return escapeHtml(text);
+}
+
 function renderGuideCommonMythsPanelHtml(game = {}) {
   const mythsGuide = getGuideCommonMyths(game);
   if (!mythsGuide) return '';
@@ -1986,7 +2001,7 @@ function renderGuideCommonMythsPanelHtml(game = {}) {
               </div>
               <div>
                 <dt class="font-bold text-white">Onde conferir</dt>
-                <dd class="mt-1 text-white/72">${escapeHtml(item.where)}</dd>
+                <dd class="mt-1 text-white/72">${renderResidentEvil5MythWhereHtml(item.where)}</dd>
               </div>
             </dl>
           </article>
@@ -2047,6 +2062,52 @@ function renderEditorialLinksHtml(links = []) {
     : [];
   if (!safeLinks.length) return '';
   return `<div class="atlas-trophy-critical-guide__links">${safeLinks.map(link => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`).join('')}</div>`;
+}
+
+function getDlcPackageAnchorId(pack = {}, key = '') {
+  const explicit = String(pack.anchorId || pack.anchor_id || '').trim();
+  if (explicit) return explicit;
+  const packageId = String(pack.id || key || '').trim().toLowerCase();
+  if (packageId === 'versus') return 're5-versus-dlc';
+  return '';
+}
+
+function getDlcCollectibleChecklistAnchorId(pack = {}, list = {}) {
+  const explicit = String(list.anchorId || list.anchor_id || '').trim();
+  if (explicit) return explicit;
+  const packageId = String(pack.id || '').trim().toLowerCase();
+  const title = String(list.title || '').trim().toLowerCase();
+  if (packageId === 'lost-in-nightmares' && title.includes('score stars')) return 're5-lost-in-nightmares-score-stars';
+  if (packageId === 'desperate-escape' && title.includes('agitator majini')) return 're5-desperate-escape-agitator-majini';
+  return '';
+}
+
+function renderResidentEvil5DlcAnchorLinksHtml() {
+  const links = [
+    ['Versus — 10 troféus', '#re5-versus-dlc'],
+    ['Lost in Nightmares — Score Stars', '#re5-lost-in-nightmares-score-stars'],
+    ['Desperate Escape — Agitator Majini', '#re5-desperate-escape-agitator-majini']
+  ];
+  return `
+    <nav class="atlas-trophy-critical-guide__links" aria-label="Atalhos para DLCs de Resident Evil 5">
+      ${links.map(([label, href]) => `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`).join('')}
+    </nav>`;
+}
+
+function replaceFirstGuideAnchor(html = '', text = '', href = '') {
+  const escapedText = escapeHtml(text);
+  if (!escapedText || !html.includes(escapedText)) return html;
+  return html.replace(escapedText, renderGuideAnchorLinkHtml(text, href));
+}
+
+function renderGuideFaqAnswerHtml(item = {}, normalizedSlug = '') {
+  let html = escapeHtml(item.answer || '');
+  if (normalizedSlug !== 'resident-evil-5') return html;
+  const combined = `${item.question || ''} ${item.answer || ''}`;
+  if (/Versus/i.test(combined)) html = replaceFirstGuideAnchor(html, 'Versus', '#re5-versus-dlc');
+  if (/Score Stars/i.test(combined)) html = replaceFirstGuideAnchor(html, 'Score Stars', '#re5-lost-in-nightmares-score-stars');
+  if (/Agitator Majini/i.test(combined)) html = replaceFirstGuideAnchor(html, 'Agitator Majini', '#re5-desperate-escape-agitator-majini');
+  return html;
 }
 
 function renderPlatinumExtraItemHtml(category = {}, item = {}) {
@@ -2161,8 +2222,9 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
     const pack = packagesById.get(key) || {};
     const title = pack.subtitle || `${pack.name || items[0]?.packageName || 'DLC'} — ${items.length} troféus`;
     const roadmapTitle = pack.roadmapTitle || `Roadmap curto de ${pack.name || 'DLC'}`;
+    const packageAnchorId = getDlcPackageAnchorId(pack, key);
     return `
-    <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+    <article${packageAnchorId ? ` id="${escapeHtml(packageAnchorId)}"` : ''} class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <h3 class="text-lg font-bold text-white">${escapeHtml(title)}</h3>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} troféu(s)</span>
@@ -2193,8 +2255,10 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
 function renderDlcPackageExtraListsHtml(pack = {}) {
   const lists = Array.isArray(pack.collectibleChecklists) ? pack.collectibleChecklists : [];
   if (!lists.length) return '';
-  return lists.map(list => `
-    <div class="atlas-tip-box">
+  return lists.map(list => {
+    const anchorId = getDlcCollectibleChecklistAnchorId(pack, list);
+    return `
+    <div${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-tip-box">
       <div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>
       ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
       ${renderEditorialLinksHtml(list.links)}
@@ -2208,12 +2272,14 @@ function renderDlcPackageExtraListsHtml(pack = {}) {
         </div>
       `).join('')}</div>` : ''}
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function renderGuideDlcCompletionPanelHtml(game = {}) {
   const dlcGuide = getGuideDlcCompletion(game);
   if (!dlcGuide) return '';
+  const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const baseTrophies = Number(dlcGuide.baseTrophies || 51);
   const dlcTrophies = Number(dlcGuide.dlcTrophies || 20);
   const totalTrophies = Number(dlcGuide.totalTrophies || (baseTrophies + dlcTrophies));
@@ -2226,6 +2292,7 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
           <div class="atlas-eyebrow">Conteúdo pós-platina</div>
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(dlcGuide.title || 'DLCs e 100% da Lista')}</h2>
           <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(dlcGuide.introduction || '')}</p>
+          ${normalizedSlug === 'resident-evil-5' ? renderResidentEvil5DlcAnchorLinksHtml() : ''}
         </div>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(baseTrophies))} base + ${escapeHtml(String(dlcTrophies))} DLC = ${escapeHtml(String(totalTrophies))} totais</span>
       </div>

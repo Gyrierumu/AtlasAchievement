@@ -1400,6 +1400,14 @@ async function validateGuide(slug = '') {
       const mythsPanelHtml = mythsPanelStart >= 0 && mythsPanelEnd > mythsPanelStart ? html.slice(mythsPanelStart, mythsPanelEnd + '</section>'.length) : '';
       const extrasPanelHtml = html.match(/<section id="guidePlatinumExtrasPanel"[\s\S]*?<section id="guideDlcCompletionPanel"/)?.[0] || '';
       const dlcPanelHtml = html.match(/<section id="guideDlcCompletionPanel"[\s\S]*?<section id="guideEditorialNotesPanel"/)?.[0] || '';
+      const re5DlcAnchorIds = [
+        're5-versus-dlc',
+        're5-lost-in-nightmares-score-stars',
+        're5-desperate-escape-agitator-majini'
+      ];
+      const guideIds = [...guideScopedHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+      const guideIdSet = new Set(guideIds);
+      const guideInternalHrefs = [...guideScopedHtml.matchAll(/<a\b[^>]*\shref="#([^"]+)"/g)].map(match => match[1]);
       assert.strictEqual(apiGame.trophies.length, 51, 'API de Resident Evil 5 deve manter 51 trofeus da platina base');
       assert.strictEqual(apiGame.roadmap.length, 7, 'API de Resident Evil 5 deve manter roadmap com 7 etapas');
       assert.strictEqual(apiGame.dlcRequired, false, 'API de Resident Evil 5 deve manter DLC nao obrigatoria explicita');
@@ -1488,6 +1496,20 @@ async function validateGuide(slug = '') {
       const re5Sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
       assert(re5Sitemap.includes('<loc>https://atlasachievement.com.br/jogo/resident-evil-5</loc>') || re5Sitemap.includes(`<loc>${baseUrl}/jogo/resident-evil-5</loc>`), 'Sitemap deve incluir canonical de Resident Evil 5');
       assert(/resident-evil-5<\/loc><lastmod>2026-07-09T/.test(re5Sitemap), 'Sitemap deve usar updated_at de Resident Evil 5 como lastmod');
+      re5DlcAnchorIds.forEach(anchorId => {
+        assert(guideIdSet.has(anchorId), `Resident Evil 5 deve renderizar anchor ${anchorId}`);
+        assert.strictEqual(guideIds.filter(id => id === anchorId).length, 1, `Anchor ${anchorId} deve ser unico no HTML`);
+        assert(dlcPanelHtml.includes(`id="${anchorId}"`), `Anchor ${anchorId} deve ficar em DLCs e 100% da Lista`);
+        assert(!extrasPanelHtml.includes(`id="${anchorId}"`), `Anchor ${anchorId} nao deve ficar em Extras da Platina`);
+        assert(guideInternalHrefs.includes(anchorId), `Resident Evil 5 deve ter link interno para #${anchorId}`);
+        assert(guideControllerSource.includes(anchorId), `Controlador de navegacao deve reconhecer #${anchorId}`);
+        assert(!re5Sitemap.includes(`#${anchorId}`), `Sitemap nao deve incluir fragmento #${anchorId}`);
+      });
+      const brokenGuideInternalHrefs = guideInternalHrefs.filter(targetId => !guideIdSet.has(targetId));
+      assert.deepStrictEqual(brokenGuideInternalHrefs, [], 'Links internos com hash do guia RE5 devem apontar para IDs existentes');
+      assert(dlcPanelHtml.includes('href="#re5-versus-dlc"') && /href="#re5-versus-dlc"[^>]*>[^<]*Versus[^<]*10/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Versus com anchor text descritivo');
+      assert(dlcPanelHtml.includes('href="#re5-lost-in-nightmares-score-stars"') && /href="#re5-lost-in-nightmares-score-stars"[^>]*>[^<]*Lost in Nightmares[^<]*Score Stars/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Score Stars com anchor text descritivo');
+      assert(dlcPanelHtml.includes('href="#re5-desperate-escape-agitator-majini"') && /href="#re5-desperate-escape-agitator-majini"[^>]*>[^<]*Desperate Escape[^<]*Agitator Majini/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Agitator Majini com anchor text descritivo');
       assert.strictEqual((quickPlanHtml.match(/<li>/g) || []).length, 7, 'Plano rapido de Resident Evil 5 deve renderizar 7 etapas');
       assert(quickPlanHtml.includes('Professional e revisão final') || quickPlanHtml.includes('Professional e revisÃ£o final'), 'Plano rapido de Resident Evil 5 deve incluir etapa final Professional');
       assert(quickPlanHtml.includes('Complete todos os capítulos no Professional') || quickPlanHtml.includes('Complete todos os capÃ­tulos no Professional'), 'Plano rapido de Resident Evil 5 deve descrever Professional e revisao final');
