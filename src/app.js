@@ -3047,7 +3047,6 @@ function isIndexablePublicGuide(game = {}) {
   const editorialStatus = normalizeGuideQualityText(game.editorial_status || 'published').toLowerCase();
   const verificationStatus = normalizeGuideQualityText(game.verification_status).toLowerCase();
   const reviewStatus = normalizeGuideQualityText(game.editorial_review_status).toLowerCase();
-  const coverageLevel = normalizeGuideQualityText(game.coverage_level).toLowerCase();
   const difficulty = Number(game.difficulty);
   const time = normalizeGuideQualityText(game.time);
   const trophyCount = Array.isArray(game.trophies)
@@ -3058,7 +3057,7 @@ function isIndexablePublicGuide(game = {}) {
     : Number(game.roadmap_count || 0);
   const verified = Boolean(game.is_verified)
     && verificationStatus === 'verified'
-    && reviewStatus === 'verified';
+    && (!reviewStatus || reviewStatus === 'verified');
   const visibleCoreText = [
     game.name,
     time,
@@ -3074,7 +3073,6 @@ function isIndexablePublicGuide(game = {}) {
 
   return editorialStatus === 'published'
     && verified
-    && coverageLevel === 'complete'
     && Number.isFinite(difficulty)
     && difficulty > 0
     && difficulty <= 10

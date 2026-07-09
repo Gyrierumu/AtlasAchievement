@@ -358,8 +358,7 @@ function isIndexableGuideFixture(game = {}) {
   return text(game.editorial_status || 'published').toLowerCase() === 'published'
     && Boolean(game.is_verified)
     && text(game.verification_status).toLowerCase() === 'verified'
-    && text(game.editorial_review_status).toLowerCase() === 'verified'
-    && text(game.coverage_level).toLowerCase() === 'complete'
+    && (!text(game.editorial_review_status) || text(game.editorial_review_status).toLowerCase() === 'verified')
     && Number.isFinite(difficulty)
     && difficulty > 0
     && difficulty <= 10
