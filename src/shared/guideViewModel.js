@@ -5050,35 +5050,35 @@
       return [
         {
           question: 'Resident Evil 2 Remake tem troféus perdíveis?',
-          answer: 'Sim. Há perdíveis por run. Arquivos, Mr. Raccoons, cofres, upgrades, bolsas, eventos específicos e condições como rank, sem cura, sem baú e poucos passos podem exigir outra campanha se forem ignorados ou quebrados.'
+          answer: 'Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist, A Small Carbon Footprint, S rank e Hardcore.'
         },
         {
           question: 'Resident Evil 2 Remake precisa de online ou coop?',
           answer: 'Não. A lista base é single-player, offline e não exige coop, servidores, multiplayer, ranking online ou PS+.'
         },
         {
-          question: 'Quantas runs são necessárias?',
-          answer: 'Planeje múltiplas campanhas. A rota mais limpa separa aprendizado, Leon, Claire, 2nd Run, Hardcore, rank S, coletáveis e desafios de restrição.'
-        },
-        {
-          question: 'Precisa jogar com Leon e Claire?',
-          answer: 'Sim. A platina exige campanhas dos dois personagens e troféus específicos ligados a cada rota.'
-        },
-        {
           question: 'Precisa fazer 2nd Run?',
           answer: 'Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.'
         },
         {
-          question: 'Existem troféus de Hardcore, rank S e speedrun?',
-          answer: 'Sim. A platina exige campanhas planejadas para Hardcore e rank S. O rank depende principalmente de tempo, então deixe essas tentativas para depois de conhecer mapas, puzzles, chefes e rotas.'
+          question: 'Por que a PSN pode mostrar 45 troféus se DLCs ou modos extras não são necessários para a platina?',
+          answer: 'Porque 45 é a lista completa/100% da lista: 42 troféus da lista base da platina e 3 extras fora da platina. The Ghost Survivors, Hell of a Sheriff, Got ’Em, Another Survivor e Chasing Jill não entram na platina PS4/base.'
+        },
+        {
+          question: 'Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?',
+          answer: 'Sim. A platina exige campanhas planejadas para Hardcore e S rank com Leon e Claire; o rank depende principalmente de tempo. S+ pode liberar armas infinitas ou servir como desafio opcional, mas não é requisito direto da platina.'
         },
         {
           question: 'Existem troféus de sem cura, sem baú ou limite de passos?',
           answer: 'Sim. Frugalist, Minimalist e A Small Carbon Footprint exigem condições específicas. Faça essas runs separadas ou combine apenas quando já tiver uma rota segura.'
         },
         {
-          question: 'DLCs ou modos extras são necessários para a platina?',
-          answer: 'Não. A rota considera a lista base da platina. DLCs, modos extras ou conteúdos fora da lista base devem ficar separados da platina.'
+          question: 'The 4th Survivor e Tofu Survivor são obrigatórios?',
+          answer: 'The 4th Survivor é obrigatório porque libera Grim Reaper na platina base. Tofu Survivor não é requisito obrigatório da platina PS4/base e deve ficar como extra opcional.'
+        },
+        {
+          question: 'The Ghost Survivors, Another Survivor e Chasing Jill entram na platina?',
+          answer: 'Não. The Ghost Survivors e Another Survivor / Chasing Jill aparecem apenas como extras fora da platina base. Eles só importam para quem quer fechar a lista completa/100% da lista.'
         }
       ];
     }

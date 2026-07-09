@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-09 21:26:30",
+    "updated_at": "2026-07-09 22:55:36",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -80,14 +80,14 @@
     "commonMythsGuide": null,
     "dlcCompletionGuide": null,
     "editorial_summary": [
-      "A platina de Resident Evil 2 Remake gira em torno de múltiplas campanhas com Leon e Claire, incluindo rotas complementares, objetivos de história, coletáveis e condições de execução. A lista base não exige online nem coop, mas pede organização para não misturar campanhas, personagens, arquivos, Mr. Raccoons, armas, upgrades, cofres, bolsas, finais e objetivos condicionais.",
-      "O maior risco está nos perdíveis por run. Arquivos, Mr. Raccoons, itens de inventário, cofres, upgrades, armas, bolsas e eventos específicos podem exigir uma nova campanha se forem ignorados. Além disso, troféus de ranking, Hardcore, limite de passos, sem cura ou sem abrir o baú devem ser feitos em runs planejadas, porque quebrar a condição pode invalidar a tentativa.",
-      "A melhor rota é primeiro concluir campanhas normais para entender mapas, inimigos, puzzles e chefes. Depois, separe runs dedicadas para Leon, Claire, 2nd Run, Hardcore, rankings, coletáveis e condições especiais.",
-      "Conteúdo extra e modos fora da lista base ficam separados da platina. Use o roadmap para organizar a ordem das campanhas e a checklist para controlar arquivos, Mr. Raccoons, upgrades, armas, bolsas, cofres, rankings e cleanup."
+      "Este guia cobre a platina base de Resident Evil 2 Remake no PS4: 42 troféus. A rota gira em torno de múltiplas campanhas com Leon e Claire. A PSN pode mostrar 45 troféus na lista completa/100% da lista, mas os 3 extras de The Ghost Survivors e Another Survivor / Chasing Jill não são necessários para a platina.",
+      "A platina base exige Leon, Claire, 2nd Run/final verdadeiro, coletáveis, Hardcore, S rank, runs de restrição e The 4th Survivor por Grim Reaper. Tofu Survivor não é requisito obrigatório da platina PS4/base, e S+ não é requisito direto.",
+      "Não há perda permanente de conta relevante. O risco real está nos perdíveis por run, nos objetivos condicionais e nos objetivos de rota: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist e A Small Carbon Footprint.",
+      "Conteúdo extra e modos fora da lista base ficam separados da platina. Use a primeira campanha para aprender mapas e recursos. Depois, separe Leon, Claire, 2nd Run, coletáveis, Hardcore, S rank, restrições e cleanup para não quebrar condições cedo."
     ],
     "faq": [
       {
-        "answer": "Sim. Há perdíveis por run. Arquivos, Mr. Raccoons, cofres, upgrades, bolsas, eventos específicos e condições como rank, sem cura, sem baú e poucos passos podem exigir outra campanha se forem ignorados ou quebrados.",
+        "answer": "Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist, A Small Carbon Footprint, S rank e Hardcore.",
         "question": "Resident Evil 2 Remake tem troféus perdíveis?"
       },
       {
@@ -95,28 +95,28 @@
         "question": "Resident Evil 2 Remake precisa de online ou coop?"
       },
       {
-        "answer": "Planeje múltiplas campanhas. A rota mais limpa separa aprendizado, Leon, Claire, 2nd Run, Hardcore, rank S, coletáveis e desafios de restrição.",
-        "question": "Quantas runs são necessárias?"
-      },
-      {
-        "answer": "Sim. A platina exige campanhas dos dois personagens e troféus específicos ligados a cada rota.",
-        "question": "Precisa jogar com Leon e Claire?"
-      },
-      {
         "answer": "Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.",
         "question": "Precisa fazer 2nd Run?"
       },
       {
-        "answer": "Sim. A platina exige campanhas planejadas para Hardcore e rank S. O rank depende principalmente de tempo, então deixe essas tentativas para depois de conhecer mapas, puzzles, chefes e rotas.",
-        "question": "Existem troféus de Hardcore, rank S e speedrun?"
+        "answer": "Porque 45 é a lista completa/100% da lista: 42 troféus da lista base da platina e 3 extras fora da platina. The Ghost Survivors, Hell of a Sheriff, Got ’Em, Another Survivor e Chasing Jill não entram na platina PS4/base.",
+        "question": "Por que a PSN pode mostrar 45 troféus se DLCs ou modos extras não são necessários para a platina?"
+      },
+      {
+        "answer": "Sim. A platina exige campanhas planejadas para Hardcore e S rank com Leon e Claire; o rank depende principalmente de tempo. S+ pode liberar armas infinitas ou servir como desafio opcional, mas não é requisito direto da platina.",
+        "question": "Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?"
       },
       {
         "answer": "Sim. Frugalist, Minimalist e A Small Carbon Footprint exigem condições específicas. Faça essas runs separadas ou combine apenas quando já tiver uma rota segura.",
         "question": "Existem troféus de sem cura, sem baú ou limite de passos?"
       },
       {
-        "answer": "Não. A rota considera a lista base da platina. DLCs, modos extras ou conteúdos fora da lista base devem ficar separados da platina.",
-        "question": "DLCs ou modos extras são necessários para a platina?"
+        "answer": "The 4th Survivor é obrigatório porque libera Grim Reaper na platina base. Tofu Survivor não é requisito obrigatório da platina PS4/base e deve ficar como extra opcional.",
+        "question": "The 4th Survivor e Tofu Survivor são obrigatórios?"
+      },
+      {
+        "answer": "Não. The Ghost Survivors e Another Survivor / Chasing Jill aparecem apenas como extras fora da platina base. Eles só importam para quem quer fechar a lista completa/100% da lista.",
+        "question": "The Ghost Survivors, Another Survivor e Chasing Jill entram na platina?"
       }
     ],
     "farmRoutesGuide": null,
@@ -125,34 +125,34 @@
     "quickDecision": null,
     "quick_plan": [
       {
-        "detail": "Conhecer mapas, puzzles, inventário, saves, cofres, chefes e rotas sem tentar otimizar tudo cedo.",
+        "detail": "Aprender o R.P.D., inventário, puzzles, chefes, recursos, saves e lógica de exploração.",
         "number": 1,
         "title": "Faça uma primeira campanha segura aprendendo o R.P.D."
       },
       {
-        "detail": "Cobrir campanhas principais, personagens e 2nd Run/final verdadeiro quando aplicável.",
+        "detail": "Cobrir as histórias de Leon e Claire, além do 2nd Run necessário para o final verdadeiro e Broken Umbrella.",
         "number": 2,
-        "title": "Complete Leon, Claire e a rota complementar"
+        "title": "Complete Leon, Claire e 2nd Run para o final verdadeiro"
       },
       {
-        "detail": "Resolver pendências de arquivos, Mr. Raccoons, armas, upgrades, bolsas, cofres e itens importantes.",
+        "detail": "Controlar os coletáveis e itens úteis da platina base antes das runs de ranking e restrição.",
         "number": 3,
-        "title": "Limpe coletáveis, arquivos, Mr. Raccoons e upgrades"
+        "title": "Resolva coletáveis base e limpeza de exploração"
       },
       {
-        "detail": "Resolver troféus ligados a dificuldade, ranking e tempo.",
+        "detail": "Resolver Leon “S.” Kennedy e Sizzling Scarlet Hero com rotas rápidas e pouco desvio.",
         "number": 4,
-        "title": "Trabalhe Hardcore, rankings e runs rápidas"
+        "title": "Faça S rank com Leon e Claire"
       },
       {
-        "detail": "Cumprir restrições que podem invalidar a tentativa se forem quebradas.",
+        "detail": "Resolver Hardcore Rookie e Hardcore College Student depois de conhecer rotas, puzzles, chefes e recursos.",
         "number": 5,
-        "title": "Faça runs condicionais sem cura, sem baú e limite de passos"
+        "title": "Complete Hardcore com Leon e Claire"
       },
       {
-        "detail": "Conferir todos os troféus restantes sem misturar DLCs ou modos extras fora da lista base.",
+        "detail": "Resolver Minimalist, Frugalist e A Small Carbon Footprint em tentativas planejadas.",
         "number": 6,
-        "title": "Finalize a checklist da platina base"
+        "title": "Faça runs condicionais sem cura, sem baú e com poucos passos"
       }
     ],
     "seo": {},
