@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-10 01:26:32",
+    "updated_at": "2026-07-10 22:08:34",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -299,7 +299,7 @@
             {
               "items": [
                 "Nenhuma arma infinita é obrigatória para a platina; elas apenas ajudam em Hardcore, cleanup e runs posteriores.",
-                "Infinite Combat Knife: destrua os 15 Mr. Raccoons para liberá-la como apoio opcional.",
+                "Infinite Combat Knife: destrua todos os bonecos Mr. Raccoon da campanha base para liberá-la como apoio opcional.",
                 "Um único S rank no Standard, com Leon ou Claire em 1st Run ou 2nd Run, libera a Infinite Samurai Edge para ambos os personagens. Isso não substitui os troféus: Leon “S.” Kennedy exige S rank com Leon, e Sizzling Scarlet Hero exige S rank com Claire.",
                 "Infinite LE 5: obtenha S rank no Hardcore. Infinite Rocket Launcher: Leon no Hardcore com S+; Infinite Minigun: Claire no Hardcore com S+. Os dois últimos desbloqueios e S+ são opcionais e não são requisitos diretos da platina.",
                 "Armas infinitas podem conflitar com S+ e com Minimalist quando exigem acessar o Item Box/baú."

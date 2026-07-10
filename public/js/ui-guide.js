@@ -32,6 +32,44 @@ window.UIGuide = (() => {
   const sharedCard = window.AtlasCardModel || {};
 
   const CHECKLIST_DENSITY_KEY = 'atlas_checklist_density';
+  const PLATINUM_EXTRAS_PROGRESS_KEY = 'atlas_platinum_extras_progress_v1';
+
+  function getPlatinumExtrasProgressKey(game = {}) {
+    const slug = String(game?.slug || game?.name || 'guide').trim().toLowerCase().replace(/[^a-z0-9_-]+/g, '-');
+    return `${PLATINUM_EXTRAS_PROGRESS_KEY}:${slug || 'guide'}`;
+  }
+
+  function getPlatinumExtrasCompletedIds(game = {}) {
+    try {
+      if (typeof localStorage === 'undefined') return new Set();
+      const parsed = JSON.parse(localStorage.getItem(getPlatinumExtrasProgressKey(game)) || '[]');
+      return new Set((Array.isArray(parsed) ? parsed : []).map(id => String(id || '').trim()).filter(Boolean));
+    } catch (_error) {
+      return new Set();
+    }
+  }
+
+  function setPlatinumExtrasCompletedIds(game = {}, completedIds = new Set()) {
+    try {
+      if (typeof localStorage === 'undefined') return;
+      const ids = [...completedIds].map(id => String(id || '').trim()).filter(Boolean).sort();
+      localStorage.setItem(getPlatinumExtrasProgressKey(game), JSON.stringify(ids));
+    } catch (_error) {}
+  }
+
+  function bindPlatinumExtrasProgress(game = {}) {
+    const completedIds = getPlatinumExtrasCompletedIds(game);
+    qsa('[data-platinum-extra-check]').forEach(input => {
+      const id = String(input.getAttribute('data-platinum-extra-check') || '').trim();
+      if (!id) return;
+      input.checked = completedIds.has(id);
+      input.addEventListener('change', () => {
+        const next = getPlatinumExtrasCompletedIds(game);
+        if (input.checked) next.add(id); else next.delete(id);
+        setPlatinumExtrasCompletedIds(game, next);
+      });
+    });
+  }
   function compactGuideHeaderText(value = '', fallback = '', maxLength = 150) {
     if (typeof compactGuideText === 'function') return compactGuideText(value, fallback, maxLength);
     const text = String(value || fallback || '').trim().replace(/\s+/g, ' ');
@@ -1062,27 +1100,52 @@ window.UIGuide = (() => {
     const isBsaa = category.id === 'bsaa-emblems';
     const isTreasure = category.id === 'treasures';
     const title = isTreasure
-      ? `Tesouro #${number}: ${item.name || 'Tesouro'} — ${item.chapter || 'Capítulo não informado'}`
+      ? `Tesouro #${number}: ${item.name || 'Tesouro'} - ${item.chapter || 'Capitulo nao informado'}`
       : isBsaa
-      ? `BSAA Emblem #${number} — ${item.chapter || 'Capítulo não informado'}`
+      ? `BSAA Emblem #${number} - ${item.chapter || 'Capitulo nao informado'}`
       : `${number}. ${item.name || 'Item'}`;
+    const itemId = String(item.id || `${category.id || 'extra'}-${number}`).trim();
+    const imageSrc = String(item.imageSrc || item.image_src || '').trim();
+    const imageAlt = item.imageAlt || item.image_alt || item.name || title;
+    const imageWidth = Number(item.imageWidth || item.image_width || 1280);
+    const imageHeight = Number(item.imageHeight || item.image_height || 720);
     const details = [
       item.description ? `<p>${escapeHtml(item.description)}</p>` : '',
       item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(item.type)}</p>` : '',
+      item.area ? `<p><strong>Area:</strong> ${escapeHtml(item.area)}</p>` : '',
+      item.room ? `<p><strong>Sala:</strong> ${escapeHtml(item.room)}</p>` : '',
+      item.character ? `<p><strong>Personagem:</strong> ${escapeHtml(item.character)}</p>` : '',
+      item.scenario ? `<p><strong>Cenario:</strong> ${escapeHtml(item.scenario)}</p>` : '',
+      item.difficulty ? `<p><strong>Dificuldade:</strong> ${escapeHtml(item.difficulty)}</p>` : '',
+      item.requirement ? `<p><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</p>` : '',
+      item.code ? `<p><strong>Codigo/combinacao:</strong> ${escapeHtml(item.code)}</p>` : '',
+      item.reward ? `<p><strong>Recompensa:</strong> ${escapeHtml(item.reward)}</p>` : '',
+      item.leonReward ? `<p><strong>Leon:</strong> ${escapeHtml(item.leonReward)}</p>` : '',
+      item.claireReward ? `<p><strong>Claire:</strong> ${escapeHtml(item.claireReward)}</p>` : '',
       item.obtain ? `<p><strong>Como obter:</strong> ${escapeHtml(item.obtain)}</p>` : '',
       item.location ? `<p><strong>Local:</strong> ${escapeHtml(item.location)}</p>` : '',
-      item.note ? `<p><strong>Observação:</strong> ${escapeHtml(item.note)}</p>` : '',
+      item.bestMoment ? `<p><strong>Melhor momento:</strong> ${escapeHtml(item.bestMoment)}</p>` : '',
+      item.note ? `<p><strong>Observacao:</strong> ${escapeHtml(item.note)}</p>` : '',
+      item.routeAlert ? `<p><strong>Alerta de rota:</strong> ${escapeHtml(item.routeAlert)}</p>` : '',
+      item.risk ? `<p><strong>Risco:</strong> ${escapeHtml(item.risk)}</p>` : '',
+      item.pointOfNoReturn ? `<p><strong>Ponto de nao retorno:</strong> ${escapeHtml(item.pointOfNoReturn)}</p>` : '',
       item.relatedTrophy ? `<p><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</p>` : '',
+      item.cleanup ? `<p><strong>Cleanup:</strong> ${escapeHtml(item.cleanup)}</p>` : '',
+      item.repeatable ? `<p><strong>Repeticao:</strong> ${escapeHtml(item.repeatable)}</p>` : '',
       Array.isArray(item.checklist) && item.checklist.length ? `<div><strong>Checklist:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.checklist.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
-      Array.isArray(item.notes) && item.notes.length ? `<div><strong>Observações:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.notes.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
+      Array.isArray(item.notes) && item.notes.length ? `<div><strong>Observacoes:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.notes.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
       isTreasure ? '<p><strong>Registro:</strong> Registre 1 unidade. Pode vender depois de registrado.</p>' : '',
-      item.repeatableViaChapterSelect ? '<p>Repetível via Seleção de Capítulos / Chapter Select.</p>' : '',
+      item.repeatableViaChapterSelect ? '<p>Repetivel via Selecao de Capitulos / Chapter Select.</p>' : '',
       item.warning ? `<p><strong>Alerta:</strong> ${escapeHtml(item.warning)}</p>` : '',
       renderEditorialLinks(item.links)
     ].filter(Boolean).join('');
     return `
-      <li class="atlas-panel atlas-panel--quiet p-4 space-y-2">
-        <strong>${escapeHtml(title)}</strong>
+      <li id="${escapeAttribute(itemId)}" class="atlas-panel atlas-panel--quiet p-4 space-y-2" data-platinum-extra-item="${escapeAttribute(itemId)}" data-platinum-extra-category="${escapeAttribute(category.id || '')}">
+        <label class="flex items-start gap-3">
+          <input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(itemId)}" aria-label="${escapeAttribute('Marcar ' + title)}">
+          <strong>${escapeHtml(title)}</strong>
+        </label>
+        ${imageSrc ? `<figure class="mt-3"><img src="${escapeAttribute(imageSrc)}" alt="${escapeAttribute(imageAlt)}" width="${escapeAttribute(String(imageWidth))}" height="${escapeAttribute(String(imageHeight))}" loading="lazy">${item.imageCaption ? `<figcaption class="text-xs text-white/50 mt-2">${escapeHtml(item.imageCaption)}</figcaption>` : ''}</figure>` : ''}
         <div class="text-sm text-white/70 space-y-1">${details}</div>
       </li>`;
   }
@@ -2310,6 +2373,7 @@ window.UIGuide = (() => {
       node.setAttribute('aria-label', `Progresso atual ${viewModel.progress}%`);
     });
     applyChecklistDensity();
+    bindPlatinumExtrasProgress(game);
     activateGuideTab(state?.activeGuideTab || 'summary');
   }
 

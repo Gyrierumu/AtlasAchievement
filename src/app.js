@@ -2064,6 +2064,14 @@ function renderEditorialLinksHtml(links = []) {
   return `<div class="atlas-trophy-critical-guide__links">${safeLinks.map(link => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`).join('')}</div>`;
 }
 
+function resolveLocalGuideImageSrc(src = '') {
+  const value = String(src || '').trim();
+  if (!value || /^https?:\/\//i.test(value) || value.includes('..')) return '';
+  const normalized = value.startsWith('/') ? value : `/assets/guides/${value.replace(/^\/+/, '')}`;
+  const absolute = path.join(__dirname, '..', 'public', normalized.replace(/^\/+/, ''));
+  return fs.existsSync(absolute) ? normalized : '';
+}
+
 function getDlcPackageAnchorId(pack = {}, key = '') {
   const explicit = String(pack.anchorId || pack.anchor_id || '').trim();
   if (explicit) return explicit;
@@ -2119,13 +2127,34 @@ function renderPlatinumExtraItemHtml(category = {}, item = {}) {
     : isBsaa
     ? `BSAA Emblem #${number} — ${item.chapter || 'Capítulo não informado'}`
     : `${number}. ${item.name || 'Item'}`;
+  const itemId = String(item.id || `${category.id || 'extra'}-${number}`).trim();
+  const imageSrc = resolveLocalGuideImageSrc(item.imageSrc || item.image_src || '');
+  const imageAlt = item.imageAlt || item.image_alt || item.name || title;
+  const imageWidth = Number(item.imageWidth || item.image_width || 1280);
+  const imageHeight = Number(item.imageHeight || item.image_height || 720);
   const details = [
     item.description ? `<p>${escapeHtml(item.description)}</p>` : '',
     item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(item.type)}</p>` : '',
+    item.area ? `<p><strong>Área:</strong> ${escapeHtml(item.area)}</p>` : '',
+    item.room ? `<p><strong>Sala:</strong> ${escapeHtml(item.room)}</p>` : '',
+    item.character ? `<p><strong>Personagem:</strong> ${escapeHtml(item.character)}</p>` : '',
+    item.scenario ? `<p><strong>Cenário:</strong> ${escapeHtml(item.scenario)}</p>` : '',
+    item.difficulty ? `<p><strong>Dificuldade:</strong> ${escapeHtml(item.difficulty)}</p>` : '',
+    item.requirement ? `<p><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</p>` : '',
+    item.code ? `<p><strong>Código/combinação:</strong> ${escapeHtml(item.code)}</p>` : '',
+    item.reward ? `<p><strong>Recompensa:</strong> ${escapeHtml(item.reward)}</p>` : '',
+    item.leonReward ? `<p><strong>Leon:</strong> ${escapeHtml(item.leonReward)}</p>` : '',
+    item.claireReward ? `<p><strong>Claire:</strong> ${escapeHtml(item.claireReward)}</p>` : '',
     item.obtain ? `<p><strong>Como obter:</strong> ${escapeHtml(item.obtain)}</p>` : '',
     item.location ? `<p><strong>Local:</strong> ${escapeHtml(item.location)}</p>` : '',
+    item.bestMoment ? `<p><strong>Melhor momento:</strong> ${escapeHtml(item.bestMoment)}</p>` : '',
     item.note ? `<p><strong>Observação:</strong> ${escapeHtml(item.note)}</p>` : '',
+    item.routeAlert ? `<p><strong>Alerta de rota:</strong> ${escapeHtml(item.routeAlert)}</p>` : '',
+    item.risk ? `<p><strong>Risco:</strong> ${escapeHtml(item.risk)}</p>` : '',
+    item.pointOfNoReturn ? `<p><strong>Ponto de não retorno:</strong> ${escapeHtml(item.pointOfNoReturn)}</p>` : '',
     item.relatedTrophy ? `<p><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</p>` : '',
+    item.cleanup ? `<p><strong>Cleanup:</strong> ${escapeHtml(item.cleanup)}</p>` : '',
+    item.repeatable ? `<p><strong>Repetição:</strong> ${escapeHtml(item.repeatable)}</p>` : '',
     Array.isArray(item.checklist) && item.checklist.length ? `<div><strong>Checklist:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.checklist.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
     Array.isArray(item.notes) && item.notes.length ? `<div><strong>Observações:</strong><ul class="list-disc pl-5 mt-1 space-y-1">${item.notes.map(entry => `<li>${escapeHtml(entry)}</li>`).join('')}</ul></div>` : '',
     isTreasure ? '<p><strong>Registro:</strong> Registre 1 unidade. Pode vender depois de registrado.</p>' : '',
@@ -2134,8 +2163,12 @@ function renderPlatinumExtraItemHtml(category = {}, item = {}) {
     renderEditorialLinksHtml(item.links)
   ].filter(Boolean).join('');
   return `
-    <li class="atlas-panel atlas-panel--quiet p-4 space-y-2">
-      <strong>${escapeHtml(title)}</strong>
+    <li id="${escapeHtml(itemId)}" class="atlas-panel atlas-panel--quiet p-4 space-y-2" data-platinum-extra-item="${escapeHtml(itemId)}" data-platinum-extra-category="${escapeHtml(category.id || '')}">
+      <label class="flex items-start gap-3">
+        <input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeHtml(itemId)}" aria-label="${escapeHtml(`Marcar ${title}`)}">
+        <strong>${escapeHtml(title)}</strong>
+      </label>
+      ${imageSrc ? `<figure class="mt-3"><img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(imageAlt)}" width="${escapeHtml(String(imageWidth))}" height="${escapeHtml(String(imageHeight))}" loading="lazy">${item.imageCaption ? `<figcaption class="text-xs text-white/50 mt-2">${escapeHtml(item.imageCaption)}</figcaption>` : ''}</figure>` : ''}
       <div class="text-sm text-white/70 space-y-1">${details}</div>
     </li>`;
 }
