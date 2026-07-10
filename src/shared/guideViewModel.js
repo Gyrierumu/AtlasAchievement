@@ -4858,7 +4858,7 @@
 
   function buildGuideQuickPlan(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
-    const quickPlanLimit = normalizedSlug === 'resident-evil-5' ? 7 : 6;
+    const quickPlanLimit = normalizedSlug === 'resident-evil-2-remake' ? 8 : (normalizedSlug === 'resident-evil-5' ? 7 : 6);
     const explicitItems = Array.isArray(game?.quick_plan)
       ? game.quick_plan
       : Array.isArray(game?.quickPlan)
@@ -5061,7 +5061,7 @@
           answer: 'Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.'
         },
         {
-          question: 'Por que a PSN pode mostrar 45 troféus se DLCs ou modos extras não são necessários para a platina?',
+          question: 'Por que a PSN pode mostrar 45 troféus se DLCs/title updates não são necessários para a platina?',
           answer: 'Porque 45 é a lista completa/100% da lista: 42 troféus da lista base da platina e 3 extras fora da platina. The Ghost Survivors, Hell of a Sheriff, Got ’Em, Another Survivor e Chasing Jill não entram na platina PS4/base.'
         },
         {
@@ -5074,7 +5074,7 @@
         },
         {
           question: 'The 4th Survivor e Tofu Survivor são obrigatórios?',
-          answer: 'The 4th Survivor é obrigatório porque libera Grim Reaper na platina base. Tofu Survivor não é requisito obrigatório da platina PS4/base e deve ficar como extra opcional.'
+          answer: 'The 4th Survivor é obrigatório porque completar esse modo rende Grim Reaper, um troféu da platina base. Tofu Survivor não é requisito obrigatório da platina PS4/base e deve ficar como extra opcional.'
         },
         {
           question: 'The Ghost Survivors, Another Survivor e Chasing Jill entram na platina?',

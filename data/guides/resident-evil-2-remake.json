@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-09 22:55:36",
+    "updated_at": "2026-07-10 00:05:52",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -75,7 +75,202 @@
   "seedExtras": {
     "aliases": [],
     "attentionPoints": [],
-    "chapterRouteGuide": null,
+    "chapterRouteGuide": {
+      "chapters": [
+        {
+          "chapter": "Visão geral das campanhas",
+          "note": "A platina base pede Leon, Claire, um 2nd Run para o final verdadeiro e controle dos troféus específicos de cada personagem.",
+          "sections": [
+            {
+              "items": [
+                "Boa rota inicial para aprender R.P.D., Sewers e NEST.",
+                "Cobre A Hero Emerges, Hack Complete e eventos do Leon.",
+                "Inclui o segmento da Ada e prepara One Slick Super-spy.",
+                "Pode desbloquear Claire 2nd Run.",
+                "Itens e armas próprios de Leon entram no controle da platina base."
+              ],
+              "title": "Leon 1st Run"
+            },
+            {
+              "items": [
+                "Boa rota alternativa para começar a campanha.",
+                "Cobre A Heroine Emerges, Hide and Seek e eventos da Claire.",
+                "Inclui o segmento da Sherry e prepara Young Escapee.",
+                "Pode desbloquear Leon 2nd Run.",
+                "Itens e armas próprios de Claire pedem controle separado."
+              ],
+              "title": "Claire 1st Run"
+            },
+            {
+              "items": [
+                "Rota de 2nd Run com Leon, útil para final verdadeiro e Broken Umbrella.",
+                "Tem início, puzzles e ritmo diferentes da 1st Run.",
+                "Pode ser usada para coletáveis e cleanup quando planejada.",
+                "Continua fazendo parte da platina base, não de DLC."
+              ],
+              "title": "Leon 2nd Run"
+            },
+            {
+              "items": [
+                "Rota de 2nd Run com Claire, útil para final verdadeiro e Broken Umbrella.",
+                "Tem início, puzzles e ritmo diferentes da 1st Run.",
+                "Pode resolver pendências de coletáveis, arquivos e eventos da Claire.",
+                "Continua fazendo parte da platina base, não de DLC."
+              ],
+              "title": "Claire 2nd Run"
+            }
+          ]
+        },
+        {
+          "chapter": "Final verdadeiro e Broken Umbrella",
+          "note": "Depois de concluir uma campanha, o jogo libera New Game [2nd Run]. Terminar um 2nd Run com Leon ou Claire leva ao final verdadeiro.",
+          "sections": [
+            {
+              "items": [
+                "New Game [2nd Run] é uma rota da platina base.",
+                "Concluir Leon ou Claire em 2nd Run libera o final verdadeiro.",
+                "Broken Umbrella está ligado ao final verdadeiro.",
+                "2nd Run não é DLC nem title update."
+              ],
+              "title": "Como funciona"
+            },
+            {
+              "items": [
+                "Se começar com Leon 1st Run, use Claire 2nd Run para o final verdadeiro.",
+                "Se começar com Claire 1st Run, use Leon 2nd Run para o final verdadeiro.",
+                "Aproveite o 2nd Run para pendências planejadas de coletáveis e eventos.",
+                "Trate o 2nd Run como rota própria, com início, puzzles e ritmo diferentes."
+              ],
+              "title": "Como usar na rota"
+            }
+          ]
+        },
+        {
+          "chapter": "Troféus específicos de Leon",
+          "note": "Use Leon para resolver história, Ada, S rank e Hardcore ligados ao personagem.",
+          "sections": [
+            {
+              "items": [
+                "A Hero Emerges — completar a história de Leon.",
+                "Hack Complete — completar o segmento da Ada.",
+                "One Slick Super-spy — concluir o segmento da Ada sem usar a pistola.",
+                "Faça save manual antes da Ada quando quiser repetir com segurança."
+              ],
+              "title": "História e Ada"
+            },
+            {
+              "items": [
+                "Leon “S.” Kennedy — S rank com Leon em Standard ou Hardcore.",
+                "Hardcore Rookie — concluir a história de Leon no Hardcore.",
+                "Separe S rank e Hardcore da primeira run se ainda estiver aprendendo.",
+                "Use rotas curtas e pouca coleta nas tentativas de tempo."
+              ],
+              "title": "Ranking e dificuldade"
+            }
+          ]
+        },
+        {
+          "chapter": "Troféus específicos de Claire",
+          "note": "Use Claire para resolver história, Sherry, S rank e Hardcore ligados à personagem.",
+          "sections": [
+            {
+              "items": [
+                "A Heroine Emerges — completar a história de Claire.",
+                "Hide and Seek — completar o segmento da Sherry.",
+                "Young Escapee — escapar do quarto da Sherry em até 60 segundos.",
+                "Faça save manual antes da Sherry quando quiser repetir com segurança."
+              ],
+              "title": "História e Sherry"
+            },
+            {
+              "items": [
+                "Sizzling Scarlet Hero — S rank com Claire em Standard ou Hardcore.",
+                "Hardcore College Student — concluir a história da Claire no Hardcore.",
+                "Separe S rank e Hardcore da primeira run se ainda estiver aprendendo.",
+                "Prepare Young Escapee antes de entrar em uma run de Sherry."
+              ],
+              "title": "Ranking e dificuldade"
+            }
+          ]
+        },
+        {
+          "chapter": "O que muda entre Leon e Claire",
+          "note": "As diferenças importam quando você controla coletáveis, eventos, armas e troféus específicos.",
+          "sections": [
+            {
+              "items": [
+                "Ada aparece nas campanhas do Leon; Sherry aparece nas campanhas da Claire.",
+                "Leon e Claire têm armas principais e upgrades próprios.",
+                "Alguns chefes e eventos mudam conforme personagem e cenário.",
+                "Files e coletáveis podem variar entre personagem, 1st Run e 2nd Run.",
+                "S rank e Hardcore têm troféus separados para Leon e Claire."
+              ],
+              "title": "Diferenças úteis"
+            },
+            {
+              "items": [
+                "Marque pendências por personagem e por área.",
+                "Use Extras da Platina para Files, Mr. Raccoons, Hip Pouches e safes/locks.",
+                "Reserve cleanup para uma rota em que o personagem certo esteja disponível.",
+                "Confirme o cenário antes de buscar item que varia em 1st Run ou 2nd Run."
+              ],
+              "title": "Como evitar retrabalho"
+            }
+          ]
+        },
+        {
+          "chapter": "Como escolher a ordem das campanhas",
+          "note": "O guia não impõe uma ordem única; escolha a sequência que resolve história, final verdadeiro, coletáveis e troféus específicos com menos retrabalho.",
+          "sections": [
+            {
+              "items": [
+                "Leon 1st Run para aprender a campanha e eventos do Leon.",
+                "Claire 2nd Run para final verdadeiro e Broken Umbrella.",
+                "Claire 1st Run ou Leon 2nd Run depois, conforme pendências.",
+                "Use runs separadas para S rank, Hardcore e restrições quando necessário."
+              ],
+              "title": "Opção segura"
+            },
+            {
+              "items": [
+                "Claire 1st Run para começar pela rota da Claire.",
+                "Leon 2nd Run para final verdadeiro e Broken Umbrella.",
+                "Depois, escolha a rota que faltar para coletáveis ou troféus específicos.",
+                "A platina exige cobrir Leon, Claire, 2nd Run, eventos e coletáveis; a ordem exata pode variar."
+              ],
+              "title": "Alternativa equivalente"
+            }
+          ]
+        },
+        {
+          "chapter": "Alertas de save manual",
+          "note": "Saves manuais reduzem o risco de repetir uma campanha inteira por erro de segmento, chefe ou coletável.",
+          "sections": [
+            {
+              "items": [
+                "Antes do segmento da Ada, principalmente para One Slick Super-spy.",
+                "Antes do segmento da Sherry, principalmente para Young Escapee.",
+                "Antes de chefes e troféus situacionais como Gotcha! ou timers.",
+                "Antes de avançar sem concluir coletáveis importantes da área.",
+                "Antes de runs condicionais como Minimalist, Frugalist e A Small Carbon Footprint."
+              ],
+              "title": "Pontos sensíveis"
+            },
+            {
+              "items": [
+                "Use Roadmap para escolher a ordem geral.",
+                "Use Extras da Platina para coletáveis e itens úteis.",
+                "Use Checklist para confirmar os 42 troféus da platina base.",
+                "Use FAQ para dúvidas rápidas sobre 2nd Run, DLCs/title updates e restrições."
+              ],
+              "title": "Conexões úteis"
+            }
+          ]
+        }
+      ],
+      "introduction": "Use esta seção para entender qual campanha jogar, o que muda entre Leon e Claire e por que o 2nd Run entra na platina base. Ela não substitui um walkthrough completo; o foco é evitar confusão de rota, coletáveis e troféus específicos.",
+      "title": "Rotas Leon/Claire e 2nd Run"
+    },
     "checklist": [],
     "commonMythsGuide": null,
     "dlcCompletionGuide": null,
@@ -100,7 +295,7 @@
       },
       {
         "answer": "Porque 45 é a lista completa/100% da lista: 42 troféus da lista base da platina e 3 extras fora da platina. The Ghost Survivors, Hell of a Sheriff, Got ’Em, Another Survivor e Chasing Jill não entram na platina PS4/base.",
-        "question": "Por que a PSN pode mostrar 45 troféus se DLCs ou modos extras não são necessários para a platina?"
+        "question": "Por que a PSN pode mostrar 45 troféus se DLCs/title updates não são necessários para a platina?"
       },
       {
         "answer": "Sim. A platina exige campanhas planejadas para Hardcore e S rank com Leon e Claire; o rank depende principalmente de tempo. S+ pode liberar armas infinitas ou servir como desafio opcional, mas não é requisito direto da platina.",
@@ -111,7 +306,7 @@
         "question": "Existem troféus de sem cura, sem baú ou limite de passos?"
       },
       {
-        "answer": "The 4th Survivor é obrigatório porque libera Grim Reaper na platina base. Tofu Survivor não é requisito obrigatório da platina PS4/base e deve ficar como extra opcional.",
+        "answer": "The 4th Survivor é obrigatório porque completar esse modo rende Grim Reaper, um troféu da platina base. Tofu Survivor não é requisito obrigatório da platina PS4/base e deve ficar como extra opcional.",
         "question": "The 4th Survivor e Tofu Survivor são obrigatórios?"
       },
       {
@@ -153,6 +348,16 @@
         "detail": "Resolver Minimalist, Frugalist e A Small Carbon Footprint em tentativas planejadas.",
         "number": 6,
         "title": "Faça runs condicionais sem cura, sem baú e com poucos passos"
+      },
+      {
+        "detail": "Resolver Grim Reaper, que faz parte da platina base por exigir The 4th Survivor.",
+        "number": 7,
+        "title": "Complete The 4th Survivor para Grim Reaper"
+      },
+      {
+        "detail": "Fechar pendências da platina base e deixar a lista completa/100% da lista para depois.",
+        "number": 8,
+        "title": "Finalize a checklist da platina base"
       }
     ],
     "seo": {},
