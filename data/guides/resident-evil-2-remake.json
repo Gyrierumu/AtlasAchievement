@@ -298,10 +298,10 @@
             },
             {
               "items": [
-                "Armas infinitas ajudam em Hardcore, cleanup e runs posteriores, mas não são requisito direto da platina.",
-                "Infinite Combat Knife pode vir de Mr. Raccoons e ajudar em rotas futuras; trate como apoio, não obrigação.",
-                "Infinite Samurai Edge pode facilitar Hardcore se você a liberar por S rank.",
-                "LE 5, Infinite Rocket Launcher e Infinite Minigun são desbloqueios avançados/opcionais.",
+                "Nenhuma arma infinita é obrigatória para a platina; elas apenas ajudam em Hardcore, cleanup e runs posteriores.",
+                "Infinite Combat Knife: destrua os 15 Mr. Raccoons para liberá-la como apoio opcional.",
+                "Um único S rank no Standard, com Leon ou Claire em 1st Run ou 2nd Run, libera a Infinite Samurai Edge para ambos os personagens. Isso não substitui os troféus: Leon “S.” Kennedy exige S rank com Leon, e Sizzling Scarlet Hero exige S rank com Claire.",
+                "Infinite LE 5: obtenha S rank no Hardcore. Infinite Rocket Launcher: Leon no Hardcore com S+; Infinite Minigun: Claire no Hardcore com S+. Os dois últimos desbloqueios e S+ são opcionais e não são requisitos diretos da platina.",
                 "Armas infinitas podem conflitar com S+ e com Minimalist quando exigem acessar o Item Box/baú."
               ],
               "title": "Armas infinitas e desbloqueios úteis"
@@ -358,7 +358,7 @@
                 "Não junte com a primeira run de Hardcore.",
                 "Não junte com coleta pesada de Files ou Mr. Raccoons se isso gerar backtracking.",
                 "Não junte com S rank se você ainda não domina rotas; S+ não é requisito direto da platina.",
-                "Deixe The Ghost Survivors e Chasing Jill para o 100% da lista; essas runs pertencem à platina base."
+                "Deixe The Ghost Survivors e Chasing Jill para o 100% da lista; essas runs ficam fora da platina base."
               ],
               "title": "O que separar"
             },
@@ -401,6 +401,198 @@
                 "Confira Roadmap, Extras da Platina, Rotas Leon/Claire, Checklist e FAQ para pendências conectadas."
               ],
               "title": "Saves e controle de erro"
+            }
+          ]
+        },
+        {
+          "chapter": "Troféus situacionais e cleanup",
+          "note": "Os objetivos abaixo não exigem uma campanha exclusiva, mas alguns dependem de personagem, chefe ou trecho específico. Use saves manuais antes dos pontos sensíveis e resolva os objetivos rápidos durante campanhas normais ou em uma run curta de cleanup.",
+          "sections": [
+            {
+              "items": [
+                "Don't Need No Stinkin' Gun — Não Preciso de Arma: Leon ou Claire; zumbi derrubado; sem save exclusivo; combate rápido.",
+                "Eat This! — Toma Essa!: Leon ou Claire; primeiros agarrões; sem save exclusivo; natural/combate rápido.",
+                "That'll Hold 'Em — Isso Deve Segurá-los: Leon ou Claire; primeira exploração do R.P.D.; sem save exclusivo; natural.",
+                "Hats Off! — Tire o Chapéu!: Leon ou Claire; início da perseguição do Tyrant no R.P.D.; sem save exclusivo; situacional.",
+                "Bon Appétit — Bon Appétit: Leon ou Claire; início de um 2nd Run; save se houver poucas granadas; combate rápido."
+              ],
+              "title": "Decisão rápida — naturais e início"
+            },
+            {
+              "items": [
+                "Zombie Roundup — Ajuntamento de Zumbis: Leon ou Claire; grupo de três zumbis ou início de um 2nd Run; sem campanha exclusiva; combate rápido.",
+                "Like Skeet Shooting — Como Tiro ao Prato: Leon ou Claire; áreas com zombie dogs; save opcional; combate rápido.",
+                "Keep Their Heads Ringin' — Cabeças Zumbindo: Leon ou Claire; corredor próximo ao S.T.A.R.S. Office; save opcional; combate rápido.",
+                "Gotcha! — Peguei Você!: Leon ou Claire; G Stage 2; save manual recomendado; boss/perdível por run.",
+                "Treasure Hunter — Caçador de Tesouros: Leon ou Claire; Sewers e retorno ao R.P.D. antes do NEST; save de rota; exploração."
+              ],
+              "title": "Decisão rápida — combate e exploração"
+            },
+            {
+              "items": [
+                "One Slick Super-spy — Uma Superespiã Eficiente: Leon/Ada; segmento da Ada; save manual recomendado; personagem/perdível por run.",
+                "Young Escapee — Jovem Fugitiva: Claire/Sherry; fuga do quarto; save manual recomendado; personagem/timer.",
+                "In the Blink of an Eye — Num Piscar de Olhos: apenas Leon; Super Tyrant; save manual recomendado; boss/timer.",
+                "With Time to Spare — Com Tempo de Sobra: apenas Claire; G Stage 4; save manual recomendado; boss/timer."
+              ],
+              "title": "Decisão rápida — personagem e finais"
+            },
+            {
+              "items": [
+                "Don't Need No Stinkin' Gun: finalize com a faca um zumbi já derrubado ou enfraquecido. Funciona com Leon ou Claire, sem save exclusivo, e poupa a durabilidade da faca.",
+                "Eat This!: mantenha faca, granada ou flash grenade equipada, permita um agarrão e execute o contra-ataque defensivo. Costuma sair naturalmente nas primeiras campanhas.",
+                "That'll Hold 'Em: use Wooden Boards em uma janela durante a primeira exploração do R.P.D.; basta vedar uma janela, sem limpar todos os zumbis da área.",
+                "Hats Off!: assim que o Tyrant/Mr. X iniciar a perseguição no R.P.D., atire apenas o necessário no chapéu. Leon e Claire podem fazer, sem gastar munição tentando derrotá-lo."
+              ],
+              "title": "Cleanup rápido de combate"
+            },
+            {
+              "items": [
+                "Bon Appétit: equipe uma frag grenade, deixe um zumbi agarrar o personagem, use a granada no contra-ataque e atire nela enquanto estiver presa. O início de um 2nd Run é uma boa janela; salve antes se tiver poucas granadas.",
+                "Zombie Roundup: reúna pelo menos três zumbis e use uma frag grenade para eliminar os três de uma vez. O início de um 2nd Run permite repetir rápido e não exige campanha exclusiva.",
+                "Like Skeet Shooting: zombie dogs são mais previsíveis. Com Leon, tente no Parking Garage depois de restaurar a energia; com Claire, no caminho entre o Parking Garage e o Orphanage. Mire antes do salto e dispare durante o ataque, em qualquer dificuldade.",
+                "Keep Their Heads Ringin': arremesse uma flash grenade diretamente em um Licker, como no corredor próximo ao S.T.A.R.S. Office. O objetivo é atordoar sua audição, não matar o inimigo."
+              ],
+              "title": "Granadas e inimigos"
+            },
+            {
+              "items": [
+                "Gotcha! — Peguei Você!: após os chess plugs, crie um save manual antes de G Stage 2. Afaste o container, cause dano pesado e chame o guindaste de volta uma única vez quando G estiver enfraquecido; se ele não cair nessa ativação efetiva, recarregue. Vale com Leon ou Claire.",
+                "Gotcha! pertence à platina base. Got ’Em, com apóstrofo, pertence a The Ghost Survivors e fica fora da platina.",
+                "In the Blink of an Eye — Num Piscar de Olhos: exclusivo do Leon. Salve antes da fuga final do NEST, chegue ao Super Tyrant com recursos e cause dano contínuo para acelerar o Rocket Launcher; termine com pelo menos 5 minutos restantes ou recarregue.",
+                "With Time to Spare — Com Tempo de Sobra: exclusivo da Claire. Salve antes da fuga final do NEST, guarde munição pesada, use a Minigun disponível contra G Stage 4 e evite desvios; termine com pelo menos 4 minutos restantes ou recarregue."
+              ],
+              "title": "Bosses e objetivos com timer"
+            },
+            {
+              "items": [
+                "One Slick Super-spy — Uma Superespiã Eficiente: apenas Leon/Ada. Salve após o crocodile ou antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun ou usar item ofensivo; se quebrar a condição, recarregue. Hack Complete sai ao concluir o segmento normalmente.",
+                "Young Escapee — Jovem Fugitiva: apenas Claire/Sherry. Salve antes da transição, estude o block puzzle e repita a fuga do quarto em até 60 segundos; o timer cobre somente o quarto, não todo o segmento da Sherry."
+              ],
+              "title": "Segmentos exclusivos de personagem"
+            },
+            {
+              "items": [
+                "Treasure Hunter — Caçador de Tesouros: pegue o Hiding Places Film na Workroom dos Sewers, revele na Dark Room do R.P.D. e colete os itens da Press Room e do S.T.A.R.S. Office antes de avançar definitivamente para o NEST.",
+                "A Vault-like Mind, First Break-In, Master of Unlocking, A Waist of Space, Lore Explorer, Complete Vermin Extermination e Customizer também entram no cleanup de exploração; números e checklists permanecem em Extras da Platina."
+              ],
+              "title": "Exploração e Extras da Platina"
+            },
+            {
+              "items": [
+                "Estes são pontos recomendados, não uma regra rígida de slots; adapte-os aos saves de Hardcore e S rank.",
+                "Save 1 — Ada: antes do segmento da Ada para One Slick Super-spy; Save 2 — Sherry: antes do segmento da Sherry para Young Escapee.",
+                "Save 3 — G Stage 2: depois dos chess plugs e antes do guindaste para Gotcha!.",
+                "Save 4 — final do Leon: antes da fuga e do Super Tyrant para In the Blink of an Eye; Save 5 — final da Claire: antes da fuga e de G Stage 4 para With Time to Spare.",
+                "Save 6 — retorno ao R.P.D.: antes de deixar Sewers/NEST com Treasure Hunter ou exploração pendente."
+              ],
+              "title": "Plano compacto de saves"
+            },
+            {
+              "items": [
+                "Resolva objetivos naturais durante as primeiras campanhas.",
+                "Use 2nd Run para Bon Appétit e Zombie Roundup se ainda estiverem pendentes; faça Like Skeet Shooting e Keep Their Heads Ringin' durante a exploração normal.",
+                "Mantenha saves antes de Ada, Sherry, G Stage 2 e finais de Leon/Claire.",
+                "Conclua Treasure Hunter antes do ponto sem retorno para o NEST.",
+                "Confira Checklist, Extras da Platina, Rotas Leon/Claire, Roadmap, Runs de restrição e FAQ; com um save disponível, repita apenas o menor trecho necessário."
+              ],
+              "title": "Ordem de cleanup recomendada"
+            }
+          ]
+        },
+        {
+          "chapter": "Rota compacta por área",
+          "note": "Esta rota não substitui um walkthrough. Use os blocos abaixo para saber quais pendências conferir antes de deixar cada área, quais saves merecem ser preservados e onde Leon, Claire e o 2nd Run exigem atenção diferente.",
+          "sections": [
+            {
+              "items": [
+                "Prioridade da platina: aprenda movimentação, combate, inventário e mapa, conserve recursos e avance naturalmente até Welcome to the City of the Dead no R.P.D.",
+                "Coletáveis e itens: pegue apenas recursos úteis para a sobrevivência imediata; a abertura não precisa de checklist próprio nem funciona como área de farm.",
+                "Troféus/oportunidades: The Basics of Survival e objetivos simples de combate podem sair naturalmente, sem repetir a abertura para cleanup.",
+                "Diferenças Leon/Claire: a abertura muda pouco para a platina; as diferenças relevantes começam no R.P.D. e crescem depois da separação das rotas.",
+                "Save ou alerta de avanço: nenhum save específico é necessário; comece o controle real de pendências ao chegar ao R.P.D."
+              ],
+              "title": "Gas Station e abertura"
+            },
+            {
+              "items": [
+                "Prioridade da platina: aprenda a estrutura do R.P.D., resolva a Goddess Statue, abra as rotas principais, controle o inventário e revise salas vermelhas por andar.",
+                "Coletáveis e itens: acompanhe Files, Mr. Raccoons, Hip Pouches, Safes, Locks/Lockers, Portable Safes, armas, weapon upgrades e mapas pelos números de Extras da Platina.",
+                "Troféus/oportunidades: Path to the Goddess, That'll Hold 'Em, A Vault-like Mind, First Break-In, Customizer, Don't Need No Stinkin' Gun, Eat This!, Keep Their Heads Ringin' e Hats Off! têm janelas aqui; use Situacionais e cleanup para a execução.",
+                "Diferenças Leon/Claire: Leon usa Club Key e Claire usa Heart Key; salas, armas, upgrades, Files e Mr. Raccoons exclusivos impedem que uma única campanha cubra tudo.",
+                "Save ou alerta de avanço: preserve saves antes de chefes e eventos que mudam a exploração. A primeira saída do R.P.D. não é definitiva, pois haverá oportunidade de retorno."
+              ],
+              "title": "R.P.D. — primeira exploração"
+            },
+            {
+              "items": [
+                "Prioridade da platina: avance pela rota de saída, confira áreas laterais do Parking Garage e aproveite o retorno ao R.P.D. para abrir salas antes inacessíveis.",
+                "Coletáveis e itens: priorize o Mr. Raccoon do Firing Range, Files, itens da Car Key, armas/upgrades de personagem e portas liberadas pelas chaves de Leon ou Claire.",
+                "Troféus/oportunidades: tente Like Skeet Shooting com zombie dogs, Hats Off! e Keep Their Heads Ringin' se faltarem; Treasure Hunter ficará para o retorno após obter o filme nos Sewers.",
+                "Diferenças Leon/Claire: Leon passa por Jail, Generator Room e preparação da rota da Ada; Claire usa Chief's Office e Heart Key antes da rota externa para o Orphanage.",
+                "Save ou alerta de avanço: salve antes de dogs ou Lickers quando houver objetivo situacional pendente. Deixar o Parking Garage ainda não encerra o acesso futuro ao R.P.D."
+              ],
+              "title": "Underground Facility, Parking Garage e retorno ao R.P.D."
+            },
+            {
+              "items": [
+                "Prioridade da platina: área exclusiva da Claire; conclua o segmento da Sherry, prepare Young Escapee e confira os coletáveis próprios dessa rota.",
+                "Coletáveis e itens: confira os Mr. Raccoons do ônibus e da Nursery e os Files ligados à rota da Claire, usando Extras da Platina para as localizações detalhadas.",
+                "Troféus/oportunidades: Hide and Seek sai ao concluir o segmento; Young Escapee exige a fuga do quarto em até 60 segundos, não o segmento completo da Sherry.",
+                "Diferenças Leon/Claire: somente Claire visita o Orphanage. A oportunidade equivalente de personagem para Leon é o segmento da Ada tratado nos Sewers.",
+                "Save ou alerta de avanço: crie um save manual antes da transição para Sherry e recarregue se Young Escapee passar de 60 segundos."
+              ],
+              "title": "Orphanage e segmento da Sherry"
+            },
+            {
+              "items": [
+                "Prioridade da platina: resolva os chess plugs, prepare Gotcha!, obtenha o Hiding Places Film e use o retorno ao R.P.D. para fechar Treasure Hunter e pendências antigas antes do Cable Car.",
+                "Coletáveis e itens: revise Files, Mr. Raccoon, Hip Pouch, armas, weapon upgrades, Hiding Places Film, T-Bar Valve Handle e chess plugs por categoria, sem transformar a área em sequência sala por sala.",
+                "Troféus/oportunidades: A Great Need for a Shower, Gotcha! em G Stage 2, Treasure Hunter, One Slick Super-spy na campanha de Leon/Ada e objetivos de safes/locks ou upgrades ainda pendentes.",
+                "Diferenças Leon/Claire: Leon recebe o segmento da Ada, One Slick Super-spy e itens próprios; Claire continua a rota da Sherry e possui armamentos, upgrades e coletáveis específicos.",
+                "Save ou alerta de avanço: salve antes de G Stage 2, antes da Ada e antes de embarcar. Ponto de não retorno: o Cable Car para o NEST encerra o retorno ao R.P.D., Underground Facility e Sewers nessa campanha; confira Treasure Hunter, Files, Mr. Raccoons, safes/locks, Hip Pouches, armas e upgrades ainda acessíveis."
+              ],
+              "title": "Sewers"
+            },
+            {
+              "items": [
+                "Prioridade da platina: use o caminho dos Sewers para voltar, revele o Hiding Places Film, conclua Treasure Hunter e revise salas vermelhas antes do Cable Car.",
+                "Coletáveis e itens: consulte Extras da Platina e Records para resolver apenas Files, Mr. Raccoons, fechaduras, armas e upgrades conhecidos e ainda acessíveis.",
+                "Troféus/oportunidades: Treasure Hunter, Master of Unlocking, Lore Explorer, Complete Vermin Extermination, A Waist of Space e Customizer podem avançar aqui, mas alguns exigem outras campanhas.",
+                "Diferenças Leon/Claire: salas, chaves, armas e coletáveis próprios continuam separados; essa visita fecha pendências acessíveis do personagem atual, não toda a conta.",
+                "Save ou alerta de avanço: preserve um save manual anterior ao Cable Car e mantenha-o até confirmar as pendências acessíveis no mapa e em Extras da Platina."
+              ],
+              "title": "Retorno final ao R.P.D. antes do NEST"
+            },
+            {
+              "items": [
+                "Prioridade da platina: conclua os últimos coletáveis da campanha, use o Signal Modulator, prepare recursos para os chefes e mantenha save antes da fuga final.",
+                "Coletáveis e itens: confira Files, Mr. Raccoons da Cafeteria e Nap Room, Signal Modulator, weapon upgrades e pendências próprias de Leon ou Claire.",
+                "Troféus/oportunidades: In the Blink of an Eye com Leon, With Time to Spare com Claire, conclusões de história, Hardcore/S rank e A Small Carbon Footprint conforme a run planejada.",
+                "Diferenças Leon/Claire: Leon enfrenta o Super Tyrant e busca In the Blink of an Eye; Claire enfrenta G Stage 4 e busca With Time to Spare, com finais e armamentos próprios.",
+                "Save ou alerta de avanço: salve antes do início da fuga e dos chefes finais. Depois de chegar ao NEST pelo Cable Car, as áreas anteriores não ficam mais acessíveis nessa campanha."
+              ],
+              "title": "NEST Laboratory"
+            },
+            {
+              "items": [
+                "Prioridade da platina: conclua o 2nd Run para o final verdadeiro e Broken Umbrella, controlando puzzles, Files e Mr. Raccoons exclusivos do cenário.",
+                "Coletáveis e itens: confira o Mr. Raccoon do início, Files exclusivos e diferenças de itens/puzzles de Leon B ou Claire B sem duplicar a lista completa de Extras da Platina.",
+                "Troféus/oportunidades: Broken Umbrella é o objetivo central; S rank, A Small Carbon Footprint, Bon Appétit, Zombie Roundup e cleanup simples podem ser combinados apenas quando a rota estiver planejada.",
+                "Diferenças Leon/Claire: Leon 1st Run libera Claire 2nd Run e Claire 1st Run libera Leon 2nd Run; ambas levam ao final verdadeiro, mas troféus de personagem continuam separados.",
+                "Save ou alerta de avanço: puzzles do 2nd Run podem usar soluções diferentes; preserve saves antes dos mesmos segmentos de personagem, bosses e pontos de não retorno."
+              ],
+              "title": "2nd Run e final verdadeiro"
+            },
+            {
+              "items": [
+                "Conferi o mapa, as salas vermelhas e as pendências conhecidas em Extras da Platina?",
+                "Existe troféu situacional nesta área e ele depende de Leon, Claire ou 2nd Run?",
+                "Tenho um save manual antes do evento, chefe ou mudança de personagem?",
+                "Estou prestes a cruzar um ponto de não retorno, especialmente o Cable Car para o NEST?",
+                "Posso deixar esta pendência para outra campanha sem criar retrabalho desnecessário?"
+              ],
+              "title": "Antes de deixar cada área"
             }
           ]
         },
