@@ -5066,11 +5066,11 @@
         },
         {
           question: 'Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?',
-          answer: 'Sim. A platina exige campanhas planejadas para Hardcore e S rank com Leon e Claire; o rank depende principalmente de tempo. S+ pode liberar armas infinitas ou servir como desafio opcional, mas não é requisito direto da platina.'
+          answer: 'Sim. S rank com Leon e Claire é obrigatório e pode ser feito em Standard ou Hardcore; Standard costuma ser mais confortável. Hardcore Rookie e Hardcore College Student pedem completar Leon e Claire no Hardcore, sem exigir S rank. S+ e armas infinitas são opcionais para desbloqueios/atalhos, não requisito direto da platina.'
         },
         {
           question: 'Existem troféus de sem cura, sem baú ou limite de passos?',
-          answer: 'Sim. Frugalist, Minimalist e A Small Carbon Footprint exigem condições específicas. Faça essas runs separadas ou combine apenas quando já tiver uma rota segura.'
+          answer: 'Sim. Minimalist quebra ao abrir o Item Box/baú, Frugalist quebra ao usar recovery item ou item de cura, e A Small Carbon Footprint pede 14.000 passos ou menos. O caminho mais seguro é separar Minimalist e combinar Frugalist + A Small Carbon Footprint depois de dominar uma rota curta.'
         },
         {
           question: 'The 4th Survivor e Tofu Survivor são obrigatórios?',

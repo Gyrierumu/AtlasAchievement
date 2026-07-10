@@ -243,6 +243,168 @@
           ]
         },
         {
+          "chapter": "Hardcore, S rank e armas infinitas",
+          "note": "Esta seção separa o que a platina exige do que é apenas atalho. A platina pede S rank com Leon e Claire e completar Hardcore com os dois personagens. S+ e armas infinitas podem ajudar, mas não são requisitos diretos.",
+          "sections": [
+            {
+              "items": [
+                "S rank com Leon entra na platina por Leon “S.” Kennedy; faça em Standard ou Hardcore, com Standard mais seguro para a maioria.",
+                "S rank com Claire entra na platina por Sizzling Scarlet Hero; faça em Standard ou Hardcore, com Standard mais seguro para a maioria.",
+                "Hardcore com Leon entra por Hardcore Rookie; completar a história no Hardcore basta, sem exigir S rank.",
+                "Hardcore com Claire entra por Hardcore College Student; completar a história no Hardcore basta, sem exigir S rank.",
+                "S+ e armas infinitas são opcionais: servem para desbloqueios ou atalhos, não como requisito direto da platina."
+              ],
+              "title": "Obrigatório vs opcional"
+            },
+            {
+              "items": [
+                "Leon 1st Run / Claire 1st Run: Standard 3h30; Hardcore 2h30.",
+                "Leon 2nd Run / Claire 2nd Run: Standard 3h00; Hardcore 2h00.",
+                "S rank depende principalmente do tempo, então priorize rota curta, puzzles memorizados e objetivos mínimos.",
+                "Se morrer em run de ranking, evite Continue e carregue o save correto para proteger o tempo.",
+                "Use saves normais sem tratar limite de saves como regra do S rank comum; limite de saves é preocupação de S+."
+              ],
+              "title": "Tempos de S rank"
+            },
+            {
+              "items": [
+                "S rank é obrigatório para Leon “S.” Kennedy e Sizzling Scarlet Hero.",
+                "S+ não é requisito direto da platina.",
+                "S rank pode ser feito em Standard e não exige as regras específicas de S+.",
+                "Não junte S rank com primeira run cega ou coleta completa se isso atrasar demais.",
+                "Para a maioria, S rank em Standard é melhor do que tentar S+ ou Hardcore cedo."
+              ],
+              "title": "S rank sem confundir com S+"
+            },
+            {
+              "items": [
+                "Hardcore Rookie pede Leon no Hardcore; Hardcore College Student pede Claire no Hardcore.",
+                "Hardcore pune mais: inimigos causam mais dano, recursos apertam e saves dependem de ink ribbons.",
+                "Entre depois de conhecer R.P.D., Sewers, NEST, puzzles, chefes e rotas de item.",
+                "Salve em segmentos planejados, evite combates desnecessários e guarde munição forte para bosses.",
+                "Hardcore não precisa ser S rank para esses dois troféus."
+              ],
+              "title": "Como planejar Hardcore"
+            },
+            {
+              "items": [
+                "Leon Hardcore: troféu Hardcore Rookie; atenção a eventos do Leon, Ada, Super Tyrant/final e armas próprias de Leon.",
+                "Claire Hardcore: troféu Hardcore College Student; atenção a eventos da Claire, Sherry, G Stage 4/final e armas próprias de Claire.",
+                "Use saves antes de Ada e Sherry se também quiser limpar troféus desses segmentos.",
+                "Separe pendências por personagem para não entrar na campanha errada.",
+                "Não transforme a tentativa em detonado: foque em rota segura e recursos para chefes."
+              ],
+              "title": "Leon vs Claire no Hardcore"
+            },
+            {
+              "items": [
+                "Armas infinitas ajudam em Hardcore, cleanup e runs posteriores, mas não são requisito direto da platina.",
+                "Infinite Combat Knife pode vir de Mr. Raccoons e ajudar em rotas futuras; trate como apoio, não obrigação.",
+                "Infinite Samurai Edge pode facilitar Hardcore se você a liberar por S rank.",
+                "LE 5, Infinite Rocket Launcher e Infinite Minigun são desbloqueios avançados/opcionais.",
+                "Armas infinitas podem conflitar com S+ e com Minimalist quando exigem acessar o Item Box/baú."
+              ],
+              "title": "Armas infinitas e desbloqueios úteis"
+            },
+            {
+              "items": [
+                "Aprenda rotas, puzzles e chefes antes de mirar tempo ou Hardcore.",
+                "Faça S rank em Standard com Leon e Claire.",
+                "Use desbloqueios obtidos, se houver, para facilitar Hardcore.",
+                "Faça Hardcore com Leon e Claire sem obrigação de S rank.",
+                "Deixe S+ para quem quiser desbloqueios avançados e confira pendências no Checklist."
+              ],
+              "title": "Ordem recomendada"
+            },
+            {
+              "items": [
+                "Salve antes de chefes e mantenha saves separados para não sobrescrever tentativa boa.",
+                "Em Hardcore, planeje ink ribbons antes de cada grande trecho.",
+                "Em run de ranking, se morrer, saia para o menu e use carregar save em vez de Continue.",
+                "Não trate cada save como regra de speedrun; S rank comum não tem limite específico de saves.",
+                "Confira Roadmap, Rotas Leon/Claire, Runs de restrição, Extras da Platina, Checklist e FAQ quando houver pendência conectada."
+              ],
+              "title": "Saves, timer e mortes"
+            }
+          ]
+        },
+        {
+          "chapter": "Runs de restrição",
+          "note": "Esses troféus não são difíceis por combate, e sim por disciplina de rota. Faça depois de conhecer puzzles, chefes e caminhos principais; o erro comum é abrir o baú, usar cura ou andar demais sem perceber.",
+          "sections": [
+            {
+              "items": [
+                "Minimalist: terminar sem abrir o Item Box/baú; abrir o baú em qualquer momento quebra a tentativa; melhor em run dedicada com Hip Pouches planejadas.",
+                "Frugalist: terminar sem usar recovery item ou item de cura; usar cura quebra a tentativa; Assisted ou run dedicada facilita.",
+                "A Small Carbon Footprint: terminar com 14.000 passos ou menos; backtracking excessivo e rota indecisa quebram a meta; use rota curta.",
+                "Acompanhe passos no menu/Records quando estiver monitorando o limite.",
+                "Não tente essas condições na primeira campanha cega."
+              ],
+              "title": "Tabela-resumo"
+            },
+            {
+              "items": [
+                "Frugalist + A Small Carbon Footprint combinam bem em Assisted/Standard ou rota curta dominada.",
+                "Minimalist + Frugalist pode funcionar, mas exige controle de inventário.",
+                "Minimalist + A Small Carbon Footprint também funciona, mas aumenta pressão de inventário e rota.",
+                "Os três troféus podem sair juntos para quem já conhece muito bem a campanha.",
+                "Para a maioria, faça Minimalist em run própria e Frugalist + A Small Carbon Footprint em outra run curta."
+              ],
+              "title": "O que combinar"
+            },
+            {
+              "items": [
+                "Não junte com a primeira campanha cega.",
+                "Não junte com a primeira run de Hardcore.",
+                "Não junte com coleta pesada de Files ou Mr. Raccoons se isso gerar backtracking.",
+                "Não junte com S rank se você ainda não domina rotas; S+ não é requisito direto da platina.",
+                "Deixe The Ghost Survivors e Chasing Jill para o 100% da lista; essas runs pertencem à platina base."
+              ],
+              "title": "O que separar"
+            },
+            {
+              "items": [
+                "Troféu relacionado: Minimalist.",
+                "Condição: terminar sem abrir o Item Box/baú.",
+                "Priorize Hip Pouches para evitar inventário travado por excesso de itens.",
+                "Não pegue armas ou upgrades desnecessários; descarte itens com cuidado.",
+                "Armas infinitas normalmente ficam no baú, então não conte com elas nessa tentativa se exigirem abrir o Item Box."
+              ],
+              "title": "Minimalist"
+            },
+            {
+              "items": [
+                "Troféu relacionado: Frugalist.",
+                "Condição: terminar sem usar recovery item ou item de cura.",
+                "Assisted facilita por menor dano e recuperação parcial.",
+                "Se tomar dano ruim, recarregue o save em vez de curar.",
+                "Evite qualquer item de recuperação durante a tentativa; se houver dúvida, recarregue o save."
+              ],
+              "title": "Frugalist"
+            },
+            {
+              "items": [
+                "Troféu relacionado: A Small Carbon Footprint.",
+                "Condição: terminar uma campanha com 14.000 passos ou menos.",
+                "Use rota curta, puzzles memorizados e pouco backtracking.",
+                "2nd Run ou B Scenario pode ser uma boa opção por ser mais curto, mas A Scenario também é possível.",
+                "Combina bem com Frugalist quando você já conhece a rota."
+              ],
+              "title": "A Small Carbon Footprint"
+            },
+            {
+              "items": [
+                "Faça saves manuais antes de chefes, áreas perigosas e grandes avanços de rota.",
+                "Mantenha saves separados para não sobrescrever uma tentativa boa.",
+                "Se quebrar condição, recarregue o save em vez de continuar.",
+                "Em tentativas de ranking/tempo, use o load correto depois de morrer.",
+                "Confira Roadmap, Extras da Platina, Rotas Leon/Claire, Checklist e FAQ para pendências conectadas."
+              ],
+              "title": "Saves e controle de erro"
+            }
+          ]
+        },
+        {
           "chapter": "Alertas de save manual",
           "note": "Saves manuais reduzem o risco de repetir uma campanha inteira por erro de segmento, chefe ou coletável.",
           "sections": [
@@ -298,11 +460,11 @@
         "question": "Por que a PSN pode mostrar 45 troféus se DLCs/title updates não são necessários para a platina?"
       },
       {
-        "answer": "Sim. A platina exige campanhas planejadas para Hardcore e S rank com Leon e Claire; o rank depende principalmente de tempo. S+ pode liberar armas infinitas ou servir como desafio opcional, mas não é requisito direto da platina.",
+        "answer": "Sim. S rank com Leon e Claire é obrigatório e pode ser feito em Standard ou Hardcore; Standard costuma ser mais confortável. Hardcore Rookie e Hardcore College Student pedem completar Leon e Claire no Hardcore, sem exigir S rank. S+ e armas infinitas são opcionais para desbloqueios/atalhos, não requisito direto da platina.",
         "question": "Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?"
       },
       {
-        "answer": "Sim. Frugalist, Minimalist e A Small Carbon Footprint exigem condições específicas. Faça essas runs separadas ou combine apenas quando já tiver uma rota segura.",
+        "answer": "Sim. Minimalist quebra ao abrir o Item Box/baú, Frugalist quebra ao usar recovery item ou item de cura, e A Small Carbon Footprint pede 14.000 passos ou menos. O caminho mais seguro é separar Minimalist e combinar Frugalist + A Small Carbon Footprint depois de dominar uma rota curta.",
         "question": "Existem troféus de sem cura, sem baú ou limite de passos?"
       },
       {
