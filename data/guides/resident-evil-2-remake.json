@@ -321,8 +321,7 @@
                 "No S rank, preserve saves estratégicos sem transformar a tentativa em uma rota de coleta.",
                 "Em Hardcore, planeje ink ribbons antes de cada grande trecho.",
                 "Em run de ranking, se morrer, saia para o menu e use carregar save em vez de Continue.",
-                "Não trate cada save como regra de speedrun; S rank comum não tem limite específico de saves.",
-                "Confira os requisitos individuais no Checklist."
+                "Não trate cada save como regra de speedrun; S rank comum não tem limite específico de saves."
               ],
               "title": "Saves, timer e mortes"
             }
@@ -394,10 +393,8 @@
             },
             {
               "items": [
-                "Faça saves manuais antes de chefes, áreas perigosas e grandes avanços de rota.",
-                "Recarregue um save separado assim que a condição da run for quebrada.",
-                "Se quebrar condição, recarregue o save em vez de continuar.",
-                "Em tentativas de ranking/tempo, use o load correto depois de morrer.",
+                "Preserve um save antes de grandes trechos quando estiver tentando uma condição restritiva.",
+                "Se abrir o Item Box, usar cura ou comprometer o limite de passos, recarregue imediatamente o save anterior.",
                 "Confira os requisitos individuais no Checklist."
               ],
               "title": "Saves e controle de erro"
@@ -756,7 +753,7 @@
             "Coletável",
             "100% da lista"
           ],
-          "tip": "Use o checklist individual dos 10 Mr. Raccoons abaixo; eles são separados dos 15 da campanha base."
+          "tip": "Use o checklist individual dos 10 Mr. Raccoons abaixo."
         },
         {
           "anchorId": "re2-chasing-jill",
@@ -867,8 +864,8 @@
                 },
                 {
                   "items": [
-                    "Zumbi comum - handgun focada, Shotgun ou agrupamento para explosao.",
-                    "Zumbi venenoso - evite a nuvem; use distancia ou explosao controlada.",
+                    "Zumbi comum - handgun focada, Shotgun ou agrupamento para explosão.",
+                    "Zumbi venenoso - evite a nuvem; use distância ou explosão controlada.",
                     "Pale Head - prioridade alta; use armas especiais para superar a regeneração.",
                     "Zumbi blindado - mire apenas nas partes expostas.",
                     "Zumbi com tanque - derrube e use o tanque contra grupos.",
@@ -882,13 +879,13 @@
                     "Máquinas de suprimento - aparecem nos três primeiros cenários; escolha pelo próximo trecho, não por acúmulo.",
                     "Tanques explosivos - derrube, reposicione e detone quando houver grupo.",
                     "Cura - cure antes de ficar sem tempo de reação, mas evite gastar tudo no início.",
-                    "Blue Herbs - úteis para reduzir risco contra veneno e criar margem de sobrevivencia.",
+                    "Blue Herbs - úteis para reduzir risco contra veneno e criar margem de sobrevivência.",
                     "Flash Grenades - use para recuperar controle quando a rota fechar.",
                     "Frag Grenades - guarde para grupos, Pale Heads ou emergência.",
                     "Spark Shot - ótimo contra Pale Heads e alvos resistentes.",
-                    "Shotgun - use para abrir espaço rápido em curta distancia.",
+                    "Shotgun - use para abrir espaço rápido em curta distância.",
                     "SMG - boa para controlar inimigos expostos sem desperdiçar explosivos.",
-                    "Flamethrower - use em rajadas curtas e recue; e forte, mas lento em espaço fechado.",
+                    "Flamethrower - use em rajadas curtas e recue; é forte, mas lento em espaço fechado.",
                     "Anti-tank Rocket - preserve para ondas grandes ou momento de quase perda de controle.",
                     "Descarte armas vazias para liberar inventário e continue após pequenos erros enquanto ainda houver recursos."
                   ],
@@ -907,7 +904,7 @@
               ],
               "anchorId": "re2-gunslinger-cat-ears",
               "introduction": "Gunslinger é um Record interno, não um troféu da PSN. Cat Ears é sua recompensa opcional e não entra no progresso 0/2.",
-              "title": "Gunslinger e Cat Ears - opcional"
+              "title": "Gunslinger e Cat Ears — opcional"
             },
             {
               "alerts": [
@@ -1092,9 +1089,9 @@
                 {
                   "items": [
                     {
-                      "angle": "Vire a direita antes de sair da Gun Shop e mire para a prateleira lateral.",
+                      "angle": "Vire à direita antes de sair da Gun Shop e mire para a prateleira lateral.",
                       "area": "Behind R.P.D.",
-                      "bestMoment": "Logo ao comecar o cenário, antes de sair da loja.",
+                      "bestMoment": "Logo ao começar o cenário, antes de sair da loja.",
                       "character": "Robert Kendo",
                       "cleanup": "Pode ser coletado em nova tentativa do cenário.",
                       "id": "re2-gs-raccoon-01-kendo-gun-shop",
@@ -1103,14 +1100,14 @@
                       "imageHeight": 720,
                       "imageSrc": "",
                       "imageWidth": 1280,
-                      "location": "Na prateleira a direita, ainda dentro da loja, perto da saída inicial.",
+                      "location": "Na prateleira à direita, ainda dentro da loja, perto da saída inicial.",
                       "name": "Mr. Raccoon GS #01",
                       "note": "",
                       "number": 1,
                       "relatedTrophy": "Got ’Em",
-                      "risk": "Facil de ignorar por estar no ponto inicial.",
+                      "risk": "Fácil de ignorar por estar no ponto inicial.",
                       "room": "Gun Shop Kendo",
-                      "route": "Rota inicial obrigatoria de Kendo.",
+                      "route": "Rota inicial obrigatória de Kendo.",
                       "scenario": "No Time to Mourn",
                       "screenshotStatus": "pendente",
                       "trainingMode": "Disponível para busca do coletável; não afeta Hell of a Sheriff.",
@@ -1118,11 +1115,11 @@
                       "warning": ""
                     },
                     {
-                      "angle": "Depois da Operators Room, olhe para baixo e para a direita na arena da primeira luta contra Birkin.",
+                      "angle": "Depois da Operators Room, olhe para baixo e para à direita na arena da primeira luta contra Birkin.",
                       "area": "Underground Facility",
-                      "bestMoment": "Ao cruzar a Machinery Room, antes de avancar para a proxima sala.",
+                      "bestMoment": "Ao cruzar a Machinery Room, antes de avançar para a próxima sala.",
                       "character": "Robert Kendo",
-                      "cleanup": "Pode ser coletado em qualquer repeticao de No Time to Mourn.",
+                      "cleanup": "Pode ser coletado em qualquer repetição de No Time to Mourn.",
                       "id": "re2-gs-raccoon-02-kendo-machinery-room",
                       "imageAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
                       "imageCaption": "Captura propria Atlas pendente para No Time to Mourn - Machinery Room / area da luta contra G1.",
@@ -1136,7 +1133,7 @@
                       "relatedTrophy": "Got ’Em",
                       "risk": "Passar correndo pela área sem olhar para as plataformas.",
                       "room": "Machinery Room / área da luta contra G1",
-                      "route": "Rota comum antes da ramificacao dos esgotos.",
+                      "route": "Rota comum antes da ramificação dos esgotos.",
                       "scenario": "No Time to Mourn",
                       "screenshotStatus": "pendente",
                       "trainingMode": "Disponível para busca do coletável; não afeta Hell of a Sheriff.",
@@ -1196,7 +1193,7 @@
                       "warning": ""
                     }
                   ],
-                  "title": "No Time to Mourn - Robert Kendo - 4"
+                  "title": "No Time to Mourn — Robert Kendo — 4"
                 },
                 {
                   "items": [
@@ -1243,7 +1240,7 @@
                       "note": "",
                       "number": 6,
                       "relatedTrophy": "Got ’Em",
-                      "risk": "Facil passar direto por estar fora do caminho de combate principal.",
+                      "risk": "Fácil passar direto por estar fora do caminho de combate principal.",
                       "room": "Ambulância antes da Parking Garage",
                       "route": "Rota de Katherine entre a área externa e a Parking Garage.",
                       "scenario": "Runaway",
@@ -1253,7 +1250,7 @@
                       "warning": ""
                     },
                     {
-                      "angle": "Ao chegar as celas, não siga direto pelo corredor principal: vire a direita e confira a cela intermediaria.",
+                      "angle": "Ao chegar as celas, não siga direto pelo corredor principal: vire à direita e confira a cela intermediária.",
                       "area": "R.P.D. B1",
                       "bestMoment": "Quando as celas se abrirem no trecho final.",
                       "character": "Katherine Warren",
@@ -1269,9 +1266,9 @@
                       "note": "",
                       "number": 7,
                       "relatedTrophy": "Got ’Em",
-                      "risk": "Seguir direto para o objetivo e deixar a cela lateral para tras.",
+                      "risk": "Seguir direto para o objetivo e deixar a cela lateral para trás.",
                       "room": "Jail cells",
-                      "route": "Trecho final rumo a Ben; exige avancar pelo fluxo de Old Keys/backpack zombies.",
+                      "route": "Trecho final rumo a Ben; exige avançar pelo fluxo de Old Keys/backpack zombies.",
                       "scenario": "Runaway",
                       "screenshotStatus": "pendente",
                       "trainingMode": "Disponível para busca do coletável; não satisfaz Hell of a Sheriff.",
@@ -1279,7 +1276,7 @@
                       "warning": ""
                     }
                   ],
-                  "title": "Runaway - Katherine Warren - 3"
+                  "title": "Runaway — Katherine Warren — 3"
                 },
                 {
                   "items": [
@@ -1328,7 +1325,7 @@
                       "relatedTrophy": "Got ’Em",
                       "risk": "Fugir direto para a saída e não entrar na sala recém-aberta.",
                       "room": "Security Room",
-                      "route": "Trecho final do laboratório; a sala so fica acessível após a abertura causada por Mr. X.",
+                      "route": "Trecho final do laboratório; a sala só fica acessível após a abertura causada por Mr. X.",
                       "scenario": "Forgotten Soldier",
                       "screenshotStatus": "pendente",
                       "trainingMode": "Disponível para busca do coletável; não satisfaz Hell of a Sheriff.",
@@ -1336,14 +1333,14 @@
                       "warning": ""
                     }
                   ],
-                  "title": "Forgotten Soldier - Ghost - 2"
+                  "title": "Forgotten Soldier — Ghost — 2"
                 },
                 {
                   "items": [
                     {
                       "angle": "Quando a porta abrir, mire para dentro da sala antes de eliminar tudo que saiu dali.",
                       "area": "Mizoil Gas Station",
-                      "bestMoment": "Na primeira abertura da porta, enquanto a pressão ainda e menor.",
+                      "bestMoment": "Na primeira abertura da porta, enquanto a pressão ainda é menor.",
                       "character": "Daniel Cortini",
                       "cleanup": "Pode ser coletado em outra tentativa de No Way Out.",
                       "id": "re2-gs-raccoon-10-no-way-out-freezer-room",
@@ -1357,17 +1354,17 @@
                       "note": "",
                       "number": 10,
                       "relatedTrophy": "Got ’Em",
-                      "risk": "A porta fecha se voce limpar os inimigos sem atirar no boneco; espere nova abertura se perder a janela.",
+                      "risk": "A porta fecha se você limpar os inimigos sem atirar no boneco; espere nova abertura se perder a janela.",
                       "room": "Sala interna/freezer atrás da porta arrombada",
                       "route": "No Way Out liberado após concluir No Time to Mourn, Runaway e Forgotten Soldier.",
                       "scenario": "No Way Out",
                       "screenshotStatus": "pendente",
                       "trainingMode": "A busca pode ser praticada, mas Hell of a Sheriff exige conclusão fora do Training Mode.",
                       "type": "Coletável DLC",
-                      "warning": "Este e o ultimo Raccoon do pacote e depende da janela de acesso da porta interna."
+                      "warning": "Este é o último Raccoon do pacote e depende da janela de acesso da porta interna."
                     }
                   ],
-                  "title": "No Way Out - Daniel Cortini - 1"
+                  "title": "No Way Out — Daniel Cortini — 1"
                 }
               ],
               "introduction": "Dez Mr. Raccoons exclusivos de The Ghost Survivors, ligados a Got ’Em e separados dos quinze da campanha base. A distribuição é 4/3/2/1, e o Training Mode é válido para a coleta.",
@@ -1378,7 +1375,7 @@
           "coopRequired": false,
           "fullListRequired": true,
           "id": "the-ghost-survivors",
-          "introduction": "The Ghost Survivors reúne quatro cenários alternativos com personagens que morreram na campanha principal. O pacote adiciona dois troféus ao PS4: Got ’Em, pelos 10 Mr. Raccoons, e Hell of a Sheriff, por concluir No Way Out sem Training Mode. Os dois pertencem apenas ao 100% da lista e não bloqueiam Raccoon City Native.",
+          "introduction": "The Ghost Survivors reúne quatro cenários alternativos com personagens que morreram na campanha principal. O pacote adiciona Got ’Em, pelos 10 Mr. Raccoons, e Hell of a Sheriff, por concluir No Way Out fora do Training Mode.",
           "mainRisks": [
             "No Way Out fora do Training Mode",
             "10 Mr. Raccoons separados dos 15 da campanha",
@@ -1497,7 +1494,7 @@
                       "imageWidth": 1280,
                       "location": "Sobre o balcão, depois da prateleira que contém o Long Barrel da W-870.",
                       "name": "Letter to the Shopkeeper",
-                      "note": "Interagir com a carta libera Chasing Jill. Não conta para Lore Explorer, para os 58 Files nem para a platina; conta somente para o 100% da lista completa.",
+                      "note": "Interagir com a carta libera Chasing Jill. Ela não conta entre os 58 Files de Lore Explorer.",
                       "number": "Extra 01",
                       "package": "Another Survivor",
                       "point": "Balcão depois da prateleira do Long Barrel",
@@ -1529,7 +1526,7 @@
                 }
               ],
               "introduction": "",
-              "title": "Another Survivor - Chasing Jill"
+              "title": "Another Survivor — Chasing Jill"
             }
           ],
           "coopRequired": false,
@@ -1568,7 +1565,7 @@
           "roadmapIntroduction": "Faça Chasing Jill durante qualquer campanha de Leon já planejada. Se a platina estiver concluída, use um save anterior ao Parking Garage ou faça uma campanha curta de Leon em Assisted.",
           "roadmapTitle": "Rota rápida",
           "rules": [],
-          "subtitle": "Another Survivor - Chasing Jill",
+          "subtitle": "Another Survivor — Chasing Jill",
           "trophyCount": 1
         },
         {

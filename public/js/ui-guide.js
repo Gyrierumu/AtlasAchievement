@@ -1316,7 +1316,7 @@ window.UIGuide = (() => {
         ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
         ${renderEditorialLinks(list.links)}
         ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
-        ${list.progressGroup ? `<div class="mt-3" data-dlc-collectible-progress="${escapeAttribute(list.progressGroup)}"><strong data-dlc-collectible-count>0/0 encontrados</strong></div>` : ''}
+        ${list.progressGroup ? `<div class="mt-3" data-dlc-collectible-progress="${escapeAttribute(list.progressGroup)}"><strong data-dlc-collectible-count>0/${countDlcCollectibleItems(list)} encontrados</strong></div>` : ''}
         ${Array.isArray(list.groups) && list.groups.length ? `<div class="mt-3 space-y-3">${list.groups.map(group => `
           <div>
             <h4 class="text-sm font-bold text-white">${escapeHtml(group.title || 'Área')}</h4>
@@ -1328,6 +1328,10 @@ window.UIGuide = (() => {
       </div>
     `;
     }).join('');
+  }
+
+  function countDlcCollectibleItems(list = {}) {
+    return (Array.isArray(list.groups) ? list.groups : []).reduce((total, group) => total + (Array.isArray(group?.items) ? group.items.filter(item => item && typeof item === 'object' && String(item.id || '').trim()).length : 0), 0);
   }
 
   function renderDlcCollectibleChecklistItem(item = {}, list = {}, group = {}) {
