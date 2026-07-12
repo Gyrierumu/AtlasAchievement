@@ -535,7 +535,7 @@
       "roadmaps": 6,
       "slug": "nioh-2",
       "status": "verified",
-      "trophies": 13
+      "trophies": 56
     },
     {
       "file": "nioh-3.json",
@@ -703,7 +703,7 @@
       "roadmaps": 6,
       "slug": "saros",
       "status": "verified",
-      "trophies": 40
+      "trophies": 45
     },
     {
       "file": "sekiro-shadows-die-twice.json",
@@ -847,6 +847,6 @@
     "games": 105,
     "redirects": 39,
     "roadmaps": 630,
-    "trophies": 4511
+    "trophies": 4559
   }
 }
