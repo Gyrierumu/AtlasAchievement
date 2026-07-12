@@ -133,7 +133,7 @@
     re2r_hardcore_college: { add: ['difficulty', 'run'] },
     re2r_minimalist: { remove: ['collectible'], add: ['difficulty', 'run'] },
     re2r_small_footprint: { remove: ['collectible', 'story'], add: ['difficulty', 'run'] },
-    re2r_grim_reaper: { add: ['difficulty', 'run'] }
+    re2r_grim_reaper: { remove: ['story'], add: ['difficulty', 'run'] }
   };
   const RESIDENT_EVIL_3_TAG_FIXES_BY_ID = {
     re3r_somebody_to_lean_on: { remove: ['collectible'], add: ['story'] },

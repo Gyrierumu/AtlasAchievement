@@ -255,7 +255,7 @@
     re2r_hardcore_college: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_minimalist: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_small_footprint: { remove: ['collectible', 'story'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_grim_reaper: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
+    re2r_grim_reaper: { remove: ['story'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
   };
   const RESIDENT_EVIL_3_TAG_FIXES_BY_ID = {
     re3r_somebody_to_lean_on: { remove: ['collectible'], add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }, { id: 'story', label: 'História', tone: 'partial' }] },

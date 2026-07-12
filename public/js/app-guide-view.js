@@ -33,6 +33,21 @@ window.AppGuideView = (() => {
   function getGuideTabFromHashLink(hash = '') {
     const id = String(hash || '').replace(/^#/, '').trim().toLowerCase();
     const tabByHash = {
+      roadmap: 'roadmap',
+      guideroadmappanel: 'roadmap',
+      guidechapterroutepanel: 'roadmap',
+      guideprofessionalaipanel: 'roadmap',
+      guidefarmroutespanel: 'roadmap',
+      guidecommonmythspanel: 'roadmap',
+      guidequickplan: 'summary',
+      guidesummaryactions: 'summary',
+      guidechecklistpanel: 'checklist',
+      guideplatinumextraspanel: 'extras',
+      guidedlccompletionpanel: 'dlcs',
+      guideattentionpointspanel: 'details',
+      guidefaqpanel: 'details',
+      guideeditorialnotespanel: 'details',
+      guidecommentspanel: 'details',
       're5-versus-dlc': 'dlcs',
       're5-lost-in-nightmares-score-stars': 'dlcs',
       're5-desperate-escape-agitator-majini': 'dlcs'
@@ -63,6 +78,13 @@ window.AppGuideView = (() => {
     }
     const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     element.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
+    const sectionLinks = Array.from(document.querySelectorAll('[data-guide-section-link]'));
+    const activeSectionLink = sectionLinks.find(link => link.getAttribute('href') === `#${targetId}`)
+      || sectionLinks.find(link => link.dataset.guideSectionLink === element.id)
+      || sectionLinks.find(link => element.closest?.(`#${link.dataset.guideSectionLink}`));
+    const activeSectionId = activeSectionLink?.dataset.guideSectionLink || element.id;
+    if (typeof window.UI?.lockGuideSectionActive === 'function') window.UI.lockGuideSectionActive(activeSectionId);
+    else window.UI?.setGuideSectionActive?.(activeSectionId);
   }
 
   function bindGuideInteractions({ UI, state, toggleTrophy, focusGuideAction, handleGuideQuickDockClick }) {
@@ -238,6 +260,104 @@ window.AppGuideView = (() => {
     });
 
     UI.qs('#guideQuickDock')?.addEventListener('click', handleGuideQuickDockClick);
+
+    let mobileDockFallbackTimer = 0;
+    const syncMobileDockFallback = () => {
+      mobileDockFallbackTimer = 0;
+      const dock = UI.qs('#guideQuickDock');
+      const viewGuide = UI.qs('#view-guide');
+      if (!dock || !viewGuide || viewGuide.classList.contains('hidden')) return;
+      const isMobile = typeof window.matchMedia === 'function'
+        ? window.matchMedia('(max-width: 767px)').matches
+        : window.innerWidth <= 767;
+      if (!isMobile) return;
+      const footerTop = document.querySelector('footer')?.getBoundingClientRect?.().top ?? Number.POSITIVE_INFINITY;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+      const visible = document.body?.dataset?.guideActiveTab !== 'details'
+        && (window.scrollY || document.documentElement.scrollTop || 0) > 160
+        && footerTop > viewportHeight + 18;
+      dock.classList.toggle('hidden', !visible);
+      dock.classList.toggle('is-enabled', true);
+      dock.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      document.body?.classList.toggle('atlas-guide-dock-enabled', true);
+      document.body?.classList.toggle('atlas-guide-dock-active', visible);
+    };
+    const requestMobileDockFallback = () => {
+      if (mobileDockFallbackTimer) return;
+      mobileDockFallbackTimer = window.setTimeout(syncMobileDockFallback, 60);
+    };
+    window.addEventListener('scroll', requestMobileDockFallback, { passive: true });
+    window.addEventListener('resize', requestMobileDockFallback);
+    window.setTimeout(syncMobileDockFallback, 120);
+
+    const setGuideSectionsPanelOpen = (open, options = {}) => {
+      const panel = UI.qs('#guideSectionsPanel');
+      const toggle = UI.qs('[data-guide-sections-toggle]');
+      const isOpen = Boolean(open && panel);
+      if (panel) {
+        panel.hidden = !isOpen;
+        panel.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        panel.classList.toggle('is-open', isOpen);
+      }
+      if (toggle) {
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.classList.toggle('is-active', isOpen);
+        if (!isOpen && options.restoreFocus) {
+          try {
+            toggle.focus({ preventScroll: true });
+          } catch (_error) {
+            toggle.focus();
+          }
+          if (document.activeElement !== toggle) window.setTimeout(() => toggle.focus(), 0);
+        }
+      }
+      document.body?.classList.toggle('atlas-guide-sections-open', isOpen);
+    };
+
+    UI.qs('#guideQuickDock')?.addEventListener('click', event => {
+      const sectionsToggle = event.target.closest('[data-guide-sections-toggle]');
+      if (!sectionsToggle) return;
+      event.preventDefault();
+      const panel = UI.qs('#guideSectionsPanel');
+      setGuideSectionsPanelOpen(!(panel && !panel.hidden));
+    });
+
+    document.addEventListener('click', event => {
+      const link = event.target.closest('[data-guide-section-link]');
+      if (!link) return;
+      const action = link.dataset.guideAction || '';
+      const href = link.getAttribute('href') || '';
+      if (action) {
+        event.preventDefault();
+        focusGuideAction(action);
+        if (typeof UI.lockGuideSectionActive === 'function') UI.lockGuideSectionActive(link.dataset.guideSectionLink || '');
+        else UI.setGuideSectionActive?.(link.dataset.guideSectionLink || '');
+        if (href && window.history?.pushState) window.history.pushState(null, '', href);
+        else if (href) window.location.hash = href;
+      }
+      if (link.closest('#guideSectionsPanel')) {
+        setGuideSectionsPanelOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !UI.qs('#guideSectionsPanel')?.hidden) {
+        event.preventDefault();
+        setGuideSectionsPanelOpen(false, { restoreFocus: true });
+      }
+    });
+
+    const syncHashTarget = () => {
+      const hash = window.location.hash || '';
+      const tab = getGuideTabFromHashLink(hash);
+      if (!tab) return;
+      state.activeGuideTab = tab;
+      UI.activateGuideTab?.(tab, { scroll: false });
+      window.requestAnimationFrame?.(() => scrollGuideHashTarget(hash)) || window.setTimeout(() => scrollGuideHashTarget(hash), 0);
+      window.setTimeout(() => scrollGuideHashTarget(hash), 120);
+    };
+    window.addEventListener('hashchange', syncHashTarget);
+    window.setTimeout(syncHashTarget, 0);
 
     UI.qs('#view-guide')?.addEventListener('click', async event => {
       const relatedLink = event.target.closest('[data-home-game]');

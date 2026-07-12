@@ -92,6 +92,7 @@
     </div>
   </header>
 
+  <span id="topo" class="sr-only" aria-hidden="true"></span>
   <main id="mainContent" tabindex="-1" class="atlas-main-shell max-w-[1320px] mx-auto px-4 lg:px-6 pt-6 space-y-6">
     <section id="view-home" class="atlas-view-shell __HOME_VIEW_CLASS__ space-y-4">
       <section class="atlas-home-hero atlas-panel atlas-panel--primary overflow-hidden">
@@ -498,6 +499,7 @@
         </section>
         <div id="guideFeedbackSlot">__GUIDE_FEEDBACK_CTA__</div>
       </div>
+      <div id="guideSectionIndexSlot" class="atlas-region">__SSR_GUIDE_SECTION_INDEX__</div>
     </section>
 
     <section id="view-profile" class="atlas-view-shell hidden space-y-5 pt-2">
@@ -670,15 +672,17 @@
     <div id="guideQuickDockActions" class="atlas-quick-dock__actions">
       <button type="button" class="atlas-quick-dock__btn" data-guide-action="trophies" aria-label="Ir para o checklist"><i class="fas fa-list-check" aria-hidden="true"></i><span>Checklist</span></button>
       <button type="button" class="atlas-quick-dock__btn" data-guide-action="roadmap" aria-label="Ir para o roadmap"><i class="fas fa-route" aria-hidden="true"></i><span>Roadmap</span></button>
+      <button type="button" class="atlas-quick-dock__btn" data-guide-sections-toggle="true" aria-expanded="false" aria-controls="guideSectionsPanel" aria-label="Seções do guia"><i class="fas fa-list-ul" aria-hidden="true"></i><span>Seções</span></button>
       <button type="button" class="atlas-quick-dock__btn" data-guide-action="search" aria-label="Buscar troféu no checklist"><i class="fas fa-magnifying-glass" aria-hidden="true"></i><span>Busca</span></button>
       <button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--desktop" data-guide-action="first-pending" aria-label="Ir para o próximo troféu pendente"><i class="fas fa-location-arrow" aria-hidden="true"></i><span>Próximo</span></button>
       <button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--top" data-scroll-top="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></button>
     </div>
   </nav>
-  <button id="backToTopBtn" type="button" class="atlas-back-to-top" data-scroll-top-global aria-label="Voltar ao topo">
+  __GUIDE_MOBILE_SECTIONS__
+  <a id="backToTopBtn" href="#topo" class="atlas-back-to-top" data-scroll-top-global aria-label="Voltar ao topo">
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    <span>Topo</span>
-  </button>
+    <span>Voltar ao topo</span>
+  </a>
   <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   __INITIAL_STATE_SCRIPT__
   <!-- Front-end core: API and local persistence. Keep these before UI/app modules. -->

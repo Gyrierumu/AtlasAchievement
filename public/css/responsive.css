@@ -290,6 +290,31 @@
     scroll-margin-top: 84px;
   }
 
+  :root {
+    --guide-anchor-offset: 96px;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 #guideUsagePanel,
+  #view-guide.atlas-guide--resident-evil-5 #roadmap,
+  #view-guide.atlas-guide--resident-evil-5 #guideRoadmapPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideQuickPlan,
+  #view-guide.atlas-guide--resident-evil-5 #guideSummaryActions,
+  #view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideProfessionalAiPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideFarmRoutesPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideCommonMythsPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideChecklistPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guidePlatinumExtrasPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideDlcCompletionPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideAttentionPointsPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideFaqPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideEditorialNotesPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideCommentsPanel,
+  #view-guide.atlas-guide--resident-evil-5 #guideFeedbackSlot,
+  #view-guide.atlas-guide--resident-evil-5 #guideRelatedPanel {
+    scroll-margin-top: var(--guide-anchor-offset);
+  }
+
   .atlas-home-hero__content,
   .atlas-panel.p-6,
   .atlas-panel.p-7,

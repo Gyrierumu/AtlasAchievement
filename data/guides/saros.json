@@ -38,8 +38,8 @@
     "time_max_hours": 30,
     "time_min_hours": 20,
     "time_reason": "A faixa de 20-30 horas considera campanha, epílogo, bosses, 7 Nightmare Gates, 33 expedições com modificadores, objetivos cumulativos e cleanup de armas/desafios.",
-    "time_sort_hours": 30,
-    "updated_at": "2026-07-10 22:08:39",
+    "time_sort_hours": 20,
+    "updated_at": "2026-07-12 13:44:44",
     "verification_note": "Guia revisado editorialmente para a platina base de Saros, com 45 troféus, distribuição 1/2/16/26, sem perdíveis definitivos, sem online obrigatório, sem coop obrigatório e DLC fora da platina base.",
     "verification_status": "verified",
     "walkthrough": ""
@@ -592,56 +592,6 @@
       "tip": "Planeje depois de desbloquear Second Chance e recursos que recuperem essa chance durante a run.",
       "trophy_code": "saros-fatal-triptych",
       "type": "Prata"
-    },
-    {
-      "description": "Alcance o nível máximo de Corruption e sobreviva.",
-      "is_missable": 0,
-      "is_spoiler": 0,
-      "name": "War Within",
-      "name_pt": "Batalha interna",
-      "tip": "Tente em luta controlável, absorvendo Corruption com o Shield e sobrevivendo até fechar o encontro.",
-      "trophy_code": "saros-war-within",
-      "type": "Prata"
-    },
-    {
-      "description": "Colete 20 Halcyon em Yellow Shore.",
-      "is_missable": 0,
-      "is_spoiler": 0,
-      "name": "Never Enough",
-      "name_pt": "Nunca bastava",
-      "tip": "Faça uma run dedicada quando já estiver confortável nessa área.",
-      "trophy_code": "saros-never-enough",
-      "type": "Bronze"
-    },
-    {
-      "description": "Use o ambiente para eliminar um hostil sem atirar nele.",
-      "is_missable": 0,
-      "is_spoiler": 0,
-      "name": "Fall From Grace",
-      "name_pt": "Queda em desgraça",
-      "tip": "Use parry e posicionamento para derrubar um inimigo em queda ou perigo ambiental.",
-      "trophy_code": "saros-fall-from-grace",
-      "type": "Bronze"
-    },
-    {
-      "description": "Complete um bioma sem usar o Shield.",
-      "is_missable": 0,
-      "is_spoiler": 0,
-      "name": "Vincible",
-      "name_pt": "Vulnerável",
-      "tip": "Escolha um bioma conhecido e jogue focado em esquiva, distância e segurança.",
-      "trophy_code": "saros-vincible",
-      "type": "Bronze"
-    },
-    {
-      "description": "Morra pela primeira vez.",
-      "is_missable": 0,
-      "is_spoiler": 0,
-      "name": "Come Back Stronger",
-      "name_pt": "Retorne mais forte",
-      "tip": "Troféu simples: libera na primeira morte.",
-      "trophy_code": "saros-come-back-stronger",
-      "type": "Bronze"
     }
   ]
 }

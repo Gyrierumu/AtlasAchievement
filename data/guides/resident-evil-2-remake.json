@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-10 22:08:34",
+    "updated_at": "2026-07-12 13:44:43",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -602,11 +602,8 @@
           "sections": [
             {
               "items": [
-                "The 4th Survivor — entra na platina: conclua uma vez para obter Grim Reaper.",
-                "The Tofu Survivor — extra opcional: é liberado após The 4th Survivor e não possui troféu obrigatório da platina PS4/base.",
-                "The Ghost Survivors — conteúdo separado: seus modos ficam fora da platina base.",
-                "Got ’Em e Hell of a Sheriff — fora da platina: são troféus de The Ghost Survivors.",
-                "Tofu e suas variantes — opcionais: oferecem Records e desafios internos, sem requisito para a platina."
+                "Conclua The 4th Survivor uma vez para obter Grim Reaper, requisito da platina.",
+                "The Tofu Survivor é opcional; The Ghost Survivors pertence aos conteúdos adicionais."
               ],
               "title": "Obrigatório vs opcional"
             },
@@ -688,96 +685,16 @@
             },
             {
               "items": [
-                "É liberado depois de concluir The 4th Survivor e reutiliza a mesma rota geral com Tofu e variantes de loadout próprio.",
-                "Funciona como desafio adicional de domínio da rota e oferece Records ou desbloqueios internos.",
-                "Não possui troféu necessário para a platina PS4/base; completar Tofu ou todas as variantes é opcional.",
-                "The Tofu Survivor permanece fora do Roadmap obrigatório e não altera o requisito de Grim Reaper."
+                "É liberado depois de The 4th Survivor e reutiliza a rota com Tofu e variantes de loadout.",
+                "Serve como desafio opcional, sem alterar o requisito de Grim Reaper."
               ],
               "title": "The Tofu Survivor — extra opcional"
-            },
-            {
-              "items": [
-                "Grim Reaper — troféu base por concluir The 4th Survivor com HUNK; obrigatório para a platina.",
-                "Gotcha! — troféu base de G Stage 2 na campanha; não possui relação com HUNK.",
-                "Got ’Em e Hell of a Sheriff — troféus de The Ghost Survivors, conjunto separado e fora da platina base.",
-                "The Tofu Survivor — liberado após The 4th Survivor, mas sem troféu obrigatório da platina."
-              ],
-              "title": "Modos e troféus que não se confundem"
             },
             {
               "items": [
                 "The 4th Survivor entra na platina e é liberado após um 2nd Run. Tofu Survivor e The Ghost Survivors não são necessários; preserve granadas e itens defensivos para o trecho final."
               ],
               "title": "Ponto de atenção — Grim Reaper"
-            }
-          ]
-        },
-        {
-          "chapter": "100% da Lista — DLCs e conteúdos extras",
-          "note": "A platina base termina nos 42 troféus de Raccoon City Native. A lista completa do PS4 pode mostrar 45 troféus porque existem três objetivos adicionais distribuídos entre The Ghost Survivors e Another Survivor. Esses conteúdos são necessários apenas para alcançar 100% da lista.",
-          "sections": [
-            {
-              "items": [
-                "Platina base — 42 troféus: 1 platina, 4 ouro, 9 prata e 28 bronze; exige campanhas, coletáveis, Hardcore, S rank, restrições e The 4th Survivor.",
-                "Extras — 3 troféus extras: 1 prata e 2 bronze; pertencem a The Ghost Survivors e Another Survivor.",
-                "Lista completa/100% — 45 troféus: 1 platina, 4 ouro, 10 prata e 30 bronze; reúne os 42 da base e os 3 extras.",
-                "Raccoon City Native — Nativo de Raccoon City é liberada com os 42 troféus da lista base; os três extras não bloqueiam a platina."
-              ],
-              "title": "Platina base vs lista completa"
-            },
-            {
-              "items": [
-                "The 4th Survivor é um modo extra do jogo base; concluí-lo rende Grim Reaper e, por isso, entra na platina.",
-                "Leon, Claire, 2nd Run, final verdadeiro e Broken Umbrella permanecem na rota obrigatória da base.",
-                "Hardcore, S rank, Minimalist, Frugalist e A Small Carbon Footprint também pertencem aos 42 troféus.",
-                "Files, Mr. Raccoons, Hip Pouches, safes/locks, armas e upgrades da campanha continuam cobertos por Extras da Platina.",
-                "The Tofu Survivor é um desafio opcional sem troféu próprio na lista completa e não altera a platina."
-              ],
-              "title": "O que pertence à platina base"
-            },
-            {
-              "items": [
-                "Escopo: pacote extra necessário apenas para 100% da lista; não interfere em Raccoon City Native.",
-                "Hell of a Sheriff — Prata / fora da platina: conclua No Way Out sem usar Training Mode.",
-                "Got ’Em — Bronze / fora da platina: destrua todos os Mr. Raccoons escondidos nos cenários de The Ghost Survivors.",
-                "Conteúdo: No Time to Mourn, Runaway, Forgotten Soldier e No Way Out formam os cenários próprios do pacote.",
-                "Esta seção apresenta escopo e requisitos; rotas, Mr. Raccoons, Training Mode e estratégias de No Way Out ficam em guias específicos dos extras."
-              ],
-              "title": "The Ghost Survivors — fora da platina"
-            },
-            {
-              "items": [
-                "Chasing Jill — Bronze / fora da platina: leia uma carta deixada por Jill.",
-                "O troféu pertence ao pacote extra/title update Another Survivor e é necessário apenas para 100% da lista.",
-                "A oportunidade aparece durante uma campanha de Leon e está relacionada à Gun Shop Kendo.",
-                "Chasing Jill não faz parte de Lore Explorer nem dos Files obrigatórios da campanha base."
-              ],
-              "title": "Another Survivor — Chasing Jill"
-            },
-            {
-              "items": [
-                "The Ghost Survivors — Hell of a Sheriff — Prata — completar No Way Out sem Training Mode — fora da platina.",
-                "The Ghost Survivors — Got ’Em — Bronze — destruir todos os Mr. Raccoons do modo — fora da platina.",
-                "Another Survivor — Chasing Jill — Bronze — ler a carta deixada por Jill — fora da platina."
-              ],
-              "title": "Troféus extras do 100%"
-            },
-            {
-              "items": [
-                "1. Conclua a platina base e obtenha Raccoon City Native.",
-                "2. Faça Chasing Jill durante uma campanha curta de Leon ou com um save adequado.",
-                "3. Complete os cenários introdutórios de The Ghost Survivors para conhecer o pacote.",
-                "4. Recolha os Mr. Raccoons dos cenários para Got ’Em.",
-                "5. Deixe No Way Out e Hell of a Sheriff por último e então confira os 45 troféus; a ordem é recomendada, não obrigatória."
-              ],
-              "title": "Ordem recomendada para o 100%"
-            },
-            {
-              "items": [
-                "Platina base vs 100%: Raccoon City Native é obtida com os 42 troféus da base; os três extras não bloqueiam a platina.",
-                "Gotcha! vs Got ’Em: Gotcha! pertence à campanha base e envolve G Stage 2; Got ’Em pertence a The Ghost Survivors e exige os Mr. Raccoons do pacote."
-              ],
-              "title": "Pontos de atenção"
             }
           ]
         },
@@ -794,15 +711,6 @@
                 "Antes de runs condicionais como Minimalist, Frugalist e A Small Carbon Footprint."
               ],
               "title": "Pontos sensíveis"
-            },
-            {
-              "items": [
-                "Use Roadmap para escolher a ordem geral.",
-                "Use Extras da Platina para coletáveis e itens úteis.",
-                "Use Checklist para confirmar os 42 troféus da platina base.",
-                "Use FAQ para dúvidas rápidas sobre 2nd Run, DLCs/title updates e restrições."
-              ],
-              "title": "Conexões úteis"
             }
           ]
         }
@@ -812,12 +720,972 @@
     },
     "checklist": [],
     "commonMythsGuide": null,
-    "dlcCompletionGuide": null,
+    "dlcCompletionGuide": {
+      "baseTrophies": 42,
+      "checklist": [
+        {
+          "anchorId": "re2-hell-of-a-sheriff",
+          "id": "re2-extra-hell-of-a-sheriff",
+          "name": "Hell of a Sheriff",
+          "notPlatinumBase": true,
+          "note": "Nao exige Gunslinger, Cat Ears, limite de 60 tiros, S rank, S+ ou repetir a platina base. No training mode.",
+          "packageId": "the-ghost-survivors",
+          "requirement": "Conclua No Way Out com Sheriff Daniel Cortini na Mizoil Gas Station, fora do Training Mode, eliminando 100 inimigos.",
+          "tags": [
+            "Prata",
+            "fora da platina",
+            "The Ghost Survivors",
+            "No Way Out",
+            "Dificuldade",
+            "100% da lista"
+          ],
+          "tip": "Use a estrategia de No Way Out abaixo: estabilize no inicio, use armas especiais no meio e preserve explosivos/Rocket Launcher para o final."
+        },
+        {
+          "anchorId": "re2-got-em",
+          "id": "re2-extra-got-em",
+          "name": "Got ’Em",
+          "notPlatinumBase": true,
+          "note": "Distribuicao: 4 em No Time to Mourn, 3 em Runaway, 2 em Forgotten Soldier e 1 em No Way Out. Nao confundir com Gotcha!.",
+          "packageId": "the-ghost-survivors",
+          "requirement": "Destrua todos os 10 Mr. Raccoons escondidos em The Ghost Survivors.",
+          "tags": [
+            "Bronze",
+            "fora da platina",
+            "The Ghost Survivors",
+            "Coletavel",
+            "100% da lista"
+          ],
+          "tip": "Use o checklist individual dos 10 Mr. Raccoons abaixo; eles sao separados dos 15 da campanha base."
+        },
+        {
+          "anchorId": "re2-chasing-jill",
+          "id": "re2-extra-chasing-jill",
+          "name": "Chasing Jill",
+          "notPlatinumBase": true,
+          "note": "Depois do Parking Garage Key Card, siga Ada até a Gun Shop Kendo. A carta fica sobre o balcão depois da prateleira do Long Barrel da W-870 e não integra os 58 Files de Lore Explorer.",
+          "packageId": "another-survivor",
+          "requirement": "Leia uma carta deixada por Jill: a Letter to the Shopkeeper, na campanha normal de Leon 1st Run ou 2nd Run, em qualquer dificuldade.",
+          "tags": [
+            "Bronze",
+            "Another Survivor",
+            "title update",
+            "fora da platina",
+            "100% da lista",
+            "Perdível por run",
+            "Leon",
+            "Coletável"
+          ],
+          "tip": "Entre na loja, passe pela prateleira do Long Barrel e leia a carta sobre o balcão. Aguarde o registro do troféu; não é necessário concluir a campanha.",
+          "warning": "Não procure Another Survivor no menu de modos extras. Chasing Jill acontece dentro da campanha normal de Leon."
+        }
+      ],
+      "dlcTrophies": 3,
+      "introduction": "Esta secao separa a platina base do 100% da lista completa de Resident Evil 2 Remake no PS4. Raccoon City Native depende apenas dos 42 trofeus base; The Ghost Survivors adiciona Hell of a Sheriff e Got ’Em, enquanto Another Survivor adiciona Chasing Jill.",
+      "packages": [
+        {
+          "coopRequired": false,
+          "fullListRequired": true,
+          "id": "platinum-base",
+          "mainRisks": [
+            "Coletaveis e restricoes de run",
+            "Hardcore e S rank",
+            "Grim Reaper em The 4th Survivor"
+          ],
+          "name": "Platina base",
+          "nature": "Lista base da platina.",
+          "observation": "Distribuicao: 1 platina, 4 ouro, 9 prata e 28 bronze. Exigencia: campanhas, coletaveis, Hardcore, S rank, restricoes e The 4th Survivor.",
+          "onlineRequired": false,
+          "platinumRequired": true,
+          "rules": [
+            "Raccoon City Native e liberada com os 42 trofeus da lista base.",
+            "The 4th Survivor fica na base por Grim Reaper.",
+            "The Ghost Survivors, Another Survivor e Tofu Survivor nao entram no checklist principal da platina."
+          ],
+          "trophyCount": 42
+        },
+        {
+          "anchorId": "re2-the-ghost-survivors",
+          "collectibleChecklists": [
+            {
+              "anchorId": "re2-ghost-survivors-scenarios",
+              "groups": [
+                {
+                  "items": [
+                    "No Time to Mourn - Robert Kendo - comeca na Gun Shop Kendo, passa por areas conhecidas e usa inimigos venenosos, backpack zombies, zumbis com tanques explosivos e uma divisao de caminhos relevante para coletaveis.",
+                    "Runaway - Katherine Warren - rota ligada ao Orphanage e a busca por Ben, com Pale Heads regenerando e Old Keys obtidas de backpack zombies.",
+                    "Forgotten Soldier - Ghost - ocorre no NEST, usa zumbis com partes protegidas por armadura e termina na fuga para a rota do Cable Car.",
+                    "No Way Out - Daniel Cortini - ocorre na Mizoil Gas Station e exige eliminar 100 inimigos em ondas; fora do Training Mode para Hell of a Sheriff."
+                  ],
+                  "title": "Cenarios e objetivos"
+                },
+                {
+                  "items": [
+                    "Training Mode oferece uma configuração mais acessível, com mais recursos e espaço de inventário para aprender rotas, posições e mecânicas.",
+                    "Pode ser usado para buscar Got ’Em e para liberar No Way Out ao concluir os três primeiros cenários.",
+                    "Em No Way Out, o objetivo cai de 100 para 70 inimigos.",
+                    "Training Mode não libera Hell of a Sheriff e não é válido para Gunslinger."
+                  ],
+                  "title": "Training Mode vs modo normal"
+                },
+                {
+                  "items": [
+                    "No Way Out precisa ser concluido fora do Training Mode; treinar e valido, mas o trofeu nao vem dai.",
+                    "Gotcha! nao e Got ’Em: Gotcha! e campanha base em G Stage 2; Got ’Em sao 10 Mr. Raccoons de The Ghost Survivors.",
+                    "No Time to Mourn possui caminhos diferentes; cubra as duas ramificacoes para fechar os quatro Mr. Raccoons do cenario."
+                  ],
+                  "title": "Pontos de atencao"
+                },
+                {
+                  "items": [
+                    "The Ghost Survivors entra na platina? Nao. Os dois trofeus servem apenas para 100% da lista.",
+                    "Posso usar Training Mode para Hell of a Sheriff? Nao. O trofeu exige No Way Out fora do Training Mode.",
+                    "Preciso de Cat Ears? Nao. Cat Ears e recompensa opcional do Record Gunslinger.",
+                    "Quantos Mr. Raccoons existem no pacote? Sao 10: quatro em No Time to Mourn, tres em Runaway, dois em Forgotten Soldier e um em No Way Out.",
+                    "Eles contam para Complete Vermin Extermination? Nao. Os 15 da campanha base e os 10 de The Ghost Survivors pertencem a listas diferentes."
+                  ],
+                  "title": "FAQ curto"
+                }
+              ],
+              "introduction": "Os tres primeiros cenarios sao rotas curtas ate uma saida. No Way Out e uma defesa fixa na Gas Station e so abre depois da conclusao dos tres anteriores.",
+              "title": "The Ghost Survivors - visao geral dos cenarios"
+            },
+            {
+              "alerts": [
+                "No Way Out acontece dentro da Gas Station; inimigos entram em ondas e backpack zombies entregam armas, municao e cura.",
+                "Aparecem tipos especiais dos tres cenarios anteriores: venenosos, Pale Heads e zumbis blindados/A-gear.",
+                "O jogador deve controlar espaco, recursos e prioridade de alvos, sem transformar a run em sequencia rigida de 100 passos."
+              ],
+              "anchorId": "re2-no-way-out",
+              "groups": [
+                {
+                  "items": [
+                    "Inicio - estabilizacao: use a handgun com precisao, evite cura precoce, derrube zumbis com tanque sem explodir cedo e abra espaco sem gastar recursos fortes.",
+                    "Meio - armas especiais: use Shotgun, Spark Shot, SMG ou Flamethrower conforme os drops; priorize Pale Heads e use backpack zombies quando precisar de recurso.",
+                    "Final - controle da Gas Station: preserve Rocket Launcher e explosivos para ondas grandes, use Flash Grenades para retomar espaco, mantenha circulacao e nao fique preso atras do balcao."
+                  ],
+                  "title": "Estrategia por faixas"
+                },
+                {
+                  "items": [
+                    "Zumbi comum - handgun focada, Shotgun ou agrupamento para explosao.",
+                    "Zumbi venenoso - evite a nuvem; use distancia ou explosao controlada.",
+                    "Pale Head - prioridade alta; use armas especiais para superar a regeneracao.",
+                    "Zumbi blindado - mire apenas nas partes expostas.",
+                    "Zumbi com tanque - derrube e use o tanque contra grupos.",
+                    "Backpack zombie - elimine quando precisar do recurso carregado."
+                  ],
+                  "title": "Prioridade de inimigos"
+                },
+                {
+                  "items": [
+                    "Backpack zombies - trate como reposicao planejada, nao como inimigo comum.",
+                    "Maquinas de suprimento - aparecem nos tres primeiros cenarios; escolha pelo proximo trecho, nao por acumulo.",
+                    "Tanques explosivos - derrube, reposicione e detone quando houver grupo.",
+                    "Cura - cure antes de ficar sem tempo de reacao, mas evite gastar tudo no inicio.",
+                    "Blue Herbs - uteis para reduzir risco contra veneno e criar margem de sobrevivencia.",
+                    "Flash Grenades - use para recuperar controle quando a rota fechar.",
+                    "Frag Grenades - guarde para grupos, Pale Heads ou emergencia.",
+                    "Spark Shot - otimo contra Pale Heads e alvos resistentes.",
+                    "Shotgun - use para abrir espaco rapido em curta distancia.",
+                    "SMG - boa para controlar inimigos expostos sem desperdiçar explosivos.",
+                    "Flamethrower - use em rajadas curtas e recue; e forte, mas lento em espaco fechado.",
+                    "Anti-tank Rocket - preserve para ondas grandes ou momento de quase perda de controle.",
+                    "Descarte armas vazias para liberar inventário e continue após pequenos erros enquanto ainda houver recursos."
+                  ],
+                  "title": "Recursos e escolhas"
+                }
+              ],
+              "introduction": "Hell of a Sheriff exige concluir No Way Out com Sheriff Daniel Cortini na Mizoil Gas Station, fora do Training Mode, eliminando os 100 inimigos. O trofeu e prata, conta apenas para 100% da lista e nao exige Gunslinger, Cat Ears, S rank ou limite de tiros.",
+              "title": "No Way Out - estrategia Hell of a Sheriff"
+            },
+            {
+              "alerts": [
+                "Gunslinger exige concluir No Way Out fora do Training Mode disparando no máximo 60 tiros de handgun; a mesma tentativa também pode liberar Hell of a Sheriff.",
+                "Acompanhe o contador pelo menu de Records, quando disponível durante a tentativa. Ao atingir o limite, descartar a handgun é apenas uma estratégia para evitar disparos extras.",
+                "Cat Ears concede munição infinita dentro de The Ghost Survivors para replays e desafios posteriores.",
+                "Cat Ears não altera os troféus da platina base, não conta como troféu e não é preparação obrigatória para Hell of a Sheriff."
+              ],
+              "anchorId": "re2-gunslinger-cat-ears",
+              "introduction": "Gunslinger é um Record interno, não um troféu da PSN. Cat Ears é sua recompensa opcional e não entra no progresso 0/2.",
+              "title": "Gunslinger e Cat Ears - opcional"
+            },
+            {
+              "alerts": [
+                "Distribuicao final: No Time to Mourn 4, Runaway 3, Forgotten Soldier 2, No Way Out 1.",
+                "No Time to Mourn exige cobrir duas ramificacoes para fechar todos os quatro.",
+                "O ultimo Mr. Raccoon fica atras de uma porta interna de No Way Out que abre por janela curta durante as ondas.",
+                "Aguarde o registro/autosave ou conclua o trecho depois de destruir um boneco.",
+                "Campos de screenshot estao preparados; nenhum arquivo e carregado ate uma captura propria do Atlas existir."
+              ],
+              "anchorId": "re2-ghost-survivors-mr-raccoons",
+              "captureManifest": [
+                {
+                  "area": "Behind R.P.D.",
+                  "captureMoment": "Logo ao comecar o cenario, antes de sair da loja.",
+                  "character": "Robert Kendo",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-01.webp",
+                  "framing": "Vire a direita antes de sair da Gun Shop e mire para a prateleira lateral.",
+                  "id": "re2-gs-raccoon-01-kendo-gun-shop",
+                  "location": "Gun Shop Kendo",
+                  "mapCaptureRequired": false,
+                  "number": 1,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                  "plannedCaption": "Captura propria Atlas pendente para No Time to Mourn - Gun Shop Kendo.",
+                  "scenario": "No Time to Mourn",
+                  "status": "pendente"
+                },
+                {
+                  "area": "Underground Facility",
+                  "captureMoment": "Ao cruzar a Machinery Room, antes de avancar para a proxima sala.",
+                  "character": "Robert Kendo",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-02.webp",
+                  "framing": "Depois da Operators Room, olhe para baixo e para a direita na arena da primeira luta contra Birkin.",
+                  "id": "re2-gs-raccoon-02-kendo-machinery-room",
+                  "location": "Machinery Room / area da luta contra G1",
+                  "mapCaptureRequired": false,
+                  "number": 2,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                  "plannedCaption": "Captura propria Atlas pendente para No Time to Mourn - Machinery Room / area da luta contra G1.",
+                  "scenario": "No Time to Mourn",
+                  "status": "pendente"
+                },
+                {
+                  "area": "Sewers",
+                  "captureMoment": "Antes de deixar a água e continuar pelas escadas.",
+                  "character": "Robert Kendo",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-03.webp",
+                  "framing": "Confira o alto antes de sair da água e seguir pelas escadas.",
+                  "id": "re2-gs-raccoon-03-kendo-sewers-path-1",
+                  "location": "Upper Waterway / caminho esquerdo sem saída",
+                  "mapCaptureRequired": true,
+                  "number": 3,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                  "plannedCaption": "Captura propria Atlas pendente para No Time to Mourn - Upper Waterway / caminho esquerdo sem saída.",
+                  "scenario": "No Time to Mourn",
+                  "status": "pendente"
+                },
+                {
+                  "area": "Sewers",
+                  "captureMoment": "Depois do corredor com G-Adults.",
+                  "character": "Robert Kendo",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-04.webp",
+                  "framing": "Olhe para dentro do cano antes de avançar pelo trecho do Ivy.",
+                  "id": "re2-gs-raccoon-04-kendo-sewers-path-2",
+                  "location": "Lower Waterway / trecho do Ivy",
+                  "mapCaptureRequired": true,
+                  "number": 4,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                  "plannedCaption": "Captura propria Atlas pendente para No Time to Mourn - Lower Waterway / trecho do Ivy.",
+                  "scenario": "No Time to Mourn",
+                  "status": "pendente"
+                },
+                {
+                  "area": "Behind R.P.D.",
+                  "captureMoment": "Antes de entrar de vez na quadra ou logo apos controlar os Lickers.",
+                  "character": "Katherine Warren",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-05.webp",
+                  "framing": "Mire atraves da grade antes de entrar, se quiser evitar agitar a area inteira.",
+                  "id": "re2-gs-raccoon-05-runaway-basketball-court",
+                  "location": "Basketball Court",
+                  "mapCaptureRequired": false,
+                  "number": 5,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em Runaway.",
+                  "plannedCaption": "Captura propria Atlas pendente para Runaway - Basketball Court.",
+                  "scenario": "Runaway",
+                  "status": "pendente"
+                },
+                {
+                  "area": "Behind R.P.D.",
+                  "captureMoment": "Antes de passar pela ambulancia e entrar no proximo trecho.",
+                  "character": "Katherine Warren",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-06.webp",
+                  "framing": "Olhe para dentro da ambulancia pelo lado aberto antes de atravessar para a garagem.",
+                  "id": "re2-gs-raccoon-06-runaway-ambulance",
+                  "location": "Ambulancia antes da Parking Garage",
+                  "mapCaptureRequired": false,
+                  "number": 6,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em Runaway.",
+                  "plannedCaption": "Captura propria Atlas pendente para Runaway - Ambulancia antes da Parking Garage.",
+                  "scenario": "Runaway",
+                  "status": "pendente"
+                },
+                {
+                  "area": "R.P.D. B1",
+                  "captureMoment": "Quando as celas se abrirem no trecho final.",
+                  "character": "Katherine Warren",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-07.webp",
+                  "framing": "Ao chegar as celas, nao siga direto pelo corredor principal: vire a direita e confira a cela intermediaria.",
+                  "id": "re2-gs-raccoon-07-runaway-jail-cell",
+                  "location": "Jail cells",
+                  "mapCaptureRequired": false,
+                  "number": 7,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em Runaway.",
+                  "plannedCaption": "Captura propria Atlas pendente para Runaway - Jail cells.",
+                  "scenario": "Runaway",
+                  "status": "pendente"
+                },
+                {
+                  "area": "NEST B3",
+                  "captureMoment": "Imediatamente após o lift subir, antes de sair da plataforma.",
+                  "character": "Ghost",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-08.webp",
+                  "framing": "Permaneça no lift ao chegar ao nível superior e olhe para a estrutura abaixo, na direção oeste.",
+                  "id": "re2-gs-raccoon-08-forgotten-soldier-pump-room",
+                  "location": "Pump Room / lift pequeno",
+                  "mapCaptureRequired": false,
+                  "number": 8,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em Forgotten Soldier.",
+                  "plannedCaption": "Captura propria Atlas pendente para Forgotten Soldier - Pump Room / lift pequeno.",
+                  "scenario": "Forgotten Soldier",
+                  "status": "pendente"
+                },
+                {
+                  "area": "NEST B1",
+                  "captureMoment": "Assim que Mr. X sair da Security Room.",
+                  "character": "Ghost",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-09.webp",
+                  "framing": "Quando a Security Room abrir, entre e olhe para a mesa onde ficava o mapa na campanha.",
+                  "id": "re2-gs-raccoon-09-forgotten-soldier-security-room",
+                  "location": "Security Room",
+                  "mapCaptureRequired": false,
+                  "number": 9,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em Forgotten Soldier.",
+                  "plannedCaption": "Captura propria Atlas pendente para Forgotten Soldier - Security Room.",
+                  "scenario": "Forgotten Soldier",
+                  "status": "pendente"
+                },
+                {
+                  "area": "Mizoil Gas Station",
+                  "captureMoment": "Na primeira abertura da porta, enquanto a pressao ainda e menor.",
+                  "character": "Daniel Cortini",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-10.webp",
+                  "framing": "Quando a porta abrir, mire para dentro da sala antes de eliminar tudo que saiu dali.",
+                  "id": "re2-gs-raccoon-10-no-way-out-freezer-room",
+                  "location": "Sala interna/freezer atras da porta arrombada",
+                  "mapCaptureRequired": true,
+                  "number": 10,
+                  "object": "Mr. Raccoon visivel no enquadramento, com contexto suficiente da sala.",
+                  "plannedAlt": "Mr. Raccoon de The Ghost Survivors em No Way Out.",
+                  "plannedCaption": "Captura propria Atlas pendente para No Way Out - Sala interna/freezer atras da porta arrombada.",
+                  "scenario": "No Way Out",
+                  "status": "pendente"
+                }
+              ],
+              "groups": [
+                {
+                  "items": [
+                    {
+                      "angle": "Vire a direita antes de sair da Gun Shop e mire para a prateleira lateral.",
+                      "area": "Behind R.P.D.",
+                      "bestMoment": "Logo ao comecar o cenario, antes de sair da loja.",
+                      "character": "Robert Kendo",
+                      "cleanup": "Pode ser coletado em nova tentativa do cenario.",
+                      "id": "re2-gs-raccoon-01-kendo-gun-shop",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                      "imageCaption": "Captura propria Atlas pendente para No Time to Mourn - Gun Shop Kendo.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Na prateleira a direita, ainda dentro da loja, perto da saida inicial.",
+                      "name": "Mr. Raccoon GS #01",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 1,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Facil de ignorar por estar no ponto inicial.",
+                      "room": "Gun Shop Kendo",
+                      "route": "Rota inicial obrigatoria de Kendo.",
+                      "scenario": "No Time to Mourn",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Disponivel para busca do coletavel; nao afeta Hell of a Sheriff.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    },
+                    {
+                      "angle": "Depois da Operators Room, olhe para baixo e para a direita na arena da primeira luta contra Birkin.",
+                      "area": "Underground Facility",
+                      "bestMoment": "Ao cruzar a Machinery Room, antes de avancar para a proxima sala.",
+                      "character": "Robert Kendo",
+                      "cleanup": "Pode ser coletado em qualquer repeticao de No Time to Mourn.",
+                      "id": "re2-gs-raccoon-02-kendo-machinery-room",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                      "imageCaption": "Captura propria Atlas pendente para No Time to Mourn - Machinery Room / area da luta contra G1.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Sobre equipamentos na area elevada da Machinery Room, antes do trecho com backpack zombie.",
+                      "name": "Mr. Raccoon GS #02",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 2,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Passar correndo pela area sem olhar para as plataformas.",
+                      "room": "Machinery Room / area da luta contra G1",
+                      "route": "Rota comum antes da ramificacao dos esgotos.",
+                      "scenario": "No Time to Mourn",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Disponivel para busca do coletavel; nao afeta Hell of a Sheriff.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    },
+                    {
+                      "angle": "Confira o alto antes de sair da água e seguir pelas escadas.",
+                      "area": "Sewers",
+                      "bestMoment": "Antes de deixar a água e continuar pelas escadas.",
+                      "character": "Robert Kendo",
+                      "cleanup": "Repita No Time to Mourn por esta ramificação; aguarde o registro/autosave ou conclua o trecho.",
+                      "id": "re2-gs-raccoon-03-kendo-sewers-path-1",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                      "imageCaption": "Captura propria Atlas pendente para No Time to Mourn - Upper Waterway / caminho esquerdo sem saída.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "No alto, sobre um barril ou plataforma no caminho sem saída.",
+                      "name": "Mr. Raccoon GS #03",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 3,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Risco de rota: escolher a outra ramificação deixa este boneco fora da tentativa.",
+                      "room": "Upper Waterway / caminho esquerdo sem saída",
+                      "route": "Ramificação esquerda dos Sewers / Upper Waterway.",
+                      "scenario": "No Time to Mourn",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Training Mode permitido para a coleta.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    },
+                    {
+                      "angle": "Olhe para dentro do cano antes de avançar pelo trecho do Ivy.",
+                      "area": "Sewers",
+                      "bestMoment": "Depois do corredor com G-Adults.",
+                      "character": "Robert Kendo",
+                      "cleanup": "Repita No Time to Mourn pela outra rota; aguarde o registro/autosave ou conclua o trecho.",
+                      "id": "re2-gs-raccoon-04-kendo-sewers-path-2",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em No Time to Mourn.",
+                      "imageCaption": "Captura propria Atlas pendente para No Time to Mourn - Lower Waterway / trecho do Ivy.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Dentro do cano próximo ao Ivy, depois do corredor com G-Adults.",
+                      "name": "Mr. Raccoon GS #04",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 4,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Risco de rota e inimigos.",
+                      "room": "Lower Waterway / trecho do Ivy",
+                      "route": "Ramificação direita dos Sewers / Lower Waterway.",
+                      "scenario": "No Time to Mourn",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Training Mode permitido para a coleta.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    }
+                  ],
+                  "title": "No Time to Mourn - Robert Kendo - 4"
+                },
+                {
+                  "items": [
+                    {
+                      "angle": "Mire atraves da grade antes de entrar, se quiser evitar agitar a area inteira.",
+                      "area": "Behind R.P.D.",
+                      "bestMoment": "Antes de entrar de vez na quadra ou logo apos controlar os Lickers.",
+                      "character": "Katherine Warren",
+                      "cleanup": "Pode ser obtido em nova tentativa de Runaway.",
+                      "id": "re2-gs-raccoon-05-runaway-basketball-court",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em Runaway.",
+                      "imageCaption": "Captura propria Atlas pendente para Runaway - Basketball Court.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "No banco dentro da Basketball Court, perto do backpack zombie.",
+                      "name": "Mr. Raccoon GS #05",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 5,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "O tiro pode alertar Lickers; pegue com calma.",
+                      "room": "Basketball Court",
+                      "route": "Rota inicial de Katherine rumo ao estacionamento.",
+                      "scenario": "Runaway",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Disponivel para busca do coletavel; nao satisfaz Hell of a Sheriff.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    },
+                    {
+                      "angle": "Olhe para dentro da ambulancia pelo lado aberto antes de atravessar para a garagem.",
+                      "area": "Behind R.P.D.",
+                      "bestMoment": "Antes de passar pela ambulancia e entrar no proximo trecho.",
+                      "character": "Katherine Warren",
+                      "cleanup": "Pode ser coletado em nova tentativa de Runaway.",
+                      "id": "re2-gs-raccoon-06-runaway-ambulance",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em Runaway.",
+                      "imageCaption": "Captura propria Atlas pendente para Runaway - Ambulancia antes da Parking Garage.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Dentro da parte traseira da ambulancia, pouco antes da entrada da Parking Garage.",
+                      "name": "Mr. Raccoon GS #06",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 6,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Facil passar direto por estar fora do caminho de combate principal.",
+                      "room": "Ambulancia antes da Parking Garage",
+                      "route": "Rota de Katherine entre a area externa e a Parking Garage.",
+                      "scenario": "Runaway",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Disponivel para busca do coletavel; nao satisfaz Hell of a Sheriff.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    },
+                    {
+                      "angle": "Ao chegar as celas, nao siga direto pelo corredor principal: vire a direita e confira a cela intermediaria.",
+                      "area": "R.P.D. B1",
+                      "bestMoment": "Quando as celas se abrirem no trecho final.",
+                      "character": "Katherine Warren",
+                      "cleanup": "Pode ser coletado repetindo Runaway.",
+                      "id": "re2-gs-raccoon-07-runaway-jail-cell",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em Runaway.",
+                      "imageCaption": "Captura propria Atlas pendente para Runaway - Jail cells.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Dentro de uma cela lateral acessada pelo caminho da direita; olhe pela parede quebrada para a mesa.",
+                      "name": "Mr. Raccoon GS #07",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 7,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Seguir direto para o objetivo e deixar a cela lateral para tras.",
+                      "room": "Jail cells",
+                      "route": "Trecho final rumo a Ben; exige avancar pelo fluxo de Old Keys/backpack zombies.",
+                      "scenario": "Runaway",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Disponivel para busca do coletavel; nao satisfaz Hell of a Sheriff.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    }
+                  ],
+                  "title": "Runaway - Katherine Warren - 3"
+                },
+                {
+                  "items": [
+                    {
+                      "angle": "Permaneça no lift ao chegar ao nível superior e olhe para a estrutura abaixo, na direção oeste.",
+                      "area": "NEST B3",
+                      "bestMoment": "Imediatamente após o lift subir, antes de sair da plataforma.",
+                      "character": "Ghost",
+                      "cleanup": "Repita Forgotten Soldier; aguarde o registro/autosave ou conclua o trecho.",
+                      "id": "re2-gs-raccoon-08-forgotten-soldier-pump-room",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em Forgotten Soldier.",
+                      "imageCaption": "Captura propria Atlas pendente para Forgotten Soldier - Pump Room / lift pequeno.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Depois de subir no lift pequeno, olhe para baixo no andaime/estrutura atrás de você.",
+                      "name": "Mr. Raccoon GS #08",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 8,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Ângulo fácil de perder.",
+                      "room": "Pump Room / lift pequeno",
+                      "route": "Rota de fuga do NEST rumo ao Cable Car.",
+                      "scenario": "Forgotten Soldier",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Training Mode permitido para a coleta.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    },
+                    {
+                      "angle": "Quando a Security Room abrir, entre e olhe para a mesa onde ficava o mapa na campanha.",
+                      "area": "NEST B1",
+                      "bestMoment": "Assim que Mr. X sair da Security Room.",
+                      "character": "Ghost",
+                      "cleanup": "Pode ser coletado repetindo Forgotten Soldier.",
+                      "id": "re2-gs-raccoon-09-forgotten-soldier-security-room",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em Forgotten Soldier.",
+                      "imageCaption": "Captura propria Atlas pendente para Forgotten Soldier - Security Room.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Na mesa da Security Room, depois que Mr. X arromba a porta durante a fuga.",
+                      "name": "Mr. Raccoon GS #09",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 9,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "Fugir direto para a saida e nao entrar na sala recem-aberta.",
+                      "room": "Security Room",
+                      "route": "Trecho final do laboratorio; a sala so fica acessivel apos a abertura causada por Mr. X.",
+                      "scenario": "Forgotten Soldier",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Disponivel para busca do coletavel; nao satisfaz Hell of a Sheriff.",
+                      "type": "Coletavel DLC",
+                      "warning": ""
+                    }
+                  ],
+                  "title": "Forgotten Soldier - Ghost - 2"
+                },
+                {
+                  "items": [
+                    {
+                      "angle": "Quando a porta abrir, mire para dentro da sala antes de eliminar tudo que saiu dali.",
+                      "area": "Mizoil Gas Station",
+                      "bestMoment": "Na primeira abertura da porta, enquanto a pressao ainda e menor.",
+                      "character": "Daniel Cortini",
+                      "cleanup": "Pode ser coletado em outra tentativa de No Way Out.",
+                      "id": "re2-gs-raccoon-10-no-way-out-freezer-room",
+                      "imageAlt": "Mr. Raccoon de The Ghost Survivors em No Way Out.",
+                      "imageCaption": "Captura propria Atlas pendente para No Way Out - Sala interna/freezer atras da porta arrombada.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Atras da porta interna que zumbis arrombam durante as ondas, dentro da sala que fica aberta por pouco tempo.",
+                      "name": "Mr. Raccoon GS #10",
+                      "note": "Separado dos 15 Mr. Raccoons da campanha base.",
+                      "number": 10,
+                      "relatedTrophy": "Got ’Em",
+                      "risk": "A porta fecha se voce limpar os inimigos sem atirar no boneco; espere nova abertura se perder a janela.",
+                      "room": "Sala interna/freezer atras da porta arrombada",
+                      "route": "No Way Out liberado apos concluir No Time to Mourn, Runaway e Forgotten Soldier.",
+                      "scenario": "No Way Out",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "A busca pode ser praticada, mas Hell of a Sheriff exige conclusao fora do Training Mode.",
+                      "type": "Coletavel DLC",
+                      "warning": "Este e o ultimo Raccoon do pacote e depende da janela de acesso da porta interna."
+                    }
+                  ],
+                  "title": "No Way Out - Daniel Cortini - 1"
+                }
+              ],
+              "introduction": "Checklist individual para Got ’Em. Estes 10 bonecos sao exclusivos de The Ghost Survivors, usam prefixo proprio de DLC e nao renumeram os 15 Mr. Raccoons da campanha base.",
+              "progressGroup": "re2-ghost-raccoons",
+              "title": "Mr. Raccoons de The Ghost Survivors - 10 itens"
+            }
+          ],
+          "coopRequired": false,
+          "fullListRequired": true,
+          "id": "the-ghost-survivors",
+          "introduction": "The Ghost Survivors reune quatro cenarios alternativos com personagens que morreram na campanha principal. O pacote adiciona dois trofeus ao PS4: Got ’Em, pelos 10 Mr. Raccoons, e Hell of a Sheriff, por concluir No Way Out sem Training Mode. Os dois pertencem apenas ao 100% da lista e nao bloqueiam Raccoon City Native.",
+          "mainRisks": [
+            "No Way Out fora do Training Mode",
+            "10 Mr. Raccoons separados dos 15 da campanha",
+            "Ramificacoes de No Time to Mourn",
+            "Nao confundir Hell of a Sheriff com Gunslinger"
+          ],
+          "name": "The Ghost Survivors",
+          "nature": "Pacote extra fora da platina.",
+          "observation": "No Time to Mourn, Runaway e Forgotten Soldier liberam No Way Out. Os tres primeiros ajudam em Got ’Em; No Way Out fecha Hell of a Sheriff e o decimo Mr. Raccoon.",
+          "onlineRequired": false,
+          "platinumRequired": false,
+          "roadmap": [
+            {
+              "actions": [
+                "Complete No Time to Mourn, Runaway e Forgotten Soldier em Training Mode para conhecer as rotas."
+              ],
+              "title": "Aprenda os três primeiros cenários"
+            },
+            {
+              "actions": [
+                "Cubra os coletáveis dos três cenários iniciais, incluindo as duas rotas de No Time to Mourn."
+              ],
+              "title": "Colete os nove primeiros Mr. Raccoons"
+            },
+            {
+              "actions": [
+                "Concluir os três primeiros cenários em qualquer dificuldade libera o quarto cenário."
+              ],
+              "title": "Libere No Way Out"
+            },
+            {
+              "actions": [
+                "Entre em Training Mode, aprenda o espaço da loja e destrua o décimo Mr. Raccoon."
+              ],
+              "title": "Pratique No Way Out"
+            },
+            {
+              "actions": [
+                "Verifique o registro do troféu após fechar os dez coletáveis."
+              ],
+              "title": "Confirme Got ’Em"
+            },
+            {
+              "actions": [
+                "Treine o uso de mochilas, cilindros explosivos, curas e armas fortes."
+              ],
+              "title": "Domine recursos e inimigos especiais"
+            },
+            {
+              "actions": [
+                "Elimine os 100 inimigos de No Way Out para liberar Hell of a Sheriff."
+              ],
+              "title": "Conclua fora do Training Mode"
+            },
+            {
+              "actions": [
+                "Tente Gunslinger e Cat Ears somente depois, ou combine com Hell of a Sheriff se já dominar o cenário."
+              ],
+              "title": "Deixe o desafio opcional para depois"
+            }
+          ],
+          "roadmapIntroduction": "Nao tente Gunslinger na primeira conclusao de No Way Out. Primeiro obtenha Hell of a Sheriff; depois tente Cat Ears apenas se quiser o Record opcional.",
+          "roadmapTitle": "Rota curta de The Ghost Survivors",
+          "rules": [
+            "No Time to Mourn - Robert Kendo - atravessar da Gun Shop Kendo ate a saida; relacionado a Got ’Em.",
+            "Runaway - Katherine Warren - escapar e alcancar Ben; relacionado a Got ’Em.",
+            "Forgotten Soldier - Ghost - escapar do NEST ate a rota do Cable Car; relacionado a Got ’Em.",
+            "No Way Out - Sheriff Daniel Cortini - eliminar 100 inimigos na Mizoil Gas Station; relacionado a Hell of a Sheriff e Got ’Em.",
+            "Training Mode serve para aprender rotas e coletaveis disponiveis, mas nao satisfaz Hell of a Sheriff.",
+            "Use os blocos abaixo para acompanhar os quatro cenarios, os 10 Mr. Raccoons e a estrategia de No Way Out."
+          ],
+          "subtitle": "The Ghost Survivors - 2 trofeus",
+          "trophyCount": 2
+        },
+        {
+          "anchorId": "re2-another-survivor",
+          "collectibleChecklists": [
+            {
+              "alerts": [
+                "Chasing Jill nao conta para Lore Explorer: a carta fica fora dos 58 Files da platina base.",
+                "Melhor save: antes de sair do Parking Garage ou antes de entrar na Gun Shop Kendo.",
+                "Se perdeu a carta, carregue um save anterior a loja ou avance novamente com Leon; nao ha promessa de chapter select livre.",
+                "Claire e rota invalida para este trofeu."
+              ],
+              "anchorId": "re2-chasing-jill-location",
+              "captureManifest": [
+                {
+                  "area": "Gun Shop Kendo",
+                  "captureMoment": "Após Ada destrancar a loja.",
+                  "dimensions": "1280x720",
+                  "expectedFile": "resident-evil-2-chasing-jill-letter-shopkeeper.webp",
+                  "framing": "Carta no balcão com parte da prateleira ou do Long Barrel visível como referência.",
+                  "id": "another-survivor-letter-shopkeeper",
+                  "item": "Letter to the Shopkeeper",
+                  "origin": "Captura própria AtlasAchievement",
+                  "package": "Another Survivor",
+                  "plannedAlt": "Letter to the Shopkeeper sobre o balcão da Gun Shop Kendo na campanha de Leon em Resident Evil 2 Remake.",
+                  "plannedCaption": "Depois da prateleira do Long Barrel, leia a carta sobre o balcão para liberar Chasing Jill.",
+                  "scenario": "Leon 1st Run ou 2nd Run",
+                  "status": "pendente"
+                }
+              ],
+              "groups": [
+                {
+                  "items": [
+                    "Chasing Jill — não passe pela carta na Gun Shop Kendo.",
+                    "Durante uma campanha de Leon, depois do Parking Garage Key Card, entre na Gun Shop Kendo com Ada e leia a Letter to the Shopkeeper sobre o balcão. A carta não conta para Lore Explorer, mas é necessária para o 100% da lista por Chasing Jill.",
+                    "Tags: Extra, Perdível por run, Leon, Coletável, 100% da lista."
+                  ],
+                  "title": "Ponto de Atenção — Chasing Jill"
+                },
+                {
+                  "items": [
+                    "Troféu - Chasing Jill (Bronze).",
+                    "Pacote - Another Survivor / title update.",
+                    "Novo modo jogável - não.",
+                    "Personagem - Leon; 1st Run ou 2nd Run.",
+                    "Dificuldade - qualquer; sem rank, Hardcore ou limite de tempo.",
+                    "Local - Gun Shop Kendo, depois do Parking Garage Key Card.",
+                    "Item - Letter to the Shopkeeper sobre o balcão, depois da prateleira do Long Barrel.",
+                    "Platina - fora da platina; necessário somente para o 100% da lista.",
+                    "Lore Explorer - não conta entre os 58 Files."
+                  ],
+                  "title": "Quadro rapido"
+                },
+                {
+                  "items": [
+                    {
+                      "angle": "Depois de entrar, passe pela prateleira do Long Barrel e procure a carta sobre o balcão.",
+                      "area": "Behind R.P.D.",
+                      "bestMoment": "Durante a visita de Leon à Gun Shop Kendo, antes de sair da loja.",
+                      "character": "Leon",
+                      "cleanup": "Use um save anterior ao Parking Garage ou inicie outra campanha de Leon; Assisted é válido.",
+                      "difficulty": "Qualquer dificuldade",
+                      "documentName": "Letter to the Shopkeeper",
+                      "id": "letter-to-the-shopkeeper",
+                      "imageAlt": "Letter to the Shopkeeper sobre o balcão da Gun Shop Kendo na campanha de Leon em Resident Evil 2 Remake.",
+                      "imageCaption": "Depois da prateleira do Long Barrel, leia a carta sobre o balcão para liberar Chasing Jill.",
+                      "imageHeight": 720,
+                      "imageSrc": "",
+                      "imageWidth": 1280,
+                      "location": "Sobre o balcão, depois da prateleira que contém o Long Barrel da W-870.",
+                      "name": "Letter to the Shopkeeper",
+                      "note": "Interagir com a carta libera Chasing Jill. Não conta para Lore Explorer, para os 58 Files nem para a platina; conta somente para o 100% da lista completa.",
+                      "number": "Extra 01",
+                      "package": "Another Survivor",
+                      "point": "Balcão depois da prateleira do Long Barrel",
+                      "progressId": "re2-extra-chasing-jill",
+                      "relatedTrophy": "Chasing Jill",
+                      "risk": "Baixo; perdível naquela passagem se você sair da loja sem interagir.",
+                      "room": "Gun Shop Kendo",
+                      "route": "Depois do Parking Garage Key Card, saia do Parking Garage e siga com Ada até ela liberar a entrada da Gun Shop Kendo.",
+                      "scenario": "Leon 1st Run ou Leon 2nd Run",
+                      "scope": "fora da platina / 100% da lista",
+                      "screenshotStatus": "pendente",
+                      "trainingMode": "Não aplicável.",
+                      "trophy": "Chasing Jill",
+                      "type": "File bônus / carta",
+                      "warning": "Não procure Another Survivor no menu de modos extras. O troféu acontece dentro da campanha normal de Leon."
+                    }
+                  ],
+                  "title": "Checklist individual"
+                },
+                {
+                  "items": [
+                    "Chasing Jill não é perdível permanentemente na conta, mas pode ser perdido naquela passagem pela loja.",
+                    "Não existe seleção de capítulos para retornar diretamente à Gun Shop Kendo.",
+                    "Preserve um save de Leon antes de usar o Parking Garage Key Card ou antes de seguir definitivamente com Ada até a loja.",
+                    "Sem um save adequado, inicie outra campanha de Leon em 1st Run ou 2nd Run; Assisted pode tornar a limpeza mais confortável.",
+                    "Não conte com qualquer autosave posterior para voltar e não é necessário terminar a campanha depois do troféu."
+                  ],
+                  "title": "Cleanup"
+                },
+                {
+                  "items": [
+                    "Another Survivor - Chasing Jill - campanha principal com Leon - Gun Shop Kendo - ler uma carta - fora da platina.",
+                    "The Ghost Survivors - Hell of a Sheriff e Got \\u2019Em - cenarios extras proprios - sem relacao com a carta de Jill."
+                  ],
+                  "title": "Another Survivor vs The Ghost Survivors"
+                },
+                {
+                  "items": [
+                    "Another Survivor é um modo jogável? Não. É o nome do pacote de troféu/title update; Chasing Jill é obtido na campanha normal de Leon.",
+                    "Posso obter Chasing Jill com Claire? Não. A Gun Shop Kendo desta rota é acessada na campanha de Leon.",
+                    "Funciona no Leon 2nd Run? Sim. Leon 1st Run e Leon 2nd Run são válidos.",
+                    "Precisa jogar no Hardcore? Não. Qualquer dificuldade funciona.",
+                    "A carta conta para Lore Explorer? Não. Letter to the Shopkeeper não integra os 58 Files da platina base.",
+                    "Por que a carta não aparece? Confirme que o jogo está atualizado, que está usando Leon e que chegou à loja após o Parking Garage.",
+                    "Posso voltar à loja depois? Não conte com retorno posterior; leia a carta durante a passagem e preserve um save anterior."
+                  ],
+                  "title": "FAQ curto"
+                }
+              ],
+              "introduction": "Bloco operacional curto para localizar a Letter to the Shopkeeper sem misturar o trofeu com Lore Explorer ou com The Ghost Survivors.",
+              "title": "Another Survivor - Chasing Jill"
+            }
+          ],
+          "coopRequired": false,
+          "fullListRequired": true,
+          "id": "another-survivor",
+          "introduction": "Another Survivor é o nome do pacote adicional de troféu. Não existe um modo separado com esse nome. Chasing Jill é obtido durante a campanha normal de Leon ao ler a Letter to the Shopkeeper na Gun Shop Kendo.",
+          "mainRisks": [
+            "Perder a visita a Gun Shop Kendo sem save manual",
+            "Procurar a carta com Claire",
+            "Misturar a carta com os 58 Files de Lore Explorer"
+          ],
+          "name": "Another Survivor",
+          "nature": "Title update / pacote adicional de troféu; não é um cenário ou modo jogável.",
+          "observation": "Distribuição: 1 Bronze. Personagem: Leon. Área: Gun Shop Kendo. Risco principal: passar pela loja sem ler a carta. Cleanup: save anterior ou nova campanha de Leon.",
+          "onlineRequired": false,
+          "platinumRequired": false,
+          "roadmap": [
+            {
+              "actions": [
+                "Confirme que o jogo está atualizado.",
+                "Inicie ou carregue uma campanha de Leon, em 1st Run ou 2nd Run.",
+                "Avance até obter o Parking Garage Key Card.",
+                "Use o cartão para sair da área da delegacia.",
+                "Siga Ada pelas ruas até a Gun Shop Kendo.",
+                "Aguarde Ada destrancar a entrada.",
+                "Entre na loja.",
+                "Use como referência a prateleira que contém o Long Barrel da W-870.",
+                "Passe pela prateleira e procure a carta sobre o balcão.",
+                "Interaja com a Letter to the Shopkeeper.",
+                "Aguarde o registro do troféu Chasing Jill.",
+                "Marque o checkbox 1/1 de Another Survivor."
+              ],
+              "title": "Chasing Jill na campanha de Leon"
+            }
+          ],
+          "roadmapIntroduction": "Faça Chasing Jill durante qualquer campanha de Leon já planejada. Se a platina estiver concluída, use um save anterior ao Parking Garage ou faça uma campanha curta de Leon em Assisted.",
+          "roadmapTitle": "Rota rápida",
+          "rules": [
+            "Novo modo jogável: não. Chasing Jill acontece na campanha normal.",
+            "Leon 1st Run e Leon 2nd Run são válidos; Claire não acessa a carta nessa rota.",
+            "Qualquer dificuldade é válida; não exige rank, Hardcore, limite de tempo ou arma específica.",
+            "Não é necessário concluir a campanha depois de ler a carta.",
+            "Apesar de aparecer como um File dentro do jogo, Letter to the Shopkeeper possui seu próprio troféu e não altera o checklist dos 58 Files da platina base."
+          ],
+          "subtitle": "Another Survivor - Chasing Jill",
+          "trophyCount": 1
+        },
+        {
+          "coopRequired": false,
+          "fullListRequired": true,
+          "id": "complete-list",
+          "mainRisks": [
+            "Separar platina de 100%",
+            "Nao misturar Gotcha! com Got ’Em",
+            "Nao tratar Cat Ears como trofeu"
+          ],
+          "name": "Lista completa/100%",
+          "nature": "Base mais os tres extras.",
+          "observation": "Distribuicao: 1 platina, 4 ouro, 10 prata e 30 bronze. Exigencia: 42 trofeus da base mais Hell of a Sheriff, Got ’Em e Chasing Jill.",
+          "onlineRequired": false,
+          "platinumRequired": false,
+          "rules": [
+            "A lista completa reune os 42 trofeus da base e os 3 extras.",
+            "Os extras nao bloqueiam Raccoon City Native.",
+            "O checklist principal continua limitado aos 42 trofeus base."
+          ],
+          "trophyCount": 45
+        }
+      ],
+      "roadmap": [
+        {
+          "actions": [
+            "Obtenha Raccoon City Native com os 42 trofeus base.",
+            "Mantenha The 4th Survivor na rota base por Grim Reaper."
+          ],
+          "title": "Concluir a platina base"
+        },
+        {
+          "actions": [
+            "Complete os tres cenarios iniciais, cubra as ramificacoes de No Time to Mourn e marque os 10 Mr. Raccoons.",
+            "Conclua No Way Out fora do Training Mode para Hell of a Sheriff.",
+            "Ignore Gunslinger/Cat Ears ate terminar os trofeus obrigatorios."
+          ],
+          "title": "Fazer The Ghost Survivors"
+        },
+        {
+          "actions": [
+            "Faca Chasing Jill separadamente, sem misturar com The Ghost Survivors ou Lore Explorer.",
+            "Confirme 45 trofeus totais ao final."
+          ],
+          "title": "Resolver Another Survivor depois"
+        }
+      ],
+      "roadmapIntro": "Faca primeiro a platina base, depois resolva The Ghost Survivors e deixe Chasing Jill separado para Another Survivor.",
+      "roadmapTitle": "Ordem recomendada para o 100%",
+      "scopeNotes": [
+        "Platina base: 42 trofeus, incluindo The 4th Survivor e Grim Reaper.",
+        "The Ghost Survivors fica fora da platina e contem Hell of a Sheriff, Got ’Em, 10 Mr. Raccoons, No Way Out, Training Mode e Cat Ears opcional.",
+        "Another Survivor permanece separado; Chasing Jill nao faz parte de The Ghost Survivors.",
+        "Gotcha! pertence a campanha base; Got ’Em pertence aos 10 Mr. Raccoons de The Ghost Survivors."
+      ],
+      "title": "DLCs e 100% da Lista",
+      "totalTrophies": 45
+    },
     "editorial_summary": [
       "Este guia cobre a platina base de Resident Evil 2 Remake no PS4: 42 troféus. A rota gira em torno de múltiplas campanhas com Leon e Claire. A PSN pode mostrar 45 troféus na lista completa/100% da lista, mas os 3 extras de The Ghost Survivors e Another Survivor / Chasing Jill não são necessários para a platina.",
       "A platina base exige Leon, Claire, 2nd Run/final verdadeiro, coletáveis, Hardcore, S rank, runs de restrição e The 4th Survivor por Grim Reaper. Tofu Survivor não é requisito obrigatório da platina PS4/base, e S+ não é requisito direto.",
       "Não há perda permanente de conta relevante. O risco real está nos perdíveis por run, nos objetivos condicionais e nos objetivos de rota: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist e A Small Carbon Footprint.",
-      "Conteúdo extra e modos fora da lista base ficam separados da platina. Use a primeira campanha para aprender mapas e recursos. Depois, separe Leon, Claire, 2nd Run, coletáveis, Hardcore, S rank, restrições e cleanup para não quebrar condições cedo."
+      "Na primeira campanha, priorize aprendizado e observação. Depois, separe ranking, dificuldade, restrições e cleanup para não quebrar condições cedo."
     ],
     "faq": [
       {
@@ -859,44 +1727,44 @@
     "quickDecision": null,
     "quick_plan": [
       {
-        "detail": "Aprender o R.P.D., inventário, puzzles, chefes, recursos, saves e lógica de exploração.",
+        "detail": "Faça uma campanha confortável para conhecer mapas, puzzles, recursos e saves.",
         "number": 1,
-        "title": "Faça uma primeira campanha segura aprendendo o R.P.D."
+        "title": "Aprenda os fundamentos"
       },
       {
-        "detail": "Cobrir as histórias de Leon e Claire, além do 2nd Run necessário para o final verdadeiro e Broken Umbrella.",
+        "detail": "Complete Leon, Claire e um 2nd Run para cobrir personagens e final verdadeiro.",
         "number": 2,
-        "title": "Complete Leon, Claire e 2nd Run para o final verdadeiro"
+        "title": "Feche as rotas principais"
       },
       {
-        "detail": "Controlar os coletáveis e itens úteis da platina base antes das runs de ranking e restrição.",
+        "detail": "Use Extras da Platina para controlar itens individualizados antes das runs restritas.",
         "number": 3,
-        "title": "Resolva coletáveis base e limpeza de exploração"
+        "title": "Limpe coletáveis e exploração"
       },
       {
-        "detail": "Resolver Leon “S.” Kennedy e Sizzling Scarlet Hero com rotas rápidas e pouco desvio.",
+        "detail": "Faça tentativas rápidas com Leon e Claire depois de memorizar as rotas.",
         "number": 4,
-        "title": "Faça S rank com Leon e Claire"
+        "title": "Resolva os dois S ranks"
       },
       {
-        "detail": "Resolver Hardcore Rookie e Hardcore College Student depois de conhecer rotas, puzzles, chefes e recursos.",
+        "detail": "Complete as campanhas exigidas com saves e recursos planejados.",
         "number": 5,
-        "title": "Complete Hardcore com Leon e Claire"
+        "title": "Conclua o Hardcore"
       },
       {
-        "detail": "Resolver Minimalist, Frugalist e A Small Carbon Footprint em tentativas planejadas.",
+        "detail": "Separe sem baú, sem cura e limite de passos conforme seu domínio da rota.",
         "number": 6,
-        "title": "Faça runs condicionais sem cura, sem baú e com poucos passos"
+        "title": "Faça as runs de restrição"
       },
       {
-        "detail": "Resolver Grim Reaper, que faz parte da platina base por exigir The 4th Survivor.",
+        "detail": "Termine The 4th Survivor para obter Grim Reaper.",
         "number": 7,
-        "title": "Complete The 4th Survivor para Grim Reaper"
+        "title": "Conclua a rota de HUNK"
       },
       {
-        "detail": "Fechar pendências da platina base e deixar a lista completa/100% da lista para depois.",
+        "detail": "Revise a checklist e deixe os três troféus extras para depois da platina.",
         "number": 8,
-        "title": "Finalize a checklist da platina base"
+        "title": "Finalize o cleanup da base"
       }
     ],
     "seo": {},

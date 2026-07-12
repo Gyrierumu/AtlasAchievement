@@ -1525,7 +1525,7 @@ async function validateGuide(slug = '') {
       assert(html.includes('/jogo/resident-evil-6'), 'Resident Evil 5 deve manter link interno natural para guia relacionado da franquia');
       const re5Sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
       assert(re5Sitemap.includes('<loc>https://atlasachievement.com.br/jogo/resident-evil-5</loc>') || re5Sitemap.includes(`<loc>${baseUrl}/jogo/resident-evil-5</loc>`), 'Sitemap deve incluir canonical de Resident Evil 5');
-      assert(/resident-evil-5<\/loc><lastmod>2026-07-09T/.test(re5Sitemap), 'Sitemap deve usar updated_at de Resident Evil 5 como lastmod');
+      assert(/resident-evil-5<\/loc><lastmod>2026-07-11T/.test(re5Sitemap), 'Sitemap deve usar updated_at de Resident Evil 5 como lastmod');
       re5DlcAnchorIds.forEach(anchorId => {
         assert(guideIdSet.has(anchorId), `Resident Evil 5 deve renderizar anchor ${anchorId}`);
         assert.strictEqual(guideIds.filter(id => id === anchorId).length, 1, `Anchor ${anchorId} deve ser unico no HTML`);

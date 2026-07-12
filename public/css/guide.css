@@ -2654,6 +2654,217 @@ body.atlas-guide-dock-active footer {
   }
 }
 
+:root {
+  --guide-anchor-offset: calc(var(--atlas-sticky-offset, 108px) + 18px);
+}
+
+#view-guide.atlas-guide--resident-evil-5 #guideUsagePanel,
+#view-guide.atlas-guide--resident-evil-5 #roadmap,
+#view-guide.atlas-guide--resident-evil-5 #guideRoadmapPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideQuickPlan,
+#view-guide.atlas-guide--resident-evil-5 #guideSummaryActions,
+#view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel,
+#view-guide.atlas-guide--resident-evil-5 #guideProfessionalAiPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideFarmRoutesPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideCommonMythsPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideChecklistPanel,
+#view-guide.atlas-guide--resident-evil-5 #guidePlatinumExtrasPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideDlcCompletionPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideAttentionPointsPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideFaqPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideEditorialNotesPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideCommentsPanel,
+#view-guide.atlas-guide--resident-evil-5 #guideFeedbackSlot,
+#view-guide.atlas-guide--resident-evil-5 #guideRelatedPanel {
+  scroll-margin-top: var(--guide-anchor-offset);
+}
+
+#topo {
+  scroll-margin-top: var(--guide-anchor-offset);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-anchor-alias {
+  display: block;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-guide-return-row {
+  display: none;
+}
+
+#guideSectionIndexSlot {
+  display: none;
+}
+
+.atlas-guide-section-index {
+  position: sticky;
+  top: var(--guide-anchor-offset);
+  max-height: calc(100vh - var(--guide-anchor-offset) - 20px);
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px;
+  background: rgba(7, 12, 24, .74);
+  box-shadow: 0 18px 38px rgba(0,0,0,.22);
+  backdrop-filter: blur(14px);
+}
+
+.atlas-guide-section-index h2,
+.atlas-guide-sections-panel h2 {
+  margin: 0 0 10px;
+  color: rgba(255,255,255,.94);
+  font-size: .92rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.atlas-guide-section-map {
+  display: grid;
+  gap: 12px;
+}
+
+.atlas-guide-section-map__group h3 {
+  margin: 0 0 6px;
+  color: rgba(155,231,255,.68);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.atlas-guide-section-map__group ol {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atlas-guide-section-map__group a {
+  position: relative;
+  display: block;
+  padding: 7px 9px 7px 12px;
+  border-radius: 10px;
+  color: rgba(255,255,255,.68);
+  font-size: .82rem;
+  font-weight: 750;
+  line-height: 1.24;
+  text-decoration: none;
+}
+
+.atlas-guide-section-map__group a::before {
+  content: "";
+  position: absolute;
+  inset-block: 8px;
+  inset-inline-start: 3px;
+  width: 3px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.atlas-guide-section-map__group a:hover,
+.atlas-guide-section-map__group a:focus-visible,
+.atlas-guide-section-map__group a.is-current,
+.atlas-guide-section-map__group a[aria-current="location"] {
+  color: #fff;
+  background: rgba(125,211,252,.11);
+}
+
+.atlas-guide-section-map__group a:focus-visible {
+  outline: 2px solid rgba(125,211,252,.82);
+  outline-offset: 2px;
+}
+
+.atlas-guide-section-map__group a.is-current,
+.atlas-guide-section-map__group a[aria-current="location"] {
+  font-weight: 900;
+}
+
+.atlas-guide-section-map__group a.is-current::before,
+.atlas-guide-section-map__group a[aria-current="location"]::before {
+  background: rgba(125,211,252,.92);
+}
+
+.atlas-guide-sections-panel {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(70px + env(safe-area-inset-bottom));
+  z-index: 61;
+  max-height: min(62vh, 520px);
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 16px;
+  background: rgba(6, 10, 22, .96);
+  box-shadow: 0 18px 44px rgba(0,0,0,.36);
+  backdrop-filter: blur(16px);
+}
+
+.atlas-guide-sections-panel[hidden] {
+  display: none;
+}
+
+.atlas-quick-dock__btn.is-active,
+.atlas-quick-dock__btn[aria-expanded="true"] {
+  border-color: rgba(125,211,252,.45);
+  color: #fff;
+  background: rgba(125,211,252,.14);
+}
+
+@media (min-width: 1280px) {
+  #view-guide.atlas-guide--resident-evil-5 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
+    column-gap: 18px;
+    align-items: start;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 > #guideBreadcrumbs,
+  #view-guide.atlas-guide--resident-evil-5 > #guideHeader,
+  #view-guide.atlas-guide--resident-evil-5 > #loading,
+  #view-guide.atlas-guide--resident-evil-5 > #guideDecisionStack {
+    grid-column: 1 / -1;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 > #guideContent {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 > #guideSectionIndexSlot {
+    display: block;
+    grid-column: 2;
+    grid-row: 5;
+    min-width: 0;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-guide-sections-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  body[data-page="public"]:has(#view-guide:not(.hidden)) .atlas-back-to-top,
+  body.atlas-guide-dock-active .atlas-back-to-top {
+    display: none;
+  }
+
+  .atlas-quick-dock__actions {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-guide-section-map__group a,
+  .atlas-quick-dock__btn,
+  .atlas-quick-dock {
+    transition: none !important;
+  }
+}
+
 /* Guide journey refresh: hero -> summary -> before start -> roadmap -> progress -> checklist. */
 .atlas-guide-flow {
   max-width: 1120px;

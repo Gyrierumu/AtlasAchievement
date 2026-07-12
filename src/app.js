@@ -1212,7 +1212,9 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
-  const sectionCopy = normalizedSlug === 'the-last-of-us-part-ii'
+  const sectionCopy = normalizedSlug === 'resident-evil-2-remake'
+    ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, platina base e conteúdos adicionais necessários para o 100% da lista.'
+    : normalizedSlug === 'the-last-of-us-part-ii'
     ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, NG+, Chapter Select e extras fora da platina base.'
     : ['resident-evil-requiem', 'resident-evil-4-remake', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
@@ -1234,14 +1236,14 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
     <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6">
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
-          <span class="atlas-section-kicker">${normalizedSlug === 'resident-evil-5' ? 'Observações finais' : 'Notas editoriais'}</span>
+          ${normalizedSlug === 'resident-evil-2-remake' ? '' : `<span class="atlas-section-kicker">${normalizedSlug === 'resident-evil-5' ? 'Observações finais' : 'Notas editoriais'}</span>`}
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2>
           <p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p>
         </div>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(statusBadge.label || 'Notas de apoio')}</span>
       </div>
         <div class="atlas-editorial-notes__grid">
-          <details class="atlas-editorial-note" open>
+          <details id="guideAttentionPointsPanel" class="atlas-editorial-note" open>
             <summary><span>Pontos de atenção</span><small>${escapeHtml(String(routeTrophies.length || 0))}</small></summary>
             <div class="atlas-editorial-notes__column">
             <p class="atlas-muted-copy">${escapeHtml(attentionIntro)}</p>
@@ -1260,7 +1262,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
             <p>${escapeHtml(methodItems[0] || viewModel.editorial.methodSummary)}</p>
             </div>
           </details>
-          <details class="atlas-editorial-note">
+          <details id="guideFaqPanel" class="atlas-editorial-note">
             <summary><span>FAQ</span><small>${escapeHtml(String(faqItems.length || 0))}</small></summary>
             <div class="atlas-editorial-notes__column">
             <div class="atlas-faq-list">
@@ -2134,7 +2136,7 @@ function renderPlatinumExtraItemHtml(category = {}, item = {}) {
   const imageHeight = Number(item.imageHeight || item.image_height || 720);
   const details = [
     item.description ? `<p>${escapeHtml(item.description)}</p>` : '',
-    item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(item.type)}</p>` : '',
+    item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(formatPlatinumExtraType(category, item.type))}</p>` : '',
     item.area ? `<p><strong>Área:</strong> ${escapeHtml(item.area)}</p>` : '',
     item.room ? `<p><strong>Sala:</strong> ${escapeHtml(item.room)}</p>` : '',
     item.character ? `<p><strong>Personagem:</strong> ${escapeHtml(item.character)}</p>` : '',
@@ -2171,6 +2173,19 @@ function renderPlatinumExtraItemHtml(category = {}, item = {}) {
       ${imageSrc ? `<figure class="mt-3"><img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(imageAlt)}" width="${escapeHtml(String(imageWidth))}" height="${escapeHtml(String(imageHeight))}" loading="lazy">${item.imageCaption ? `<figcaption class="text-xs text-white/50 mt-2">${escapeHtml(item.imageCaption)}</figcaption>` : ''}</figure>` : ''}
       <div class="text-sm text-white/70 space-y-1">${details}</div>
     </li>`;
+}
+
+function formatPlatinumExtraType(category = {}, value = '') {
+  if (!String(category.id || '').startsWith('re2-')) return value;
+  const labels = {
+    Required: 'Obrigatória', Optional: 'Opcional', Story: 'História',
+    'Inventory upgrade': 'Upgrade de inventário', 'Weapon upgrade': 'Upgrade de arma',
+    'Hidden item': 'Item escondido', 'Collectible destrutivel': 'Coletável destrutível',
+    'Collectible destrutível': 'Coletável destrutível',
+    Safe: 'Cofre', 'Locker lock': 'Fechadura de armário', 'Desk lock': 'Fechadura da mesa', 'Portable safe': 'Cofre portátil',
+    'Roll film': 'Rolo de filme'
+  };
+  return labels[value] || value;
 }
 
 function renderPlatinumExtraCategoryItemsHtml(category = {}) {
@@ -2214,7 +2229,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Extras da Platina</h2>
           <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
         </div>
-        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(extras.categories.length))} categoria(s)</span>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(extras.categories.length))} ${extras.categories.length === 1 ? 'categoria' : 'categorias'}</span>
       </div>
       <div class="space-y-3">
         ${extras.categories.map((category, index) => {
@@ -2262,6 +2277,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
         <h3 class="text-lg font-bold text-white">${escapeHtml(title)}</h3>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} troféu(s)</span>
       </div>
+      <div class="atlas-tip-box" data-dlc-progress="${escapeHtml(key)}"><div class="flex items-center justify-between gap-3"><strong data-dlc-progress-count>0/${items.length} troféus</strong><span data-dlc-progress-percent>0%</span></div><div class="atlas-sidebar-progress mt-2" aria-hidden="true"><span data-dlc-progress-bar style="width:0%"></span></div></div>
       ${pack.introduction ? `<p class="text-sm text-white/70">${escapeHtml(pack.introduction)}</p>` : ''}
       ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
       ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
@@ -2275,9 +2291,10 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
             item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
             item.tip ? `<span><strong>Dica:</strong> ${escapeHtml(item.tip)}</span>` : '',
             item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
-            item.notPlatinumBase ? '<span>Este troféu pertence à DLC e conta apenas para o 100% da lista completa.</span>' : ''
+            item.notPlatinumBase && !String(item.id || '').startsWith('re2-extra-') ? '<span>Este troféu pertence à DLC e conta apenas para o 100% da lista completa.</span>' : ''
           ].filter(Boolean);
-          return `<li><strong class="text-white">${escapeHtml(item.name)}</strong>${details.length ? `<div class="mt-1 space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}</li>`;
+          const itemAnchorId = String(item.anchorId || item.anchor_id || '').trim();
+          return `<li${itemAnchorId ? ` id="${escapeHtml(itemAnchorId)}"` : ''}><label class="flex items-start gap-3"><input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeHtml(item.id)}" data-dlc-progress-group="${escapeHtml(key)}" aria-label="${escapeHtml(`Marcar troféu ${item.name}`)}"><strong class="text-white">${escapeHtml(item.name)}</strong></label>${details.length ? `<div class="mt-1 space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}</li>`;
         }).join('')}
       </ol>
     </article>
@@ -2296,17 +2313,56 @@ function renderDlcPackageExtraListsHtml(pack = {}) {
       ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
       ${renderEditorialLinksHtml(list.links)}
       ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
+      ${list.progressGroup ? `<div class="mt-3" data-dlc-collectible-progress="${escapeHtml(list.progressGroup)}"><strong data-dlc-collectible-count>0/0 encontrados</strong></div>` : ''}
       ${Array.isArray(list.groups) && list.groups.length ? `<div class="mt-3 space-y-3">${list.groups.map(group => `
         <div>
           <h4 class="text-sm font-bold text-white">${escapeHtml(group.title || 'Área')}</h4>
-          <ol class="text-sm mt-2 list-decimal pl-5 space-y-1">
-            ${(Array.isArray(group.items) ? group.items : []).map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+          <ol class="text-sm mt-2 list-decimal pl-5 space-y-2">
+            ${(Array.isArray(group.items) ? group.items : []).map(item => renderDlcCollectibleChecklistItemHtml(item, list, group)).join('')}
           </ol>
         </div>
       `).join('')}</div>` : ''}
+      ${Array.isArray(list.captureManifest) && list.captureManifest.length ? `<details class="mt-4"><summary class="font-bold text-white">Manifesto de capturas (${list.captureManifest.length})</summary><ol class="text-sm mt-3 list-decimal pl-5 space-y-3">${list.captureManifest.map(item => `<li><strong>${escapeHtml(item.id)}</strong><div>${escapeHtml(item.scenario)} — ${escapeHtml(item.area)}</div><div><strong>Momento:</strong> ${escapeHtml(item.captureMoment)}</div><div><strong>Enquadramento:</strong> ${escapeHtml(item.framing)}</div><div><strong>Texto alternativo:</strong> ${escapeHtml(item.plannedAlt)}</div><div><strong>Legenda:</strong> ${escapeHtml(item.plannedCaption)}</div><div><strong>Status:</strong> ${escapeHtml(item.status)} · ${escapeHtml(item.expectedFile)} · ${escapeHtml(item.dimensions)}</div></li>`).join('')}</ol></details>` : ''}
     </div>
   `;
   }).join('');
+}
+
+function renderDlcCollectibleChecklistItemHtml(item = {}, list = {}, group = {}) {
+  if (!item || typeof item !== 'object') return `<li>${escapeHtml(item)}</li>`;
+  const itemId = String(item.id || '').trim();
+  const number = item.number ? String(item.number).padStart(2, '0') : '';
+  const title = item.title || item.name || (number ? `Item #${number}` : 'Item');
+  const imageSrc = resolveLocalGuideImageSrc(item.imageSrc || item.image_src || '');
+  const imageAlt = item.imageAlt || item.image_alt || title;
+  const imageWidth = Number(item.imageWidth || item.image_width || 1280);
+  const imageHeight = Number(item.imageHeight || item.image_height || 720);
+  const details = [
+    item.scenario ? `<span><strong>Cenário:</strong> ${escapeHtml(item.scenario)}</span>` : '',
+    item.character ? `<span><strong>Personagem:</strong> ${escapeHtml(item.character)}</span>` : '',
+    item.area ? `<span><strong>Área:</strong> ${escapeHtml(item.area)}</span>` : '',
+    item.room ? `<span><strong>Sala/ponto:</strong> ${escapeHtml(item.room)}</span>` : '',
+    item.location ? `<span><strong>Localização:</strong> ${escapeHtml(item.location)}</span>` : '',
+    item.angle ? `<span><strong>Ângulo:</strong> ${escapeHtml(item.angle)}</span>` : '',
+    item.route ? `<span><strong>Rota:</strong> ${escapeHtml(item.route)}</span>` : '',
+    item.trainingMode ? `<span><strong>Training Mode:</strong> ${escapeHtml(item.trainingMode)}</span>` : '',
+    item.bestMoment ? `<span><strong>Melhor momento:</strong> ${escapeHtml(item.bestMoment)}</span>` : '',
+    item.risk ? `<span><strong>Risco:</strong> ${escapeHtml(item.risk)}</span>` : '',
+    item.cleanup ? `<span><strong>Cleanup:</strong> ${escapeHtml(item.cleanup)}</span>` : '',
+    item.relatedTrophy ? `<span><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</span>` : '',
+    item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
+    item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
+    item.screenshotStatus ? `<span><strong>Screenshot:</strong> ${escapeHtml(item.screenshotStatus)}</span>` : ''
+  ].filter(Boolean);
+  return `
+    <li${itemId ? ` id="${escapeHtml(itemId)}"` : ''} class="space-y-2">
+      <label class="flex items-start gap-3">
+        ${itemId ? `<input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeHtml(item.progressId || itemId)}"${list.progressGroup ? ` data-dlc-collectible-group="${escapeHtml(list.progressGroup)}"` : ''} aria-label="${escapeHtml(`Marcar ${title}`)}">` : ''}
+        <strong class="text-white">${escapeHtml(title)}</strong>
+      </label>
+      ${imageSrc ? `<figure class="mt-2"><img src="${escapeHtml(imageSrc)}" alt="${escapeHtml(imageAlt)}" width="${escapeHtml(String(imageWidth))}" height="${escapeHtml(String(imageHeight))}" loading="lazy">${item.imageCaption ? `<figcaption class="text-xs text-white/50 mt-2">${escapeHtml(item.imageCaption)}</figcaption>` : ''}</figure>` : ''}
+      ${details.length ? `<div class="space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}
+    </li>`;
 }
 
 function renderGuideDlcCompletionPanelHtml(game = {}) {
@@ -2586,6 +2642,7 @@ function renderGuideRoadmapPanelHtml(viewModel = {}) {
   const roadmapStages = Array.isArray(viewModel.roadmapStages) ? viewModel.roadmapStages : [];
   return `
     <section id="guideRoadmapPanel" class="atlas-panel atlas-panel--section atlas-roadmap-panel p-5 md:p-6">
+      <span id="roadmap" class="atlas-anchor-alias" aria-hidden="true"></span>
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
           <div class="atlas-eyebrow">Roadmap da platina</div>
@@ -2794,20 +2851,108 @@ function renderGuideRiskAlertsPanelHtmlV2(game = {}, viewModel = {}) {
     </section>`;
 }
 
-function renderGuideLayerNavHtml(game = {}) {
+function isGuideSectionNavigationEnabled(game = {}) {
+  return String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
+}
+
+function getGuideSectionRegistryHtml(game = {}) {
   const hasPlatinumExtras = Boolean(getGuidePlatinumExtras(game));
   const hasDlcCompletion = Boolean(getGuideDlcCompletion(game));
-  const items = [
-    { id: 'summary', tabTarget: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary', href: '#guideSummaryActions' },
-    { id: 'roadmap', tabTarget: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', href: '#guideRoadmapPanel' },
-    { id: 'checklist', tabTarget: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies', href: '#guideChecklistPanel' },
-    hasPlatinumExtras ? { id: 'extras', tabTarget: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', href: '#guidePlatinumExtrasPanel' } : null,
-    hasDlcCompletion ? { id: 'dlcs', tabTarget: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', href: '#guideDlcCompletionPanel' } : null,
-    { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', href: '#guideEditorialNotesPanel' },
-    { id: 'faq', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', href: '#guideEditorialNotesPanel' },
-    { id: 'comments', icon: 'fa-comments', label: 'Comentários', action: 'comments', href: '#guideCommentsPanel' },
-    { id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }
+  return [
+    { id: 'usage', targetId: 'guideUsagePanel', href: '#guideUsagePanel', icon: 'fa-circle-info', label: 'Como usar este guia', shortLabel: 'Como usar', action: 'usage', group: 'Início' },
+    { id: 'roadmap', targetId: 'guideRoadmapPanel', href: '#roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', tabTarget: 'roadmap', group: 'Início' },
+    { id: 'quick', targetId: 'guideQuickPlan', href: '#guideQuickPlan', icon: 'fa-bolt', label: 'Plano rápido', action: 'quick', group: 'Início' },
+    { id: 'summary', targetId: 'guideSummaryActions', href: '#guideSummaryActions', icon: 'fa-bolt', label: 'Resumo da platina', shortLabel: 'Resumo', action: 'summary', tabTarget: 'summary', group: 'Início' },
+    { id: 'chapter-route', targetId: 'guideChapterRoutePanel', href: '#guideChapterRoutePanel', icon: 'fa-map-location-dot', label: 'Rota por Capítulo', action: 'chapter-route', group: 'Platina base' },
+    { id: 'professional', targetId: 'guideProfessionalAiPanel', href: '#guideProfessionalAiPanel', icon: 'fa-shield-halved', label: 'Professional e IA', action: 'professional', group: 'Platina base' },
+    { id: 'farm', targetId: 'guideFarmRoutesPanel', href: '#guideFarmRoutesPanel', icon: 'fa-coins', label: 'Rotas de Farm', action: 'farm', group: 'Platina base' },
+    { id: 'myths', targetId: 'guideCommonMythsPanel', href: '#guideCommonMythsPanel', icon: 'fa-triangle-exclamation', label: 'Mitos e erros comuns', action: 'myths', group: 'Platina base' },
+    { id: 'checklist', targetId: 'guideChecklistPanel', href: '#guideChecklistPanel', icon: 'fa-list-check', label: 'Checklist da platina base', shortLabel: 'Checklist', action: 'trophies', tabTarget: 'checklist', group: 'Platina base' },
+    hasPlatinumExtras ? { id: 'extras', targetId: 'guidePlatinumExtrasPanel', href: '#guidePlatinumExtrasPanel', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', tabTarget: 'extras', group: 'Platina base' } : null,
+    hasDlcCompletion ? { id: 'dlcs', targetId: 'guideDlcCompletionPanel', href: '#guideDlcCompletionPanel', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', tabTarget: 'dlcs', group: 'Conteúdo adicional' } : null,
+    { id: 'attention', targetId: 'guideAttentionPointsPanel', href: '#guideAttentionPointsPanel', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', group: 'Conteúdo adicional' },
+    { id: 'faq', targetId: 'guideFaqPanel', href: '#guideFaqPanel', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', group: 'Conteúdo adicional' },
+    { id: 'comments', targetId: 'guideCommentsPanel', href: '#guideCommentsPanel', icon: 'fa-comments', label: 'Comentários', action: 'comments', group: 'Conteúdo adicional' }
   ].filter(Boolean);
+}
+
+function getGuideLayerNavItemsHtml(game = {}) {
+  const sections = getGuideSectionRegistryHtml(game);
+  const byId = new Map(sections.map(item => [item.id, item]));
+  return ['summary', 'roadmap', 'checklist', 'extras', 'dlcs', 'attention', 'faq', 'comments']
+    .map(id => {
+      const item = byId.get(id);
+      if (!item) return null;
+      return {
+        id: item.id,
+        tabTarget: item.tabTarget,
+        icon: item.icon,
+        label: item.shortLabel || item.label,
+        action: item.action,
+        href: item.id === 'roadmap' ? '#guideRoadmapPanel' : item.href
+      };
+    })
+    .filter(Boolean)
+    .concat([{ id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }]);
+}
+
+function renderGuideSectionLinksHtml(sections = [], options = {}) {
+  let currentApplied = false;
+  const groups = [];
+  sections.forEach(section => {
+    const groupName = section.group || 'Seções';
+    let group = groups.find(item => item.name === groupName);
+    if (!group) {
+      group = { name: groupName, items: [] };
+      groups.push(group);
+    }
+    group.items.push(section);
+  });
+  return groups.map(group => `
+    <section class="atlas-guide-section-map__group" aria-label="${escapeHtml(group.name)}">
+      <h3>${escapeHtml(group.name)}</h3>
+      <ol>
+        ${group.items.map((item, index) => `
+          <li>
+            <a href="${escapeHtml(item.href)}" data-guide-action="${escapeHtml(item.action)}" data-guide-section-link="${escapeHtml(item.targetId)}" data-guide-section-id="${escapeHtml(item.id)}"${item.tabTarget ? ` data-guide-tab-target="${escapeHtml(item.tabTarget)}"` : ''}${options.initialCurrent && !currentApplied ? (currentApplied = true, ' aria-current="location"') : ''}>
+              <span>${escapeHtml(item.label)}</span>
+            </a>
+          </li>
+        `).join('')}
+      </ol>
+    </section>`).join('');
+}
+
+function renderGuideSectionIndexHtml(game = {}) {
+  if (!isGuideSectionNavigationEnabled(game)) return '';
+  const sections = getGuideSectionRegistryHtml(game);
+  return `
+    <aside class="atlas-guide-section-index" aria-labelledby="guideSectionIndexTitle">
+      <nav aria-label="Neste guia">
+        <h2 id="guideSectionIndexTitle">Neste guia</h2>
+        <div class="atlas-guide-section-map">
+          ${renderGuideSectionLinksHtml(sections, { initialCurrent: true })}
+        </div>
+      </nav>
+    </aside>`;
+}
+
+function renderGuideMobileSectionsPanelHtml(game = {}) {
+  if (!isGuideSectionNavigationEnabled(game)) return '';
+  const sections = getGuideSectionRegistryHtml(game);
+  return `
+    <div id="guideSectionsPanel" class="atlas-guide-sections-panel" hidden aria-hidden="true">
+      <nav aria-label="Seções do guia">
+        <h2>Seções do guia</h2>
+        <div class="atlas-guide-section-map">
+          ${renderGuideSectionLinksHtml(sections)}
+        </div>
+      </nav>
+    </div>`;
+}
+
+function renderGuideLayerNavHtml(game = {}) {
+  const items = getGuideLayerNavItemsHtml(game);
   return `
     <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Seções do guia">
       ${items.map((item, index) => `
@@ -2924,14 +3069,15 @@ function renderGuideUsagePanelHtml(game = {}) {
 
 function renderGuideDecisionStackHtmlV2(game, viewModel) {
   return `
-    ${renderGuideLayerNavHtml(game)}`;
+    ${renderGuideLayerNavHtml(game)}
+    ${renderGuideUsagePanelHtml(game)}`;
 }
 
 function buildSsrGuideMarkup(game, relatedGames = [], commentContext = {}) {
   const viewModel = buildGuideViewModel(game, []);
   const header = renderGuideHeaderHtml(game, viewModel);
   const decisionStack = renderGuideDecisionStackHtmlV2(game, viewModel);
-  const summary = `${renderGuideSummaryPanelHtml(game, viewModel)}${renderGuideUsagePanelHtml(game)}`;
+  const summary = renderGuideSummaryPanelHtml(game, viewModel);
   const roadmap = `${renderGuideRoadmapPanelHtml(viewModel)}${renderGuideChapterRoutePanelHtml(game)}${renderGuideProfessionalAiPanelHtml(game)}${renderGuideFarmRoutesPanelHtml(game)}${renderGuideCommonMythsPanelHtml(game)}`;
   const platinumExtras = renderGuidePlatinumExtrasPanelHtml(game);
   const dlcCompletion = renderGuideDlcCompletionPanelHtml(game);
@@ -2943,8 +3089,10 @@ function buildSsrGuideMarkup(game, relatedGames = [], commentContext = {}) {
   const relatedOverview = renderGuideRelatedOverviewServer(game, relatedGames);
   const feedbackCta = renderGuideFeedbackCtaHtml(game);
   const comments = renderGuideCommentsHtml(game, commentContext.comments, commentContext.actor);
+  const sectionIndex = renderGuideSectionIndexHtml(game);
+  const mobileSections = renderGuideMobileSectionsPanelHtml(game);
 
-  return { header, decisionStack, summary, roadmap, platinumExtras, dlcCompletion, sidebar, trophyList, editorialNotes, relatedOverview, feedbackCta, comments, viewModel };
+  return { header, decisionStack, summary, roadmap, platinumExtras, dlcCompletion, sidebar, trophyList, editorialNotes, relatedOverview, feedbackCta, comments, sectionIndex, mobileSections, viewModel };
 }
 
 function applyTemplateDefaults(template) {
@@ -2973,6 +3121,7 @@ function applyTemplateDefaults(template) {
     .replace(/__HAS_SSR_GAME__/g, 'false')
     .replace(/__SSR_GUIDE_HEADER__/g, '')
     .replace(/__SSR_GUIDE_DECISION_STACK__/g, '')
+    .replace(/__SSR_GUIDE_SECTION_INDEX__/g, '')
     .replace(/__SSR_GUIDE_SIDEBAR__/g, '')
     .replace(/__SSR_GUIDE_SUMMARY__/g, '')
     .replace(/__SSR_TROPHY_LIST__/g, '')
@@ -2983,6 +3132,7 @@ function applyTemplateDefaults(template) {
     .replace(/__GUIDE_COMMENTS__/g, '')
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, '')
     .replace(/__GUIDE_FEEDBACK_CTA__/g, '')
+    .replace(/__GUIDE_MOBILE_SECTIONS__/g, '')
     .replace(/__CATALOG_TITLE__/g, 'Escolha sua próxima platina')
     .replace(/__CATALOG_SUMMARY__/g, '')
     .replace(/__CATALOG_HERO_TITLE__/g, 'Filtre por tempo, dificuldade e risco')
@@ -3131,7 +3281,7 @@ async function buildGamePageHtml(game, req) {
     ? `0/${ssrTotal} concluídos`
     : 'Checklist ainda não disponível';
   const ssrResultsInitial = ssrTotal > 0
-    ? `${ssrTotal} troféu(s) visível(is)`
+    ? `${ssrTotal} ${ssrTotal === 1 ? 'troféu visível' : 'troféus visíveis'}`
     : 'Checklist ainda não disponível para este guia.';
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
   const title = buildGameSeoTitle(game);
@@ -3170,7 +3320,7 @@ async function buildGamePageHtml(game, req) {
       description,
       image: [image],
       datePublished: String(game.created_at || '').slice(0, 10),
-      dateModified: String(game.updated_at || game.last_reviewed_at || '').slice(0, 10),
+      dateModified: String(game.last_reviewed_at || game.updated_at || '').slice(0, 10),
       inLanguage: 'pt-BR',
       mainEntityOfPage: {
         '@type': 'WebPage',
@@ -3216,7 +3366,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
     .replace(/__CATALOG_HEADING_TAG__/g, 'h2')
-    .replace(/__GUIDE_VIEW_CLASS__/g, normalizedSlug === 'resident-evil-6' ? 'atlas-guide--resident-evil-6' : (normalizedSlug === 'lego-batman-legacy-of-the-dark-knight' ? 'atlas-guide--lego-batman-legacy-of-the-dark-knight' : (normalizedSlug === 'lies-of-p' ? 'atlas-guide--lies-of-p' : '')))
+    .replace(/__GUIDE_VIEW_CLASS__/g, normalizedSlug === 'resident-evil-5' ? 'atlas-guide--resident-evil-5' : (normalizedSlug === 'resident-evil-6' ? 'atlas-guide--resident-evil-6' : (normalizedSlug === 'lego-batman-legacy-of-the-dark-knight' ? 'atlas-guide--lego-batman-legacy-of-the-dark-knight' : (normalizedSlug === 'lies-of-p' ? 'atlas-guide--lies-of-p' : ''))))
     .replace(/__GUIDE_BREADCRUMBS__/g, buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]))
     .replace(/__GUIDE_COLLECTION_LINKS__/g, guideCollectionLinks.map(item => `<a href="${escapeHtml(item.path)}" class="atlas-card atlas-card--minimal atlas-related-collection"><div class="atlas-card__body"><strong class="atlas-card__title">${escapeHtml(item.label)}</strong><span class="atlas-card__reason">${escapeHtml(item.reason)}</span><span class="atlas-card__link">${escapeHtml(item.actionLabel || 'Abrir coleção')}</span></div></a>`).join(''))
     .replace(/__GUIDE_CHECKLIST_TITLE__/g, normalizedSlug === 'resident-evil-5' ? 'Checklist da platina base' : 'Checklist de troféus')
@@ -3227,6 +3377,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__HAS_SSR_GAME__/g, 'true')
     .replace(/__SSR_GUIDE_HEADER__/g, ssrMarkup.header)
     .replace(/__SSR_GUIDE_DECISION_STACK__/g, ssrMarkup.decisionStack)
+    .replace(/__SSR_GUIDE_SECTION_INDEX__/g, ssrMarkup.sectionIndex)
     .replace(/__SSR_GUIDE_SIDEBAR__/g, ssrMarkup.sidebar)
     .replace(/__SSR_GUIDE_SUMMARY__/g, ssrMarkup.summary)
     .replace(/__SSR_TROPHY_LIST__/g, ssrMarkup.trophyList)
@@ -3237,6 +3388,7 @@ async function buildGamePageHtml(game, req) {
     .replace(/__GUIDE_COMMENTS__/g, ssrMarkup.comments)
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, ssrMarkup.relatedOverview)
     .replace(/__GUIDE_FEEDBACK_CTA__/g, ssrMarkup.feedbackCta)
+    .replace(/__GUIDE_MOBILE_SECTIONS__/g, ssrMarkup.mobileSections)
     .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'guide', game: sanitizePublicGuideInitialStateGame(game) })))));
 }
 

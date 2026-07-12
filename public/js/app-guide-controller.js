@@ -39,6 +39,11 @@ window.AppGuideController = (() => {
         guideroadmappanel: 'roadmap',
         'guidetab-roadmap': 'roadmap',
         roadmap: 'roadmap',
+        guidechapterroutepanel: 'roadmap',
+        guideprofessionalaipanel: 'roadmap',
+        guidefarmroutespanel: 'roadmap',
+        guidecommonmythspanel: 'roadmap',
+        guidequickplan: 'summary',
         guidechecklistpanel: 'checklist',
         'guidetab-checklist': 'checklist',
         checklist: 'checklist',
@@ -437,6 +442,7 @@ window.AppGuideController = (() => {
     function focusGuideAction(action = 'trophies') {
       const tabByAction = {
         header: 'summary',
+        usage: 'roadmap',
         summary: 'summary',
         quick: 'summary',
         roadmap: 'roadmap',
@@ -478,6 +484,7 @@ window.AppGuideController = (() => {
       });
       const map = {
         header: '#guideHeader',
+        usage: '#guideUsagePanel',
         summary: '#guideSummaryActions',
         quick: '#guideQuickPlan',
         roadmap: '#guideRoadmapPanel',
@@ -493,8 +500,8 @@ window.AppGuideController = (() => {
         dlc: '#guideQuickCard-dlc',
         search: '#trophySearch',
         risks: '#guideRiskSummaryPanel',
-        attention: '#guideEditorialNotesPanel',
-        faq: '#guideEditorialNotesPanel',
+        attention: '#guideAttentionPointsPanel',
+        faq: '#guideFaqPanel',
         feedback: '#guideFeedbackSlot',
         comments: '#guideCommentsPanel',
         related: '#guideRelatedPanel',
@@ -503,6 +510,7 @@ window.AppGuideController = (() => {
       const selector = map[action] || map.trophies;
       const element = document.querySelector(selector) || document.querySelector('#guideEditorialNotes') || document.querySelector('#trophyList');
       if (!element) return;
+      UI.setGuideSectionActive?.(element.id || selector.replace(/^#/, ''));
       const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const scrollBehavior = reducedMotion ? 'auto' : 'smooth';
 
@@ -585,11 +593,10 @@ window.AppGuideController = (() => {
 
     function requestGuideQuickDockSync() {
       if (quickDockScrollFrame) return;
-      const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 16));
-      quickDockScrollFrame = schedule(() => {
+      quickDockScrollFrame = window.setTimeout(() => {
         quickDockScrollFrame = null;
         syncGuideQuickDock();
-      });
+      }, 50);
     }
 
     function bindGuideQuickDockAutoSync() {

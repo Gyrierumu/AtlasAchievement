@@ -273,7 +273,8 @@ window.AppPublicNav = (() => {
       };
       backToTopButton.addEventListener('click', event => {
         event.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
       });
       window.addEventListener('scroll', requestBackToTopUpdate, { passive: true });
       window.addEventListener('resize', requestBackToTopUpdate);
