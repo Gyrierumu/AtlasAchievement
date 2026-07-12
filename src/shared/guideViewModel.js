@@ -2257,7 +2257,7 @@
         return {
           kind: 'roadmap',
           title: 'Faça uma primeira campanha segura aprendendo o R.P.D.',
-          detail: firstRunAdvice || 'Comece com uma campanha segura para aprender o Departamento de Polícia, puzzles, inventário, rotas, chefes e recursos antes de tentar rankings ou condições especiais.',
+          detail: 'Abra o Roadmap e siga a primeira campanha sem buscar ranking ou restrições.',
           cta: 'Abrir roadmap',
           focus: 'roadmap',
           trophyId: firstPending?.id || '',

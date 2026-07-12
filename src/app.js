@@ -1504,6 +1504,9 @@ function getGuideHeroRouteTextFromContent(game = {}, viewModel = {}) {
 }
 
 function buildGuideHeroRouteModel(game = {}, viewModel = {}) {
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+    return { title: 'Comece com uma campanha segura para aprender o R.P.D.', detail: '', focus: 'roadmap', icon: 'fa-route' };
+  }
   const quickDecision = typeof sharedGuideViewModel.buildGuideQuickDecisionModel === 'function'
     ? sharedGuideViewModel.buildGuideQuickDecisionModel(game, viewModel)
     : null;
@@ -1644,7 +1647,7 @@ function renderGuideHeaderHtml(game, viewModel) {
             <div>
               <span>Melhor rota</span>
               <strong>${escapeHtml(routeModel.title)}</strong>
-              <p>${escapeHtml(routeModel.detail)}</p>
+              ${routeModel.detail ? `<p>${escapeHtml(routeModel.detail)}</p>` : ''}
             </div>
           </div>
           <div class="atlas-guide-hero__facts">
@@ -1801,7 +1804,7 @@ function renderGuideChapterRoutePanelHtml(game = {}) {
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(routeGuide.title || 'Rota por Capítulo — Platina Base')}</h2>
           <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
         </div>
-        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(routeGuide.chapters.length))} capítulo(s)</span>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(routeGuide.chapters.length))} ${routeGuide.chapters.length === 1 ? 'seção' : 'seções'}</span>
       </div>
       <div class="space-y-3">
         ${routeGuide.chapters.map((chapter, index) => {
@@ -2275,7 +2278,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
     <article${packageAnchorId ? ` id="${escapeHtml(packageAnchorId)}"` : ''} class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <h3 class="text-lg font-bold text-white">${escapeHtml(title)}</h3>
-        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} troféu(s)</span>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} ${items.length === 1 ? 'troféu' : 'troféus'}</span>
       </div>
       <div class="atlas-tip-box" data-dlc-progress="${escapeHtml(key)}"><div class="flex items-center justify-between gap-3"><strong data-dlc-progress-count>0/${items.length} troféus</strong><span data-dlc-progress-percent>0%</span></div><div class="atlas-sidebar-progress mt-2" aria-hidden="true"><span data-dlc-progress-bar style="width:0%"></span></div></div>
       ${pack.introduction ? `<p class="text-sm text-white/70">${escapeHtml(pack.introduction)}</p>` : ''}
@@ -2287,7 +2290,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}) {
         ${items.map(item => {
           const details = [
             item.requirement ? `<span><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</span>` : '',
-            Array.isArray(item.tags) && item.tags.length ? `<span><strong>Tag/contexto:</strong> ${item.tags.map(escapeHtml).join(', ')}</span>` : '',
+            Array.isArray(item.tags) && item.tags.length ? `<span class="flex flex-wrap gap-2" aria-label="Classificações">${item.tags.map(tag => `<span class="atlas-tag atlas-tag--soft">${escapeHtml(tag)}</span>`).join('')}</span>` : '',
             item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
             item.tip ? `<span><strong>Dica:</strong> ${escapeHtml(item.tip)}</span>` : '',
             item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
@@ -2322,7 +2325,6 @@ function renderDlcPackageExtraListsHtml(pack = {}) {
           </ol>
         </div>
       `).join('')}</div>` : ''}
-      ${Array.isArray(list.captureManifest) && list.captureManifest.length ? `<details class="mt-4"><summary class="font-bold text-white">Manifesto de capturas (${list.captureManifest.length})</summary><ol class="text-sm mt-3 list-decimal pl-5 space-y-3">${list.captureManifest.map(item => `<li><strong>${escapeHtml(item.id)}</strong><div>${escapeHtml(item.scenario)} — ${escapeHtml(item.area)}</div><div><strong>Momento:</strong> ${escapeHtml(item.captureMoment)}</div><div><strong>Enquadramento:</strong> ${escapeHtml(item.framing)}</div><div><strong>Texto alternativo:</strong> ${escapeHtml(item.plannedAlt)}</div><div><strong>Legenda:</strong> ${escapeHtml(item.plannedCaption)}</div><div><strong>Status:</strong> ${escapeHtml(item.status)} · ${escapeHtml(item.expectedFile)} · ${escapeHtml(item.dimensions)}</div></li>`).join('')}</ol></details>` : ''}
     </div>
   `;
   }).join('');
@@ -2352,7 +2354,6 @@ function renderDlcCollectibleChecklistItemHtml(item = {}, list = {}, group = {})
     item.relatedTrophy ? `<span><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</span>` : '',
     item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
     item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
-    item.screenshotStatus ? `<span><strong>Screenshot:</strong> ${escapeHtml(item.screenshotStatus)}</span>` : ''
   ].filter(Boolean);
   return `
     <li${itemId ? ` id="${escapeHtml(itemId)}"` : ''} class="space-y-2">
@@ -2369,6 +2370,7 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
   const dlcGuide = getGuideDlcCompletion(game);
   if (!dlcGuide) return '';
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+  const isResidentEvil2 = normalizedSlug === 'resident-evil-2-remake';
   const baseTrophies = Number(dlcGuide.baseTrophies || 51);
   const dlcTrophies = Number(dlcGuide.dlcTrophies || 20);
   const totalTrophies = Number(dlcGuide.totalTrophies || (baseTrophies + dlcTrophies));
@@ -2385,25 +2387,25 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
         </div>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(baseTrophies))} base + ${escapeHtml(String(dlcTrophies))} DLC = ${escapeHtml(String(totalTrophies))} totais</span>
       </div>
-      ${scopeNotes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Separação de escopo</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${scopeNotes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
+      ${!isResidentEvil2 && scopeNotes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Separação de escopo</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${scopeNotes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
       <div class="grid md:grid-cols-3 gap-4">
-        ${dlcGuide.packages.map(pack => `
+        ${dlcGuide.packages.filter(pack => !(isResidentEvil2 && pack.id === 'complete-list')).map(pack => `
           <article class="atlas-panel atlas-panel--support p-4 space-y-3">
             <div class="flex items-center justify-between gap-2">
               <h3 class="text-lg font-bold text-white">${escapeHtml(pack.name)}</h3>
-              <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(pack.trophyCount || 0))} troféus</span>
+              <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(pack.trophyCount || 0))} ${Number(pack.trophyCount || 0) === 1 ? 'troféu' : 'troféus'}</span>
             </div>
-            <p class="text-sm text-white/70"><strong>Pacote:</strong> ${escapeHtml(pack.name || '')}</p>
-            <p class="text-sm text-white/70"><strong>Troféus:</strong> ${escapeHtml(String(pack.trophyCount || 0))}</p>
-            <p class="text-sm text-white/70"><strong>Natureza:</strong> ${escapeHtml(pack.nature || '')}</p>
-            ${pack.platinumRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para platina:</strong> ${pack.platinumRequired ? 'sim' : 'não'}</p>` : ''}
-            ${pack.fullListRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Obrigatório para 100% da lista completa:</strong> ${pack.fullListRequired ? 'sim' : 'não'}</p>` : ''}
+            ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Pacote:</strong> ${escapeHtml(pack.name || '')}</p>`}
+            ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Troféus:</strong> ${escapeHtml(String(pack.trophyCount || 0))}</p>`}
+            ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Natureza:</strong> ${escapeHtml(pack.nature || '')}</p>`}
+            ${pack.platinumRequired !== undefined ? `<p class="text-sm text-white/70"><strong>${isResidentEvil2 ? 'Platina' : 'Obrigatório para platina'}:</strong> ${pack.platinumRequired ? 'sim' : 'não'}</p>` : ''}
+            ${pack.fullListRequired !== undefined ? `<p class="text-sm text-white/70"><strong>${isResidentEvil2 ? 'Lista completa' : 'Obrigatório para 100% da lista completa'}:</strong> ${pack.fullListRequired ? 'sim' : 'não'}</p>` : ''}
             ${pack.onlineRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Online obrigatório:</strong> ${pack.onlineRequired ? 'sim' : 'não'}</p>` : ''}
             ${pack.coopRequired !== undefined ? `<p class="text-sm text-white/70"><strong>Parceiro obrigatório:</strong> ${pack.coopRequired ? 'sim' : 'não'}</p>` : ''}
             ${pack.coopRecommended !== undefined ? `<p class="text-sm text-white/70"><strong>Parceiro humano recomendado:</strong> ${pack.coopRecommended ? 'sim' : 'não'}</p>` : ''}
-            <p class="text-sm text-white/70"><strong>Observação:</strong> ${escapeHtml(pack.observation || '')}</p>
+            ${!isResidentEvil2 && pack.observation ? `<p class="text-sm text-white/70"><strong>Observação:</strong> ${escapeHtml(pack.observation)}</p>` : ''}
             ${Array.isArray(pack.mainRisks) && pack.mainRisks.length ? `<div><div class="atlas-tip-label">Riscos principais</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.mainRisks.map(risk => `<li>${escapeHtml(risk)}</li>`).join('')}</ul></div>` : ''}
-            ${Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Observações importantes</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
+            ${!isResidentEvil2 && Array.isArray(pack.rules) && pack.rules.length ? `<div><div class="atlas-tip-label">Observações importantes</div><ul class="text-sm text-white/68 list-disc pl-5 mt-2 space-y-1">${pack.rules.map(rule => `<li>${escapeHtml(rule)}</li>`).join('')}</ul></div>` : ''}
           </article>
         `).join('')}
       </div>
@@ -3018,9 +3020,9 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
   return `
     <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
       <div>
-        ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina">${normalizedSlug === 'resident-evil-5' ? '<h2>Plano rápido</h2>' : '<div class="atlas-eyebrow">Plano rápido</div>'}<ol>${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
+        ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina">${normalizedSlug === 'resident-evil-5' ? '<h2>Plano rápido</h2>' : '<div class="atlas-eyebrow">Plano rápido</div>'}<ol style="list-style:none">${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ol></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
-        <p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>
+        ${normalizedSlug === 'resident-evil-2-remake' ? '' : `<p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>`}
         ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
       </div>
       <div class="atlas-guide-summary-actions__buttons">
