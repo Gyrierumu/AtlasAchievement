@@ -2943,7 +2943,7 @@ body.atlas-guide-dock-active footer {
   margin-bottom: 14px;
 }
 
-.atlas-guide-quick-plan ol {
+.atlas-guide-quick-plan :is(ol, ul) {
   display: grid;
   gap: 8px;
   margin-top: 10px;

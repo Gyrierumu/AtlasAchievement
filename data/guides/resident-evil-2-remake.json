@@ -937,7 +937,7 @@
                   "character": "Robert Kendo",
                   "dimensions": "1280x720",
                   "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-02.webp",
-                  "framing": "Depois da Operators Room, olhe para baixo e para a direita na arena da primeira luta contra Birkin.",
+                  "framing": "Depois da Operators Room, olhe para baixo e à direita na arena da primeira luta contra Birkin.",
                   "id": "re2-gs-raccoon-02-kendo-machinery-room",
                   "location": "Machinery Room / area da luta contra G1",
                   "mapCaptureRequired": false,
@@ -1022,7 +1022,7 @@
                   "character": "Katherine Warren",
                   "dimensions": "1280x720",
                   "expectedFile": "resident-evil-2-remake/ghost-survivors/mr-raccoons/re2-ghost-survivors-raccoon-07.webp",
-                  "framing": "Ao chegar as celas, nao siga direto pelo corredor principal: vire a direita e confira a cela intermediaria.",
+                  "framing": "Ao chegar às celas, nao siga direto pelo corredor principal: vire a direita e confira a cela intermediaria.",
                   "id": "re2-gs-raccoon-07-runaway-jail-cell",
                   "location": "Jail cells",
                   "mapCaptureRequired": false,
@@ -1115,7 +1115,7 @@
                       "warning": ""
                     },
                     {
-                      "angle": "Depois da Operators Room, olhe para baixo e para à direita na arena da primeira luta contra Birkin.",
+                      "angle": "Depois da Operators Room, olhe para baixo e à direita na arena da primeira luta contra Birkin.",
                       "area": "Underground Facility",
                       "bestMoment": "Ao cruzar a Machinery Room, antes de avançar para a próxima sala.",
                       "character": "Robert Kendo",
@@ -1240,7 +1240,7 @@
                       "note": "",
                       "number": 6,
                       "relatedTrophy": "Got ’Em",
-                      "risk": "Fácil passar direto por estar fora do caminho de combate principal.",
+                      "risk": "É fácil passar direto, pois o boneco fica fora do caminho de combate principal.",
                       "room": "Ambulância antes da Parking Garage",
                       "route": "Rota de Katherine entre a área externa e a Parking Garage.",
                       "scenario": "Runaway",
@@ -1250,7 +1250,7 @@
                       "warning": ""
                     },
                     {
-                      "angle": "Ao chegar as celas, não siga direto pelo corredor principal: vire à direita e confira a cela intermediária.",
+                      "angle": "Ao chegar às celas, não siga direto pelo corredor principal: vire à direita e confira a cela intermediária.",
                       "area": "R.P.D. B1",
                       "bestMoment": "Quando as celas se abrirem no trecho final.",
                       "character": "Katherine Warren",
