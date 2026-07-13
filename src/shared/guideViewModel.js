@@ -71,6 +71,25 @@
     return GUIDE_EDITORIAL_SUMMARIES[normalizedSlug] || [];
   }
 
+  function buildGuideHeaderSummary(game = {}, fallback = '') {
+    const firstEditorialParagraph = Array.isArray(game?.editorial_summary)
+      ? String(game.editorial_summary.find(Boolean) || '').trim().replace(/\s+/g, ' ')
+      : '';
+    const candidates = [
+      game?.header_summary,
+      game?.summary_short,
+      game?.guide_summary_short,
+      game?.runs_summary,
+      game?.before_you_start,
+      game?.first_run_advice,
+      game?.best_for,
+      fallback
+    ]
+      .map(value => String(value || '').trim().replace(/\s+/g, ' '))
+      .filter(Boolean);
+    return candidates.find(value => value !== firstEditorialParagraph) || '';
+  }
+
   function normalizeGuideSignalText(value = '') {
     return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
@@ -6616,6 +6635,7 @@
     firstGuideText,
     compactGuideText,
     buildGuideEditorialSummary,
+    buildGuideHeaderSummary,
     buildGuideQuickPlan,
     normalizeGuideSignalText,
     isCompletionTrophy,

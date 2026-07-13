@@ -1634,10 +1634,9 @@ function renderGuideHeaderHtml(game, viewModel) {
   const routeModel = buildGuideHeroRouteModel(game, viewModel);
   const primaryAction = buildGuideHeroPrimaryAction(viewModel);
   const scopeModel = viewModel.scopeModel || {};
-  const explicitEditorialSummary = Array.isArray(game?.editorial_summary)
-    ? game.editorial_summary.map(item => String(item || '').trim()).find(Boolean)
-    : '';
-  const editorialSummary = String(explicitEditorialSummary || verdict.summary || viewModel.decisionModel?.verdictDetail || scopeModel.subtitle || '').trim();
+  const editorialSummary = typeof sharedGuideViewModel.buildGuideHeaderSummary === 'function'
+    ? sharedGuideViewModel.buildGuideHeaderSummary(game, verdict.summary || viewModel.decisionModel?.verdictDetail || scopeModel.subtitle || '')
+    : String(game?.runs_summary || game?.before_you_start || verdict.summary || scopeModel.subtitle || '').trim();
   return `
     <section class="atlas-panel atlas-panel--primary atlas-guide-hero p-5 md:p-6">
       <div class="atlas-guide-hero__layout">
@@ -2715,7 +2714,7 @@ function getGuideSectionRegistryHtml(game = {}) {
     { id: 'myths', targetId: 'guideCommonMythsPanel', href: '#guideCommonMythsPanel', icon: 'fa-triangle-exclamation', label: 'Mitos e erros comuns', action: 'myths', group: 'Platina base' },
     { id: 'checklist', targetId: 'guideChecklistPanel', href: '#guideChecklistPanel', icon: 'fa-list-check', label: 'Checklist da platina base', shortLabel: 'Checklist', action: 'trophies', tabTarget: 'checklist', group: 'Platina base' },
     hasPlatinumExtras ? { id: 'extras', targetId: 'guidePlatinumExtrasPanel', href: '#guidePlatinumExtrasPanel', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', tabTarget: 'extras', group: 'Platina base' } : null,
-    hasDlcCompletion ? { id: 'dlcs', targetId: 'guideDlcCompletionPanel', href: '#guideDlcCompletionPanel', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', tabTarget: 'dlcs', group: 'Conteúdo adicional' } : null,
+    hasDlcCompletion ? { id: 'dlcs', targetId: 'guideDlcCompletionPanel', href: '#guideDlcCompletionPanel', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', tabTarget: 'dlc', group: 'Conteúdo adicional' } : null,
     { id: 'attention', targetId: 'guideAttentionPointsPanel', href: '#guideAttentionPointsPanel', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', group: 'Conteúdo adicional' },
     { id: 'faq', targetId: 'guideFaqPanel', href: '#guideFaqPanel', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', group: 'Conteúdo adicional' },
     { id: 'comments', targetId: 'guideCommentsPanel', href: '#guideCommentsPanel', icon: 'fa-comments', label: 'Comentários', action: 'comments', group: 'Conteúdo adicional' }
@@ -2728,7 +2727,7 @@ function getGuideLayerNavItemsHtml(game = {}) {
     { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap' },
     { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies' },
     { id: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras' },
-    { id: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100%', action: 'dlcs' },
+    { id: 'dlc', icon: 'fa-puzzle-piece', label: 'DLCs e 100%', action: 'dlcs' },
     { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention' }
   ].map(item => ({ ...item, tabTarget: item.id, href: `#guideTab-${item.id}` }));
 }

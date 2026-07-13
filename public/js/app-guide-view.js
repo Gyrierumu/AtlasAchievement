@@ -100,7 +100,7 @@ window.AppGuideView = (() => {
     const activateGuideTabButton = (tabButton, options = {}) => {
       if (!tabButton) return;
       const tab = tabButton.dataset.guideTabTarget || tabButton.dataset.guideTabButton || 'summary';
-      const hash = tabButton.getAttribute('href') || `#guideTab-${tab}`;
+      const hash = UI.getGuideCanonicalHash?.(tab) || tabButton.getAttribute('href') || `#guideTab-${tab}`;
       state.activeGuideTab = tab;
       UI.activateGuideTab?.(tab, { scroll: options.scroll !== false, revealTab: true });
       if (options.focus) tabButton.focus({ preventScroll: true });

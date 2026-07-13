@@ -22,6 +22,7 @@ window.UIGuide = (() => {
     buildGuideSummaryCards,
     buildGuideBeforeStartItems,
     buildGuideEditorialSummary,
+    buildGuideHeaderSummary,
     buildGuideQuickPlan
   } = window.UIDecisionModels;
   const sharedEditorial = window.AtlasEditorialModel || {};
@@ -49,13 +50,14 @@ window.UIGuide = (() => {
     extras: 'extras',
     'guidetab-extras': 'extras',
     guideplatinumextraspanel: 'extras',
-    dlc: 'dlcs',
-    dlcs: 'dlcs',
-    'guidetab-dlcs': 'dlcs',
-    guidedlccompletionpanel: 'dlcs',
-    're5-versus-dlc': 'dlcs',
-    're5-lost-in-nightmares-score-stars': 'dlcs',
-    're5-desperate-escape-agitator-majini': 'dlcs',
+    dlc: 'dlc',
+    dlcs: 'dlc',
+    'guidetab-dlc': 'dlc',
+    'guidetab-dlcs': 'dlc',
+    guidedlccompletionpanel: 'dlc',
+    're5-versus-dlc': 'dlc',
+    're5-lost-in-nightmares-score-stars': 'dlc',
+    're5-desperate-escape-agitator-majini': 'dlc',
     attention: 'attention',
     details: 'attention',
     'guidetab-attention': 'attention',
@@ -69,8 +71,9 @@ window.UIGuide = (() => {
     checklist: 'guideTab-checklist',
     trophies: 'guideTab-checklist',
     extras: 'guideTab-extras',
-    dlc: 'guideTab-dlcs',
-    dlcs: 'guideTab-dlcs',
+    dlc: 'guideTab-dlc',
+    dlcs: 'guideTab-dlc',
+    'guidetab-dlcs': 'guideTab-dlc',
     attention: 'guideTab-attention',
     details: 'guideTab-attention',
     'guidetab-details': 'guideTab-attention'
@@ -93,6 +96,13 @@ window.UIGuide = (() => {
   function resolveGuideHashTargetId(hash = '') {
     const decodedHash = decodeGuideHash(hash);
     return GUIDE_LEGACY_HASH_TARGET[decodedHash.toLowerCase()] || decodedHash;
+  }
+
+  function getGuideCanonicalHash(tab = '') {
+    const normalizedTab = tab === 'dlcs' ? 'dlc' : String(tab || '').trim().toLowerCase();
+    return ['summary', 'roadmap', 'checklist', 'extras', 'dlc', 'attention'].includes(normalizedTab)
+      ? `#guideTab-${normalizedTab}`
+      : '';
   }
 
   function getPlatinumExtrasProgressKey(game = {}) {
@@ -1775,7 +1785,7 @@ window.UIGuide = (() => {
       { id: 'myths', targetId: 'guideCommonMythsPanel', href: '#guideCommonMythsPanel', icon: 'fa-triangle-exclamation', label: 'Mitos e erros comuns', action: 'myths', group: 'Platina base' },
       { id: 'checklist', targetId: 'guideChecklistPanel', href: '#guideChecklistPanel', icon: 'fa-list-check', label: 'Checklist da platina base', shortLabel: 'Checklist', action: 'trophies', tabTarget: 'checklist', group: 'Platina base' },
       hasPlatinumExtras ? { id: 'extras', targetId: 'guidePlatinumExtrasPanel', href: '#guidePlatinumExtrasPanel', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', tabTarget: 'extras', group: 'Platina base' } : null,
-      hasDlcCompletion ? { id: 'dlcs', targetId: 'guideDlcCompletionPanel', href: '#guideDlcCompletionPanel', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', tabTarget: 'dlcs', group: 'Conteúdo adicional' } : null,
+      hasDlcCompletion ? { id: 'dlcs', targetId: 'guideDlcCompletionPanel', href: '#guideDlcCompletionPanel', icon: 'fa-puzzle-piece', label: 'DLCs e 100% da Lista', action: 'dlcs', tabTarget: 'dlc', group: 'Conteúdo adicional' } : null,
       { id: 'attention', targetId: 'guideAttentionPointsPanel', href: '#guideAttentionPointsPanel', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', group: 'Conteúdo adicional' },
       { id: 'faq', targetId: 'guideFaqPanel', href: '#guideFaqPanel', icon: 'fa-circle-question', label: 'FAQ', action: 'faq', group: 'Conteúdo adicional' },
       { id: 'comments', targetId: 'guideCommentsPanel', href: '#guideCommentsPanel', icon: 'fa-comments', label: 'Comentários', action: 'comments', group: 'Conteúdo adicional' }
@@ -1788,9 +1798,9 @@ window.UIGuide = (() => {
       { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap' },
       { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies' },
       { id: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras' },
-      { id: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100%', action: 'dlcs' },
+      { id: 'dlc', icon: 'fa-puzzle-piece', label: 'DLCs e 100%', action: 'dlcs' },
       { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention' }
-    ].map(item => ({ ...item, tabTarget: item.id, href: `#guideTab-${item.id}` }));
+    ].map(item => ({ ...item, tabTarget: item.id, href: getGuideCanonicalHash(item.id) }));
   }
 
   function renderGuideSectionLinks(sections = [], options = {}) {
@@ -2194,10 +2204,9 @@ window.UIGuide = (() => {
     const routeModel = buildGuideHeroRouteModel(game, viewModel);
     const primaryAction = buildGuideHeroPrimaryAction(viewModel);
     const scopeModel = viewModel.scopeModel || {};
-    const explicitEditorialSummary = Array.isArray(game?.editorial_summary)
-      ? game.editorial_summary.map(item => String(item || '').trim()).find(Boolean)
-      : '';
-    const editorialSummary = String(explicitEditorialSummary || verdict.summary || viewModel.decisionModel?.verdictDetail || scopeModel.subtitle || '').trim();
+    const editorialSummary = typeof buildGuideHeaderSummary === 'function'
+      ? buildGuideHeaderSummary(game, verdict.summary || viewModel.decisionModel?.verdictDetail || scopeModel.subtitle || '')
+      : String(game?.runs_summary || game?.before_you_start || verdict.summary || scopeModel.subtitle || '').trim();
     return `
       <section class="atlas-panel atlas-panel--primary atlas-guide-hero p-5 md:p-6">
         <div class="atlas-guide-hero__layout">
@@ -2344,7 +2353,8 @@ window.UIGuide = (() => {
     const requested = target || 'summary';
     const aliases = { trophies: 'checklist', details: 'attention' };
     const candidate = aliases[requested] || requested;
-    const panelTarget = ['summary', 'roadmap', 'checklist', 'extras', 'dlcs', 'attention'].includes(candidate) ? candidate : 'summary';
+    const normalizedCandidate = candidate === 'dlcs' ? 'dlc' : candidate;
+    const panelTarget = ['summary', 'roadmap', 'checklist', 'extras', 'dlc', 'attention'].includes(normalizedCandidate) ? normalizedCandidate : 'summary';
     const panels = qsa('[data-guide-tab-panel]');
     if (!panels.length) return panelTarget;
     if (typeof document !== 'undefined' && document.body) {
@@ -2781,6 +2791,7 @@ window.UIGuide = (() => {
     renderGuideFeedbackCta,
     resolveGuideTabFromHash,
     resolveGuideHashTargetId,
+    getGuideCanonicalHash,
     activateGuideTab,
     syncGuideNavigationOffsets,
     renderGuide,

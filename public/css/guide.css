@@ -389,11 +389,11 @@
 
 #view-guide .atlas-guide-hero__action--tertiary {
   flex: 0 1 auto;
-  color: rgba(226, 232, 240, .6);
+  color: rgba(226, 232, 240, .76);
 }
 
 #view-guide .atlas-guide-hero__action--report {
-  color: rgba(254, 202, 202, .62);
+  color: rgba(254, 226, 226, .78);
 }
 
 #view-guide .atlas-editorial-trust {
@@ -898,9 +898,14 @@
 }
 
 #view-guide .atlas-btn-muted-action {
-  color: rgba(226,232,240,.56);
-  background: rgba(255,255,255,.018);
-  border-color: rgba(255,255,255,.055);
+  color: rgba(226,232,240,.76);
+  background: rgba(255,255,255,.03);
+  border-color: rgba(226,232,240,.14);
+}
+
+#view-guide .atlas-btn-muted-action.atlas-guide-hero__action--report {
+  color: rgba(254,226,226,.78);
+  border-color: rgba(248,113,113,.16);
 }
 
 #view-guide .atlas-editorial-notes .atlas-section-head h2 {

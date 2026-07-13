@@ -76,8 +76,8 @@
             <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </summary>
           <div class="atlas-user-menu__panel auth-menu user-menu">
-            <button type="button" class="auth-menu__item user-menu__item" data-user-profile><i class="fas fa-user"></i> Meu perfil</button>
-            <button type="button" class="auth-menu__item auth-menu__item--danger user-menu__item user-menu__item--danger" data-user-logout><i class="fas fa-right-from-bracket"></i> Sair</button>
+            <button type="button" class="auth-menu__item user-menu__item" data-user-profile><i class="fas fa-user" aria-hidden="true"></i> Meu perfil</button>
+            <button type="button" class="auth-menu__item auth-menu__item--danger user-menu__item user-menu__item--danger" data-user-logout><i class="fas fa-right-from-bracket" aria-hidden="true"></i> Sair</button>
           </div>
         </details>
       </div>
@@ -383,16 +383,16 @@
     <section id="view-guide" class="atlas-view-shell __GUIDE_VIEW_CLASS__ pt-2 space-y-5" data-ssr-game="__HAS_SSR_GAME__">
       <div id="guideBreadcrumbs">__GUIDE_BREADCRUMBS__</div>
       <div id="guideHeader" class="atlas-region">__SSR_GUIDE_HEADER__</div>
+      <div id="guideTabsSlot" class="atlas-region atlas-guide-tabs-slot __GUIDE_CONTENT_CLASS__">__SSR_GUIDE_TABS__</div>
       <div id="loading" class="flex flex-col items-center space-y-4 py-20 hidden">
         <div class="loading-spinner"></div>
       </div>
-      <div id="guideDecisionStack" class="atlas-region atlas-view-shell __GUIDE_CONTENT_CLASS__ space-y-5">__SSR_GUIDE_DECISION_STACK__</div>
-      <div id="guideTabsSlot" class="atlas-region atlas-guide-tabs-slot __GUIDE_CONTENT_CLASS__">__SSR_GUIDE_TABS__</div>
       <div id="guideContent" class="atlas-guide-shell atlas-guide-flow atlas-region atlas-view-shell __GUIDE_CONTENT_CLASS__ space-y-5">
         <section id="guideTab-roadmap" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="roadmap" role="tabpanel" aria-labelledby="guideTabButton-roadmap" aria-hidden="true" tabindex="0" hidden>
           <div id="guideRoadmapSlot">__SSR_GUIDE_ROADMAP__</div>
         </section>
         <section id="guideTab-summary" class="atlas-guide-tab-panel" data-guide-tab-panel="summary" role="tabpanel" aria-labelledby="guideTabButton-summary" aria-hidden="false" tabindex="0">
+          <div id="guideDecisionStack" class="atlas-region __GUIDE_CONTENT_CLASS__ space-y-5">__SSR_GUIDE_DECISION_STACK__</div>
           <div id="guideSummarySlot">__SSR_GUIDE_SUMMARY__</div>
           <aside id="sidebarInfo" class="atlas-region">__SSR_GUIDE_SIDEBAR__</aside>
         </section>
@@ -477,7 +477,7 @@
         <section id="guideTab-extras" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="extras" role="tabpanel" aria-labelledby="guideTabButton-extras" aria-hidden="true" tabindex="0" hidden>
           <div id="guidePlatinumExtrasSlot">__SSR_GUIDE_PLATINUM_EXTRAS__</div>
         </section>
-        <section id="guideTab-dlcs" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="dlcs" role="tabpanel" aria-labelledby="guideTabButton-dlcs" aria-hidden="true" tabindex="0" hidden>
+        <section id="guideTab-dlc" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="dlc" role="tabpanel" aria-labelledby="guideTabButton-dlc" aria-hidden="true" tabindex="0" hidden>
           <div id="guideDlcCompletionSlot">__SSR_GUIDE_DLC_COMPLETION__</div>
         </section>
         <section id="guideTab-attention" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="attention" role="tabpanel" aria-labelledby="guideTabButton-attention" aria-hidden="true" tabindex="0" hidden>

@@ -417,7 +417,7 @@ window.AppGuideController = (() => {
         trophies: 'checklist',
         checklist: 'checklist',
         extras: 'extras',
-        dlcs: 'dlcs',
+        dlcs: 'dlc',
         search: 'checklist',
         'first-pending': 'checklist',
         risks: 'summary',
@@ -490,7 +490,10 @@ window.AppGuideController = (() => {
       }
 
       element.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
-      const targetHash = selector.startsWith('#') ? selector : (element.id ? `#${element.id}` : '');
+      const canonicalHashActions = new Set(['summary', 'roadmap', 'trophies', 'checklist', 'extras', 'dlcs', 'attention']);
+      const targetHash = canonicalHashActions.has(action)
+        ? UI.getGuideCanonicalHash?.(nextTab) || ''
+        : selector.startsWith('#') ? selector : (element.id ? `#${element.id}` : '');
       if (targetHash && window.location.hash !== targetHash) {
         if (window.history?.pushState) window.history.pushState({ guideAction: action }, '', targetHash);
         else window.location.hash = targetHash;

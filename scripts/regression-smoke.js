@@ -490,6 +490,13 @@ function assertUIModules() {
   const checklistCss = read('public/css/checklist.css');
   const serverCode = read('src/app.js');
   const publicIndex = read('public/index.html');
+  assert.strictEqual(ctx.window.UIGuide.getGuideCanonicalHash('roadmap'), '#guideTab-roadmap', 'CTA de roadmap deve usar o hash canonico da aba');
+  assert.strictEqual(ctx.window.UIGuide.getGuideCanonicalHash('checklist'), '#guideTab-checklist', 'CTA de checklist deve usar o hash canonico da aba');
+  assert.strictEqual(ctx.window.UIGuide.getGuideCanonicalHash('dlcs'), '#guideTab-dlc', 'alias interno dlcs deve normalizar para o hash canonico singular');
+  assert.strictEqual(ctx.window.UIGuide.resolveGuideTabFromHash('#guideRoadmapPanel'), 'roadmap', 'hash legado do roadmap deve continuar aceito');
+  assert.strictEqual(ctx.window.UIGuide.resolveGuideTabFromHash('#guideChecklistPanel'), 'checklist', 'hash legado do checklist deve continuar aceito');
+  assert.strictEqual(ctx.window.UIGuide.resolveGuideTabFromHash('#guideTab-dlcs'), 'dlc', 'hash legado da aba DLC deve continuar aceito');
+  assert.strictEqual(ctx.window.UIGuide.resolveGuideHashTargetId('#guideTab-dlcs'), 'guideTab-dlc', 'hash legado da aba DLC deve apontar para o painel canonico');
   assert(publicIndex.includes('class="atlas-brand notranslate') && publicIndex.includes('translate="no" aria-label="AtlasAchievement"'), 'marca AtlasAchievement precisa estar protegida contra traducao automatica');
   assert(publicIndex.includes('/shared/featureFlags.js'), 'pagina publica precisa carregar feature flags compartilhadas antes do renderer do guia');
   assert(featureFlagsCode.includes('ENABLE_WALKTHROUGH: false') && featureFlagsCode.includes('isWalkthroughEnabled'), 'feature flag do walkthrough deve ficar desligada por padrao em configuracao central');
@@ -509,15 +516,24 @@ function assertUIModules() {
   assert(/\.spoiler-blur[\s\S]*?filter:\s*none/.test(read('public/css/checklist.css')), 'classe antiga de spoiler nao deve borrar leitura basica');
   assert(read('public/js/ui.js').includes('data-guide-clear-filters'), 'estado vazio do checklist precisa oferecer Limpar filtros');
   assert(guideViewCode.includes('data-guide-clear-filters'), 'guia precisa tratar clique em Limpar filtros');
-  assert(publicIndex.indexOf('id="guideHeader"') < publicIndex.indexOf('id="guideDecisionStack"'), 'hero do guia deve aparecer antes do resumo/alertas');
+  assert(publicIndex.indexOf('id="guideBreadcrumbs"') < publicIndex.indexOf('id="guideHeader"'), 'breadcrumbs devem aparecer antes do hero do guia');
+  assert(publicIndex.indexOf('id="guideHeader"') < publicIndex.indexOf('id="guideTabsSlot"'), 'tablist deve aparecer imediatamente depois do hero do guia');
+  assert(publicIndex.indexOf('id="guideTabsSlot"') < publicIndex.indexOf('id="guideContent"'), 'conteudo ativo deve aparecer depois do tablist');
+  assert(publicIndex.indexOf('id="guideTab-summary"') < publicIndex.indexOf('id="guideDecisionStack"') && publicIndex.indexOf('id="guideDecisionStack"') < publicIndex.indexOf('id="guideSummarySlot"'), 'Como usar este guia deve ficar dentro do painel Resumo');
   assert(publicIndex.indexOf('id="guideRoadmapSlot"') < publicIndex.indexOf('id="sidebarInfo"'), 'roadmap deve aparecer antes do progresso no fluxo do guia');
   assert(publicIndex.indexOf('id="sidebarInfo"') < publicIndex.indexOf('id="guideChecklistPanel"'), 'progresso deve aparecer antes do checklist');
   assert(publicIndex.includes('id="guideTabsSlot"') && publicIndex.includes('role="tabpanel"'), 'guia deve manter slot sticky e paineis com semantica de abas');
-  assert.strictEqual((publicIndex.match(/data-guide-tab-panel="(?:summary|roadmap|checklist|extras|dlcs|attention)"/g) || []).length, 6, 'template publico deve conter seis paineis editoriais');
+  assert.strictEqual((publicIndex.match(/data-guide-tab-panel="(?:summary|roadmap|checklist|extras|dlc|attention)"/g) || []).length, 6, 'template publico deve conter seis paineis editoriais');
   assert(publicIndex.indexOf('id="guideFaqSlot"') < publicIndex.indexOf('id="guideCommentsSlot"'), 'FAQ e Comentarios devem ficar fora dos paineis e em ordem editorial');
   assert(guideUiCode.includes('role="tablist"') && guideUiCode.includes('aria-selected=') && guideUiCode.includes('aria-controls='), 'renderer client deve expor contratos ARIA completos das abas');
   assert(guideUiCode.includes('GUIDE_TAB_BY_HASH') && guideUiCode.includes('resolveGuideTabFromHash') && guideUiCode.includes('resolveGuideHashTargetId'), 'aliases das abas e hashes legados devem ter uma fonte compartilhada');
+  ['#guideTab-summary', '#guideTab-roadmap', '#guideTab-checklist', '#guideTab-extras', '#guideTab-dlc', '#guideTab-attention'].forEach(hash => {
+    assert(publicIndex.includes(`id="${hash.slice(1)}"`), `template deve expor o destino do hash canonico ${hash}`);
+  });
+  assert(guideUiCode.includes('getGuideCanonicalHash') && guideUiCode.includes("['summary', 'roadmap', 'checklist', 'extras', 'dlc', 'attention']"), 'renderer deve gerar somente os seis hashes canonicos das abas');
+  assert(guideUiCode.includes("'guidetab-dlcs': 'dlc'") && guideUiCode.includes("guidechecklistpanel: 'checklist'") && guideUiCode.includes("guideroadmappanel: 'roadmap'"), 'hashes legados devem continuar ativando as abas correspondentes');
   assert(guideControllerCode.includes('UI.resolveGuideTabFromHash') && guideControllerCode.includes('UI.resolveGuideHashTargetId') && guideViewCode.includes('window.UI?.resolveGuideTabFromHash') && guideViewCode.includes('window.UI?.resolveGuideHashTargetId'), 'controller e view devem consumir os resolvers compartilhados de hash');
+  assert(guideControllerCode.includes('UI.getGuideCanonicalHash?.(nextTab)') && guideViewCode.includes('UI.getGuideCanonicalHash?.(tab)'), 'CTAs do hero e abas devem escrever os mesmos hashes canonicos');
   assert(!guideUiCode.includes('renderGuideInternalNav') && !serverCode.includes('renderGuideInternalNavHtml') && !guideCss.includes('.atlas-guide-nav') && !checklistCss.includes('.atlas-guide-nav'), 'navegacao interna antiga nao deve permanecer abandonada no codigo ou CSS');
   ['atlas-platinum-summary', 'atlas-guide-shortcuts', 'atlas-guide-start-context', 'atlas-guide-hero__subtitle'].forEach(legacyClass => {
     assert(!guideUiCode.includes(legacyClass) && !serverCode.includes(legacyClass) && !guideCss.includes(`.${legacyClass}`), `estrutura antiga ${legacyClass} nao deve permanecer abandonada`);
@@ -528,6 +544,7 @@ function assertUIModules() {
   assert(/@media \(max-width: 768px\)[\s\S]*?\.atlas-guide-layer-nav[\s\S]*?overflow-x:\s*auto/.test(guideCss), 'abas mobile devem usar rolagem horizontal contida');
   assert(/\.atlas-guide-tabs-slot::after\s*\{[\s\S]*?content:\s*''/.test(guideCss), 'indicador lateral das abas nao deve injetar glifo decorativo na arvore acessivel');
   assert(/\.atlas-guide-hero__secondary-meta small\s*\{[\s\S]*?color:\s*rgba\(226,\s*232,\s*240,\s*\.68\)/.test(guideCss), 'rotulos dos metadados secundarios precisam manter contraste legivel');
+  assert(/#view-guide \.atlas-btn-muted-action\s*\{[\s\S]*?color:\s*rgba\(226,\s*232,\s*240,\s*\.76\)[\s\S]*?border-color:\s*rgba\(226,\s*232,\s*240,\s*\.14\)/.test(guideCss), 'acoes terciarias do hero nao devem parecer desabilitadas');
   assert(/\.atlas-guide-start-card \.atlas-btn,[\s\S]*?\.atlas-guide-hero__actions \.atlas-btn\s*\{[\s\S]*?min-height:\s*44px/.test(responsiveCss), 'acoes do cabecalho precisam manter alvo de toque de pelo menos 44px');
   assert(guideUiCode.includes('renderGuideSummaryPanel'), 'guia precisa renderizar resumo editorial da platina');
   assert(guideUiCode.includes('renderGuideDecisionStackV2'), 'guia precisa usar nova ordem resumo -> alertas -> nav');
