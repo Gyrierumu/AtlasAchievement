@@ -77,7 +77,7 @@
     "attentionPoints": [],
     "chapterRouteGuide": {
       "campaignPlan": {
-        "advancedNote": "Jogadores experientes podem combinar rank S com as runs de Hardcore. Isso reduz campanhas, mas aumenta muito o risco de repetição e não é a rota principal do Atlas. A combinação das três restrições continua sendo a tentativa principal da Run 7 em Assisted, com o fallback indicado no card.",
+        "advancedNote": "Jogadores experientes podem combinar rank S com as campanhas de Hardcore ou reduzir campanhas por meio de cleanup mais agressivo. Isso diminui o número total de runs, mas aumenta o risco de repetição e não é a rota principal do Atlas.",
         "afterPlatinum": {
           "items": [
             "Confirme se Chasing Jill já foi obtido durante a Run 1.",
@@ -86,6 +86,7 @@
             "Colete os nove Mr. Raccoons disponíveis nesses três cenários.",
             "Entre em No Way Out e destrua o décimo Mr. Raccoon.",
             "Conclua No Way Out fora do Training Mode para Hell of a Sheriff.",
+            "Confirme Got ’Em e Hell of a Sheriff.",
             "Deixe Gunslinger e Cat Ears como objetivos opcionais."
           ],
           "title": "Depois da platina — 100% da lista"
@@ -1814,7 +1815,7 @@
         },
         {
           "actions": [
-            "Colete os nove Mr. Raccoons desses três cenários."
+            "Colete os nove Mr. Raccoons disponíveis nesses três cenários."
           ],
           "title": "Coletar os nove primeiros Mr. Raccoons"
         },
@@ -1829,6 +1830,12 @@
             "Conclua No Way Out fora do Training Mode."
           ],
           "title": "Concluir No Way Out"
+        },
+        {
+          "actions": [
+            "Confirme Got ’Em e Hell of a Sheriff."
+          ],
+          "title": "Confirmar os troféus obrigatórios"
         },
         {
           "actions": [
