@@ -442,15 +442,14 @@
         },
         {
           "chapter": "Hardcore, S rank e armas infinitas",
-          "note": "Esta seção separa o que a platina exige do que é apenas atalho. A platina pede S rank com Leon e Claire e completar Hardcore com os dois personagens. S+ e armas infinitas podem ajudar, mas não são requisitos diretos.",
+          "note": "Esta seção reúne tempos, dificuldades, saves, desbloqueios e planejamento de Hardcore para Leon e Claire.",
           "sections": [
             {
               "items": [
                 "S rank com Leon entra na platina por Leon “S.” Kennedy; faça em Standard ou Hardcore, com Standard mais seguro para a maioria.",
                 "S rank com Claire entra na platina por Sizzling Scarlet Hero; faça em Standard ou Hardcore, com Standard mais seguro para a maioria.",
                 "Hardcore com Leon entra por Hardcore Rookie; completar a história no Hardcore basta, sem exigir S rank.",
-                "Hardcore com Claire entra por Hardcore College Student; completar a história no Hardcore basta, sem exigir S rank.",
-                "S+ e armas infinitas são opcionais: servem para desbloqueios ou atalhos, não como requisito direto da platina."
+                "Hardcore com Claire entra por Hardcore College Student; completar a história no Hardcore basta, sem exigir S rank."
               ],
               "title": "Obrigatório vs opcional"
             },
@@ -460,19 +459,9 @@
                 "Leon 2nd Run / Claire 2nd Run: Standard 3h00; Hardcore 2h00.",
                 "S rank depende principalmente do tempo, então priorize rota curta, puzzles memorizados e objetivos mínimos.",
                 "Se morrer em run de ranking, evite Continue e carregue o save correto para proteger o tempo.",
-                "Use saves normais sem tratar limite de saves como regra do S rank comum; limite de saves é preocupação de S+."
+                "Para os troféus, basta rank S; S+ é opcional e possui regras próprias. O limite de saves pertence ao S+."
               ],
               "title": "Tempos de S rank"
-            },
-            {
-              "items": [
-                "S rank é obrigatório para Leon “S.” Kennedy e Sizzling Scarlet Hero.",
-                "S+ não é requisito direto da platina.",
-                "S rank pode ser feito em Standard e não exige as regras específicas de S+.",
-                "Não junte S rank com primeira run cega ou coleta completa se isso atrasar demais.",
-                "Para a maioria, S rank em Standard é melhor do que tentar S+ ou Hardcore cedo."
-              ],
-              "title": "S rank sem confundir com S+"
             },
             {
               "items": [
@@ -554,7 +543,7 @@
                 "Não junte com a primeira campanha cega.",
                 "Não junte com a primeira run de Hardcore.",
                 "Não junte com coleta pesada de Files ou Mr. Raccoons se isso gerar backtracking.",
-                "Não junte com S rank se você ainda não domina rotas; S+ não é requisito direto da platina.",
+                "Não junte com S rank se você ainda não domina rotas.",
                 "Deixe The Ghost Survivors e Chasing Jill para o 100% da lista; essas runs ficam fora da platina base."
               ],
               "title": "O que separar"
@@ -986,9 +975,7 @@
           "myth": "Para os troféus de S rank preciso obter S+, fazer no Hardcore e usar no máximo três saves.",
           "where": [
             {
-              "action": "chapter-route",
-              "href": "#guideChapterRoutePanel",
-              "label": "Rota por Capítulo — Hardcore, S rank e armas infinitas"
+              "label": "Hardcore, S rank e armas infinitas"
             },
             {
               "action": "quick",
@@ -1008,9 +995,10 @@
           "myth": "Usar uma arma infinita invalida S rank, Hardcore Rookie ou Hardcore College Student.",
           "where": [
             {
-              "action": "chapter-route",
-              "href": "#guideChapterRoutePanel",
-              "label": "Rota por Capítulo — rank, armas infinitas e Minimalist"
+              "label": "Hardcore, S rank e armas infinitas"
+            },
+            {
+              "label": "Runs de restrição — Minimalist"
             },
             {
               "action": "quick",
@@ -1025,9 +1013,7 @@
           "myth": "The 4th Survivor, Tofu Survivor e The Ghost Survivors são variações do mesmo modo e todos são obrigatórios para a platina.",
           "where": [
             {
-              "action": "chapter-route",
-              "href": "#guideChapterRoutePanel",
-              "label": "Rota por Capítulo — The 4th Survivor"
+              "label": "The 4th Survivor — Grim Reaper"
             },
             {
               "action": "dlcs",
@@ -2060,7 +2046,7 @@
         "question": "Por que a PSN pode mostrar 45 troféus se DLCs/title updates não são necessários para a platina?"
       },
       {
-        "answer": "Sim. S rank com Leon e Claire é obrigatório e pode ser feito em Standard ou Hardcore; Standard costuma ser mais confortável. Hardcore Rookie e Hardcore College Student pedem completar Leon e Claire no Hardcore, sem exigir S rank. S+ e armas infinitas são opcionais para desbloqueios/atalhos, não requisito direto da platina.",
+        "answer": "S rank com Leon e Claire é obrigatório, enquanto S+ é opcional e não é necessário para a platina. Hardcore Rookie e Hardcore College Student exigem concluir Leon e Claire no Hardcore, sem exigir S rank.",
         "question": "Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?"
       },
       {

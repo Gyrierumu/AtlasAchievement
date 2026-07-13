@@ -5089,7 +5089,7 @@
         },
         {
           question: 'Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?',
-          answer: 'Sim. S rank com Leon e Claire é obrigatório e pode ser feito em Standard ou Hardcore; Standard costuma ser mais confortável. Hardcore Rookie e Hardcore College Student pedem completar Leon e Claire no Hardcore, sem exigir S rank. S+ e armas infinitas são opcionais para desbloqueios/atalhos, não requisito direto da platina.'
+          answer: 'S rank com Leon e Claire é obrigatório, enquanto S+ é opcional e não é necessário para a platina. Hardcore Rookie e Hardcore College Student exigem concluir Leon e Claire no Hardcore, sem exigir S rank.'
         },
         {
           question: 'Existem troféus de sem cura, sem baú ou limite de passos?',

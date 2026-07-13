@@ -135,6 +135,25 @@ function validateData() {
   ['42 troféus da lista base', 'final verdadeiro e Broken Umbrella', 'quatro combinações da rota', 'S+, limite de três saves', 'Item Box para pegar uma arma pode invalidar Minimalist', 'Tofu Survivor é opcional', 'Gotcha! pertence à campanha base', 'fora do Training Mode', 'campanha normal de Leon'].forEach(text => {
     assert(residentEvil2MythsText.includes(text), `Resident Evil 2 Remake deve preservar a correcao de mito: ${text}`);
   });
+  const residentEvil2MythDestinations = residentEvil2Guide.commonMythsGuide.myths.slice(3, 6).map(item => item.where);
+  assert.deepStrictEqual(
+    residentEvil2MythDestinations.map(destinations => destinations.map(destination => destination.label)),
+    [
+      ['Hardcore, S rank e armas infinitas', 'Plano rápido — Runs 3 e 4', 'Checklist — Leon “S.” Kennedy e Sizzling Scarlet Hero'],
+      ['Hardcore, S rank e armas infinitas', 'Runs de restrição — Minimalist', 'Plano rápido — Runs 3 a 7'],
+      ['The 4th Survivor — Grim Reaper', 'DLCs e 100% da Lista', 'FAQ — The 4th Survivor e Tofu Survivor']
+    ],
+    'Resident Evil 2 Remake deve usar apenas nomes reais em Onde conferir dos mitos 4, 5 e 6'
+  );
+  assert(residentEvil2MythDestinations.every(destinations => !destinations[0].href), 'Subsecoes sem anchor confiavel devem permanecer como texto em Onde conferir');
+  assert(!residentEvil2MythDestinations[1][1].href, 'Runs de restricao — Minimalist deve permanecer como texto sem inventar anchor');
+  const residentEvil2RankChapter = residentEvil2Guide.chapterRouteGuide.chapters.find(chapter => chapter.chapter === 'Hardcore, S rank e armas infinitas');
+  assert(!residentEvil2RankChapter.sections.some(section => section.title === 'S rank sem confundir com S+'), 'Resident Evil 2 Remake deve centralizar a duvida conceitual no Mito 4');
+  assert.strictEqual(
+    residentEvil2RankChapter.sections.find(section => section.title === 'Tempos de S rank')?.items?.at(-1),
+    'Para os troféus, basta rank S; S+ é opcional e possui regras próprias. O limite de saves pertence ao S+.',
+    'Tempos de S rank deve manter somente a nota curta sobre S e limite de saves do S+'
+  );
   assert.strictEqual(sampleGames.find(game => game.slug === 'resident-evil-5')?.commonMythsGuide?.myths?.length, 8, 'Resident Evil 5 deve permanecer com seus 8 mitos');
   const re5Related = cardModel.buildRelatedGames(residentEvilGuide, sampleGames, 4);
   assert(
@@ -807,7 +826,9 @@ async function validateGuide(slug = '') {
     assert.strictEqual(viewModel.contextualFaq.length, 8, 'Resident Evil 2 Remake deve ter FAQ objetiva com limite visual');
     assert(viewModel.contextualFaq.some(item => item.question.includes('2nd Run') && item.answer.includes('2ª jornada')), 'FAQ de Resident Evil 2 Remake deve explicar 2nd Run');
     assert(viewModel.contextualFaq.some(item => item.question.includes('DLCs ou modos extras') && item.answer.includes('lista base da platina')), 'FAQ de Resident Evil 2 Remake deve separar DLC/extras');
-    assert(viewModel.contextualFaq.some(item => item.question.includes('Hardcore, rank S e speedrun') && item.answer.includes('rank depende principalmente de tempo')), 'FAQ de Resident Evil 2 Remake deve explicar Hardcore/rank');
+    const re2RankFaq = viewModel.contextualFaq.find(item => item.question.includes('Hardcore, rank S e speedrun'));
+    assert(re2RankFaq?.answer.includes('S rank com Leon e Claire é obrigatório') && re2RankFaq.answer.includes('S+ é opcional') && re2RankFaq.answer.includes('Hardcore Rookie e Hardcore College Student'), 'FAQ de Resident Evil 2 Remake deve resumir S, S+ e Hardcore');
+    assert.strictEqual((re2RankFaq.answer.match(/[.!?](?:\s|$)/g) || []).length, 2, 'FAQ de S rank de Resident Evil 2 Remake deve ter no maximo duas frases');
     assert(viewModel.contextualFaq.some(item => item.question.includes('sem cura, sem baú ou limite de passos') && item.answer.includes('Frugalist')), 'FAQ de Resident Evil 2 Remake deve explicar runs condicionais');
     const re2Myths = seedGame.commonMythsGuide?.myths || [];
     assert.strictEqual(seedGame.commonMythsGuide?.anchorId, 'mitos-e-erros-comuns', 'Resident Evil 2 Remake deve usar anchor local estavel para Mitos e erros comuns');
@@ -825,6 +846,8 @@ async function validateGuide(slug = '') {
     assert.deepStrictEqual(viewModel.routeChangingTrophies.slice(0, 5).map(item => item.name), ['Peguei Você!', 'Num Piscar de Olhos', 'Leon "S." Kennedy', 'Uma Superespiã Eficiente', 'Heroína Escarlate Flamejante'], 'Pontos de atencao de Resident Evil 2 Remake devem usar titulos PT-BR');
     assert(viewModel.routeChangingTrophies.every(item => !/Este troféu está marcado como spoiler|Revele os detalhes/i.test(item.text)), 'Pontos de atencao de Resident Evil 2 Remake nao devem usar texto generico de spoiler');
     assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_eat_this')?.tip, 'Use faca, granada ou flash ao ser agarrado.', 'Resident Evil 2 Remake deve corrigir dica de Eat This');
+    assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_leon_s')?.tip, 'S rank é obrigatório; S+ não é necessário.', 'Card Leon S Kennedy deve manter uma unica frase pratica sobre S e S+');
+    assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_scarlet_hero')?.tip, 'S rank é obrigatório; S+ não é necessário.', 'Card Sizzling Scarlet Hero deve manter uma unica frase pratica sobre S e S+');
     assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 42, 'Resident Evil 2 Remake deve ter titulo PT-BR nos 42 trofeus');
     assert(!/Obtain all trophies|Reach the police station|Complete Leon|Complete Claire|Complete the game without|Open all of the safes|Destroy all Mr\. Raccoons/i.test(trophyText), 'Resident Evil 2 Remake nao deve manter descricoes em ingles na checklist');
     [
@@ -1935,6 +1958,11 @@ async function validateGuide(slug = '') {
       assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Mito<\/dt>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem renderizar 9 campos Mito');
       assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Correção<\/dt>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem renderizar 9 campos Correcao');
       assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Onde conferir<\/dt>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem renderizar 9 campos Onde conferir');
+      ['Hardcore, S rank e armas infinitas', 'Runs de restrição — Minimalist', 'The 4th Survivor — Grim Reaper'].forEach(label => {
+        assert(mythsPanelHtml.includes(label), `Onde conferir deve usar heading real: ${label}`);
+      });
+      assert(!mythsPanelHtml.includes('href="#guideChapterRoutePanel"'), 'Onde conferir nao deve apontar subsecoes do RE2 para o inicio generico do painel');
+      assert(!/<a\b[^>]*>Hardcore, S rank e armas infinitas<\/a>|<a\b[^>]*>Runs de restrição — Minimalist<\/a>|<a\b[^>]*>The 4th Survivor — Grim Reaper<\/a>/.test(mythsPanelHtml), 'Subsecoes sem anchor confiavel devem ser renderizadas como texto');
       assert.strictEqual((mythsPanelHtml.match(/>Mito [1-9]<\/div>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem ter uma unica numeracao por card');
       assert(!/>Mito ([1-9])<\/div>[\s\S]{0,80}>\1[.\s]</.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem duplicar numeracao');
       assert(!/<input\b|data-platinum-extra-check|data-dlc-progress|data-progress|<img\b|<video\b|<iframe\b/.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem incluir progresso, checkbox ou midia');
@@ -1949,6 +1977,14 @@ async function validateGuide(slug = '') {
       apiGame.commonMythsGuide.myths.forEach((item, index) => {
         assert(!faqPanelHtml.includes(item.myth) && !faqPanelHtml.includes(item.correction), `FAQ nao deve duplicar integralmente o mito ${index + 1}`);
       });
+      assert(!html.includes('Rota por Capítulo'), 'Resident Evil 2 Remake nao deve expor nomenclatura exclusiva do guia de Resident Evil 5');
+      ['S rank sem confundir com S+', 'S+ não é requisito direto da platina', 'S+ e armas infinitas são opcionais', 'S rank pode ser feito em Standard'].forEach(text => {
+        assert(!html.includes(text), `Resident Evil 2 Remake nao deve repetir explicacao conceitual: ${text}`);
+      });
+      assert.strictEqual((guideScopedHtml.match(/Para os troféus, basta rank S; S\+ é opcional e possui regras próprias\./g) || []).length, 1, 'Tempos de S rank deve conter uma unica nota conceitual curta no conteudo renderizado');
+      assert(html.includes('O limite de saves pertence ao S+.'), 'Tempos de S rank deve preservar a regra operacional do limite de saves');
+      assert(html.includes('S rank é obrigatório; S+ não é necessário.'), 'Card de Leon S Kennedy deve preservar a frase pratica aprovada');
+      assert(faqPanelHtml.includes('S rank com Leon e Claire é obrigatório') && faqPanelHtml.includes('S+ é opcional') && faqPanelHtml.includes('Hardcore Rookie e Hardcore College Student'), 'FAQ deve preservar resposta curta sobre S, S+ e Hardcore');
       assert(html.includes('Peguei Você!') && html.includes('Exige derrotar a forma 2 do G usando o guindaste apenas uma vez'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Peguei Voce');
       assert(html.includes('Num Piscar de Olhos') && html.includes('Guarde munição pesada para o final do Leon'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Num Piscar de Olhos');
       assert(html.includes('Uma Superespiã Eficiente') && html.includes('Não dispare a pistola'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Ada');
