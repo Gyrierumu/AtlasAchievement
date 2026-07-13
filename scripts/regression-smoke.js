@@ -482,10 +482,13 @@ function assertUIModules() {
 
   const guideUiCode = read('public/js/ui-guide.js');
   const featureFlagsCode = read('src/shared/featureFlags.js');
+  const guideControllerCode = read('public/js/app-guide-controller.js');
   const guideViewCode = read('public/js/app-guide-view.js');
   const searchContextCode = read('public/js/app-context.js');
   const responsiveCss = read('public/css/responsive.css');
   const guideCss = read('public/css/guide.css');
+  const checklistCss = read('public/css/checklist.css');
+  const serverCode = read('src/app.js');
   const publicIndex = read('public/index.html');
   assert(publicIndex.includes('class="atlas-brand notranslate') && publicIndex.includes('translate="no" aria-label="AtlasAchievement"'), 'marca AtlasAchievement precisa estar protegida contra traducao automatica');
   assert(publicIndex.includes('/shared/featureFlags.js'), 'pagina publica precisa carregar feature flags compartilhadas antes do renderer do guia');
@@ -509,7 +512,24 @@ function assertUIModules() {
   assert(publicIndex.indexOf('id="guideHeader"') < publicIndex.indexOf('id="guideDecisionStack"'), 'hero do guia deve aparecer antes do resumo/alertas');
   assert(publicIndex.indexOf('id="guideRoadmapSlot"') < publicIndex.indexOf('id="sidebarInfo"'), 'roadmap deve aparecer antes do progresso no fluxo do guia');
   assert(publicIndex.indexOf('id="sidebarInfo"') < publicIndex.indexOf('id="guideChecklistPanel"'), 'progresso deve aparecer antes do checklist');
-  assert(guideUiCode.includes('renderGuidePlatinumSummaryPanel'), 'guia precisa renderizar resumo rapido da platina');
+  assert(publicIndex.includes('id="guideTabsSlot"') && publicIndex.includes('role="tabpanel"'), 'guia deve manter slot sticky e paineis com semantica de abas');
+  assert.strictEqual((publicIndex.match(/data-guide-tab-panel="(?:summary|roadmap|checklist|extras|dlcs|attention)"/g) || []).length, 6, 'template publico deve conter seis paineis editoriais');
+  assert(publicIndex.indexOf('id="guideFaqSlot"') < publicIndex.indexOf('id="guideCommentsSlot"'), 'FAQ e Comentarios devem ficar fora dos paineis e em ordem editorial');
+  assert(guideUiCode.includes('role="tablist"') && guideUiCode.includes('aria-selected=') && guideUiCode.includes('aria-controls='), 'renderer client deve expor contratos ARIA completos das abas');
+  assert(guideUiCode.includes('GUIDE_TAB_BY_HASH') && guideUiCode.includes('resolveGuideTabFromHash') && guideUiCode.includes('resolveGuideHashTargetId'), 'aliases das abas e hashes legados devem ter uma fonte compartilhada');
+  assert(guideControllerCode.includes('UI.resolveGuideTabFromHash') && guideControllerCode.includes('UI.resolveGuideHashTargetId') && guideViewCode.includes('window.UI?.resolveGuideTabFromHash') && guideViewCode.includes('window.UI?.resolveGuideHashTargetId'), 'controller e view devem consumir os resolvers compartilhados de hash');
+  assert(!guideUiCode.includes('renderGuideInternalNav') && !serverCode.includes('renderGuideInternalNavHtml') && !guideCss.includes('.atlas-guide-nav') && !checklistCss.includes('.atlas-guide-nav'), 'navegacao interna antiga nao deve permanecer abandonada no codigo ou CSS');
+  ['atlas-platinum-summary', 'atlas-guide-shortcuts', 'atlas-guide-start-context', 'atlas-guide-hero__subtitle'].forEach(legacyClass => {
+    assert(!guideUiCode.includes(legacyClass) && !serverCode.includes(legacyClass) && !guideCss.includes(`.${legacyClass}`), `estrutura antiga ${legacyClass} nao deve permanecer abandonada`);
+  });
+  assert(guideViewCode.includes("['ArrowRight', 'ArrowLeft', 'Home', 'End']") && guideViewCode.includes("window.addEventListener('popstate', syncHashTarget)"), 'navegacao deve oferecer teclado e restauracao pelo historico');
+  assert(guideViewCode.includes("window.history.pushState({ guideTab: tab }") && guideViewCode.includes('scrollGuideHashTarget'), 'troca de aba deve atualizar hash e restaurar o alvo');
+  assert(guideCss.includes('.atlas-guide-tabs-slot') && /\.atlas-guide-layer-nav\s*\{[\s\S]*?flex-wrap:\s*nowrap/.test(guideCss), 'barra de abas deve ser sticky e permanecer em uma linha');
+  assert(/@media \(max-width: 768px\)[\s\S]*?\.atlas-guide-layer-nav[\s\S]*?overflow-x:\s*auto/.test(guideCss), 'abas mobile devem usar rolagem horizontal contida');
+  assert(/\.atlas-guide-tabs-slot::after\s*\{[\s\S]*?content:\s*''/.test(guideCss), 'indicador lateral das abas nao deve injetar glifo decorativo na arvore acessivel');
+  assert(/\.atlas-guide-hero__secondary-meta small\s*\{[\s\S]*?color:\s*rgba\(226,\s*232,\s*240,\s*\.68\)/.test(guideCss), 'rotulos dos metadados secundarios precisam manter contraste legivel');
+  assert(/\.atlas-guide-start-card \.atlas-btn,[\s\S]*?\.atlas-guide-hero__actions \.atlas-btn\s*\{[\s\S]*?min-height:\s*44px/.test(responsiveCss), 'acoes do cabecalho precisam manter alvo de toque de pelo menos 44px');
+  assert(guideUiCode.includes('renderGuideSummaryPanel'), 'guia precisa renderizar resumo editorial da platina');
   assert(guideUiCode.includes('renderGuideDecisionStackV2'), 'guia precisa usar nova ordem resumo -> alertas -> nav');
   assert(guideUiCode.includes('renderGuideWalkthrough') && guideUiCode.includes('data-walkthrough-check') && guideUiCode.includes('isWalkthroughEnabled'), 'client deve manter walkthrough opcional com checklist interativo atras da feature flag');
   assert(guideUiCode.includes('renderWalkthroughImages') && guideUiCode.includes('loading="lazy"'), 'client deve renderizar imagens opcionais do walkthrough com lazy loading');
@@ -517,7 +537,7 @@ function assertUIModules() {
   assert(read('src/app.js').includes('renderWalkthroughImagesHtml') && read('src/app.js').includes('atlas-walkthrough-image'), 'SSR deve renderizar imagens opcionais do walkthrough');
   assert(guideViewCode.includes('data-walkthrough-check'), 'view publica deve sincronizar checklist visual do walkthrough');
   assert(read('src/app.js').includes('renderGuideDecisionStackHtmlV2'), 'SSR do guia precisa usar a mesma ordem do client');
-  assert(guideCss.includes('.atlas-platinum-summary__grid'), 'guide.css precisa estilizar cards de resumo da platina');
+  assert(guideCss.includes('.atlas-guide-summary-actions'), 'guide.css precisa estilizar o resumo editorial da platina');
   assert(guideCss.includes('.atlas-walkthrough-panel') && guideCss.includes('.atlas-walkthrough-alerts'), 'guide.css precisa estilizar o detonado opcional e alertas perdiveis');
   assert(guideCss.includes('.atlas-walkthrough-images') && guideCss.includes('object-fit: contain'), 'guide.css precisa manter imagens do walkthrough responsivas sem deformar');
   assert(guideCss.includes('.atlas-roadmap-step__actions'), 'roadmap visual precisa expor lista curta de acoes');
@@ -528,7 +548,7 @@ function assertUIModules() {
   assert(read('public/css/checklist.css').includes('.atlas-trophy-card__title-translation'), 'checklist precisa estilizar name_pt como linha secundaria do card');
   assert(responsiveCss.includes('.atlas-trophy-card__title-translation'), 'mobile precisa ajustar a linha secundaria de name_pt');
   assert(responsiveCss.includes('Platinum-run mobile comfort'), 'responsive.css precisa manter ajustes mobile para uso durante platina');
-  assert(/\.atlas-guide-hero__summary[\s\S]*?-webkit-line-clamp:\s*3/.test(responsiveCss), 'resumo do guia mobile precisa ser limitado para nao empurrar o conteudo util');
+  assert(!/\.atlas-guide-hero__summary[\s\S]{0,240}?-webkit-line-clamp/.test(responsiveCss), 'resumo editorial mobile nao deve esconder informacao essencial por line clamp');
   assert(/#guideChecklistPanel\s+\.atlas-filter-primary[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/.test(responsiveCss), 'filtros do checklist precisam caber em uma coluna no mobile');
   assert(/#guideChecklistPanel\s+\.atlas-filter-primary\s+\.atlas-filter-group:nth-child\(2\)\s*>\s*div[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/.test(responsiveCss), 'filtros de risco do checklist precisam virar grade tocavel no mobile');
   assert(/#guideChecklistPanel\s+\.atlas-filter-primary\s+\.atlas-filter-group:nth-child\(2\)\s+\.atlas-pill[\s\S]*?width:\s*100%/.test(responsiveCss), 'chips de risco mobile precisam ocupar a coluna inteira para toque confortavel');
@@ -12699,8 +12719,9 @@ async function assertBackendEditorialConsistency() {
       astroBotGuideHtml.indexOf('atlas-guide-hero__actions') + 900
     );
     const astroBotSaveButtonCount = (astroBotGuideHtml.match(/data-toggle-save-game="true"/g) || []).length;
-    assert(astroBotHeroActions.includes('Roadmap') && astroBotHeroActions.includes('Checklist'), 'SSR de Astro Bot deve exibir CTAs diretos para roadmap e checklist no topo do guia');
-    assert(astroBotHeroActions.includes('data-guide-action="trophies"') || astroBotHeroActions.includes('data-guide-action="roadmap"') || astroBotHeroActions.includes('data-guide-action="risks"'), 'CTA do topo do guia deve apontar para plano ou checklist');
+    assert(astroBotHeroActions.includes('Começar roadmap') && astroBotHeroActions.includes('Abrir checklist'), 'SSR de Astro Bot deve priorizar roadmap e manter checklist como acao secundaria no topo');
+    assert(/class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"/.test(astroBotHeroActions), 'CTA principal do topo deve abrir o roadmap');
+    assert(!astroBotHeroActions.includes('<small>Status</small>'), 'hero nao deve repetir status editorial como metrica');
     assert(astroBotGuideHtml.includes('Salvar na biblioteca') || astroBotGuideHtml.includes('Salvar guia'), 'guia deve manter acao de salvar sem duplicacao confusa no hero');
     assert(astroBotSaveButtonCount >= 1, 'guia deve manter pelo menos uma acao de biblioteca');
     assert(astroBotGuideHtml.includes('atlas-guide-cover--poster'), 'SSR de Astro Bot deve usar cover_image como poster do guia');

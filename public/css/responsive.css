@@ -911,7 +911,6 @@
   .atlas-intent-card:hover,
   .atlas-collection-chip:hover,
   .atlas-segment-card:hover,
-  .atlas-guide-nav__link:hover,
   .atlas-quick-dock__btn:hover {
     transform: none;
   }
@@ -922,7 +921,6 @@
   .atlas-intent-card,
   .atlas-collection-chip,
   .atlas-segment-card,
-  .atlas-guide-nav__link,
   .atlas-quick-dock__btn {
     transition-property: color, background, border-color, opacity;
   }
@@ -1019,7 +1017,6 @@
   .atlas-intent-card:hover,
   .atlas-collection-chip:hover,
   .atlas-segment-card:hover,
-  .atlas-guide-nav__link:hover,
   .atlas-quick-dock__btn:hover {
     transform: none;
   }
@@ -1236,28 +1233,6 @@
     padding-block: 5px;
   }
 
-  #view-guide .atlas-guide-nav,
-  .atlas-guide-nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-flow: row;
-    grid-auto-columns: unset;
-    gap: 8px;
-    margin-inline: 0;
-    padding: 0;
-    overflow-x: visible;
-  }
-
-  #view-guide .atlas-guide-nav__link,
-  .atlas-guide-nav__link {
-    min-width: 0;
-    width: 100%;
-    min-height: 42px;
-    padding: 7px 8px;
-    white-space: normal;
-    line-height: 1.12;
-  }
-
   #catalogPagination {
     justify-content: stretch;
     gap: 7px;
@@ -1355,10 +1330,6 @@
     font-size: .72rem;
   }
 
-  #view-guide .atlas-guide-nav,
-  .atlas-guide-nav {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
 
 /* Platinum-run mobile comfort: tighter first viewport, easier filters and safer dock at 390px. */
@@ -1431,20 +1402,10 @@
     line-height: 1.04 !important;
   }
 
-  #view-guide .atlas-guide-hero__subtitle {
-    margin-top: 5px;
-    font-size: .84rem;
-    line-height: 1.22;
-  }
-
   #view-guide .atlas-guide-hero__summary {
     margin-top: 6px;
     font-size: .8rem;
     line-height: 1.34;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 
   #view-guide .atlas-guide-start-card {
@@ -1467,7 +1428,7 @@
 
   #view-guide .atlas-guide-start-card .atlas-btn,
   #view-guide .atlas-guide-hero__actions .atlas-btn {
-    min-height: 40px;
+    min-height: 44px;
     height: auto;
     border-radius: 12px;
     font-size: .82rem;
@@ -1481,11 +1442,26 @@
     margin-top: 9px;
   }
 
+  #view-guide .atlas-guide-hero__actions .atlas-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
   #view-guide .atlas-guide-hero__facts {
     order: 5;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 6px;
     margin-top: 9px;
+  }
+
+  #view-guide .atlas-guide-hero__secondary-meta {
+    order: 5;
+    margin-top: 7px;
+  }
+
+  #view-guide .atlas-guide-hero__secondary-meta > span {
+    min-width: 0;
+    max-width: 100%;
   }
 
   #view-guide .atlas-guide-hero__facts span,

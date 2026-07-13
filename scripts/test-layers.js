@@ -1387,6 +1387,63 @@ async function validateGuide(slug = '') {
     assert(!/needs_trophy_list_validation|needs_missables_validation|needs_trophy_localization_check/.test(html), `${slug} nao deve expor warnings tecnicos publicamente`);
     assert(html.includes(seedGame.name), `${slug} SSR deve renderizar o nome do jogo`);
     if (seedGame.cover_image) assert(html.includes(seedGame.cover_image), `${slug} SSR deve renderizar cover_image`);
+    const guideHeaderStart = html.indexOf('<div id="guideHeader"');
+    const guideHeaderEnd = guideHeaderStart >= 0 ? html.indexOf('<div id="guideDecisionStack"', guideHeaderStart) : -1;
+    const guideHeaderHtml = guideHeaderStart >= 0 && guideHeaderEnd > guideHeaderStart ? html.slice(guideHeaderStart, guideHeaderEnd) : '';
+    assert(guideHeaderHtml.includes('atlas-guide-hero__summary') && !/atlas-guide-hero__summary[^>]*hidden/.test(guideHeaderHtml), `${slug} deve exibir um resumo editorial unico no hero`);
+    assert.strictEqual((guideHeaderHtml.match(/atlas-guide-hero__summary/g) || []).length, 1, `${slug} deve manter somente um resumo editorial no hero`);
+    assert.strictEqual((guideHeaderHtml.match(/class="atlas-editorial-badge /g) || []).length, 1, `${slug} deve renderizar um unico badge editorial no hero`);
+    assert(!guideHeaderHtml.includes('atlas-editorial-trust__copy'), `${slug} nao deve repetir o status editorial em uma frase abaixo do badge`);
+    assert(!/<small>Status<\/small>/.test(guideHeaderHtml), `${slug} nao deve repetir status como metrica do hero`);
+    assert.strictEqual((guideHeaderHtml.match(/<h1\b/gi) || []).length, 1, `${slug} deve manter um unico H1 no cabecalho`);
+    const headerDecorativeIcons = [...guideHeaderHtml.matchAll(/<i\b[^>]*class="[^"]*\bfa[srlb]?\b[^"]*"[^>]*>/gi)].map(match => match[0]);
+    assert(headerDecorativeIcons.every(icon => /aria-hidden="true"/i.test(icon)), `${slug} deve ocultar icones decorativos do cabecalho da arvore acessivel`);
+    assert(/class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"[^>]*>[\s\S]*?Começar roadmap/.test(guideHeaderHtml), `${slug} deve usar Comecar roadmap como acao principal`);
+    assert(/class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"[^>]*>[\s\S]*?Abrir checklist/.test(guideHeaderHtml), `${slug} deve manter Abrir checklist como acao secundaria`);
+    assert(guideHeaderHtml.includes('atlas-guide-hero__action--tertiary') && guideHeaderHtml.includes('Reportar problema'), `${slug} deve manter biblioteca e feedback como acoes terciarias`);
+    if (seedGame.last_reviewed_at || seedGame.lastReviewedAt) {
+      assert(/atlas-editorial-badge[^>]*>[\s\S]*?Revisado em/.test(guideHeaderHtml), `${slug} deve incorporar a data existente ao badge editorial`);
+    } else {
+      assert(!guideHeaderHtml.includes('Revisado em'), `${slug} nao deve inventar data de revisao no badge editorial`);
+    }
+    const globalLayerNavHtml = html.match(/<nav id="guideLayerNav"[\s\S]*?<\/nav>/)?.[0] || '';
+    const expectedGuideTabs = [
+      ['summary', 'Resumo'],
+      ['roadmap', 'Roadmap'],
+      ['checklist', 'Checklist'],
+      ['extras', 'Extras da Platina'],
+      ['dlcs', 'DLCs e 100%'],
+      ['attention', 'Pontos de atenção']
+    ];
+    assert(globalLayerNavHtml.includes('role="tablist"'), `${slug} deve expor a navegacao principal como tablist`);
+    assert.strictEqual((globalLayerNavHtml.match(/role="tab"/g) || []).length, 6, `${slug} deve manter exatamente seis abas principais`);
+    assert(!/>\s*(?:FAQ|Comentários|Feedback)\s*</.test(globalLayerNavHtml), `${slug} nao deve manter FAQ, Comentarios ou Feedback no tablist`);
+    const tabDecorativeIcons = [...globalLayerNavHtml.matchAll(/<i\b[^>]*>/gi)].map(match => match[0]);
+    assert(tabDecorativeIcons.every(icon => /aria-hidden="true"/i.test(icon)), `${slug} deve ocultar icones decorativos das abas da arvore acessivel`);
+    expectedGuideTabs.forEach(([tab, label], index) => {
+      assert(globalLayerNavHtml.includes(`id="guideTabButton-${tab}"`), `${slug} deve manter id acessivel para a aba ${label}`);
+      assert(globalLayerNavHtml.includes(`href="#guideTab-${tab}"`) && globalLayerNavHtml.includes(`aria-controls="guideTab-${tab}"`), `${slug} deve ligar a aba ${label} ao painel correto`);
+      assert(globalLayerNavHtml.includes(`<span>${label}</span>`), `${slug} deve exibir a aba ${label}`);
+      assert(globalLayerNavHtml.includes(`aria-selected="${index === 0 ? 'true' : 'false'}"`), `${slug} deve expor estado inicial da aba ${label}`);
+      assert(new RegExp(`<section id="guideTab-${tab}"[^>]*data-guide-tab-panel="${tab}"[^>]*role="tabpanel"[^>]*aria-labelledby="guideTabButton-${tab}"`).test(html), `${slug} deve expor o painel acessivel ${label}`);
+    });
+    assert.strictEqual((html.match(/data-guide-tab-panel="(?:summary|roadmap|checklist|extras|dlcs|attention)"/g) || []).length, 6, `${slug} deve manter seis paineis editoriais sem IDs duplicados`);
+    const guideScopedStart = html.indexOf('<main');
+    const guideScopedEnd = guideScopedStart >= 0 ? html.indexOf('</main>', guideScopedStart) : -1;
+    const guidePageHtml = guideScopedStart >= 0 && guideScopedEnd > guideScopedStart ? html.slice(guideScopedStart, guideScopedEnd) : html;
+    const guidePageIds = [...guidePageHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+    const duplicateGuidePageIds = [...new Set(guidePageIds.filter((id, index) => guidePageIds.indexOf(id) !== index))];
+    assert.deepStrictEqual(duplicateGuidePageIds, [], `${slug} nao deve renderizar IDs duplicados no conteudo principal`);
+    assert(!html.includes('id="guideTab-details"'), `${slug} nao deve manter o antigo painel agregado details`);
+    assert(html.indexOf('id="guideFaqSlot"') > html.indexOf('id="guideTab-attention"'), `${slug} deve posicionar FAQ depois dos paineis principais`);
+    assert(html.indexOf('id="guideCommentsSlot"') > html.indexOf('id="guideFaqSlot"'), `${slug} deve posicionar Comentarios fora do tablist e abaixo do FAQ`);
+    if (!seedGame.dlcCompletionGuide) {
+      assert(html.includes('Este guia não possui conteúdo adicional de DLC ou 100% da lista cadastrado.'), `${slug} sem DLC deve manter a aba global com estado vazio coerente`);
+    }
+    if (slug === 'uncharted-legacy-of-thieves-collection') {
+      assert(/atlas-editorial-badge[^>]*>[\s\S]*?Em revisão/.test(guideHeaderHtml), `${slug} deve preservar status editorial diferente de Verificado`);
+      assert(!/atlas-editorial-badge[^>]*>[\s\S]*?Verificado/.test(guideHeaderHtml), `${slug} nao deve promover status editorial em revisao`);
+    }
     if (slug === 'resident-evil-requiem') {
       assertNoRequiemInternalCopy(html);
       assert(html.includes('DLC fora da platina base'), 'Resident Evil Requiem deve exibir DLC fora da platina base');
@@ -1409,6 +1466,7 @@ async function validateGuide(slug = '') {
         .replace(/\s+/g, ' ')
         .trim();
       const guideControllerSource = readProjectFile('public/js/app-guide-controller.js');
+      const guideNavigationSource = `${guideControllerSource}\n${readProjectFile('public/js/ui-guide.js')}`;
       const layerNavHtml = html.match(/<nav id="guideLayerNav"[\s\S]*?<\/nav>/)?.[0] || '';
       const quickPlanHtml = html.match(/<div id="guideQuickPlan" class="atlas-guide-quick-plan"[\s\S]*?<\/ol><\/div>/)?.[0] || '';
       const usagePanelHtml = html.match(/<section id="guideUsagePanel"[\s\S]*?<\/section>/)?.[0] || '';
@@ -1476,7 +1534,7 @@ async function validateGuide(slug = '') {
       assert(html.includes('property="og:image:width" content="460"') && html.includes('property="og:image:height" content="215"'), 'Open Graph deve declarar dimensoes reais da imagem');
       assert(html.includes('name="twitter:card" content="summary_large_image"'), 'Resident Evil 5 deve manter Twitter Card grande');
       assert(/<img[^>]+alt="Capa de Resident Evil 5"[^>]+width="600"[^>]+height="900"/.test(html), 'Capa de Resident Evil 5 deve ter alt e dimensoes definidos');
-      ['resident evil 5', 'guia de platina e troféus', 'ps4', '51 troféus base', 'dlcs não obrigatórias', 'roadmap', 'extras da platina', 'checklist'].forEach(text => {
+      ['resident evil 5', 'guia de platina e troféus', 'ps4', '51 troféus do jogo principal', 'não são necessários para a platina'].forEach(text => {
         assert(mainText.slice(0, 500).toLowerCase().includes(text), `Primeiros 500 caracteres devem sinalizar: ${text}`);
       });
       assert(html.includes('51 troféus') || html.includes('51 trofÃ©us'), 'Resident Evil 5 deve exibir 51 trofeus no topo');
@@ -1484,18 +1542,20 @@ async function validateGuide(slug = '') {
       assert(html.includes('Sem online obrigatório') || html.includes('Sem online obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem online obrigatorio');
       assert(html.includes('Sem coop obrigatório') || html.includes('Sem coop obrigatÃ³rio'), 'Resident Evil 5 deve exibir sem coop obrigatorio');
       [
-        ['Roadmap', 'data-guide-tab-target="roadmap"', 'data-guide-action="roadmap"', 'href="#guideRoadmapPanel"'],
-        ['Checklist', 'data-guide-tab-target="checklist"', 'data-guide-action="trophies"', 'href="#guideChecklistPanel"'],
-        ['Extras da Platina', 'data-guide-tab-target="extras"', 'data-guide-action="extras"', 'href="#guidePlatinumExtrasPanel"'],
-        ['DLCs e 100% da Lista', 'data-guide-tab-target="dlcs"', 'data-guide-action="dlcs"', 'href="#guideDlcCompletionPanel"']
+        ['Resumo', 'data-guide-tab-target="summary"', 'data-guide-action="summary"', 'href="#guideTab-summary"'],
+        ['Roadmap', 'data-guide-tab-target="roadmap"', 'data-guide-action="roadmap"', 'href="#guideTab-roadmap"'],
+        ['Checklist', 'data-guide-tab-target="checklist"', 'data-guide-action="trophies"', 'href="#guideTab-checklist"'],
+        ['Extras da Platina', 'data-guide-tab-target="extras"', 'data-guide-action="extras"', 'href="#guideTab-extras"'],
+        ['DLCs e 100%', 'data-guide-tab-target="dlcs"', 'data-guide-action="dlcs"', 'href="#guideTab-dlcs"'],
+        ['Pontos de atenção', 'data-guide-tab-target="attention"', 'data-guide-action="attention"', 'href="#guideTab-attention"']
       ].forEach(([label, tabTarget, action, href]) => {
         const linkHtml = layerNavHtml.match(new RegExp(`<a[^>]*${tabTarget}[^>]*>[\\s\\S]*?<span>${label}<\\/span>[\\s\\S]*?<\\/a>`))?.[0] || '';
         assert(linkHtml.includes(action) && linkHtml.includes(href), `Navegacao de Resident Evil 5 deve abrir a secao correta: ${label}`);
       });
-      ['roadmap', 'checklist', 'extras', 'dlcs'].forEach(tab => {
+      ['summary', 'roadmap', 'checklist', 'extras', 'dlcs', 'attention'].forEach(tab => {
         assert(guideScopedHtml.includes(`id="guideTab-${tab}"`) && guideScopedHtml.includes(`data-guide-tab-panel="${tab}"`), `Resident Evil 5 deve manter painel unico para a aba ${tab}`);
       });
-      assert.strictEqual((guideScopedHtml.match(/id="guideTab-(?:roadmap|checklist|extras|dlcs)"/g) || []).length, 4, 'Abas principais de Resident Evil 5 nao devem colidir em IDs');
+      assert.strictEqual((guideScopedHtml.match(/id="guideTab-(?:summary|roadmap|checklist|extras|dlcs|attention)"/g) || []).length, 6, 'Abas principais de Resident Evil 5 nao devem colidir em IDs');
       assert(usagePanelHtml.includes('Como usar este guia') && usagePanelHtml.includes('Se você quer... abra...'), 'Resident Evil 5 deve renderizar placa curta de navegacao');
       assert.strictEqual((usagePanelHtml.match(/<li>/g) || []).length, 3, 'Como usar este guia deve manter somente tres orientacoes');
       assert.strictEqual((usagePanelHtml.match(/<tr>/g) || []).length, 10, 'Tabela Se voce quer deve manter cabecalho e nove destinos');
@@ -1532,7 +1592,7 @@ async function validateGuide(slug = '') {
         assert(dlcPanelHtml.includes(`id="${anchorId}"`), `Anchor ${anchorId} deve ficar em DLCs e 100% da Lista`);
         assert(!extrasPanelHtml.includes(`id="${anchorId}"`), `Anchor ${anchorId} nao deve ficar em Extras da Platina`);
         assert(guideInternalHrefs.includes(anchorId), `Resident Evil 5 deve ter link interno para #${anchorId}`);
-        assert(guideControllerSource.includes(anchorId), `Controlador de navegacao deve reconhecer #${anchorId}`);
+        assert(guideNavigationSource.includes(anchorId), `Navegacao compartilhada deve reconhecer #${anchorId}`);
         assert(!re5Sitemap.includes(`#${anchorId}`), `Sitemap nao deve incluir fragmento #${anchorId}`);
       });
       const brokenGuideInternalHrefs = guideInternalHrefs.filter(targetId => !guideIdSet.has(targetId));

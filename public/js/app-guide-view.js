@@ -31,37 +31,13 @@ window.AppGuideView = (() => {
   }
 
   function getGuideTabFromHashLink(hash = '') {
-    const id = String(hash || '').replace(/^#/, '').trim().toLowerCase();
-    const tabByHash = {
-      roadmap: 'roadmap',
-      guideroadmappanel: 'roadmap',
-      guidechapterroutepanel: 'roadmap',
-      guideprofessionalaipanel: 'roadmap',
-      guidefarmroutespanel: 'roadmap',
-      guidecommonmythspanel: 'roadmap',
-      guidequickplan: 'summary',
-      guidesummaryactions: 'summary',
-      guidechecklistpanel: 'checklist',
-      guideplatinumextraspanel: 'extras',
-      guidedlccompletionpanel: 'dlcs',
-      guideattentionpointspanel: 'details',
-      guidefaqpanel: 'details',
-      guideeditorialnotespanel: 'details',
-      guidecommentspanel: 'details',
-      're5-versus-dlc': 'dlcs',
-      're5-lost-in-nightmares-score-stars': 'dlcs',
-      're5-desperate-escape-agitator-majini': 'dlcs'
-    };
-    return tabByHash[id] || '';
+    return window.UI?.resolveGuideTabFromHash?.(hash) || '';
   }
 
   function scrollGuideHashTarget(hash = '') {
     const rawId = String(hash || '').replace(/^#/, '').trim();
     if (!rawId) return;
-    let targetId = rawId;
-    try {
-      targetId = decodeURIComponent(rawId);
-    } catch (_error) {}
+    const targetId = window.UI?.resolveGuideHashTargetId?.(hash) || rawId;
     const element = document.getElementById(targetId);
     if (!element) return;
     const sectionBody = element.matches?.('[data-guide-section-content]')
@@ -121,6 +97,27 @@ window.AppGuideView = (() => {
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
     });
 
+    const activateGuideTabButton = (tabButton, options = {}) => {
+      if (!tabButton) return;
+      const tab = tabButton.dataset.guideTabTarget || tabButton.dataset.guideTabButton || 'summary';
+      const hash = tabButton.getAttribute('href') || `#guideTab-${tab}`;
+      state.activeGuideTab = tab;
+      UI.activateGuideTab?.(tab, { scroll: options.scroll !== false, revealTab: true });
+      if (options.focus) tabButton.focus({ preventScroll: true });
+      if (options.updateHash !== false && hash) {
+        if (window.history?.pushState) window.history.pushState({ guideTab: tab }, '', hash);
+        else window.location.hash = hash;
+      }
+      window.AtlasAnalytics?.trackGuideTabChange?.({
+        gameSlug: state.currentGame?.slug || '',
+        tabName: tab
+      });
+      if (tab === 'checklist') {
+        state.activeFilter = 'all';
+        UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
+      }
+    };
+
     UI.qs('#trophyList')?.addEventListener('click', event => {
       const toggleButton = event.target.closest('[data-trophy-toggle]');
       if (toggleButton) return toggleTrophy(toggleButton.dataset.trophyToggle);
@@ -162,20 +159,30 @@ window.AppGuideView = (() => {
       }
     });
 
-    UI.qs('#view-guide')?.addEventListener('click', async event => {
+    const guideView = UI.qs('#view-guide');
+
+    guideView?.addEventListener('keydown', event => {
+      const currentTab = event.target.closest('#guideLayerNav [role="tab"]');
+      if (!currentTab || !['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) return;
+      const tabs = UI.qsa('#guideLayerNav [role="tab"]');
+      const currentIndex = tabs.indexOf(currentTab);
+      if (currentIndex < 0 || !tabs.length) return;
+      event.preventDefault();
+      const nextIndex = event.key === 'Home'
+        ? 0
+        : event.key === 'End'
+        ? tabs.length - 1
+        : event.key === 'ArrowRight'
+        ? (currentIndex + 1) % tabs.length
+        : (currentIndex - 1 + tabs.length) % tabs.length;
+      activateGuideTabButton(tabs[nextIndex], { focus: true });
+    });
+
+    guideView?.addEventListener('click', async event => {
       const tabButton = event.target.closest('[data-guide-tab-target]');
       if (tabButton) {
         event.preventDefault();
-        state.activeGuideTab = tabButton.dataset.guideTabButton || tabButton.dataset.guideTabTarget || 'summary';
-        UI.activateGuideTab?.(state.activeGuideTab, { scroll: true });
-        window.AtlasAnalytics?.trackGuideTabChange?.({
-          gameSlug: state.currentGame?.slug || '',
-          tabName: state.activeGuideTab
-        });
-        if (state.activeGuideTab === 'trophies') {
-          state.activeFilter = 'all';
-          UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
-        }
+        activateGuideTabButton(tabButton);
         return;
       }
 
@@ -326,14 +333,11 @@ window.AppGuideView = (() => {
       const link = event.target.closest('[data-guide-section-link]');
       if (!link) return;
       const action = link.dataset.guideAction || '';
-      const href = link.getAttribute('href') || '';
       if (action) {
         event.preventDefault();
         focusGuideAction(action);
         if (typeof UI.lockGuideSectionActive === 'function') UI.lockGuideSectionActive(link.dataset.guideSectionLink || '');
         else UI.setGuideSectionActive?.(link.dataset.guideSectionLink || '');
-        if (href && window.history?.pushState) window.history.pushState(null, '', href);
-        else if (href) window.location.hash = href;
       }
       if (link.closest('#guideSectionsPanel')) {
         setGuideSectionsPanelOpen(false);
@@ -350,13 +354,20 @@ window.AppGuideView = (() => {
     const syncHashTarget = () => {
       const hash = window.location.hash || '';
       const tab = getGuideTabFromHashLink(hash);
-      if (!tab) return;
-      state.activeGuideTab = tab;
-      UI.activateGuideTab?.(tab, { scroll: false });
+      if (!hash) {
+        state.activeGuideTab = 'summary';
+        UI.activateGuideTab?.('summary', { scroll: false });
+        return;
+      }
+      if (tab) {
+        state.activeGuideTab = tab;
+        UI.activateGuideTab?.(tab, { scroll: false });
+      }
       window.requestAnimationFrame?.(() => scrollGuideHashTarget(hash)) || window.setTimeout(() => scrollGuideHashTarget(hash), 0);
       window.setTimeout(() => scrollGuideHashTarget(hash), 120);
     };
     window.addEventListener('hashchange', syncHashTarget);
+    window.addEventListener('popstate', syncHashTarget);
     window.setTimeout(syncHashTarget, 0);
 
     UI.qs('#view-guide')?.addEventListener('click', async event => {

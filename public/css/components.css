@@ -277,21 +277,6 @@ select:focus {
   align-items: center;
   gap: 8px;
 }
-.atlas-editorial-trust__date,
-.atlas-editorial-trust__copy,
-.atlas-editorial-alert,
-.atlas-editorial-warning-list {
-  color: rgba(226, 232, 240, .64);
-  font-size: .82rem;
-  line-height: 1.45;
-}
-.atlas-editorial-alert {
-  color: #fde68a;
-}
-.atlas-editorial-warning-list {
-  margin: 0;
-  padding-left: 18px;
-}
 .atlas-badge--verified,
 .atlas-badge--review,
 .atlas-badge--warning {

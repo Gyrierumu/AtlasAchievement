@@ -19,10 +19,7 @@ window.UIGuide = (() => {
     buildTrophyYoutubeSearchUrl,
     buildTrophyYoutubeSearchAriaLabel,
     buildGuideQuickDecisionModel,
-    buildGuideShortcutModel,
-    buildGuideStartContextModel,
     buildGuideSummaryCards,
-    buildGuideRiskAlerts,
     buildGuideBeforeStartItems,
     buildGuideEditorialSummary,
     buildGuideQuickPlan
@@ -33,6 +30,70 @@ window.UIGuide = (() => {
 
   const CHECKLIST_DENSITY_KEY = 'atlas_checklist_density';
   const PLATINUM_EXTRAS_PROGRESS_KEY = 'atlas_platinum_extras_progress_v1';
+  const GUIDE_TAB_BY_HASH = Object.freeze({
+    summary: 'summary',
+    'guidetab-summary': 'summary',
+    guidesummaryactions: 'summary',
+    guidequickplan: 'summary',
+    roadmap: 'roadmap',
+    'guidetab-roadmap': 'roadmap',
+    guideroadmappanel: 'roadmap',
+    guidechapterroutepanel: 'roadmap',
+    guideprofessionalaipanel: 'roadmap',
+    guidefarmroutespanel: 'roadmap',
+    guidecommonmythspanel: 'roadmap',
+    checklist: 'checklist',
+    trophies: 'checklist',
+    'guidetab-checklist': 'checklist',
+    guidechecklistpanel: 'checklist',
+    extras: 'extras',
+    'guidetab-extras': 'extras',
+    guideplatinumextraspanel: 'extras',
+    dlc: 'dlcs',
+    dlcs: 'dlcs',
+    'guidetab-dlcs': 'dlcs',
+    guidedlccompletionpanel: 'dlcs',
+    're5-versus-dlc': 'dlcs',
+    're5-lost-in-nightmares-score-stars': 'dlcs',
+    're5-desperate-escape-agitator-majini': 'dlcs',
+    attention: 'attention',
+    details: 'attention',
+    'guidetab-attention': 'attention',
+    'guidetab-details': 'attention',
+    guideattentionpointspanel: 'attention',
+    guideeditorialnotes: 'attention',
+    guideeditorialnotespanel: 'attention'
+  });
+  const GUIDE_LEGACY_HASH_TARGET = Object.freeze({
+    summary: 'guideTab-summary',
+    checklist: 'guideTab-checklist',
+    trophies: 'guideTab-checklist',
+    extras: 'guideTab-extras',
+    dlc: 'guideTab-dlcs',
+    dlcs: 'guideTab-dlcs',
+    attention: 'guideTab-attention',
+    details: 'guideTab-attention',
+    'guidetab-details': 'guideTab-attention'
+  });
+
+  function decodeGuideHash(hash = '') {
+    const rawHash = String(hash || '').replace(/^#/, '').trim();
+    if (!rawHash) return '';
+    try {
+      return decodeURIComponent(rawHash);
+    } catch (_error) {
+      return rawHash;
+    }
+  }
+
+  function resolveGuideTabFromHash(hash = '') {
+    return GUIDE_TAB_BY_HASH[decodeGuideHash(hash).toLowerCase()] || '';
+  }
+
+  function resolveGuideHashTargetId(hash = '') {
+    const decodedHash = decodeGuideHash(hash);
+    return GUIDE_LEGACY_HASH_TARGET[decodedHash.toLowerCase()] || decodedHash;
+  }
 
   function getPlatinumExtrasProgressKey(game = {}) {
     const slug = String(game?.slug || game?.name || 'guide').trim().toLowerCase().replace(/[^a-z0-9_-]+/g, '-');
@@ -204,15 +265,6 @@ window.UIGuide = (() => {
     return match ? `${match[3]}/${match[2]}/${match[1]}` : text;
   }
 
-  function getGuideEditorialTrustCopy(badge = {}, fallback = '') {
-    const status = String(badge.status || badge.badge || badge.tone || '').trim().toLowerCase();
-    if (status === 'verified') return 'Guia verificado editorialmente.';
-    if (status === 'in_review' || status === 'review') {
-      return 'Guia em revisão editorial. Use com atenção aos pontos sinalizados.';
-    }
-    return fallback || badge.detail || 'Este guia ainda está passando por revisão editorial.';
-  }
-
   function renderEditorialTrustRow(game = {}, viewModel = {}) {
     const badge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
     const reviewedAt = badge.lastReviewedAt || viewModel.editorial?.lastReviewedAt || game.last_reviewed_at || game.lastReviewedAt || '';
@@ -221,16 +273,12 @@ window.UIGuide = (() => {
     const detail = isRequiem && sharedEditorial.getEditorialStatusMessage
       ? sharedEditorial.getEditorialStatusMessage(game, badge)
       : (badge.detail || 'Este guia ainda está passando por revisão editorial.');
-    const trustCopy = getGuideEditorialTrustCopy(badge, detail);
-    const warningItems = isRequiem ? [] : (Array.isArray(viewModel.editorial?.qualityWarnings) ? viewModel.editorial.qualityWarnings : (badge.qualityWarnings || []));
+    const badgeLabel = badge.label || 'Em revisão';
     return `
       <div class="atlas-editorial-trust">
         <div class="atlas-editorial-trust__row">
-          <span class="atlas-editorial-badge atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeAttribute(detail)}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(badge.label || 'Em revisão')}</span>
-          ${reviewedLabel ? `<span class="atlas-editorial-trust__date">Revisado em ${escapeHtml(reviewedLabel)}</span>` : ''}
+          <span class="atlas-editorial-badge atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeAttribute(detail)}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(`${badgeLabel}${reviewedLabel ? ` · Revisado em ${reviewedLabel}` : ''}`)}</span>
         </div>
-        <p class="${badge.critical ? 'atlas-editorial-alert' : 'atlas-editorial-trust__copy'}">${escapeHtml(trustCopy)}</p>
-        ${warningItems.length ? `<ul class="atlas-editorial-warning-list">${warningItems.slice(0, 3).map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
       </div>`;
   }
 
@@ -599,6 +647,30 @@ window.UIGuide = (() => {
     return 'Consulte este troféu junto do roadmap e dos pontos de atenção antes de avançar.';
   }
 
+  function getGuideHeroStatId(item = {}) {
+    const explicitId = String(item.id || '').trim().toLowerCase();
+    if (['time', 'difficulty', 'missables', 'online', 'coop', 'dlc'].includes(explicitId)) return explicitId;
+    const label = String(item.label || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim()
+      .toLowerCase();
+    if (label.startsWith('tempo')) return 'time';
+    if (label.startsWith('dificuldade')) return 'difficulty';
+    if (label.startsWith('perdiveis')) return 'missables';
+    if (label.startsWith('online')) return 'online';
+    if (label.startsWith('coop') || label.startsWith('co-op')) return 'coop';
+    if (label.startsWith('dlc')) return 'dlc';
+    return '';
+  }
+
+  function normalizeGuideHeroStats(items = []) {
+    return (Array.isArray(items) ? items : [])
+      .map(item => ({ ...item, id: getGuideHeroStatId(item) }))
+      .filter(item => item.id && String(item.value || '').trim())
+      .filter(item => !/informação em revisão|informacao em revisao|não informado|nao informado/i.test(String(item.value || '')));
+  }
+
   function buildGuideHeroStats(game = {}, viewModel = {}) {
     const quickDecision = typeof buildGuideQuickDecisionModel === 'function' ? buildGuideQuickDecisionModel(game, viewModel) : null;
     if (quickDecision?.cards?.length) {
@@ -608,10 +680,9 @@ window.UIGuide = (() => {
         missables: 'Perdíveis',
         online: 'Online',
         coop: 'Coop',
-        dlc: 'DLC',
-        editorial: 'Status'
+        dlc: 'DLC'
       };
-      return ['time', 'difficulty', 'missables', 'online', 'coop', 'dlc', 'editorial']
+      return normalizeGuideHeroStats(['time', 'difficulty', 'missables', 'online', 'coop', 'dlc']
         .map(id => quickDecision.cards.find(card => card?.id === id))
         .filter(Boolean)
         .map(card => ({
@@ -631,37 +702,26 @@ window.UIGuide = (() => {
                 ? 'DLC fora da platina base'
                 : card.id === 'dlc' && /sem dlcs?|base game|não necessária|nao necessaria/i.test(`${card.value || ''} ${card.detail || ''}`)
                 ? 'Base game sem DLCs'
-                : card.value
-        }));
+              : card.value
+          })));
     }
     if (typeof buildGuideSummaryCards === 'function') {
       const cards = buildGuideSummaryCards(game, viewModel);
       const compactLabels = new Set(['Tempo estimado', 'Tempo', 'Dificuldade', 'Perdíveis', 'Online', 'Coop', 'DLC']);
-      const compactCards = cards.filter(item => compactLabels.has(item.label));
-      const statusCard = cards.find(item => ['Status', 'Status editorial'].includes(item.label));
+      const compactCards = normalizeGuideHeroStats(cards.filter(item => compactLabels.has(item.label)));
       if (compactCards.length) {
-        const heroCards = compactCards.slice(0, 6);
-        if (statusCard && !heroCards.some(item => ['Status', 'Status editorial'].includes(item.label))) {
-          heroCards.push({ ...statusCard, label: 'Status' });
-        }
-        return heroCards.slice(0, 7);
+        return compactCards.slice(0, 6);
       }
       const essentials = new Set(['Tempo estimado', 'Tempo', 'Dificuldade', 'Perdíveis', 'Online', 'Coop', 'DLC']);
-      const fallbackCards = buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label)).slice(0, 6);
-      if (statusCard && !fallbackCards.some(item => ['Status', 'Status editorial'].includes(item.label))) {
-        fallbackCards.push({ ...statusCard, label: 'Status' });
-      }
-      return fallbackCards.slice(0, 7);
+      return normalizeGuideHeroStats(buildGuideSummaryCards(game, viewModel).filter(item => essentials.has(item.label))).slice(0, 6);
     }
     if (typeof sharedEditorial.buildGuideHeroStats === 'function') {
-      return sharedEditorial.buildGuideHeroStats(game, viewModel);
+      return normalizeGuideHeroStats(sharedEditorial.buildGuideHeroStats(game, viewModel));
     }
-    return [
-      { icon: 'fa-gauge-high', label: 'Dificuldade', value: `${String(game?.difficulty || '-')}/10`, tone: getDifficultyToneClass(game?.difficulty) },
-      { icon: 'fa-clock', label: 'Tempo', value: game?.time || 'Tempo não informado', tone: 'atlas-meta-signal--time' },
-      { icon: 'fa-trophy', label: 'Troféus', value: `${String(viewModel.total || 0)} ${Number(viewModel.total || 0) === 1 ? 'troféu' : 'troféus'}`, tone: 'atlas-meta-signal--trophy' },
-      { icon: 'fa-route', label: 'Roadmap', value: `${String(getGuideRoadmapCount(game, viewModel))} etapa(s)`, tone: 'atlas-meta-signal--partial' }
-    ];
+    return normalizeGuideHeroStats([
+      game?.time ? { id: 'time', icon: 'fa-clock', label: 'Tempo', value: game.time, tone: 'atlas-meta-signal--time' } : null,
+      Number(game?.difficulty) ? { id: 'difficulty', icon: 'fa-gauge-high', label: 'Dificuldade', value: `${String(game.difficulty)}/10`, tone: getDifficultyToneClass(game.difficulty) } : null
+    ].filter(Boolean));
   }
 
   function getGuideHeroRouteTextFromContent(game = {}, viewModel = {}) {
@@ -719,18 +779,18 @@ window.UIGuide = (() => {
 
   function renderGuideHeroPrimaryAction(action = {}) {
     if (action.save) {
-      return `<button type="button" class="atlas-btn atlas-btn-primary" data-toggle-save-game="true"><i class="fas ${escapeAttribute(action.icon || 'fa-bookmark')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Salvar na biblioteca')}</button>`;
+      return `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-muted-action atlas-guide-hero__action--tertiary" data-toggle-save-game="true"><i class="fas ${escapeAttribute(action.icon || 'fa-bookmark')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Salvar na biblioteca')}</button>`;
     }
-    return `<button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="${escapeAttribute(action.action || 'roadmap')}"><i class="fas ${escapeAttribute(action.icon || 'fa-play')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Continuar guia')}</button>`;
+    return `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-muted-action atlas-guide-hero__action--tertiary" data-guide-action="${escapeAttribute(action.action || 'roadmap')}"><i class="fas ${escapeAttribute(action.icon || 'fa-play')}" aria-hidden="true"></i>${escapeHtml(action.label || 'Continuar guia')}</button>`;
   }
 
   function renderGuideQuickActions(primaryAction = {}) {
     return `
       <div class="atlas-guide-hero__actions" aria-label="Ações rápidas do guia">
-        ${renderGuideHeroPrimaryAction(primaryAction)}
-        <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Ver roadmap</button>
+        <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Começar roadmap</button>
         <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
-        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-soft-danger" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
+        ${renderGuideHeroPrimaryAction(primaryAction)}
+        <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-muted-action atlas-guide-hero__action--tertiary atlas-guide-hero__action--report" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
       </div>`;
   }
 
@@ -1226,7 +1286,11 @@ window.UIGuide = (() => {
 
   function renderGuidePlatinumExtrasPanel(game = {}) {
     const extras = getGuidePlatinumExtras(game);
-    if (!extras) return '';
+    if (!extras) return `
+      <section id="guidePlatinumExtrasPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-4">
+        <div><div class="atlas-eyebrow">Platina base</div><h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Extras da Platina</h2></div>
+        <p class="atlas-muted-copy">Este guia não possui checklists adicionais da platina cadastrados.</p>
+      </section>`;
     const intro = extras.introduction || 'Esta aba reúne os checklists detalhados da platina base. DLCs ficam fora da platina base e devem ser tratados separadamente.';
     return `
       <section id="guidePlatinumExtrasPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
@@ -1377,7 +1441,11 @@ window.UIGuide = (() => {
 
   function renderGuideDlcCompletionPanel(game = {}) {
     const dlcGuide = getGuideDlcCompletion(game);
-    if (!dlcGuide) return '';
+    if (!dlcGuide) return `
+      <section id="guideDlcCompletionPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-4">
+        <div><div class="atlas-eyebrow">Conteúdo pós-platina</div><h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">DLCs e 100% da Lista</h2></div>
+        <p class="atlas-muted-copy">Este guia não possui conteúdo adicional de DLC ou 100% da lista cadastrado.</p>
+      </section>`;
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const isResidentEvil2 = normalizedSlug === 'resident-evil-2-remake';
     const baseTrophies = Number(dlcGuide.baseTrophies || 51);
@@ -1635,20 +1703,6 @@ window.UIGuide = (() => {
       .map(item => item.length > 120 ? `${item.slice(0, 117).trim()}...` : item);
   }
 
-  function renderGuideInternalNav() {
-    const items = [
-      { action: 'header', href: '#guideHeader', icon: 'fa-compass', label: 'Resumo' },
-      { action: 'roadmap', href: '#guideRoadmapPanel', icon: 'fa-route', label: 'Roadmap' },
-      { action: 'trophies', href: '#guideChecklistPanel', icon: 'fa-list-check', label: 'Checklist' },
-      { action: 'risks', href: '#guideRiskSummaryPanel', icon: 'fa-triangle-exclamation', label: 'Alertas' },
-      { action: 'related', href: '#guideRelatedPanel', icon: 'fa-layer-group', label: 'Relacionados' }
-    ];
-    return `
-      <nav id="guideInternalNav" class="atlas-guide-nav" aria-label="Navegação interna do guia">
-        ${items.map(item => `<a class="atlas-guide-nav__link" href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}"><i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i><span>${escapeHtml(item.label)}</span></a>`).join('')}
-      </nav>`;
-  }
-
   function renderGuideRoadmapPanel(viewModel = {}) {
     const roadmapStages = Array.isArray(viewModel.roadmapStages) ? viewModel.roadmapStages : [];
     return `
@@ -1668,155 +1722,6 @@ window.UIGuide = (() => {
           ${roadmapStages.length >= 4 ? '<div class="atlas-guide-return-row"><button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button></div>' : ''}
         </div>
       </section>`;
-  }
-
-  function renderGuidePlatinumSummaryPanel(game = {}, viewModel = {}) {
-    const quickDecision = typeof buildGuideQuickDecisionModel === 'function' ? buildGuideQuickDecisionModel(game, viewModel) : null;
-    const cards = quickDecision?.cards?.length
-      ? quickDecision.cards
-      : (typeof buildGuideSummaryCards === 'function' ? buildGuideSummaryCards(game, viewModel) : buildGuideHeroStats(game, viewModel));
-    const decisionCards = cards.filter(card => ['missables', 'online', 'coop', 'dlc'].includes(card?.id)).slice(0, 4);
-    const visibleCards = decisionCards.length ? decisionCards : cards.slice(0, 4);
-    const firstAction = quickDecision?.firstAction || {
-      label: 'Primeiro passo recomendado',
-      title: viewModel.nextActionModel?.title || 'Abra o roadmap antes da checklist',
-      detail: viewModel.nextActionModel?.detail || 'Abra o roadmap antes da checklist para entender a ordem da platina.',
-      icon: 'fa-route',
-      focus: 'roadmap'
-    };
-    return `
-      <section id="guidePlatinumSummaryPanel" class="atlas-panel atlas-panel--section atlas-platinum-summary atlas-quick-decision p-5 md:p-6">
-        <div class="atlas-section-head atlas-section-head--compact">
-          <div>
-            <div class="atlas-eyebrow">Decisão rápida</div>
-            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">O que você precisa saber antes de começar essa platina</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">Tempo, dificuldade, perdíveis, online, coop, DLC e confiança editorial em uma leitura rápida.</p>
-          </div>
-        </div>
-        <div class="atlas-platinum-summary__grid" aria-label="Resumo essencial da platina">
-          ${visibleCards.map(card => `<article id="guideQuickCard-${escapeAttribute(card.id || '')}" class="atlas-platinum-summary__card ${escapeAttribute(card.tone || '')}" title="${escapeAttribute(card.detail || '')}"><i class="fas ${escapeAttribute(card.icon || 'fa-circle-info')}" aria-hidden="true"></i><div><span>${escapeHtml(card.label)}</span><strong>${escapeHtml(card.value)}</strong><p>${escapeHtml(card.detail || '')}</p></div></article>`).join('')}
-        </div>
-        <div class="atlas-quick-decision__actions">
-          <article class="atlas-quick-decision-callout atlas-quick-decision-callout--action">
-            <i class="fas ${escapeAttribute(firstAction.icon || 'fa-route')}" aria-hidden="true"></i>
-            <div>
-              <span>${escapeHtml(firstAction.label || 'Primeiro passo recomendado')}</span>
-              <strong>${escapeHtml(firstAction.title || 'Abra o roadmap antes da checklist')}</strong>
-              <p>${escapeHtml(firstAction.detail || '')}</p>
-              <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-action="${escapeAttribute(firstAction.focus || 'roadmap')}">Ir para este ponto</button>
-            </div>
-          </article>
-        </div>
-      </section>`;
-  }
-
-  function renderGuideShortcuts(game = {}, viewModel = {}) {
-    const items = typeof buildGuideShortcutModel === 'function' ? buildGuideShortcutModel(game, viewModel) : [];
-    if (!items.length) return '';
-    return `
-      <nav id="guideShortcutPanel" class="atlas-guide-shortcuts atlas-panel atlas-panel--section" aria-label="Atalhos do guia">
-        <div class="atlas-guide-shortcuts__head">
-          <span class="atlas-eyebrow">Atalhos do guia</span>
-          <p>Vá direto ao ponto sem reler a página inteira.</p>
-        </div>
-        <div class="atlas-guide-shortcuts__chips">
-          ${items.map(item => `<a class="atlas-guide-shortcut" href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}"><i class="fas ${escapeAttribute(item.icon || 'fa-circle-info')}" aria-hidden="true"></i><span>${escapeHtml(item.label)}</span></a>`).join('')}
-        </div>
-      </nav>`;
-  }
-
-  function renderGuideStartContextPanel(game = {}, viewModel = {}) {
-    const model = typeof buildGuideStartContextModel === 'function' ? buildGuideStartContextModel(game, viewModel) : null;
-    if (!model) return '';
-    return `
-      <section id="guideStartContextPanel" class="atlas-panel atlas-panel--section atlas-guide-start-context p-5 md:p-6">
-        <div class="atlas-section-head atlas-section-head--compact">
-          <div>
-            <div class="atlas-eyebrow">${escapeHtml(model.title || 'Antes de começar')}</div>
-            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Plano geral antes do roadmap</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(model.detail || 'Use esta seção para entender o plano geral antes de seguir o roadmap.')}</p>
-          </div>
-        </div>
-        <div class="atlas-guide-start-context__grid">
-          ${(model.items || []).map(item => `
-            <article class="atlas-guide-context-chip atlas-guide-context-chip--${escapeAttribute(item.tone || 'neutral')}">
-              <i class="fas ${escapeAttribute(item.icon || 'fa-circle-info')}" aria-hidden="true"></i>
-              <div>
-                <span>${escapeHtml(item.label || 'Contexto')}</span>
-                <p>${escapeHtml(item.text || '')}</p>
-              </div>
-            </article>
-          `).join('')}
-        </div>
-      </section>`;
-  }
-
-  function renderGuideRiskAlertsPanel(game = {}, viewModel = {}) {
-    const alerts = typeof buildGuideRiskAlerts === 'function' ? buildGuideRiskAlerts(game, viewModel) : [];
-    const beforeItems = Array.isArray(viewModel.beforeStartItems) && viewModel.beforeStartItems.length
-      ? viewModel.beforeStartItems
-      : (typeof buildGuideBeforeStartItems === 'function' ? buildGuideBeforeStartItems(game, viewModel) : []);
-    if (!alerts.length && !beforeItems.length) return '';
-    return `
-      <section id="guideRiskSummaryPanel" class="atlas-panel atlas-panel--section atlas-guide-risk-summary p-5 md:p-6">
-        <div class="atlas-section-head atlas-section-head--compact">
-          <div>
-            <div class="atlas-eyebrow">Leia antes de começar</div>
-            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Alertas que mudam a rota da platina</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">Confirme estes sinais antes da primeira sessão. Eles dizem se você deve priorizar roadmap, online, grind, NG+ ou cleanup antes de abrir a lista completa.</p>
-          </div>
-          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(beforeItems.length || alerts.length))} sinal(is)</span>
-        </div>
-        ${beforeItems.length ? `<div class="atlas-guide-before-grid">
-          ${beforeItems.map(item => `
-            <article class="atlas-guide-before-card atlas-guide-before-card--${escapeAttribute(item.tone || 'neutral')}">
-              <i class="fas ${escapeAttribute(item.icon || 'fa-circle-info')}" aria-hidden="true"></i>
-              <div>
-                <span>${escapeHtml(item.label || 'Sinal')}</span>
-                <strong>${escapeHtml(item.title || 'Revise antes de começar')}</strong>
-                <p>${escapeHtml(item.detail || '')}</p>
-              </div>
-            </article>
-          `).join('')}
-        </div>` : ''}
-        ${alerts.length ? `
-        <div class="atlas-guide-risk-subhead">
-          <span>Alertas detalhados</span>
-        </div>
-        <div class="atlas-guide-risk-grid">
-          ${alerts.map(alert => `
-            <article class="atlas-guide-risk-card atlas-guide-risk-card--${escapeAttribute(alert.tone || 'neutral')}">
-              <i class="fas ${escapeAttribute(alert.icon || 'fa-circle-info')}" aria-hidden="true"></i>
-              <div>
-                <span>${escapeHtml(alert.label || 'Alerta')}</span>
-                <strong>${escapeHtml(alert.title || 'Revise este ponto.')}</strong>
-                <p>${escapeHtml(alert.detail || '')}</p>
-              </div>
-            </article>
-          `).join('')}
-        </div>
-        ` : ''}
-      </section>`;
-  }
-
-  function renderGuideDecisionStack(game = {}, viewModel = {}) {
-    const verdict = buildThirtySecondVerdict(game, viewModel);
-    return `
-      <section id="guideVerdictPanel" class="atlas-panel atlas-panel--primary atlas-editorial-band p-5 md:p-6">
-        <div class="atlas-editorial-band__intro">
-          <div>
-            <div class="atlas-eyebrow">Veredito de 30 segundos</div>
-            <h2>O custo da platina em leitura rápida</h2>
-            <p>${escapeHtml(verdict.summary)}</p>
-          </div>
-          <button type="button" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-guide-action="${escapeAttribute(viewModel.nextActionModel?.focus === 'risks' ? 'risks' : 'trophies')}"><i class="fas ${escapeAttribute(viewModel.nextActionModel?.focus === 'risks' ? 'fa-triangle-exclamation' : 'fa-list-check')}"></i> ${escapeHtml(viewModel.nextActionModel?.focus === 'risks' ? 'Ler alertas e roadmap' : 'Ir para checklist')}</button>
-        </div>
-        <div class="atlas-verdict-strip" aria-label="Resumo rápido da platina">
-          ${verdict.cards.map(card => `<article class="atlas-verdict-strip__item ${escapeAttribute(card.tone || '')}" title="${escapeAttribute(card.detail || '')}"><span>${escapeHtml(card.label)}</span><strong>${escapeHtml(card.value)}</strong><p>${escapeHtml(card.detail)}</p></article>`).join('')}
-        </div>
-      </section>
-      ${renderGuideRiskAlertsPanel(game, viewModel)}
-      ${renderGuideInternalNav()}`;
   }
 
   function renderGuideRiskAlertsPanelV2(game = {}, viewModel = {}) {
@@ -1878,22 +1783,14 @@ window.UIGuide = (() => {
   }
 
   function getGuideLayerNavItems(game = {}) {
-    const byId = new Map(getGuideSectionRegistry(game).map(item => [item.id, item]));
-    return ['summary', 'roadmap', 'checklist', 'extras', 'dlcs', 'attention', 'faq', 'comments']
-      .map(id => {
-        const item = byId.get(id);
-        if (!item) return null;
-        return {
-          id: item.id,
-          tabTarget: item.tabTarget,
-          icon: item.icon,
-          label: item.shortLabel || item.label,
-          action: item.action,
-          href: item.id === 'roadmap' ? '#guideRoadmapPanel' : item.href
-        };
-      })
-      .filter(Boolean)
-      .concat([{ id: 'feedback', icon: 'fa-flag', label: 'Feedback', action: 'feedback', href: '#guideFeedbackSlot' }]);
+    return [
+      { id: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary' },
+      { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap' },
+      { id: 'checklist', icon: 'fa-list-check', label: 'Checklist', action: 'trophies' },
+      { id: 'extras', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras' },
+      { id: 'dlcs', icon: 'fa-puzzle-piece', label: 'DLCs e 100%', action: 'dlcs' },
+      { id: 'attention', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention' }
+    ].map(item => ({ ...item, tabTarget: item.id, href: `#guideTab-${item.id}` }));
   }
 
   function renderGuideSectionLinks(sections = [], options = {}) {
@@ -1952,9 +1849,9 @@ window.UIGuide = (() => {
   function renderGuideLayerNav(game = {}) {
     const items = getGuideLayerNavItems(game);
     return `
-      <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Seções do guia">
+      <nav id="guideLayerNav" class="atlas-guide-layer-nav" role="tablist" aria-label="Seções principais do guia" aria-orientation="horizontal">
         ${items.map((item, index) => `
-          <a class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}"${item.tabTarget ? ` data-guide-tab-target="${escapeAttribute(item.tabTarget)}"` : ''} data-guide-tab-button="${escapeAttribute(item.id)}" aria-current="${index === 0 ? 'true' : 'false'}">
+          <a id="guideTabButton-${escapeAttribute(item.id)}" class="atlas-guide-layer-nav__button${index === 0 ? ' is-active' : ''}" href="${escapeAttribute(item.href)}" role="tab" data-guide-action="${escapeAttribute(item.action)}" data-guide-tab-target="${escapeAttribute(item.tabTarget)}" data-guide-tab-button="${escapeAttribute(item.id)}" aria-controls="guideTab-${escapeAttribute(item.id)}" aria-selected="${index === 0 ? 'true' : 'false'}" tabindex="${index === 0 ? '0' : '-1'}">
             <i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i>
             <span>${escapeHtml(item.label)}</span>
           </a>
@@ -2117,9 +2014,7 @@ window.UIGuide = (() => {
   }
 
   function renderGuideDecisionStackV2(game = {}, viewModel = {}) {
-    return `
-      ${renderGuideLayerNav(game)}
-      ${renderGuideUsagePanel(game)}`;
+    return renderGuideUsagePanel(game);
   }
 
   function renderGuideSidebarCompact(game = {}, viewModel = {}, context = {}) {
@@ -2212,7 +2107,6 @@ window.UIGuide = (() => {
     const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
-    const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
     const sectionCopy = normalizedSlug === 'resident-evil-2-remake'
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade, platina base e conteúdos adicionais necessários para o 100% da lista.'
       : normalizedSlug === 'the-last-of-us-part-ii'
@@ -2220,21 +2114,27 @@ window.UIGuide = (() => {
       : ['resident-evil-requiem', 'resident-evil-4-remake', 'resident-evil-5', 'resident-evil-6', 'hades', 'ghost-of-tsushima', 'god-of-war', 'god-of-war-2018', 'hades-ii', 'astro-bot', 'pragmata', 'saros', 'nioh-2', 'nioh-3', 'the-last-of-us-part-i'].includes(normalizedSlug)
       ? 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da lista base.'
       : 'Respostas rápidas sobre perdíveis, online, coop, tempo, dificuldade e DLC da platina base.';
-    return `
-      <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6">
+    const attentionIntro = normalizedSlug === 'monster-hunter-world'
+      ? 'Online, multiplayer, Guild Cards, gold crowns, RNG, endemic life e Iceborne separado que merecem acompanhamento durante a platina.'
+      : normalizedSlug === 'metaphor-refantazio'
+      ? 'Calendário, Followers, quests, debates, livros, receitas, Archetypes e New Game+ que merecem acompanhamento durante a platina.'
+      : normalizedSlug === 'little-nightmares-ii'
+      ? 'Glitching Remains, chapéus, Chapter Select, misc por capítulo e DLC extra que merecem acompanhamento durante a platina.'
+      : normalizedSlug === 'reanimal'
+      ? 'Coffins, Hidden Statues, Sheep Mask, Chapter Replay, coop opcional e DLC extra que merecem acompanhamento durante a platina.'
+      : normalizedSlug === 'avatar-frontiers-of-pandora'
+      ? 'Alertas de exploração, DLCs separadas e objetivos de mapa que merecem acompanhamento durante a platina.'
+      : 'Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.';
+    const attention = `
+      <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6" aria-labelledby="guideAttentionTitle">
         <div class="atlas-section-head atlas-section-head--compact">
-          <div>
-            ${normalizedSlug === 'resident-evil-2-remake' ? '' : `<span class="atlas-section-kicker">${normalizedSlug === 'resident-evil-5' ? 'Observações finais' : 'Notas editoriais'}</span>`}
-            <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2>
-            <p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p>
-          </div>
-          <span class="atlas-tag atlas-tag--soft">${escapeHtml(statusBadge.label || 'Notas de apoio')}</span>
+          <div><span class="atlas-section-kicker">Antes de avançar</span><h2 id="guideAttentionTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Pontos de atenção</h2><p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(attentionIntro)}</p></div>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(routeTrophies.length || 0))} alerta(s)</span>
         </div>
         <div class="atlas-editorial-notes__grid">
           <details id="guideAttentionPointsPanel" class="atlas-editorial-note" open>
-            <summary><span>Pontos de atenção</span><small>${escapeHtml(String(routeTrophies.length || 0))}</small></summary>
+            <summary><span>Alertas da rota</span><small>${escapeHtml(String(routeTrophies.length || 0))}</small></summary>
             <div class="atlas-editorial-notes__column">
-            <p class="atlas-muted-copy">${normalizedSlug === 'monster-hunter-world' ? 'Online, multiplayer, Guild Cards, gold crowns, RNG, endemic life e Iceborne separado que merecem acompanhamento durante a platina.' : (normalizedSlug === 'metaphor-refantazio' ? 'Calendário, Followers, quests, debates, livros, receitas, Archetypes e New Game+ que merecem acompanhamento durante a platina.' : (normalizedSlug === 'little-nightmares-ii' ? 'Glitching Remains, chapéus, Chapter Select, misc por capítulo e DLC extra que merecem acompanhamento durante a platina.' : (normalizedSlug === 'reanimal' ? 'Coffins, Hidden Statues, Sheep Mask, Chapter Replay, coop opcional e DLC extra que merecem acompanhamento durante a platina.' : (normalizedSlug === 'avatar-frontiers-of-pandora' ? 'Alertas de exploração, DLCs separadas e objetivos de mapa que merecem acompanhamento durante a platina.' : 'Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.'))))}</p>
             ${routeTrophies.length ? routeTrophies.map(item => {
               const badge = Array.isArray(item.tags) && item.tags.length ? item.tags[0] : null;
               return `<article class="atlas-critical-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeAttribute(badge?.tone || 'neutral')}">${escapeHtml(item.type || badge?.label || '')}</span></article>`;
@@ -2243,23 +2143,18 @@ window.UIGuide = (() => {
           </details>
           <details class="atlas-editorial-note atlas-editorial-note--quiet">
             <summary><span>Confiança editorial</span><small>Metodologia</small></summary>
-            <div class="atlas-editorial-notes__column atlas-editorial-notes__column--quiet">
-            <strong>${escapeHtml(viewModel.snapshot.confidence.label)}</strong>
-            <p>${escapeHtml(viewModel.snapshot.confidence.detail)}</p>
-            <p>${escapeHtml(playerFit.fit[0] || 'Para quem quer validar custo, risco e ordem antes de começar.')}</p>
-            <p>${escapeHtml(methodItems[0] || viewModel.editorial.methodSummary)}</p>
-            </div>
-          </details>
-          <details id="guideFaqPanel" class="atlas-editorial-note">
-            <summary><span>FAQ</span><small>${escapeHtml(String(faqItems.length || 0))}</small></summary>
-            <div class="atlas-editorial-notes__column">
-            <div class="atlas-faq-list">
-              ${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></article>`).join('')}
-            </div>
-            </div>
+            <div class="atlas-editorial-notes__column atlas-editorial-notes__column--quiet"><strong>${escapeHtml(viewModel.snapshot.confidence.label)}</strong><p>${escapeHtml(viewModel.snapshot.confidence.detail)}</p><p>${escapeHtml(playerFit.fit[0] || 'Para quem quer validar custo, risco e ordem antes de começar.')}</p><p>${escapeHtml(methodItems[0] || viewModel.editorial.methodSummary)}</p></div>
           </details>
         </div>
       </section>`;
+    const faq = `
+      <section id="guideFaqPanel" class="atlas-panel atlas-panel--support atlas-guide-faq-section p-5 md:p-6" aria-labelledby="guideFaqTitle">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div><span class="atlas-section-kicker">Consulta rápida</span><h2 id="guideFaqTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2><p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p></div>
+        </div>
+        <div class="atlas-faq-list">${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></article>`).join('')}</div>
+      </section>`;
+    return { attention, faq };
   }
 
   function getGuideCoverModel(game = {}, viewModel = {}) {
@@ -2294,13 +2189,15 @@ window.UIGuide = (() => {
     const guideEyebrow = 'Resumo rápido do guia';
     const verdict = buildThirtySecondVerdict(game, viewModel);
     const heroStats = buildGuideHeroStats(game, viewModel);
+    const primaryStats = heroStats.filter(item => ['time', 'difficulty', 'missables', 'online'].includes(item.id));
+    const secondaryStats = heroStats.filter(item => ['coop', 'dlc'].includes(item.id));
     const routeModel = buildGuideHeroRouteModel(game, viewModel);
     const primaryAction = buildGuideHeroPrimaryAction(viewModel);
     const scopeModel = viewModel.scopeModel || {};
-    const isResidentEvil5 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
-    const subtitle = isResidentEvil5
-      ? 'Guia de platina e troféus de Resident Evil 5 no PS4, com roadmap e checklist dos 51 troféus base. DLCs não obrigatórias ficam na seção DLCs e 100% da Lista; Extras da Platina detalha a lista base.'
-      : (scopeModel.subtitle || 'Guia de troféus e roadmap da platina');
+    const explicitEditorialSummary = Array.isArray(game?.editorial_summary)
+      ? game.editorial_summary.map(item => String(item || '').trim()).find(Boolean)
+      : '';
+    const editorialSummary = String(explicitEditorialSummary || verdict.summary || viewModel.decisionModel?.verdictDetail || scopeModel.subtitle || '').trim();
     return `
       <section class="atlas-panel atlas-panel--primary atlas-guide-hero p-5 md:p-6">
         <div class="atlas-guide-hero__layout">
@@ -2311,8 +2208,7 @@ window.UIGuide = (() => {
             </div>
             <h1>${escapeHtml(buildGameGuideH1(game))}</h1>
             ${renderEditorialTrustRow(game, viewModel)}
-            <p class="atlas-guide-hero__subtitle">${escapeHtml(subtitle)}</p>
-            <p class="atlas-guide-hero__summary" hidden>${escapeHtml(verdict.summary || viewModel.decisionModel.verdictDetail)}</p>
+            ${editorialSummary ? `<p class="atlas-guide-hero__summary">${escapeHtml(editorialSummary)}</p>` : ''}
             <div class="atlas-guide-start-card">
               <div>
                 <span>Melhor rota</span>
@@ -2320,9 +2216,8 @@ window.UIGuide = (() => {
                 ${routeModel.detail ? `<p>${escapeHtml(routeModel.detail)}</p>` : ''}
               </div>
             </div>
-            <div class="atlas-guide-hero__facts">
-              ${heroStats.map(item => `<span class="atlas-meta-signal ${escapeAttribute(item.tone || 'atlas-meta-signal--partial')}" title="${escapeAttribute(item.detail || '')}"><i class="fas ${escapeAttribute(item.icon)}"></i><small>${escapeHtml(item.label)}</small><strong>${escapeHtml(item.value)}</strong></span>`).join('')}
-            </div>
+            ${primaryStats.length ? `<div class="atlas-guide-hero__facts" aria-label="Métricas principais do guia">${primaryStats.map(item => `<span class="atlas-meta-signal ${escapeAttribute(item.tone || 'atlas-meta-signal--partial')}" title="${escapeAttribute(item.detail || '')}"><i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i><small>${escapeHtml(item.label)}</small><strong>${escapeHtml(item.value)}</strong></span>`).join('')}</div>` : ''}
+            ${secondaryStats.length ? `<div class="atlas-guide-hero__secondary-meta" aria-label="Metadados adicionais do guia">${secondaryStats.map(item => `<span title="${escapeAttribute(item.detail || '')}"><i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i><small>${escapeHtml(item.label)}</small><strong>${escapeHtml(item.value)}</strong></span>`).join('')}</div>` : ''}
             ${renderGuideQuickActions(primaryAction)}
           </div>
         </div>
@@ -2384,8 +2279,8 @@ window.UIGuide = (() => {
             <h3 class="atlas-card__title">${escapeHtml(model?.name || game?.name || 'Jogo')}</h3>
             <p class="atlas-card__reason">${escapeHtml(shortReason)}</p>
             <div class="atlas-card__meta">
-              <span class="atlas-meta-signal ${escapeAttribute(difficultyClass)}"><i class="fas fa-gauge-high"></i>${escapeHtml(model?.difficulty || String(game?.difficulty || '-'))}/10</span>
-              <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock"></i>${escapeHtml(model?.time || game?.time || 'Tempo não informado')}</span>
+              <span class="atlas-meta-signal ${escapeAttribute(difficultyClass)}"><i class="fas fa-gauge-high" aria-hidden="true"></i>${escapeHtml(model?.difficulty || String(game?.difficulty || '-'))}/10</span>
+              <span class="atlas-meta-signal atlas-meta-signal--time"><i class="fas fa-clock" aria-hidden="true"></i>${escapeHtml(model?.time || game?.time || 'Tempo não informado')}</span>
             </div>
             <div class="atlas-card__actions">
               <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-btn-compact" data-home-game="${escapeAttribute(game?.name || '')}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeAttribute(model?.name || game?.name || 'Jogo')}">Abrir guia de ${escapeHtml(model?.name || game?.name || 'Jogo')}</a>
@@ -2416,9 +2311,40 @@ window.UIGuide = (() => {
       </section>`;
   }
 
+  let guideNavigationResizeObserver = null;
+  let guideNavigationResizeBound = false;
+
+  function syncGuideNavigationOffsets() {
+    if (typeof document === 'undefined') return;
+    const root = document.documentElement;
+    const topbar = document.querySelector('.atlas-topbar');
+    const tabs = qs('#guideLayerNav');
+    const topbarHeight = Math.ceil(topbar?.getBoundingClientRect?.().height || 88);
+    const tabsHeight = Math.ceil(tabs?.getBoundingClientRect?.().height || 58);
+    root.style.setProperty('--guide-topbar-offset', `${topbarHeight}px`);
+    root.style.setProperty('--guide-tabs-height', `${tabsHeight}px`);
+    if (typeof ResizeObserver === 'function') {
+      guideNavigationResizeObserver?.disconnect?.();
+      guideNavigationResizeObserver = new ResizeObserver(() => {
+        const nextTopbarHeight = Math.ceil(topbar?.getBoundingClientRect?.().height || topbarHeight);
+        const nextTabsHeight = Math.ceil(tabs?.getBoundingClientRect?.().height || tabsHeight);
+        root.style.setProperty('--guide-topbar-offset', `${nextTopbarHeight}px`);
+        root.style.setProperty('--guide-tabs-height', `${nextTabsHeight}px`);
+      });
+      if (topbar) guideNavigationResizeObserver.observe(topbar);
+      if (tabs) guideNavigationResizeObserver.observe(tabs);
+    }
+    if (!guideNavigationResizeBound && typeof window !== 'undefined') {
+      guideNavigationResizeBound = true;
+      window.addEventListener('resize', syncGuideNavigationOffsets, { passive: true });
+    }
+  }
+
   function activateGuideTab(target = 'summary', options = {}) {
     const requested = target || 'summary';
-    const panelTarget = requested === 'trophies' ? 'checklist' : requested;
+    const aliases = { trophies: 'checklist', details: 'attention' };
+    const candidate = aliases[requested] || requested;
+    const panelTarget = ['summary', 'roadmap', 'checklist', 'extras', 'dlcs', 'attention'].includes(candidate) ? candidate : 'summary';
     const panels = qsa('[data-guide-tab-panel]');
     if (!panels.length) return panelTarget;
     if (typeof document !== 'undefined' && document.body) {
@@ -2429,15 +2355,15 @@ window.UIGuide = (() => {
       panel.hidden = !active;
       panel.classList.toggle('hidden', !active);
       panel.classList.toggle('is-active', active);
+      panel.setAttribute('aria-hidden', active ? 'false' : 'true');
     });
     qsa('[data-guide-tab-button]').forEach(button => {
-      const selected = button.dataset.guideTabButton === requested
-        || (requested === panelTarget && button.dataset.guideTabTarget === panelTarget);
+      const selected = button.dataset.guideTabTarget === panelTarget;
       button.classList.toggle('is-active', selected);
-      if (button.tagName === 'A') {
-        button.setAttribute('aria-current', selected ? 'true' : 'false');
-      } else {
-        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      button.setAttribute('aria-selected', selected ? 'true' : 'false');
+      button.setAttribute('tabindex', selected ? '0' : '-1');
+      if (selected && options.revealTab !== false) {
+        button.scrollIntoView?.({ behavior: 'auto', block: 'nearest', inline: 'nearest' });
       }
     });
     if (options.scroll) {
@@ -2445,13 +2371,13 @@ window.UIGuide = (() => {
       const reducedMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       element?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
-    if (panelTarget === 'details') {
-      setGuideQuickDockState({ enabled: false, visible: false });
-    }
     const schedule = typeof window !== 'undefined' && window.requestAnimationFrame
       ? window.requestAnimationFrame
       : (callback => window.setTimeout(callback, 0));
-    schedule(() => setupGuideSectionScrollSpy());
+    schedule(() => {
+      syncGuideNavigationOffsets();
+      setupGuideSectionScrollSpy();
+    });
     return panelTarget;
   }
 
@@ -2593,6 +2519,7 @@ window.UIGuide = (() => {
       guideViewEl.classList.toggle('atlas-guide--lies-of-p', normalizedSlug === 'lies-of-p');
     }
     const headerEl = qs('#guideHeader');
+    const tabsEl = qs('#guideTabsSlot');
     const decisionEl = qs('#guideDecisionStack');
     const sidebarEl = qs('#sidebarInfo');
     const trophiesEl = qs('#trophyList') || qs('#trophiesList') || qs('#guideTrophies');
@@ -2602,6 +2529,7 @@ window.UIGuide = (() => {
     const dlcCompletionEl = qs('#guideDlcCompletionSlot');
     const relatedEl = qs('#guideRelatedOverview');
     const editorialNotesEl = qs('#guideEditorialNotes');
+    const faqEl = qs('#guideFaqSlot');
     const guideFeedbackEl = qs('#guideFeedbackSlot');
     const sectionIndexEl = qs('#guideSectionIndexSlot');
     let mobileSectionsEl = qs('#guideSectionsPanel');
@@ -2628,6 +2556,9 @@ window.UIGuide = (() => {
 
     if (decisionEl) {
       decisionEl.innerHTML = renderGuideDecisionStackV2(game, viewModel);
+    }
+    if (tabsEl) {
+      tabsEl.innerHTML = renderGuideLayerNav(game);
     }
     if (sectionIndexEl) {
       sectionIndexEl.innerHTML = renderGuideSectionIndex(game);
@@ -2701,7 +2632,7 @@ window.UIGuide = (() => {
                     ${detailsToggleHtml}
                   </div>
                   <div class="atlas-trophy-card__actions">
-                    <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeAttribute(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeAttribute(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}"></i><span>${escapeHtml(toggleLabel)}</span></button>
+                    <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeAttribute(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeAttribute(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}" aria-hidden="true"></i><span>${escapeHtml(toggleLabel)}</span></button>
                     ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeAttribute(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeAttribute(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>YouTube</span></a>` : ''}
                   </div>
                 </div>
@@ -2723,9 +2654,9 @@ window.UIGuide = (() => {
       dlcCompletionEl.innerHTML = renderGuideDlcCompletionPanel(game);
     }
 
-    if (editorialNotesEl) {
-      editorialNotesEl.innerHTML = renderGuideEditorialNotes(game, viewModel);
-    }
+    const editorialSections = renderGuideEditorialNotes(game, viewModel);
+    if (editorialNotesEl) editorialNotesEl.innerHTML = editorialSections.attention;
+    if (faqEl) faqEl.innerHTML = editorialSections.faq;
 
     if (relatedEl) {
       relatedEl.innerHTML = renderGuideRelatedOverview(game, relatedGames, comparisonModel);
@@ -2750,6 +2681,7 @@ window.UIGuide = (() => {
     applyChecklistDensity();
     bindPlatinumExtrasProgress(game);
     activateGuideTab(state?.activeGuideTab || 'summary');
+    syncGuideNavigationOffsets();
     setupGuideSectionScrollSpy();
   }
 
@@ -2847,7 +2779,10 @@ window.UIGuide = (() => {
     renderGuideRelatedCards,
     renderGuideRelatedOverview,
     renderGuideFeedbackCta,
+    resolveGuideTabFromHash,
+    resolveGuideHashTargetId,
     activateGuideTab,
+    syncGuideNavigationOffsets,
     renderGuide,
     updateProgress,
     setGuideQuickDockState,

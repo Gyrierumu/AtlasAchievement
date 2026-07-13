@@ -26,50 +26,11 @@ window.AppGuideController = (() => {
     }
 
     function resolveGuideTabFromHash(hash = window.location.hash) {
-      const rawHash = String(hash || '').replace(/^#/, '').trim();
-      if (!rawHash) return null;
-      let normalizedHash = rawHash.toLowerCase();
-      try {
-        normalizedHash = decodeURIComponent(rawHash).toLowerCase();
-      } catch (_error) {}
-      const tabByHash = {
-        guidesummaryactions: 'summary',
-        'guidetab-summary': 'summary',
-        summary: 'summary',
-        guideroadmappanel: 'roadmap',
-        'guidetab-roadmap': 'roadmap',
-        roadmap: 'roadmap',
-        guidechapterroutepanel: 'roadmap',
-        guideprofessionalaipanel: 'roadmap',
-        guidefarmroutespanel: 'roadmap',
-        guidecommonmythspanel: 'roadmap',
-        guidequickplan: 'summary',
-        guidechecklistpanel: 'checklist',
-        'guidetab-checklist': 'checklist',
-        checklist: 'checklist',
-        trophies: 'checklist',
-        guideplatinumextraspanel: 'extras',
-        'guidetab-extras': 'extras',
-        extras: 'extras',
-        guidedlccompletionpanel: 'dlcs',
-        'guidetab-dlcs': 'dlcs',
-        're5-versus-dlc': 'dlcs',
-        're5-lost-in-nightmares-score-stars': 'dlcs',
-        're5-desperate-escape-agitator-majini': 'dlcs',
-        dlcs: 'dlcs',
-        dlc: 'dlcs'
-      };
-      return tabByHash[normalizedHash] || null;
+      return UI.resolveGuideTabFromHash?.(hash) || null;
     }
 
     function getDecodedHashId(hash = window.location.hash) {
-      const rawHash = String(hash || '').replace(/^#/, '').trim();
-      if (!rawHash) return '';
-      try {
-        return decodeURIComponent(rawHash);
-      } catch (_error) {
-        return rawHash;
-      }
+      return UI.resolveGuideHashTargetId?.(hash) || '';
     }
 
     function expandCollapsedGuideAncestor(element) {
@@ -134,6 +95,7 @@ window.AppGuideController = (() => {
       });
       if (!renderModel) return;
       const hashGuideTab = !options.preserveChecklistState ? resolveGuideTabFromHash() : null;
+      const hasGuideHash = !options.preserveChecklistState && Boolean(window.location.hash);
       const activeGuideTab = hashGuideTab || state.activeGuideTab || 'summary';
       UI.renderGuide(state.currentGame, {
         completedTrophies: renderModel.completedTrophies,
@@ -152,7 +114,7 @@ window.AppGuideController = (() => {
         state.guideSearch = '';
         state.activeGuideTab = activeGuideTab;
         UI.activateGuideTab?.(activeGuideTab, { scroll: Boolean(hashGuideTab) });
-        if (hashGuideTab) {
+        if (hasGuideHash) {
           const schedule = window.requestAnimationFrame || (callback => window.setTimeout(callback, 0));
           schedule(() => scrollCurrentGuideHashTarget());
           window.setTimeout(scrollCurrentGuideHashTarget, 120);
@@ -160,7 +122,9 @@ window.AppGuideController = (() => {
       }
       UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       if (UI.has('#guideDecisionStack')) UI.qs('#guideDecisionStack').classList.remove('hidden');
+      if (UI.has('#guideTabsSlot')) UI.qs('#guideTabsSlot').classList.remove('hidden');
       if (UI.has('#guideContent')) UI.qs('#guideContent').classList.remove('hidden');
+      UI.syncGuideNavigationOffsets?.();
       resetGuideScrollAfterRender(options);
       if (!options.preserveChecklistState) {
         window.AtlasAnalytics?.trackGuideView?.(state.currentGame, {
@@ -457,31 +421,22 @@ window.AppGuideController = (() => {
         search: 'checklist',
         'first-pending': 'checklist',
         risks: 'summary',
-        attention: 'details',
-        comments: 'details',
+        attention: 'attention',
         missables: 'summary',
         online: 'summary',
         dlc: 'summary',
-        faq: 'details',
-        feedback: 'details',
-        related: 'details',
-        details: 'details'
+        details: 'attention'
       };
-      const nextTab = tabByAction[action] || 'checklist';
-      state.activeGuideTab = nextTab;
-      UI.activateGuideTab?.(nextTab, { scroll: false });
-      const navAction = ['chapter-route', 'professional', 'farm', 'myths'].includes(action)
-        ? 'roadmap'
-        : (action === 'quick' ? 'summary' : action);
-      document.querySelectorAll('#guideLayerNav [data-guide-action]').forEach(link => {
-        const selected = (link.dataset.guideAction || '') === navAction;
-        link.classList.toggle('is-active', selected);
-        link.setAttribute('aria-current', selected ? 'true' : 'false');
-      });
-      window.AtlasAnalytics?.trackGuideTabChange?.({
-        gameSlug: getGameSlug(state.currentGame),
-        tabName: nextTab
-      });
+      const externalActions = new Set(['faq', 'feedback', 'comments', 'related']);
+      const nextTab = externalActions.has(action) ? state.activeGuideTab || 'summary' : (tabByAction[action] || 'checklist');
+      if (!externalActions.has(action)) {
+        state.activeGuideTab = nextTab;
+        UI.activateGuideTab?.(nextTab, { scroll: false });
+        window.AtlasAnalytics?.trackGuideTabChange?.({
+          gameSlug: getGameSlug(state.currentGame),
+          tabName: nextTab
+        });
+      }
       const map = {
         header: '#guideHeader',
         usage: '#guideUsagePanel',
@@ -535,6 +490,11 @@ window.AppGuideController = (() => {
       }
 
       element.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
+      const targetHash = selector.startsWith('#') ? selector : (element.id ? `#${element.id}` : '');
+      if (targetHash && window.location.hash !== targetHash) {
+        if (window.history?.pushState) window.history.pushState({ guideAction: action }, '', targetHash);
+        else window.location.hash = targetHash;
+      }
       if (selector === '#trophySearch') {
         window.setTimeout(() => {
           element.focus({ preventScroll: true });

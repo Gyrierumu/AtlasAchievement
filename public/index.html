@@ -387,15 +387,16 @@
         <div class="loading-spinner"></div>
       </div>
       <div id="guideDecisionStack" class="atlas-region atlas-view-shell __GUIDE_CONTENT_CLASS__ space-y-5">__SSR_GUIDE_DECISION_STACK__</div>
+      <div id="guideTabsSlot" class="atlas-region atlas-guide-tabs-slot __GUIDE_CONTENT_CLASS__">__SSR_GUIDE_TABS__</div>
       <div id="guideContent" class="atlas-guide-shell atlas-guide-flow atlas-region atlas-view-shell __GUIDE_CONTENT_CLASS__ space-y-5">
-        <section id="guideTab-roadmap" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="roadmap" hidden>
+        <section id="guideTab-roadmap" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="roadmap" role="tabpanel" aria-labelledby="guideTabButton-roadmap" aria-hidden="true" tabindex="0" hidden>
           <div id="guideRoadmapSlot">__SSR_GUIDE_ROADMAP__</div>
         </section>
-        <section id="guideTab-summary" class="atlas-guide-tab-panel" data-guide-tab-panel="summary">
+        <section id="guideTab-summary" class="atlas-guide-tab-panel" data-guide-tab-panel="summary" role="tabpanel" aria-labelledby="guideTabButton-summary" aria-hidden="false" tabindex="0">
           <div id="guideSummarySlot">__SSR_GUIDE_SUMMARY__</div>
           <aside id="sidebarInfo" class="atlas-region">__SSR_GUIDE_SIDEBAR__</aside>
         </section>
-        <section id="guideTab-checklist" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="checklist" hidden>
+        <section id="guideTab-checklist" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="checklist" role="tabpanel" aria-labelledby="guideTabButton-checklist" aria-hidden="true" tabindex="0" hidden>
           <section id="guideChecklistPanel" class="atlas-panel atlas-panel--section p-4 md:p-5 space-y-4">
             <div class="atlas-checklist-head">
               <div class="atlas-checklist-title">
@@ -473,29 +474,30 @@
             <button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button>
           </div>
         </section>
-        <section id="guideTab-extras" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="extras" hidden>
+        <section id="guideTab-extras" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="extras" role="tabpanel" aria-labelledby="guideTabButton-extras" aria-hidden="true" tabindex="0" hidden>
           <div id="guidePlatinumExtrasSlot">__SSR_GUIDE_PLATINUM_EXTRAS__</div>
         </section>
-        <section id="guideTab-dlcs" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="dlcs" hidden>
+        <section id="guideTab-dlcs" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="dlcs" role="tabpanel" aria-labelledby="guideTabButton-dlcs" aria-hidden="true" tabindex="0" hidden>
           <div id="guideDlcCompletionSlot">__SSR_GUIDE_DLC_COMPLETION__</div>
         </section>
-        <section id="guideTab-details" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="details" hidden>
+        <section id="guideTab-attention" class="atlas-guide-tab-panel hidden" data-guide-tab-panel="attention" role="tabpanel" aria-labelledby="guideTabButton-attention" aria-hidden="true" tabindex="0" hidden>
           <div id="guideEditorialNotes">__SSR_GUIDE_EDITORIAL_NOTES__</div>
-          <div id="guideCommentsSlot">__GUIDE_COMMENTS__</div>
-          <section id="guideRelatedPanel" class="atlas-panel atlas-panel--support p-5 md:p-6 space-y-5">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-              <div>
-                <span class="atlas-section-kicker">Recomendações relacionadas</span>
-                <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Continue por um guia parecido depois deste</h2>
-                <p class="text-white/58 mt-2 max-w-3xl">Quando terminar ou quiser alternar de projeto, use estes jogos parecidos para manter o mesmo ritmo de progresso.</p>
-              </div>
-              <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRelatedBody" data-expanded-label="Ocultar sugestões" data-collapsed-label="Mostrar sugestões" aria-expanded="true" aria-controls="guideRelatedBody"><span data-toggle-label>Ocultar sugestões</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+        </section>
+        <div id="guideFaqSlot">__SSR_GUIDE_FAQ__</div>
+        <div id="guideCommentsSlot">__GUIDE_COMMENTS__</div>
+        <section id="guideRelatedPanel" class="atlas-panel atlas-panel--support p-5 md:p-6 space-y-5">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <span class="atlas-section-kicker">Recomendações relacionadas</span>
+              <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Continue por um guia parecido depois deste</h2>
+              <p class="text-white/58 mt-2 max-w-3xl">Quando terminar ou quiser alternar de projeto, use estes jogos parecidos para manter o mesmo ritmo de progresso.</p>
             </div>
-            <div id="guideRelatedBody" class="atlas-related-panel__body" data-guide-section-content>
-              <div id="guideCollectionLinks" class="grid md:grid-cols-3 gap-4">__GUIDE_COLLECTION_LINKS__</div>
-              <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4">__GUIDE_RELATED_OVERVIEW__</div>
-            </div>
-          </section>
+            <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRelatedBody" data-expanded-label="Ocultar sugestões" data-collapsed-label="Mostrar sugestões" aria-expanded="true" aria-controls="guideRelatedBody"><span data-toggle-label>Ocultar sugestões</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+          </div>
+          <div id="guideRelatedBody" class="atlas-related-panel__body" data-guide-section-content>
+            <div id="guideCollectionLinks" class="grid md:grid-cols-3 gap-4">__GUIDE_COLLECTION_LINKS__</div>
+            <div id="guideRelatedOverview" class="grid md:grid-cols-2 gap-4">__GUIDE_RELATED_OVERVIEW__</div>
+          </div>
         </section>
         <div id="guideFeedbackSlot">__GUIDE_FEEDBACK_CTA__</div>
       </div>

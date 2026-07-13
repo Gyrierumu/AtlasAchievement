@@ -910,23 +910,6 @@
   .atlas-editorial-band__intro h2 {
     font-size: 1.55rem;
   }
-  .atlas-guide-nav {
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    margin-inline: -4px;
-    padding: 0 4px 3px;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .atlas-guide-nav::-webkit-scrollbar {
-    display: none;
-  }
-  .atlas-guide-nav__link {
-    min-width: 132px;
-    min-height: 44px;
-    padding-inline: 12px;
-  }
   .atlas-guide-hero__facts span {
     min-width: min(100%, 150px);
     flex: 1 1 150px;
