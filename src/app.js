@@ -2970,6 +2970,55 @@ function renderGuideLayerNavHtml(game = {}) {
     </nav>`;
 }
 
+function renderRe2CampaignPlanHtml(game = {}) {
+  if (String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-2-remake') return '';
+  const plan = game?.chapterRouteGuide?.campaignPlan;
+  const runs = Array.isArray(plan?.runs) ? plan.runs : [];
+  if (runs.length !== 7) return '';
+  const renderList = items => Array.isArray(items) && items.length
+    ? `<ul>${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`
+    : '';
+  const renderField = (label, content, className = '') => content
+    ? `<section class="atlas-re2-campaign-plan__field${className ? ` ${className}` : ''}"><h4>${escapeHtml(label)}</h4>${content}</section>`
+    : '';
+  const runHtml = runs.map((run, index) => `
+    <li class="atlas-re2-campaign-plan__run" data-run-number="${escapeHtml(run.number || index + 1)}">
+      <span aria-hidden="true">${escapeHtml(String(run.number || index + 1))}</span>
+      <details${index === 0 ? ' open' : ''}>
+        <summary><div>
+          <strong>Run ${escapeHtml(String(run.number || index + 1))} — ${escapeHtml(run.character || '')}, ${escapeHtml(run.scenario || '')}</strong>
+          <div class="atlas-re2-campaign-plan__badges" aria-label="Personagem, cenário e dificuldade">
+            <span>Personagem: ${escapeHtml(run.character || '')}</span><span>Cenário: ${escapeHtml(run.scenario || '')}</span><span>Dificuldade: ${escapeHtml(run.difficulty || '')}</span>
+          </div>
+        </div></summary>
+        <div class="atlas-re2-campaign-plan__body">
+          ${renderField('Objetivo principal', `<p>${escapeHtml(run.objective || '')}</p>`)}
+          ${renderField('Combine nesta run', renderList(run.combine))}
+          ${renderField('Evite nesta run', renderList(run.avoid), 'is-warning')}
+          ${renderField('Save crítico', renderList(run.criticalSave))}
+          ${run.fallback ? `<div class="atlas-re2-campaign-plan__fallback"><strong>Fallback das restrições</strong><p>${escapeHtml(run.fallback)}</p></div>` : ''}
+          ${renderField('Resultado esperado', `<p>${escapeHtml(run.result || '')}</p>`, 'is-result')}
+        </div>
+      </details>
+    </li>`).join('');
+  const extra = plan.extraMode || {};
+  const cleanup = plan.cleanup || {};
+  const after = plan.afterPlatinum || {};
+  return `
+    <div id="guideQuickPlan" class="atlas-guide-quick-plan atlas-re2-campaign-plan" data-re2-campaign-plan aria-labelledby="re2CampaignPlanTitle">
+      <h2 id="re2CampaignPlanTitle">${escapeHtml(plan.title || 'Plano rápido — rota compacta da platina')}</h2>
+      <p class="atlas-re2-campaign-plan__intro">${escapeHtml(plan.introduction || '')}</p>
+      <ol class="atlas-re2-campaign-plan__runs" style="list-style:none">${runHtml}</ol>
+      <div class="atlas-re2-campaign-plan__closing">
+        <details><summary><h3>${escapeHtml(extra.title || '')}</h3></summary>${renderField('Objetivo', `<p>${escapeHtml(extra.objective || '')}</p>`)}${renderField('Evite', renderList(extra.avoid), 'is-warning')}${renderField('Resultado', `<p>${escapeHtml(extra.result || '')}</p>`, 'is-result')}</details>
+        <details><summary><h3>${escapeHtml(cleanup.title || '')}</h3></summary>${renderList(cleanup.items)}<p>${escapeHtml(cleanup.principle || '')}</p>${renderField('Resultado', `<p>${escapeHtml(cleanup.result || '')}</p>`, 'is-result')}</details>
+        <details><summary><h3>${escapeHtml(after.title || '')}</h3></summary>${Array.isArray(after.items) ? `<ol>${after.items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ol>` : ''}</details>
+      </div>
+      <div class="atlas-re2-campaign-plan__note"><strong>Rota espelhada</strong><p>${escapeHtml(plan.mirrorNote || '')}</p></div>
+      <div class="atlas-re2-campaign-plan__note is-advanced"><strong>Compressão avançada opcional</strong><p>${escapeHtml(plan.advancedNote || '')}</p></div>
+    </div>`;
+}
+
 function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
   const nextAction = viewModel.nextActionModel || {};
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
@@ -3021,10 +3070,11 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
         'Shadow of the Erdtree fica fora da platina base. Use primeiro o roadmap para organizar a rota e depois a checklist para acompanhar chefes, finais, lendários e cleanup.'
       ]
     : [];
+  const re2CampaignPlanHtml = renderRe2CampaignPlanHtml(game);
   return `
     <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
       <div>
-        ${quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina">${normalizedSlug === 'resident-evil-5' ? '<h2>Plano rápido</h2>' : '<div class="atlas-eyebrow">Plano rápido</div>'}<ul style="list-style:none">${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ul></div>` : '<div class="atlas-eyebrow">Plano rápido</div>'}
+        ${re2CampaignPlanHtml || (quickPlanItems.length ? `<div${normalizedSlug === 'resident-evil-5' ? ' id="guideQuickPlan"' : ''} class="atlas-guide-quick-plan" aria-label="Plano rápido da platina">${normalizedSlug === 'resident-evil-5' ? '<h2>Plano rápido</h2>' : '<div class="atlas-eyebrow">Plano rápido</div>'}<ul style="list-style:none">${quickPlanItems.map(item => `<li><span>${escapeHtml(String(item.number || ''))}</span><div><strong>${escapeHtml(item.title || '')}</strong>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div></li>`).join('')}</ul></div>` : '<div class="atlas-eyebrow">Plano rápido</div>')}
         <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Resumo da platina</h2>
         ${normalizedSlug === 'resident-evil-2-remake' ? '' : `<p class="text-white/62 mt-2 max-w-3xl">${escapeHtml(nextAction.detail || 'Leia o resumo, abra o roadmap quando precisar da ordem completa e use a checklist para acompanhar progresso.')}</p>`}
         ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-4 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}

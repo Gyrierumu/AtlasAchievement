@@ -76,6 +76,208 @@
     "aliases": [],
     "attentionPoints": [],
     "chapterRouteGuide": {
+      "campaignPlan": {
+        "advancedNote": "Jogadores experientes podem combinar rank S com as runs de Hardcore ou fazer as três restrições em uma única tentativa. Isso reduz campanhas, mas aumenta muito o risco de repetição e não é a rota principal do Atlas.",
+        "afterPlatinum": {
+          "items": [
+            "Marque Chasing Jill se a carta já foi lida em uma campanha de Leon.",
+            "Se estiver pendente, use um save adequado ou uma campanha curta de Leon.",
+            "Conclua The Ghost Survivors.",
+            "Colete os dez Mr. Raccoons próprios do pacote.",
+            "Conclua No Way Out fora do Training Mode.",
+            "Deixe Gunslinger e Cat Ears como objetivos opcionais."
+          ],
+          "title": "Depois da platina — 100% da lista"
+        },
+        "cleanup": {
+          "items": [
+            "Gotcha!, One Slick Super-spy, Young Escapee, In the Blink of an Eye e With Time to Spare",
+            "58 Files e quinze Mr. Raccoons",
+            "Hip Pouches, Safes, Locks/Lockers e Portable Safes",
+            "Treasure Hunter, armas, upgrades e demais situacionais"
+          ],
+          "principle": "Use saves preservados quando possível e confirme a pendência no Checklist e em Extras da Platina antes de iniciar outra campanha completa.",
+          "result": "42/42, Raccoon City Native e conteúdos adicionais ainda separados.",
+          "title": "Cleanup por saves e checklist"
+        },
+        "extraMode": {
+          "avoid": [
+            "Não misture Tofu Survivor ou The Ghost Survivors",
+            "Não exija tempo, rank ou S+"
+          ],
+          "objective": "Concluir Grim Reaper depois das campanhas, quando rotas, stagger, inimigos e recursos já forem familiares.",
+          "result": "Grim Reaper concluído; este modo pertence à platina base e não é uma campanha numerada.",
+          "title": "Extra Mode — The 4th Survivor"
+        },
+        "introduction": "Use esta ordem para decidir qual campanha abrir agora. Nas Runs 1 e 2, consulte também a Rota por área; nas demais, priorize a rota conhecida e o objetivo específico.",
+        "mirrorNote": "Você pode inverter os personagens: Claire 1st Run → Leon 2nd Run → Leon 1st Run → Claire 2nd Run. A lógica da rota permanece a mesma.",
+        "runs": [
+          {
+            "avoid": [
+              "Rank S e Hardcore",
+              "Minimalist e Frugalist",
+              "Controle obsessivo dos 14.000 passos",
+              "Reiniciar a campanha por item com cleanup planejado"
+            ],
+            "character": "Leon",
+            "combine": [
+              "Files, Mr. Raccoons e Hip Pouches disponíveis",
+              "Safes, Locks/Lockers e Portable Safes",
+              "Armas e upgrades de Leon",
+              "Treasure Hunter quando aplicável",
+              "One Slick Super-spy e In the Blink of an Eye",
+              "Gotcha!, se for seguro",
+              "Chasing Jill apenas como oportunidade opcional para o 100%"
+            ],
+            "criticalSave": [
+              "Antes do segmento da Ada",
+              "Antes de G Stage 2",
+              "Antes do trecho final de Leon",
+              "Antes do avanço definitivo para o NEST"
+            ],
+            "difficulty": "Assisted ou Standard",
+            "number": 1,
+            "objective": "Aprender o R.P.D., puzzles, inventário, combate e chefes; concluir a história de Leon e iniciar os checklists da campanha base.",
+            "result": "História de Leon concluída, Claire 2nd Run liberado, rota básica dominada e checklists de Leon avançados.",
+            "scenario": "1st Run"
+          },
+          {
+            "avoid": [
+              "Transformar a run em tentativa de rank",
+              "Misturar Hardcore ou as três restrições",
+              "Refazer áreas sem consultar o checklist individual"
+            ],
+            "character": "Claire",
+            "combine": [
+              "Files e Mr. Raccoons exclusivos",
+              "Armas e upgrades de Claire",
+              "Young Escapee e With Time to Spare",
+              "Gotcha!, se ainda estiver pendente",
+              "Objetivos situacionais confortáveis"
+            ],
+            "criticalSave": [
+              "Antes do segmento da Sherry",
+              "Antes de G Stage 2, se Gotcha! estiver pendente",
+              "Antes do trecho final de Claire",
+              "Antes do ponto de não retorno para o NEST"
+            ],
+            "difficulty": "Assisted ou Standard",
+            "number": 2,
+            "objective": "Concluir a rota complementar, obter o final verdadeiro, aprender Claire e avançar coletáveis exclusivos de Claire e do 2nd Run.",
+            "result": "A Heroine Emerges encaminhado ou concluído, Broken Umbrella concluído, final verdadeiro visto e as áreas principais conhecidas com os dois personagens.",
+            "scenario": "2nd Run"
+          },
+          {
+            "avoid": [
+              "Limpeza geral e backtracking",
+              "Abrir todos os cofres ou recolher itens já registrados",
+              "S+ e limite artificial de saves"
+            ],
+            "character": "Claire",
+            "combine": [
+              "Files exclusivos de Claire 1st Run",
+              "Mr. Raccoons exclusivos que estejam na rota",
+              "Objetivos rápidos sem desvio relevante"
+            ],
+            "criticalSave": [
+              "Use saves estratégicos",
+              "Após morte que comprometa o timer, carregue pelo menu em vez de usar Continue"
+            ],
+            "difficulty": "Standard — S rank em até 3h30",
+            "number": 3,
+            "objective": "Obter Sizzling Scarlet Hero e recolher somente itens exclusivos desta combinação que ainda estejam pendentes.",
+            "result": "Sizzling Scarlet Hero concluído, Files exclusivos atualizados e primeira arma de munição infinita obtida quando aplicável.",
+            "scenario": "1st Run"
+          },
+          {
+            "avoid": [
+              "Coleta completa de áreas já encerradas",
+              "S+, Hardcore e restrições",
+              "Desvios longos por consumíveis comuns"
+            ],
+            "character": "Leon",
+            "combine": [
+              "Files exclusivos de Leon 2nd Run",
+              "Mr. Raccoons exclusivos que estejam na rota",
+              "Pequena limpeza de Leon sem backtracking excessivo"
+            ],
+            "criticalSave": [
+              "Use saves estratégicos e carregue pelo menu após uma morte que comprometa o timer"
+            ],
+            "difficulty": "Standard — S rank em até 3h",
+            "number": 4,
+            "objective": "Obter Leon “S.” Kennedy e recolher somente itens exclusivos desta combinação ainda pendentes.",
+            "result": "Leon “S.” Kennedy concluído e cobertura dos quatro cenários confirmada; revise os checklists antes de declarar Files ou Mr. Raccoons completos.",
+            "scenario": "2nd Run"
+          },
+          {
+            "avoid": [
+              "Rank S obrigatório e S+",
+              "Coletar tudo novamente",
+              "Minimalist, Frugalist e limite de passos",
+              "Objetivos situacionais arriscados"
+            ],
+            "character": "Leon",
+            "combine": [
+              "Cleanup curto exclusivo de Leon, somente sem aumentar muito o risco",
+              "Armas bônus permitidas, se já estiverem disponíveis e o jogador preferir segurança"
+            ],
+            "criticalSave": [
+              "Planeje ink ribbons antes dos principais chefes e grandes trechos"
+            ],
+            "difficulty": "Hardcore",
+            "number": 5,
+            "objective": "Concluir Hardcore Rookie com uma rota segura e já conhecida.",
+            "result": "Hardcore Rookie concluído.",
+            "scenario": "Campanha conhecida"
+          },
+          {
+            "avoid": [
+              "Rank S obrigatório e S+",
+              "Coleta completa",
+              "Minimalist, Frugalist e limite de passos",
+              "Objetivos situacionais arriscados"
+            ],
+            "character": "Claire",
+            "combine": [
+              "Cleanup curto exclusivo de Claire, apenas quando seguro",
+              "Armas bônus permitidas, se já estiverem disponíveis"
+            ],
+            "criticalSave": [
+              "Planeje ink ribbons antes dos principais chefes e grandes trechos"
+            ],
+            "difficulty": "Hardcore",
+            "number": 6,
+            "objective": "Concluir Hardcore College Student usando poucos desvios e recursos voltados à sobrevivência.",
+            "result": "Hardcore College Student concluído e dificuldades obrigatórias encerradas.",
+            "scenario": "Campanha conhecida"
+          },
+          {
+            "avoid": [
+              "Backtracking",
+              "Armas bônus que exijam abrir o Item Box",
+              "Continuar após quebrar uma condição; recarregue imediatamente"
+            ],
+            "character": "Leon ou Claire",
+            "combine": [
+              "Não abrir o Item Box",
+              "Não usar recovery item",
+              "Terminar com 14.000 passos ou menos",
+              "Hip Pouches planejadas, poucos desvios e saves manuais separados"
+            ],
+            "criticalSave": [
+              "Mantenha saves manuais separados para recuperar uma condição quebrada"
+            ],
+            "difficulty": "Assisted",
+            "fallback": "Se a combinação tripla estiver causando repetição, faça Minimalist em uma run própria e combine Frugalist + A Small Carbon Footprint em outra tentativa Assisted.",
+            "number": 7,
+            "objective": "Tentar combinar Minimalist, Frugalist e A Small Carbon Footprint em uma rota curta e conhecida.",
+            "result": "Os três troféus de restrição concluídos ou somente a parte obtida, com o fallback claramente planejado.",
+            "scenario": "A rota que você domina melhor"
+          }
+        ],
+        "title": "Plano rápido — rota compacta da platina"
+      },
       "chapters": [
         {
           "chapter": "Visão geral das campanhas",

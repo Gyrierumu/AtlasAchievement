@@ -2986,6 +2986,201 @@ body.atlas-guide-dock-active footer {
   line-height: 1.42;
 }
 
+.atlas-re2-campaign-plan {
+  min-width: 0;
+}
+
+.atlas-re2-campaign-plan > h2 {
+  color: #fff;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.atlas-re2-campaign-plan__intro {
+  max-width: 78ch;
+  margin-top: 7px !important;
+}
+
+.atlas-re2-campaign-plan__runs {
+  gap: 10px !important;
+}
+
+.atlas-re2-campaign-plan__run {
+  min-width: 0;
+}
+
+.atlas-re2-campaign-plan__run > details {
+  min-width: 0;
+}
+
+.atlas-re2-campaign-plan__run summary {
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.atlas-re2-campaign-plan__run summary::marker {
+  color: rgba(94, 234, 212, .78);
+}
+
+.atlas-re2-campaign-plan__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.atlas-re2-campaign-plan__badges span {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 4px 8px;
+  border: 1px solid rgba(148, 163, 184, .18);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, .54);
+  color: rgba(226, 232, 240, .82);
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.atlas-re2-campaign-plan__body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.atlas-re2-campaign-plan__field,
+.atlas-re2-campaign-plan__fallback {
+  min-width: 0;
+  padding: 10px 11px;
+  border: 1px solid rgba(148, 163, 184, .13);
+  border-radius: 10px;
+  background: rgba(15, 23, 42, .38);
+}
+
+.atlas-re2-campaign-plan__field h4,
+.atlas-re2-campaign-plan__fallback > strong {
+  color: rgba(204, 251, 241, .92);
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+
+.atlas-re2-campaign-plan__field.is-warning {
+  border-color: rgba(251, 191, 36, .2);
+  background: rgba(120, 53, 15, .12);
+}
+
+.atlas-re2-campaign-plan__field.is-result {
+  border-color: rgba(74, 222, 128, .2);
+  background: rgba(20, 83, 45, .12);
+}
+
+.atlas-re2-campaign-plan__fallback {
+  grid-column: 1 / -1;
+  border-color: rgba(96, 165, 250, .25);
+  background: rgba(30, 64, 175, .12);
+}
+
+.atlas-re2-campaign-plan__field li,
+.atlas-re2-campaign-plan__closing li {
+  display: list-item;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(226, 232, 240, .72);
+  font-size: .82rem;
+  line-height: 1.42;
+}
+
+.atlas-re2-campaign-plan__field ul,
+.atlas-re2-campaign-plan__closing :is(ul, ol) {
+  display: block;
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.atlas-re2-campaign-plan__closing {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.atlas-re2-campaign-plan__closing > details {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(94, 234, 212, .14);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, .42);
+  overflow-wrap: anywhere;
+}
+
+.atlas-re2-campaign-plan__closing h3 {
+  display: inline;
+  color: #fff;
+  font-size: .92rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.atlas-re2-campaign-plan__closing .atlas-re2-campaign-plan__field {
+  margin-top: 8px;
+}
+
+.atlas-re2-campaign-plan__closing summary {
+  cursor: pointer;
+}
+
+.atlas-re2-campaign-plan__note {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-left: 3px solid rgba(94, 234, 212, .6);
+  border-radius: 0 10px 10px 0;
+  background: rgba(20, 184, 166, .07);
+}
+
+.atlas-re2-campaign-plan__note.is-advanced {
+  border-left-color: rgba(167, 139, 250, .7);
+  background: rgba(91, 33, 182, .09);
+}
+
+@media (max-width: 900px) {
+  .atlas-re2-campaign-plan__closing {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .atlas-re2-campaign-plan__run {
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: 9px 10px;
+  }
+
+  .atlas-re2-campaign-plan__run > span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .atlas-re2-campaign-plan__body {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-re2-campaign-plan__badges {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-re2-campaign-plan__badges span {
+    width: fit-content;
+    border-radius: 8px;
+  }
+}
+
 .atlas-guide-return-row {
   display: flex;
   justify-content: flex-end;
