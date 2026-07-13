@@ -1974,8 +1974,7 @@ window.UIGuide = (() => {
       ? `<section class="atlas-re2-campaign-plan__field${className ? ` ${className}` : ''}"><h4>${escapeHtml(label)}</h4>${content}</section>`
       : '';
     const runHtml = runs.map((run, index) => `
-      <li class="atlas-re2-campaign-plan__run" data-run-number="${escapeAttribute(run.number || index + 1)}">
-        <span aria-hidden="true">${escapeHtml(String(run.number || index + 1))}</span>
+      <article class="atlas-re2-campaign-plan__run" data-run-number="${escapeAttribute(run.number || index + 1)}">
         <details${index === 0 ? ' open' : ''}>
           <summary><div>
             <strong>Run ${escapeHtml(String(run.number || index + 1))} — ${escapeHtml(run.character || '')}, ${escapeHtml(run.scenario || '')}</strong>
@@ -1992,7 +1991,8 @@ window.UIGuide = (() => {
             ${renderField('Resultado esperado', `<p>${escapeHtml(run.result || '')}</p>`, 'is-result')}
           </div>
         </details>
-      </li>`).join('');
+      </article>
+      ${index === 5 && plan.hardcoreNote ? `<div class="atlas-re2-campaign-plan__note"><p>${escapeHtml(plan.hardcoreNote)}</p></div>` : ''}`).join('');
     const extra = plan.extraMode || {};
     const cleanup = plan.cleanup || {};
     const after = plan.afterPlatinum || {};
@@ -2000,7 +2000,7 @@ window.UIGuide = (() => {
       <div id="guideQuickPlan" class="atlas-guide-quick-plan atlas-re2-campaign-plan" data-re2-campaign-plan aria-labelledby="re2CampaignPlanTitle">
         <h2 id="re2CampaignPlanTitle">${escapeHtml(plan.title || 'Plano rápido — rota compacta da platina')}</h2>
         <p class="atlas-re2-campaign-plan__intro">${escapeHtml(plan.introduction || '')}</p>
-        <ol class="atlas-re2-campaign-plan__runs" style="list-style:none">${runHtml}</ol>
+        <div class="atlas-re2-campaign-plan__runs">${runHtml}</div>
         <div class="atlas-re2-campaign-plan__closing">
           <details><summary><h3>${escapeHtml(extra.title || '')}</h3></summary>${renderField('Objetivo', `<p>${escapeHtml(extra.objective || '')}</p>`)}${renderField('Evite', renderList(extra.avoid), 'is-warning')}${renderField('Resultado', `<p>${escapeHtml(extra.result || '')}</p>`, 'is-result')}</details>
           <details><summary><h3>${escapeHtml(cleanup.title || '')}</h3></summary>${renderList(cleanup.items)}<p>${escapeHtml(cleanup.principle || '')}</p>${renderField('Resultado', `<p>${escapeHtml(cleanup.result || '')}</p>`, 'is-result')}</details>

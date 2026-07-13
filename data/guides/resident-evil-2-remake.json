@@ -82,9 +82,11 @@
           "items": [
             "Marque Chasing Jill se a carta já foi lida em uma campanha de Leon.",
             "Se estiver pendente, use um save adequado ou uma campanha curta de Leon.",
-            "Conclua The Ghost Survivors.",
-            "Colete os dez Mr. Raccoons próprios do pacote.",
-            "Conclua No Way Out fora do Training Mode.",
+            "Conclua No Time to Mourn, Runaway e Forgotten Soldier, usando Training Mode se precisar aprender as rotas.",
+            "Colete os nove Mr. Raccoons disponíveis nesses três cenários.",
+            "Entre em No Way Out e destrua o décimo Mr. Raccoon.",
+            "Conclua No Way Out fora do Training Mode para Hell of a Sheriff.",
+            "Confirme Got ’Em e Hell of a Sheriff.",
             "Deixe Gunslinger e Cat Ears como objetivos opcionais."
           ],
           "title": "Depois da platina — 100% da lista"
@@ -109,6 +111,7 @@
           "result": "Grim Reaper concluído; este modo pertence à platina base e não é uma campanha numerada.",
           "title": "Extra Mode — The 4th Survivor"
         },
+        "hardcoreNote": "O 2nd Run também é válido para os troféus de Hardcore; use-o apenas se você dominar melhor essa rota.",
         "introduction": "Use esta ordem para decidir qual campanha abrir agora. Nas Runs 1 e 2, consulte também a Rota por área; nas demais, priorize a rota conhecida e o objetivo específico.",
         "mirrorNote": "Você pode inverter os personagens: Claire 1st Run → Leon 2nd Run → Leon 1st Run → Claire 2nd Run. A lógica da rota permanece a mesma.",
         "runs": [
@@ -124,7 +127,7 @@
               "Files, Mr. Raccoons e Hip Pouches disponíveis",
               "Safes, Locks/Lockers e Portable Safes",
               "Armas e upgrades de Leon",
-              "Treasure Hunter quando aplicável",
+              "Treasure Hunter, se ainda estiver pendente",
               "One Slick Super-spy e In the Blink of an Eye",
               "Gotcha!, se for seguro",
               "Chasing Jill apenas como oportunidade opcional para o 100%"
@@ -164,7 +167,7 @@
             "difficulty": "Assisted ou Standard",
             "number": 2,
             "objective": "Concluir a rota complementar, obter o final verdadeiro, aprender Claire e avançar coletáveis exclusivos de Claire e do 2nd Run.",
-            "result": "A Heroine Emerges encaminhado ou concluído, Broken Umbrella concluído, final verdadeiro visto e as áreas principais conhecidas com os dois personagens.",
+            "result": "A Heroine Emerges concluído, Broken Umbrella concluído, final verdadeiro visto e as áreas principais conhecidas com os dois personagens.",
             "scenario": "2nd Run"
           },
           {
@@ -186,7 +189,7 @@
             "difficulty": "Standard — S rank em até 3h30",
             "number": 3,
             "objective": "Obter Sizzling Scarlet Hero e recolher somente itens exclusivos desta combinação que ainda estejam pendentes.",
-            "result": "Sizzling Scarlet Hero concluído, Files exclusivos atualizados e primeira arma de munição infinita obtida quando aplicável.",
+            "result": "Sizzling Scarlet Hero concluído, Files exclusivos atualizados e Infinite Samurai Edge desbloqueada.",
             "scenario": "1st Run"
           },
           {
@@ -229,7 +232,7 @@
             "number": 5,
             "objective": "Concluir Hardcore Rookie com uma rota segura e já conhecida.",
             "result": "Hardcore Rookie concluído.",
-            "scenario": "Campanha conhecida"
+            "scenario": "1st Run"
           },
           {
             "avoid": [
@@ -250,7 +253,7 @@
             "number": 6,
             "objective": "Concluir Hardcore College Student usando poucos desvios e recursos voltados à sobrevivência.",
             "result": "Hardcore College Student concluído e dificuldades obrigatórias encerradas.",
-            "scenario": "Campanha conhecida"
+            "scenario": "1st Run"
           },
           {
             "avoid": [
@@ -422,25 +425,17 @@
         },
         {
           "chapter": "Como escolher a ordem das campanhas",
-          "note": "O guia não impõe uma ordem única; escolha a sequência que resolve história, final verdadeiro, coletáveis e troféus específicos com menos retrabalho.",
+          "note": "Essa ordem entrega o final verdadeiro nas duas primeiras campanhas e cobre as quatro combinações antes das runs de Hardcore e restrição.",
           "sections": [
             {
               "items": [
-                "Leon 1st Run para aprender a campanha e eventos do Leon.",
-                "Claire 2nd Run para final verdadeiro e Broken Umbrella.",
-                "Claire 1st Run ou Leon 2nd Run depois, conforme pendências.",
-                "Use runs separadas para S rank, Hardcore e restrições quando necessário."
+                "Leon 1st Run.",
+                "Claire 2nd Run.",
+                "Claire 1st Run.",
+                "Leon 2nd Run.",
+                "A versão espelhada começa com Claire 1st Run e segue com Leon 2nd Run; consulte a nota ao final do Plano rápido."
               ],
-              "title": "Opção segura"
-            },
-            {
-              "items": [
-                "Claire 1st Run para começar pela rota da Claire.",
-                "Leon 2nd Run para final verdadeiro e Broken Umbrella.",
-                "Depois, escolha a rota que faltar para coletáveis ou troféus específicos.",
-                "A platina exige cobrir Leon, Claire, 2nd Run, eventos e coletáveis; a ordem exata pode variar."
-              ],
-              "title": "Alternativa equivalente"
+              "title": "Ordem principal do Atlas"
             }
           ]
         },
@@ -1843,7 +1838,7 @@
         "question": "Resident Evil 2 Remake precisa de online ou coop?"
       },
       {
-        "answer": "Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.",
+        "answer": "Sim. A 2ª jornada entra na rota para cobrir a campanha complementar e concluir o final verdadeiro.",
         "question": "Precisa fazer 2nd Run?"
       },
       {

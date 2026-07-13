@@ -5062,7 +5062,7 @@
         },
         {
           question: 'Precisa fazer 2nd Run?',
-          answer: 'Sim. A 2ª jornada entra na rota para cobrir campanha complementar e final verdadeiro quando aplicável.'
+          answer: 'Sim. A 2ª jornada entra na rota para cobrir a campanha complementar e concluir o final verdadeiro.'
         },
         {
           question: 'Por que a PSN pode mostrar 45 troféus se DLCs/title updates não são necessários para a platina?',

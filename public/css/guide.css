@@ -3003,11 +3003,17 @@ body.atlas-guide-dock-active footer {
 }
 
 .atlas-re2-campaign-plan__runs {
+  display: grid;
   gap: 10px !important;
+  margin-top: 10px;
 }
 
 .atlas-re2-campaign-plan__run {
   min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(94, 234, 212, .14);
+  border-radius: 12px;
+  background: rgba(20, 184, 166, .055);
 }
 
 .atlas-re2-campaign-plan__run > details {
@@ -3157,13 +3163,7 @@ body.atlas-guide-dock-active footer {
 
 @media (max-width: 640px) {
   .atlas-re2-campaign-plan__run {
-    grid-template-columns: 24px minmax(0, 1fr);
     padding: 9px 10px;
-  }
-
-  .atlas-re2-campaign-plan__run > span {
-    width: 24px;
-    height: 24px;
   }
 
   .atlas-re2-campaign-plan__body {
