@@ -102,6 +102,14 @@ function validateData() {
     if (game.cover_image) assert(isValidImage(game.cover_image), `${game.slug} deve ter cover_image valida`);
     assertNoVisiblePlaceholders(`${game.slug} dados publicos`, visibleGameText(game));
 
+    if (game.commonMythsGuide) {
+      const myths = Array.isArray(game.commonMythsGuide.myths) ? game.commonMythsGuide.myths : [];
+      assert(myths.length > 0, `${game.slug} deve ter mitos cadastrados quando commonMythsGuide existir`);
+      myths.forEach((item, index) => {
+        assert(item.myth && item.correction && item.where, `${game.slug} mito ${index + 1} deve ter Mito, Correcao e Onde conferir`);
+      });
+    }
+
     const trophies = Array.isArray(game.trophies) ? game.trophies : [];
     assert(trophies.length > 0, `${game.slug} deve ter trofeus cadastrados`);
     const trophyIds = new Set();
@@ -115,6 +123,19 @@ function validateData() {
   }
 
   const residentEvilGuide = sampleGames.find(game => game.slug === 'resident-evil');
+  const residentEvil2Guide = sampleGames.find(game => game.slug === 'resident-evil-2-remake');
+  assert.strictEqual(residentEvil2Guide.commonMythsGuide?.myths?.length, 9, 'Resident Evil 2 Remake deve manter exatamente 9 mitos');
+  assert.strictEqual(residentEvil2Guide.commonMythsGuide?.anchorId, 'mitos-e-erros-comuns', 'Resident Evil 2 Remake deve manter anchor local de Mitos e erros comuns');
+  assert.deepStrictEqual(
+    residentEvil2Guide.commonMythsGuide.myths.map(item => item.category),
+    ['Platina x 100%', 'Campanhas', 'Coletáveis', 'Rank', 'Armas infinitas', 'Modos extras', 'Nomes parecidos', 'The Ghost Survivors', 'Another Survivor'],
+    'Resident Evil 2 Remake deve manter as nove categorias na ordem editorial'
+  );
+  const residentEvil2MythsText = residentEvil2Guide.commonMythsGuide.myths.map(item => `${item.myth} ${item.correction}`).join(' ');
+  ['42 troféus da lista base', 'final verdadeiro e Broken Umbrella', 'quatro combinações da rota', 'S+, limite de três saves', 'Item Box para pegar uma arma pode invalidar Minimalist', 'Tofu Survivor é opcional', 'Gotcha! pertence à campanha base', 'fora do Training Mode', 'campanha normal de Leon'].forEach(text => {
+    assert(residentEvil2MythsText.includes(text), `Resident Evil 2 Remake deve preservar a correcao de mito: ${text}`);
+  });
+  assert.strictEqual(sampleGames.find(game => game.slug === 'resident-evil-5')?.commonMythsGuide?.myths?.length, 8, 'Resident Evil 5 deve permanecer com seus 8 mitos');
   const re5Related = cardModel.buildRelatedGames(residentEvilGuide, sampleGames, 4);
   assert(
     re5Related.some(item => item?.game?.slug === 'resident-evil-5' && /Resident Evil 5/i.test(item.reason || '')),
@@ -788,6 +809,17 @@ async function validateGuide(slug = '') {
     assert(viewModel.contextualFaq.some(item => item.question.includes('DLCs ou modos extras') && item.answer.includes('lista base da platina')), 'FAQ de Resident Evil 2 Remake deve separar DLC/extras');
     assert(viewModel.contextualFaq.some(item => item.question.includes('Hardcore, rank S e speedrun') && item.answer.includes('rank depende principalmente de tempo')), 'FAQ de Resident Evil 2 Remake deve explicar Hardcore/rank');
     assert(viewModel.contextualFaq.some(item => item.question.includes('sem cura, sem baú ou limite de passos') && item.answer.includes('Frugalist')), 'FAQ de Resident Evil 2 Remake deve explicar runs condicionais');
+    const re2Myths = seedGame.commonMythsGuide?.myths || [];
+    assert.strictEqual(seedGame.commonMythsGuide?.anchorId, 'mitos-e-erros-comuns', 'Resident Evil 2 Remake deve usar anchor local estavel para Mitos e erros comuns');
+    assert.strictEqual(re2Myths.length, 9, 'Resident Evil 2 Remake deve manter exatamente 9 mitos');
+    re2Myths.forEach((item, index) => {
+      assert(item.category && item.myth && item.correction && Array.isArray(item.where) && item.where.length, `Mito ${index + 1} de Resident Evil 2 Remake deve manter categoria, Mito, Correcao e Onde conferir`);
+      item.where.forEach(destination => {
+        assert(destination.label, `Destino de Onde conferir do mito ${index + 1} deve ter texto descritivo`);
+        assert(!destination.href || (/^#[^#]/.test(destination.href) && destination.href !== '#'), `Destino de Onde conferir do mito ${index + 1} nao deve usar link vazio`);
+      });
+    });
+    assert(!/mito\(s\)|troféu\(s\)|NOME ORIGINAL|\[object Object\]/.test(JSON.stringify(seedGame.commonMythsGuide)), 'Mitos de Resident Evil 2 Remake nao devem conter pluralizacao artificial, linguagem interna ou placeholder');
     assert.strictEqual(viewModel.nextActionModel.title, 'Faça uma primeira campanha segura aprendendo o R.P.D.', 'Resident Evil 2 Remake deve ter primeiro passo recomendado especifico');
     assert(viewModel.nextActionModel.detail.includes('Comece com uma campanha segura'), 'Resident Evil 2 Remake deve preservar descricao do primeiro passo recomendado');
     assert.deepStrictEqual(viewModel.routeChangingTrophies.slice(0, 5).map(item => item.name), ['Peguei Você!', 'Num Piscar de Olhos', 'Leon "S." Kennedy', 'Uma Superespiã Eficiente', 'Heroína Escarlate Flamejante'], 'Pontos de atencao de Resident Evil 2 Remake devem usar titulos PT-BR');
@@ -1799,6 +1831,11 @@ async function validateGuide(slug = '') {
       const apiRoadmapText = JSON.stringify(apiGame.roadmap);
       const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
       const summaryHtml = html.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/)?.[0] || '';
+      const mythsPanelStart = html.indexOf('<section id="mitos-e-erros-comuns"');
+      const mythsPanelEnd = mythsPanelStart >= 0 ? html.indexOf('</section>', mythsPanelStart) : -1;
+      const checklistTabStart = mythsPanelStart >= 0 ? html.indexOf('<section id="guideTab-checklist"', mythsPanelStart) : -1;
+      const mythsPanelHtml = mythsPanelStart >= 0 && mythsPanelEnd > mythsPanelStart ? html.slice(mythsPanelStart, mythsPanelEnd + '</section>'.length) : '';
+      const guideIds = [...guideScopedHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
       assert.strictEqual(apiGame.slug, 'dead-cells', 'API de Dead Cells deve usar slug real');
       assert.strictEqual(apiGame.is_verified, true, 'API de Dead Cells deve ficar verified');
       assert.strictEqual(apiGame.verification_status, 'verified', 'API de Dead Cells deve expor verification_status verified');
@@ -1879,6 +1916,7 @@ async function validateGuide(slug = '') {
       assert(apiGame.dlc_scope.includes('DLC fora da platina base') && apiGame.dlc_scope.includes('The Ghost Survivors'), 'Resident Evil 2 Remake deve padronizar DLC/extras fora da platina base');
       assert.strictEqual(apiGame.roadmap.length, 6, 'API de Resident Evil 2 Remake deve retornar roadmap de 6 etapas');
       assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 4), 'API de Resident Evil 2 Remake deve retornar actions reais no roadmap');
+      assert.strictEqual(apiGame.commonMythsGuide?.myths?.length, 9, 'API de Resident Evil 2 Remake deve expor exatamente 9 mitos');
       ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e a rota complementar', 'Limpe coletáveis, arquivos, Mr. Raccoons e upgrades', 'Trabalhe Hardcore, rankings e runs rápidas', 'Faça runs condicionais sem cura, sem baú e limite de passos', 'Finalize a checklist da platina base'].forEach(text => {
         assert(apiRoadmapText.includes(text), `API roadmap de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
         assert(roadmapPanelHtml.includes(text), `Roadmap SSR de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
@@ -1891,6 +1929,26 @@ async function validateGuide(slug = '') {
       assert(summaryHtml.includes('múltiplas campanhas com Leon e Claire') && summaryHtml.includes('Conteúdo extra e modos fora da lista base'), 'Resumo da platina de Resident Evil 2 Remake deve renderizar texto editorial completo');
       assert(summaryHtml.includes('Comece com uma campanha segura para aprender o Departamento de Polícia'), 'Resumo da platina de Resident Evil 2 Remake deve preservar primeiro passo recomendado');
       assert(html.includes('Faça uma primeira campanha segura aprendendo o R.P.D.'), 'Resident Evil 2 Remake deve renderizar primeiro passo recomendado especifico');
+      assert.strictEqual((html.match(/id="mitos-e-erros-comuns"/g) || []).length, 1, 'Resident Evil 2 Remake deve renderizar uma unica secao Mitos e erros comuns');
+      assert(mythsPanelHtml.includes('<h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Mitos e erros comuns</h2>'), 'Mitos de Resident Evil 2 Remake devem usar H2 local');
+      assert(mythsPanelHtml.includes('>9 mitos</span>') && !mythsPanelHtml.includes('mito(s)'), 'Contador de Mitos de Resident Evil 2 Remake deve usar pluralizacao natural');
+      assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Mito<\/dt>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem renderizar 9 campos Mito');
+      assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Correção<\/dt>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem renderizar 9 campos Correcao');
+      assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Onde conferir<\/dt>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem renderizar 9 campos Onde conferir');
+      assert.strictEqual((mythsPanelHtml.match(/>Mito [1-9]<\/div>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem ter uma unica numeracao por card');
+      assert(!/>Mito ([1-9])<\/div>[\s\S]{0,80}>\1[.\s]</.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem duplicar numeracao');
+      assert(!/<input\b|data-platinum-extra-check|data-dlc-progress|data-progress|<img\b|<video\b|<iframe\b/.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem incluir progresso, checkbox ou midia');
+      assert(!/href="#"|https?:\/\/|mito\(s\)|troféu\(s\)|\[object Object\]|NOME ORIGINAL/.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem expor link vazio, fonte externa, pluralizacao artificial ou linguagem interna');
+      ['45 troféus', 'S+', 'três saves', 'armas infinitas', '2nd Run', '58 Files', 'The 4th Survivor', 'Tofu Survivor', 'The Ghost Survivors', 'Gotcha!', 'Got ’Em', 'Training Mode', 'Another Survivor', 'Chasing Jill'].forEach(text => {
+        assert(mythsPanelHtml.includes(text), `Mitos de Resident Evil 2 Remake devem cobrir ${text}`);
+      });
+      const mythInternalHrefs = [...mythsPanelHtml.matchAll(/<a\b[^>]*href="#([^"]+)"/g)].map(match => match[1]);
+      assert(mythInternalHrefs.length > 0 && mythInternalHrefs.every(targetId => guideIds.includes(targetId)), 'Onde conferir deve apontar somente para secoes reais do guia');
+      assert(html.indexOf('id="guideChapterRoutePanel"') < mythsPanelStart && mythsPanelStart < checklistTabStart, 'Mitos devem ficar depois da Rota por Capitulo e antes dos checklists longos');
+      const faqPanelHtml = html.match(/<section id="guideFaqPanel"[\s\S]*?<\/section>/)?.[0] || '';
+      apiGame.commonMythsGuide.myths.forEach((item, index) => {
+        assert(!faqPanelHtml.includes(item.myth) && !faqPanelHtml.includes(item.correction), `FAQ nao deve duplicar integralmente o mito ${index + 1}`);
+      });
       assert(html.includes('Peguei Você!') && html.includes('Exige derrotar a forma 2 do G usando o guindaste apenas uma vez'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Peguei Voce');
       assert(html.includes('Num Piscar de Olhos') && html.includes('Guarde munição pesada para o final do Leon'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Num Piscar de Olhos');
       assert(html.includes('Uma Superespiã Eficiente') && html.includes('Não dispare a pistola'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Ada');

@@ -43,6 +43,7 @@ window.UIGuide = (() => {
     guideprofessionalaipanel: 'roadmap',
     guidefarmroutespanel: 'roadmap',
     guidecommonmythspanel: 'roadmap',
+    'mitos-e-erros-comuns': 'roadmap',
     checklist: 'checklist',
     trophies: 'checklist',
     'guidetab-checklist': 'checklist',
@@ -1047,6 +1048,11 @@ window.UIGuide = (() => {
     return `<a class="text-atlas-300 font-bold hover:text-white" href="${escapeAttribute(href)}">${escapeHtml(label)}</a>`;
   }
 
+  function renderGuideActionAnchorLink(label = '', href = '', action = '') {
+    const guideAction = String(action || '').trim();
+    return `<a class="text-atlas-300 font-bold hover:text-white" href="${escapeAttribute(href)}"${guideAction ? ` data-guide-action="${escapeAttribute(guideAction)}"` : ''}>${escapeHtml(label)}</a>`;
+  }
+
   function renderResidentEvil5MythWhere(where = '') {
     const text = String(where || '').trim();
     if (text === 'DLCs e 100% da Lista > Versus.') {
@@ -1058,25 +1064,44 @@ window.UIGuide = (() => {
     return escapeHtml(text);
   }
 
+  function renderGuideMythWhere(where = '') {
+    if (!Array.isArray(where)) return renderResidentEvil5MythWhere(where);
+    return where
+      .filter(item => item && typeof item === 'object' && item.label)
+      .map(item => {
+        const href = String(item.href || '').trim();
+        return href.startsWith('#') && href !== '#'
+          ? renderGuideActionAnchorLink(item.label, href, item.action)
+          : escapeHtml(item.label);
+      })
+      .join('<span aria-hidden="true"> · </span>');
+  }
+
   function renderGuideCommonMythsPanel(game = {}) {
     const mythsGuide = getGuideCommonMyths(game);
     if (!mythsGuide) return '';
     const intro = mythsGuide.introduction || 'Use esta seção para evitar retrabalho antes de fechar a platina base.';
-    const myths = mythsGuide.myths.slice(0, 8);
+    const maxItems = Number.isInteger(mythsGuide.maxItems) && mythsGuide.maxItems > 0 ? mythsGuide.maxItems : 8;
+    const myths = mythsGuide.myths.slice(0, maxItems);
+    const panelId = String(mythsGuide.anchorId || 'guideCommonMythsPanel').trim() || 'guideCommonMythsPanel';
+    const countLabel = mythsGuide.naturalCount ? `${myths.length} ${myths.length === 1 ? 'mito' : 'mitos'}` : `${myths.length} mito(s)`;
     return `
-      <section id="guideCommonMythsPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
+      <section id="${escapeAttribute(panelId)}" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
         <div class="atlas-section-head atlas-section-head--compact">
           <div>
             <div class="atlas-eyebrow">Platina base</div>
             <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">${escapeHtml(mythsGuide.title || 'Mitos e erros comuns')}</h2>
             <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(intro)}</p>
           </div>
-          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(myths.length))} mito(s)</span>
+          <span class="atlas-tag atlas-tag--soft">${escapeHtml(countLabel)}</span>
         </div>
         <div class="grid md:grid-cols-2 gap-3">
           ${myths.map((item, index) => `
             <article class="atlas-panel atlas-panel--support p-4 space-y-3">
-              <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>
+              ${item.category ? `<div class="flex flex-wrap items-center gap-2">
+                <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>
+                <span class="atlas-tag atlas-tag--soft">${escapeHtml(item.category)}</span>
+              </div>` : `<div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>`}
               <dl class="space-y-3 text-sm">
                 <div>
                   <dt class="font-bold text-white">Mito</dt>
@@ -1088,7 +1113,7 @@ window.UIGuide = (() => {
                 </div>
                 <div>
                   <dt class="font-bold text-white">Onde conferir</dt>
-                  <dd class="mt-1 text-white/72">${renderResidentEvil5MythWhere(item.where)}</dd>
+                  <dd class="mt-1 text-white/72">${renderGuideMythWhere(item.where)}</dd>
                 </div>
               </dl>
             </article>

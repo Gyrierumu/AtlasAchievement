@@ -914,7 +914,188 @@
       "title": "Rotas Leon/Claire e 2nd Run"
     },
     "checklist": [],
-    "commonMythsGuide": null,
+    "commonMythsGuide": {
+      "anchorId": "mitos-e-erros-comuns",
+      "introduction": "Use esta seção para evitar campanhas desnecessárias e confusões entre platina base, 100% da lista, cenários, ranks e modos extras.",
+      "maxItems": 9,
+      "myths": [
+        {
+          "category": "Platina x 100%",
+          "correction": "Não. Raccoon City Native depende dos 42 troféus da lista base. Hell of a Sheriff, Got ’Em e Chasing Jill são necessários apenas para o 100% da lista completa.",
+          "myth": "A PSN mostra 45 troféus, então preciso concluir os 45 para obter a platina.",
+          "where": [
+            {
+              "action": "summary",
+              "href": "#guideSummaryActions",
+              "label": "Resumo da platina"
+            },
+            {
+              "action": "trophies",
+              "href": "#guideChecklistPanel",
+              "label": "Checklist da platina base — progresso 0/42"
+            },
+            {
+              "action": "dlcs",
+              "href": "#guideDlcCompletionPanel",
+              "label": "DLCs e 100% da Lista — progresso 0/2 e 0/1"
+            }
+          ]
+        },
+        {
+          "category": "Campanhas",
+          "correction": "Não. Pelo menos um 2nd Run entra na rota da platina para concluir o final verdadeiro e Broken Umbrella. A rota principal do Atlas resolve isso cedo com Leon 1st Run seguido de Claire 2nd Run.",
+          "myth": "O 2nd Run é opcional se eu já terminar uma campanha de Leon e uma de Claire.",
+          "where": [
+            {
+              "action": "quick",
+              "href": "#guideQuickPlan",
+              "label": "Plano rápido — Runs 1 e 2"
+            },
+            {
+              "action": "roadmap",
+              "href": "#guideRoadmapPanel",
+              "label": "Roadmap — final verdadeiro"
+            },
+            {
+              "action": "faq",
+              "href": "#guideFaqPanel",
+              "label": "FAQ — Precisa fazer 2nd Run?"
+            }
+          ]
+        },
+        {
+          "category": "Coletáveis",
+          "correction": "Não. Existem Files distribuídos entre Leon, Claire, 1st Run e 2nd Run. Use as quatro combinações da rota e marque apenas os arquivos realmente coletados.",
+          "myth": "Consigo fechar os 58 Files apenas em Leon 1st Run e Claire 2nd Run.",
+          "where": [
+            {
+              "action": "extras",
+              "href": "#guidePlatinumExtrasPanel",
+              "label": "Extras da Platina — 58 Files e filtros de personagem/cenário"
+            },
+            {
+              "action": "quick",
+              "href": "#guideQuickPlan",
+              "label": "Plano rápido — Runs 1 a 4"
+            }
+          ]
+        },
+        {
+          "category": "Rank",
+          "correction": "Não. Leon “S.” Kennedy e Sizzling Scarlet Hero exigem rank S, que pode ser feito no Standard ou Hardcore. S+, limite de três saves e regras adicionais pertencem a desbloqueios opcionais.",
+          "myth": "Para os troféus de S rank preciso obter S+, fazer no Hardcore e usar no máximo três saves.",
+          "where": [
+            {
+              "action": "chapter-route",
+              "href": "#guideChapterRoutePanel",
+              "label": "Rota por Capítulo — Hardcore, S rank e armas infinitas"
+            },
+            {
+              "action": "quick",
+              "href": "#guideQuickPlan",
+              "label": "Plano rápido — Runs 3 e 4"
+            },
+            {
+              "action": "trophies",
+              "href": "#guideChecklistPanel",
+              "label": "Checklist — Leon “S.” Kennedy e Sizzling Scarlet Hero"
+            }
+          ]
+        },
+        {
+          "category": "Armas infinitas",
+          "correction": "Não. Armas infinitas podem ser usadas no rank S comum e nas conclusões de Hardcore da platina. O conflito relevante é com S+; além disso, acessar o Item Box para pegar uma arma pode invalidar Minimalist.",
+          "myth": "Usar uma arma infinita invalida S rank, Hardcore Rookie ou Hardcore College Student.",
+          "where": [
+            {
+              "action": "chapter-route",
+              "href": "#guideChapterRoutePanel",
+              "label": "Rota por Capítulo — rank, armas infinitas e Minimalist"
+            },
+            {
+              "action": "quick",
+              "href": "#guideQuickPlan",
+              "label": "Plano rápido — Runs 3 a 7"
+            }
+          ]
+        },
+        {
+          "category": "Modos extras",
+          "correction": "Não. The 4th Survivor é o modo de HUNK e rende Grim Reaper, necessário para a platina base. Tofu Survivor é opcional. The Ghost Survivors é conteúdo adicional separado e seus troféus contam somente para o 100% da lista.",
+          "myth": "The 4th Survivor, Tofu Survivor e The Ghost Survivors são variações do mesmo modo e todos são obrigatórios para a platina.",
+          "where": [
+            {
+              "action": "chapter-route",
+              "href": "#guideChapterRoutePanel",
+              "label": "Rota por Capítulo — The 4th Survivor"
+            },
+            {
+              "action": "dlcs",
+              "href": "#guideDlcCompletionPanel",
+              "label": "DLCs e 100% da Lista"
+            },
+            {
+              "action": "faq",
+              "href": "#guideFaqPanel",
+              "label": "FAQ — The 4th Survivor e Tofu Survivor"
+            }
+          ]
+        },
+        {
+          "category": "Nomes parecidos",
+          "correction": "Não. Gotcha! pertence à campanha base e exige derrotar G Stage 2 usando uma única ativação efetiva do guindaste. Got ’Em pertence a The Ghost Survivors e exige os dez Mr. Raccoons próprios do pacote.",
+          "myth": "Gotcha! e Got ’Em são o mesmo troféu ou traduções diferentes do mesmo requisito.",
+          "where": [
+            {
+              "action": "trophies",
+              "href": "#guideChecklistPanel",
+              "label": "Checklist — Gotcha!"
+            },
+            {
+              "action": "attention",
+              "href": "#guideAttentionPointsPanel",
+              "label": "Pontos de atenção — Peguei Você!"
+            },
+            {
+              "action": "dlcs",
+              "href": "#guideDlcCompletionPanel",
+              "label": "DLCs e 100% — Got ’Em e os dez Mr. Raccoons"
+            }
+          ]
+        },
+        {
+          "category": "The Ghost Survivors",
+          "correction": "Não. Training Mode serve para aprender rotas, inimigos e recursos e pode ajudar na coleta de Got ’Em. Hell of a Sheriff exige concluir No Way Out fora do Training Mode.",
+          "myth": "Concluir No Way Out no Training Mode libera Hell of a Sheriff.",
+          "where": [
+            {
+              "action": "dlcs",
+              "href": "#guideDlcCompletionPanel",
+              "label": "DLCs e 100% — Training Mode, No Way Out e Hell of a Sheriff"
+            }
+          ]
+        },
+        {
+          "category": "Another Survivor",
+          "correction": "Não. Another Survivor é o nome do pacote adicional de troféu. Chasing Jill é obtido dentro da campanha normal de Leon ao ler a Letter to the Shopkeeper na Gun Shop Kendo. A carta não entra nos 58 Files de Lore Explorer.",
+          "myth": "Another Survivor é uma campanha extra, pode ser iniciado no menu e Chasing Jill pode ser obtido com Claire.",
+          "where": [
+            {
+              "action": "dlcs",
+              "href": "#guideDlcCompletionPanel",
+              "label": "DLCs e 100% — Another Survivor, Chasing Jill e Letter to the Shopkeeper"
+            },
+            {
+              "action": "extras",
+              "href": "#guidePlatinumExtrasPanel",
+              "label": "Extras da Platina — Lore Explorer"
+            }
+          ]
+        }
+      ],
+      "naturalCount": true,
+      "title": "Mitos e erros comuns"
+    },
     "dlcCompletionGuide": {
       "baseTrophies": 42,
       "checklist": [
