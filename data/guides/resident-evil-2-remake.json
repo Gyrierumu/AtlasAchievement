@@ -77,16 +77,15 @@
     "attentionPoints": [],
     "chapterRouteGuide": {
       "campaignPlan": {
-        "advancedNote": "Jogadores experientes podem combinar rank S com as runs de Hardcore ou fazer as três restrições em uma única tentativa. Isso reduz campanhas, mas aumenta muito o risco de repetição e não é a rota principal do Atlas.",
+        "advancedNote": "Jogadores experientes podem combinar rank S com as runs de Hardcore. Isso reduz campanhas, mas aumenta muito o risco de repetição e não é a rota principal do Atlas. A combinação das três restrições continua sendo a tentativa principal da Run 7 em Assisted, com o fallback indicado no card.",
         "afterPlatinum": {
           "items": [
-            "Marque Chasing Jill se a carta já foi lida em uma campanha de Leon.",
+            "Confirme se Chasing Jill já foi obtido durante a Run 1.",
             "Se estiver pendente, use um save adequado ou uma campanha curta de Leon.",
             "Conclua No Time to Mourn, Runaway e Forgotten Soldier, usando Training Mode se precisar aprender as rotas.",
             "Colete os nove Mr. Raccoons disponíveis nesses três cenários.",
             "Entre em No Way Out e destrua o décimo Mr. Raccoon.",
             "Conclua No Way Out fora do Training Mode para Hell of a Sheriff.",
-            "Confirme Got ’Em e Hell of a Sheriff.",
             "Deixe Gunslinger e Cat Ears como objetivos opcionais."
           ],
           "title": "Depois da platina — 100% da lista"
@@ -114,6 +113,7 @@
         "hardcoreNote": "O 2nd Run também é válido para os troféus de Hardcore; use-o apenas se você dominar melhor essa rota.",
         "introduction": "Use esta ordem para decidir qual campanha abrir agora. Nas Runs 1 e 2, consulte também a Rota por área; nas demais, priorize a rota conhecida e o objetivo específico.",
         "mirrorNote": "Você pode inverter os personagens: Claire 1st Run → Leon 2nd Run → Leon 1st Run → Claire 2nd Run. A lógica da rota permanece a mesma.",
+        "restrictionRouteNote": "Claire e o 2nd Run também são válidos. Use uma dessas alternativas apenas se você dominar melhor a respectiva rota.",
         "runs": [
           {
             "avoid": [
@@ -261,7 +261,7 @@
               "Armas bônus que exijam abrir o Item Box",
               "Continuar após quebrar uma condição; recarregue imediatamente"
             ],
-            "character": "Leon ou Claire",
+            "character": "Leon",
             "combine": [
               "Não abrir o Item Box",
               "Não usar recovery item",
@@ -276,7 +276,7 @@
             "number": 7,
             "objective": "Tentar combinar Minimalist, Frugalist e A Small Carbon Footprint em uma rota curta e conhecida.",
             "result": "Os três troféus de restrição concluídos ou somente a parte obtida, com o fallback claramente planejado.",
-            "scenario": "A rota que você domina melhor"
+            "scenario": "1st Run"
           }
         ],
         "title": "Plano rápido — rota compacta da platina"
@@ -543,8 +543,8 @@
                 "Frugalist + A Small Carbon Footprint combinam bem em Assisted/Standard ou rota curta dominada.",
                 "Minimalist + Frugalist pode funcionar, mas exige controle de inventário.",
                 "Minimalist + A Small Carbon Footprint também funciona, mas aumenta pressão de inventário e rota.",
-                "Os três troféus podem sair juntos para quem já conhece muito bem a campanha.",
-                "Para a maioria, faça Minimalist em run própria e Frugalist + A Small Carbon Footprint em outra run curta."
+                "A rota principal do Atlas tenta Minimalist, Frugalist e A Small Carbon Footprint juntos na Run 7, em Assisted.",
+                "Se o controle de inventário ou o limite de passos ficar instável, faça Minimalist em uma run própria e combine Frugalist + A Small Carbon Footprint em outra tentativa Assisted."
               ],
               "title": "O que combinar"
             },
@@ -1790,28 +1790,54 @@
       "roadmap": [
         {
           "actions": [
-            "Obtenha Raccoon City Native com os 42 troféus base.",
-            "Mantenha The 4th Survivor na rota base por Grim Reaper."
+            "Obtenha Raccoon City Native com os 42 troféus base."
           ],
           "title": "Concluir a platina base"
         },
         {
           "actions": [
-            "Complete os três cenários iniciais, cubra as ramificações de No Time to Mourn e marque os 10 Mr. Raccoons.",
-            "Conclua No Way Out fora do Training Mode para Hell of a Sheriff.",
-            "Ignore Gunslinger/Cat Ears até terminar os troféus obrigatórios."
+            "Confirme se Chasing Jill já foi obtido durante a Run 1."
           ],
-          "title": "Fazer The Ghost Survivors"
+          "title": "Confirmar Chasing Jill"
         },
         {
           "actions": [
-            "Faça Chasing Jill separadamente, sem misturar com The Ghost Survivors ou Lore Explorer.",
-            "Confirme 45 troféus totais ao final."
+            "Se estiver pendente, use um save adequado ou uma campanha curta de Leon."
           ],
-          "title": "Resolver Another Survivor depois"
+          "title": "Resolver Chasing Jill pendente"
+        },
+        {
+          "actions": [
+            "Conclua No Time to Mourn, Runaway e Forgotten Soldier."
+          ],
+          "title": "Concluir os três primeiros cenários"
+        },
+        {
+          "actions": [
+            "Colete os nove Mr. Raccoons desses três cenários."
+          ],
+          "title": "Coletar os nove primeiros Mr. Raccoons"
+        },
+        {
+          "actions": [
+            "Entre em No Way Out e destrua o décimo Mr. Raccoon."
+          ],
+          "title": "Obter o décimo Mr. Raccoon"
+        },
+        {
+          "actions": [
+            "Conclua No Way Out fora do Training Mode."
+          ],
+          "title": "Concluir No Way Out"
+        },
+        {
+          "actions": [
+            "Deixe Gunslinger e Cat Ears como opcionais."
+          ],
+          "title": "Deixar desafios opcionais para depois"
         }
       ],
-      "roadmapIntro": "Faça primeiro a platina base, depois resolva The Ghost Survivors e deixe Chasing Jill separado para Another Survivor.",
+      "roadmapIntro": "Conclua a platina base, confirme Chasing Jill e depois siga a ordem dos quatro cenários de The Ghost Survivors.",
       "roadmapTitle": "Ordem recomendada para o 100%",
       "scopeNotes": [
         "Platina base: 42 troféus, incluindo The 4th Survivor e Grim Reaper.",
@@ -1850,7 +1876,7 @@
         "question": "Existem troféus de Hardcore, rank S e speedrun? S+ é obrigatório?"
       },
       {
-        "answer": "Sim. Minimalist quebra ao abrir o Item Box/baú, Frugalist quebra ao usar recovery item ou item de cura, e A Small Carbon Footprint pede 14.000 passos ou menos. O caminho mais seguro é separar Minimalist e combinar Frugalist + A Small Carbon Footprint depois de dominar uma rota curta.",
+        "answer": "Sim. Minimalist quebra ao abrir o Item Box/baú, Frugalist quebra ao usar recovery item ou item de cura, e A Small Carbon Footprint pede 14.000 passos ou menos. A rota principal do Atlas tenta os três juntos na Run 7, em Assisted. Se o controle de inventário ou o limite de passos ficar instável, faça Minimalist em uma run própria e combine Frugalist + A Small Carbon Footprint em outra tentativa Assisted.",
         "question": "Existem troféus de sem cura, sem baú ou limite de passos?"
       },
       {

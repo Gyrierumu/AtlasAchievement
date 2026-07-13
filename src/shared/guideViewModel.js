@@ -5074,7 +5074,7 @@
         },
         {
           question: 'Existem troféus de sem cura, sem baú ou limite de passos?',
-          answer: 'Sim. Minimalist quebra ao abrir o Item Box/baú, Frugalist quebra ao usar recovery item ou item de cura, e A Small Carbon Footprint pede 14.000 passos ou menos. O caminho mais seguro é separar Minimalist e combinar Frugalist + A Small Carbon Footprint depois de dominar uma rota curta.'
+          answer: 'Sim. Minimalist quebra ao abrir o Item Box/baú, Frugalist quebra ao usar recovery item ou item de cura, e A Small Carbon Footprint pede 14.000 passos ou menos. A rota principal do Atlas tenta os três juntos na Run 7, em Assisted. Se o controle de inventário ou o limite de passos ficar instável, faça Minimalist em uma run própria e combine Frugalist + A Small Carbon Footprint em outra tentativa Assisted.'
         },
         {
           question: 'The 4th Survivor e Tofu Survivor são obrigatórios?',

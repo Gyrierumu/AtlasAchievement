@@ -1992,7 +1992,8 @@ window.UIGuide = (() => {
           </div>
         </details>
       </article>
-      ${index === 5 && plan.hardcoreNote ? `<div class="atlas-re2-campaign-plan__note"><p>${escapeHtml(plan.hardcoreNote)}</p></div>` : ''}`).join('');
+      ${index === 5 && plan.hardcoreNote ? `<div class="atlas-re2-campaign-plan__note"><p>${escapeHtml(plan.hardcoreNote)}</p></div>` : ''}
+      ${index === 6 && plan.restrictionRouteNote ? `<div class="atlas-re2-campaign-plan__note"><p>${escapeHtml(plan.restrictionRouteNote)}</p></div>` : ''}`).join('');
     const extra = plan.extraMode || {};
     const cleanup = plan.cleanup || {};
     const after = plan.afterPlatinum || {};
