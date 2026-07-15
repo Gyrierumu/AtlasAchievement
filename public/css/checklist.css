@@ -270,7 +270,7 @@
   min-width: 0;
 }
 
-.atlas-trophy-card__headline h4 {
+.atlas-trophy-card__headline :is(h3, h4) {
   min-width: 0;
 }
 

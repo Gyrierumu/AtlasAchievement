@@ -404,9 +404,10 @@ window.AppGuideController = (() => {
     }
 
     function focusGuideAction(action = 'trophies') {
+      const isResidentEvil2 = getGameSlug(state.currentGame) === 'resident-evil-2-remake';
       const tabByAction = {
         header: 'summary',
-        usage: 'roadmap',
+        usage: isResidentEvil2 ? 'summary' : 'roadmap',
         summary: 'summary',
         quick: 'summary',
         roadmap: 'roadmap',
@@ -446,7 +447,7 @@ window.AppGuideController = (() => {
         'chapter-route': '#guideChapterRoutePanel',
         professional: '#guideProfessionalAiPanel',
         farm: '#guideFarmRoutesPanel',
-        myths: '#guideCommonMythsPanel',
+        myths: isResidentEvil2 ? '#mitos-e-erros-comuns' : '#guideCommonMythsPanel',
         extras: '#guidePlatinumExtrasPanel',
         dlcs: '#guideDlcCompletionPanel',
         missables: '#guideQuickCard-missables',
@@ -455,9 +456,9 @@ window.AppGuideController = (() => {
         dlc: '#guideQuickCard-dlc',
         search: '#trophySearch',
         risks: '#guideRiskSummaryPanel',
-        attention: '#guideAttentionPointsPanel',
+        attention: isResidentEvil2 ? '#guideEditorialNotesPanel' : '#guideAttentionPointsPanel',
         faq: '#guideFaqPanel',
-        feedback: '#guideFeedbackSlot',
+        feedback: isResidentEvil2 ? '#guideFeedbackPanel' : '#guideFeedbackSlot',
         comments: '#guideCommentsPanel',
         related: '#guideRelatedPanel',
         'first-pending': '[data-next-focus="true"]'
@@ -491,7 +492,7 @@ window.AppGuideController = (() => {
 
       element.scrollIntoView({ behavior: scrollBehavior, block: 'start' });
       const canonicalHashActions = new Set(['summary', 'roadmap', 'trophies', 'checklist', 'extras', 'dlcs', 'attention']);
-      const targetHash = canonicalHashActions.has(action)
+      const targetHash = canonicalHashActions.has(action) && !isResidentEvil2
         ? UI.getGuideCanonicalHash?.(nextTab) || ''
         : selector.startsWith('#') ? selector : (element.id ? `#${element.id}` : '');
       if (targetHash && window.location.hash !== targetHash) {
@@ -508,7 +509,7 @@ window.AppGuideController = (() => {
         element.classList.add('ring-2', 'ring-atlas-300');
         window.setTimeout(() => element.classList.remove('ring-2', 'ring-atlas-300'), 1800);
       }
-      if (selector === '#guideFeedbackSlot') {
+      if (selector === '#guideFeedbackSlot' || selector === '#guideFeedbackPanel') {
         window.setTimeout(() => {
           const feedbackButton = element.querySelector?.('[data-guide-feedback-open]');
           feedbackButton?.focus?.({ preventScroll: true });

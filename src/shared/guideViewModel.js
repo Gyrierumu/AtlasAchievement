@@ -249,12 +249,16 @@
     }
   };
   const RESIDENT_EVIL_2_TAG_FIXES_BY_ID = {
+    re2r_path_goddess: { add: [{ id: 'story', label: 'História', tone: 'partial' }] },
+    re2r_hero_emerges: { add: [{ id: 'story', label: 'História', tone: 'partial' }] },
+    re2r_heroine_emerges: { add: [{ id: 'story', label: 'História', tone: 'partial' }] },
+    re2r_broken_umbrella: { remove: ['missable', 'run'], add: [{ id: 'story', label: 'História', tone: 'partial' }] },
     re2r_basics_survival: { remove: ['difficulty'] },
     re2r_hip_squares: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
-    re2r_customizer: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
+    re2r_customizer: { remove: ['story', 'collectible'], add: [{ id: 'situational', label: 'Situacional', tone: 'warning' }, { id: 'run', label: 'Perdível por run', tone: 'warning' }] },
     re2r_no_stinkin_gun: { remove: ['difficulty', 'story'], add: [{ id: 'combat', label: 'Combate', tone: 'warning' }, { id: 'situational', label: 'Situacional', tone: 'warning' }] },
     re2r_eat_this: { remove: ['difficulty'], add: [{ id: 'combat', label: 'Combate', tone: 'warning' }, { id: 'situational', label: 'Situacional', tone: 'warning' }] },
-    re2r_hold_em: { remove: ['missable', 'collectible'], add: [{ id: 'situational', label: 'Situacional', tone: 'warning' }] },
+    re2r_hold_em: { remove: ['collectible'], add: [{ id: 'situational', label: 'Situacional', tone: 'warning' }, { id: 'run', label: 'Perdível por run', tone: 'warning' }] },
     re2r_bon_appetit: { add: [{ id: 'combat', label: 'Combate', tone: 'warning' }, { id: 'situational', label: 'Situacional', tone: 'warning' }] },
     re2r_zombie_roundup: { add: [{ id: 'combat', label: 'Combate', tone: 'warning' }, { id: 'situational', label: 'Situacional', tone: 'warning' }] },
     re2r_skeet: { remove: ['story'], add: [{ id: 'combat', label: 'Combate', tone: 'warning' }, { id: 'situational', label: 'Situacional', tone: 'warning' }] },
@@ -262,19 +266,22 @@
     re2r_hats_off: { remove: ['collectible'], add: [{ id: 'situational', label: 'Situacional', tone: 'warning' }] },
     re2r_gotcha: { remove: ['story', 'difficulty', 'cleanup'], add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_treasure_hunter: { add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
-    re2r_super_spy: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_young_escapee: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_time_spare: { remove: ['story', 'difficulty'], add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_blink_eye: { remove: ['story', 'difficulty'], add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_waist_space: { remove: ['story', 'difficulty'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }, { id: 'run', label: 'Perdível por run', tone: 'warning' }] },
+    re2r_master_unlocking: { remove: ['story', 'difficulty'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }, { id: 'run', label: 'Perdível por run', tone: 'warning' }] },
+    re2r_super_spy: { remove: ['story', 'difficulty', 'cleanup'], add: [{ id: 'character', label: 'Personagem', tone: 'partial' }, { id: 'segment', label: 'Segmento', tone: 'partial' }, { id: 'run', label: 'Perdível por run', tone: 'warning' }] },
+    re2r_young_escapee: { remove: ['story', 'difficulty', 'cleanup'], add: [{ id: 'character', label: 'Personagem', tone: 'partial' }, { id: 'timer', label: 'Timer', tone: 'warning' }, { id: 'segment', label: 'Segmento', tone: 'partial' }, { id: 'run', label: 'Perdível por run', tone: 'warning' }] },
+    re2r_time_spare: { remove: ['story', 'difficulty'], add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'timer', label: 'Timer', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_blink_eye: { remove: ['story', 'difficulty'], add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'timer', label: 'Timer', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_lore_explorer: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
     re2r_complete_vermin: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
     re2r_leon_s: { remove: ['grind', 'cleanup'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_scarlet_hero: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_hardcore_rookie: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_hardcore_college: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_minimalist: { remove: ['collectible'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_small_footprint: { remove: ['collectible', 'story'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_grim_reaper: { remove: ['story'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
+    re2r_frugalist: { remove: ['collectible', 'story', 'difficulty', 'cleanup'], add: [{ id: 'restriction', label: 'Restrição', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_minimalist: { remove: ['collectible', 'story', 'difficulty', 'cleanup'], add: [{ id: 'restriction', label: 'Restrição', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_small_footprint: { remove: ['collectible', 'story', 'difficulty', 'cleanup'], add: [{ id: 'restriction', label: 'Restrição', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_grim_reaper: { remove: ['story', 'difficulty', 'cleanup'], add: [{ id: 'mode', label: 'Modo extra', tone: 'partial' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] }
   };
   const RESIDENT_EVIL_3_TAG_FIXES_BY_ID = {
     re3r_somebody_to_lean_on: { remove: ['collectible'], add: [{ id: 'spoiler', label: 'Spoiler', tone: 'warning' }, { id: 'story', label: 'História', tone: 'partial' }] },
@@ -1155,6 +1162,14 @@
       return tags;
     }
     const max = Number(limit || 0);
+    if (slug === 'resident-evil-2-remake' && max > 0) {
+      const priority = ['difficulty', 'restriction', 'character', 'timer', 'segment', 'mode', 'boss', 'situational', 'combat', 'collectible', 'missable', 'run', 'story', 'spoiler'];
+      return tags.slice().sort((a, b) => {
+        const aIndex = priority.indexOf(a?.id);
+        const bIndex = priority.indexOf(b?.id);
+        return (aIndex < 0 ? 99 : aIndex) - (bIndex < 0 ? 99 : bIndex);
+      }).slice(0, max);
+    }
     if (slug === 'lies-of-p' && max > 0 && isRealMissableTrophy(trophy)) {
       const visibleTags = tags.slice(0, max);
       const missableTag = tags.find(tag => tag?.id === 'missable');
@@ -3479,7 +3494,7 @@
       return [
         {
           id: 're2r_gotcha',
-          name: trophyById.get('re2r_gotcha')?.name_pt || 'Peguei Você!',
+          name: trophyById.get('re2r_gotcha')?.name_pt || 'Te Peguei!',
           originalName: trophyById.get('re2r_gotcha')?.name || 'Gotcha!',
           type: 'Perdível / Boss / Risco de run',
           text: 'Salve depois dos chess plugs e antes de G Stage 2. Cause dano pesado e chame o guindaste de volta uma única vez; se G não cair nessa ativação efetiva, recarregue o save.',
@@ -3488,7 +3503,7 @@
         },
         {
           id: 're2r_blink_eye',
-          name: trophyById.get('re2r_blink_eye')?.name_pt || 'Num Piscar de Olhos',
+          name: trophyById.get('re2r_blink_eye')?.name_pt || 'Em um Piscar de Olhos',
           originalName: trophyById.get('re2r_blink_eye')?.name || 'In the Blink of an Eye',
           type: 'Perdível / Boss / Risco de run',
           text: 'Exclusivo do Leon. Salve antes da fuga final do NEST, chegue ao Super Tyrant com recursos e conclua a luta com pelo menos 5 minutos restantes; se falhar, recarregue.',
@@ -3506,7 +3521,7 @@
         },
         {
           id: 're2r_super_spy',
-          name: trophyById.get('re2r_super_spy')?.name_pt || 'Uma Superespiã Eficiente',
+          name: trophyById.get('re2r_super_spy')?.name_pt || 'Espiã Nota Dez',
           originalName: trophyById.get('re2r_super_spy')?.name || 'One Slick Super-spy',
           type: 'Perdível / Personagem / Spoiler / Risco de run',
           text: 'Exclusivo de Leon/Ada. Salve antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun nem usar subweapons; recarregue se errar.',

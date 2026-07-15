@@ -878,6 +878,7 @@ window.UIGuide = (() => {
   function renderGuideChapterRoutePanel(game = {}) {
     const routeGuide = getGuideChapterRoute(game);
     if (!routeGuide) return '';
+    const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
     const intro = routeGuide.introduction || 'Use esta rota como visÃ£o rÃ¡pida do que observar em cada capÃ­tulo. Ela nÃ£o substitui as listas completas de Extras da Platina.';
     return `
       <section id="guideChapterRoutePanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
@@ -902,7 +903,7 @@ window.UIGuide = (() => {
               </h3>
               <div id="${escapeAttribute(panelId)}" class="${index === 0 ? '' : 'is-collapsed '}space-y-3" data-guide-section-content aria-hidden="${index === 0 ? 'false' : 'true'}"${index === 0 ? '' : ' hidden'}>
                 ${chapter.note ? `<p class="text-sm text-white/62">${escapeHtml(chapter.note)}</p>` : ''}
-                ${renderUsefulVideo(chapter.usefulVideo)}
+                ${renderUsefulVideo(chapter.usefulVideo, { useStrongTitle: isResidentEvil2 })}
                 <div class="grid md:grid-cols-2 gap-3">
                   ${chapter.sections.map(section => `
                     <div class="atlas-panel atlas-panel--quiet p-4 space-y-2">
@@ -1066,15 +1067,20 @@ window.UIGuide = (() => {
     return escapeHtml(text);
   }
 
-  function renderGuideMythWhere(where = '') {
+  function renderGuideMythWhere(where = '', options = {}) {
     if (!Array.isArray(where)) return renderResidentEvil5MythWhere(where);
     return where
       .filter(item => item && typeof item === 'object' && item.label)
       .map(item => {
         const href = String(item.href || '').trim();
+        const label = options.isResidentEvil2
+          ? String(item.label || '')
+            .replace('Checklist da platina base — progresso 0/42', 'Checklist de troféus')
+            .replace('DLCs e 100% da Lista — progresso 0/2 e 0/1', 'DLCs e 100% da Lista')
+          : item.label;
         return href.startsWith('#') && href !== '#'
-          ? renderGuideActionAnchorLink(item.label, href, item.action)
-          : escapeHtml(item.label);
+          ? renderGuideActionAnchorLink(label, href, item.action)
+          : escapeHtml(label);
       })
       .join('<span aria-hidden="true"> · </span>');
   }
@@ -1087,6 +1093,7 @@ window.UIGuide = (() => {
     const myths = mythsGuide.myths.slice(0, maxItems);
     const panelId = String(mythsGuide.anchorId || 'guideCommonMythsPanel').trim() || 'guideCommonMythsPanel';
     const countLabel = mythsGuide.naturalCount ? `${myths.length} ${myths.length === 1 ? 'mito' : 'mitos'}` : `${myths.length} mito(s)`;
+    const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
     return `
       <section id="${escapeAttribute(panelId)}" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
         <div class="atlas-section-head atlas-section-head--compact">
@@ -1100,10 +1107,12 @@ window.UIGuide = (() => {
         <div class="grid md:grid-cols-2 gap-3">
           ${myths.map((item, index) => `
             <article class="atlas-panel atlas-panel--support p-4 space-y-3">
-              ${item.category ? `<div class="flex flex-wrap items-center gap-2">
-                <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>
-                <span class="atlas-tag atlas-tag--soft">${escapeHtml(item.category)}</span>
-              </div>` : `<div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>`}
+              ${isResidentEvil2
+                ? `<h3 class="text-base font-bold text-white">Mito ${index + 1}${item.category ? ` — ${escapeHtml(item.category)}` : ''}</h3>`
+                : item.category ? `<div class="flex flex-wrap items-center gap-2">
+                  <div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>
+                  <span class="atlas-tag atlas-tag--soft">${escapeHtml(item.category)}</span>
+                </div>` : `<div class="text-xs font-bold uppercase tracking-[0.18em] text-white/42">Mito ${index + 1}</div>`}
               <dl class="space-y-3 text-sm">
                 <div>
                   <dt class="font-bold text-white">Mito</dt>
@@ -1115,7 +1124,7 @@ window.UIGuide = (() => {
                 </div>
                 <div>
                   <dt class="font-bold text-white">Onde conferir</dt>
-                  <dd class="mt-1 text-white/72">${renderGuideMythWhere(item.where)}</dd>
+                  <dd class="mt-1 text-white/72">${renderGuideMythWhere(item.where, { isResidentEvil2 })}</dd>
                 </div>
               </dl>
             </article>
@@ -1178,7 +1187,7 @@ window.UIGuide = (() => {
     return `<div class="atlas-trophy-critical-guide__links">${safeLinks.map(link => `<a href="${escapeAttribute(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`).join('')}</div>`;
   }
 
-  function renderUsefulVideo(video = {}) {
+  function renderUsefulVideo(video = {}, options = {}) {
     if (!video || typeof video !== 'object' || video.external !== true || video.status !== 'validated') return '';
     const youtubeId = String(video.youtubeId || '').trim();
     const title = String(video.title || '').trim();
@@ -1190,7 +1199,9 @@ window.UIGuide = (() => {
     return `
       <aside class="atlas-useful-video" data-useful-video-id="${escapeAttribute(youtubeId)}" aria-labelledby="${escapeAttribute(descriptionId)}-title">
         <div class="atlas-useful-video__body">
-          <h5 id="${escapeAttribute(descriptionId)}-title">${escapeHtml(title)}</h5>
+          ${options.useStrongTitle
+            ? `<strong id="${escapeAttribute(descriptionId)}-title">${escapeHtml(title)}</strong>`
+            : `<h5 id="${escapeAttribute(descriptionId)}-title">${escapeHtml(title)}</h5>`}
           <p id="${escapeAttribute(descriptionId)}-context">${escapeHtml(context)}</p>
           ${video.note ? `<p class="atlas-useful-video__note">${escapeHtml(video.note)}</p>` : ''}
         </div>
@@ -1258,6 +1269,9 @@ window.UIGuide = (() => {
       ? `BSAA Emblem #${number} - ${item.chapter || 'Capitulo nao informado'}`
       : `${number}. ${item.name || 'Item'}`;
     const itemId = String(item.id || `${category.id || 'extra'}-${number}`).trim();
+    const isResidentEvil2Category = String(category.id || '').startsWith('re2-');
+    const itemHeadingTag = category.groupBy ? 'h5' : 'h4';
+    const checkboxId = `extra-check-${itemId}`;
     const imageSrc = String(item.imageSrc || item.image_src || '').trim();
     const imageAlt = item.imageAlt || item.image_alt || item.name || title;
     const imageWidth = Number(item.imageWidth || item.image_width || 1280);
@@ -1294,10 +1308,9 @@ window.UIGuide = (() => {
     ].filter(Boolean).join('');
     return `
       <li id="${escapeAttribute(itemId)}" class="atlas-panel atlas-panel--quiet p-4 space-y-2" data-platinum-extra-item="${escapeAttribute(itemId)}" data-platinum-extra-category="${escapeAttribute(category.id || '')}">
-        <label class="flex items-start gap-3">
-          <input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(itemId)}" aria-label="${escapeAttribute('Marcar ' + title)}">
-          <strong>${escapeHtml(title)}</strong>
-        </label>
+        ${isResidentEvil2Category
+          ? `<div class="flex items-start gap-3"><input id="${escapeAttribute(checkboxId)}" type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(itemId)}" aria-label="${escapeAttribute('Marcar ' + title)}"><${itemHeadingTag} class="text-sm font-bold text-white"><label for="${escapeAttribute(checkboxId)}">${escapeHtml(title)}</label></${itemHeadingTag}></div>`
+          : `<label class="flex items-start gap-3"><input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(itemId)}" aria-label="${escapeAttribute('Marcar ' + title)}"><strong>${escapeHtml(title)}</strong></label>`}
         ${imageSrc ? `<figure class="mt-3"><img src="${escapeAttribute(imageSrc)}" alt="${escapeAttribute(imageAlt)}" width="${escapeAttribute(String(imageWidth))}" height="${escapeAttribute(String(imageHeight))}" loading="lazy">${item.imageCaption ? `<figcaption class="text-xs text-white/50 mt-2">${escapeHtml(item.imageCaption)}</figcaption>` : ''}</figure>` : ''}
         <div class="text-sm text-white/70 space-y-1">${details}</div>
       </li>`;
@@ -1377,7 +1390,7 @@ window.UIGuide = (() => {
               </h3>
               <div id="${escapeAttribute(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
               ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
-              ${renderUsefulVideo(category.usefulVideo)}
+              ${renderUsefulVideo(category.usefulVideo, { useStrongTitle: String(category.id || '').startsWith('re2-') })}
               ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
               ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
               ${Array.isArray(category.checklist) && category.checklist.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">${escapeHtml(category.checklistTitle || 'Checklist')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-1">${category.checklist.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol></div>` : ''}
@@ -1391,7 +1404,7 @@ window.UIGuide = (() => {
       </section>`;
   }
 
-  function renderDlcChecklistGroups(dlcGuide = {}) {
+  function renderDlcChecklistGroups(dlcGuide = {}, { isResidentEvil2 = false } = {}) {
     const packagesById = new Map((dlcGuide.packages || []).map(item => [item.id, item]));
     const groups = (dlcGuide.checklist || []).reduce((result, item) => {
       const key = item.packageId || item.packageName || 'dlc';
@@ -1401,7 +1414,9 @@ window.UIGuide = (() => {
     }, new Map());
     return Array.from(groups.entries()).map(([key, items]) => {
       const pack = packagesById.get(key) || {};
-      const title = pack.subtitle || `${pack.name || items[0]?.packageName || 'DLC'} — ${items.length} troféus`;
+      const title = isResidentEvil2
+        ? (pack.name || items[0]?.packageName || 'DLC')
+        : (pack.subtitle || `${pack.name || items[0]?.packageName || 'DLC'} — ${items.length} troféus`);
       const roadmapTitle = pack.roadmapTitle || `Roadmap curto de ${pack.name || 'DLC'}`;
       const packageAnchorId = getDlcPackageAnchorId(pack, key);
       return `
@@ -1414,12 +1429,13 @@ window.UIGuide = (() => {
         ${pack.introduction ? `<p class="text-sm text-white/70">${escapeHtml(pack.introduction)}</p>` : ''}
         ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
         ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
-        ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">${escapeHtml(roadmapTitle)}</div>${pack.roadmapIntroduction ? `<p class="text-sm mt-2">${escapeHtml(pack.roadmapIntroduction)}</p>` : ''}<ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
-        ${renderDlcPackageExtraLists(pack)}
+        ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box">${isResidentEvil2 ? `<h4 class="atlas-tip-label">${escapeHtml(roadmapTitle)}</h4>` : `<div class="atlas-tip-label">${escapeHtml(roadmapTitle)}</div>`}${pack.roadmapIntroduction ? `<p class="text-sm mt-2">${escapeHtml(pack.roadmapIntroduction)}</p>` : ''}<ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
+        ${renderDlcPackageExtraLists(pack, { isResidentEvil2 })}
         <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
           ${items.map(item => {
             const details = [
-              item.requirement ? `<span><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</span>` : '',
+              isResidentEvil2 && item.descriptionPtBr ? `<span><strong>Descrição oficial:</strong> ${escapeHtml(item.descriptionPtBr)}</span>` : '',
+              item.requirement ? `<span><strong>${isResidentEvil2 ? 'Como obter' : 'Requisito'}:</strong> ${escapeHtml(item.requirement)}</span>` : '',
               Array.isArray(item.tags) && item.tags.length ? `<span class="flex flex-wrap gap-2" aria-label="Classificações">${item.tags.map(tag => `<span class="atlas-tag atlas-tag--soft">${escapeHtml(tag)}</span>`).join('')}</span>` : '',
               item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
               item.tip ? `<span><strong>Dica:</strong> ${escapeHtml(item.tip)}</span>` : '',
@@ -1427,7 +1443,10 @@ window.UIGuide = (() => {
               item.notPlatinumBase && !String(item.id || '').startsWith('re2-extra-') ? '<span>Este troféu pertence à DLC e conta apenas para o 100% da lista completa.</span>' : ''
             ].filter(Boolean);
             const itemAnchorId = String(item.anchorId || item.anchor_id || '').trim();
-            return `<li${itemAnchorId ? ` id="${escapeAttribute(itemAnchorId)}"` : ''}><label class="flex items-start gap-3"><input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(item.id)}" data-dlc-progress-group="${escapeAttribute(key)}" aria-label="${escapeAttribute('Marcar troféu ' + item.name)}"><strong class="text-white">${escapeHtml(item.name)}</strong></label>${details.length ? `<div class="mt-1 space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}</li>`;
+            const checkboxId = `dlc-check-${String(item.id || '').trim()}`;
+            return `<li${itemAnchorId ? ` id="${escapeAttribute(itemAnchorId)}"` : ''}>${isResidentEvil2
+              ? `<div class="flex items-start gap-3"><input id="${escapeAttribute(checkboxId)}" type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(item.id)}" data-dlc-progress-group="${escapeAttribute(key)}" aria-label="${escapeAttribute('Marcar troféu ' + item.name)}"><div><h4 class="text-sm font-bold text-white"><label for="${escapeAttribute(checkboxId)}">${escapeHtml(item.name)}</label></h4>${item.name_pt ? `<span class="atlas-trophy-card__title-translation"><span>PT-BR</span>${escapeHtml(item.name_pt)}</span>` : ''}</div></div>`
+              : `<label class="flex items-start gap-3"><input type="checkbox" class="mt-1" data-platinum-extra-check="${escapeAttribute(item.id)}" data-dlc-progress-group="${escapeAttribute(key)}" aria-label="${escapeAttribute('Marcar troféu ' + item.name)}"><span><strong class="text-white">${escapeHtml(item.name)}</strong></span></label>`}${details.length ? `<div class="mt-1 space-y-1">${details.map(detail => `<div>${detail}</div>`).join('')}</div>` : ''}</li>`;
           }).join('')}
         </ol>
       </article>
@@ -1435,14 +1454,14 @@ window.UIGuide = (() => {
     }).join('');
   }
 
-  function renderDlcPackageExtraLists(pack = {}) {
+  function renderDlcPackageExtraLists(pack = {}, { isResidentEvil2 = false } = {}) {
     const lists = Array.isArray(pack.collectibleChecklists) ? pack.collectibleChecklists : [];
     if (!lists.length) return '';
     return lists.map(list => {
       const anchorId = getDlcCollectibleChecklistAnchorId(pack, list);
       return `
       <div${anchorId ? ` id="${escapeAttribute(anchorId)}"` : ''} class="atlas-tip-box">
-        <div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>
+        ${isResidentEvil2 ? `<h4 class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</h4>` : `<div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>`}
         ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
         ${renderUsefulVideo(list.usefulVideo)}
         ${renderEditorialLinks(list.links)}
@@ -1450,7 +1469,7 @@ window.UIGuide = (() => {
         ${list.progressGroup ? `<div class="mt-3" data-dlc-collectible-progress="${escapeAttribute(list.progressGroup)}"><strong data-dlc-collectible-count>0/${countDlcCollectibleItems(list)} encontrados</strong></div>` : ''}
         ${Array.isArray(list.groups) && list.groups.length ? `<div class="mt-3 space-y-3">${list.groups.map(group => `
           <div>
-            <h4 class="text-sm font-bold text-white">${escapeHtml(group.title || 'Área')}</h4>
+            ${isResidentEvil2 ? `<h5 class="text-sm font-bold text-white">${escapeHtml(group.title || 'Área')}</h5>` : `<h4 class="text-sm font-bold text-white">${escapeHtml(group.title || 'Área')}</h4>`}
             <ol class="text-sm mt-2 list-decimal pl-5 space-y-2">
               ${(Array.isArray(group.items) ? group.items : []).map(item => renderDlcCollectibleChecklistItem(item, list, group)).join('')}
             </ol>
@@ -1525,14 +1544,18 @@ window.UIGuide = (() => {
             <p class="text-white/62 mt-2 max-w-4xl">${escapeHtml(dlcGuide.introduction || '')}</p>
             ${normalizedSlug === 'resident-evil-5' ? renderResidentEvil5DlcAnchorLinks() : ''}
           </div>
-          <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(baseTrophies))} base + ${escapeHtml(String(dlcTrophies))} DLC = ${escapeHtml(String(totalTrophies))} totais</span>
+          <span class="atlas-tag atlas-tag--soft">${isResidentEvil2
+            ? `${escapeHtml(String(baseTrophies))} troféus da base + ${escapeHtml(String(dlcTrophies))} extras = ${escapeHtml(String(totalTrophies))} no total`
+            : `${escapeHtml(String(baseTrophies))} base + ${escapeHtml(String(dlcTrophies))} DLC = ${escapeHtml(String(totalTrophies))} totais`}</span>
         </div>
         ${!isResidentEvil2 && scopeNotes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Separação de escopo</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${scopeNotes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
         <div class="grid md:grid-cols-3 gap-4">
           ${dlcGuide.packages.filter(pack => !(isResidentEvil2 && pack.id === 'complete-list')).map(pack => `
             <article class="atlas-panel atlas-panel--support p-4 space-y-3">
               <div class="flex items-center justify-between gap-2">
-                <h3 class="text-lg font-bold text-white">${escapeHtml(pack.name)}</h3>
+                ${isResidentEvil2 && pack.id !== 'platinum-base'
+                  ? `<strong class="text-lg font-bold text-white">${escapeHtml(pack.name)}</strong>`
+                  : `<h3 class="text-lg font-bold text-white">${escapeHtml(pack.name)}</h3>`}
                 <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(pack.trophyCount || 0))} ${Number(pack.trophyCount || 0) === 1 ? 'troféu' : 'troféus'}</span>
               </div>
               ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Pacote:</strong> ${escapeHtml(pack.name || '')}</p>`}
@@ -1561,9 +1584,11 @@ window.UIGuide = (() => {
         <div class="space-y-3">
           <div>
             <div class="atlas-eyebrow">Checklist separado</div>
-            <h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>
+            ${isResidentEvil2
+              ? `<strong class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} extras</strong>`
+              : `<h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>`}
           </div>
-          ${renderDlcChecklistGroups(dlcGuide)}
+          ${renderDlcChecklistGroups(dlcGuide, { isResidentEvil2 })}
         </div>
       </section>`;
   }
@@ -1766,8 +1791,9 @@ window.UIGuide = (() => {
       .map(item => item.length > 120 ? `${item.slice(0, 117).trim()}...` : item);
   }
 
-  function renderGuideRoadmapPanel(viewModel = {}) {
+  function renderGuideRoadmapPanel(viewModel = {}, game = {}) {
     const roadmapStages = Array.isArray(viewModel.roadmapStages) ? viewModel.roadmapStages : [];
+    const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
     return `
       <section id="guideRoadmapPanel" class="atlas-panel atlas-panel--section atlas-roadmap-panel p-5 md:p-6">
         <span id="roadmap" class="atlas-anchor-alias" aria-hidden="true"></span>
@@ -1782,7 +1808,7 @@ window.UIGuide = (() => {
         <div id="guideRoadmapBody" data-guide-section-content>
           ${renderGuideRoadmapTimeline(roadmapStages)}
           ${renderGuideWalkthrough(viewModel)}
-          ${roadmapStages.length >= 4 ? '<div class="atlas-guide-return-row"><button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button></div>' : ''}
+          ${roadmapStages.length >= 4 ? `<div class="atlas-guide-return-row">${isResidentEvil2 ? '<a href="#topo" class="atlas-btn atlas-btn-secondary atlas-btn-compact"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</a>' : '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button>'}</div>` : ''}
         </div>
       </section>`;
   }
@@ -1821,10 +1847,28 @@ window.UIGuide = (() => {
   }
 
   function isGuideSectionNavigationEnabled(game = {}) {
-    return String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
+    return ['resident-evil-2-remake', 'resident-evil-5'].includes(String(game?.slug || '').trim().toLowerCase());
   }
 
   function getGuideSectionRegistry(game = {}) {
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    if (normalizedSlug === 'resident-evil-2-remake') {
+      const mythsTargetId = String(getGuideCommonMyths(game)?.anchorId || 'guideCommonMythsPanel').trim() || 'guideCommonMythsPanel';
+      return [
+        { id: 'summary', panelId: 'summary', targetId: 'guideSummaryActions', href: '#guideSummaryActions', icon: 'fa-bolt', label: 'Resumo', action: 'summary', topNav: true },
+        { id: 'roadmap', panelId: 'roadmap', targetId: 'guideRoadmapPanel', href: '#guideRoadmapPanel', icon: 'fa-route', label: 'Roadmap', action: 'roadmap', topNav: true, directoryGoal: 'Ver a ordem detalhada da platina' },
+        { id: 'quick', targetId: 'guideQuickPlan', href: '#guideQuickPlan', icon: 'fa-bolt', label: 'Plano rápido', directoryLabel: 'Plano rápido — rota compacta da platina', action: 'quick', topNav: true, directoryGoal: 'Saber qual campanha abrir agora' },
+        { id: 'routes', targetId: 'guideChapterRoutePanel', href: '#guideChapterRoutePanel', icon: 'fa-map-location-dot', label: 'Rotas', directoryLabel: 'Rotas Leon/Claire e 2nd Run', action: 'chapter-route', topNav: true, directoryGoal: 'Conferir diferenças entre Leon, Claire e 2nd Run' },
+        { id: 'myths', targetId: mythsTargetId, href: `#${mythsTargetId}`, icon: 'fa-triangle-exclamation', label: 'Mitos', directoryLabel: 'Mitos e erros comuns', action: 'myths', topNav: true, directoryGoal: 'Evitar interpretações erradas' },
+        { id: 'checklist', panelId: 'checklist', targetId: 'guideChecklistPanel', href: '#guideChecklistPanel', icon: 'fa-list-check', label: 'Checklist', directoryLabel: 'Checklist de troféus', action: 'trophies', topNav: true, directoryGoal: 'Marcar os 42 troféus base' },
+        { id: 'extras', panelId: 'extras', targetId: 'guidePlatinumExtrasPanel', href: '#guidePlatinumExtrasPanel', icon: 'fa-layer-group', label: 'Extras da Platina', action: 'extras', topNav: true, directoryGoal: 'Conferir Files, Mr. Raccoons e outros itens' },
+        { id: 'dlcs', panelId: 'dlc', targetId: 'guideDlcCompletionPanel', href: '#guideDlcCompletionPanel', icon: 'fa-puzzle-piece', label: 'DLCs e 100%', directoryLabel: 'DLCs e 100% da Lista', action: 'dlcs', topNav: true, directoryGoal: 'Fazer os três troféus adicionais' },
+        { id: 'attention', panelId: 'attention', targetId: 'guideEditorialNotesPanel', href: '#guideEditorialNotesPanel', icon: 'fa-triangle-exclamation', label: 'Pontos de atenção', action: 'attention', topNav: true, directoryGoal: 'Revisar riscos de run' },
+        { id: 'faq', targetId: 'guideFaqPanel', href: '#guideFaqPanel', icon: 'fa-circle-question', label: 'FAQ', directoryLabel: 'Perguntas frequentes', action: 'faq', topNav: true, directoryGoal: 'Resolver uma dúvida rápida' },
+        { id: 'comments', targetId: 'guideCommentsPanel', href: '#guideCommentsPanel', icon: 'fa-comments', label: 'Comentários', action: 'comments', directoryGoal: 'Tirar dúvida com a comunidade' },
+        { id: 'feedback', targetId: 'guideFeedbackPanel', href: '#guideFeedbackPanel', icon: 'fa-flag', label: 'Encontrou erro neste guia?', action: 'feedback', directoryGoal: 'Informar uma correção' }
+      ];
+    }
     const hasPlatinumExtras = Boolean(getGuidePlatinumExtras(game));
     const hasDlcCompletion = Boolean(getGuideDlcCompletion(game));
     return [
@@ -1846,6 +1890,9 @@ window.UIGuide = (() => {
   }
 
   function getGuideLayerNavItems(game = {}) {
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+      return getGuideSectionRegistry(game).filter(item => item.topNav);
+    }
     return [
       { id: 'summary', icon: 'fa-bolt', label: 'Resumo', action: 'summary' },
       { id: 'roadmap', icon: 'fa-route', label: 'Roadmap', action: 'roadmap' },
@@ -1885,6 +1932,7 @@ window.UIGuide = (() => {
 
   function renderGuideSectionIndex(game = {}) {
     if (!isGuideSectionNavigationEnabled(game)) return '';
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') return '';
     return `
       <aside class="atlas-guide-section-index" aria-labelledby="guideSectionIndexTitle">
         <nav aria-label="Neste guia">
@@ -1898,12 +1946,16 @@ window.UIGuide = (() => {
 
   function renderGuideMobileSectionsPanel(game = {}) {
     if (!isGuideSectionNavigationEnabled(game)) return '';
+    const sections = getGuideSectionRegistry(game);
+    const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
     return `
       <div id="guideSectionsPanel" class="atlas-guide-sections-panel" hidden aria-hidden="true">
         <nav aria-label="Seções do guia">
-          <h2>Seções do guia</h2>
+          ${isResidentEvil2 ? '<strong>Seções do guia</strong>' : '<h2>Seções do guia</h2>'}
           <div class="atlas-guide-section-map">
-            ${renderGuideSectionLinks(getGuideSectionRegistry(game))}
+            ${isResidentEvil2
+              ? `<ol>${sections.map(item => `<li><a href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}" data-guide-section-link="${escapeAttribute(item.targetId)}"><span>${escapeHtml(item.label)}</span></a></li>`).join('')}</ol>`
+              : renderGuideSectionLinks(sections)}
           </div>
         </nav>
       </div>`;
@@ -1911,6 +1963,17 @@ window.UIGuide = (() => {
 
   function renderGuideLayerNav(game = {}) {
     const items = getGuideLayerNavItems(game);
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+      return `
+        <nav id="guideLayerNav" class="atlas-guide-layer-nav" aria-label="Navegação rápida do guia">
+          ${items.map(item => `
+            <a${item.panelId ? ` id="guideTabButton-${escapeAttribute(item.panelId)}"` : ''} class="atlas-guide-layer-nav__button" href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}" data-guide-section-link="${escapeAttribute(item.targetId)}">
+              <i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i>
+              <span>${escapeHtml(item.shortLabel || item.label)}</span>
+            </a>
+          `).join('')}
+        </nav>`;
+    }
     return `
       <nav id="guideLayerNav" class="atlas-guide-layer-nav" role="tablist" aria-label="Seções principais do guia" aria-orientation="horizontal">
         ${items.map((item, index) => `
@@ -1937,7 +2000,7 @@ window.UIGuide = (() => {
       <article class="atlas-re2-campaign-plan__run" data-run-number="${escapeAttribute(run.number || index + 1)}">
         <details${index === 0 ? ' open' : ''}>
           <summary><div>
-            <strong>Run ${escapeHtml(String(run.number || index + 1))} — ${escapeHtml(run.character || '')}, ${escapeHtml(run.scenario || '')}</strong>
+            <h3>Run ${escapeHtml(String(run.number || index + 1))} — ${escapeHtml(run.character || '')}, ${escapeHtml(run.scenario || '')}</h3>
             <div class="atlas-re2-campaign-plan__badges" aria-label="Personagem, cenário e dificuldade">
               <span>Personagem: ${escapeHtml(run.character || '')}</span><span>Cenário: ${escapeHtml(run.scenario || '')}</span><span>Dificuldade: ${escapeHtml(run.difficulty || '')}</span>
             </div>
@@ -2024,6 +2087,8 @@ window.UIGuide = (() => {
         ]
       : [];
     const re2CampaignPlanHtml = renderRe2CampaignPlan(game);
+    const re2Sections = normalizedSlug === 'resident-evil-2-remake' ? getGuideSectionRegistry(game) : [];
+    const re2Section = id => re2Sections.find(item => item.id === id) || {};
     return `
       <section id="guideSummaryActions" class="atlas-panel atlas-panel--section atlas-guide-summary-actions p-5 md:p-6">
         <div>
@@ -2033,15 +2098,39 @@ window.UIGuide = (() => {
           ${editorialParagraphs.length ? `<div class="atlas-guide-summary-editorial mt-3 space-y-3">${editorialParagraphs.map(paragraph => `<p class="text-white/72 max-w-4xl">${escapeHtml(paragraph)}</p>`).join('')}</div>` : ''}
         </div>
         <div class="atlas-guide-summary-actions__buttons">
-          <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
-          <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
-          <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>
+          ${normalizedSlug === 'resident-evil-2-remake'
+            ? `<a class="atlas-btn atlas-btn-primary" href="${escapeAttribute(re2Section('roadmap').href)}" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</a>
+               <a class="atlas-btn atlas-btn-secondary" href="${escapeAttribute(re2Section('checklist').href)}" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</a>
+               <a class="atlas-btn atlas-btn-secondary" href="${escapeAttribute(re2Section('feedback').href)}" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</a>`
+            : `<button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i> Abrir roadmap</button>
+               <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i> Abrir checklist</button>
+               <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i> Reportar problema</button>`}
         </div>
       </section>`;
   }
 
   function renderGuideUsagePanel(game = {}) {
-    if (String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5') return '';
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    if (normalizedSlug === 'resident-evil-2-remake') {
+      const rows = getGuideSectionRegistry(game).filter(item => item.directoryGoal);
+      return `
+        <section id="guideUsagePanel" class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4" aria-labelledby="guideUsageTitle">
+          <div>
+            <div class="atlas-eyebrow">Navegação rápida</div>
+            <h2 id="guideUsageTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Como usar este guia</h2>
+            <p class="text-white/62 mt-2 max-w-4xl">Escolha a seção conforme o que você precisa resolver agora: ordem das campanhas, troféus, coletáveis, conteúdos adicionais ou cleanup.</p>
+          </div>
+          <nav class="overflow-x-auto" aria-label="Diretório de seções do guia">
+            <table class="w-full min-w-[560px] text-sm">
+              <thead class="text-left text-white/72"><tr><th class="py-2 pr-4 font-bold">Se você quer...</th><th class="py-2 font-bold">Abra...</th></tr></thead>
+              <tbody class="divide-y divide-white/10">
+                ${rows.map(item => `<tr><td class="py-2 pr-4 text-white/72">${escapeHtml(item.directoryGoal)}</td><td class="py-2"><a class="text-atlas-300 font-bold hover:text-white" href="${escapeAttribute(item.href)}" data-guide-action="${escapeAttribute(item.action)}">${escapeHtml(item.directoryLabel || item.label)}</a></td></tr>`).join('')}
+              </tbody>
+            </table>
+          </nav>
+        </section>`;
+    }
+    if (normalizedSlug !== 'resident-evil-5') return '';
     const rows = [
       ['Ver a ordem ideal da platina', 'Roadmap', 'roadmap', '#guideRoadmapPanel'],
       ['Seguir uma versão resumida', 'Plano rápido', 'quick', '#guideQuickPlan'],
@@ -2200,7 +2289,7 @@ window.UIGuide = (() => {
             <div class="atlas-editorial-notes__column">
             ${routeTrophies.length ? routeTrophies.map(item => {
               const badge = Array.isArray(item.tags) && item.tags.length ? item.tags[0] : null;
-              return `<article class="atlas-critical-row"><div><strong>${escapeHtml(item.name)}</strong><p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeAttribute(badge?.tone || 'neutral')}">${escapeHtml(item.type || badge?.label || '')}</span></article>`;
+              return `<article class="atlas-critical-row"><div>${normalizedSlug === 'resident-evil-2-remake' ? `<h3>${escapeHtml(item.name)}</h3>` : `<strong>${escapeHtml(item.name)}</strong>`}<p>${escapeHtml(item.text)}</p></div><span class="atlas-badge atlas-badge--${escapeAttribute(badge?.tone || 'neutral')}">${escapeHtml(item.type || badge?.label || '')}</span></article>`;
             }).join('') : '<p class="atlas-muted-copy">Nenhum troféu com risco editorial alto foi detectado nos dados atuais.</p>'}
             </div>
           </details>
@@ -2215,7 +2304,7 @@ window.UIGuide = (() => {
         <div class="atlas-section-head atlas-section-head--compact">
           <div><span class="atlas-section-kicker">Consulta rápida</span><h2 id="guideFaqTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2><p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p></div>
         </div>
-        <div class="atlas-faq-list">${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></article>`).join('')}</div>
+        <div class="atlas-faq-list">${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row">${normalizedSlug === 'resident-evil-2-remake' ? `<h3>${escapeHtml(item.question)}</h3>` : `<strong>${escapeHtml(item.question)}</strong>`}<p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></article>`).join('')}</div>
       </section>`;
     return { attention, faq };
   }
@@ -2354,14 +2443,15 @@ window.UIGuide = (() => {
 
   function renderGuideRelatedOverview(game, relatedGames = [], comparisonModel = null) {
     if (!Array.isArray(relatedGames) || !relatedGames.length) return '';
-    return `<section class="atlas-related-suggestions md:col-span-2 space-y-4"><div class="atlas-decision-panel__header"><div><span class="atlas-section-kicker">Jogos relacionados</span><h2 class="text-lg md:text-xl font-extrabold mt-2">Guias parecidos para manter o ritmo</h2></div><span class="atlas-tag atlas-tag--soft">Descoberta</span></div><div class="atlas-related-suggestions__grid">${renderGuideRelatedCards(relatedGames)}</div></section>`;
+    const headingTag = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake' ? 'h3' : 'h2';
+    return `<section class="atlas-related-suggestions md:col-span-2 space-y-4"><div class="atlas-decision-panel__header"><div><span class="atlas-section-kicker">Jogos relacionados</span><${headingTag} class="text-lg md:text-xl font-extrabold mt-2">Guias parecidos para manter o ritmo</${headingTag}></div><span class="atlas-tag atlas-tag--soft">Descoberta</span></div><div class="atlas-related-suggestions__grid">${renderGuideRelatedCards(relatedGames)}</div></section>`;
   }
 
   function renderGuideFeedbackCta(game = {}) {
     const gameName = game?.name || '';
     const slug = game?.slug || '';
     return `
-      <section class="atlas-guide-feedback-cta atlas-panel atlas-panel--support" aria-labelledby="guideFeedbackCtaTitle">
+      <section id="guideFeedbackPanel" class="atlas-guide-feedback-cta atlas-panel atlas-panel--support" aria-labelledby="guideFeedbackCtaTitle">
         <div class="atlas-guide-feedback-cta__copy">
           <span class="atlas-section-kicker">Correção colaborativa</span>
           <h2 id="guideFeedbackCtaTitle">Encontrou erro neste guia?</h2>
@@ -2532,6 +2622,7 @@ window.UIGuide = (() => {
     }
     window.removeEventListener('scroll', requestGuideSectionSpyFallback);
     window.removeEventListener('resize', requestGuideSectionSpyFallback);
+    if (qs('#view-guide')?.classList.contains('atlas-guide--resident-evil-2-remake')) return;
     const links = qsa('[data-guide-section-link]');
     if (!links.length) return;
 
@@ -2572,15 +2663,57 @@ window.UIGuide = (() => {
     }
   }
 
+  function syncResidentEvil2FragmentShortcuts(game = {}) {
+    const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
+    if (!isResidentEvil2) {
+      qsa('[data-re2-fragment-shortcut]').forEach(link => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = link.className;
+        button.innerHTML = link.innerHTML;
+        const action = link.getAttribute('data-guide-action');
+        if (action) button.setAttribute('data-guide-action', action);
+        else button.setAttribute('data-scroll-top', 'true');
+        const ariaLabel = link.getAttribute('aria-label');
+        if (ariaLabel) button.setAttribute('aria-label', ariaLabel);
+        link.replaceWith(button);
+      });
+      return;
+    }
+
+    const mappings = [
+      ['#guideQuickDock button[data-guide-action="trophies"]', '#guideChecklistPanel'],
+      ['#guideQuickDock button[data-guide-action="roadmap"]', '#guideRoadmapPanel'],
+      ['#guideQuickDock button[data-scroll-top]', '#topo'],
+      ['#guideTab-checklist .atlas-guide-return-row button[data-scroll-top]', '#topo']
+    ];
+    mappings.forEach(([selector, href]) => {
+      const button = qs(selector);
+      if (!button) return;
+      const link = document.createElement('a');
+      link.className = button.className;
+      link.href = href;
+      link.innerHTML = button.innerHTML;
+      link.setAttribute('data-re2-fragment-shortcut', 'true');
+      const action = button.getAttribute('data-guide-action');
+      if (action) link.setAttribute('data-guide-action', action);
+      const ariaLabel = button.getAttribute('aria-label');
+      if (ariaLabel) link.setAttribute('aria-label', ariaLabel);
+      button.replaceWith(link);
+    });
+  }
+
   function renderGuide(game, state = {}) {
+    const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const guideViewEl = qs('#view-guide');
     if (guideViewEl) {
-      const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+      guideViewEl.classList.toggle('atlas-guide--resident-evil-2-remake', normalizedSlug === 'resident-evil-2-remake');
       guideViewEl.classList.toggle('atlas-guide--resident-evil-5', normalizedSlug === 'resident-evil-5');
       guideViewEl.classList.toggle('atlas-guide--resident-evil-6', normalizedSlug === 'resident-evil-6');
       guideViewEl.classList.toggle('atlas-guide--lego-batman-legacy-of-the-dark-knight', normalizedSlug === 'lego-batman-legacy-of-the-dark-knight');
       guideViewEl.classList.toggle('atlas-guide--lies-of-p', normalizedSlug === 'lies-of-p');
     }
+    syncResidentEvil2FragmentShortcuts(game);
     const headerEl = qs('#guideHeader');
     const tabsEl = qs('#guideTabsSlot');
     const decisionEl = qs('#guideDecisionStack');
@@ -2679,7 +2812,7 @@ window.UIGuide = (() => {
                   <div class="atlas-trophy-card__main">
                     <div class="atlas-trophy-card__headline">
                       <div class="atlas-trophy-card__title">
-                        <h4>${escapeHtml(primaryName)}</h4>
+                        ${normalizedSlug === 'resident-evil-2-remake' ? `<h3>${escapeHtml(primaryName)}</h3>` : `<h4>${escapeHtml(primaryName)}</h4>`}
                         ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>${escapeHtml(translationLabel)}</span>${escapeHtml(secondaryName)}</p>` : ''}
                       </div>
                       <div class="atlas-trophy-card__meta">
@@ -2689,7 +2822,7 @@ window.UIGuide = (() => {
                     </div>
                     ${displayRiskTags.length ? `<div class="atlas-trophy-risk-list">${displayRiskTags.map(tag => `<span class="atlas-risk-chip atlas-risk-chip--${escapeAttribute(tag.tone)}">${escapeHtml(tag.label)}</span>`).join('')}</div>` : ''}
                     <div id="${escapeAttribute(detailsId)}" class="atlas-trophy-details" data-trophy-details>
-                      <p class="atlas-trophy-description">${escapeHtml(description || 'Sem descrição.')}</p>
+                      <p class="atlas-trophy-description">${String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake' ? '<strong>Descrição oficial:</strong> ' : ''}${escapeHtml(description || 'Sem descrição.')}</p>
                       ${tip ? `<div class="atlas-tip-box atlas-trophy-tip"><div class="atlas-tip-label">${trophy.is_spoiler ? 'Dica com spoiler' : 'Dica'}</div><p class="text-sm mt-2">${escapeHtml(tip)}</p></div>` : ''}
                       ${criticalGuideHtml}
                     </div>
@@ -2707,7 +2840,7 @@ window.UIGuide = (() => {
     }
 
     if (roadmapEl) {
-      roadmapEl.innerHTML = `${renderGuideRoadmapPanel(viewModel)}${renderGuideChapterRoutePanel(game)}${renderGuideProfessionalAiPanel(game)}${renderGuideFarmRoutesPanel(game)}${renderGuideCommonMythsPanel(game)}`;
+      roadmapEl.innerHTML = `${renderGuideRoadmapPanel(viewModel, game)}${renderGuideChapterRoutePanel(game)}${renderGuideProfessionalAiPanel(game)}${renderGuideFarmRoutesPanel(game)}${renderGuideCommonMythsPanel(game)}`;
     }
 
     if (platinumExtrasEl) {

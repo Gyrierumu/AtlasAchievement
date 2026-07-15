@@ -628,16 +628,16 @@
                 "Zombie Roundup — Ajuntamento de Zumbis: Leon ou Claire; grupo de três zumbis ou início de um 2nd Run; sem campanha exclusiva; combate rápido.",
                 "Like Skeet Shooting — Como Tiro ao Prato: Leon ou Claire; áreas com zombie dogs; save opcional; combate rápido.",
                 "Keep Their Heads Ringin' — Cabeças Zumbindo: Leon ou Claire; corredor próximo ao S.T.A.R.S. Office; save opcional; combate rápido.",
-                "Gotcha! — Peguei Você!: Leon ou Claire; G Stage 2; save manual recomendado; boss/perdível por run.",
+                "Gotcha! — Te Peguei!: Leon ou Claire; G Stage 2; save manual recomendado; boss/perdível por run.",
                 "Treasure Hunter — Caçador de Tesouros: Leon ou Claire; Sewers e retorno ao R.P.D. antes do NEST; save de rota; exploração."
               ],
               "title": "Decisão rápida — combate e exploração"
             },
             {
               "items": [
-                "One Slick Super-spy — Uma Superespiã Eficiente: Leon/Ada; segmento da Ada; save manual recomendado; personagem/perdível por run.",
+                "One Slick Super-spy — Espiã Nota Dez: Leon/Ada; segmento da Ada; save manual recomendado; personagem/perdível por run.",
                 "Young Escapee — Jovem Fugitiva: Claire/Sherry; fuga do quarto; save manual recomendado; personagem/timer.",
-                "In the Blink of an Eye — Num Piscar de Olhos: apenas Leon; Super Tyrant; save manual recomendado; boss/timer.",
+                "In the Blink of an Eye — Em um Piscar de Olhos: apenas Leon; Super Tyrant; save manual recomendado; boss/timer.",
                 "With Time to Spare — Com Tempo de Sobra: apenas Claire; G Stage 4; save manual recomendado; boss/timer."
               ],
               "title": "Decisão rápida — personagem e finais"
@@ -662,9 +662,9 @@
             },
             {
               "items": [
-                "Gotcha! — Peguei Você!: após os chess plugs, crie um save manual antes de G Stage 2. Afaste o container, cause dano pesado e chame o guindaste de volta uma única vez quando G estiver enfraquecido; se ele não cair nessa ativação efetiva, recarregue. Vale com Leon ou Claire.",
+                "Gotcha! — Te Peguei!: após os chess plugs, crie um save manual antes de G Stage 2. Afaste o container, cause dano pesado e chame o guindaste de volta uma única vez quando G estiver enfraquecido; se ele não cair nessa ativação efetiva, recarregue. Vale com Leon ou Claire.",
                 "Gotcha! pertence à platina base. Got ’Em, com apóstrofo, pertence a The Ghost Survivors e fica fora da platina.",
-                "In the Blink of an Eye — Num Piscar de Olhos: exclusivo do Leon. Salve antes da fuga final do NEST, chegue ao Super Tyrant com recursos e cause dano contínuo para acelerar o Rocket Launcher; termine com pelo menos 5 minutos restantes ou recarregue.",
+                "In the Blink of an Eye — Em um Piscar de Olhos: exclusivo do Leon. Salve antes da fuga final do NEST, chegue ao Super Tyrant com recursos e cause dano contínuo para acelerar o Rocket Launcher; termine com pelo menos 5 minutos restantes ou recarregue.",
                 "With Time to Spare — Com Tempo de Sobra: exclusivo da Claire. Salve antes da fuga final do NEST, guarde munição pesada, use a Minigun disponível contra G Stage 4 e evite desvios; termine com pelo menos 4 minutos restantes ou recarregue."
               ],
               "title": "Bosses e objetivos com timer",
@@ -681,7 +681,7 @@
             },
             {
               "items": [
-                "One Slick Super-spy — Uma Superespiã Eficiente: apenas Leon/Ada. Salve após o crocodile ou antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun nem usar subweapons; se quebrar a condição, recarregue. Hack Complete sai ao concluir o segmento normalmente.",
+                "One Slick Super-spy — Espiã Nota Dez: apenas Leon/Ada. Salve após o crocodile ou antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun nem usar subweapons; se quebrar a condição, recarregue. Hack Complete sai ao concluir o segmento normalmente.",
                 "Young Escapee — Jovem Fugitiva: apenas Claire/Sherry. Salve antes da transição e estude o block puzzle. O timer começa quando o controle de Sherry é assumido e termina ao cortar o papelão e atravessar a abertura na parede do quarto; não abrange todo o segmento da Sherry."
               ],
               "title": "Segmentos exclusivos de personagem"
@@ -1081,7 +1081,7 @@
             {
               "action": "attention",
               "href": "#guideAttentionPointsPanel",
-              "label": "Pontos de atenção — Peguei Você!"
+              "label": "Pontos de atenção — Te Peguei!"
             },
             {
               "action": "dlcs",
@@ -1128,13 +1128,26 @@
       "baseTrophies": 42,
       "checklist": [
         {
+          "alert": "Training Mode não libera este troféu.",
           "anchorId": "re2-hell-of-a-sheriff",
+          "atlasTip": "Use a estratégia de No Way Out abaixo: estabilize no início, use armas especiais no meio e preserve explosivos/Rocket Launcher para o final.",
+          "cleanup": "Repita No Way Out fora do Training Mode.",
+          "description": "Conclua o cenário \"Sem Escapatória\". (Sem modo de treinamento)",
+          "descriptionOriginal": "Complete the No Way Out scenario. (Sem Training Mode)",
+          "descriptionPtBr": "Conclua o cenário \"Sem Escapatória\". (Sem modo de treinamento)",
+          "descriptionPtSource": "official_ps4_pt_br",
+          "guideTip": "Use a estratégia de No Way Out abaixo: estabilize no início, use armas especiais no meio e preserve explosivos/Rocket Launcher para o final.",
+          "howToObtain": "Conclua No Way Out com Sheriff Daniel Cortini na Mizoil Gas Station, fora do Training Mode, eliminando 100 inimigos.",
           "id": "re2-extra-hell-of-a-sheriff",
           "name": "Hell of a Sheriff",
+          "namePtSource": "official_ps4_pt_br",
+          "name_pt": "Um Baita Xerife",
           "notPlatinumBase": true,
-          "note": "Não exige Gunslinger, Cat Ears, limite de 60 tiros, S rank, S+ ou repetir a platina base. Sem Training Mode.",
+          "note": "Não exige Gunslinger, Cat Ears, limite de 60 tiros, S rank, S+ ou repetir a platina base. Não vale Sem Training Mode.",
           "packageId": "the-ghost-survivors",
+          "ptDescription": "Conclua o cenário \"Sem Escapatória\". (Sem modo de treinamento)",
           "requirement": "Conclua No Way Out com Sheriff Daniel Cortini na Mizoil Gas Station, fora do Training Mode, eliminando 100 inimigos.",
+          "risk": "Concluir No Way Out Sem Training Mode não satisfaz o requisito.",
           "tags": [
             "Prata",
             "fora da platina",
@@ -1143,16 +1156,31 @@
             "Dificuldade",
             "100% da lista"
           ],
-          "tip": "Use a estratégia de No Way Out abaixo: estabilize no início, use armas especiais no meio e preserve explosivos/Rocket Launcher para o final."
+          "tip": "Use a estratégia de No Way Out abaixo: estabilize no início, use armas especiais no meio e preserve explosivos/Rocket Launcher para o final.",
+          "trophyNameOriginal": "Hell of a Sheriff",
+          "trophyNamePtBr": "Um Baita Xerife"
         },
         {
+          "alert": "O nome localizado coincide com Gotcha!, mas pacote e requisito são distintos.",
           "anchorId": "re2-got-em",
+          "atlasTip": "Use o checklist individual dos 10 Mr. Raccoons abaixo.",
+          "cleanup": "Revise o checklist 4/3/2/1 nos quatro cenários.",
+          "description": "Destrua todos os Mr. Raccoons escondidos no modo Sobreviventes Perdidos.",
+          "descriptionOriginal": "Destroy all Mr. Raccoons hidden in The Ghost Survivors mode.",
+          "descriptionPtBr": "Destrua todos os Mr. Raccoons escondidos no modo Sobreviventes Perdidos.",
+          "descriptionPtSource": "official_ps4_pt_br",
+          "guideTip": "Use o checklist individual dos 10 Mr. Raccoons abaixo.",
+          "howToObtain": "Destrua todos os 10 Mr. Raccoons escondidos em The Ghost Survivors.",
           "id": "re2-extra-got-em",
           "name": "Got ’Em",
+          "namePtSource": "official_ps4_pt_br",
+          "name_pt": "Te Peguei!",
           "notPlatinumBase": true,
           "note": "Distribuição: 4 em No Time to Mourn, 3 em Runaway, 2 em Forgotten Soldier e 1 em No Way Out.",
           "packageId": "the-ghost-survivors",
+          "ptDescription": "Destrua todos os Mr. Raccoons escondidos no modo Sobreviventes Perdidos.",
           "requirement": "Destrua todos os 10 Mr. Raccoons escondidos em The Ghost Survivors.",
+          "risk": "No Time to Mourn exige as duas ramificações.",
           "tags": [
             "Bronze",
             "fora da platina",
@@ -1160,16 +1188,31 @@
             "Coletável",
             "100% da lista"
           ],
-          "tip": "Use o checklist individual dos 10 Mr. Raccoons abaixo."
+          "tip": "Use o checklist individual dos 10 Mr. Raccoons abaixo.",
+          "trophyNameOriginal": "Got ’Em",
+          "trophyNamePtBr": "Te Peguei!"
         },
         {
+          "alert": "Another Survivor é o pacote de troféu, não um modo jogável.",
           "anchorId": "re2-chasing-jill",
+          "atlasTip": "Entre na loja, passe pela prateleira do Long Barrel e leia a carta sobre o balcão. Aguarde o registro do troféu; não é necessário concluir a campanha.",
+          "cleanup": "Use um save anterior à Gun Shop Kendo ou uma nova campanha de Leon.",
+          "description": "Leia uma carta deixada por Jill.",
+          "descriptionOriginal": "Read a letter left behind by Jill.",
+          "descriptionPtBr": "Leia uma carta deixada por Jill.",
+          "descriptionPtSource": "official_ps4_pt_br",
+          "guideTip": "Entre na loja, passe pela prateleira do Long Barrel e leia a carta sobre o balcão. Aguarde o registro do troféu; não é necessário concluir a campanha.",
+          "howToObtain": "Leia a Letter to the Shopkeeper na Gun Shop Kendo durante Leon 1st Run ou 2nd Run.",
           "id": "re2-extra-chasing-jill",
           "name": "Chasing Jill",
+          "namePtSource": "official_ps4_pt_br",
+          "name_pt": "No Encalço de Jill",
           "notPlatinumBase": true,
           "note": "Depois do Parking Garage Key Card, siga Ada até a Gun Shop Kendo. A carta fica sobre o balcão depois da prateleira do Long Barrel da W-870 e não integra os 58 Files de Lore Explorer.",
           "packageId": "another-survivor",
+          "ptDescription": "Leia uma carta deixada por Jill.",
           "requirement": "Leia uma carta deixada por Jill: a Letter to the Shopkeeper, na campanha normal de Leon 1st Run ou 2nd Run, em qualquer dificuldade.",
+          "risk": "A carta é perdível por run e exclusiva da campanha de Leon.",
           "tags": [
             "Bronze",
             "Another Survivor",
@@ -1181,11 +1224,13 @@
             "Coletável"
           ],
           "tip": "Entre na loja, passe pela prateleira do Long Barrel e leia a carta sobre o balcão. Aguarde o registro do troféu; não é necessário concluir a campanha.",
+          "trophyNameOriginal": "Chasing Jill",
+          "trophyNamePtBr": "No Encalço de Jill",
           "warning": "Não procure Another Survivor no menu de modos extras. Chasing Jill acontece dentro da campanha normal de Leon."
         }
       ],
       "dlcTrophies": 3,
-      "introduction": "Esta seção separa a platina base do 100% da lista completa de Resident Evil 2 Remake no PS4. Raccoon City Native depende apenas dos 42 troféus base; The Ghost Survivors adiciona Hell of a Sheriff e Got ’Em, enquanto Another Survivor adiciona Chasing Jill.",
+      "introduction": "Esta seção separa a platina base do 100% da lista completa de Resident Evil 2 Remake no PS4. Nativo de Raccoon depende apenas dos 42 troféus da base; o conteúdo adicional gratuito The Ghost Survivors acrescenta Hell of a Sheriff e Got ’Em, enquanto o pacote/title update Another Survivor acrescenta Chasing Jill.",
       "packages": [
         {
           "coopRequired": false,
@@ -1810,7 +1855,7 @@
             "Não confundir Hell of a Sheriff com Gunslinger"
           ],
           "name": "The Ghost Survivors",
-          "nature": "Pacote extra fora da platina.",
+          "nature": "Conteúdo adicional gratuito fora da platina.",
           "observation": "No Time to Mourn, Runaway e Forgotten Soldier liberam No Way Out. Os três primeiros ajudam em Got ’Em; No Way Out fecha Hell of a Sheriff e o décimo Mr. Raccoon.",
           "onlineRequired": false,
           "platinumRequired": false,

@@ -985,8 +985,8 @@
   padding: 8px 0;
 }
 
-#view-guide .atlas-critical-row strong,
-#view-guide .atlas-faq-row strong {
+#view-guide .atlas-critical-row :is(strong, h3),
+#view-guide .atlas-faq-row :is(strong, h3) {
   font-size: .86rem;
 }
 
@@ -2320,8 +2320,8 @@
   grid-template-columns: minmax(0, 1fr) auto;
 }
 
-.atlas-critical-row strong,
-.atlas-faq-row strong {
+.atlas-critical-row :is(strong, h3),
+.atlas-faq-row :is(strong, h3) {
   color: #fff;
   font-size: .94rem;
 }
@@ -2692,6 +2692,24 @@ body.atlas-guide-dock-active footer {
   scroll-margin-top: var(--guide-anchor-offset);
 }
 
+#view-guide.atlas-guide--resident-evil-2-remake :is(
+  #guideUsagePanel,
+  #guideRoadmapPanel,
+  #guideQuickPlan,
+  #guideSummaryActions,
+  #guideChapterRoutePanel,
+  #mitos-e-erros-comuns,
+  #guideChecklistPanel,
+  #guidePlatinumExtrasPanel,
+  #guideDlcCompletionPanel,
+  #guideEditorialNotesPanel,
+  #guideFaqPanel,
+  #guideCommentsPanel,
+  #guideFeedbackPanel
+) {
+  scroll-margin-top: var(--guide-anchor-offset);
+}
+
 #topo {
   scroll-margin-top: var(--guide-anchor-offset);
 }
@@ -3057,6 +3075,12 @@ body.atlas-guide-dock-active footer {
 .atlas-re2-campaign-plan__run summary {
   cursor: pointer;
   overflow-wrap: anywhere;
+}
+
+.atlas-re2-campaign-plan__run summary h3 {
+  color: #fff;
+  font-size: inherit;
+  font-weight: 800;
 }
 
 .atlas-re2-campaign-plan__run summary::marker {
