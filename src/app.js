@@ -874,7 +874,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
           </div>
           ${displayRiskTags.length ? `<div class="atlas-trophy-risk-list">${displayRiskTags.map(tag => `<span class="atlas-risk-chip atlas-risk-chip--${escapeHtml(tag.tone)}">${escapeHtml(tag.label)}</span>`).join('')}</div>` : ''}
           <div id="${escapeHtml(detailsId)}" class="atlas-trophy-details" data-trophy-details>
-            <p class="atlas-trophy-description">${String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake' ? '<strong>Descrição oficial:</strong> ' : ''}${escapeHtml(description || 'Sem descrição.')}</p>
+            <p class="atlas-trophy-description">${String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake' ? '<strong>Requisito:</strong> ' : ''}${escapeHtml(description || 'Sem descrição.')}</p>
             ${tip ? `<div class="atlas-tip-box atlas-trophy-tip"><div class="atlas-tip-label">${trophy.is_spoiler ? 'Dica com spoiler' : 'Dica'}</div><p class="text-sm mt-2">${escapeHtml(tip)}</p></div>` : ''}
             ${criticalGuideHtml}
           </div>
@@ -1242,7 +1242,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
           <h2 id="guideAttentionTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Pontos de atenção</h2>
           <p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(attentionIntro)}</p>
         </div>
-        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(routeTrophies.length || 0))} alerta(s)</span>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(routeTrophies.length || 0))} ${routeTrophies.length === 1 ? 'alerta' : 'alertas'}</span>
       </div>
       <div class="atlas-editorial-notes__grid">
         <details id="guideAttentionPointsPanel" class="atlas-editorial-note" open>
@@ -1818,8 +1818,9 @@ function renderGuideChapterRoutePanelHtml(game = {}) {
       <div class="space-y-3">
         ${routeGuide.chapters.map((chapter, index) => {
           const panelId = `chapter-route-${String(chapter.chapter || index).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+          const anchorId = String(chapter.anchorId || '').trim();
           return `
-          <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+          <article${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
             <h3>
                 <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeHtml(panelId)}" aria-expanded="${index === 0 ? 'true' : 'false'}" aria-controls="${escapeHtml(panelId)}">
                 <span>${escapeHtml(chapter.chapter)}</span>
@@ -2367,7 +2368,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}, { isResidentEvil2 = false }
       <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
         ${items.map(item => {
           const details = [
-            isResidentEvil2 && item.descriptionPtBr ? `<span><strong>Descrição oficial:</strong> ${escapeHtml(item.descriptionPtBr)}</span>` : '',
+            isResidentEvil2 && item.descriptionPtBr ? `<span><strong>Requisito:</strong> ${escapeHtml(item.descriptionPtBr)}</span>` : '',
             item.requirement ? `<span><strong>${isResidentEvil2 ? 'Como obter' : 'Requisito'}:</strong> ${escapeHtml(item.requirement)}</span>` : '',
             Array.isArray(item.tags) && item.tags.length ? `<span class="flex flex-wrap gap-2" aria-label="Classificações">${item.tags.map(tag => `<span class="atlas-tag atlas-tag--soft">${escapeHtml(tag)}</span>`).join('')}</span>` : '',
             item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
@@ -2761,7 +2762,7 @@ function renderGuideRiskAlertsPanelHtmlV2(game = {}, viewModel = {}) {
           <h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Alertas que mudam a rota da platina</h2>
           <p class="text-white/58 mt-2 max-w-4xl">Leia estes pontos antes do roadmap para evitar erro de ordem, DLC fora do escopo, coop esquecido ou cleanup mal planejado.</p>
         </div>
-        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} alerta(s)</span>
+        <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(items.length))} ${items.length === 1 ? 'alerta' : 'alertas'}</span>
       </div>
       <div class="atlas-guide-before-grid">
         ${items.map(item => `

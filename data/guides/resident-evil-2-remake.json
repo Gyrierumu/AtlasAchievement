@@ -39,7 +39,7 @@
     "time_min_hours": 25,
     "time_reason": "A faixa de 25-35 horas considera campanhas de Leon/Claire, 2ª jornada, Hardcore, rank S, coletáveis e cleanup de desafios pontuais.",
     "time_sort_hours": 25,
-    "updated_at": "2026-07-12 21:14:03",
+    "updated_at": "2026-07-15 13:22:16",
     "verification_note": "Guia normalizado a partir do dado seed com checklist e roadmap; aguardando revisão editorial manual final.",
     "verification_status": "review",
     "walkthrough": null
@@ -461,6 +461,7 @@
           ]
         },
         {
+          "anchorId": "hardcore-s-rank-armas-infinitas",
           "chapter": "Hardcore, S rank e armas infinitas",
           "note": "Esta seção reúne tempos, dificuldades, saves, desbloqueios e planejamento de Hardcore para Leon e Claire.",
           "sections": [
@@ -536,6 +537,7 @@
           ]
         },
         {
+          "anchorId": "runs-de-restricao",
           "chapter": "Runs de restrição",
           "note": "Esses troféus não são difíceis por combate, e sim por disciplina de rota. Faça depois de conhecer puzzles, chefes e caminhos principais; o erro comum é abrir o baú, usar cura ou andar demais sem perceber.",
           "sections": [
@@ -812,6 +814,7 @@
           ]
         },
         {
+          "anchorId": "the-4th-survivor-grim-reaper",
           "chapter": "The 4th Survivor — Grim Reaper",
           "note": "The 4th Survivor é a última prova de execução da platina base. Você controla HUNK em uma rota contínua dos Sewers até o ponto de extração diante do R.P.D., usando um inventário limitado contra uma sequência fixa de inimigos. Grim Reaper pede apenas concluir o modo; velocidade e rank não fazem parte do requisito.",
           "sections": [
@@ -1016,6 +1019,7 @@
           "myth": "Para os troféus de S rank preciso obter S+, fazer no Hardcore e usar no máximo três saves.",
           "where": [
             {
+              "href": "#hardcore-s-rank-armas-infinitas",
               "label": "Hardcore, S rank e armas infinitas"
             },
             {
@@ -1036,9 +1040,11 @@
           "myth": "Usar uma arma infinita invalida S rank, Hardcore Rookie ou Hardcore College Student.",
           "where": [
             {
+              "href": "#hardcore-s-rank-armas-infinitas",
               "label": "Hardcore, S rank e armas infinitas"
             },
             {
+              "href": "#runs-de-restricao",
               "label": "Runs de restrição — Minimalist"
             },
             {
@@ -1054,6 +1060,7 @@
           "myth": "The 4th Survivor, Tofu Survivor e The Ghost Survivors são variações do mesmo modo e todos são obrigatórios para a platina.",
           "where": [
             {
+              "href": "#the-4th-survivor-grim-reaper",
               "label": "The 4th Survivor — Grim Reaper"
             },
             {
@@ -2415,7 +2422,7 @@
     },
     {
       "description": "Aumente o espaço do inventário.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Hip to Add Squares",
       "name_pt": "Mais Espaço no Inventário",
@@ -2425,7 +2432,7 @@
     },
     {
       "description": "Customize uma arma.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Customizer",
       "name_pt": "Personalizador",
@@ -2435,7 +2442,7 @@
     },
     {
       "description": "Derrote um inimigo com a faça.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Don't Need No Stinkin' Gun",
       "name_pt": "Não Preciso de Arma",
@@ -2445,7 +2452,7 @@
     },
     {
       "description": "Contra-ataque com uma arma secundária.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Eat This!",
       "name_pt": "Toma Essa!",
@@ -2455,7 +2462,7 @@
     },
     {
       "description": "Use tábuas de madeira para vedar uma janela.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "That'll Hold 'Em",
       "name_pt": "Isso Deve Segurá-los",
@@ -2465,7 +2472,7 @@
     },
     {
       "description": "Destrua um Mr. Raccoon.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Vermin Extermination",
       "name_pt": "Extermínio de Pragas",
@@ -2475,7 +2482,7 @@
     },
     {
       "description": "Abra um cofre portátil.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "A Vault-like Mind",
       "name_pt": "Mente de Cofre",
@@ -2485,7 +2492,7 @@
     },
     {
       "description": "Abra um cofre mecânico.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "First Break-In",
       "name_pt": "Primeira Invasão",
@@ -2495,7 +2502,7 @@
     },
     {
       "description": "Atire em uma granada que esteja na boca de um inimigo.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Bon Appétit",
       "name_pt": "Bon Appétit",
@@ -2505,7 +2512,7 @@
     },
     {
       "description": "Maté 3 inimigos de uma vez com uma sub-weapon.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Zombie Roundup",
       "name_pt": "Ajuntamento de Zumbis",
@@ -2515,7 +2522,7 @@
     },
     {
       "description": "Atire em um cão zumbi ou Licker enquanto ele estiver no ar.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Like Skeet Shooting",
       "name_pt": "Como Tiro ao Prato",
@@ -2525,7 +2532,7 @@
     },
     {
       "description": "Atordoe um Licker com uma granada de luz.",
-      "is_missable": 0,
+      "is_missable": 1,
       "is_spoiler": 0,
       "name": "Keep Their Heads Ringin'",
       "name_pt": "Cabeças Zumbindo",

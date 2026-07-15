@@ -274,8 +274,8 @@
     re2r_blink_eye: { remove: ['story', 'difficulty'], add: [{ id: 'boss', label: 'Boss', tone: 'warning' }, { id: 'timer', label: 'Timer', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_lore_explorer: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
     re2r_complete_vermin: { remove: ['story'], add: [{ id: 'collectible', label: 'Coletável', tone: 'partial' }] },
-    re2r_leon_s: { remove: ['grind', 'cleanup'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
-    re2r_scarlet_hero: { remove: ['grind'], add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_leon_s: { remove: ['story', 'grind', 'cleanup'], add: [{ id: 'rank-s', label: 'Rank', tone: 'warning' }, { id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
+    re2r_scarlet_hero: { remove: ['story', 'grind'], add: [{ id: 'rank-s', label: 'Rank', tone: 'warning' }, { id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_hardcore_rookie: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_hardcore_college: { add: [{ id: 'difficulty', label: 'Dificuldade', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
     re2r_frugalist: { remove: ['collectible', 'story', 'difficulty', 'cleanup'], add: [{ id: 'restriction', label: 'Restrição', tone: 'warning' }, { id: 'run', label: 'Risco de run', tone: 'warning' }] },
@@ -1163,8 +1163,11 @@
     }
     const max = Number(limit || 0);
     if (slug === 'resident-evil-2-remake' && max > 0) {
-      const priority = ['difficulty', 'restriction', 'character', 'timer', 'segment', 'mode', 'boss', 'situational', 'combat', 'collectible', 'missable', 'run', 'story', 'spoiler'];
-      return tags.slice().sort((a, b) => {
+      const priority = ['rank-s', 'difficulty', 'restriction', 'character', 'timer', 'segment', 'mode', 'boss', 'situational', 'combat', 'collectible', 'missable', 'run', 'story', 'spoiler'];
+      const displayTags = tags.some(tag => tag?.id === 'run' && tag?.label === 'Perdível por run')
+        ? tags.filter(tag => tag?.id !== 'missable')
+        : tags;
+      return displayTags.slice().sort((a, b) => {
         const aIndex = priority.indexOf(a?.id);
         const bIndex = priority.indexOf(b?.id);
         return (aIndex < 0 ? 99 : aIndex) - (bIndex < 0 ? 99 : bIndex);

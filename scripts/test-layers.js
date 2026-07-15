@@ -145,8 +145,15 @@ function validateData() {
     ],
     'Resident Evil 2 Remake deve usar apenas nomes reais em Onde conferir dos mitos 4, 5 e 6'
   );
-  assert(residentEvil2MythDestinations.every(destinations => !destinations[0].href), 'Subsecoes sem anchor confiavel devem permanecer como texto em Onde conferir');
-  assert(!residentEvil2MythDestinations[1][1].href, 'Runs de restricao — Minimalist deve permanecer como texto sem inventar anchor');
+  assert.deepStrictEqual(
+    residentEvil2MythDestinations.map(destinations => destinations.map(destination => destination.href || '')),
+    [
+      ['#hardcore-s-rank-armas-infinitas', '#guideQuickPlan', '#guideChecklistPanel'],
+      ['#hardcore-s-rank-armas-infinitas', '#runs-de-restricao', '#guideQuickPlan'],
+      ['#the-4th-survivor-grim-reaper', '#guideDlcCompletionPanel', '#guideFaqPanel']
+    ],
+    'Mitos 4, 5 e 6 devem preservar destinos existentes e usar as quatro anchors estaveis da Fase 19'
+  );
   const residentEvil2RankChapter = residentEvil2Guide.chapterRouteGuide.chapters.find(chapter => chapter.chapter === 'Hardcore, S rank e armas infinitas');
   assert(!residentEvil2RankChapter.sections.some(section => section.title === 'S rank sem confundir com S+'), 'Resident Evil 2 Remake deve centralizar a duvida conceitual no Mito 4');
   assert.strictEqual(
@@ -822,6 +829,13 @@ async function validateGuide(slug = '') {
     });
     assert.strictEqual(seedGame.chapterRouteGuide?.campaignPlan?.runs?.length, 7, 'Resident Evil 2 Remake deve preservar exatamente 7 runs no plano principal');
     assert.strictEqual(seedGame.usefulVideos?.length, 8, 'Resident Evil 2 Remake deve preservar exatamente 8 videos contextuais');
+    const re2ChapterAnchors = Object.fromEntries((seedGame.chapterRouteGuide?.chapters || []).filter(chapter => chapter.anchorId).map(chapter => [chapter.chapter, chapter.anchorId]));
+    assert.deepStrictEqual(re2ChapterAnchors, {
+      'Hardcore, S rank e armas infinitas': 'hardcore-s-rank-armas-infinitas',
+      'Runs de restrição': 'runs-de-restricao',
+      'The 4th Survivor — Grim Reaper': 'the-4th-survivor-grim-reaper'
+    }, 'Resident Evil 2 Remake deve manter somente as tres anchors estaveis da Fase 19');
+    assert.strictEqual(new Set(Object.values(re2ChapterAnchors)).size, 3, 'Anchors das subsecoes da Fase 19 devem ser unicas');
     assert(seedGame.dlc_scope.includes('DLC fora da platina base') && seedGame.dlc_scope.includes('The Ghost Survivors'), 'Resident Evil 2 Remake deve separar DLC/extras da platina base');
     assert(Array.isArray(seedGame.editorial_summary) && seedGame.editorial_summary.length >= 4, 'Resident Evil 2 Remake deve ter resumo editorial completo da platina');
     assert(seedGame.editorial_summary.join(' ').includes('múltiplas campanhas com Leon e Claire') && seedGame.editorial_summary.join(' ').includes('3 extras de The Ghost Survivors e Another Survivor / Chasing Jill'), 'Resumo editorial de Resident Evil 2 Remake deve explicar rota e extras');
@@ -842,6 +856,10 @@ async function validateGuide(slug = '') {
         assert(!destination.href || (/^#[^#]/.test(destination.href) && destination.href !== '#'), `Destino de Onde conferir do mito ${index + 1} nao deve usar link vazio`);
       });
     });
+    assert.strictEqual(re2Myths[3]?.where?.[0]?.href, '#hardcore-s-rank-armas-infinitas', 'Mito 4 deve apontar para Hardcore, S rank e armas infinitas');
+    assert.strictEqual(re2Myths[4]?.where?.[0]?.href, '#hardcore-s-rank-armas-infinitas', 'Mito 5 deve apontar para Hardcore, S rank e armas infinitas');
+    assert.strictEqual(re2Myths[4]?.where?.[1]?.href, '#runs-de-restricao', 'Mito 5 deve apontar para Runs de restricao');
+    assert.strictEqual(re2Myths[5]?.where?.[0]?.href, '#the-4th-survivor-grim-reaper', 'Mito 6 deve apontar para The 4th Survivor');
     assert(!/mito\(s\)|troféu\(s\)|NOME ORIGINAL|\[object Object\]/.test(JSON.stringify(seedGame.commonMythsGuide)), 'Mitos de Resident Evil 2 Remake nao devem conter pluralizacao artificial, linguagem interna ou placeholder');
     assert.strictEqual(viewModel.nextActionModel.title, 'Faça uma primeira campanha segura aprendendo o R.P.D.', 'Resident Evil 2 Remake deve ter primeiro passo recomendado especifico');
     assert(viewModel.nextActionModel.detail.includes('siga a primeira campanha sem buscar ranking ou restrições'), 'Resident Evil 2 Remake deve preservar descricao do primeiro passo recomendado');
@@ -867,6 +885,7 @@ async function validateGuide(slug = '') {
     const re2Files = re2FilesCategory?.items || [];
     assert.strictEqual(re2Files.length, 58, 'Resident Evil 2 Remake deve manter exatamente 58 Files');
     assert.strictEqual(new Set(re2Files.map(item => item.id)).size, 58, 'Os 58 Files devem manter IDs unicos');
+    assert.strictEqual(re2Files.find(item => item.name === 'Confiscation Report')?.location, 'RPD 1F - Observation Room', 'Confiscation Report deve ficar exclusivamente na Observation Room');
     ['Record of Events', 'Operation Report', "Rookie's First Assignment", 'Storage Locker Terminal Memo', 'Portable Safe Instructions', 'To any survivors', "Some Guy's Scribblings", 'Internal Memo'].forEach(name => {
       assert.strictEqual(re2Files.find(item => item.name === name)?.scenario, '1st/2nd Run', `${name} deve estar disponivel nos quatro cenarios`);
     });
@@ -887,8 +906,18 @@ async function validateGuide(slug = '') {
       assert(!guideModel.getGuideTrophyTags(seedGame.trophies.find(trophy => trophy.id === id), seedGame).some(tag => tag.id === 'difficulty'), `${id} nao deve usar tag Dificuldade`);
     });
     ['re2r_waist_space', 're2r_master_unlocking'].forEach(id => {
+      const trophy = seedGame.trophies.find(item => item.id === id);
+      const tags = guideModel.getGuideTrophyTags(trophy, seedGame).map(tag => tag.id);
+      const displayTags = guideModel.getGuideTrophyDisplayTags(trophy, seedGame, 4).map(tag => tag.id);
+      assert(!tags.includes('story') && tags.includes('missable') && tags.includes('collectible') && tags.includes('run'), `${id} deve preservar o token do filtro Perdivel e usar Coletavel e Perdivel por run, sem Historia`);
+      assert(!displayTags.includes('missable') && displayTags.includes('collectible') && displayTags.includes('run'), `${id} nao deve renderizar tag Perdivel duplicada`);
+    });
+    const re2Customizer = seedGame.trophies.find(trophy => trophy.id === 're2r_customizer');
+    assert.deepStrictEqual(guideModel.getGuideTrophyTags(re2Customizer, seedGame).map(tag => tag.id), ['missable', 'run', 'situational'], 'Customizer deve preservar o token do filtro Perdivel');
+    assert.deepStrictEqual(guideModel.getGuideTrophyDisplayTags(re2Customizer, seedGame, 4).map(tag => tag.id), ['situational', 'run'], 'Customizer deve renderizar apenas Situacional e Perdivel por run');
+    ['re2r_leon_s', 're2r_scarlet_hero'].forEach(id => {
       const tags = guideModel.getGuideTrophyTags(seedGame.trophies.find(trophy => trophy.id === id), seedGame).map(tag => tag.id);
-      assert(!tags.includes('story') && tags.includes('collectible') && tags.includes('run'), `${id} deve usar Coletavel e Perdivel por run, sem Historia`);
+      assert(tags.includes('rank-s') && tags.includes('difficulty') && tags.includes('run') && !tags.includes('story'), `${id} deve usar Rank, Dificuldade e Risco de run, sem Historia`);
     });
     assert(!/Obtain all trophies|Reach the police station|Complete Leon['’]s story|Complete Claire['’]s story|Complete the game without|Open all of the safes|Destroy all Mr\. Raccoons/i.test(trophyText), 'Resident Evil 2 Remake nao deve manter descricoes em ingles na checklist');
     [
@@ -2029,7 +2058,9 @@ async function validateGuide(slug = '') {
         assert(mythsPanelHtml.includes(label), `Onde conferir deve usar heading real: ${label}`);
       });
       assert(!mythsPanelHtml.includes('href="#guideChapterRoutePanel"'), 'Onde conferir nao deve apontar subsecoes do RE2 para o inicio generico do painel');
-      assert(!/<a\b[^>]*>Hardcore, S rank e armas infinitas<\/a>|<a\b[^>]*>Runs de restrição — Minimalist<\/a>|<a\b[^>]*>The 4th Survivor — Grim Reaper<\/a>/.test(mythsPanelHtml), 'Subsecoes sem anchor confiavel devem ser renderizadas como texto');
+      assert.strictEqual((mythsPanelHtml.match(/href="#hardcore-s-rank-armas-infinitas"/g) || []).length, 2, 'Mitos 4 e 5 devem apontar para a anchor de Hardcore');
+      assert.strictEqual((mythsPanelHtml.match(/href="#runs-de-restricao"/g) || []).length, 1, 'Mito 5 deve apontar para a anchor de runs de restricao');
+      assert.strictEqual((mythsPanelHtml.match(/href="#the-4th-survivor-grim-reaper"/g) || []).length, 1, 'Mito 6 deve apontar para a anchor de The 4th Survivor');
       assert.strictEqual((mythsPanelHtml.match(/<h3[^>]*>Mito [1-9] — [^<]+<\/h3>/g) || []).length, 9, 'Mitos de Resident Evil 2 Remake devem ter titulo H3 e uma unica numeracao por card');
       assert(!/>Mito ([1-9]) — [^<]+<\/h3>[\s\S]{0,80}>\1[.\s]</.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem duplicar numeracao');
       assert(!/<input\b|data-platinum-extra-check|data-dlc-progress|data-progress|<img\b|<video\b|<iframe\b/.test(mythsPanelHtml), 'Mitos de Resident Evil 2 Remake nao devem incluir progresso, checkbox ou midia');
@@ -2062,6 +2093,9 @@ async function validateGuide(slug = '') {
       const routePanelHtml = html.match(/<section id="guideChapterRoutePanel"[\s\S]*?<\/section>/)?.[0] || '';
       assert.strictEqual((routePanelHtml.match(/<h3>/g) || []).length, 12, 'Rotas Leon/Claire e 2nd Run deve manter 12 subdivisoes H3');
       assert((routePanelHtml.match(/<h4\b/g) || []).length >= 12, 'Rotas Leon/Claire e 2nd Run deve manter conteudo interno em H4');
+      ['hardcore-s-rank-armas-infinitas', 'runs-de-restricao', 'the-4th-survivor-grim-reaper'].forEach(anchorId => {
+        assert.strictEqual((routePanelHtml.match(new RegExp(`id="${anchorId}"`, 'g')) || []).length, 1, `Rota por capitulo deve renderizar uma unica anchor #${anchorId}`);
+      });
       const quickPlanStart = html.indexOf('id="guideQuickPlan"');
       const summaryHeadingStart = quickPlanStart >= 0 ? html.indexOf('>Resumo da platina</h2>', quickPlanStart) : -1;
       const quickPlanHtml = quickPlanStart >= 0 && summaryHeadingStart > quickPlanStart ? html.slice(quickPlanStart, summaryHeadingStart) : '';
@@ -2070,6 +2104,12 @@ async function validateGuide(slug = '') {
       assert(!quickPlanHtml.includes('<strong>Run '), 'Plano rapido nao deve manter titulo de run como strong');
       assert.strictEqual((mainHtml.match(/atlas-trophy-card__title">\s*<h3>/g) || []).length, 42, 'Checklist deve renderizar os 42 nomes canonicos como H3');
       assert.strictEqual((mainHtml.match(/<article class="atlas-critical-row">[\s\S]*?<h3>/g) || []).length, 5, 'Pontos de atencao deve renderizar cinco alertas H3');
+      assert(mainHtml.includes('>5 alertas</span>') && !mainHtml.includes('5 alerta(s)'), 'Pontos de atencao deve usar pluralizacao natural para cinco alertas');
+      const guideUiSource = readProjectFile('public/js/ui-guide.js');
+      assert(guideUiSource.includes("routeTrophies.length === 1 ? 'alerta' : 'alertas'"), 'Renderizacao cliente deve tratar singular e plural de alerta dinamicamente');
+      ['hardcore-s-rank-armas-infinitas', 'runs-de-restricao', 'the-4th-survivor-grim-reaper'].forEach(anchorId => {
+        assert(guideUiSource.includes(`'${anchorId}': 'roadmap'`), `Navegacao cliente deve abrir a aba Roadmap para #${anchorId}`);
+      });
       assert.strictEqual((mainHtml.match(/<article class="atlas-faq-item atlas-faq-row"><h3>/g) || []).length, 8, 'FAQ deve renderizar cada uma das oito perguntas como H3');
       assert.strictEqual((mainHtml.match(/<h3>\s*<button[^>]*data-guide-section-toggle="extras-re2-/g) || []).length, 8, 'Extras da Platina deve renderizar oito categorias H3');
       assert(mainHtml.includes('<h3 class="text-lg font-bold text-white">The Ghost Survivors</h3>') && mainHtml.includes('<h3 class="text-lg font-bold text-white">Another Survivor</h3>'), 'Pacotes adicionais devem ser H3');
@@ -2112,7 +2152,8 @@ async function validateGuide(slug = '') {
       assert(html.includes('Espiã Nota Dez') && html.includes('não dispare a handgun nem use subweapons'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Ada');
       assert(html.includes('Jovem Fugitiva') && html.includes('termina ao cortar o papelão e atravessar a abertura na parede do quarto'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Sherry');
       assert(html.includes('<h3>Raccoon City Native</h3>') && html.includes('<span>PT-BR</span>Nativo de Raccoon'), 'Checklist de Resident Evil 2 Remake deve renderizar nome original como H3 com localizacao oficial PT-BR');
-      assert(html.includes('<strong>Descrição oficial:</strong>') && html.includes('42 troféus da base + 3 extras = 45 no total'), 'HTML publico deve rotular descricao oficial e usar terminologia de extras');
+      assert.strictEqual((html.match(/<strong>Requisito:<\/strong>/g) || []).length, 45, 'HTML publico deve rotular os 42 trofeus base e 3 extras como Requisito');
+      assert(!html.includes('<strong>Descrição oficial:</strong>') && html.includes('42 troféus da base + 3 extras = 45 no total'), 'HTML publico nao deve chamar parafrase de descricao oficial e deve manter a terminologia de extras');
       assert(html.includes('Um Baita Xerife') && html.includes('No Encalço de Jill'), 'HTML publico deve renderizar os nomes localizados dos extras');
       ['Record of Events', 'Operation Report', 'Observation Room', 'Interrogation Room', 'Gun Fanatic', 'Letter to the Shopkeeper'].forEach(text => {
         assert(visibleGuideHtml.includes(text), `HTML publico de Resident Evil 2 Remake deve manter o contexto validado: ${text}`);
