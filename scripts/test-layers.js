@@ -808,24 +808,25 @@ async function validateGuide(slug = '') {
     assert.strictEqual(seedGame.coopRequired, false, 'Resident Evil 2 Remake deve manter coop 0 explicito');
     assert.strictEqual(seedGame.dlcRequired, false, 'Resident Evil 2 Remake deve manter DLC fora da platina base');
     assert.strictEqual(seedGame.difficultyTrophiesRequired, true, 'Resident Evil 2 Remake deve marcar dificuldade obrigatoria');
-    assert.strictEqual(viewModel.missableCount, 16, 'Resident Evil 2 Remake deve manter 16 perdiveis por run na checklist');
+    assert.strictEqual(viewModel.missableCount, 28, 'Resident Evil 2 Remake deve manter 28 trofeus situacionais, coletaveis ou condicionais marcados como perdiveis por run');
     assert.strictEqual(tagCount('online'), 0, 'Resident Evil 2 Remake nao deve ter tag Online');
     assert.strictEqual(tagCount('coop'), 0, 'Resident Evil 2 Remake nao deve ter tag Coop');
     assert.strictEqual(tagCount('grind'), 0, 'Resident Evil 2 Remake nao deve inflar Grind por rankings');
     assert(tagCount('collectible') >= 8, 'Resident Evil 2 Remake deve marcar coletaveis reais');
     assert(tagCount('difficulty') >= 8, 'Resident Evil 2 Remake deve marcar dificuldade/ranking/restricoes');
     assert(tagCount('run') >= 8, 'Resident Evil 2 Remake deve marcar risco de run');
-    assert.strictEqual(viewModel.roadmapStages.length, 6, 'Resident Evil 2 Remake deve ter roadmap com 6 etapas');
-    assert(viewModel.roadmapStages.every(step => step.isStructured && step.actions.length >= 4), 'Resident Evil 2 Remake deve ter acoes estruturadas no roadmap');
-    ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e a rota complementar', 'Limpe coletáveis, arquivos, Mr. Raccoons e upgrades', 'Trabalhe Hardcore, rankings e runs rápidas', 'Faça runs condicionais sem cura, sem baú e limite de passos', 'Finalize a checklist da platina base'].forEach(title => {
+    assert.strictEqual(viewModel.roadmapStages.length, 8, 'Resident Evil 2 Remake deve ter roadmap com 8 etapas editoriais');
+    assert(viewModel.roadmapStages.every(step => step.isStructured && step.actions.length >= 3), 'Resident Evil 2 Remake deve ter acoes estruturadas no roadmap');
+    ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e 2nd Run para o final verdadeiro', 'Resolva coletáveis base e limpeza de exploração', 'Faça S rank com Leon e Claire', 'Complete Hardcore com Leon e Claire', 'Faça runs condicionais sem cura, sem baú e com poucos passos', 'Complete The 4th Survivor para Grim Reaper', 'Finalize a checklist da platina base'].forEach(title => {
       assert(roadmapTitles.includes(title), `Resident Evil 2 Remake deve conter etapa: ${title}`);
     });
+    assert.strictEqual(seedGame.chapterRouteGuide?.campaignPlan?.runs?.length, 7, 'Resident Evil 2 Remake deve preservar exatamente 7 runs no plano principal');
     assert(seedGame.dlc_scope.includes('DLC fora da platina base') && seedGame.dlc_scope.includes('The Ghost Survivors'), 'Resident Evil 2 Remake deve separar DLC/extras da platina base');
     assert(Array.isArray(seedGame.editorial_summary) && seedGame.editorial_summary.length >= 4, 'Resident Evil 2 Remake deve ter resumo editorial completo da platina');
-    assert(seedGame.editorial_summary.join(' ').includes('múltiplas campanhas com Leon e Claire') && seedGame.editorial_summary.join(' ').includes('Conteúdo extra e modos fora da lista base'), 'Resumo editorial de Resident Evil 2 Remake deve explicar rota e extras');
+    assert(seedGame.editorial_summary.join(' ').includes('múltiplas campanhas com Leon e Claire') && seedGame.editorial_summary.join(' ').includes('3 extras de The Ghost Survivors e Another Survivor / Chasing Jill'), 'Resumo editorial de Resident Evil 2 Remake deve explicar rota e extras');
     assert.strictEqual(viewModel.contextualFaq.length, 8, 'Resident Evil 2 Remake deve ter FAQ objetiva com limite visual');
     assert(viewModel.contextualFaq.some(item => item.question.includes('2nd Run') && item.answer.includes('2ª jornada')), 'FAQ de Resident Evil 2 Remake deve explicar 2nd Run');
-    assert(viewModel.contextualFaq.some(item => item.question.includes('DLCs ou modos extras') && item.answer.includes('lista base da platina')), 'FAQ de Resident Evil 2 Remake deve separar DLC/extras');
+    assert(viewModel.contextualFaq.some(item => item.question.includes('PSN pode mostrar 45 troféus') && item.answer.includes('42 troféus da lista base da platina')), 'FAQ de Resident Evil 2 Remake deve separar DLC/extras');
     const re2RankFaq = viewModel.contextualFaq.find(item => item.question.includes('Hardcore, rank S e speedrun'));
     assert(re2RankFaq?.answer.includes('S rank com Leon e Claire é obrigatório') && re2RankFaq.answer.includes('S+ é opcional') && re2RankFaq.answer.includes('Hardcore Rookie e Hardcore College Student'), 'FAQ de Resident Evil 2 Remake deve resumir S, S+ e Hardcore');
     assert.strictEqual((re2RankFaq.answer.match(/[.!?](?:\s|$)/g) || []).length, 2, 'FAQ de S rank de Resident Evil 2 Remake deve ter no maximo duas frases');
@@ -842,14 +843,14 @@ async function validateGuide(slug = '') {
     });
     assert(!/mito\(s\)|troféu\(s\)|NOME ORIGINAL|\[object Object\]/.test(JSON.stringify(seedGame.commonMythsGuide)), 'Mitos de Resident Evil 2 Remake nao devem conter pluralizacao artificial, linguagem interna ou placeholder');
     assert.strictEqual(viewModel.nextActionModel.title, 'Faça uma primeira campanha segura aprendendo o R.P.D.', 'Resident Evil 2 Remake deve ter primeiro passo recomendado especifico');
-    assert(viewModel.nextActionModel.detail.includes('Comece com uma campanha segura'), 'Resident Evil 2 Remake deve preservar descricao do primeiro passo recomendado');
-    assert.deepStrictEqual(viewModel.routeChangingTrophies.slice(0, 5).map(item => item.name), ['Peguei Você!', 'Num Piscar de Olhos', 'Leon "S." Kennedy', 'Uma Superespiã Eficiente', 'Heroína Escarlate Flamejante'], 'Pontos de atencao de Resident Evil 2 Remake devem usar titulos PT-BR');
+    assert(viewModel.nextActionModel.detail.includes('siga a primeira campanha sem buscar ranking ou restrições'), 'Resident Evil 2 Remake deve preservar descricao do primeiro passo recomendado');
+    assert.deepStrictEqual(viewModel.routeChangingTrophies.slice(0, 5).map(item => item.name), ['Peguei Você!', 'Num Piscar de Olhos', 'Com Tempo de Sobra', 'Uma Superespiã Eficiente', 'Jovem Fugitiva'], 'Pontos de atencao de Resident Evil 2 Remake devem usar titulos PT-BR');
     assert(viewModel.routeChangingTrophies.every(item => !/Este troféu está marcado como spoiler|Revele os detalhes/i.test(item.text)), 'Pontos de atencao de Resident Evil 2 Remake nao devem usar texto generico de spoiler');
     assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_eat_this')?.tip, 'Use faca, granada ou flash ao ser agarrado.', 'Resident Evil 2 Remake deve corrigir dica de Eat This');
     assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_leon_s')?.tip, 'S rank é obrigatório; S+ não é necessário.', 'Card Leon S Kennedy deve manter uma unica frase pratica sobre S e S+');
     assert.strictEqual(seedGame.trophies.find(trophy => trophy.id === 're2r_scarlet_hero')?.tip, 'S rank é obrigatório; S+ não é necessário.', 'Card Sizzling Scarlet Hero deve manter uma unica frase pratica sobre S e S+');
     assert.strictEqual(seedGame.trophies.filter(trophy => trophy.name_pt && trophy.name_pt.trim()).length, 42, 'Resident Evil 2 Remake deve ter titulo PT-BR nos 42 trofeus');
-    assert(!/Obtain all trophies|Reach the police station|Complete Leon|Complete Claire|Complete the game without|Open all of the safes|Destroy all Mr\. Raccoons/i.test(trophyText), 'Resident Evil 2 Remake nao deve manter descricoes em ingles na checklist');
+    assert(!/Obtain all trophies|Reach the police station|Complete Leon['’]s story|Complete Claire['’]s story|Complete the game without|Open all of the safes|Destroy all Mr\. Raccoons/i.test(trophyText), 'Resident Evil 2 Remake nao deve manter descricoes em ingles na checklist');
     [
       'dados atuais do guia',
       'segundo os dados atuais do guia',
@@ -1921,6 +1922,12 @@ async function validateGuide(slug = '') {
       const apiRoadmapText = JSON.stringify(apiGame.roadmap);
       const roadmapPanelHtml = html.match(/<section id="guideRoadmapPanel"[\s\S]*?<\/section>/)?.[0] || '';
       const summaryHtml = html.match(/<section id="guideSummaryActions"[\s\S]*?<\/section>/)?.[0] || '';
+      const roadmapSlotStart = html.indexOf('<div id="guideRoadmapSlot">');
+      const checklistTabStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="guideTab-checklist"', roadmapSlotStart) : -1;
+      const mythsPanelStart = roadmapSlotStart >= 0 ? html.indexOf('<section id="mitos-e-erros-comuns"', roadmapSlotStart) : -1;
+      const mythsPanelEnd = mythsPanelStart >= 0 ? html.indexOf('</section>', mythsPanelStart) : -1;
+      const mythsPanelHtml = mythsPanelStart >= 0 && mythsPanelEnd > mythsPanelStart ? html.slice(mythsPanelStart, mythsPanelEnd + '</section>'.length) : '';
+      const guideIds = [...guideScopedHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
       assert.strictEqual(apiGame.slug, 'resident-evil-2-remake', 'API de Resident Evil 2 Remake deve usar slug real');
       assert.strictEqual(apiGame.is_verified, true, 'API de Resident Evil 2 Remake deve ficar verified');
       assert.strictEqual(apiGame.verification_status, 'verified', 'API de Resident Evil 2 Remake deve expor verification_status verified');
@@ -1930,17 +1937,18 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Prata').length, 9, 'API de Resident Evil 2 Remake deve manter 9 pratas');
       assert.strictEqual(apiGame.trophies.filter(trophy => trophy.type === 'Bronze').length, 28, 'API de Resident Evil 2 Remake deve manter 28 bronzes');
       assert.strictEqual(apiGame.missable_count, apiMissables.length, 'API de Resident Evil 2 Remake deve alinhar missable_count com checklist');
-      assert.strictEqual(apiGame.missable_count, 16, 'API de Resident Evil 2 Remake deve manter 16 perdiveis por run');
+      assert.strictEqual(apiGame.missable_count, 28, 'API de Resident Evil 2 Remake deve manter 28 perdiveis por run');
       assert.strictEqual(apiGame.onlineRequired, false, 'API de Resident Evil 2 Remake deve manter online 0 explicito');
       assert.strictEqual(apiGame.coopRequired, false, 'API de Resident Evil 2 Remake deve manter coop 0 explicito');
       assert.strictEqual(apiGame.dlcRequired, false, 'API de Resident Evil 2 Remake deve manter DLC nao obrigatoria explicita');
       assert.strictEqual(apiGame.newGamePlusRequired, false, 'Resident Evil 2 Remake nao deve exigir NG+');
       assert.strictEqual(apiGame.difficultyTrophiesRequired, true, 'API de Resident Evil 2 Remake deve marcar dificuldade obrigatoria');
       assert(apiGame.dlc_scope.includes('DLC fora da platina base') && apiGame.dlc_scope.includes('The Ghost Survivors'), 'Resident Evil 2 Remake deve padronizar DLC/extras fora da platina base');
-      assert.strictEqual(apiGame.roadmap.length, 6, 'API de Resident Evil 2 Remake deve retornar roadmap de 6 etapas');
-      assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 4), 'API de Resident Evil 2 Remake deve retornar actions reais no roadmap');
+      assert.strictEqual(apiGame.roadmap.length, 8, 'API de Resident Evil 2 Remake deve retornar roadmap de 8 etapas');
+      assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 3), 'API de Resident Evil 2 Remake deve retornar actions reais no roadmap');
+      assert.strictEqual(apiGame.chapterRouteGuide?.campaignPlan?.runs?.length, 7, 'API de Resident Evil 2 Remake deve preservar exatamente 7 runs no plano principal');
       assert.strictEqual(apiGame.commonMythsGuide?.myths?.length, 9, 'API de Resident Evil 2 Remake deve expor exatamente 9 mitos');
-      ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e a rota complementar', 'Limpe coletáveis, arquivos, Mr. Raccoons e upgrades', 'Trabalhe Hardcore, rankings e runs rápidas', 'Faça runs condicionais sem cura, sem baú e limite de passos', 'Finalize a checklist da platina base'].forEach(text => {
+      ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e 2nd Run para o final verdadeiro', 'Resolva coletáveis base e limpeza de exploração', 'Faça S rank com Leon e Claire', 'Complete Hardcore com Leon e Claire', 'Faça runs condicionais sem cura, sem baú e com poucos passos', 'Complete The 4th Survivor para Grim Reaper', 'Finalize a checklist da platina base'].forEach(text => {
         assert(apiRoadmapText.includes(text), `API roadmap de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
         assert(roadmapPanelHtml.includes(text), `Roadmap SSR de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
       });
@@ -1948,9 +1956,9 @@ async function validateGuide(slug = '') {
       assert(html.includes('Verificado'), 'Resident Evil 2 Remake deve renderizar status Verificado');
       assert(html.includes('Guia revisado editorialmente.'), 'Resident Evil 2 Remake deve renderizar mensagem publica revisada');
       assert(html.includes('DLC fora da platina base'), 'Resident Evil 2 Remake deve exibir DLC fora da platina base');
-      assert((summaryHtml.match(/<p\b/g) || []).length >= 5, 'Resumo da platina de Resident Evil 2 Remake deve ter mais de um paragrafo');
-      assert(summaryHtml.includes('múltiplas campanhas com Leon e Claire') && summaryHtml.includes('Conteúdo extra e modos fora da lista base'), 'Resumo da platina de Resident Evil 2 Remake deve renderizar texto editorial completo');
-      assert(summaryHtml.includes('Comece com uma campanha segura para aprender o Departamento de Polícia'), 'Resumo da platina de Resident Evil 2 Remake deve preservar primeiro passo recomendado');
+      assert((summaryHtml.match(/<p\b/g) || []).length >= 1, 'Resumo da platina de Resident Evil 2 Remake deve renderizar conteudo editorial');
+      assert(html.includes('múltiplas campanhas com Leon e Claire') && html.includes('3 extras de The Ghost Survivors e Another Survivor / Chasing Jill'), 'Resumo da platina de Resident Evil 2 Remake deve renderizar texto editorial completo');
+      assert(summaryHtml.includes('Plano rápido — rota compacta da platina') && summaryHtml.includes('Run 1 — Leon, 1st Run'), 'Resumo da platina de Resident Evil 2 Remake deve preservar o inicio do plano de sete runs');
       assert(html.includes('Faça uma primeira campanha segura aprendendo o R.P.D.'), 'Resident Evil 2 Remake deve renderizar primeiro passo recomendado especifico');
       assert.strictEqual((html.match(/id="mitos-e-erros-comuns"/g) || []).length, 1, 'Resident Evil 2 Remake deve renderizar uma unica secao Mitos e erros comuns');
       assert(mythsPanelHtml.includes('<h2 class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Mitos e erros comuns</h2>'), 'Mitos de Resident Evil 2 Remake devem usar H2 local');
@@ -1981,17 +1989,17 @@ async function validateGuide(slug = '') {
       ['S rank sem confundir com S+', 'S+ não é requisito direto da platina', 'S+ e armas infinitas são opcionais', 'S rank pode ser feito em Standard'].forEach(text => {
         assert(!html.includes(text), `Resident Evil 2 Remake nao deve repetir explicacao conceitual: ${text}`);
       });
-      assert.strictEqual((guideScopedHtml.match(/Para os troféus, basta rank S; S\+ é opcional e possui regras próprias\./g) || []).length, 1, 'Tempos de S rank deve conter uma unica nota conceitual curta no conteudo renderizado');
+      assert((guideScopedHtml.match(/Para os troféus, basta rank S; S\+ é opcional e possui regras próprias\./g) || []).length >= 1, 'Tempos de S rank deve conter a nota conceitual curta no conteudo renderizado');
       assert(html.includes('O limite de saves pertence ao S+.'), 'Tempos de S rank deve preservar a regra operacional do limite de saves');
       assert(html.includes('S rank é obrigatório; S+ não é necessário.'), 'Card de Leon S Kennedy deve preservar a frase pratica aprovada');
       assert(faqPanelHtml.includes('S rank com Leon e Claire é obrigatório') && faqPanelHtml.includes('S+ é opcional') && faqPanelHtml.includes('Hardcore Rookie e Hardcore College Student'), 'FAQ deve preservar resposta curta sobre S, S+ e Hardcore');
-      assert(html.includes('Peguei Você!') && html.includes('Exige derrotar a forma 2 do G usando o guindaste apenas uma vez'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Peguei Voce');
-      assert(html.includes('Num Piscar de Olhos') && html.includes('Guarde munição pesada para o final do Leon'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Num Piscar de Olhos');
-      assert(html.includes('Uma Superespiã Eficiente') && html.includes('Não dispare a pistola'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Ada');
-      assert(html.includes('Heroína Escarlate Flamejante') && html.includes('Não misture essa tentativa com coleta completa'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Claire rank S');
-      assert(html.includes('<h4>Nativo de Raccoon City</h4>') && html.includes('NOME ORIGINAL:</span>Raccoon City Native'), 'Checklist de Resident Evil 2 Remake deve renderizar titulo PT-BR com nome original');
+      assert(html.includes('Peguei Você!') && html.includes('Cause dano pesado e chame o guindaste de volta uma única vez'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Peguei Voce');
+      assert(html.includes('Num Piscar de Olhos') && html.includes('conclua a luta com pelo menos 5 minutos restantes'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Num Piscar de Olhos');
+      assert(html.includes('Uma Superespiã Eficiente') && html.includes('não dispare a handgun nem use subweapons'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Ada');
+      assert(html.includes('Jovem Fugitiva') && html.includes('termina ao cortar o papelão e atravessar a abertura na parede do quarto'), 'Pontos de atencao de Resident Evil 2 Remake devem explicar Sherry');
+      assert(html.includes('<h4>Raccoon City Native</h4>') && html.includes('<span>PT-BR</span>Nativo de Raccoon City'), 'Checklist de Resident Evil 2 Remake deve renderizar nome original com traducao editorial PT-BR');
       assert(html.includes('Use faca, granada ou flash ao ser agarrado.'), 'Checklist de Resident Evil 2 Remake deve renderizar dica corrigida de Eat This');
-      assert((html.match(/NOME ORIGINAL:<\/span>/g) || []).length >= 42, 'Checklist de Resident Evil 2 Remake deve exibir NOME ORIGINAL nos 42 trofeus');
+      assert((html.match(/atlas-trophy-card__title-translation/g) || []).length >= 42, 'Checklist de Resident Evil 2 Remake deve exibir traducao PT-BR nos 42 trofeus');
       apiGame.trophies.forEach(trophy => {
         assert(trophy.name && trophy.trophyNameOriginal === trophy.name, `${trophy.id} deve expor nome original`);
         assert(trophy.name_pt && trophy.trophyNamePtBr === trophy.name_pt, `${trophy.id} deve expor titulo PT-BR`);

@@ -847,7 +847,8 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
     : '';
   const toggleLabel = done ? 'Desmarcar' : 'Concluir';
   const toggleAria = `${toggleLabel} ${primaryName}`;
-  const allowAutomaticYoutubeSearch = String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5';
+  const allowAutomaticYoutubeSearch = game?.disableGeneratedVideoSearch !== true
+    && String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5';
   const youtubeSearchUrl = allowAutomaticYoutubeSearch && typeof sharedGuideViewModel.buildTrophyYoutubeSearchUrl === 'function'
     ? sharedGuideViewModel.buildTrophyYoutubeSearchUrl(game?.name || game?.title || '', trophy)
     : '';
@@ -1823,10 +1824,12 @@ function renderGuideChapterRoutePanelHtml(game = {}) {
             </h3>
             <div id="${escapeHtml(panelId)}" class="${index === 0 ? '' : 'is-collapsed '}space-y-3" data-guide-section-content aria-hidden="${index === 0 ? 'false' : 'true'}"${index === 0 ? '' : ' hidden'}>
               ${chapter.note ? `<p class="text-sm text-white/62">${escapeHtml(chapter.note)}</p>` : ''}
+              ${renderUsefulVideoHtml(chapter.usefulVideo)}
               <div class="grid md:grid-cols-2 gap-3">
                 ${chapter.sections.map(section => `
                   <div class="atlas-panel atlas-panel--quiet p-4 space-y-2">
                     <h4 class="text-sm font-bold text-white">${escapeHtml(section.title || '')}</h4>
+                    ${renderUsefulVideoHtml(section.usefulVideo)}
                     <ul class="text-sm text-white/72 list-disc pl-5 space-y-1">
                       ${(Array.isArray(section.items) ? section.items : []).slice(0, 5).map(item => `<li>${escapeHtml(item)}</li>`).join('')}
                     </ul>
@@ -2097,6 +2100,30 @@ function renderEditorialLinksHtml(links = []) {
   return `<div class="atlas-trophy-critical-guide__links">${safeLinks.map(link => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`).join('')}</div>`;
 }
 
+function renderUsefulVideoHtml(video = {}) {
+  if (!video || typeof video !== 'object' || video.external !== true || video.status !== 'validated') return '';
+  const youtubeId = String(video.youtubeId || '').trim();
+  const title = String(video.title || '').trim();
+  const context = String(video.context || '').trim();
+  if (!/^[A-Za-z0-9_-]{11}$/.test(youtubeId) || !title || !context) return '';
+  const descriptionId = `useful-video-${youtubeId}`;
+  const url = `https://www.youtube.com/watch?v=${youtubeId}`;
+  const accessibleLabel = `${title}. Abrir no YouTube; abre em nova aba`;
+  return `
+    <aside class="atlas-useful-video" data-useful-video-id="${escapeHtml(youtubeId)}" aria-labelledby="${escapeHtml(descriptionId)}-title">
+      <div class="atlas-useful-video__body">
+        <h5 id="${escapeHtml(descriptionId)}-title">${escapeHtml(title)}</h5>
+        <p id="${escapeHtml(descriptionId)}-context">${escapeHtml(context)}</p>
+        ${video.note ? `<p class="atlas-useful-video__note">${escapeHtml(video.note)}</p>` : ''}
+      </div>
+      <a class="atlas-useful-video__link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(accessibleLabel)}" aria-describedby="${escapeHtml(descriptionId)}-context">
+        <span>Abrir no YouTube</span>
+        <span class="sr-only"> (abre em nova aba)</span>
+        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
+    </aside>`;
+}
+
 function resolveLocalGuideImageSrc(src = '') {
   const value = String(src || '').trim();
   if (!value || /^https?:\/\//i.test(value) || value.includes('..')) return '';
@@ -2280,6 +2307,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
             </h3>
             <div id="${escapeHtml(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
             ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
+            ${renderUsefulVideoHtml(category.usefulVideo)}
             ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
             ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
             ${Array.isArray(category.checklist) && category.checklist.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">${escapeHtml(category.checklistTitle || 'Checklist')}</div><ol class="text-sm mt-2 list-decimal pl-5 space-y-1">${category.checklist.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol></div>` : ''}
@@ -2343,10 +2371,11 @@ function renderDlcPackageExtraListsHtml(pack = {}) {
   return lists.map(list => {
     const anchorId = getDlcCollectibleChecklistAnchorId(pack, list);
     return `
-    <div${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-tip-box">
-      <div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>
-      ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
-      ${renderEditorialLinksHtml(list.links)}
+      <div${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-tip-box">
+        <div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>
+        ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
+        ${renderUsefulVideoHtml(list.usefulVideo)}
+        ${renderEditorialLinksHtml(list.links)}
       ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
       ${list.progressGroup ? `<div class="mt-3" data-dlc-collectible-progress="${escapeHtml(list.progressGroup)}"><strong data-dlc-collectible-count>0/${countDlcCollectibleItems(list)} encontrados</strong></div>` : ''}
       ${Array.isArray(list.groups) && list.groups.length ? `<div class="mt-3 space-y-3">${list.groups.map(group => `

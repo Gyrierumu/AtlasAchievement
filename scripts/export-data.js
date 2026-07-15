@@ -94,6 +94,8 @@ function getSeedExtrasBySlug() {
       farmRoutesGuide: game.farmRoutesGuide || null,
       commonMythsGuide: game.commonMythsGuide || null,
       dlcCompletionGuide: game.dlcCompletionGuide || null,
+      ...(game.disableGeneratedVideoSearch === true ? { disableGeneratedVideoSearch: true } : {}),
+      ...(Array.isArray(game.usefulVideos) && game.usefulVideos.length ? { usefulVideos: game.usefulVideos } : {}),
       seo: game.seo || {},
       tags: game.tags || [],
       note: 'Campos exportados para auditoria. O SQLite atual nao possui colunas nativas para todos esses extras; a importacao preserva o que o banco suporta.'

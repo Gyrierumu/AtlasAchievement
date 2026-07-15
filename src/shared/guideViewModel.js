@@ -3509,7 +3509,7 @@
           name: trophyById.get('re2r_super_spy')?.name_pt || 'Uma Superespiã Eficiente',
           originalName: trophyById.get('re2r_super_spy')?.name || 'One Slick Super-spy',
           type: 'Perdível / Personagem / Spoiler / Risco de run',
-          text: 'Exclusivo de Leon/Ada. Salve antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun ou usar item ofensivo; recarregue se errar.',
+          text: 'Exclusivo de Leon/Ada. Salve antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun nem usar subweapons; recarregue se errar.',
           tags: [attentionTag('Perdível / Personagem / Spoiler / Risco de run', 'risk')],
           score: 96
         },
@@ -3518,7 +3518,7 @@
           name: trophyById.get('re2r_young_escapee')?.name_pt || 'Jovem Fugitiva',
           originalName: trophyById.get('re2r_young_escapee')?.name || 'Young Escapee',
           type: 'Perdível / Personagem / Spoiler / Risco de run',
-          text: 'Exclusivo de Claire/Sherry. Salve antes da transição, memorize o block puzzle e conclua a fuga do quarto em até 60 segundos; o limite não cobre o segmento inteiro da Sherry.',
+          text: 'Exclusivo de Claire/Sherry. O timer começa ao assumir Sherry e termina ao cortar o papelão e atravessar a abertura na parede do quarto; não cobre o segmento inteiro da Sherry.',
           tags: [attentionTag('Perdível / Personagem / Spoiler / Risco de run', 'risk')],
           score: 95
         }
@@ -5073,7 +5073,7 @@
       return [
         {
           question: 'Resident Evil 2 Remake tem troféus perdíveis?',
-          answer: 'Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist, A Small Carbon Footprint, S rank e Hardcore.'
+          answer: 'Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada usando apenas o EMF Visualizer, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist, A Small Carbon Footprint, S rank e Hardcore.'
         },
         {
           question: 'Resident Evil 2 Remake precisa de online ou coop?',

@@ -143,6 +143,18 @@ const CANONICAL_MISSABLE_TROPHIES_BY_SLUG = {
     'rdr2_errand_boy'
   ]),
   'resident-evil-2-remake': new Set([
+    're2r_hip_squares',
+    're2r_customizer',
+    're2r_no_stinkin_gun',
+    're2r_eat_this',
+    're2r_hold_em',
+    're2r_vermin_extermination',
+    're2r_vault_mind',
+    're2r_first_breakin',
+    're2r_bon_appetit',
+    're2r_zombie_roundup',
+    're2r_skeet',
+    're2r_heads_ringin',
     're2r_hats_off',
     're2r_gotcha',
     're2r_treasure_hunter',
@@ -659,6 +671,8 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       : [],
     seo: seedGame?.seo && typeof seedGame.seo === 'object' ? { ...seedGame.seo } : (editorialSource.seo && typeof editorialSource.seo === 'object' ? { ...editorialSource.seo } : {}),
     quickDecision: seedGame?.quickDecision && typeof seedGame.quickDecision === 'object' ? { ...seedGame.quickDecision } : (editorialSource.quickDecision && typeof editorialSource.quickDecision === 'object' ? { ...editorialSource.quickDecision } : null),
+    disableGeneratedVideoSearch: seedGame?.disableGeneratedVideoSearch === true,
+    usefulVideos: Array.isArray(seedGame?.usefulVideos) ? JSON.parse(JSON.stringify(seedGame.usefulVideos)) : [],
     platinumBaseChecklist: seedGame?.platinumBaseChecklist && typeof seedGame.platinumBaseChecklist === 'object'
       ? JSON.parse(JSON.stringify(seedGame.platinumBaseChecklist))
       : null,

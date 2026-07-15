@@ -359,10 +359,20 @@
               "items": [
                 "A Hero Emerges — completar a história de Leon.",
                 "Hack Complete — completar o segmento da Ada.",
-                "One Slick Super-spy — concluir o segmento da Ada sem usar a pistola.",
+                "One Slick Super-spy — concluir o segmento da Ada sem disparar a handgun nem usar subweapons.",
                 "Faça save manual antes da Ada quando quiser repetir com segurança."
               ],
-              "title": "História e Ada"
+              "title": "História e Ada",
+              "usefulVideo": {
+                "context": "Apoio visual para a sequência completa e para evitar o uso acidental da pistola.",
+                "external": true,
+                "id": "re2-video-ada-emf",
+                "placement": "One Slick Super-spy",
+                "status": "validated",
+                "title": "Vídeo útil — segmento da Ada usando somente o EMF Visualizer",
+                "verifiedAt": "2026-07-14",
+                "youtubeId": "z_VGHlajkcA"
+              }
             },
             {
               "items": [
@@ -383,10 +393,20 @@
               "items": [
                 "A Heroine Emerges — completar a história de Claire.",
                 "Hide and Seek — completar o segmento da Sherry.",
-                "Young Escapee — escapar do quarto da Sherry em até 60 segundos.",
+                "Young Escapee — sair do quarto da Sherry em até 60 segundos, do início do controle até atravessar a abertura na parede.",
                 "Faça save manual antes da Sherry quando quiser repetir com segurança."
               ],
-              "title": "História e Sherry"
+              "title": "História e Sherry",
+              "usefulVideo": {
+                "context": "Mostra a manipulação do quebra-cabeça e a rota de saída depois que a solução já é conhecida.",
+                "external": true,
+                "id": "re2-video-sherry-escape",
+                "placement": "Young Escapee",
+                "status": "validated",
+                "title": "Vídeo útil — fuga da Sherry em até 60 segundos",
+                "verifiedAt": "2026-07-14",
+                "youtubeId": "vD3NS6EhSCQ"
+              }
             },
             {
               "items": [
@@ -466,7 +486,7 @@
             {
               "items": [
                 "Hardcore Rookie pede Leon no Hardcore; Hardcore College Student pede Claire no Hardcore.",
-                "Hardcore pune mais: inimigos causam mais dano, recursos apertam e saves dependem de ink ribbons.",
+                "Hardcore pune mais: inimigos causam mais dano, recursos apertam e não há autosave; cada save manual na typewriter consome uma Ink Ribbon.",
                 "Entre depois de conhecer R.P.D., Sewers, NEST, puzzles, chefes e rotas de item.",
                 "Salve em segmentos planejados, evite combates desnecessários e guarde munição forte para bosses.",
                 "Hardcore não precisa ser S rank para esses dois troféus."
@@ -489,7 +509,8 @@
                 "Infinite Combat Knife: destrua todos os bonecos Mr. Raccoon da campanha base para liberá-la como apoio opcional.",
                 "Um único S rank no Standard, com Leon ou Claire em 1st Run ou 2nd Run, libera a Infinite Samurai Edge para ambos os personagens. Isso não substitui os troféus: Leon “S.” Kennedy exige S rank com Leon, e Sizzling Scarlet Hero exige S rank com Claire.",
                 "Infinite LE 5: obtenha S rank no Hardcore. Infinite Rocket Launcher: Leon no Hardcore com S+; Infinite Minigun: Claire no Hardcore com S+. Os dois últimos desbloqueios e S+ são opcionais e não são requisitos diretos da platina.",
-                "Armas infinitas podem conflitar com S+ e com Minimalist quando exigem acessar o Item Box/baú."
+                "S+ permite no máximo três saves manuais e proíbe armas infinitas, com exceção da Infinite Combat Knife. Mantém os mesmos limites de tempo do S e é opcional para a platina.",
+                "Armas guardadas no Item Box/baú também conflitam com Minimalist, pois abri-lo invalida a run."
               ],
               "title": "Armas infinitas e desbloqueios úteis"
             },
@@ -646,12 +667,22 @@
                 "In the Blink of an Eye — Num Piscar de Olhos: exclusivo do Leon. Salve antes da fuga final do NEST, chegue ao Super Tyrant com recursos e cause dano contínuo para acelerar o Rocket Launcher; termine com pelo menos 5 minutos restantes ou recarregue.",
                 "With Time to Spare — Com Tempo de Sobra: exclusivo da Claire. Salve antes da fuga final do NEST, guarde munição pesada, use a Minigun disponível contra G Stage 4 e evite desvios; termine com pelo menos 4 minutos restantes ou recarregue."
               ],
-              "title": "Bosses e objetivos com timer"
+              "title": "Bosses e objetivos com timer",
+              "usefulVideo": {
+                "context": "Mostra a preparação de G Stage 2 antes da única ativação efetiva do guindaste.",
+                "external": true,
+                "id": "re2-video-gotcha",
+                "placement": "Gotcha!",
+                "status": "validated",
+                "title": "Vídeo útil — Gotcha! com uma ativação do guindaste",
+                "verifiedAt": "2026-07-14",
+                "youtubeId": "cjYhN0RWcGs"
+              }
             },
             {
               "items": [
-                "One Slick Super-spy — Uma Superespiã Eficiente: apenas Leon/Ada. Salve após o crocodile ou antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun ou usar item ofensivo; se quebrar a condição, recarregue. Hack Complete sai ao concluir o segmento normalmente.",
-                "Young Escapee — Jovem Fugitiva: apenas Claire/Sherry. Salve antes da transição, estude o block puzzle e repita a fuga do quarto em até 60 segundos; o timer cobre somente o quarto, não todo o segmento da Sherry."
+                "One Slick Super-spy — Uma Superespiã Eficiente: apenas Leon/Ada. Salve após o crocodile ou antes de controlar Ada e conclua o segmento usando somente o EMF Visualizer, sem disparar a handgun nem usar subweapons; se quebrar a condição, recarregue. Hack Complete sai ao concluir o segmento normalmente.",
+                "Young Escapee — Jovem Fugitiva: apenas Claire/Sherry. Salve antes da transição e estude o block puzzle. O timer começa quando o controle de Sherry é assumido e termina ao cortar o papelão e atravessar a abertura na parede do quarto; não abrange todo o segmento da Sherry."
               ],
               "title": "Segmentos exclusivos de personagem"
             },
@@ -880,7 +911,17 @@
               ],
               "title": "Ponto de atenção — Grim Reaper"
             }
-          ]
+          ],
+          "usefulVideo": {
+            "context": "Use para visualizar os gargalos, inimigos que podem ser evitados e pontos de uso de granadas e munição.",
+            "external": true,
+            "id": "re2-video-fourth-survivor",
+            "placement": "The 4th Survivor",
+            "status": "validated",
+            "title": "Vídeo útil — rota completa de The 4th Survivor",
+            "verifiedAt": "2026-07-14",
+            "youtubeId": "k3PRhFIGJw0"
+          }
         },
         {
           "chapter": "Alertas de save manual",
@@ -1082,6 +1123,7 @@
       "naturalCount": true,
       "title": "Mitos e erros comuns"
     },
+    "disableGeneratedVideoSearch": true,
     "dlcCompletionGuide": {
       "baseTrophies": 42,
       "checklist": [
@@ -1174,9 +1216,9 @@
               "groups": [
                 {
                   "items": [
-                    "No Time to Mourn — Robert Kendo — começa na Gun Shop Kendo, passa por áreas conhecidas e usa inimigos venenosos, backpack zombies, zumbis com tanques explosivos e uma divisão de caminhos relevante para coletáveis.",
-                    "Runaway — Katherine Warren — rota ligada ao Orphanage e à busca por Ben, com Pale Heads regenerando e Old Keys obtidas de backpack zombies.",
-                    "Forgotten Soldier — Ghost — ocorre no NEST, usa zumbis com partes protegidas por armadura e termina na fuga para a rota do Cable Car.",
+                    "No Time to Mourn — Robert Kendo — começa na Gun Shop Kendo e termina na Proposed Water Purification Room dos Sewers, com inimigos venenosos, backpack zombies, zumbis com tanques explosivos e uma divisão de caminhos relevante para coletáveis.",
+                    "Runaway — Katherine Warren — começa no Orphanage e termina na cela de Ben na Jail, com Pale Heads regenerando e Old Keys obtidas de backpack zombies.",
+                    "Forgotten Soldier — Ghost — começa no NEST, usa zumbis com partes protegidas por armadura e termina ao alcançar o Cable Car.",
                     "No Way Out — Daniel Cortini — ocorre na Mizoil Gas Station e exige eliminar 100 inimigos em ondas; deve ser concluído fora do Training Mode para Hell of a Sheriff."
                   ],
                   "title": "Cenários e objetivos"
@@ -1258,7 +1300,17 @@
                 }
               ],
               "introduction": "Hell of a Sheriff exige concluir No Way Out com Sheriff Daniel Cortini na Mizoil Gas Station, fora do Training Mode, eliminando os 100 inimigos. O troféu é prata, conta apenas para o 100% da lista e não exige Gunslinger, Cat Ears, S rank ou limite de tiros.",
-              "title": "No Way Out — estratégia para Hell of a Sheriff"
+              "title": "No Way Out — estratégia para Hell of a Sheriff",
+              "usefulVideo": {
+                "context": "Mostra uma tentativa completa para Hell of a Sheriff, com gerenciamento de portas, mochilas e recursos. É apoio audiovisual, não uma rota obrigatória; use o Training Mode para treinar.",
+                "external": true,
+                "id": "re2-video-no-way-out",
+                "placement": "No Way Out",
+                "status": "validated",
+                "title": "Vídeo útil — No Way Out fora do Training Mode",
+                "verifiedAt": "2026-07-14",
+                "youtubeId": "HOIMdSOdvKY"
+              }
             },
             {
               "alerts": [
@@ -1734,7 +1786,17 @@
               ],
               "introduction": "Dez Mr. Raccoons exclusivos de The Ghost Survivors, ligados a Got ’Em e separados dos quinze da campanha base. A distribuição é 4/3/2/1, e o Training Mode é válido para a coleta.",
               "progressGroup": "re2-ghost-raccoons",
-              "title": "Mr. Raccoons de The Ghost Survivors — 10 itens"
+              "title": "Mr. Raccoons de The Ghost Survivors — 10 itens",
+              "usefulVideo": {
+                "context": "Apoio visual para as quatro rotas e para as janelas curtas de observação.",
+                "external": true,
+                "id": "re2-video-ghost-raccoons-10",
+                "placement": "10 Mr. Raccoons de The Ghost Survivors",
+                "status": "validated",
+                "title": "Vídeo útil — os 10 Mr. Raccoons de The Ghost Survivors",
+                "verifiedAt": "2026-07-14",
+                "youtubeId": "liqGGZ90_cI"
+              }
             }
           ],
           "coopRequired": false,
@@ -1805,9 +1867,9 @@
           "roadmapIntroduction": "Não tente Gunslinger na primeira conclusão de No Way Out. Primeiro obtenha Hell of a Sheriff; depois tente Cat Ears apenas se quiser o Record opcional.",
           "roadmapTitle": "Rota curta de The Ghost Survivors",
           "rules": [
-            "No Time to Mourn — Robert Kendo — atravesse da Gun Shop Kendo até a saída; relacionado a Got ’Em.",
-            "Runaway — Katherine Warren — escape e alcance Ben; relacionado a Got ’Em.",
-            "Forgotten Soldier — Ghost — escape do NEST até a rota do Cable Car; relacionado a Got ’Em.",
+            "No Time to Mourn — Robert Kendo — saia da Gun Shop Kendo e alcance a Proposed Water Purification Room nos Sewers para a extração; relacionado a Got ’Em.",
+            "Runaway — Katherine Warren — saia do Orphanage e alcance a cela de Ben na Jail; relacionado a Got ’Em.",
+            "Forgotten Soldier — Ghost — saia do NEST e alcance o Cable Car; relacionado a Got ’Em.",
             "No Way Out — Sheriff Daniel Cortini — elimine 100 inimigos na Mizoil Gas Station; relacionado a Hell of a Sheriff e Got ’Em.",
             "Training Mode serve para aprender rotas e coletáveis disponíveis, mas não satisfaz Hell of a Sheriff.",
             "Use os blocos abaixo para acompanhar os quatro cenários, os 10 Mr. Raccoons e a estratégia de No Way Out."
@@ -2025,12 +2087,12 @@
     "editorial_summary": [
       "Este guia cobre a platina base de Resident Evil 2 Remake no PS4: 42 troféus. A rota gira em torno de múltiplas campanhas com Leon e Claire. A PSN pode mostrar 45 troféus na lista completa/100% da lista, mas os 3 extras de The Ghost Survivors e Another Survivor / Chasing Jill não são necessários para a platina.",
       "A platina base exige Leon, Claire, 2nd Run/final verdadeiro, coletáveis, Hardcore, S rank, runs de restrição e The 4th Survivor por Grim Reaper. Tofu Survivor não é requisito obrigatório da platina PS4/base, e S+ não é requisito direto.",
-      "Não há perda permanente de conta relevante. O risco real está nos perdíveis por run, nos objetivos condicionais e nos objetivos de rota: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist e A Small Carbon Footprint.",
+      "Não há perda permanente de conta relevante. O risco real está nos perdíveis por run, nos objetivos condicionais e nos objetivos de rota: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada usando apenas o EMF Visualizer, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist e A Small Carbon Footprint.",
       "Na primeira campanha, priorize aprendizado e observação. Depois, separe ranking, dificuldade, restrições e cleanup para não quebrar condições cedo."
     ],
     "faq": [
       {
-        "answer": "Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada sem pistola, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist, A Small Carbon Footprint, S rank e Hardcore.",
+        "answer": "Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada usando apenas o EMF Visualizer, Sherry em 60s, Gotcha!, bosses com timer, Minimalist, Frugalist, A Small Carbon Footprint, S rank e Hardcore.",
         "question": "Resident Evil 2 Remake tem troféus perdíveis?"
       },
       {
@@ -2109,7 +2171,90 @@
       }
     ],
     "seo": {},
-    "tags": []
+    "tags": [],
+    "usefulVideos": [
+      {
+        "context": "Use como apoio visual para reconhecer salas e posições. O checklist individual do Atlas continua sendo o controle principal.",
+        "external": true,
+        "id": "re2-video-files-58",
+        "note": "A ordem do vídeo pode diferir da numeração do Atlas.",
+        "placement": "58 Files",
+        "status": "validated",
+        "title": "Vídeo útil — todos os 58 Files",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "3ae9Ood0LxQ"
+      },
+      {
+        "context": "Apoio visual para conferir ângulos e campanhas. Marque cada boneco no checklist individual.",
+        "external": true,
+        "id": "re2-video-campaign-raccoons-15",
+        "placement": "15 Mr. Raccoons",
+        "status": "validated",
+        "title": "Vídeo útil — os 15 Mr. Raccoons da campanha",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "dk5h-nCw10Q"
+      },
+      {
+        "context": "Mostra a preparação de G Stage 2 antes da única ativação efetiva do guindaste.",
+        "external": true,
+        "id": "re2-video-gotcha",
+        "placement": "Gotcha!",
+        "status": "validated",
+        "title": "Vídeo útil — Gotcha! com uma ativação do guindaste",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "cjYhN0RWcGs"
+      },
+      {
+        "context": "Apoio visual para a sequência completa e para evitar o uso acidental da pistola.",
+        "external": true,
+        "id": "re2-video-ada-emf",
+        "placement": "One Slick Super-spy",
+        "status": "validated",
+        "title": "Vídeo útil — segmento da Ada usando somente o EMF Visualizer",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "z_VGHlajkcA"
+      },
+      {
+        "context": "Mostra a manipulação do quebra-cabeça e a rota de saída depois que a solução já é conhecida.",
+        "external": true,
+        "id": "re2-video-sherry-escape",
+        "placement": "Young Escapee",
+        "status": "validated",
+        "title": "Vídeo útil — fuga da Sherry em até 60 segundos",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "vD3NS6EhSCQ"
+      },
+      {
+        "context": "Use para visualizar os gargalos, inimigos que podem ser evitados e pontos de uso de granadas e munição.",
+        "external": true,
+        "id": "re2-video-fourth-survivor",
+        "placement": "The 4th Survivor",
+        "status": "validated",
+        "title": "Vídeo útil — rota completa de The 4th Survivor",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "k3PRhFIGJw0"
+      },
+      {
+        "context": "Apoio visual para as quatro rotas e para as janelas curtas de observação.",
+        "external": true,
+        "id": "re2-video-ghost-raccoons-10",
+        "placement": "10 Mr. Raccoons de The Ghost Survivors",
+        "status": "validated",
+        "title": "Vídeo útil — os 10 Mr. Raccoons de The Ghost Survivors",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "liqGGZ90_cI"
+      },
+      {
+        "context": "Mostra uma tentativa completa para Hell of a Sheriff, com gerenciamento de portas, mochilas e recursos. É apoio audiovisual, não uma rota obrigatória; use o Training Mode para treinar.",
+        "external": true,
+        "id": "re2-video-no-way-out",
+        "placement": "No Way Out",
+        "status": "validated",
+        "title": "Vídeo útil — No Way Out fora do Training Mode",
+        "verifiedAt": "2026-07-14",
+        "youtubeId": "HOIMdSOdvKY"
+      }
+    ]
   },
   "slug": "resident-evil-2-remake",
   "trophies": [
