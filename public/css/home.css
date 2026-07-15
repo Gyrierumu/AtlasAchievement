@@ -532,6 +532,29 @@
     0 0 28px rgba(250, 204, 21, .14) !important;
 }
 
+#view-home .atlas-home-primary-cta,
+#view-home #recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn-primary,
+#view-home .atlas-home-primary-cta:hover,
+#view-home .atlas-home-primary-cta:focus-visible,
+#view-home .atlas-home-primary-cta:active,
+#view-home #recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn-primary:hover,
+#view-home #recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn-primary:focus-visible,
+#view-home #recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn-primary:active {
+  color: var(--atlas-cta-on-bright, #04111f);
+}
+
+#view-home .atlas-home-primary-cta > i,
+#view-home .atlas-home-primary-cta > i::before {
+  color: currentColor;
+}
+
+#view-home .atlas-home-primary-cta::before,
+#view-home .atlas-home-primary-cta::after,
+#view-home #recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn-primary::before,
+#view-home #recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn-primary::after {
+  color: inherit;
+}
+
 .atlas-home-secondary-cta {
   min-height: 52px;
   padding-inline: 18px;
@@ -860,117 +883,6 @@
   line-height: 1.42;
 }
 
-.atlas-home-spotlight__slot {
-  min-width: 0;
-}
-
-.atlas-home-spotlight-card {
-  min-width: 0;
-  display: grid;
-  grid-template-columns: 84px minmax(0, 1fr) auto;
-  gap: 14px;
-  align-items: center;
-  padding: 12px;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, .08);
-  background:
-    linear-gradient(135deg, rgba(52, 211, 153, .09), transparent 48%),
-    linear-gradient(90deg, rgba(14, 165, 233, .075), transparent 70%),
-    rgba(7, 13, 28, .5);
-  backdrop-filter: blur(10px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .035), 0 12px 28px rgba(2, 6, 23, .16);
-  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
-}
-
-.atlas-home-spotlight-card:hover,
-.atlas-home-spotlight-card:focus-within {
-  transform: translateY(-2px);
-  border-color: rgba(125, 211, 252, .20);
-  background:
-    linear-gradient(135deg, rgba(52, 211, 153, .11), transparent 50%),
-    linear-gradient(90deg, rgba(14, 165, 233, .09), transparent 74%),
-    rgba(9, 17, 34, .62);
-  box-shadow: 0 18px 40px rgba(2, 6, 23, .22), inset 0 1px 0 rgba(255, 255, 255, .05);
-}
-
-.atlas-home-spotlight-card__media {
-  width: 84px;
-  aspect-ratio: 2 / 3;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(250, 204, 21, .16);
-}
-
-.atlas-home-spotlight-card__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .22s ease;
-}
-
-.atlas-home-spotlight-card:hover .atlas-home-spotlight-card__image {
-  transform: scale(1.035);
-}
-
-.atlas-home-spotlight-card__body {
-  min-width: 0;
-}
-
-.atlas-home-spotlight-card__badge {
-  display: inline-flex;
-  align-items: center;
-  min-height: 24px;
-  padding: 0 9px;
-  border-radius: 999px;
-  color: rgba(209, 250, 229, .96);
-  background: rgba(52, 211, 153, .10);
-  border: 1px solid rgba(110, 231, 183, .18);
-  font-size: .72rem;
-  font-weight: 880;
-}
-
-.atlas-home-spotlight-card h3 {
-  margin-top: 6px;
-  color: rgba(248, 250, 252, .96);
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
-  font-weight: 900;
-  line-height: 1.15;
-}
-
-.atlas-home-spotlight-card p {
-  margin-top: 4px;
-  color: rgba(226, 232, 240, .62);
-  font-size: .86rem;
-  line-height: 1.38;
-}
-
-.atlas-home-spotlight-card__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px 10px;
-  margin-top: 8px;
-  color: rgba(226, 232, 240, .72);
-  font-size: .78rem;
-  font-weight: 780;
-}
-
-.atlas-home-spotlight-card__meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.atlas-home-spotlight-card__meta i {
-  color: rgba(250, 204, 21, .74);
-}
-
-.atlas-home-spotlight-card__cta {
-  min-height: 42px;
-  padding-inline: 14px;
-  border-radius: 12px;
-  white-space: nowrap;
-}
-
 .atlas-featured-game {
   position: relative;
   display: grid;
@@ -1147,7 +1059,8 @@
 }
 
 .atlas-discovery-card {
-  min-height: 100%;
+  height: auto;
+  min-height: 0;
   backdrop-filter: blur(10px);
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
@@ -1172,34 +1085,42 @@
 
 .atlas-discovery-card .atlas-card__body {
   padding: 14px;
-  gap: 9px;
+  gap: 8px;
 }
 
 .atlas-discovery-card .atlas-card__title {
   font-size: 1.02rem;
 }
 
-.atlas-discovery-card .atlas-card__status {
-  color: rgba(250, 204, 21, .88);
-}
-
-.atlas-home-risk-badge {
-  min-height: 24px;
-  display: inline-flex;
-  align-items: center;
+#recentGamesOverview .atlas-discovery-card .atlas-card__meta {
   gap: 6px;
-  padding: 0 9px;
-  border-radius: 999px;
-  color: rgba(254, 226, 226, .92);
-  background: rgba(251, 113, 133, .10);
-  border: 1px solid rgba(251, 113, 133, .20);
-  font-size: .7rem;
-  font-weight: 850;
-  line-height: 1;
 }
 
-.atlas-home-risk-badge i {
-  color: rgba(251, 113, 133, .94);
+#recentGamesOverview .atlas-discovery-card .atlas-meta-signal {
+  padding: 2px 6px;
+}
+
+#recentGamesOverview .atlas-discovery-card .atlas-card__meta span {
+  gap: 5px;
+}
+
+#recentGamesOverview .atlas-discovery-card .atlas-editorial-badge {
+  min-height: 22px;
+}
+
+#recentGamesOverview .atlas-discovery-card .atlas-card__reason {
+  line-height: 1.44;
+}
+
+#recentGamesOverview .atlas-discovery-card .atlas-card__actions .atlas-btn {
+  min-height: 44px;
+  height: auto;
+}
+
+@media (min-width: 1200px) {
+  #recentGamesOverview .atlas-discovery-card .atlas-card__meta {
+    flex-wrap: nowrap;
+  }
 }
 
 .atlas-editorial-timeline {
@@ -1213,7 +1134,7 @@
   grid-template-columns: 66px minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
-  padding: 10px 0;
+  padding: 11px 0;
   border-bottom: 1px solid rgba(255,255,255,.055);
   transition: background .18s ease, border-color .18s ease, padding-inline .18s ease;
 }
@@ -1288,7 +1209,8 @@
 }
 
 .atlas-editorial-update__link {
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding-inline: 10px;
   border-radius: 999px;
   display: inline-flex;
@@ -1501,19 +1423,6 @@
     width: 100%;
   }
 
-  .atlas-home-spotlight-card {
-    grid-template-columns: 76px minmax(0, 1fr);
-  }
-
-  .atlas-home-spotlight-card__media {
-    width: 76px;
-  }
-
-  .atlas-home-spotlight-card__cta {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-
   .atlas-decision-panel__header {
     flex-direction: column;
     align-items: flex-start;
@@ -1546,19 +1455,6 @@
     min-width: 0;
   }
 
-  .atlas-home-spotlight-card {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 11px;
-    padding: 11px;
-  }
-
-  .atlas-home-spotlight-card__media {
-    width: 64px;
-  }
-
-  .atlas-home-spotlight-card p {
-    font-size: .82rem;
-  }
 }
 
 .atlas-site-footer__panel {
@@ -1623,8 +1519,6 @@
   .atlas-home-benefit > i,
   .atlas-home-hero-preview__image,
   .atlas-home-hero-preview__link,
-  .atlas-home-spotlight-card,
-  .atlas-home-spotlight-card__image,
   .atlas-discovery-card,
   .atlas-discovery-card .atlas-card__image,
   .atlas-editorial-update,
@@ -1643,9 +1537,6 @@
   .atlas-home-hero-preview__shell:focus-within .atlas-home-hero-preview__image,
   .atlas-home-hero-preview__link:hover,
   .atlas-home-hero-preview__link:focus-visible,
-  .atlas-home-spotlight-card:hover,
-  .atlas-home-spotlight-card:focus-within,
-  .atlas-home-spotlight-card:hover .atlas-home-spotlight-card__image,
   .atlas-discovery-card:hover,
   .atlas-discovery-card:focus-within,
   .atlas-discovery-card:hover .atlas-card__image,

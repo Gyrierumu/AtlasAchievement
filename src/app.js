@@ -33,6 +33,7 @@ app.set('trust proxy', 1);
 const publicIndexPath = path.join(__dirname, '../public/index.html');
 const publicIndexTemplate = fs.readFileSync(publicIndexPath, 'utf8');
 const catalogFacetPageMap = sharedCatalogModel.catalogFacetPageMap;
+const HOME_EDITORIAL_HIGHLIGHT_LIMIT = sharedCatalogModel.HOME_EDITORIAL_HIGHLIGHT_LIMIT || 3;
 const PUBLIC_CATALOG_PAGE_SIZE = 24;
 const PRODUCTION_CANONICAL_ORIGIN = 'https://atlasachievement.com.br';
 const DEFAULT_SOCIAL_IMAGE_PATH = '/assets/brand/atlasachievement-og.png';
@@ -963,7 +964,10 @@ function renderHomeImageHtml(model = {}, imageClass = 'atlas-card__image', optio
 function renderEditorialBadgeHtml(statusBadge = {}, options = {}) {
   if (!statusBadge?.label) return '';
   const sizeClass = options.small ? ' atlas-editorial-badge--small' : '';
-  return `<span class="atlas-editorial-badge${sizeClass} atlas-editorial-badge--${escapeHtml(statusBadge.status || statusBadge.badge || statusBadge.tone || 'in_review')}" title="${escapeHtml(statusBadge.detail || '')}">${escapeHtml(statusBadge.label)}</span>`;
+  const accessibleLabel = options.accessibleLabel
+    ? ` aria-label="${escapeHtml(options.accessibleLabel)}"`
+    : '';
+  return `<span class="atlas-editorial-badge${sizeClass} atlas-editorial-badge--${escapeHtml(statusBadge.status || statusBadge.badge || statusBadge.tone || 'in_review')}"${accessibleLabel} title="${escapeHtml(statusBadge.detail || '')}">${escapeHtml(statusBadge.label)}</span>`;
 }
 
 function renderHomeIntentCardsHtml(games = []) {
@@ -986,8 +990,8 @@ function renderHomeIntentCardsHtml(games = []) {
 
 function renderHomeDiscoveryGuidesHtml(games = []) {
   const showcaseGames = typeof sharedCatalogModel.selectHomeShowcaseGames === 'function'
-    ? sharedCatalogModel.selectHomeShowcaseGames(games, 6)
-    : games.slice(0, 6);
+    ? sharedCatalogModel.selectHomeShowcaseGames(games, HOME_EDITORIAL_HIGHLIGHT_LIMIT)
+    : games.slice(0, HOME_EDITORIAL_HIGHLIGHT_LIMIT);
   if (!showcaseGames.length) {
     return '<div class="atlas-inline-empty">Nenhum guia recente disponível.</div>';
   }
@@ -1001,7 +1005,7 @@ function renderHomeDiscoveryGuidesHtml(games = []) {
           ${renderHomeImageHtml(model, 'atlas-card__image', { width: 600, height: 900, sizes: '(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 42vw' })}
         </div>
         <div class="atlas-card__body">
-          <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true })}<span class="atlas-card__status atlas-badge atlas-badge--partial">Escolha editorial</span></div>
+          <div class="atlas-card__badges">${renderEditorialBadgeHtml(model.statusBadge, { small: true, accessibleLabel: 'Guia revisado e verificado editorialmente' })}</div>
           <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
           <p class="atlas-card__reason">${escapeHtml(getHomeFeaturedReason(game))}</p>
           <div class="atlas-card__meta">
@@ -1021,6 +1025,19 @@ function getHomeRevisionNote(game = {}) {
   return sharedCatalogModel.getHomeRevisionNote(game);
 }
 
+function hasNoOnlineRequirementForHome(game = {}) {
+  const onlineFlags = [
+    game.onlineRequired,
+    game.online_required,
+    game.requiresOnline,
+    game.requires_online,
+    game.is_online
+  ];
+  return onlineFlags.some(value => value === false)
+    && onlineFlags.every(value => value !== true)
+    && Number(game.online_trophy_count || game.onlineTrophies || 0) === 0;
+}
+
 function renderHomeEditorialHistoryHtml(games = []) {
   if (!games.length) {
     return '<div class="atlas-inline-empty">Nenhuma revisão recente disponível.</div>';
@@ -1029,11 +1046,16 @@ function renderHomeEditorialHistoryHtml(games = []) {
   return games.slice(0, 5).map(game => {
     const updatedLabel = formatDisplayDate(game.updated_at || game.created_at);
     const slug = escapeHtml(game.slug || '');
+    const revisionBadges = [
+      sharedCatalogModel.isCatalogVerified(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--verified">Verificado</span>' : '',
+      hasNoOnlineRequirementForHome(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--soft">Sem online</span>' : ''
+    ].filter(Boolean).join('');
     return `
       <article class="atlas-editorial-update">
         <time datetime="${escapeHtml(game.updated_at || game.created_at || '')}">${escapeHtml(updatedLabel)}</time>
         <div class="atlas-editorial-update__body">
           <h3>${escapeHtml(stripMarkdownHeadingPrefix(game.name))}</h3>
+          <div class="atlas-editorial-update__badges">${revisionBadges}</div>
           <p>${escapeHtml(getHomeRevisionNote(game))}</p>
         </div>
         <a href="/jogo/${slug}" class="atlas-editorial-update__link" data-home-game="${escapeHtml(game.name)}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeHtml(game.name)}">

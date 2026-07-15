@@ -5,6 +5,7 @@
   }
   if (root) root.AtlasCatalogModel = factory(root.AtlasEditorialModel);
 })(typeof globalThis !== 'undefined' ? globalThis : this, function catalogModelFactory(editorial = {}) {
+  const HOME_EDITORIAL_HIGHLIGHT_LIMIT = 3;
   const FALLBACK_TIME_VALUE = editorial.FALLBACK_TIME_VALUE || Number.MAX_SAFE_INTEGER;
   const getTimeValue = editorial.getTimeValue || (() => FALLBACK_TIME_VALUE);
   const parseTimeValue = editorial.parseTimeValue || (() => null);
@@ -1184,6 +1185,7 @@
   }
 
   return {
+    HOME_EDITORIAL_HIGHLIGHT_LIMIT,
     FALLBACK_TIME_VALUE,
     catalogFacetMeta,
     catalogFacetPageMap,

@@ -210,6 +210,10 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="view-profile"'), 'public/index.html precisa expor a pagina/painel de perfil');
     assert(html.includes('id="homeBetaNotice"'), 'home precisa expor aviso beta no template');
     assert(html.includes('AtlasAchievement está em evolução'), 'aviso beta precisa comunicar evolução editorial no template');
+    assert(html.includes('Guias de platina, roadmaps e checklists em um só lugar.'), 'H1 da home deve apresentar diretamente guias, roadmaps e checklists');
+    assert(!html.includes('Sua biblioteca de platinas, guias e checklists em um só lugar.'), 'home não deve manter cópia do H1 anterior');
+    assert(!html.includes('id="homeEditorialSpotlight"') && !html.includes('Guia de platina recomendado agora') && !html.includes('Boa escolha para começar'), 'home não deve duplicar a recomendação do hero em uma seção independente');
+    assert(/id="homeBetaNotice"[\s\S]*?<\/aside>\s*<section class="atlas-home-section atlas-home-section--moment"/.test(html), 'aviso beta deve ser seguido diretamente pela seção de escolha por tempo, risco e dificuldade');
     assert(html.includes('id="homeBenefitsTitle"') && html.includes('Por que usar o Atlas'), 'home precisa expor a seção de diferenciais');
     assert(html.includes('Guias para escolher a próxima platina'), 'home precisa manter o título editorial da seção de guias');
     assert(html.includes('Últimas revisões'), 'home precisa manter a seção de revisões');
@@ -281,7 +285,16 @@ function assertUIModules() {
   assert(feedbackCode.includes('trackFeedbackSubmit') && !feedbackCode.includes('message: payload.message'), 'feedback deve rastrear apenas tipo e slug, nunca a mensagem');
   const homeUiCode = read('public/js/ui-home.js');
   const homeCss = read('public/css/home.css');
+  const catalogModelCode = read('src/shared/catalogModel.js');
   assert(homeUiCode.includes('data-home-update-banner'), 'novidade semanal deve ser renderizada como faixa na home');
+  assert((homeUiCode.match(/Guia em destaque/g) || []).length === 2 && !homeUiCode.includes('Próxima platina'), 'prévia do hero deve usar rótulo editorial também no fallback');
+  assert(catalogModelCode.includes('HOME_EDITORIAL_HIGHLIGHT_LIMIT = 3'), 'home deve centralizar o limite de três destaques editoriais');
+  assert(homeUiCode.includes('selectHomeShowcaseGames(items, HOME_EDITORIAL_HIGHLIGHT_LIMIT)'), 'cliente da home deve respeitar o limite centralizado de destaques');
+  assert(!homeUiCode.includes('Verificado recentemente') && !homeUiCode.includes('Revisão recente'), 'home não deve manter selos editoriais redundantes');
+  assert(!homeUiCode.includes('atlas-home-risk-badge') && !homeCss.includes('.atlas-home-risk-badge'), 'destaques da home devem renderizar somente o status editorial verificado');
+  assert(homeCss.includes('#recentGamesOverview .atlas-discovery-card'), 'compactação dos destaques deve permanecer escopada à home');
+  assert(!homeUiCode.includes('renderHomeEditorialSpotlight') && !homeUiCode.includes('#homeEditorialSpotlight'), 'ui-home não deve manter renderizador órfão da recomendação duplicada');
+  assert(!homeCss.includes('.atlas-home-spotlight-card') && !homeCss.includes('.atlas-home-spotlight__slot'), 'home.css não deve manter estilos órfãos da recomendação duplicada');
   assert(homeUiCode.includes("document.createElement('aside')"), 'faixa de novidade deve usar semantica informativa');
   assert(homeUiCode.includes("banner.setAttribute('aria-label', 'Novidade da semana')"), 'faixa de novidade precisa de nome acessivel');
   assert(homeUiCode.includes('data-update-banner-game') && homeUiCode.includes('data-update-banner-catalog'), 'faixa deve manter CTAs para guia e catalogo');
@@ -8889,7 +8902,12 @@ async function assertBackendEditorialConsistency() {
     assert(homeHtml.includes('Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank'), 'home deve expor exemplos de busca');
     assert(!homeHtml.includes('Ver guias em destaque'), 'SSR da home deve manter apenas um CTA editorial principal');
     assert(homeHtml.includes('id="homeBetaNotice"'), 'home deve renderizar aviso beta');
+    assert.strictEqual((homeHtml.match(/<h1\b/g) || []).length, 1, 'SSR da home deve manter exatamente um H1');
+    assert(homeHtml.includes('Guias de platina, roadmaps e checklists em um só lugar.'), 'SSR da home deve renderizar o novo H1 editorial');
+    assert(!homeHtml.includes('Sua biblioteca de platinas, guias e checklists em um só lugar.'), 'SSR da home não deve manter o H1 anterior');
     assert(homeHtml.includes('Guias verificados passam por revisão editorial'), 'aviso beta deve comunicar evolucao editorial');
+    assert(!homeHtml.includes('id="homeEditorialSpotlight"') && !homeHtml.includes('Guia de platina recomendado agora') && !homeHtml.includes('Boa escolha para começar'), 'SSR da home não deve renderizar a recomendação duplicada');
+    assert(/id="homeBetaNotice"[\s\S]*?<\/aside>\s*<section class="atlas-home-section atlas-home-section--moment"/.test(homeHtml), 'SSR da home deve ligar o aviso beta diretamente à seção de escolha por tempo, risco e dificuldade');
     assert(homeHtml.includes('id="homeBenefitsTitle"') && homeHtml.includes('Por que usar o Atlas'), 'SSR da home deve renderizar a seção de diferenciais');
     assert(!homeHtml.includes('id="featuredNowOverview"') && !homeHtml.includes('Melhor primeiro clique agora'), 'SSR da home não deve duplicar um jogo em destaque isolado');
     assert(!homeHtml.includes('Quem faz o Atlas') && !homeHtml.includes('Feito por jogadores brasileiros'), 'SSR da home não deve incluir a seção de autoria vetada');
@@ -8899,6 +8917,10 @@ async function assertBackendEditorialConsistency() {
     assert(homeHtml.includes('/js/app-modal-factories.js'), 'home precisa carregar factories para montar modais sob demanda');
     assert(homeHtml.includes('atlas-home-image-shell'), 'home deve renderizar imagens com fallback visual');
     assert(homeHtml.includes('atlas-discovery-card__media atlas-home-image-shell'), 'cards em destaque da home devem usar shell de imagem');
+    assert.strictEqual((homeHtml.match(/<article class="[^"]*atlas-discovery-card/g) || []).length, 3, 'SSR da home deve renderizar exatamente três destaques editoriais');
+    assert.strictEqual((homeHtml.match(/<article class="atlas-editorial-update"/g) || []).length, 5, 'SSR da home deve preservar exatamente cinco últimas revisões');
+    assert(!homeHtml.includes('Verificado recentemente') && !homeHtml.includes('Revisão recente') && !homeHtml.includes('Escolha editorial'), 'SSR da home não deve renderizar selos redundantes');
+    assert.strictEqual((homeHtml.match(/aria-label="Guia revisado e verificado editorialmente"/g) || []).length, 3, 'cada destaque SSR deve preservar nome acessível editorial');
     assert(!/>\s*0 op/i.test(homeHtml), 'home nao deve exibir cards de momento com zero opcoes');
     assert(/window\.__APP_VERSION__\s*=/.test(homeHtml), 'SSR / deve expor versao publica do app para invalidacao tecnica');
 

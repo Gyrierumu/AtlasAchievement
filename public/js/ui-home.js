@@ -4,13 +4,17 @@ window.UIHome = (() => {
   const { hasMissableRiskText, getDifficultyTone, getDifficultyToneClass } = window.UIDecisionModels;
   const sharedCatalog = window.AtlasCatalogModel || {};
   const sharedCard = window.AtlasCardModel || {};
+  const HOME_EDITORIAL_HIGHLIGHT_LIMIT = Number(sharedCatalog.HOME_EDITORIAL_HIGHLIGHT_LIMIT || 3);
   const siteUpdates = window.AtlasSiteUpdates || {};
   let homePulseTimer = null;
 
   function renderHomeEditorialBadge(model = {}) {
     const badge = model.statusBadge || {};
     if (!badge.label) return '';
-    return `<span class="atlas-editorial-badge atlas-editorial-badge--small atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" title="${escapeAttribute(badge.detail || '')}">${escapeHtml(badge.label)}</span>`;
+    const accessibleLabel = badge.status === 'verified'
+      ? 'Guia revisado e verificado editorialmente'
+      : `Status editorial: ${badge.label}`;
+    return `<span class="atlas-editorial-badge atlas-editorial-badge--small atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'in_review')}" aria-label="${escapeAttribute(accessibleLabel)}" title="${escapeAttribute(badge.detail || '')}">${escapeHtml(badge.label)}</span>`;
   }
 
   function renderHomeImage(model = {}, imageClass = 'atlas-card__image', options = {}) {
@@ -93,13 +97,6 @@ window.UIHome = (() => {
     return hasExplicitOfflineFlag
       && onlineFlags.every(value => value !== true)
       && toNumber(game.online_trophy_count || game.onlineTrophies, 0) === 0;
-  }
-
-  function getHomeGuideSignal(game = {}) {
-    if (isGuideVerified(game)) return 'Verificado recentemente';
-    if (hasNoOnlineRequirement(game)) return 'Sem online';
-    if (isShortPlatinum(game)) return 'Platina curta';
-    return 'Boa escolha para começar';
   }
 
   function renderHomeCatalogProof(target, gamesCount = 0, totalTrophies = 0, totalRoadmaps = 0, fallbackText = '') {
@@ -203,54 +200,6 @@ window.UIHome = (() => {
       })[0] || null;
   }
 
-  function renderHomeEditorialSpotlight(games = []) {
-    const target = qs('#homeEditorialSpotlight');
-    if (!target) return;
-    const game = selectEditorialSpotlight(games);
-    if (!game) {
-      target.innerHTML = '<div class="atlas-inline-empty">O destaque aparece aqui quando houver guias suficientes no catálogo.</div>';
-      return;
-    }
-    const model = typeof sharedCard.buildStandardGameCardModel === 'function'
-      ? sharedCard.buildStandardGameCardModel(game)
-      : {
-        slug: game.slug || '',
-        name: game.name || 'Jogo',
-        image: getGameCoverSrc ? getGameCoverSrc(game) : (game.cover_image || game.image || ''),
-        difficulty: game.difficulty || '-',
-        time: game.time || 'Tempo não informado',
-        trophies: getGameTotal(game)
-      };
-    const slug = escapeAttribute(model.slug || '');
-    const signal = getHomeGuideSignal(game);
-    const metaItems = [
-      model.time ? `<span><i class="fas fa-clock" aria-hidden="true"></i>${escapeHtml(model.time)}</span>` : '',
-      model.difficulty ? `<span><i class="fas fa-gauge-high" aria-hidden="true"></i>${escapeHtml(String(model.difficulty))}/10</span>` : '',
-      `<span><i class="fas fa-trophy" aria-hidden="true"></i>${escapeHtml(String(model.trophies || getGameTotal(game)))} troféus</span>`
-    ].filter(Boolean).join('');
-    const reason = isGuideVerified(game)
-      ? 'Status editorial verificado no catálogo, com rota e checklist prontos para consulta.'
-      : hasNoOnlineRequirement(game)
-        ? 'Platina marcada sem online obrigatório nos dados do guia.'
-        : 'Boa opção para comparar tempo, dificuldade e riscos antes de começar.';
-    target.innerHTML = `
-      <article class="atlas-home-spotlight-card">
-        <div class="atlas-home-spotlight-card__media atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
-          ${renderHomeImage(model, 'atlas-home-spotlight-card__image', { width: 260, height: 360, sizes: '(min-width: 768px) 120px, 88px' })}
-        </div>
-        <div class="atlas-home-spotlight-card__body">
-          <span class="atlas-home-spotlight-card__badge">${escapeHtml(signal)}</span>
-          <h3>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
-          <p>${escapeHtml(reason)}</p>
-          <div class="atlas-home-spotlight-card__meta">${metaItems}</div>
-        </div>
-        <a href="/jogo/${slug}" class="atlas-btn atlas-btn-primary atlas-home-spotlight-card__cta" data-home-game="${escapeAttribute(model.name)}" data-open-guide-card="${slug}">
-          <span>Abrir guia</span>
-          <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-        </a>
-      </article>`;
-  }
-
   function renderHomeHeroPreview(games = []) {
     const target = qs('#homeHeroPreview');
     if (!target) return;
@@ -258,7 +207,7 @@ window.UIHome = (() => {
     if (!game) {
       target.innerHTML = `
         <div class="atlas-home-hero-preview__empty">
-          <span>Próxima platina</span>
+          <span>Guia em destaque</span>
           <strong>Escolha por tempo, dificuldade e risco</strong>
         </div>`;
       return;
@@ -281,7 +230,7 @@ window.UIHome = (() => {
     target.innerHTML = `
       <div class="atlas-home-hero-preview__shell">
         <div class="atlas-home-hero-preview__head">
-          <span>Próxima platina</span>
+          <span>Guia em destaque</span>
           <strong>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</strong>
         </div>
         <div class="atlas-home-hero-preview__cover atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
@@ -425,7 +374,6 @@ window.UIHome = (() => {
     renderHomeCatalogProof(catalogProofTarget, games.length, totalTrophies, totalRoadmaps, formatHomeCatalogProof(games.length, totalTrophies, totalRoadmaps));
     renderHomeSearchChips(games);
     hydrateHomePulse(games);
-    renderHomeEditorialSpotlight(games);
     renderHomeHeroPreview(games);
 
     const renderDiscoveryList = (target, items, emptyMessage) => {
@@ -435,8 +383,8 @@ window.UIHome = (() => {
         return;
       }
       const showcaseItems = typeof sharedCatalog.selectHomeShowcaseGames === 'function'
-        ? sharedCatalog.selectHomeShowcaseGames(items, 6)
-        : items.slice(0, 6);
+        ? sharedCatalog.selectHomeShowcaseGames(items, HOME_EDITORIAL_HIGHLIGHT_LIMIT)
+        : items.slice(0, HOME_EDITORIAL_HIGHLIGHT_LIMIT);
       target.innerHTML = showcaseItems.map(game => {
         const model = typeof sharedCard.buildStandardGameCardModel === 'function'
           ? sharedCard.buildStandardGameCardModel(game)
@@ -460,8 +408,6 @@ window.UIHome = (() => {
           <div class="atlas-card__body">
             <div class="atlas-card__badges">
               ${renderHomeEditorialBadge(model)}
-              <span class="atlas-card__status atlas-badge atlas-badge--partial">${escapeHtml(getHomeGuideSignal(game))}</span>
-              ${model.hasRisk ? '<span class="atlas-home-risk-badge atlas-home-risk-badge--risk"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i>Atenção cedo</span>' : ''}
             </div>
             <h3 class="atlas-card__title">${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</h3>
             <p class="atlas-card__reason">${escapeHtml(getFeaturedReason(game))}</p>
@@ -488,7 +434,6 @@ window.UIHome = (() => {
         const updatedLabel = formatDisplayDate(game.updated_at || game.created_at);
         const slug = escapeAttribute(game.slug || '');
         const revisionBadges = [
-          '<span class="atlas-editorial-update__badge">Revisão recente</span>',
           isGuideVerified(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--verified">Verificado</span>' : '',
           hasNoOnlineRequirement(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--soft">Sem online</span>' : ''
         ].filter(Boolean).join('');
