@@ -167,6 +167,20 @@ function validateData() {
     re5Related.some(item => item?.game?.slug === 'resident-evil-5' && /Resident Evil 5/i.test(item.reason || '')),
     'Modelo de relacionados deve expor link natural para Resident Evil 5 em guias da franquia Resident Evil'
   );
+  const re2VillageRelated = cardModel.buildRelatedGames(
+    residentEvil2Guide,
+    [{ ...sampleGames.find(game => game.slug === 'resident-evil-village'), difficulty: '6', time: '25-35 horas' }],
+    1
+  );
+  assert.strictEqual(re2VillageRelated[0]?.game?.difficulty, '7', 'Card de Village relacionado ao RE2 deve refletir dificuldade atual do destino');
+  assert.strictEqual(re2VillageRelated[0]?.game?.time, '25-40 horas', 'Card de Village relacionado ao RE2 deve refletir tempo atual do destino');
+  const otherGuideVillageRelated = cardModel.buildRelatedGames(
+    residentEvilGuide,
+    [{ ...sampleGames.find(game => game.slug === 'resident-evil-village'), difficulty: '6', time: '25-35 horas' }],
+    1
+  );
+  assert.strictEqual(otherGuideVillageRelated[0]?.game?.difficulty, '6', 'Correcao do card de Village deve permanecer restrita ao RE2');
+  assert.strictEqual(otherGuideVillageRelated[0]?.game?.time, '25-35 horas', 'Correcao de tempo do card de Village deve permanecer restrita ao RE2');
   assert.strictEqual(
     cardModel.getGuideFranchiseConfig(sampleGames.find(game => game.slug === 'resident-evil-5'))?.name,
     'Resident Evil',
@@ -2073,6 +2087,27 @@ async function validateGuide(slug = '') {
       const re2Sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
       assert.strictEqual((re2Sitemap.match(/\/jogo\/resident-evil-2-remake<\/loc>/g) || []).length, 1, 'Sitemap deve conter uma unica URL canonica do RE2');
       assert(!re2Sitemap.includes('http://atlasachievement.com.br/jogo/resident-evil-2-remake') && !re2Sitemap.includes('resident-evil-2-remake?'), 'Sitemap do RE2 nao deve conter variantes HTTP ou com query string');
+      const re2CollectionPaths = ['/catalogo/dificuldade-media', '/catalogo/16-a-40-horas', '/catalogo/31-a-60-trofeus'];
+      re2CollectionPaths.forEach(pathname => {
+        assert(html.includes(`<a href="${pathname}"`), `Descoberta do RE2 deve manter link SSR rastreavel para ${pathname}`);
+      });
+      assert.strictEqual((html.match(/class="atlas-card atlas-card--game atlas-card--compact atlas-related-guide-card/g) || []).length, 4, 'RE2 deve preservar quatro cards de guias relacionados');
+      const re2RelatedStart = html.indexOf('<section class="atlas-related-suggestions');
+      const re2RelatedEnd = html.indexOf('</section>', re2RelatedStart);
+      const re2RelatedHtml = re2RelatedStart >= 0 && re2RelatedEnd > re2RelatedStart ? html.slice(re2RelatedStart, re2RelatedEnd + 10) : '';
+      const re2RelatedGuideLinks = [...re2RelatedHtml.matchAll(/<a href="(\/jogo\/[^"]+)"[^>]*aria-label="Abrir guia de ([^"]+)"/g)].map(match => ({ pathname: match[1], name: match[2] }));
+      assert.strictEqual(re2RelatedGuideLinks.length, 4, 'RE2 deve renderizar quatro links SSR descritivos para guias relacionados');
+      assert.strictEqual(new Set(re2RelatedGuideLinks.map(item => item.pathname)).size, 4, 'Guias relacionados do RE2 nao devem duplicar destinos');
+      assert(re2RelatedGuideLinks.every(item => item.name && item.pathname !== '/jogo/resident-evil-2-remake'), 'Guias relacionados do RE2 devem ter nome acessivel e nao conter self-link');
+      assert(re2RelatedHtml && !re2RelatedHtml.includes('href="/jogo/resident-evil-2-remake"'), 'Guias relacionados do RE2 nao devem conter self-link');
+      for (const pathname of [...re2CollectionPaths, ...re2RelatedGuideLinks.map(item => item.pathname)]) {
+        const response = await fetch(`${baseUrl}${pathname}`, { redirect: 'manual' });
+        assert.strictEqual(response.status, 200, `Destino interno do RE2 deve responder 200: ${pathname}`);
+        const destinationHtml = await response.text();
+        const destinationCanonical = new URL(getCanonical(destinationHtml));
+        assert.strictEqual(destinationCanonical.pathname, pathname, `Destino interno do RE2 deve usar canonical direto: ${pathname}`);
+        assert.strictEqual(destinationCanonical.search, '', `Destino interno do RE2 nao deve usar query string no canonical: ${pathname}`);
+      }
       assert(!JSON.stringify(apiGame).includes('captureManifest') && !JSON.stringify(apiGame).includes('expectedFile'), 'API publica de Resident Evil 2 Remake nao deve expor manifestos ou paths internos de captura');
       assert(!JSON.stringify(apiGame).includes('screenshotStatus') && !JSON.stringify(apiGame).includes('Captura propria Atlas pendente'), 'API publica de Resident Evil 2 Remake nao deve expor status ou captions internas de capturas pendentes');
       assert(!html.includes('captureManifest') && !html.includes('expectedFile') && !html.includes('screenshotStatus'), 'HTML publico de Resident Evil 2 Remake nao deve serializar metadados internos de captura');

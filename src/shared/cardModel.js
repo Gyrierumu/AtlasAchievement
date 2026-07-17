@@ -201,6 +201,26 @@
     };
   }
 
+  function alignRelatedGuideDisplayMetadata(currentSlug = '', entries = []) {
+    if (String(currentSlug || '').trim().toLowerCase() !== 'resident-evil-2-remake') {
+      return entries;
+    }
+    return entries.map(entry => {
+      const game = entry?.game || {};
+      if (String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-village') {
+        return entry;
+      }
+      return {
+        ...entry,
+        game: {
+          ...game,
+          difficulty: '7',
+          time: '25-40 horas'
+        }
+      };
+    });
+  }
+
   function buildRelatedGames(currentGame, pool = [], limit = 4) {
     if (!currentGame) return [];
     const currentSlug = currentGame.slug || '';
@@ -209,7 +229,7 @@
     const currentTime = getTimeValue(currentGame);
     const currentHasTime = hasKnownTimeValue(currentTime);
 
-    return (Array.isArray(pool) ? pool : [])
+    const relatedGames = (Array.isArray(pool) ? pool : [])
       .filter(game => game && (game.slug || '') !== currentSlug)
       .map(game => {
         const trophyCount = getTrophyTotal(game);
@@ -255,6 +275,7 @@
       })
       .sort((a, b) => b.score - a.score || String(a.game?.name || '').localeCompare(String(b.game?.name || ''), 'pt-BR'))
       .slice(0, limit);
+    return alignRelatedGuideDisplayMetadata(currentSlug, relatedGames);
   }
 
   function buildGuideComparisonModel(currentGame, relatedGames = []) {
