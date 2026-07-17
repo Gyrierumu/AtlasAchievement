@@ -22,6 +22,7 @@ const sharedFeatureFlags = require('./shared/featureFlags');
 const sharedGuideViewModel = require('./shared/guideViewModel');
 const sharedCardModel = require('./shared/cardModel');
 const sharedCatalogModel = require('./shared/catalogModel');
+const { sanitizePublicGuideGame } = require('./shared/publicGuideSanitizer');
 const { loginRateLimit, registerRateLimit, registerFailedLoginAttempt } = require('./middleware/loginRateLimit');
 const SqliteSessionStore = require('./services/sqliteSessionStore');
 const AppError = require('./utils/AppError');
@@ -336,7 +337,7 @@ function buildInitialStateScript(payload = null) {
 }
 
 function sanitizePublicGuideInitialStateGame(game = {}) {
-  const sanitized = { ...game };
+  const sanitized = sanitizePublicGuideGame(game);
   if (!sharedFeatureFlags.isWalkthroughEnabled()) {
     delete sanitized.walkthrough;
   }
@@ -843,8 +844,11 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
     : `${trophy.trophyNameOriginal || trophy.name || ''} ${trophy.trophyNamePtBr || trophy.name_pt || ''} ${description} ${tip} ${trophy.type || ''} ${riskTags.map(tag => `${tag.id} ${tag.label}`).join(' ')}`.trim().toLowerCase();
   const detailsId = buildTrophyDetailsId(trophy, index);
   const hasDetailsToggle = shouldShowTrophyDetailsToggle(trophy, description, tip);
+  const contextualDetailsAttributes = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake'
+    ? ` data-details-item-name="${escapeHtml(primaryName)}" aria-label="${escapeHtml(`Ver detalhes de ${primaryName}`)}"`
+    : '';
   const detailsToggleHtml = hasDetailsToggle
-    ? `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-details-toggle" data-trophy-details-toggle="true" aria-expanded="false" aria-controls="${escapeHtml(detailsId)}"><span data-details-label>Ver detalhes</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button>`
+    ? `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-details-toggle" data-trophy-details-toggle="true"${contextualDetailsAttributes} aria-expanded="false" aria-controls="${escapeHtml(detailsId)}"><span data-details-label>Ver detalhes</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button>`
     : '';
   const toggleLabel = done ? 'Desmarcar' : 'Concluir';
   const toggleAria = `${toggleLabel} ${primaryName}`;
@@ -1297,7 +1301,13 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
         </div>
       </div>
       <div class="atlas-faq-list">
-        ${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row">${normalizedSlug === 'resident-evil-2-remake' ? `<h3>${escapeHtml(item.question)}</h3>` : `<strong>${escapeHtml(item.question)}</strong>`}<p>${renderGuideFaqAnswerHtml(item, normalizedSlug)}</p></article>`).join('')}
+        ${faqItems.map((item, index) => {
+          if (normalizedSlug !== 'resident-evil-2-remake') {
+            return `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswerHtml(item, normalizedSlug)}</p></article>`;
+          }
+          const answerId = `guideFaqAnswer-${index + 1}`;
+          return `<article class="atlas-faq-item atlas-faq-row"><h3><button type="button" class="atlas-faq-toggle" data-guide-section-toggle="${answerId}" aria-expanded="false" aria-controls="${answerId}"><span>${escapeHtml(item.question)}</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button></h3><div id="${answerId}" class="atlas-faq-answer is-collapsed" data-guide-section-content aria-hidden="true" hidden><p>${renderGuideFaqAnswerHtml(item, normalizedSlug)}</p></div></article>`;
+        }).join('')}
       </div>
     </section>`;
   return { attention, faq };
@@ -2538,7 +2548,7 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
       ` : ''}
       <div class="space-y-3">
         <div>
-          <div class="atlas-eyebrow">Checklist separado</div>
+          ${isResidentEvil2 ? '' : '<div class="atlas-eyebrow">Checklist separado</div>'}
           ${isResidentEvil2
             ? `<strong class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} extras</strong>`
             : `<h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>`}
@@ -3068,7 +3078,7 @@ function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
 function renderGuideUsagePanelHtml(game = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   if (normalizedSlug === 'resident-evil-2-remake') {
-    const rows = getGuideSectionRegistryHtml(game).filter(item => item.directoryGoal);
+    const rows = getGuideSectionRegistryHtml(game).filter(item => item.directoryGoal && item.id !== 'feedback');
     return `
       <section id="guideUsagePanel" class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4" aria-labelledby="guideUsageTitle">
         <div>
@@ -3324,8 +3334,8 @@ function enhanceResidentEvil2FragmentLinks(html = '') {
   return String(html || '')
     .replace('<button type="button" class="atlas-quick-dock__btn" data-guide-action="trophies" aria-label="Ir para o checklist"><i class="fas fa-list-check" aria-hidden="true"></i><span>Checklist</span></button>', '<a class="atlas-quick-dock__btn" href="#guideChecklistPanel" data-guide-action="trophies" data-re2-fragment-shortcut="true" aria-label="Ir para o checklist"><i class="fas fa-list-check" aria-hidden="true"></i><span>Checklist</span></a>')
     .replace('<button type="button" class="atlas-quick-dock__btn" data-guide-action="roadmap" aria-label="Ir para o roadmap"><i class="fas fa-route" aria-hidden="true"></i><span>Roadmap</span></button>', '<a class="atlas-quick-dock__btn" href="#guideRoadmapPanel" data-guide-action="roadmap" data-re2-fragment-shortcut="true" aria-label="Ir para o roadmap"><i class="fas fa-route" aria-hidden="true"></i><span>Roadmap</span></a>')
-    .replace('<button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--top" data-scroll-top="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></button>', '<a class="atlas-quick-dock__btn atlas-quick-dock__btn--top" href="#topo" data-re2-fragment-shortcut="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></a>')
-    .replace('<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button>', '<a href="#topo" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-re2-fragment-shortcut="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</a>');
+    .replace('<button type="button" class="atlas-quick-dock__btn atlas-quick-dock__btn--top" data-scroll-top="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></button>', '<a class="atlas-quick-dock__btn atlas-quick-dock__btn--top" href="#topo" data-scroll-top="true" data-re2-fragment-shortcut="true" aria-label="Voltar ao topo"><i class="fas fa-arrow-up" aria-hidden="true"></i><span>Topo</span></a>')
+    .replace('<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button>', '<a href="#topo" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true" data-re2-fragment-shortcut="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</a>');
 }
 
 async function buildGamePageHtml(game, req) {

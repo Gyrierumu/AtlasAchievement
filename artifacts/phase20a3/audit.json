@@ -1,0 +1,1029 @@
+{
+  "zoomResults": [
+    {
+      "zoom": 100,
+      "summary": {
+        "label": "100-hero",
+        "hash": "#topo",
+        "viewport": [
+          1440,
+          900
+        ],
+        "scrollWidth": 1425,
+        "clientWidth": 1425,
+        "overflow": false,
+        "issues": [],
+        "issueCount": 0,
+        "overlaps": [],
+        "target": {
+          "selector": "#topo",
+          "top": 88,
+          "height": 1
+        },
+        "cardHeights": [],
+        "searchVisible": false,
+        "filtersVisible": false,
+        "usefulVideosVisible": 0,
+        "dock": null,
+        "buttons": 40,
+        "tags": 5
+      },
+      "sections": [
+        {
+          "label": "100-hero",
+          "hash": "#topo",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#topo",
+            "top": 88,
+            "height": 1
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 40,
+          "tags": 5
+        },
+        {
+          "label": "100-roadmap",
+          "hash": "#guideRoadmapPanel",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideRoadmapPanel",
+            "top": 282,
+            "height": 2774
+          },
+          "cardHeights": [
+            315,
+            315,
+            283
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 59,
+          "tags": 7
+        },
+        {
+          "label": "100-quick-plan",
+          "hash": "#guideQuickPlan",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideQuickPlan",
+            "top": 282,
+            "height": 2022
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": {
+            "x": 1167,
+            "y": 767,
+            "width": 244,
+            "height": 119,
+            "collapsed": false
+          },
+          "buttons": 40,
+          "tags": 5
+        },
+        {
+          "label": "100-checklist",
+          "hash": "#guideChecklistPanel",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideChecklistPanel",
+            "top": 282,
+            "height": 315
+          },
+          "cardHeights": [
+            170,
+            197,
+            197
+          ],
+          "searchVisible": true,
+          "filtersVisible": true,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 126,
+          "tags": 5
+        },
+        {
+          "label": "100-extras",
+          "hash": "#guidePlatinumExtrasPanel",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guidePlatinumExtrasPanel",
+            "top": 282,
+            "height": 20657
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 1,
+          "dock": null,
+          "buttons": 31,
+          "tags": 6
+        },
+        {
+          "label": "100-dlcs",
+          "hash": "#guideDlcCompletionPanel",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideDlcCompletionPanel",
+            "top": 282,
+            "height": 9654
+          },
+          "cardHeights": [
+            353,
+            353,
+            353
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 2,
+          "dock": null,
+          "buttons": 24,
+          "tags": 30
+        },
+        {
+          "label": "100-faq",
+          "hash": "#guideFaqPanel",
+          "viewport": [
+            1440,
+            900
+          ],
+          "scrollWidth": 1425,
+          "clientWidth": 1425,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideFaqPanel",
+            "top": 284,
+            "height": 1069
+          },
+          "cardHeights": [
+            353,
+            353,
+            353
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 2,
+          "dock": {
+            "x": 1167,
+            "y": 767,
+            "width": 244,
+            "height": 119,
+            "collapsed": false
+          },
+          "buttons": 24,
+          "tags": 30
+        }
+      ],
+      "video": {
+        "link": {
+          "x": 1067,
+          "y": 483,
+          "width": 151,
+          "height": 42
+        },
+        "dock": {
+          "x": 1167,
+          "y": 767,
+          "width": 244,
+          "height": 119
+        },
+        "overlapArea": 0
+      },
+      "endReach": {
+        "scrollY": 22718,
+        "innerHeight": 900,
+        "scrollHeight": 23618,
+        "reached": true,
+        "dockVisible": false
+      }
+    },
+    {
+      "zoom": 150,
+      "summary": {
+        "label": "150-hero",
+        "hash": "#topo",
+        "viewport": [
+          960,
+          600
+        ],
+        "scrollWidth": 945,
+        "clientWidth": 945,
+        "overflow": false,
+        "issues": [],
+        "issueCount": 0,
+        "overlaps": [],
+        "target": {
+          "selector": "#topo",
+          "top": 124,
+          "height": 1
+        },
+        "cardHeights": [],
+        "searchVisible": false,
+        "filtersVisible": false,
+        "usefulVideosVisible": 0,
+        "dock": null,
+        "buttons": 30,
+        "tags": 6
+      },
+      "sections": [
+        {
+          "label": "150-hero",
+          "hash": "#topo",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#topo",
+            "top": 124,
+            "height": 1
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 30,
+          "tags": 6
+        },
+        {
+          "label": "150-roadmap",
+          "hash": "#guideRoadmapPanel",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideRoadmapPanel",
+            "top": 318,
+            "height": 2928
+          },
+          "cardHeights": [
+            315,
+            347,
+            283
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 59,
+          "tags": 7
+        },
+        {
+          "label": "150-quick-plan",
+          "hash": "#guideQuickPlan",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideQuickPlan",
+            "top": 318,
+            "height": 2033
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": {
+            "x": 687,
+            "y": 518,
+            "width": 244,
+            "height": 74,
+            "collapsed": false
+          },
+          "buttons": 40,
+          "tags": 5
+        },
+        {
+          "label": "150-checklist",
+          "hash": "#guideChecklistPanel",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideChecklistPanel",
+            "top": 320,
+            "height": 365
+          },
+          "cardHeights": [
+            170,
+            197,
+            197
+          ],
+          "searchVisible": true,
+          "filtersVisible": true,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 126,
+          "tags": 5
+        },
+        {
+          "label": "150-extras",
+          "hash": "#guidePlatinumExtrasPanel",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guidePlatinumExtrasPanel",
+            "top": 294,
+            "height": 20724
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 1,
+          "dock": null,
+          "buttons": 31,
+          "tags": 6
+        },
+        {
+          "label": "150-dlcs",
+          "hash": "#guideDlcCompletionPanel",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideDlcCompletionPanel",
+            "top": 316,
+            "height": 10222
+          },
+          "cardHeights": [
+            324,
+            324,
+            296
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 2,
+          "dock": null,
+          "buttons": 24,
+          "tags": 30
+        },
+        {
+          "label": "150-faq",
+          "hash": "#guideFaqPanel",
+          "viewport": [
+            960,
+            600
+          ],
+          "scrollWidth": 945,
+          "clientWidth": 945,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideFaqPanel",
+            "top": 317,
+            "height": 1087
+          },
+          "cardHeights": [
+            324,
+            324,
+            296
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 2,
+          "dock": {
+            "x": 687,
+            "y": 518,
+            "width": 244,
+            "height": 74,
+            "collapsed": false
+          },
+          "buttons": 24,
+          "tags": 30
+        }
+      ],
+      "video": {
+        "link": {
+          "x": 723,
+          "y": 333,
+          "width": 151,
+          "height": 42
+        },
+        "dock": {
+          "x": 687,
+          "y": 518,
+          "width": 244,
+          "height": 74
+        },
+        "overlapArea": 0
+      },
+      "endReach": {
+        "scrollY": 23192,
+        "innerHeight": 600,
+        "scrollHeight": 23792,
+        "reached": true,
+        "dockVisible": false
+      }
+    },
+    {
+      "zoom": 200,
+      "summary": {
+        "label": "200-hero",
+        "hash": "#topo",
+        "viewport": [
+          720,
+          450
+        ],
+        "scrollWidth": 705,
+        "clientWidth": 705,
+        "overflow": false,
+        "issues": [],
+        "issueCount": 0,
+        "overlaps": [],
+        "target": {
+          "selector": "#topo",
+          "top": 88,
+          "height": 1
+        },
+        "cardHeights": [],
+        "searchVisible": false,
+        "filtersVisible": false,
+        "usefulVideosVisible": 0,
+        "dock": null,
+        "buttons": 30,
+        "tags": 6
+      },
+      "sections": [
+        {
+          "label": "200-hero",
+          "hash": "#topo",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#topo",
+            "top": 88,
+            "height": 1
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": null,
+          "buttons": 30,
+          "tags": 6
+        },
+        {
+          "label": "200-roadmap",
+          "hash": "#guideRoadmapPanel",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideRoadmapPanel",
+            "top": 196,
+            "height": 3149
+          },
+          "cardHeights": [
+            360,
+            368,
+            320
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": {
+            "x": 505,
+            "y": 406,
+            "width": 190,
+            "height": 42,
+            "collapsed": true
+          },
+          "buttons": 59,
+          "tags": 7
+        },
+        {
+          "label": "200-quick-plan",
+          "hash": "#guideQuickPlan",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideQuickPlan",
+            "top": 196,
+            "height": 2147
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 0,
+          "dock": {
+            "x": 505,
+            "y": 406,
+            "width": 190,
+            "height": 42,
+            "collapsed": true
+          },
+          "buttons": 40,
+          "tags": 5
+        },
+        {
+          "label": "200-checklist",
+          "hash": "#guideChecklistPanel",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideChecklistPanel",
+            "top": 180,
+            "height": 621
+          },
+          "cardHeights": [
+            269,
+            296,
+            296
+          ],
+          "searchVisible": true,
+          "filtersVisible": true,
+          "usefulVideosVisible": 0,
+          "dock": {
+            "x": 505,
+            "y": 406,
+            "width": 190,
+            "height": 42,
+            "collapsed": true
+          },
+          "buttons": 126,
+          "tags": 5
+        },
+        {
+          "label": "200-extras",
+          "hash": "#guidePlatinumExtrasPanel",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guidePlatinumExtrasPanel",
+            "top": 195,
+            "height": 21449
+          },
+          "cardHeights": [],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 1,
+          "dock": {
+            "x": 505,
+            "y": 406,
+            "width": 190,
+            "height": 42,
+            "collapsed": true
+          },
+          "buttons": 31,
+          "tags": 6
+        },
+        {
+          "label": "200-dlcs",
+          "hash": "#guideDlcCompletionPanel",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideDlcCompletionPanel",
+            "top": 195,
+            "height": 12319
+          },
+          "cardHeights": [
+            332,
+            321,
+            302
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 2,
+          "dock": {
+            "x": 505,
+            "y": 406,
+            "width": 190,
+            "height": 42,
+            "collapsed": true
+          },
+          "buttons": 24,
+          "tags": 30
+        },
+        {
+          "label": "200-faq",
+          "hash": "#guideFaqPanel",
+          "viewport": [
+            720,
+            450
+          ],
+          "scrollWidth": 705,
+          "clientWidth": 705,
+          "overflow": false,
+          "issues": [],
+          "issueCount": 0,
+          "overlaps": [],
+          "target": {
+            "selector": "#guideFaqPanel",
+            "top": 195,
+            "height": 1114
+          },
+          "cardHeights": [
+            332,
+            321,
+            302
+          ],
+          "searchVisible": false,
+          "filtersVisible": false,
+          "usefulVideosVisible": 2,
+          "dock": {
+            "x": 505,
+            "y": 406,
+            "width": 190,
+            "height": 42,
+            "collapsed": true
+          },
+          "buttons": 24,
+          "tags": 30
+        }
+      ],
+      "video": {
+        "link": {
+          "x": 227,
+          "y": 262,
+          "width": 151,
+          "height": 42
+        },
+        "dock": {
+          "x": 505,
+          "y": 406,
+          "width": 190,
+          "height": 42
+        },
+        "overlapArea": 0
+      },
+      "endReach": {
+        "scrollY": 24333,
+        "innerHeight": 450,
+        "scrollHeight": 24783,
+        "reached": true,
+        "dockVisible": false
+      }
+    }
+  ],
+  "spacingResults": [
+    {
+      "label": "spacing-hero",
+      "hash": "#topo",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#topo",
+        "top": 88,
+        "height": 1
+      },
+      "cardHeights": [],
+      "searchVisible": false,
+      "filtersVisible": false,
+      "usefulVideosVisible": 0,
+      "dock": null,
+      "buttons": 30,
+      "tags": 6
+    },
+    {
+      "label": "spacing-roadmap",
+      "hash": "#guideRoadmapPanel",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#guideRoadmapPanel",
+        "top": 282,
+        "height": 3168
+      },
+      "cardHeights": [
+        342,
+        342,
+        309
+      ],
+      "searchVisible": false,
+      "filtersVisible": false,
+      "usefulVideosVisible": 0,
+      "dock": null,
+      "buttons": 59,
+      "tags": 7
+    },
+    {
+      "label": "spacing-quick-plan",
+      "hash": "#guideQuickPlan",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#guideQuickPlan",
+        "top": 282,
+        "height": 2258
+      },
+      "cardHeights": [],
+      "searchVisible": false,
+      "filtersVisible": false,
+      "usefulVideosVisible": 0,
+      "dock": {
+        "x": 1167,
+        "y": 767,
+        "width": 244,
+        "height": 119,
+        "collapsed": false
+      },
+      "buttons": 40,
+      "tags": 5
+    },
+    {
+      "label": "spacing-checklist",
+      "hash": "#guideChecklistPanel",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#guideChecklistPanel",
+        "top": 284,
+        "height": 337
+      },
+      "cardHeights": [
+        204,
+        231,
+        231
+      ],
+      "searchVisible": true,
+      "filtersVisible": true,
+      "usefulVideosVisible": 0,
+      "dock": null,
+      "buttons": 126,
+      "tags": 5
+    },
+    {
+      "label": "spacing-extras",
+      "hash": "#guidePlatinumExtrasPanel",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#guidePlatinumExtrasPanel",
+        "top": 282,
+        "height": 26574
+      },
+      "cardHeights": [],
+      "searchVisible": false,
+      "filtersVisible": false,
+      "usefulVideosVisible": 1,
+      "dock": null,
+      "buttons": 31,
+      "tags": 6
+    },
+    {
+      "label": "spacing-dlcs",
+      "hash": "#guideDlcCompletionPanel",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#guideDlcCompletionPanel",
+        "top": 282,
+        "height": 11124
+      },
+      "cardHeights": [
+        483,
+        483,
+        483
+      ],
+      "searchVisible": false,
+      "filtersVisible": false,
+      "usefulVideosVisible": 2,
+      "dock": null,
+      "buttons": 24,
+      "tags": 30
+    },
+    {
+      "label": "spacing-faq",
+      "hash": "#guideFaqPanel",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollWidth": 1425,
+      "clientWidth": 1425,
+      "overflow": false,
+      "issues": [],
+      "issueCount": 0,
+      "overlaps": [],
+      "target": {
+        "selector": "#guideFaqPanel",
+        "top": 281,
+        "height": 1263
+      },
+      "cardHeights": [
+        483,
+        483,
+        483
+      ],
+      "searchVisible": false,
+      "filtersVisible": false,
+      "usefulVideosVisible": 2,
+      "dock": {
+        "x": 1167,
+        "y": 767,
+        "width": 244,
+        "height": 119,
+        "collapsed": false
+      },
+      "buttons": 24,
+      "tags": 30
+    }
+  ]
+}

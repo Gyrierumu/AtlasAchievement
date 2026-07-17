@@ -1,0 +1,110 @@
+{
+  "generatedAt": "2026-07-16T22:56:44.211Z",
+  "initial": {
+    "pressed": [
+      "all"
+    ],
+    "visible": 42,
+    "results": "42 de 42 troféus",
+    "emptyText": "",
+    "density": "compact",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "single": {
+    "pressed": [
+      "pending"
+    ],
+    "visible": 42,
+    "results": "42 de 42 troféus em Pendentes",
+    "emptyText": "",
+    "density": "compact",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "multiple": {
+    "pressed": [
+      "pending",
+      "missable",
+      "difficulty"
+    ],
+    "visible": 2,
+    "results": "2 de 42 troféus em Pendentes + Perdíveis + Dificuldade",
+    "emptyText": "",
+    "density": "compact",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "multipleEmpty": {
+    "pressed": [
+      "pending",
+      "missable",
+      "online",
+      "difficulty"
+    ],
+    "visible": 0,
+    "results": "0 de 42 troféus em Pendentes + Perdíveis + Dificuldade + Online",
+    "emptyText": "Nenhum troféu corresponde a Pendentes + Perdíveis + Dificuldade + Online.\nTente remover um dos filtros ou limpar a seleção.\nLimpar filtros",
+    "density": "compact",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "cleared": {
+    "pressed": [
+      "all"
+    ],
+    "visible": 42,
+    "results": "42 de 42 troféus",
+    "emptyText": "",
+    "density": "compact",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "modeComfortable1": {
+    "pressed": [
+      "pending",
+      "missable",
+      "difficulty"
+    ],
+    "visible": 2,
+    "results": "2 de 42 troféus em Pendentes + Perdíveis + Dificuldade",
+    "emptyText": "",
+    "density": "comfortable",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "modeCompact": {
+    "pressed": [
+      "pending",
+      "missable",
+      "difficulty"
+    ],
+    "visible": 2,
+    "results": "2 de 42 troféus em Pendentes + Perdíveis + Dificuldade",
+    "emptyText": "",
+    "density": "compact",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  },
+  "modeComfortable2": {
+    "pressed": [
+      "pending",
+      "missable",
+      "difficulty"
+    ],
+    "visible": 2,
+    "results": "2 de 42 troféus em Pendentes + Perdíveis + Dificuldade",
+    "emptyText": "",
+    "density": "comfortable",
+    "progress": "0/42 concluídos",
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  }
+}

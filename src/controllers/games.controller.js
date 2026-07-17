@@ -1,5 +1,10 @@
 const gamesService = require('../services/games.service');
 const { validateGamePayload, normalizeGamePayload, normalizeListQuery, validateListQuery } = require('../validators/game.validator');
+const { sanitizePublicGuideGame } = require('../shared/publicGuideSanitizer');
+
+function getGameResponse(req, game) {
+  return req.session?.admin ? game : sanitizePublicGuideGame(game);
+}
 
 async function listGames(req, res) {
   const query = validateListQuery(normalizeListQuery(req.query));
@@ -9,17 +14,17 @@ async function listGames(req, res) {
 
 async function getGameByName(req, res) {
   const game = await gamesService.getGameByName(req.params.name, { includeDrafts: Boolean(req.session?.admin) });
-  res.json(game);
+  res.json(getGameResponse(req, game));
 }
 
 async function getGameBySlug(req, res) {
   const game = await gamesService.getGameBySlug(req.params.slug, { includeDrafts: Boolean(req.session?.admin) });
-  res.json(game);
+  res.json(getGameResponse(req, game));
 }
 
 async function getGameById(req, res) {
   const game = await gamesService.getGameById(Number(req.params.id), { includeDrafts: Boolean(req.session?.admin) });
-  res.json(game);
+  res.json(getGameResponse(req, game));
 }
 
 async function createGame(req, res) {

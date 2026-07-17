@@ -578,7 +578,12 @@ window.AppGuideController = (() => {
       bindGuideQuickDockAutoSync();
       const enabled = isGuideQuickDockEnabled();
       const mobile = isMobileQuickDock();
-      const visible = enabled && !state.quickDockDismissed && !hasReachedGuideEnd() && (mobile ? hasMobileQuickDockTrigger() : hasScrolledPastGuideHero());
+      const isResidentEvil2 = getGameSlug(state.currentGame) === 'resident-evil-2-remake';
+      const dock = document.querySelector('#guideQuickDock');
+      const retainsKeyboardFocus = Boolean(dock?.contains(document.activeElement));
+      const reachedEnd = !isResidentEvil2 && hasReachedGuideEnd();
+      const passedTrigger = mobile ? hasMobileQuickDockTrigger() : hasScrolledPastGuideHero();
+      const visible = enabled && !state.quickDockDismissed && !reachedEnd && (passedTrigger || retainsKeyboardFocus);
       UI.setGuideQuickDockState({ enabled, visible, collapsed: mobile && state.quickDockCollapsed !== false });
     }
 

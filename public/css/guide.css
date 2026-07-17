@@ -2348,6 +2348,39 @@
   gap: 0;
 }
 
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-faq-toggle {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  line-height: 1.45;
+  text-align: left;
+  cursor: pointer;
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-faq-toggle i {
+  flex: 0 0 auto;
+  margin-top: .25em;
+  color: rgba(125, 211, 252, .86);
+  font-size: .76rem;
+  transition: transform .2s ease;
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-faq-toggle[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-faq-answer p {
+  margin-top: 7px;
+}
+
 .atlas-quick-dock {
   position: fixed;
   right: 16px;
@@ -2610,7 +2643,7 @@ body.atlas-guide-dock-active footer {
 }
 
 .atlas-quick-dock__btn--desktop {
-  display: none;
+  display: inline-flex;
 }
 
 .atlas-quick-dock__btn--top {
@@ -2647,6 +2680,76 @@ body.atlas-guide-dock-active footer {
 
   body.atlas-guide-dock-active.atlas-guide-dock-collapsed {
     padding-bottom: 70px;
+  }
+}
+
+/* RE2 keyboard navigation: keep the audited controls visible and unmistakable. */
+html:has(
+  body[data-page="public"] #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+) {
+  scroll-padding-top: 170px;
+  scroll-padding-bottom: 150px;
+}
+
+body[data-page="public"]:has(
+  #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+) .atlas-skip-link:focus-visible,
+#view-guide.atlas-guide--resident-evil-2-remake
+  #guideUsagePanel a:focus-visible,
+body[data-page="public"]:has(
+  #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+) #guideSectionsPanel a:focus-visible {
+  color: #fff;
+  background: rgba(125, 211, 252, .14);
+  outline: 2px solid rgba(125, 211, 252, .92);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+body[data-page="public"].atlas-guide-dock-active:has(
+  #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+) .atlas-back-to-top {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body[data-page="public"].atlas-guide-dock-active:has(
+    #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+  ) {
+    padding-bottom: 140px;
+  }
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake :is(
+  .atlas-guide-hero__actions .atlas-btn,
+  #guideLayerNav .atlas-guide-layer-nav__button,
+  #guideUsagePanel a,
+  .atlas-re2-campaign-plan__run > details > summary,
+  .atlas-re2-campaign-plan__closing > details > summary,
+  .atlas-useful-video__link
+) {
+  scroll-margin-top: var(--guide-anchor-offset);
+  scroll-margin-bottom: 140px;
+}
+
+@media (max-width: 900px) and (max-height: 480px) and (orientation: landscape) {
+  html:has(
+    body[data-page="public"] #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+  ) {
+    scroll-padding-top: 70px;
+    scroll-padding-bottom: 130px;
+  }
+
+  #view-guide.atlas-guide--resident-evil-2-remake :is(
+    .atlas-guide-hero__actions .atlas-btn,
+    #guideLayerNav .atlas-guide-layer-nav__button,
+    #guideUsagePanel a,
+    .atlas-re2-campaign-plan__run > details > summary,
+    .atlas-re2-campaign-plan__closing > details > summary,
+    .atlas-useful-video__link
+  ) {
+    scroll-margin-top: 70px;
+    scroll-margin-bottom: 90px;
   }
 }
 

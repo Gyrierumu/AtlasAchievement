@@ -2036,6 +2036,12 @@ async function validateGuide(slug = '') {
       assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 3), 'API de Resident Evil 2 Remake deve retornar actions reais no roadmap');
       assert.strictEqual(apiGame.chapterRouteGuide?.campaignPlan?.runs?.length, 7, 'API de Resident Evil 2 Remake deve preservar exatamente 7 runs no plano principal');
       assert.strictEqual(apiGame.commonMythsGuide?.myths?.length, 9, 'API de Resident Evil 2 Remake deve expor exatamente 9 mitos');
+      assert(!JSON.stringify(apiGame).includes('captureManifest') && !JSON.stringify(apiGame).includes('expectedFile'), 'API publica de Resident Evil 2 Remake nao deve expor manifestos ou paths internos de captura');
+      assert(!JSON.stringify(apiGame).includes('screenshotStatus') && !JSON.stringify(apiGame).includes('Captura propria Atlas pendente'), 'API publica de Resident Evil 2 Remake nao deve expor status ou captions internas de capturas pendentes');
+      assert(!html.includes('captureManifest') && !html.includes('expectedFile') && !html.includes('screenshotStatus'), 'HTML publico de Resident Evil 2 Remake nao deve serializar metadados internos de captura');
+      assert(!JSON.stringify(apiGame).includes('Checklist separado'), 'API publica de Resident Evil 2 Remake nao deve expor o label tecnico Checklist separado');
+      assert(!html.includes('Checklist separado'), 'HTML SSR de Resident Evil 2 Remake nao deve conter o label tecnico Checklist separado');
+      assert(!visibleGuideHtml.includes('Checklist separado'), 'Resident Evil 2 Remake nao deve exibir o label tecnico Checklist separado');
       ['Faça uma primeira campanha segura aprendendo o R.P.D.', 'Complete Leon, Claire e 2nd Run para o final verdadeiro', 'Resolva coletáveis base e limpeza de exploração', 'Faça S rank com Leon e Claire', 'Complete Hardcore com Leon e Claire', 'Faça runs condicionais sem cura, sem baú e com poucos passos', 'Complete The 4th Survivor para Grim Reaper', 'Finalize a checklist da platina base'].forEach(text => {
         assert(apiRoadmapText.includes(text), `API roadmap de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
         assert(roadmapPanelHtml.includes(text), `Roadmap SSR de Resident Evil 2 Remake deve conter etapa nova: ${text}`);
@@ -2117,8 +2123,8 @@ async function validateGuide(slug = '') {
 
       const usagePanelHtml = html.match(/<section id="guideUsagePanel"[\s\S]*?<\/section>/)?.[0] || '';
       assert(usagePanelHtml.includes('aria-label="Diret\u00f3rio de se\u00e7\u00f5es do guia"'), 'Como usar este guia deve nomear o landmark do diretorio');
-      assert.strictEqual((usagePanelHtml.match(/<tr><td/g) || []).length, 11, 'Como usar este guia deve manter onze destinos');
-      ['#guideRoadmapPanel', '#guideQuickPlan', '#guideChapterRoutePanel', '#mitos-e-erros-comuns', '#guideChecklistPanel', '#guidePlatinumExtrasPanel', '#guideDlcCompletionPanel', '#guideEditorialNotesPanel', '#guideFaqPanel', '#guideCommentsPanel', '#guideFeedbackPanel'].forEach(href => {
+      assert.strictEqual((usagePanelHtml.match(/<tr><td/g) || []).length, 10, 'Como usar este guia deve manter dez destinos');
+      ['#guideRoadmapPanel', '#guideQuickPlan', '#guideChapterRoutePanel', '#mitos-e-erros-comuns', '#guideChecklistPanel', '#guidePlatinumExtrasPanel', '#guideDlcCompletionPanel', '#guideEditorialNotesPanel', '#guideFaqPanel', '#guideCommentsPanel'].forEach(href => {
         assert(usagePanelHtml.includes(`href="${href}"`), `Diretorio do RE2 deve apontar para ${href}`);
       });
       assert(html.indexOf('id="mitos-e-erros-comuns"') < html.indexOf('id="guideUsagePanel"') && html.indexOf('id="guideUsagePanel"') < html.indexOf('id="guideQuickPlan"'), 'Como usar este guia deve ficar entre Mitos e Plano rapido');

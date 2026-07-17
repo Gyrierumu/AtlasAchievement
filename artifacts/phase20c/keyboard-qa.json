@@ -1,0 +1,299 @@
+{
+  "generatedAt": "2026-07-16T22:47:21.774Z",
+  "tabTraversal": {
+    "forward": {
+      "tag": "button",
+      "id": "",
+      "text": "Limpar filtros",
+      "trophy": "",
+      "extra": "",
+      "faq": ""
+    },
+    "reverse": {
+      "tag": "input",
+      "id": "trophySearch",
+      "text": "",
+      "trophy": "",
+      "extra": "",
+      "faq": ""
+    }
+  },
+  "roadmap": {
+    "before": {
+      "expanded": "true",
+      "label": "Ocultar roadmap",
+      "focus": true
+    },
+    "closed": {
+      "expanded": "false",
+      "label": "Mostrar roadmap",
+      "hidden": true,
+      "ariaHidden": "true",
+      "focus": true,
+      "focusableInside": 0
+    },
+    "open": {
+      "expanded": "true",
+      "label": "Ocultar roadmap",
+      "hidden": false,
+      "ariaHidden": "false",
+      "focus": true
+    }
+  },
+  "faq": [
+    {
+      "before": {
+        "tag": "button",
+        "name": "Resident Evil 2 Remake tem troféus perdíveis?",
+        "expanded": "false",
+        "hidden": true,
+        "controls": "guideFaqAnswer-1"
+      },
+      "open": {
+        "expanded": "true",
+        "hidden": false,
+        "ariaHidden": "false",
+        "focus": true,
+        "answer": "Sim, mas não há perda permanente de conta relevante. O risco é por run, rota ou condição: Files, Mr. Raccoons, Hip Pouches, safes/locks, Ada usando apenas o EMF"
+      },
+      "closed": {
+        "expanded": "false",
+        "hidden": true,
+        "ariaHidden": "true",
+        "focus": true,
+        "focusableInside": 0
+      }
+    },
+    {
+      "before": {
+        "tag": "button",
+        "name": "Resident Evil 2 Remake precisa de online ou coop?",
+        "expanded": "false",
+        "hidden": true,
+        "controls": "guideFaqAnswer-2"
+      },
+      "open": {
+        "expanded": "true",
+        "hidden": false,
+        "ariaHidden": "false",
+        "focus": true,
+        "answer": "Não. A lista base é single-player, offline e não exige coop, servidores, multiplayer, ranking online ou PS+."
+      },
+      "closed": {
+        "expanded": "false",
+        "hidden": true,
+        "ariaHidden": "true",
+        "focus": true,
+        "focusableInside": 0
+      }
+    },
+    {
+      "before": {
+        "tag": "button",
+        "name": "Precisa fazer 2nd Run?",
+        "expanded": "false",
+        "hidden": true,
+        "controls": "guideFaqAnswer-3"
+      },
+      "open": {
+        "expanded": "true",
+        "hidden": false,
+        "ariaHidden": "false",
+        "focus": true,
+        "answer": "Sim. A 2ª jornada entra na rota para cobrir a campanha complementar e concluir o final verdadeiro."
+      },
+      "closed": {
+        "expanded": "false",
+        "hidden": true,
+        "ariaHidden": "true",
+        "focus": true,
+        "focusableInside": 0
+      }
+    }
+  ],
+  "details": [
+    {
+      "before": {
+        "name": "Ver detalhes de Raccoon City Native",
+        "visible": true,
+        "expanded": "false",
+        "cardOpen": false,
+        "detailsId": "trophy-details-re2r_platinum-0"
+      },
+      "open": {
+        "name": "Ocultar detalhes de Raccoon City Native",
+        "expanded": "true",
+        "cardOpen": true,
+        "focus": true,
+        "descriptionOverflow": "visible"
+      },
+      "closed": {
+        "name": "Ver detalhes de Raccoon City Native",
+        "expanded": "false",
+        "cardOpen": false,
+        "focus": true
+      }
+    },
+    {
+      "before": {
+        "name": "Ver detalhes de Hardcore College Student",
+        "visible": true,
+        "expanded": "false",
+        "cardOpen": false,
+        "detailsId": "trophy-details-re2r_hardcore_college-1"
+      },
+      "open": {
+        "name": "Ocultar detalhes de Hardcore College Student",
+        "expanded": "true",
+        "cardOpen": true,
+        "focus": true,
+        "descriptionOverflow": "visible"
+      },
+      "closed": {
+        "name": "Ver detalhes de Hardcore College Student",
+        "expanded": "false",
+        "cardOpen": false,
+        "focus": true
+      }
+    },
+    {
+      "before": {
+        "name": "Ver detalhes de Hardcore Rookie",
+        "visible": true,
+        "expanded": "false",
+        "cardOpen": false,
+        "detailsId": "trophy-details-re2r_hardcore_rookie-2"
+      },
+      "open": {
+        "name": "Ocultar detalhes de Hardcore Rookie",
+        "expanded": "true",
+        "cardOpen": true,
+        "focus": true,
+        "descriptionOverflow": "visible"
+      },
+      "closed": {
+        "name": "Ver detalhes de Hardcore Rookie",
+        "expanded": "false",
+        "cardOpen": false,
+        "focus": true
+      }
+    }
+  ],
+  "searchWithResult": {
+    "value": "Raccoon City Native",
+    "results": "1 de 42 troféus",
+    "visible": 1,
+    "emptyHidden": true
+  },
+  "searchWithoutResult": {
+    "value": "zzzz-sem-resultado-20c",
+    "results": "0 de 42 troféus",
+    "visible": 0,
+    "emptyText": "Nenhum resultado para essa busca.\nTente limpar filtros ou buscar por outro termo.\nLimpar filtros",
+    "emptyAriaHidden": "false"
+  },
+  "emptyClear": {
+    "value": "",
+    "active": "all",
+    "visible": 42,
+    "focusPersistentClear": true
+  },
+  "clearSearch": {
+    "value": "",
+    "active": "all",
+    "visible": 42,
+    "focus": true
+  },
+  "singleFilter": {
+    "active": "missable",
+    "visible": 27,
+    "results": "27 de 42 troféus em Perdíveis",
+    "focus": "missable"
+  },
+  "combinedFilter": {
+    "query": "Leon",
+    "active": "missable",
+    "visible": 3,
+    "hiddenFocusable": 0
+  },
+  "density": {
+    "progressBeforeMode": "0/42 concluídos",
+    "scrollBeforeMode": 450,
+    "comfortable": {
+      "density": "comfortable",
+      "query": "Hardcore",
+      "activeFilter": "difficulty",
+      "detailsOpen": true,
+      "progress": "0/42 concluídos",
+      "scrollY": 450
+    },
+    "compact": {
+      "density": "compact",
+      "query": "Hardcore",
+      "activeFilter": "difficulty",
+      "detailsOpen": true,
+      "detailsExpanded": "true",
+      "progress": "0/42 concluídos",
+      "scrollY": 450
+    }
+  },
+  "trophyToggle": {
+    "id": "re2r_hero_emerges",
+    "afterToggle": {
+      "pressed": "true",
+      "label": "Desmarcar A Hero Emerges",
+      "active": true,
+      "activeElement": {
+        "tag": "button",
+        "text": "Desmarcar"
+      }
+    },
+    "afterReload": {
+      "pressed": "true",
+      "label": "Desmarcar A Hero Emerges"
+    }
+  },
+  "file": {
+    "id": "re2-file-01-orientation-letter",
+    "contentId": "extras-re2-files-lore-explorer",
+    "checked": false,
+    "afterToggle": {
+      "checked": true,
+      "peerCount": 1,
+      "active": true,
+      "ariaLabel": "Marcar 01. Orientation Letter"
+    },
+    "afterReload": true
+  },
+  "raccoon": {
+    "id": "re2-raccoon-01-west-office",
+    "contentId": "extras-re2-mr-raccoons",
+    "checked": false,
+    "afterToggle": {
+      "checked": true,
+      "peerCount": 1,
+      "active": true,
+      "ariaLabel": "Marcar 01. Mr. Raccoon - West Office 1F"
+    },
+    "afterReload": true
+  },
+  "structure": {
+    "trophyCount": 42,
+    "detailsCount": 42,
+    "uniqueDetailNames": 42,
+    "faqItems": 8,
+    "faqButtons": 8,
+    "extraChecks": 134,
+    "duplicateTaskIds": [
+      "re2-extra-chasing-jill"
+    ],
+    "trophyExtraOverlap": [],
+    "runs": 7,
+    "myths": 9,
+    "videos": 8,
+    "files": 58,
+    "raccoons": 15,
+    "scrollWidth": 1265,
+    "clientWidth": 1265
+  }
+}

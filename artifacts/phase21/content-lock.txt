@@ -1,0 +1,19 @@
+CONTENT LOCK — FASE 21
+
+Guia: Resident Evil 2 Remake
+Slug: resident-evil-2-remake
+Data: 2026-07-17
+Gate factual: PASS
+Gate editorial: PASS
+Gate de vídeos: PASS
+Gate funcional: PASS
+Gate técnico: PASS
+Gate histórico 0–20: PASS
+
+Validações:
+- npm run test:guide -- resident-evil-2-remake: PASS
+- npm run test:quick -- resident-evil-2-remake: PASS
+- npm run build: PASS
+- git diff --check: PASS
+- auditoria de navegador da Fase 21: PASS
+- bloqueio final "Checklist separado" em SSR, API e hidratação: PASS

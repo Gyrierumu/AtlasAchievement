@@ -87,6 +87,11 @@ window.UI = (() => {
     const main = qs('#mainContent');
     const target = guideHeading || main;
     if (!target || typeof target.focus !== 'function') return;
+    const isResidentEvil2Guide = Boolean(qs('#view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)'));
+    const activeElement = document.activeElement;
+    if (isResidentEvil2Guide && (!activeElement || activeElement === document.body || activeElement === document.documentElement)) {
+      return;
+    }
     if (guideHeading && target.getAttribute('tabindex') === null) target.setAttribute('tabindex', '-1');
     window.setTimeout(() => {
       try {

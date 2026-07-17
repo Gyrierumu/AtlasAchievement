@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-07-16T22:52:14.231Z",
+  "modeSequence": {
+    "trophyId": "re2r_hardcore_college",
+    "marked": {
+      "query": "Hardcore",
+      "filter": "difficulty",
+      "density": "compact",
+      "progress": "1/42 concluídos",
+      "visible": 2,
+      "scrollY": 605
+    },
+    "comfortable1": {
+      "query": "Hardcore",
+      "filter": "difficulty",
+      "density": "comfortable",
+      "progress": "1/42 concluídos",
+      "visible": 2,
+      "scrollY": 673
+    },
+    "compact": {
+      "query": "Hardcore",
+      "filter": "difficulty",
+      "density": "compact",
+      "progress": "1/42 concluídos",
+      "visible": 2,
+      "scrollY": 668
+    },
+    "comfortable2": {
+      "query": "Hardcore",
+      "filter": "difficulty",
+      "density": "comfortable",
+      "progress": "1/42 concluídos",
+      "visible": 2,
+      "scrollY": 668
+    }
+  },
+  "trophy": {
+    "id": "re2r_hardcore_college",
+    "afterMarkedReload": "true",
+    "afterUnmark": "false",
+    "afterUnmarkedReload": "false"
+  },
+  "file": {
+    "id": "re2-file-01-orientation-letter",
+    "afterMarkedReload": true,
+    "afterUnmark": false,
+    "afterUnmarkedReload": false
+  },
+  "raccoon": {
+    "id": "re2-raccoon-01-west-office",
+    "afterMarkedReload": true,
+    "afterUnmark": false,
+    "afterUnmarkedReload": false
+  },
+  "duplicate": {
+    "id": "re2-extra-chasing-jill",
+    "focus": true,
+    "before": [
+      {
+        "checked": false,
+        "visible": true,
+        "panel": "guideDlcCompletionPanel",
+        "content": ""
+      },
+      {
+        "checked": false,
+        "visible": true,
+        "panel": "guideDlcCompletionPanel",
+        "content": ""
+      }
+    ],
+    "peers": 2,
+    "statesAfterMark": [
+      true,
+      true
+    ],
+    "afterMark": true,
+    "afterUnmark": true
+  }
+}

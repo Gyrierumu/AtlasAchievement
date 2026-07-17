@@ -65,17 +65,41 @@ window.AppGuideView = (() => {
 
   function bindGuideInteractions({ UI, state, toggleTrophy, focusGuideAction, handleGuideQuickDockClick }) {
     const getVisibleFilterButtons = () => UI.qsa('.filter-btn').filter(item => item.offsetParent !== null);
+    const isResidentEvil2 = () => UI.qs('#view-guide')?.classList.contains('atlas-guide--resident-evil-2-remake') === true;
     state.checklistDensity = UI.applyChecklistDensity?.(state.checklistDensity || UI.getChecklistDensityPreference?.()) || 'comfortable';
 
     UI.qsa('[data-checklist-density]').forEach(button => {
       button.addEventListener('click', () => {
+        const scrollTop = window.scrollY;
         state.checklistDensity = UI.setChecklistDensity?.(button.dataset.checklistDensity) || button.dataset.checklistDensity;
+        if (isResidentEvil2()) {
+          window.requestAnimationFrame?.(() => window.scrollTo({ top: scrollTop, behavior: 'auto' }));
+        }
       });
     });
 
     UI.qsa('.filter-btn').forEach(button => {
       button.addEventListener('click', () => {
-        state.activeFilter = button.dataset.filter;
+        if (isResidentEvil2()) {
+          const filter = button.dataset.filter || 'all';
+          const currentFilters = Array.isArray(state.activeFilter)
+            ? [...state.activeFilter]
+            : state.activeFilter && state.activeFilter !== 'all' ? [state.activeFilter] : [];
+          if (filter === 'all') {
+            state.activeFilter = 'all';
+          } else {
+            const fieldset = button.closest('.atlas-filter-group');
+            const groupFilters = Array.from(fieldset?.querySelectorAll('.filter-btn') || []).map(item => item.dataset.filter).filter(Boolean);
+            const groupName = fieldset?.querySelector('legend')?.textContent?.trim().toLowerCase() || '';
+            const isExclusiveGroup = ['status', 'tipo'].includes(groupName);
+            const wasActive = currentFilters.includes(filter);
+            const nextFilters = currentFilters.filter(item => isExclusiveGroup ? !groupFilters.includes(item) : item !== filter);
+            if (!wasActive) nextFilters.push(filter);
+            state.activeFilter = nextFilters.length ? [...new Set(nextFilters)] : 'all';
+          }
+        } else {
+          state.activeFilter = button.dataset.filter;
+        }
         UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
       });
 
@@ -118,9 +142,43 @@ window.AppGuideView = (() => {
       }
     };
 
-    UI.qs('#trophyList')?.addEventListener('click', event => {
+    const activateTrophyToggle = toggleButton => {
+      if (!toggleButton) return;
+      const trophyId = toggleButton.dataset.trophyToggle;
+      toggleTrophy(trophyId);
+      if (isResidentEvil2()) {
+        const restoreTrophyFocus = () => {
+          const replacement = UI.qsa('[data-trophy-toggle]').find(button => button.dataset.trophyToggle === trophyId);
+          replacement?.focus({ preventScroll: true });
+        };
+        window.requestAnimationFrame?.(restoreTrophyFocus);
+        window.setTimeout(restoreTrophyFocus, 0);
+      }
+    };
+
+    const trophyList = UI.qs('#trophyList');
+    let pendingKeyboardTrophyId = '';
+    trophyList?.addEventListener('keydown', event => {
       const toggleButton = event.target.closest('[data-trophy-toggle]');
-      if (toggleButton) return toggleTrophy(toggleButton.dataset.trophyToggle);
+      if (!toggleButton || !isResidentEvil2() || !['Enter', ' '].includes(event.key)) return;
+      event.preventDefault();
+      pendingKeyboardTrophyId = toggleButton.dataset.trophyToggle || '';
+    });
+
+    trophyList?.addEventListener('keyup', event => {
+      const toggleButton = event.target.closest('[data-trophy-toggle]');
+      if (!toggleButton || !isResidentEvil2() || !['Enter', ' '].includes(event.key) || toggleButton.dataset.trophyToggle !== pendingKeyboardTrophyId) return;
+      event.preventDefault();
+      pendingKeyboardTrophyId = '';
+      activateTrophyToggle(toggleButton);
+    });
+
+    trophyList?.addEventListener('click', event => {
+      const toggleButton = event.target.closest('[data-trophy-toggle]');
+      if (toggleButton) {
+        activateTrophyToggle(toggleButton);
+        return;
+      }
 
       const clearFiltersButton = event.target.closest('[data-guide-clear-filters]');
       if (clearFiltersButton) {
@@ -137,6 +195,8 @@ window.AppGuideView = (() => {
         const expanded = !card.classList.contains('is-details-open');
         card.classList.toggle('is-details-open', expanded);
         detailsToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        const itemName = detailsToggle.dataset.detailsItemName || '';
+        if (itemName) detailsToggle.setAttribute('aria-label', `${expanded ? 'Ocultar' : 'Ver'} detalhes de ${itemName}`);
         const label = detailsToggle.querySelector('[data-details-label]');
         if (label) label.textContent = expanded ? 'Ocultar detalhes' : 'Ver detalhes';
         return;
@@ -213,9 +273,18 @@ window.AppGuideView = (() => {
       const clearFiltersButton = event.target.closest('[data-guide-clear-filters]');
       if (clearFiltersButton) {
         event.preventDefault();
+        const restoreClearFocus = isResidentEvil2() && Boolean(clearFiltersButton.closest('#guideEmptyState'));
         state.activeFilter = 'all';
         state.guideSearch = '';
         UI.clearGuideChecklistFilters?.() || UI.applyTrophyFilter(state.activeFilter, state.guideSearch);
+        if (restoreClearFocus) {
+          const restoreClearButtonFocus = () => {
+            const persistentClearButton = UI.qsa('[data-guide-clear-filters]').find(button => !button.closest('#guideEmptyState'));
+            persistentClearButton?.focus({ preventScroll: true });
+          };
+          window.requestAnimationFrame?.(restoreClearButtonFocus);
+          window.setTimeout(restoreClearButtonFocus, 0);
+        }
         return;
       }
 
@@ -280,9 +349,11 @@ window.AppGuideView = (() => {
       if (!isMobile) return;
       const footerTop = document.querySelector('footer')?.getBoundingClientRect?.().top ?? Number.POSITIVE_INFINITY;
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+      const isResidentEvil2 = viewGuide.classList.contains('atlas-guide--resident-evil-2-remake');
+      const retainsKeyboardFocus = dock.contains(document.activeElement);
       const visible = document.body?.dataset?.guideActiveTab !== 'details'
-        && (window.scrollY || document.documentElement.scrollTop || 0) > 160
-        && footerTop > viewportHeight + 18;
+        && ((window.scrollY || document.documentElement.scrollTop || 0) > 160 || retainsKeyboardFocus)
+        && (isResidentEvil2 || footerTop > viewportHeight + 18);
       dock.classList.toggle('hidden', !visible);
       dock.classList.toggle('is-enabled', true);
       dock.setAttribute('aria-hidden', visible ? 'false' : 'true');

@@ -1,0 +1,28 @@
+{
+  "checklistSeparado": 0,
+  "captureManifest": 0,
+  "expectedFile": 0,
+  "internalPath": 0,
+  "pendingCaption": 0,
+  "objectObject": 0,
+  "nomeOriginal": 0,
+  "labels": [
+    "Resumo",
+    "Roadmap",
+    "Plano rápido",
+    "Rotas",
+    "Mitos",
+    "Checklist",
+    "Extras da Platina",
+    "DLCs e 100%",
+    "Pontos de atenção",
+    "FAQ"
+  ],
+  "progress": [
+    "0/2 troféus",
+    "0/1 troféu"
+  ],
+  "ghostSurvivors": true,
+  "anotherSurvivor": true,
+  "trophyCards": 42
+}

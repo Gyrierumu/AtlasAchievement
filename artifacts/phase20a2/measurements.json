@@ -1,0 +1,514 @@
+[
+  {
+    "viewport": "568x320",
+    "scrollWidth": 553,
+    "clientWidth": 553,
+    "overflow": false,
+    "gridTemplateColumns": "491px",
+    "gridDisplay": "grid",
+    "cardCount": 3,
+    "columns": 1,
+    "cards": [
+      {
+        "x": 31,
+        "y": 1059,
+        "width": 491,
+        "height": 332
+      },
+      {
+        "x": 31,
+        "y": 1407,
+        "width": 491,
+        "height": 321
+      },
+      {
+        "x": 31,
+        "y": 1745,
+        "width": 491,
+        "height": 302
+      }
+    ],
+    "protectedSections": {
+      "guideRoadmapPanel": {
+        "htmlLength": 15355,
+        "heading": "Roadmap"
+      },
+      "guideQuickPlan": {
+        "htmlLength": 15942,
+        "heading": "Plano rápido — rota compacta da platina"
+      },
+      "guideChecklistPanel": {
+        "htmlLength": 6158,
+        "heading": "Checklist de troféus"
+      },
+      "guidePlatinumExtrasPanel": {
+        "htmlLength": 134690,
+        "heading": "Extras da Platina"
+      }
+    },
+    "headings": [
+      "Resident Evil 2 Remake — Guia de platina e troféus",
+      "Roadmap",
+      "Rotas Leon/Claire e 2nd Run",
+      "Mitos e erros comuns",
+      "Como usar este guia",
+      "Plano rápido — rota compacta da platina",
+      "Resumo da platina",
+      "Checklist de troféus",
+      "Extras da Platina",
+      "DLCs e 100% da Lista",
+      "Pontos de atenção",
+      "Perguntas frequentes",
+      "Comentários",
+      "Continue por um guia parecido depois deste",
+      "Encontrou erro neste guia?"
+    ],
+    "checkboxes": 134,
+    "usefulVideos": 8,
+    "video": {
+      "link": {
+        "x": 62,
+        "y": 270,
+        "width": 169,
+        "height": 46
+      },
+      "dock": {
+        "x": 353,
+        "y": 276,
+        "width": 190,
+        "height": 42,
+        "collapsed": true
+      },
+      "overlap": {
+        "width": 0,
+        "height": 40,
+        "area": 0
+      },
+      "expanded": {
+        "link": {
+          "x": 62,
+          "y": 270,
+          "width": 169,
+          "height": 46
+        },
+        "dock": {
+          "x": 299,
+          "y": 228,
+          "width": 244,
+          "height": 86,
+          "collapsed": false
+        },
+        "overlap": {
+          "width": 0,
+          "height": 44,
+          "area": 0
+        }
+      },
+      "scrollY": 1095
+    },
+    "panel": {
+      "scrollY": 0,
+      "top": 816
+    }
+  },
+  {
+    "viewport": "800x360",
+    "scrollWidth": 785,
+    "clientWidth": 785,
+    "overflow": false,
+    "gridTemplateColumns": "347.5px 347.5px",
+    "gridDisplay": "grid",
+    "cardCount": 3,
+    "columns": 2,
+    "cards": [
+      {
+        "x": 37,
+        "y": 1068,
+        "width": 348,
+        "height": 353
+      },
+      {
+        "x": 401,
+        "y": 1068,
+        "width": 348,
+        "height": 353
+      },
+      {
+        "x": 37,
+        "y": 1437,
+        "width": 348,
+        "height": 334
+      }
+    ],
+    "protectedSections": {
+      "guideRoadmapPanel": {
+        "htmlLength": 15355,
+        "heading": "Roadmap"
+      },
+      "guideQuickPlan": {
+        "htmlLength": 15942,
+        "heading": "Plano rápido — rota compacta da platina"
+      },
+      "guideChecklistPanel": {
+        "htmlLength": 6158,
+        "heading": "Checklist de troféus"
+      },
+      "guidePlatinumExtrasPanel": {
+        "htmlLength": 134690,
+        "heading": "Extras da Platina"
+      }
+    },
+    "headings": [
+      "Resident Evil 2 Remake — Guia de platina e troféus",
+      "Roadmap",
+      "Rotas Leon/Claire e 2nd Run",
+      "Mitos e erros comuns",
+      "Como usar este guia",
+      "Plano rápido — rota compacta da platina",
+      "Resumo da platina",
+      "Checklist de troféus",
+      "Extras da Platina",
+      "DLCs e 100% da Lista",
+      "Pontos de atenção",
+      "Perguntas frequentes",
+      "Comentários",
+      "Continue por um guia parecido depois deste",
+      "Encontrou erro neste guia?"
+    ],
+    "checkboxes": 134,
+    "usefulVideos": 8,
+    "video": {
+      "link": {
+        "x": 303,
+        "y": 310,
+        "width": 151,
+        "height": 42
+      },
+      "dock": {
+        "x": 531,
+        "y": 280,
+        "width": 244,
+        "height": 74,
+        "collapsed": false
+      },
+      "overlap": {
+        "width": 0,
+        "height": 42,
+        "area": 0
+      },
+      "expanded": {
+        "link": {
+          "x": 303,
+          "y": 310,
+          "width": 151,
+          "height": 42
+        },
+        "dock": {
+          "x": 531,
+          "y": 280,
+          "width": 244,
+          "height": 74,
+          "collapsed": false
+        },
+        "overlap": {
+          "width": 0,
+          "height": 42,
+          "area": 0
+        }
+      },
+      "scrollY": 991
+    },
+    "panel": {
+      "scrollY": 428,
+      "top": 376
+    }
+  },
+  {
+    "viewport": "768x1024",
+    "scrollWidth": 753,
+    "clientWidth": 753,
+    "overflow": false,
+    "gridTemplateColumns": "335.5px 335.5px",
+    "gridDisplay": "grid",
+    "cardCount": 3,
+    "columns": 2,
+    "cards": [
+      {
+        "x": 33,
+        "y": 1026,
+        "width": 336,
+        "height": 359
+      },
+      {
+        "x": 385,
+        "y": 1026,
+        "width": 336,
+        "height": 359
+      },
+      {
+        "x": 33,
+        "y": 1401,
+        "width": 336,
+        "height": 340
+      }
+    ],
+    "protectedSections": {
+      "guideRoadmapPanel": {
+        "htmlLength": 15355,
+        "heading": "Roadmap"
+      },
+      "guideQuickPlan": {
+        "htmlLength": 15942,
+        "heading": "Plano rápido — rota compacta da platina"
+      },
+      "guideChecklistPanel": {
+        "htmlLength": 6158,
+        "heading": "Checklist de troféus"
+      },
+      "guidePlatinumExtrasPanel": {
+        "htmlLength": 134690,
+        "heading": "Extras da Platina"
+      }
+    },
+    "headings": [
+      "Resident Evil 2 Remake — Guia de platina e troféus",
+      "Roadmap",
+      "Rotas Leon/Claire e 2nd Run",
+      "Mitos e erros comuns",
+      "Como usar este guia",
+      "Plano rápido — rota compacta da platina",
+      "Resumo da platina",
+      "Checklist de troféus",
+      "Extras da Platina",
+      "DLCs e 100% da Lista",
+      "Pontos de atenção",
+      "Perguntas frequentes",
+      "Comentários",
+      "Continue por um guia parecido depois deste",
+      "Encontrou erro neste guia?"
+    ],
+    "checkboxes": 134,
+    "usefulVideos": 8,
+    "video": null,
+    "panel": {
+      "scrollY": 590,
+      "top": 210
+    }
+  },
+  {
+    "viewport": "1024x768",
+    "scrollWidth": 1009,
+    "clientWidth": 1009,
+    "overflow": false,
+    "gridTemplateColumns": "459.5px 459.5px",
+    "gridDisplay": "grid",
+    "cardCount": 3,
+    "columns": 2,
+    "cards": [
+      {
+        "x": 37,
+        "y": 966,
+        "width": 460,
+        "height": 324
+      },
+      {
+        "x": 513,
+        "y": 966,
+        "width": 460,
+        "height": 324
+      },
+      {
+        "x": 37,
+        "y": 1306,
+        "width": 460,
+        "height": 296
+      }
+    ],
+    "protectedSections": {
+      "guideRoadmapPanel": {
+        "htmlLength": 15355,
+        "heading": "Roadmap"
+      },
+      "guideQuickPlan": {
+        "htmlLength": 15942,
+        "heading": "Plano rápido — rota compacta da platina"
+      },
+      "guideChecklistPanel": {
+        "htmlLength": 6158,
+        "heading": "Checklist de troféus"
+      },
+      "guidePlatinumExtrasPanel": {
+        "htmlLength": 134690,
+        "heading": "Extras da Platina"
+      }
+    },
+    "headings": [
+      "Resident Evil 2 Remake — Guia de platina e troféus",
+      "Roadmap",
+      "Rotas Leon/Claire e 2nd Run",
+      "Mitos e erros comuns",
+      "Como usar este guia",
+      "Plano rápido — rota compacta da platina",
+      "Resumo da platina",
+      "Checklist de troféus",
+      "Extras da Platina",
+      "DLCs e 100% da Lista",
+      "Pontos de atenção",
+      "Perguntas frequentes",
+      "Comentários",
+      "Continue por um guia parecido depois deste",
+      "Encontrou erro neste guia?"
+    ],
+    "checkboxes": 134,
+    "usefulVideos": 8,
+    "video": null,
+    "panel": {
+      "scrollY": 512,
+      "top": 210
+    }
+  },
+  {
+    "viewport": "1280x720",
+    "scrollWidth": 1265,
+    "clientWidth": 1265,
+    "overflow": false,
+    "gridTemplateColumns": "348.656px 348.672px 348.656px",
+    "gridDisplay": "grid",
+    "cardCount": 3,
+    "columns": 3,
+    "cards": [
+      {
+        "x": 94,
+        "y": 927,
+        "width": 349,
+        "height": 353
+      },
+      {
+        "x": 458,
+        "y": 927,
+        "width": 349,
+        "height": 353
+      },
+      {
+        "x": 823,
+        "y": 927,
+        "width": 349,
+        "height": 353
+      }
+    ],
+    "protectedSections": {
+      "guideRoadmapPanel": {
+        "htmlLength": 15355,
+        "heading": "Roadmap"
+      },
+      "guideQuickPlan": {
+        "htmlLength": 15942,
+        "heading": "Plano rápido — rota compacta da platina"
+      },
+      "guideChecklistPanel": {
+        "htmlLength": 6158,
+        "heading": "Checklist de troféus"
+      },
+      "guidePlatinumExtrasPanel": {
+        "htmlLength": 134690,
+        "heading": "Extras da Platina"
+      }
+    },
+    "headings": [
+      "Resident Evil 2 Remake — Guia de platina e troféus",
+      "Roadmap",
+      "Rotas Leon/Claire e 2nd Run",
+      "Mitos e erros comuns",
+      "Como usar este guia",
+      "Plano rápido — rota compacta da platina",
+      "Resumo da platina",
+      "Checklist de troféus",
+      "Extras da Platina",
+      "DLCs e 100% da Lista",
+      "Pontos de atenção",
+      "Perguntas frequentes",
+      "Comentários",
+      "Continue por um guia parecido depois deste",
+      "Encontrou erro neste guia?"
+    ],
+    "checkboxes": 134,
+    "usefulVideos": 8,
+    "video": null,
+    "panel": {
+      "scrollY": 533,
+      "top": 150
+    }
+  },
+  {
+    "viewport": "1440x900",
+    "scrollWidth": 1425,
+    "clientWidth": 1425,
+    "overflow": false,
+    "gridTemplateColumns": "348.656px 348.672px 348.656px",
+    "gridDisplay": "grid",
+    "cardCount": 3,
+    "columns": 3,
+    "cards": [
+      {
+        "x": 174,
+        "y": 927,
+        "width": 349,
+        "height": 353
+      },
+      {
+        "x": 538,
+        "y": 927,
+        "width": 349,
+        "height": 353
+      },
+      {
+        "x": 903,
+        "y": 927,
+        "width": 349,
+        "height": 353
+      }
+    ],
+    "protectedSections": {
+      "guideRoadmapPanel": {
+        "htmlLength": 15355,
+        "heading": "Roadmap"
+      },
+      "guideQuickPlan": {
+        "htmlLength": 15942,
+        "heading": "Plano rápido — rota compacta da platina"
+      },
+      "guideChecklistPanel": {
+        "htmlLength": 6158,
+        "heading": "Checklist de troféus"
+      },
+      "guidePlatinumExtrasPanel": {
+        "htmlLength": 134690,
+        "heading": "Extras da Platina"
+      }
+    },
+    "headings": [
+      "Resident Evil 2 Remake — Guia de platina e troféus",
+      "Roadmap",
+      "Rotas Leon/Claire e 2nd Run",
+      "Mitos e erros comuns",
+      "Como usar este guia",
+      "Plano rápido — rota compacta da platina",
+      "Resumo da platina",
+      "Checklist de troféus",
+      "Extras da Platina",
+      "DLCs e 100% da Lista",
+      "Pontos de atenção",
+      "Perguntas frequentes",
+      "Comentários",
+      "Continue por um guia parecido depois deste",
+      "Encontrou erro neste guia?"
+    ],
+    "checkboxes": 134,
+    "usefulVideos": 8,
+    "video": null,
+    "panel": {
+      "scrollY": 533,
+      "top": 150
+    }
+  }
+]

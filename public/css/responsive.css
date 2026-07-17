@@ -1857,6 +1857,18 @@
   justify-content: flex-start;
 }
 
+/* Keep navigation labels in their own controls when user text spacing grows. */
+#view-guide.atlas-guide--resident-evil-2-remake #guideLayerNav {
+  justify-content: safe center;
+  overflow-x: auto;
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake
+  #guideLayerNav .atlas-guide-layer-nav__button {
+  flex: 0 0 auto;
+  min-width: max-content;
+}
+
 /* Resident Evil 2 Remake: keep the long campaign plan readable on tablets. */
 @media (max-width: 1100px) {
   #view-guide.atlas-guide--resident-evil-2-remake #guideLayerNav {
@@ -1925,6 +1937,22 @@
   }
 }
 
+/* Resident Evil 2 Remake: the DLC cards need an explicit responsive grid.
+   The generated md:grid-cols-3 token has no matching utility in utilities.css. */
+@media (min-width: 768px) {
+  #view-guide.atlas-guide--resident-evil-2-remake
+    #guideDlcCompletionPanel > .grid.md\:grid-cols-3.gap-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  #view-guide.atlas-guide--resident-evil-2-remake
+    #guideDlcCompletionPanel > .grid.md\:grid-cols-3.gap-4 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1100px) {
   body[data-page="public"]:has(
     #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
@@ -1987,7 +2015,26 @@
   body[data-page="public"]:has(
     #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
   ) .atlas-quick-dock:not(.is-collapsed) {
+    right: 10px;
+    left: auto;
+    width: min(244px, calc(100vw - 20px));
     bottom: calc(6px + env(safe-area-inset-bottom));
+  }
+
+  body[data-page="public"]:has(
+    #view-guide.atlas-guide--resident-evil-2-remake:not(.hidden)
+  ) .atlas-useful-video__link {
+    width: auto;
+    max-width: calc(100% - 260px);
+    margin-right: 260px;
+  }
+
+  #view-guide.atlas-guide--resident-evil-2-remake
+    #guideChecklistPanel .atlas-checklist-clear {
+    width: auto;
+    max-width: calc(100% - 260px);
+    margin-right: 260px;
+    justify-self: start;
   }
 
   body[data-page="public"]:has(
@@ -2017,6 +2064,15 @@
     overflow: visible;
     -webkit-box-orient: initial;
     -webkit-line-clamp: unset;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 768px) and (max-height: 480px) and (orientation: landscape) {
+  #view-guide.atlas-guide--resident-evil-2-remake
+    #guideChecklistPanel :is(.atlas-filter-primary, .atlas-filter-secondary) {
+    width: auto;
+    max-width: calc(100% - 260px);
+    margin-right: 260px;
   }
 }
 
@@ -2078,5 +2134,65 @@
   .library-game__action {
     min-height: 44px;
     padding-block: 8px;
+  }
+}
+
+/* Resident Evil 2 Remake — auditoria final de contraste e cores (Fase 20D). */
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-section-kicker {
+  color: rgba(203, 213, 225, .62);
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-guide-hero__facts small,
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-roadmap-step__meta strong,
+#view-guide.atlas-guide--resident-evil-2-remake .atlas-critical-row > .atlas-badge {
+  color: rgba(255, 255, 255, .52);
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake
+  .atlas-checklist-list[data-checklist-density="compact"] .atlas-trophy-type {
+  color: rgba(255, 255, 255, .52) !important;
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake #trophySearch {
+  border-color: rgba(148, 163, 184, .62);
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake :is(.filter-btn, .atlas-btn-secondary) {
+  border-color: rgba(148, 163, 184, .62);
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake .filter-btn.atlas-pill-active {
+  border-color: color-mix(in srgb, var(--filter-color, var(--status-partial)) 72%, white) !important;
+}
+
+#view-guide.atlas-guide--resident-evil-2-remake .filter-btn.atlas-pill-active::before {
+  content: "✓";
+  flex: 0 0 auto;
+  font-weight: 900;
+}
+
+@media (forced-colors: active) {
+  #view-guide.atlas-guide--resident-evil-2-remake .filter-btn.atlas-pill-active {
+    forced-color-adjust: none;
+    border-color: Highlight !important;
+    color: HighlightText !important;
+    background: Highlight !important;
+  }
+
+  #view-guide.atlas-guide--resident-evil-2-remake .atlas-sidebar-progress {
+    forced-color-adjust: none;
+    border: 1px solid CanvasText;
+    background: Canvas !important;
+  }
+
+  #view-guide.atlas-guide--resident-evil-2-remake .atlas-sidebar-progress > span {
+    forced-color-adjust: none;
+    background: Highlight !important;
+  }
+
+  #view-guide.atlas-guide--resident-evil-2-remake :focus-visible,
+  body:has(#view-guide.atlas-guide--resident-evil-2-remake) #guideQuickDock :focus-visible {
+    outline: 2px solid Highlight !important;
+    outline-offset: 2px !important;
   }
 }

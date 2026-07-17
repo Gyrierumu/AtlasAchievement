@@ -375,9 +375,10 @@ window.UIGuide = (() => {
   }
 
   function getGuideFilterEmptyMessage(filter = 'all', query = '') {
-    const label = getGuideFilterLabel(filter);
+    const filters = Array.isArray(filter) ? filter.filter(item => item && item !== 'all') : filter && filter !== 'all' ? [filter] : [];
+    const label = filters.length ? filters.map(getGuideFilterLabel).join(' + ') : getGuideFilterLabel('all');
     const hasQuery = Boolean(String(query || '').trim());
-    if (hasQuery && filter !== 'all') {
+    if (hasQuery && filters.length) {
       return {
         title: `Nenhum troféu em ${label} para essa busca.`,
         detail: 'Tente limpar filtros ou buscar por outro termo.'
@@ -389,11 +390,12 @@ window.UIGuide = (() => {
         detail: 'Tente limpar filtros ou buscar por outro termo.'
       };
     }
-    if (filter === 'completed') return { title: 'Nenhum troféu concluído ainda.', detail: 'Marque um troféu para ele aparecer aqui.' };
-    if (filter === 'pending') return { title: 'Nenhum troféu pendente neste guia.', detail: 'A checklist pode estar completa.' };
-    if (filter === 'online') return { title: 'Nenhum troféu online neste guia.', detail: 'Este filtro só mostra troféus com sinal online claro no conteúdo ou nas tags derivadas.' };
-    if (filter === 'coop') return { title: 'Nenhum troféu coop neste guia.', detail: 'Este filtro só mostra troféus com sinal claro de co-op ou 2 jogadores obrigatórios.' };
-    if (filter === 'missable') return { title: 'Nenhum troféu perdível encontrado.', detail: 'O cadastro atual não aponta perdíveis para este filtro.' };
+    if (filters.length > 1) return { title: `Nenhum troféu corresponde a ${label}.`, detail: 'Tente remover um dos filtros ou limpar a seleção.' };
+    if (filters[0] === 'completed') return { title: 'Nenhum troféu concluído ainda.', detail: 'Marque um troféu para ele aparecer aqui.' };
+    if (filters[0] === 'pending') return { title: 'Nenhum troféu pendente neste guia.', detail: 'A checklist pode estar completa.' };
+    if (filters[0] === 'online') return { title: 'Nenhum troféu online neste guia.', detail: 'Este filtro só mostra troféus com sinal online claro no conteúdo ou nas tags derivadas.' };
+    if (filters[0] === 'coop') return { title: 'Nenhum troféu coop neste guia.', detail: 'Este filtro só mostra troféus com sinal claro de co-op ou 2 jogadores obrigatórios.' };
+    if (filters[0] === 'missable') return { title: 'Nenhum troféu perdível encontrado.', detail: 'O cadastro atual não aponta perdíveis para este filtro.' };
     return { title: `Nenhum troféu marcado como ${label}.`, detail: 'Tente limpar filtros ou buscar por outro termo.' };
   }
 
@@ -413,7 +415,9 @@ window.UIGuide = (() => {
 
   function applyTrophyFilter(filter, query = '') {
     const normalizedQuery = normalizeGuideSearchValue(query).trim();
-    let activeFilter = filter || 'all';
+    let activeFilters = Array.isArray(filter)
+      ? [...new Set(filter.filter(item => item && item !== 'all'))]
+      : filter && filter !== 'all' ? [filter] : [];
     let visibleCount = 0;
     const cards = getTrophyCards();
     if (!cards.length) {
@@ -427,23 +431,26 @@ window.UIGuide = (() => {
       return { activeFilter: 'all', visibleCount: 0 };
     }
     updateGuideFilterButtons(normalizedQuery);
-    const activeButton = qsa('.filter-btn').find(button => button.dataset.filter === activeFilter);
-    if (activeButton?.hidden) activeFilter = 'all';
+    activeFilters = activeFilters.filter(activeFilter => {
+      const activeButton = qsa('.filter-btn').find(button => button.dataset.filter === activeFilter);
+      return !activeButton?.hidden;
+    });
     cards.forEach(card => {
-      const passesFilter = cardMatchesGuideFilter(card, activeFilter);
+      const passesFilter = activeFilters.every(activeFilter => cardMatchesGuideFilter(card, activeFilter));
       const matchesSearch = !normalizedQuery || (card.dataset.search || '').includes(normalizedQuery);
       const visible = passesFilter && matchesSearch;
       card.classList.toggle('hidden', !visible);
       if (visible) visibleCount += 1;
     });
     qsa('.filter-btn').forEach(button => {
-      const active = button.dataset.filter === activeFilter;
+      const active = button.dataset.filter === 'all' ? activeFilters.length === 0 : activeFilters.includes(button.dataset.filter);
       button.classList.toggle('atlas-pill-active', active);
       button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
     const results = qs('#guideResults');
-    const resultLabel = activeFilter === 'all' ? '' : ` em ${getGuideFilterLabel(activeFilter)}`;
+    const resultLabel = activeFilters.length ? ` em ${activeFilters.map(getGuideFilterLabel).join(' + ')}` : '';
     if (results) results.textContent = `${visibleCount} de ${cards.length} ${cards.length === 1 ? 'troféu' : 'troféus'}${resultLabel}`;
+    const activeFilter = activeFilters.length ? activeFilters : 'all';
     setGuideEmptyState(visibleCount === 0, getGuideFilterEmptyMessage(activeFilter, query));
     return { activeFilter, visibleCount };
   }
@@ -1587,7 +1594,7 @@ window.UIGuide = (() => {
         ` : ''}
         <div class="space-y-3">
           <div>
-            <div class="atlas-eyebrow">Checklist separado</div>
+            ${isResidentEvil2 ? '' : '<div class="atlas-eyebrow">Checklist separado</div>'}
             ${isResidentEvil2
               ? `<strong class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} extras</strong>`
               : `<h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>`}
@@ -2116,7 +2123,7 @@ window.UIGuide = (() => {
   function renderGuideUsagePanel(game = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     if (normalizedSlug === 'resident-evil-2-remake') {
-      const rows = getGuideSectionRegistry(game).filter(item => item.directoryGoal);
+      const rows = getGuideSectionRegistry(game).filter(item => item.directoryGoal && item.id !== 'feedback');
       return `
         <section id="guideUsagePanel" class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4" aria-labelledby="guideUsageTitle">
           <div>
@@ -2308,7 +2315,13 @@ window.UIGuide = (() => {
         <div class="atlas-section-head atlas-section-head--compact">
           <div><span class="atlas-section-kicker">Consulta rápida</span><h2 id="guideFaqTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Perguntas frequentes</h2><p class="text-white/58 mt-2 max-w-4xl">${escapeHtml(sectionCopy)}</p></div>
         </div>
-        <div class="atlas-faq-list">${faqItems.map(item => `<article class="atlas-faq-item atlas-faq-row">${normalizedSlug === 'resident-evil-2-remake' ? `<h3>${escapeHtml(item.question)}</h3>` : `<strong>${escapeHtml(item.question)}</strong>`}<p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></article>`).join('')}</div>
+        <div class="atlas-faq-list">${faqItems.map((item, index) => {
+          if (normalizedSlug !== 'resident-evil-2-remake') {
+            return `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></article>`;
+          }
+          const answerId = `guideFaqAnswer-${index + 1}`;
+          return `<article class="atlas-faq-item atlas-faq-row"><h3><button type="button" class="atlas-faq-toggle" data-guide-section-toggle="${answerId}" aria-expanded="false" aria-controls="${answerId}"><span>${escapeHtml(item.question)}</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button></h3><div id="${answerId}" class="atlas-faq-answer is-collapsed" data-guide-section-content aria-hidden="true" hidden><p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></div></article>`;
+        }).join('')}</div>
       </section>`;
     return { attention, faq };
   }
@@ -2685,6 +2698,10 @@ window.UIGuide = (() => {
       return;
     }
 
+    qsa('a[data-re2-fragment-shortcut][href="#topo"]').forEach(link => {
+      link.setAttribute('data-scroll-top', 'true');
+    });
+
     const mappings = [
       ['#guideQuickDock button[data-guide-action="trophies"]', '#guideChecklistPanel'],
       ['#guideQuickDock button[data-guide-action="roadmap"]', '#guideRoadmapPanel'],
@@ -2701,6 +2718,7 @@ window.UIGuide = (() => {
       link.setAttribute('data-re2-fragment-shortcut', 'true');
       const action = button.getAttribute('data-guide-action');
       if (action) link.setAttribute('data-guide-action', action);
+      else link.setAttribute('data-scroll-top', 'true');
       const ariaLabel = button.getAttribute('aria-label');
       if (ariaLabel) link.setAttribute('aria-label', ariaLabel);
       button.replaceWith(link);
@@ -2797,8 +2815,11 @@ window.UIGuide = (() => {
               : normalizeGuideSearchValue(`${trophy.trophyNameOriginal || trophy.name || ''} ${trophy.trophyNamePtBr || trophy.name_pt || ''} ${description} ${tip} ${trophy.type || ''} ${riskTags.map(tag => `${tag.id} ${tag.label}`).join(' ')}`);
             const detailsId = buildTrophyDetailsId(trophy, index);
             const hasDetailsToggle = shouldShowTrophyDetailsToggle(trophy, description, tip);
+            const contextualDetailsAttributes = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake'
+              ? ` data-details-item-name="${escapeAttribute(primaryName)}" aria-label="${escapeAttribute(`Ver detalhes de ${primaryName}`)}"`
+              : '';
             const detailsToggleHtml = hasDetailsToggle
-              ? `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-details-toggle" data-trophy-details-toggle="true" aria-expanded="false" aria-controls="${escapeAttribute(detailsId)}"><span data-details-label>Ver detalhes</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button>`
+              ? `<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-details-toggle" data-trophy-details-toggle="true"${contextualDetailsAttributes} aria-expanded="false" aria-controls="${escapeAttribute(detailsId)}"><span data-details-label>Ver detalhes</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button>`
               : '';
             const toggleLabel = done ? 'Desmarcar' : 'Concluir';
             const toggleAria = `${toggleLabel} ${primaryName}`;
