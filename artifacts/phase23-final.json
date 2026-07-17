@@ -1,0 +1,34 @@
+{
+  "url": "http://127.0.0.1:3014/jogo/resident-evil-2-remake",
+  "title": "Resident Evil 2 Remake: Guia de Platina e Troféus | AtlasAchievement",
+  "description": [
+    "Guia de platina de Resident Evil 2 Remake no PS4 com roadmap, checklist dos 42 troféus base, 58 Files, Mr. Raccoons, ranks S, Hardcore e DLCs separadas."
+  ],
+  "canonical": [
+    "https://atlasachievement.com.br/jogo/resident-evil-2-remake"
+  ],
+  "ogUrl": [
+    "https://atlasachievement.com.br/jogo/resident-evil-2-remake"
+  ],
+  "metaRobots": [],
+  "counts": {
+    "title": 1,
+    "description": 1,
+    "canonical": 1,
+    "h1": 1,
+    "runs": 7,
+    "myths": 9,
+    "videos": 8,
+    "trophyCards": 42
+  },
+  "contentLock": {
+    "checklistSeparado": false,
+    "captureManifest": false,
+    "objectObject": false,
+    "originalName": false
+  },
+  "documentWidth": {
+    "scrollWidth": 1425,
+    "clientWidth": 1425
+  }
+}

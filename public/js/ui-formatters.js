@@ -15,6 +15,9 @@ window.UIFormatters = (() => {
 
   function buildGameSeoTitle(game = {}) {
     const name = String(game?.name || 'Jogo').trim() || 'Jogo';
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+      return 'Resident Evil 2 Remake: Guia de Platina e Troféus | AtlasAchievement';
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
       return 'Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement';
     }
@@ -31,6 +34,9 @@ window.UIFormatters = (() => {
 
   function buildGameSeoDescription(game = {}) {
     const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+      return 'Guia de platina de Resident Evil 2 Remake no PS4 com roadmap, checklist dos 42 troféus base, 58 Files, Mr. Raccoons, ranks S, Hardcore e DLCs separadas.';
+    }
     if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
       return 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.';
     }

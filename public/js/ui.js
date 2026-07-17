@@ -292,7 +292,10 @@ window.UI = (() => {
       ? buildGameSeoDescription(game)
       : 'Guias de platina em português com roadmap, checklist, filtros por risco e progresso salvo para escolher sua próxima platina.';
     const canonical = game?.slug ? `${publicOrigin}/jogo/${game.slug}` : `${publicOrigin}/`;
-    const image = !game?.image
+    const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
+    const image = isResidentEvil2
+      ? `${publicOrigin}/assets/brand/atlasachievement-og.png`
+      : !game?.image
       ? `${publicOrigin}/assets/brand/atlasachievement-og.png`
       : /^https?:\/\//i.test(game.image)
         ? game.image

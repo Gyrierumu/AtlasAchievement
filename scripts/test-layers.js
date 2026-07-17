@@ -361,6 +361,10 @@ function getMeta(html = '', name = '') {
   return html.match(new RegExp(`<meta\\s+name="${name}"\\s+content="([^"]*)"`, 'i'))?.[1] || '';
 }
 
+function getPropertyMeta(html = '', property = '') {
+  return html.match(new RegExp(`<meta\\s+property="${property}"\\s+content="([^"]*)"`, 'i'))?.[1] || '';
+}
+
 function getCanonical(html = '') {
   return html.match(/<link\s+rel="canonical"\s+href="([^"]*)"/i)?.[1] || '';
 }
@@ -2036,6 +2040,39 @@ async function validateGuide(slug = '') {
       assert(apiGame.roadmap.every(step => Array.isArray(step.actions) && step.actions.length >= 3), 'API de Resident Evil 2 Remake deve retornar actions reais no roadmap');
       assert.strictEqual(apiGame.chapterRouteGuide?.campaignPlan?.runs?.length, 7, 'API de Resident Evil 2 Remake deve preservar exatamente 7 runs no plano principal');
       assert.strictEqual(apiGame.commonMythsGuide?.myths?.length, 9, 'API de Resident Evil 2 Remake deve expor exatamente 9 mitos');
+      const re2SeoTitle = 'Resident Evil 2 Remake: Guia de Platina e Troféus | AtlasAchievement';
+      const re2SeoDescription = 'Guia de platina de Resident Evil 2 Remake no PS4 com roadmap, checklist dos 42 troféus base, 58 Files, Mr. Raccoons, ranks S, Hardcore e DLCs separadas.';
+      const re2SocialImage = 'https://atlasachievement.com.br/assets/brand/atlasachievement-og.png';
+      assert.strictEqual(getTitle(html), re2SeoTitle, 'Resident Evil 2 Remake deve usar title SEO especifico');
+      assert.strictEqual(getMeta(html, 'description'), re2SeoDescription, 'Resident Evil 2 Remake deve usar meta description especifica');
+      assert.strictEqual(getPropertyMeta(html, 'og:title'), re2SeoTitle, 'Open Graph do RE2 deve repetir o title especifico');
+      assert.strictEqual(getPropertyMeta(html, 'og:description'), re2SeoDescription, 'Open Graph do RE2 deve repetir a description especifica');
+      assert.strictEqual(getPropertyMeta(html, 'og:type'), 'article', 'Open Graph do RE2 deve manter type article');
+      assert.strictEqual(getPropertyMeta(html, 'og:url'), 'https://atlasachievement.com.br/jogo/resident-evil-2-remake', 'Open Graph do RE2 deve apontar para a propria pagina');
+      assert.strictEqual(getPropertyMeta(html, 'og:image'), re2SocialImage, 'Open Graph do RE2 deve usar imagem social autorizada do Atlas');
+      assert.strictEqual(getPropertyMeta(html, 'og:image:width'), '1200', 'Imagem social do RE2 deve declarar largura real');
+      assert.strictEqual(getPropertyMeta(html, 'og:image:height'), '630', 'Imagem social do RE2 deve declarar altura real');
+      assert.strictEqual(getMeta(html, 'twitter:card'), 'summary_large_image', 'Twitter Card do RE2 deve manter summary_large_image');
+      assert.strictEqual(getMeta(html, 'twitter:title'), re2SeoTitle, 'Twitter do RE2 deve repetir o title especifico');
+      assert.strictEqual(getMeta(html, 'twitter:description'), re2SeoDescription, 'Twitter do RE2 deve repetir a description especifica');
+      assert.strictEqual(getMeta(html, 'twitter:image'), re2SocialImage, 'Twitter do RE2 deve usar a imagem social autorizada do Atlas');
+      assert.strictEqual((html.match(/<title>/gi) || []).length, 1, 'Resident Evil 2 Remake deve manter um title');
+      assert.strictEqual((html.match(/<meta\s+name="description"/gi) || []).length, 1, 'Resident Evil 2 Remake deve manter uma meta description');
+      assert.strictEqual((html.match(/<h1\b/gi) || []).length, 1, 'Resident Evil 2 Remake deve manter H1 unico');
+      assert(html.includes('Este guia de platina e troféus cobre o remake de 2019 no PS4') && html.includes('mantém os conteúdos adicionais separados da platina'), 'Primeiro bloco do RE2 deve contextualizar o remake de 2019 e separar extras da platina');
+      assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/resident-evil-2-remake', 'Canonical do RE2 deve apontar para a URL oficial HTTPS');
+      assert.strictEqual(getPropertyMeta(html, 'og:url'), getCanonical(html), 'og:url e canonical do RE2 devem ser coerentes');
+      assert(!getMeta(html, 'robots'), 'Resident Evil 2 Remake verificado nao deve receber noindex');
+      const re2TrailingSlashResponse = await fetch(`${baseUrl}/jogo/resident-evil-2-remake/`, { redirect: 'manual' });
+      assert.strictEqual(re2TrailingSlashResponse.status, 301, 'Variante do RE2 com barra final deve redirecionar permanentemente');
+      assert.strictEqual(re2TrailingSlashResponse.headers.get('location'), '/jogo/resident-evil-2-remake', 'Variante com barra final deve consolidar na URL oficial do RE2');
+      const re2TrackingHtml = await fetchText(`${baseUrl}/jogo/resident-evil-2-remake?utm_source=phase23-test`);
+      assert.strictEqual(getCanonical(re2TrackingHtml), 'https://atlasachievement.com.br/jogo/resident-evil-2-remake', 'Parametro de tracking do RE2 deve manter canonical limpo');
+      const re2Robots = await fetchText(`${baseUrl}/robots.txt`);
+      assert(!/Disallow:\s*\/jogo(?:\/|$)/i.test(re2Robots) && !/noindex/i.test(re2Robots), 'robots.txt deve permitir crawl de /jogo/ e nao usar noindex');
+      const re2Sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
+      assert.strictEqual((re2Sitemap.match(/\/jogo\/resident-evil-2-remake<\/loc>/g) || []).length, 1, 'Sitemap deve conter uma unica URL canonica do RE2');
+      assert(!re2Sitemap.includes('http://atlasachievement.com.br/jogo/resident-evil-2-remake') && !re2Sitemap.includes('resident-evil-2-remake?'), 'Sitemap do RE2 nao deve conter variantes HTTP ou com query string');
       assert(!JSON.stringify(apiGame).includes('captureManifest') && !JSON.stringify(apiGame).includes('expectedFile'), 'API publica de Resident Evil 2 Remake nao deve expor manifestos ou paths internos de captura');
       assert(!JSON.stringify(apiGame).includes('screenshotStatus') && !JSON.stringify(apiGame).includes('Captura propria Atlas pendente'), 'API publica de Resident Evil 2 Remake nao deve expor status ou captions internas de capturas pendentes');
       assert(!html.includes('captureManifest') && !html.includes('expectedFile') && !html.includes('screenshotStatus'), 'HTML publico de Resident Evil 2 Remake nao deve serializar metadados internos de captura');

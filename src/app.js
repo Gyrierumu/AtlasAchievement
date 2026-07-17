@@ -564,6 +564,9 @@ function firstSeoText(...values) {
 
 function buildGameSeoTitle(game = {}) {
   const name = String(game?.name || 'Jogo').trim() || 'Jogo';
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+    return 'Resident Evil 2 Remake: Guia de Platina e Troféus | AtlasAchievement';
+  }
   if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
     return 'Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement';
   }
@@ -609,6 +612,9 @@ function hasMissablesForSeo(game = {}) {
 
 function buildGameSeoDescription(game = {}) {
   const name = String(game?.name || 'este jogo').trim() || 'este jogo';
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake') {
+    return 'Guia de platina de Resident Evil 2 Remake no PS4 com roadmap, checklist dos 42 troféus base, 58 Files, Mr. Raccoons, ranks S, Hardcore e DLCs separadas.';
+  }
   if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
     return 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.';
   }
@@ -3359,7 +3365,9 @@ async function buildGamePageHtml(game, req) {
   const statusBadge = viewModel.editorial?.statusBadge || getEditorialBadge(game);
   const title = buildGameSeoTitle(game);
   const description = buildGameSeoDescription(game);
-  const image = resolveGuideMetaImage(game);
+  const image = normalizedSlug === 'resident-evil-2-remake'
+    ? `${PRODUCTION_CANONICAL_ORIGIN}${DEFAULT_SOCIAL_IMAGE_PATH}`
+    : resolveGuideMetaImage(game);
   const guideCollections = classifyGameCollections(game, game.trophies || []);
   const guideCollectionLinks = normalizedSlug === 'resident-evil-5'
     ? [{
@@ -4707,6 +4715,16 @@ app.get('/colecoes/:collectionSlug', setHtmlRouteCacheHeaders, async (req, res, 
   } catch (error) {
     return next(error);
   }
+});
+
+app.use((req, res, next) => {
+  if (
+    ['GET', 'HEAD'].includes(req.method)
+    && req.path === '/jogo/resident-evil-2-remake/'
+  ) {
+    return res.redirect(301, '/jogo/resident-evil-2-remake');
+  }
+  return next();
 });
 
 app.get('/jogo/:slug', setHtmlRouteCacheHeaders, async (req, res, next) => {
