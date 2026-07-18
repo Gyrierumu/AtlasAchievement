@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 760" width="640" height="760" role="img" aria-labelledby="title desc">
+  <title id="title">Gatilho e posição do tesouro Heart of Africa</title>
+  <desc id="desc">Planta esquemática da Monarch Room mostra causar dano suficiente a Wesker durante a luta de sete minutos e recolher o tesouro entre as duas escadarias antes de terminar a luta com Jill.</desc>
+  <rect width="640" height="760" rx="24" fill="#0f172a"/>
+  <rect x="20" y="20" width="600" height="100" rx="16" fill="#172033" stroke="#5eead4" stroke-width="2"/>
+  <text x="44" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Chapter 5-3 — Heart of Africa</text>
+  <text x="44" y="88" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="17">Gatilho na luta com Wesker • coleta durante Jill</text>
+  <text x="320" y="146" fill="#fbbf24" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Diagrama esquemático — não representa escala.</text>
+
+  <rect x="36" y="176" width="568" height="128" rx="18" fill="#321c24" stroke="#fb7185" stroke-width="2"/>
+  <circle cx="78" cy="218" r="24" fill="#be123c" stroke="#fecdd3" stroke-width="2"/>
+  <text x="78" y="226" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">1</text>
+  <text x="120" y="212" fill="#fff1f2" font-family="Arial, sans-serif" font-size="20" font-weight="700">Fase Wesker — janela de 7 minutos</text>
+  <text x="120" y="242" fill="#fecdd3" font-family="Arial, sans-serif" font-size="17">Cause dano suficiente até ele abandonar a luta.</text>
+  <text x="120" y="270" fill="#fecdd3" font-family="Arial, sans-serif" font-size="17">Só sobreviver ao cronômetro não garante o tesouro.</text>
+
+  <rect x="36" y="326" width="568" height="286" rx="18" fill="#111c2f" stroke="#334155" stroke-width="2"/>
+  <text x="320" y="360" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">MONARCH ROOM — vista superior simplificada</text>
+  <path d="M82 542 L82 406 L210 406 L210 480" fill="none" stroke="#94a3b8" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M558 542 L558 406 L430 406 L430 480" fill="none" stroke="#94a3b8" stroke-width="18" stroke-linejoin="round"/>
+  <g fill="#cbd5e1">
+    <rect x="94" y="426" width="82" height="8"/><rect x="94" y="450" width="82" height="8"/><rect x="94" y="474" width="82" height="8"/>
+    <rect x="464" y="426" width="82" height="8"/><rect x="464" y="450" width="82" height="8"/><rect x="464" y="474" width="82" height="8"/>
+  </g>
+  <text x="146" y="392" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">ESCADARIA A</text>
+  <text x="494" y="392" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">ESCADARIA B</text>
+  <path d="M238 420 H402 V548 H238 Z" fill="#134e4a" stroke="#5eead4" stroke-width="3" stroke-dasharray="9 7"/>
+  <circle cx="320" cy="490" r="33" fill="#b45309" stroke="#fde68a" stroke-width="4"/>
+  <path d="M320 469 C298 451 278 481 320 519 C362 481 342 451 320 469 Z" fill="#fef3c7"/>
+  <text x="320" y="570" fill="#fef3c7" font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">2. ENTRE AS ESCADARIAS</text>
+
+  <rect x="36" y="634" width="568" height="92" rx="16" fill="#3b2410" stroke="#fbbf24" stroke-width="2"/>
+  <text x="58" y="666" fill="#fef3c7" font-family="Arial, sans-serif" font-size="18" font-weight="700">COLETE ANTES DE ENCERRAR JILL</text>
+  <text x="58" y="696" fill="#fde68a" font-family="Arial, sans-serif" font-size="17">Passou da luta? Repita Chapter 5-3 e refaça Wesker.</text>
+</svg>

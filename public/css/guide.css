@@ -2831,6 +2831,146 @@ body[data-page="public"].atlas-guide-dock-active:has(
   display: none;
 }
 
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual {
+  display: grid;
+  min-width: 0;
+  max-width: 720px;
+  gap: 14px;
+  margin: 18px auto;
+  padding: clamp(14px, 3vw, 22px);
+  overflow: hidden;
+  border: 1px solid rgba(125, 211, 252, .22);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(14, 165, 233, .08), transparent 46%),
+    rgba(8, 15, 29, .78);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .2);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__head {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__head > div {
+  min-width: 0;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__kicker,
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__type {
+  color: rgba(125, 211, 252, .84);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual h4 {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, .96);
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__type {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid rgba(125, 211, 252, .2);
+  border-radius: 999px;
+  background: rgba(14, 165, 233, .08);
+  white-space: nowrap;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__asset {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 14px;
+  background: #0a1324;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__asset img {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  margin-inline: auto;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual figcaption {
+  color: rgba(226, 232, 240, .72);
+  font-size: .82rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__fallback {
+  min-width: 0;
+  padding: 12px 14px;
+  border-left: 3px solid rgba(94, 234, 212, .58);
+  border-radius: 0 12px 12px 0;
+  color: rgba(226, 232, 240, .78);
+  font-size: .84rem;
+  line-height: 1.5;
+  background: rgba(20, 184, 166, .07);
+  overflow-wrap: anywhere;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__fallback strong {
+  color: rgba(255, 255, 255, .92);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__fallback ol {
+  display: grid;
+  gap: 5px;
+  margin: 7px 0 0;
+  padding-left: 20px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__link {
+  width: fit-content;
+  max-width: 100%;
+  color: rgba(125, 211, 252, .94);
+  font-size: .84rem;
+  font-weight: 850;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  text-underline-offset: 3px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__link:focus-visible {
+  outline: 2px solid rgba(125, 211, 252, .88);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (max-width: 520px) {
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__head {
+    display: grid;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__type {
+    width: fit-content;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual,
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual * {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
 #guideSectionIndexSlot {
   display: none;
 }

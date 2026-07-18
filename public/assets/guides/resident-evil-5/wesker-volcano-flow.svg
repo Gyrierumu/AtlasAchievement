@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 900" width="640" height="900" role="img" aria-labelledby="title desc">
+  <title id="title">Fluxo da luta final contra Wesker no vulcão</title>
+  <desc id="desc">Diagrama em quatro fases: separação de Chris e Sheva, cobertura durante a subida de Sheva, empurrar a pedra para reunir a dupla e atacar o núcleo exposto nas costas e no peito antes do QTE final.</desc>
+  <rect width="640" height="900" rx="24" fill="#0f172a"/>
+  <rect x="20" y="20" width="600" height="100" rx="16" fill="#172033" stroke="#fb7185" stroke-width="2"/>
+  <text x="44" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Chapter 6-3 — Wesker no vulcão</text>
+  <text x="44" y="88" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="17">Posição, Partner Action, núcleo e QTE final</text>
+  <text x="320" y="146" fill="#fbbf24" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Diagrama esquemático — não representa escala.</text>
+
+  <rect x="36" y="174" width="568" height="142" rx="18" fill="#321c24" stroke="#fb7185" stroke-width="2"/>
+  <circle cx="72" cy="218" r="24" fill="#be123c" stroke="#fecdd3" stroke-width="2"/><text x="72" y="226" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">1</text>
+  <text x="112" y="214" fill="#fff1f2" font-family="Arial, sans-serif" font-size="21" font-weight="700">SEPARAÇÃO</text>
+  <rect x="112" y="238" width="196" height="52" rx="12" fill="#172554"/><text x="210" y="260" fill="#dbeafe" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">CHRIS — arena central</text><text x="210" y="282" fill="#bfdbfe" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">atrai Wesker</text>
+  <rect x="326" y="238" width="242" height="52" rx="12" fill="#3f1d45"/><text x="447" y="260" fill="#fae8ff" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">SHEVA — plataforma lateral</text><text x="447" y="282" fill="#f5d0fe" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">corre para a subida</text>
+
+  <path d="M320 324 V354" stroke="#94a3b8" stroke-width="5"/><polygon points="308,348 332,348 320,366" fill="#94a3b8"/>
+  <rect x="36" y="366" width="568" height="142" rx="18" fill="#13243d" stroke="#60a5fa" stroke-width="2"/>
+  <circle cx="72" cy="410" r="24" fill="#1d4ed8" stroke="#bfdbfe" stroke-width="2"/><text x="72" y="418" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">2</text>
+  <text x="112" y="406" fill="#eff6ff" font-family="Arial, sans-serif" font-size="21" font-weight="700">PROTEJA A SUBIDA</text>
+  <text x="112" y="438" fill="#dbeafe" font-family="Arial, sans-serif" font-size="17">Chris atira em Wesker para interromper golpes em Sheva.</text>
+  <text x="112" y="468" fill="#dbeafe" font-family="Arial, sans-serif" font-size="17">Sheva cumpre o QTE sem parar até alcançar a borda.</text>
+  <text x="112" y="494" fill="#fde68a" font-family="Arial, sans-serif" font-size="15">Professional: falha de cobertura ou QTE costuma ser fatal.</text>
+
+  <path d="M320 516 V546" stroke="#94a3b8" stroke-width="5"/><polygon points="308,540 332,540 320,558" fill="#94a3b8"/>
+  <rect x="36" y="558" width="568" height="126" rx="18" fill="#122a2d" stroke="#5eead4" stroke-width="2"/>
+  <circle cx="72" cy="602" r="24" fill="#0f766e" stroke="#99f6e4" stroke-width="2"/><text x="72" y="610" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">3</text>
+  <text x="112" y="598" fill="#ecfeff" font-family="Arial, sans-serif" font-size="21" font-weight="700">REÚNA A DUPLA</text>
+  <text x="112" y="630" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="17">Chris empurra a pedra no QTE e cria a passagem.</text>
+  <text x="112" y="660" fill="#ccfbf1" font-family="Arial, sans-serif" font-size="17">Reagrupem antes de iniciar o ciclo de dano final.</text>
+
+  <path d="M320 692 V722" stroke="#94a3b8" stroke-width="5"/><polygon points="308,716 332,716 320,734" fill="#94a3b8"/>
+  <rect x="36" y="734" width="568" height="138" rx="18" fill="#3b2410" stroke="#fbbf24" stroke-width="2"/>
+  <circle cx="72" cy="778" r="24" fill="#b45309" stroke="#fde68a" stroke-width="2"/><text x="72" y="786" fill="#fff" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">4</text>
+  <text x="112" y="774" fill="#fef3c7" font-family="Arial, sans-serif" font-size="21" font-weight="700">NÚCLEO → QTE FINAL</text>
+  <path d="M112 810 H254" stroke="#fde68a" stroke-width="4"/><circle cx="274" cy="810" r="20" fill="#be123c" stroke="#fecdd3" stroke-width="3"/><path d="M264 810 H284 M274 800 V820" stroke="#fff" stroke-width="4"/>
+  <text x="306" y="806" fill="#fde68a" font-family="Arial, sans-serif" font-size="16">Ataque as costas quando expostas;</text>
+  <text x="306" y="832" fill="#fde68a" font-family="Arial, sans-serif" font-size="16">depois o peito. Afaste-se do tornado.</text>
+  <text x="112" y="858" fill="#fef3c7" font-family="Arial, sans-serif" font-size="16" font-weight="700">Abertura final → Partner Action/QTE → conclusão.</text>
+</svg>

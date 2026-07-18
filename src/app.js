@@ -1222,8 +1222,11 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
 
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+  const editorialDisplay = game?.editorialDisplay && typeof game.editorialDisplay === 'object'
+    ? game.editorialDisplay
+    : {};
   const routeTrophyLimit = ['little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'reanimal'].includes(normalizedSlug) ? 12 : (normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5));
-  const explicitAttentionPoints = ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'dead-space-remake', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+  const explicitAttentionPoints = (editorialDisplay.attentionMode === 'editorial' || ['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'days-gone', 'dead-space-remake', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'lords-of-the-fallen', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug)) && Array.isArray(game?.attentionPoints)
     ? game.attentionPoints.map(item => {
       const tags = Array.isArray(item?.tags)
         ? item.tags.map(tag => {
@@ -1242,8 +1245,9 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
   const routeTrophies = explicitAttentionPoints.length
     ? explicitAttentionPoints
     : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-  const faqLimit = normalizedSlug === 'resident-evil-5' ? 19 : (normalizedSlug === 'dead-space-remake' ? 16 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'lies-of-p', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))))));
-  const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
+  const faqLimit = normalizedSlug === 'dead-space-remake' ? 16 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['baldurs-gate-3', 'dark-souls-ii-scholar-of-the-first-sin', 'demons-souls', 'final-fantasy-xvi', 'heavy-rain', 'lies-of-p', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['days-gone', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))))));
+  const contextualFaq = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq : [];
+  const faqItems = editorialDisplay.faqMode === 'all' ? contextualFaq : contextualFaq.slice(0, faqLimit);
   const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
   const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
   const sectionCopy = normalizedSlug === 'resident-evil-2-remake'
@@ -2231,6 +2235,44 @@ function renderGuideFaqAnswerHtml(item = {}, normalizedSlug = '') {
   return html;
 }
 
+function renderGuideInstructionalVisualsHtml(game = {}, placement = '') {
+  const visuals = Array.isArray(game?.instructionalVisuals)
+    ? game.instructionalVisuals.filter(item => item && item.placement === placement)
+    : [];
+  return visuals.map(visual => {
+    const id = String(visual.id || '').trim();
+    const src = resolveLocalGuideImageSrc(visual.src || '');
+    const width = Number(visual.width || 640);
+    const height = Number(visual.height || 640);
+    const relatedAnchor = /^#[A-Za-z][\w:.-]*$/.test(String(visual.relatedAnchor || ''))
+      ? String(visual.relatedAnchor)
+      : '';
+    const textFallback = Array.isArray(visual.textFallback)
+      ? visual.textFallback.filter(item => String(item || '').trim())
+      : [];
+    if (!id || !/^\/assets\/guides\/resident-evil-5\/[a-z0-9-]+\.svg$/.test(src) || !visual.title || !visual.caption || !visual.alt || !textFallback.length) return '';
+    return `
+      <figure id="${escapeHtml(id)}" class="atlas-instructional-visual" data-instructional-visual="${escapeHtml(id)}" data-instructional-placement="${escapeHtml(placement)}" aria-labelledby="${escapeHtml(id)}-title" aria-describedby="${escapeHtml(id)}-caption ${escapeHtml(id)}-text">
+        <div class="atlas-instructional-visual__head">
+          <div>
+            <span class="atlas-instructional-visual__kicker">${escapeHtml(visual.relation || 'Apoio visual')}</span>
+            <h4 id="${escapeHtml(id)}-title">${escapeHtml(visual.title)}</h4>
+          </div>
+          <span class="atlas-instructional-visual__type">SVG original</span>
+        </div>
+        <div class="atlas-instructional-visual__asset">
+          <img src="${escapeHtml(src)}" alt="${escapeHtml(visual.alt)}" width="${escapeHtml(String(width))}" height="${escapeHtml(String(height))}" loading="lazy" decoding="async">
+        </div>
+        <figcaption id="${escapeHtml(id)}-caption">${escapeHtml(visual.caption)}</figcaption>
+        <div id="${escapeHtml(id)}-text" class="atlas-instructional-visual__fallback">
+          <strong>Alternativa textual</strong>
+          <ol>${textFallback.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+        </div>
+        ${relatedAnchor ? `<a class="atlas-instructional-visual__link" href="${escapeHtml(relatedAnchor)}">${escapeHtml(visual.relatedLabel || 'Abrir instrução relacionada')}</a>` : ''}
+      </figure>`;
+  }).join('');
+}
+
 function renderPlatinumExtraItemHtml(category = {}, item = {}) {
   const number = String(item.number || '').padStart(2, '0');
   const isBsaa = category.id === 'bsaa-emblems';
@@ -2252,11 +2294,23 @@ function renderPlatinumExtraItemHtml(category = {}, item = {}) {
     item.description ? `<p>${escapeHtml(item.description)}</p>` : '',
     item.type ? `<p><strong>Tipo:</strong> ${escapeHtml(formatPlatinumExtraType(category, item.type))}</p>` : '',
     item.area ? `<p><strong>Área:</strong> ${escapeHtml(item.area)}</p>` : '',
+    item.landmark ? `<p><strong>Landmark:</strong> ${escapeHtml(item.landmark)}</p>` : '',
+    item.angle ? `<p><strong>Posição/câmera:</strong> ${escapeHtml(item.angle)}</p>` : '',
+    item.trigger ? `<p><strong>Gatilho:</strong> ${escapeHtml(item.trigger)}</p>` : '',
+    item.action ? `<p><strong>Ação:</strong> ${escapeHtml(item.action)}</p>` : '',
     item.room ? `<p><strong>Sala:</strong> ${escapeHtml(item.room)}</p>` : '',
     item.character ? `<p><strong>Personagem:</strong> ${escapeHtml(item.character)}</p>` : '',
     item.scenario ? `<p><strong>Cenário:</strong> ${escapeHtml(item.scenario)}</p>` : '',
     item.difficulty ? `<p><strong>Dificuldade:</strong> ${escapeHtml(item.difficulty)}</p>` : '',
     item.requirement ? `<p><strong>Requisito:</strong> ${escapeHtml(item.requirement)}</p>` : '',
+    item.preparation ? `<p><strong>Preparação:</strong> ${escapeHtml(item.preparation)}</p>` : '',
+    item.mechanics ? `<p><strong>Mecânica e fases:</strong> ${escapeHtml(item.mechanics)}</p>` : '',
+    item.weakness ? `<p><strong>Fraqueza/abertura:</strong> ${escapeHtml(item.weakness)}</p>` : '',
+    item.qte ? `<p><strong>QTEs e ataques fatais:</strong> ${escapeHtml(item.qte)}</p>` : '',
+    item.solo ? `<p><strong>Solo com IA:</strong> ${escapeHtml(item.solo)}</p>` : '',
+    item.coop ? `<p><strong>Coop humano:</strong> ${escapeHtml(item.coop)}</p>` : '',
+    item.professional ? `<p><strong>No Professional:</strong> ${escapeHtml(item.professional)}</p>` : '',
+    item.checkpoint ? `<p><strong>Checkpoint/recuperação:</strong> ${escapeHtml(item.checkpoint)}</p>` : '',
     item.code ? `<p><strong>Código/combinação:</strong> ${escapeHtml(item.code)}</p>` : '',
     item.reward ? `<p><strong>Recompensa:</strong> ${escapeHtml(item.reward)}</p>` : '',
     item.leonReward ? `<p><strong>Leon:</strong> ${escapeHtml(item.leonReward)}</p>` : '',
@@ -2362,6 +2416,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
             </h3>
             <div id="${escapeHtml(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
             ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
+            ${renderGuideInstructionalVisualsHtml(game, `category:${category.id}`)}
             ${renderUsefulVideoHtml(category.usefulVideo, { useStrongTitle: String(category.id || '').startsWith('re2-') })}
             ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
             ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
@@ -2376,7 +2431,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
     </section>`;
 }
 
-function renderDlcChecklistGroupsHtml(dlcGuide = {}, { isResidentEvil2 = false } = {}) {
+function renderDlcChecklistGroupsHtml(dlcGuide = {}, { isResidentEvil2 = false, game = {} } = {}) {
   const packagesById = new Map((dlcGuide.packages || []).map(item => [item.id, item]));
   const groups = (dlcGuide.checklist || []).reduce((result, item) => {
     const key = item.packageId || item.packageName || 'dlc';
@@ -2402,7 +2457,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}, { isResidentEvil2 = false }
       ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
       ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
       ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box">${isResidentEvil2 ? `<h4 class="atlas-tip-label">${escapeHtml(roadmapTitle)}</h4>` : `<div class="atlas-tip-label">${escapeHtml(roadmapTitle)}</div>`}${pack.roadmapIntroduction ? `<p class="text-sm mt-2">${escapeHtml(pack.roadmapIntroduction)}</p>` : ''}<ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
-      ${renderDlcPackageExtraListsHtml(pack, { isResidentEvil2 })}
+      ${renderDlcPackageExtraListsHtml(pack, { isResidentEvil2, game })}
       <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
         ${items.map(item => {
           const details = [
@@ -2426,7 +2481,7 @@ function renderDlcChecklistGroupsHtml(dlcGuide = {}, { isResidentEvil2 = false }
   }).join('');
 }
 
-function renderDlcPackageExtraListsHtml(pack = {}, { isResidentEvil2 = false } = {}) {
+function renderDlcPackageExtraListsHtml(pack = {}, { isResidentEvil2 = false, game = {} } = {}) {
   const lists = Array.isArray(pack.collectibleChecklists) ? pack.collectibleChecklists : [];
   if (!lists.length) return '';
   return lists.map(list => {
@@ -2435,6 +2490,7 @@ function renderDlcPackageExtraListsHtml(pack = {}, { isResidentEvil2 = false } =
       <div${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-tip-box">
         ${isResidentEvil2 ? `<h4 class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</h4>` : `<div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>`}
         ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
+        ${renderGuideInstructionalVisualsHtml(game, `dlc:${list.progressGroup || ''}`)}
         ${renderUsefulVideoHtml(list.usefulVideo)}
         ${renderEditorialLinksHtml(list.links)}
       ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
@@ -2471,15 +2527,20 @@ function renderDlcCollectibleChecklistItemHtml(item = {}, list = {}, group = {})
     item.area ? `<span><strong>Área:</strong> ${escapeHtml(item.area)}</span>` : '',
     item.room ? `<span><strong>Sala/ponto:</strong> ${escapeHtml(item.room)}</span>` : '',
     item.location ? `<span><strong>Localização:</strong> ${escapeHtml(item.location)}</span>` : '',
+    item.landmark ? `<span><strong>Landmark:</strong> ${escapeHtml(item.landmark)}</span>` : '',
     item.angle ? `<span><strong>Ângulo:</strong> ${escapeHtml(item.angle)}</span>` : '',
+    item.trigger ? `<span><strong>Gatilho:</strong> ${escapeHtml(item.trigger)}</span>` : '',
+    item.action ? `<span><strong>Ação:</strong> ${escapeHtml(item.action)}</span>` : '',
     item.route ? `<span><strong>Rota:</strong> ${escapeHtml(item.route)}</span>` : '',
     item.trainingMode ? `<span><strong>Training Mode:</strong> ${escapeHtml(item.trainingMode)}</span>` : '',
     item.bestMoment ? `<span><strong>Melhor momento:</strong> ${escapeHtml(item.bestMoment)}</span>` : '',
     item.risk ? `<span><strong>Risco:</strong> ${escapeHtml(item.risk)}</span>` : '',
+    item.pointOfNoReturn ? `<span><strong>Ponto sem retorno:</strong> ${escapeHtml(item.pointOfNoReturn)}</span>` : '',
     item.cleanup ? `<span><strong>Cleanup:</strong> ${escapeHtml(item.cleanup)}</span>` : '',
     item.relatedTrophy ? `<span><strong>Relacionado:</strong> ${escapeHtml(item.relatedTrophy)}</span>` : '',
     item.note ? `<span><strong>Observação:</strong> ${escapeHtml(item.note)}</span>` : '',
     item.warning ? `<span><strong>Alerta:</strong> ${escapeHtml(item.warning)}</span>` : '',
+    renderEditorialLinksHtml(item.links)
   ].filter(Boolean);
   return `
     <li${itemId ? ` id="${escapeHtml(itemId)}"` : ''} class="space-y-2">
@@ -2559,7 +2620,7 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
             ? `<strong class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} extras</strong>`
             : `<h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>`}
         </div>
-        ${renderDlcChecklistGroupsHtml(dlcGuide, { isResidentEvil2 })}
+        ${renderDlcChecklistGroupsHtml(dlcGuide, { isResidentEvil2, game })}
       </div>
     </section>`;
 }

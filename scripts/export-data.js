@@ -89,6 +89,13 @@ function getSeedExtrasBySlug() {
         ? guideViewModel.buildGuideQuickPlan(game, { roadmap: game.roadmap || [] })
         : [],
       quickDecision: game.quickDecision || null,
+      ...(game.editorialDisplay && typeof game.editorialDisplay === 'object' ? {
+        editorialDisplay: game.editorialDisplay,
+        lastReviewedAt: game.lastReviewedAt || null,
+        platinumBaseChecklist: game.platinumBaseChecklist || null,
+        videoAudit: game.videoAudit || null,
+        instructionalVisuals: game.instructionalVisuals || null
+      } : {}),
       chapterRouteGuide: game.chapterRouteGuide || null,
       professionalAiGuide: game.professionalAiGuide || null,
       farmRoutesGuide: game.farmRoutesGuide || null,

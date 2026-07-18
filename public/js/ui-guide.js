@@ -1270,6 +1270,44 @@ window.UIGuide = (() => {
     return html;
   }
 
+  function renderGuideInstructionalVisuals(game = {}, placement = '') {
+    const visuals = Array.isArray(game?.instructionalVisuals)
+      ? game.instructionalVisuals.filter(item => item && item.placement === placement)
+      : [];
+    return visuals.map(visual => {
+      const id = String(visual.id || '').trim();
+      const src = String(visual.src || '').trim();
+      const width = Number(visual.width || 640);
+      const height = Number(visual.height || 640);
+      const relatedAnchor = /^#[A-Za-z][\w:.-]*$/.test(String(visual.relatedAnchor || ''))
+        ? String(visual.relatedAnchor)
+        : '';
+      const textFallback = Array.isArray(visual.textFallback)
+        ? visual.textFallback.filter(item => String(item || '').trim())
+        : [];
+      if (!id || !/^\/assets\/guides\/resident-evil-5\/[a-z0-9-]+\.svg$/.test(src) || !visual.title || !visual.caption || !visual.alt || !textFallback.length) return '';
+      return `
+        <figure id="${escapeAttribute(id)}" class="atlas-instructional-visual" data-instructional-visual="${escapeAttribute(id)}" data-instructional-placement="${escapeAttribute(placement)}" aria-labelledby="${escapeAttribute(id)}-title" aria-describedby="${escapeAttribute(id)}-caption ${escapeAttribute(id)}-text">
+          <div class="atlas-instructional-visual__head">
+            <div>
+              <span class="atlas-instructional-visual__kicker">${escapeHtml(visual.relation || 'Apoio visual')}</span>
+              <h4 id="${escapeAttribute(id)}-title">${escapeHtml(visual.title)}</h4>
+            </div>
+            <span class="atlas-instructional-visual__type">SVG original</span>
+          </div>
+          <div class="atlas-instructional-visual__asset">
+            <img src="${escapeAttribute(src)}" alt="${escapeAttribute(visual.alt)}" width="${escapeAttribute(String(width))}" height="${escapeAttribute(String(height))}" loading="lazy" decoding="async">
+          </div>
+          <figcaption id="${escapeAttribute(id)}-caption">${escapeHtml(visual.caption)}</figcaption>
+          <div id="${escapeAttribute(id)}-text" class="atlas-instructional-visual__fallback">
+            <strong>Alternativa textual</strong>
+            <ol>${textFallback.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+          </div>
+          ${relatedAnchor ? `<a class="atlas-instructional-visual__link" href="${escapeAttribute(relatedAnchor)}">${escapeHtml(visual.relatedLabel || 'Abrir instrução relacionada')}</a>` : ''}
+        </figure>`;
+    }).join('');
+  }
+
   function renderPlatinumExtraItem(category = {}, item = {}) {
     const number = String(item.number || '').padStart(2, '0');
     const isBsaa = category.id === 'bsaa-emblems';
@@ -1401,6 +1439,7 @@ window.UIGuide = (() => {
               </h3>
               <div id="${escapeAttribute(panelId)}" class="is-collapsed space-y-4" data-guide-section-content aria-hidden="true" hidden>
               ${category.introduction ? `<p class="text-sm text-white/62 mt-4">${escapeHtml(category.introduction)}</p>` : ''}
+              ${renderGuideInstructionalVisuals(game, `category:${category.id}`)}
               ${renderUsefulVideo(category.usefulVideo, { useStrongTitle: String(category.id || '').startsWith('re2-') })}
               ${category.warning ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta</div><p class="text-sm mt-2">${escapeHtml(category.warning)}</p></div>` : ''}
               ${Array.isArray(category.notes) && category.notes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Observações</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${category.notes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
@@ -1415,7 +1454,7 @@ window.UIGuide = (() => {
       </section>`;
   }
 
-  function renderDlcChecklistGroups(dlcGuide = {}, { isResidentEvil2 = false } = {}) {
+  function renderDlcChecklistGroups(dlcGuide = {}, { isResidentEvil2 = false, game = {} } = {}) {
     const packagesById = new Map((dlcGuide.packages || []).map(item => [item.id, item]));
     const groups = (dlcGuide.checklist || []).reduce((result, item) => {
       const key = item.packageId || item.packageName || 'dlc';
@@ -1441,7 +1480,7 @@ window.UIGuide = (() => {
         ${pack.versionAlert ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Alerta de versão</div><p class="text-sm mt-2">${escapeHtml(pack.versionAlert)}</p></div>` : ''}
         ${(Array.isArray(pack.recommendedBoostPlayers) && pack.recommendedBoostPlayers.length) || pack.bestMoment ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Resumo de boost</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${pack.bestMoment ? `<li>Melhor momento: ${escapeHtml(pack.bestMoment)}</li>` : ''}${Array.isArray(pack.recommendedBoostPlayers) ? pack.recommendedBoostPlayers.map(item => `<li>${escapeHtml(item)}</li>`).join('') : ''}</ul></div>` : ''}
         ${Array.isArray(pack.roadmap) && pack.roadmap.length ? `<div class="atlas-tip-box">${isResidentEvil2 ? `<h4 class="atlas-tip-label">${escapeHtml(roadmapTitle)}</h4>` : `<div class="atlas-tip-label">${escapeHtml(roadmapTitle)}</div>`}${pack.roadmapIntroduction ? `<p class="text-sm mt-2">${escapeHtml(pack.roadmapIntroduction)}</p>` : ''}<ol class="text-sm mt-2 list-decimal pl-5 space-y-2">${pack.roadmap.map(step => `<li><strong>${escapeHtml(step.title || '')}</strong>${Array.isArray(step.actions) && step.actions.length ? `<ul class="list-disc pl-5 mt-1 space-y-1">${step.actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}</li>`).join('')}</ol></div>` : ''}
-        ${renderDlcPackageExtraLists(pack, { isResidentEvil2 })}
+        ${renderDlcPackageExtraLists(pack, { isResidentEvil2, game })}
         <ol class="text-sm text-white/72 list-decimal pl-5 space-y-2">
           ${items.map(item => {
             const details = [
@@ -1465,7 +1504,7 @@ window.UIGuide = (() => {
     }).join('');
   }
 
-  function renderDlcPackageExtraLists(pack = {}, { isResidentEvil2 = false } = {}) {
+  function renderDlcPackageExtraLists(pack = {}, { isResidentEvil2 = false, game = {} } = {}) {
     const lists = Array.isArray(pack.collectibleChecklists) ? pack.collectibleChecklists : [];
     if (!lists.length) return '';
     return lists.map(list => {
@@ -1474,6 +1513,7 @@ window.UIGuide = (() => {
       <div${anchorId ? ` id="${escapeAttribute(anchorId)}"` : ''} class="atlas-tip-box">
         ${isResidentEvil2 ? `<h4 class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</h4>` : `<div class="atlas-tip-label">${escapeHtml(list.title || 'Checklist da DLC')}</div>`}
         ${list.introduction ? `<p class="text-sm mt-2">${escapeHtml(list.introduction)}</p>` : ''}
+        ${renderGuideInstructionalVisuals(game, `dlc:${list.progressGroup || ''}`)}
         ${renderUsefulVideo(list.usefulVideo)}
         ${renderEditorialLinks(list.links)}
         ${Array.isArray(list.alerts) && list.alerts.length ? `<ul class="text-sm mt-2 list-disc pl-5 space-y-1">${list.alerts.map(alert => `<li>${escapeHtml(alert)}</li>`).join('')}</ul>` : ''}
@@ -1599,7 +1639,7 @@ window.UIGuide = (() => {
               ? `<strong class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} extras</strong>`
               : `<h3 class="text-lg font-bold text-white mt-2">${escapeHtml(String(dlcTrophies))} troféus de DLC</h3>`}
           </div>
-          ${renderDlcChecklistGroups(dlcGuide, { isResidentEvil2 })}
+          ${renderDlcChecklistGroups(dlcGuide, { isResidentEvil2, game })}
         </div>
       </section>`;
   }
@@ -2246,8 +2286,11 @@ window.UIGuide = (() => {
 
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+    const editorialDisplay = game?.editorialDisplay && typeof game.editorialDisplay === 'object'
+      ? game.editorialDisplay
+      : {};
     const routeTrophyLimit = ['little-nightmares-ii', 'metaphor-refantazio', 'monster-hunter-world', 'reanimal'].includes(normalizedSlug) ? 12 : (normalizedSlug === 'red-dead-redemption-2' ? 11 : (normalizedSlug === 'death-stranding-2-on-the-beach' ? 11 : (['clair-obscur-expedition-33', 'detroit-become-human'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'death-stranding' ? 9 : (normalizedSlug === 'marvels-spider-man-2' ? 8 : 5)))));
-    const explicitAttentionPoints = ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'blasphemous', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-remastered', 'dead-space-remake', 'grand-theft-auto-v', 'hollow-knight-silksong', 'days-gone', 'disney-epic-mickey-rebrushed', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-5', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'rise-of-the-ronin', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug) && Array.isArray(game?.attentionPoints)
+    const explicitAttentionPoints = (editorialDisplay.attentionMode === 'editorial' || ['a-way-out', 'armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-origins', 'assassins-creed-odyssey', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'blasphemous', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'dark-souls-remastered', 'dead-space-remake', 'grand-theft-auto-v', 'hollow-knight-silksong', 'days-gone', 'disney-epic-mickey-rebrushed', 'hades', 'hogwarts-legacy', 'horizon-forbidden-west', 'horizon-zero-dawn', 'lies-of-p', 'life-is-strange-double-exposure', 'life-is-strange-remastered', 'lords-of-the-fallen', 'resident-evil-6', 'resident-evil-7-biohazard', 'resident-evil-village', 'rise-of-the-ronin', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'until-dawn'].includes(normalizedSlug)) && Array.isArray(game?.attentionPoints)
       ? game.attentionPoints.map(item => {
         const tags = Array.isArray(item?.tags)
           ? item.tags.map(tag => {
@@ -2266,8 +2309,9 @@ window.UIGuide = (() => {
     const routeTrophies = explicitAttentionPoints.length
       ? explicitAttentionPoints
       : (Array.isArray(viewModel.routeChangingTrophies) ? viewModel.routeChangingTrophies.slice(0, routeTrophyLimit) : []);
-    const faqLimit = normalizedSlug === 'resident-evil-5' ? 19 : (['dead-space-remake', 'grand-theft-auto-v'].includes(normalizedSlug) ? 16 : (normalizedSlug === 'rise-of-the-ronin' ? 14 : (normalizedSlug === 'blasphemous' ? 13 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'hades', 'lies-of-p', 'life-is-strange-double-exposure', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'resident-evil-6', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['assassins-creed-origins', 'days-gone', 'disney-epic-mickey-rebrushed', 'hogwarts-legacy', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'resident-evil-5', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6)))))))));
-    const faqItems = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq.slice(0, faqLimit) : [];
+    const faqLimit = ['dead-space-remake', 'grand-theft-auto-v'].includes(normalizedSlug) ? 16 : (normalizedSlug === 'rise-of-the-ronin' ? 14 : (normalizedSlug === 'blasphemous' ? 13 : (normalizedSlug === 'marvels-spider-man-miles-morales' ? 12 : (['armored-core-vi-fires-of-rubicon', 'assassins-creed-mirage', 'assassins-creed-shadows', 'assassins-creed-valhalla', 'avatar-frontiers-of-pandora', 'baldurs-gate-3', 'beyond-two-souls', 'cyberpunk-2077', 'dark-souls-ii-scholar-of-the-first-sin', 'hades', 'lies-of-p', 'life-is-strange-double-exposure', 'little-nightmares-ii', 'lords-of-the-fallen', 'metaphor-refantazio', 'monster-hunter-world', 'nioh-3', 'reanimal', 'resident-evil-6', 'saros', 'sekiro-shadows-die-twice', 'star-wars-jedi-survivor', 'the-last-of-us-part-ii'].includes(normalizedSlug) ? 12 : (['assassins-creed-origins', 'days-gone', 'disney-epic-mickey-rebrushed', 'hogwarts-legacy', 'hollow-knight-silksong', 'horizon-forbidden-west', 'horizon-zero-dawn', 'the-last-of-us-part-i', 'subnautica', 'resident-evil-7-biohazard', 'resident-evil-village', 'until-dawn'].includes(normalizedSlug) ? 10 : (normalizedSlug === 'dark-souls-remastered' ? 9 : (['god-of-war-ragnarok', 'resident-evil-2-remake', 'resident-evil-3-remake', 'hollow-knight', 'marvels-spider-man'].includes(normalizedSlug) ? 8 : (normalizedSlug === 'red-dead-redemption-2' ? 7 : 6))))))));
+    const contextualFaq = Array.isArray(viewModel.contextualFaq) ? viewModel.contextualFaq : [];
+    const faqItems = editorialDisplay.faqMode === 'all' ? contextualFaq : contextualFaq.slice(0, faqLimit);
     const playerFit = viewModel.playerFit || buildGuidePlayerFit(game, viewModel);
     const methodItems = Array.isArray(viewModel.editorial?.methodItems) ? viewModel.editorial.methodItems : [];
     const sectionCopy = normalizedSlug === 'resident-evil-2-remake'

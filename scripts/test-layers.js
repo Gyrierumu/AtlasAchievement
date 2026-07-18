@@ -492,6 +492,7 @@ async function validateGuide(slug = '') {
     assert(!/atlas-editorial-note\[open\]\s+summary::after\s*\{[^}]*content:\s*['"]-['"]/is.test(guideCss), 'acordeao de notas nao deve renderizar hifen textual quando aberto');
   }
   if (slug === 'resident-evil-5') {
+    const re5Snapshot = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'guides', 'resident-evil-5.json'), 'utf8'));
     const re5Text = visibleGameText(seedGame);
     const re5FaqText = JSON.stringify(seedGame.faq || []);
     const quickPlan = guideModel.buildGuideQuickPlan(seedGame, viewModel);
@@ -509,6 +510,7 @@ async function validateGuide(slug = '') {
     const dlcGuide = seedGame.dlcCompletionGuide || {};
     const dlcText = JSON.stringify(dlcGuide);
     const dlcPackagesById = Object.fromEntries((dlcGuide.packages || []).map(pack => [pack.id, pack]));
+    const instructionalVisuals = Array.isArray(seedGame.instructionalVisuals) ? seedGame.instructionalVisuals : [];
     const chapterRoute = seedGame.chapterRouteGuide || {};
     const routeChapters = Array.isArray(chapterRoute.chapters) ? chapterRoute.chapters : [];
     const routeText = JSON.stringify(chapterRoute);
@@ -531,7 +533,7 @@ async function validateGuide(slug = '') {
     assert.strictEqual(seedGame.dlcRequired || seedGame.dlc_required || false, false, 'Resident Evil 5 deve manter DLC nao obrigatoria');
     assert.strictEqual(seedGame.onlineRequired || seedGame.online_required || false, false, 'Resident Evil 5 deve manter online nao obrigatorio');
     assert.strictEqual(seedGame.coopRequired || seedGame.coop_required || false, false, 'Resident Evil 5 deve manter coop nao obrigatorio');
-    assert.strictEqual(platinumCategories.length, 8, 'Extras da Platina de Resident Evil 5 deve manter 8 categorias');
+    assert.strictEqual(platinumCategories.length, 9, 'Extras da Platina de Resident Evil 5 deve manter 9 categorias, incluindo o compendio operacional');
     assert.deepStrictEqual(platinumCategories.map(category => category.id), [
       'bsaa-emblems',
       'treasures',
@@ -540,8 +542,9 @@ async function validateGuide(slug = '') {
       'ranks-s-chapters',
       'bonus-features-outfits-figures',
       'eggs-egg-hunt-egg-on-your-face',
-      'situational-trophies'
-    ], 'Extras da Platina de Resident Evil 5 deve manter apenas categorias da platina base');
+      'situational-trophies',
+      'bosses-critical-encounters'
+    ], 'Extras da Platina de Resident Evil 5 deve manter as categorias anteriores e acrescentar o compendio operacional');
     assert.strictEqual(dlcGuide.baseTrophies, 51, 'DLCs de Resident Evil 5 devem preservar 51 trofeus base');
     assert.strictEqual(dlcGuide.dlcTrophies, 20, 'DLCs de Resident Evil 5 devem preservar 20 trofeus extras');
     assert.strictEqual(dlcGuide.totalTrophies, 71, 'DLCs de Resident Evil 5 devem preservar total completo de 71');
@@ -585,6 +588,13 @@ async function validateGuide(slug = '') {
     const heartOfAfrica = (treasuresCategory?.items || []).find(item => item.name === 'Heart of Africa');
     const scoreStarsChecklist = (dlcPackagesById['lost-in-nightmares']?.collectibleChecklists || []).find(item => item.title.includes('Score Stars'));
     const agitatorChecklist = (dlcPackagesById['desperate-escape']?.collectibleChecklists || []).find(item => item.title.includes('Agitator Majini'));
+    const bossCompendium = platinumCategories.find(category => category.id === 'bosses-critical-encounters');
+    const scoreStars = (scoreStarsChecklist?.groups || []).flatMap(group => group.items || []);
+    const agitators = (agitatorChecklist?.groups || []).flatMap(group => group.items || []);
+    const bsaaEmblems = bsaaCategory?.items || [];
+    const treasures = treasuresCategory?.items || [];
+    const dlcTrophies = dlcGuide.checklist || [];
+    const allTrophyNames = [...viewModel.trophies, ...dlcTrophies].map(item => item.name);
     const editorialVideoLinks = [
       ...(bsaaCategory?.links || []),
       ...(emblem29?.links || []),
@@ -594,14 +604,98 @@ async function validateGuide(slug = '') {
     ];
     assert.deepStrictEqual(editorialVideoLinks.map(link => link.label), [
       'Vídeo: BSAA Emblems — 30 localizações',
-      'Vídeo: BSAA Emblem #29 — Chapter 6-1',
+      'Vídeo: BSAA Emblem #29 — Chapter 6-1 (8:40)',
       'Vídeo: Heart of Africa — Chapter 5-3',
       'Vídeo: Lost in Nightmares — 18 Score Stars',
       'Vídeo: Desperate Escape — 3 Agitator Majini'
     ], 'Resident Evil 5 deve manter somente os cinco links visuais prioritarios com rotulos claros');
     assert(editorialVideoLinks.every(link => /^https:\/\/www\.youtube\.com\/watch\?v=/.test(link.url)), 'Links de video de Resident Evil 5 devem apontar para videos diretos');
     assert(emblem29.links[0].url.includes('&t=520s'), 'BSAA Emblem #29 deve usar timestamp direto no emblema 29');
-    assert(!JSON.stringify(platinumCategories).includes('Score Stars') && !JSON.stringify(platinumCategories).includes('Agitator Majini'), 'Videos de DLC nao devem entrar em Extras da Platina');
+    assert(!JSON.stringify(platinumCategories).includes('Vídeo: Lost in Nightmares') && !JSON.stringify(platinumCategories).includes('Vídeo: Desperate Escape'), 'Links de video de DLC nao devem entrar em Extras da Platina');
+    assert.strictEqual(dlcTrophies.length, 20, 'Resident Evil 5 deve manter 20 trofeus DLC no checklist editorial');
+    assert.strictEqual(new Set(viewModel.trophies.map(item => item.name)).size, 51, 'Resident Evil 5 deve manter 51 nomes base unicos');
+    assert.strictEqual(new Set(dlcTrophies.map(item => item.name)).size, 20, 'Resident Evil 5 deve manter 20 nomes DLC unicos');
+    assert.strictEqual(new Set(allTrophyNames).size, 71, 'Resident Evil 5 deve manter 71 nomes unicos entre base e DLC');
+    assert.deepStrictEqual(seedGame.editorialDisplay, { faqMode: 'all', attentionMode: 'editorial' }, 'Resident Evil 5 deve declarar paridade editorial sem numeros fixos no renderer');
+    assert.strictEqual(instructionalVisuals.length, 5, 'Resident Evil 5 deve manter cinco modulos visuais instrucionais prioritarios');
+    assert.strictEqual(new Set(instructionalVisuals.map(visual => visual.id)).size, 5, 'Modulos visuais de Resident Evil 5 devem usar IDs unicos');
+    assert.deepStrictEqual(instructionalVisuals.map(visual => visual.placement), [
+      'dlc:re5-score-stars',
+      'dlc:re5-agitators',
+      'category:bsaa-emblems',
+      'category:treasures',
+      'category:bosses-critical-encounters'
+    ], 'Modulos visuais devem permanecer ligados às cinco prioridades editoriais aprovadas');
+    let instructionalVisualBytes = 0;
+    instructionalVisuals.forEach(visual => {
+      ['id', 'title', 'caption', 'alt', 'src', 'relation', 'relatedAnchor', 'relatedLabel', 'provenance'].forEach(field => {
+        assert(String(visual[field] || '').trim(), `${visual.id || 'visual'} deve documentar ${field}`);
+      });
+      assert(visual.caption.includes('Diagrama esquemático — não representa escala.'), `${visual.id} deve declarar natureza esquematica sem escala`);
+      assert(/^\/assets\/guides\/resident-evil-5\/[a-z0-9-]+\.svg$/.test(visual.src), `${visual.id} deve usar SVG local dedicado ao guia`);
+      assert(Number.isFinite(visual.width) && visual.width > 0 && Number.isFinite(visual.height) && visual.height > 0, `${visual.id} deve declarar dimensoes intrinsecas`);
+      assert(Array.isArray(visual.textFallback) && visual.textFallback.length >= 3 && visual.textFallback.every(item => String(item || '').trim()), `${visual.id} deve oferecer alternativa textual operacional`);
+      assert(/^#[A-Za-z][\w:.-]*$/.test(visual.relatedAnchor), `${visual.id} deve apontar para ancora interna valida`);
+      const visualPath = path.join(ROOT, 'public', visual.src.replace(/^\/+/, ''));
+      assert(fs.existsSync(visualPath), `${visual.id} deve apontar para asset existente`);
+      const visualSvg = fs.readFileSync(visualPath, 'utf8');
+      const visualStat = fs.statSync(visualPath);
+      instructionalVisualBytes += visualStat.size;
+      assert(/<svg\b[^>]*\bviewBox="[^"]+"[^>]*\bwidth="[^"]+"[^>]*\bheight="[^"]+"/i.test(visualSvg), `${visual.id} deve ter viewBox e dimensoes no SVG`);
+      assert(/<title\b[^>]*>[^<]+<\/title>/i.test(visualSvg) && /<desc\b[^>]*>[^<]+<\/desc>/i.test(visualSvg), `${visual.id} deve ter title e desc no SVG`);
+      assert(!/<(?:script|image|foreignObject)\b/i.test(visualSvg), `${visual.id} nao deve incorporar script, bitmap ou documento externo`);
+      assert(!/(?:href|src)\s*=\s*["']https?:/i.test(visualSvg), `${visual.id} nao deve carregar recurso externo`);
+    });
+    assert(instructionalVisualBytes < 500 * 1024, 'Conjunto dos cinco SVGs deve permanecer abaixo de 500 KB');
+    assert.strictEqual(seedGame.faq?.length, 36, 'Resident Evil 5 deve manter 36 FAQs na fonte');
+    assert.strictEqual(seedGame.attentionPoints?.length, 12, 'Resident Evil 5 deve manter 12 pontos de atencao na fonte');
+    assert.strictEqual(bsaaEmblems.length, 30, 'Resident Evil 5 deve manter 30 BSAA Emblems');
+    assert.strictEqual(treasures.length, 50, 'Resident Evil 5 deve manter 50 tesouros');
+    assert.strictEqual(scoreStars.length, 18, 'Lost in Nightmares deve manter 18 Score Stars');
+    assert.strictEqual(agitators.length, 3, 'Desperate Escape deve manter 3 Agitator Majini');
+    assert.strictEqual(bossCompendium?.items?.length, 22, 'Compendio deve inventariar 22 chefes, minibosses e encontros criticos');
+    assert.strictEqual(new Set(bossCompendium.items.map(item => item.id)).size, 22, 'Compendio deve usar IDs unicos');
+    bossCompendium.items.forEach(item => {
+      ['chapter', 'type', 'area', 'requirement', 'preparation', 'mechanics', 'weakness', 'solo', 'coop', 'professional', 'checkpoint'].forEach(field => {
+        assert(String(item[field] || '').trim(), `${item.name} deve documentar ${field}`);
+      });
+    });
+    bsaaEmblems.forEach((item, index) => {
+      ['area', 'landmark', 'angle', 'action', 'pointOfNoReturn', 'cleanup'].forEach(field => {
+        assert(String(item[field] || '').trim(), `BSAA Emblem #${index + 1} deve documentar ${field}`);
+      });
+      assert.strictEqual(item.videoTimestampSeconds, [7, 27, 48, 63, 72, 91, 106, 126, 142, 165, 179, 204, 222, 230, 243, 255, 270, 289, 302, 324, 340, 365, 402, 419, 435, 448, 470, 487, 520, 542][index], `BSAA Emblem #${index + 1} deve manter timestamp auditado`);
+      assert(item.links?.[0]?.url.includes(`&t=${item.videoTimestampSeconds}s`), `BSAA Emblem #${index + 1} deve linkar seu timestamp`);
+    });
+    scoreStars.forEach((item, index) => {
+      ['area', 'landmark', 'angle', 'action', 'pointOfNoReturn', 'cleanup'].forEach(field => {
+        assert(String(item[field] || '').trim(), `Score Star #${index + 1} deve documentar ${field}`);
+      });
+      assert.strictEqual(item.videoTimestampSeconds, [6, 17, 30, 45, 54, 70, 90, 104, 137, 150, 161, 174, 185, 196, 206, 217, 231, 246][index], `Score Star #${index + 1} deve manter timestamp auditado`);
+      assert(item.links?.[0]?.url.includes(`&t=${item.videoTimestampSeconds}s`), `Score Star #${index + 1} deve linkar seu timestamp`);
+    });
+    agitators.forEach((item, index) => {
+      ['area', 'landmark', 'trigger', 'action', 'risk', 'pointOfNoReturn', 'cleanup'].forEach(field => {
+        assert(String(item[field] || '').trim(), `Agitator Majini #${index + 1} deve documentar ${field}`);
+      });
+      assert.strictEqual(item.videoTimestampSeconds, undefined, `Agitator Majini #${index + 1} nao deve inventar timestamp`);
+    });
+    ['Soul Gem', 'Heart of Africa', 'Diamond (Marquise)'].forEach(name => {
+      const treasure = treasures.find(item => item.name === name);
+      assert(treasure?.landmark && treasure?.action && treasure?.pointOfNoReturn && treasure?.cleanup, `${name} deve ter localizacao e recuperacao autossuficientes`);
+    });
+    assert.strictEqual(seedGame.videoAudit?.length, 5, 'Resident Evil 5 deve manter auditoria dos cinco rotulos de video');
+    assert.deepStrictEqual(seedGame.videoAudit.map(item => item.youtubeId), ['qG94-12Nznk', 'qG94-12Nznk', 'XKfQyYb_hBY', '4KAJ6zfUNxc', 'Zxx5PkPYeuU'], 'Auditoria deve preservar os quatro videos e os cinco usos editoriais');
+    assert(seedGame.videoAudit.every(item => item.status === 'validated' && /^https:\/\/www\.youtube\.com\/watch\?v=/.test(item.url)), 'Cinco usos de video devem estar validados e apontar para URLs diretas');
+    assert.strictEqual(seedGame.last_reviewed_at, '2026-07-18', 'Resident Evil 5 deve registrar a data real da Fase 2');
+    assert.strictEqual(seedGame.lastReviewedAt, '2026-07-18T00:00:00.000-03:00', 'Resident Evil 5 deve manter lastReviewedAt sincronizado');
+    assert.strictEqual(re5Snapshot.game?.last_reviewed_at, seedGame.last_reviewed_at, 'Snapshot deve manter last_reviewed_at igual ao seed');
+    assert.strictEqual(re5Snapshot.seedExtras?.lastReviewedAt, seedGame.lastReviewedAt, 'Snapshot deve manter lastReviewedAt igual ao seed');
+    ['editorialDisplay', 'instructionalVisuals', 'platinumBaseChecklist', 'dlcCompletionGuide', 'videoAudit', 'faq', 'attentionPoints'].forEach(field => {
+      assert.deepStrictEqual(re5Snapshot.seedExtras?.[field], seedGame[field], `Snapshot deve manter ${field} em paridade com o seed`);
+    });
+    assert.strictEqual(re5Snapshot.trophies?.length, 51, 'Snapshot deve manter 51 trofeus base');
+    assert.strictEqual(re5Snapshot.roadmaps?.length, 7, 'Snapshot deve manter 7 etapas de roadmap');
     assert(dlcText.includes('Professional da DLC não muda a dificuldade/flags da platina base'), 'DLCs devem separar Professional da platina base');
     assert(re5FaqText.includes('Qual DLC é online?') && re5FaqText.includes('Qual DLC costuma dar mais trabalho?') && re5FaqText.includes('Professional das DLCs muda a platina?'), 'FAQ de RE5 deve cobrir micro-FAQ de DLC');
     ['30 vitórias', '100 eliminações', 'coop obrigatório', 'online obrigatório', 'Checklist Brutal', 'guia brutal', '100% da base', 'Checklist Completo', 'Não dizer', 'Não colocar', 'Não misturar', 'Não marcar', 'Não tratar', 'Não transformar'].forEach(text => {
@@ -1659,6 +1753,7 @@ async function validateGuide(slug = '') {
       const structuredGraph = Array.isArray(structuredData?.['@graph']) ? structuredData['@graph'] : [];
       const techArticle = structuredGraph.find(item => item?.['@type'] === 'TechArticle');
       const breadcrumbSchema = structuredGraph.find(item => item?.['@type'] === 'BreadcrumbList');
+      const faqSchema = structuredGraph.find(item => item?.['@type'] === 'FAQPage');
       const mainText = (html.match(/<main[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '')
         .replace(/<script[\s\S]*?<\/script>/gi, ' ')
         .replace(/<[^>]+>/g, ' ')
@@ -1666,6 +1761,7 @@ async function validateGuide(slug = '') {
         .trim();
       const guideControllerSource = readProjectFile('public/js/app-guide-controller.js');
       const guideNavigationSource = `${guideControllerSource}\n${readProjectFile('public/js/ui-guide.js')}`;
+      const guideCssSource = readProjectFile('public/css/guide.css');
       const layerNavHtml = html.match(/<nav id="guideLayerNav"[\s\S]*?<\/nav>/)?.[0] || '';
       const quickPlanHtml = html.match(/<div id="guideQuickPlan" class="atlas-guide-quick-plan"[\s\S]*?<\/ol><\/div>/)?.[0] || '';
       const usagePanelHtml = html.match(/<section id="guideUsagePanel"[\s\S]*?<\/section>/)?.[0] || '';
@@ -1687,6 +1783,8 @@ async function validateGuide(slug = '') {
       const mythsPanelHtml = mythsPanelStart >= 0 && mythsPanelEnd > mythsPanelStart ? html.slice(mythsPanelStart, mythsPanelEnd + '</section>'.length) : '';
       const extrasPanelHtml = html.match(/<section id="guidePlatinumExtrasPanel"[\s\S]*?<section id="guideDlcCompletionPanel"/)?.[0] || '';
       const dlcPanelHtml = html.match(/<section id="guideDlcCompletionPanel"[\s\S]*?<section id="guideEditorialNotesPanel"/)?.[0] || '';
+      const attentionPanelHtml = html.match(/<section id="guideEditorialNotesPanel"[\s\S]*?<section id="guideFaqPanel"/)?.[0] || '';
+      const faqPanelHtml = html.match(/<section id="guideFaqPanel"[\s\S]*?<div id="guideCommentsSlot"/)?.[0] || '';
       const re5DlcAnchorIds = [
         're5-versus-dlc',
         're5-lost-in-nightmares-score-stars',
@@ -1700,6 +1798,12 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.dlcRequired, false, 'API de Resident Evil 5 deve manter DLC nao obrigatoria explicita');
       assert.strictEqual(apiGame.onlineRequired, false, 'API de Resident Evil 5 deve manter online 0 explicito');
       assert.strictEqual(apiGame.coopRequired, false, 'API de Resident Evil 5 deve manter coop 0 explicito');
+      assert.strictEqual(apiGame.faq?.length, 36, 'API de Resident Evil 5 deve expor 36 FAQs');
+      assert.strictEqual(apiGame.attentionPoints?.length, 12, 'API de Resident Evil 5 deve expor 12 pontos de atencao');
+      assert.strictEqual(apiGame.attention_count, 12, 'API de Resident Evil 5 deve alinhar attention_count com os 12 pontos editoriais');
+      assert.deepStrictEqual(apiGame.editorialDisplay, { faqMode: 'all', attentionMode: 'editorial' }, 'API deve expor a configuracao orientada a dados de paridade editorial');
+      assert.strictEqual(apiGame.videoAudit?.length, 5, 'API deve expor a auditoria dos cinco usos de video');
+      assert.strictEqual(apiGame.instructionalVisuals?.length, 5, 'API deve expor os cinco modulos visuais instrucionais');
       assert.strictEqual(getTitle(html), 'Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement', 'Resident Evil 5 deve usar title SEO especifico');
       assert.strictEqual(getMeta(html, 'description'), 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.', 'Resident Evil 5 deve usar meta description especifica');
       assert.strictEqual(getCanonical(html), 'https://atlasachievement.com.br/jogo/resident-evil-5', 'Resident Evil 5 deve usar canonical de producao');
@@ -1720,6 +1824,7 @@ async function validateGuide(slug = '') {
         assert(html.includes(`<h2`) && new RegExp(`<h2[^>]*>${heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}<\\/h2>`).test(html), `Resident Evil 5 deve manter H2 principal: ${heading}`);
       });
       assert(techArticle, 'Resident Evil 5 deve expor TechArticle no JSON-LD');
+      assert.strictEqual(faqSchema?.mainEntity?.length, 36, 'FAQPage JSON-LD deve manter as mesmas 36 perguntas publicas');
       assert.strictEqual(techArticle.headline, 'Resident Evil 5 — Guia de platina e troféus', 'TechArticle deve ter headline fiel');
       assert.strictEqual(techArticle.mainEntityOfPage?.['@id'], 'https://atlasachievement.com.br/jogo/resident-evil-5', 'TechArticle deve apontar para canonical');
       assert.strictEqual(techArticle.publisher?.name, 'AtlasAchievement', 'TechArticle deve identificar publisher');
@@ -1776,6 +1881,9 @@ async function validateGuide(slug = '') {
       ['#guideQuickPlan', '#guideChapterRoutePanel', '#guideProfessionalAiPanel', '#guideFarmRoutesPanel', '#guideCommonMythsPanel'].forEach(selector => {
         assert(guideControllerSource.includes(selector), `Controlador de navegacao deve reconhecer o destino ${selector}`);
       });
+      assert(guideNavigationSource.includes("editorialDisplay.faqMode === 'all'"), 'Hidratacao deve respeitar o modo editorial de FAQ orientado a dados');
+      assert(guideNavigationSource.includes("editorialDisplay.attentionMode === 'editorial'"), 'Hidratacao deve respeitar os pontos de atencao editoriais');
+      assert(!/normalizedSlug\s*===\s*['"]resident-evil-5['"]\s*\?\s*19/.test(guideNavigationSource), 'Hidratacao nao deve voltar ao limite fixo de 19 FAQs para Resident Evil 5');
       assert(!guideScopedHtml.includes('atlas-trophy-youtube-link'), 'Resident Evil 5 nao deve renderizar buscas automaticas de video em todos os trofeus');
       assert(!guideScopedHtml.includes('<span>YouTube</span>'), 'Resident Evil 5 nao deve exibir rotulo generico YouTube');
       assert(!guideScopedHtml.includes('Concluir YouTube'), 'Resident Evil 5 nao deve exibir rotulo generico Concluir YouTube');
@@ -1795,6 +1903,24 @@ async function validateGuide(slug = '') {
         assert(guideNavigationSource.includes(anchorId), `Navegacao compartilhada deve reconhecer #${anchorId}`);
         assert(!re5Sitemap.includes(`#${anchorId}`), `Sitemap nao deve incluir fragmento #${anchorId}`);
       });
+      const instructionalVisualIds = apiGame.instructionalVisuals.map(visual => visual.id);
+      assert.strictEqual((guideScopedHtml.match(/\sdata-instructional-visual="/g) || []).length, 5, 'SSR deve renderizar exatamente cinco modulos visuais');
+      assert.strictEqual((extrasPanelHtml.match(/\sdata-instructional-visual="/g) || []).length, 3, 'Extras da Platina deve receber os três visuais da campanha base');
+      assert.strictEqual((dlcPanelHtml.match(/\sdata-instructional-visual="/g) || []).length, 2, 'DLCs deve receber os visuais de Score Stars e Agitators');
+      instructionalVisualIds.forEach(visualId => {
+        assert.strictEqual((guideScopedHtml.match(new RegExp(`data-instructional-visual="${visualId}"`, 'g')) || []).length, 1, `${visualId} deve aparecer uma unica vez no SSR`);
+        const visual = apiGame.instructionalVisuals.find(item => item.id === visualId);
+        const visualHtml = guideScopedHtml.match(new RegExp(`<figure id="${visualId}"[\\s\\S]*?<\\/figure>`))?.[0] || '';
+        assert(visualHtml.includes(`aria-labelledby="${visualId}-title"`) && visualHtml.includes(`aria-describedby="${visualId}-caption ${visualId}-text"`), `${visualId} deve relacionar titulo, legenda e alternativa textual`);
+        assert(new RegExp(`<img\\b[^>]*src="${visual.src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*alt="[^"]+"[^>]*width="${visual.width}"[^>]*height="${visual.height}"[^>]*loading="lazy"[^>]*decoding="async"`).test(visualHtml), `${visualId} deve renderizar imagem acessivel, dimensionada e lazy`);
+        assert(visualHtml.includes('<figcaption') && visualHtml.includes('Alternativa textual') && (visualHtml.match(/<li>/g) || []).length >= 3, `${visualId} deve renderizar legenda e fallback visivel`);
+        assert(visualHtml.includes(`href="${visual.relatedAnchor}"`), `${visualId} deve linkar a instrucao detalhada relacionada`);
+        assert(guideIdSet.has(visual.relatedAnchor.slice(1)), `${visualId} deve apontar para ancora existente no guia`);
+      });
+      assert(guideNavigationSource.includes('function renderGuideInstructionalVisuals(') && guideNavigationSource.includes('data-instructional-visual='), 'Hidratacao deve compartilhar o contrato data-driven dos modulos visuais');
+      assert(guideNavigationSource.includes('resident-evil-5') && guideNavigationSource.includes('[a-z0-9-]+\\.svg$'), 'Hidratacao deve restringir os modulos a SVGs locais do RE5 sem aceitar traversal');
+      assert(guideCssSource.includes('#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual'), 'CSS dos modulos visuais deve permanecer restrito ao guia de Resident Evil 5');
+      assert(guideCssSource.includes('.atlas-instructional-visual__asset img') && guideCssSource.includes('max-width: 640px') && guideCssSource.includes('height: auto'), 'CSS dos SVGs deve preservar proporcao e largura responsiva');
       const brokenGuideInternalHrefs = guideInternalHrefs.filter(targetId => !guideIdSet.has(targetId));
       assert.deepStrictEqual(brokenGuideInternalHrefs, [], 'Links internos com hash do guia RE5 devem apontar para IDs existentes');
       assert(dlcPanelHtml.includes('href="#re5-versus-dlc"') && /href="#re5-versus-dlc"[^>]*>[^<]*Versus[^<]*10/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Versus com anchor text descritivo');
@@ -1860,9 +1986,11 @@ async function validateGuide(slug = '') {
         assert(!mythsPanelHtml.includes(text), `Mitos e erros comuns SSR nao deve conter lista longa ou termo proibido: ${text}`);
       });
       assert(extrasPanelHtml.includes('Platina base'), 'Extras da Platina de Resident Evil 5 deve ser marcado como platina base');
-      assert(extrasPanelHtml.includes('8 categorias') || extrasPanelHtml.includes('8 categoria(s)'), 'Extras da Platina de Resident Evil 5 deve renderizar 8 categorias');
+      assert(extrasPanelHtml.includes('9 categorias') || extrasPanelHtml.includes('9 categoria(s)'), 'Extras da Platina de Resident Evil 5 deve renderizar 9 categorias');
       assert(extrasPanelHtml.includes('BSAA Emblems') && extrasPanelHtml.includes('Tesouros') && extrasPanelHtml.includes('Troféus situacionais'), 'Extras da Platina de Resident Evil 5 deve manter categorias operacionais da base');
-      ['Vídeo: BSAA Emblems — 30 localizações', 'Vídeo: BSAA Emblem #29 — Chapter 6-1', 'Vídeo: Heart of Africa — Chapter 5-3'].forEach(label => {
+      assert(extrasPanelHtml.includes('Compêndio de chefes e encontros críticos') || extrasPanelHtml.includes('CompÃªndio de chefes e encontros crÃ­ticos'), 'Extras da Platina deve renderizar o compendio operacional');
+      assert.strictEqual((extrasPanelHtml.match(/data-platinum-extra-category="bosses-critical-encounters"/g) || []).length, 22, 'Compendio SSR deve renderizar 22 encontros');
+      ['Vídeo: BSAA Emblems — 30 localizações', 'Vídeo: BSAA Emblem #29 — Chapter 6-1 (8:40)', 'Vídeo: Heart of Africa — Chapter 5-3'].forEach(label => {
         assert(extrasPanelHtml.includes(label), `Extras da Platina deve renderizar link claro: ${label}`);
       });
       assert(!extrasPanelHtml.includes('Vídeo: Lost in Nightmares') && !extrasPanelHtml.includes('Vídeo: Desperate Escape'), 'Extras da Platina nao deve receber links de DLC');
@@ -1884,7 +2012,12 @@ async function validateGuide(slug = '') {
       assert(dlcPanelHtml.includes('3 Agitator Majini'), 'DLCs SSR deve manter 3 Agitator Majini');
       assert(dlcPanelHtml.includes('Vídeo: Lost in Nightmares — 18 Score Stars'), 'Lost in Nightmares deve renderizar link claro de Score Stars');
       assert(dlcPanelHtml.includes('Vídeo: Desperate Escape — 3 Agitator Majini'), 'Desperate Escape deve renderizar link claro de Agitator Majini');
-      assert.strictEqual((guideScopedHtml.match(/<a href="https:\/\/www\.youtube\.com\/watch\?v=/g) || []).length, 5, 'Resident Evil 5 deve manter exatamente cinco links de video editoriais');
+      const renderedYoutubeIds = [...guideScopedHtml.matchAll(/https:\/\/www\.youtube\.com\/watch\?v=([^"&]+)/g)].map(match => match[1]);
+      assert.deepStrictEqual([...new Set(renderedYoutubeIds)].sort(), ['4KAJ6zfUNxc', 'XKfQyYb_hBY', 'Zxx5PkPYeuU', 'qG94-12Nznk'].sort(), 'SSR deve usar somente os quatro videos auditados nos cinco usos editoriais');
+      assert.strictEqual((dlcPanelHtml.match(/data-dlc-collectible-group="re5-score-stars"/g) || []).length, 18, 'Lost in Nightmares SSR deve renderizar 18 Score Stars');
+      assert.strictEqual((dlcPanelHtml.match(/data-dlc-collectible-group="re5-agitators"/g) || []).length, 3, 'Desperate Escape SSR deve renderizar 3 Agitator Majini');
+      assert.strictEqual((faqPanelHtml.match(/<article class="atlas-faq-item atlas-faq-row">/g) || []).length, 36, 'SSR deve renderizar todas as 36 FAQs');
+      assert.strictEqual((attentionPanelHtml.match(/<article class="atlas-critical-row">/g) || []).length, 12, 'SSR deve renderizar os 12 pontos de atencao');
       ['>YouTube<', '>Concluir YouTube<', '>Ver vídeo<', '>Vídeo:<'].forEach(label => {
         assert(!guideScopedHtml.includes(label), `Resident Evil 5 nao deve renderizar rotulo generico: ${label}`);
       });
@@ -1896,6 +2029,8 @@ async function validateGuide(slug = '') {
       });
       assert(!guideScopedHtml.includes('Use Extras da Platina para limpar ovos e troféus situacionais por Chapter Select.'), 'Resident Evil 5 SSR nao deve repetir frase antiga em Trofeus situacionais');
       assert(!/>\s*null\s*</i.test(html), 'Resident Evil 5 SSR nao deve exibir null visivel');
+      const nonRe5Html = await fetchText(`${baseUrl}/jogo/resident-evil-6`, { headers: { accept: 'text/html' } });
+      assert(!nonRe5Html.includes('data-instructional-visual='), 'Modulos visuais de Resident Evil 5 nao devem alterar o SSR de outros jogos');
     }
     if (slug === 'resident-evil') {
       const guideScopedHtml = html.replace(/<aside[^>]*atlas-home-beta-notice[\s\S]*?<\/aside>/i, '');

@@ -671,8 +671,13 @@ function normalizeGame(row, roadmapRows, trophyRows) {
       : [],
     seo: seedGame?.seo && typeof seedGame.seo === 'object' ? { ...seedGame.seo } : (editorialSource.seo && typeof editorialSource.seo === 'object' ? { ...editorialSource.seo } : {}),
     quickDecision: seedGame?.quickDecision && typeof seedGame.quickDecision === 'object' ? { ...seedGame.quickDecision } : (editorialSource.quickDecision && typeof editorialSource.quickDecision === 'object' ? { ...editorialSource.quickDecision } : null),
+    editorialDisplay: seedGame?.editorialDisplay && typeof seedGame.editorialDisplay === 'object'
+      ? { ...seedGame.editorialDisplay }
+      : {},
     disableGeneratedVideoSearch: seedGame?.disableGeneratedVideoSearch === true,
     usefulVideos: Array.isArray(seedGame?.usefulVideos) ? JSON.parse(JSON.stringify(seedGame.usefulVideos)) : [],
+    videoAudit: Array.isArray(seedGame?.videoAudit) ? JSON.parse(JSON.stringify(seedGame.videoAudit)) : [],
+    instructionalVisuals: Array.isArray(seedGame?.instructionalVisuals) ? JSON.parse(JSON.stringify(seedGame.instructionalVisuals)) : [],
     platinumBaseChecklist: seedGame?.platinumBaseChecklist && typeof seedGame.platinumBaseChecklist === 'object'
       ? JSON.parse(JSON.stringify(seedGame.platinumBaseChecklist))
       : null,
@@ -795,7 +800,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     time_bucket: editorialSource.time_bucket || null,
     missable_count: resolvedMissableCount,
     spoiler_count: spoilerCount,
-    attention_count: resolvedMissableCount + spoilerCount
+    attention_count: seedGame?.editorialDisplay?.attentionMode === 'editorial' && Array.isArray(seedGame?.attentionPoints)
+      ? seedGame.attentionPoints.length
+      : resolvedMissableCount + spoilerCount
   };
 }
 
@@ -1221,7 +1228,9 @@ function normalizeListRow(row) {
     newGamePlusRequired: normalizedNewGamePlusRequired ?? row.newGamePlusRequired,
     difficultyTrophiesRequired: normalizedDifficultyTrophiesRequired ?? row.difficultyTrophiesRequired,
     spoiler_count: spoilerCount,
-    attention_count: canonicalMissableCount ? missableCount + spoilerCount : Number(row.attention_count || 0),
+    attention_count: listSeedGame?.editorialDisplay?.attentionMode === 'editorial' && Array.isArray(listSeedGame?.attentionPoints)
+      ? listSeedGame.attentionPoints.length
+      : (canonicalMissableCount ? missableCount + spoilerCount : Number(row.attention_count || 0)),
     editorial_status: normalizeEditorialStatus(editorialSource.editorial_status),
     publication_status: normalizeEditorialStatus(editorialSource.editorial_status),
     ...buildEditorialReviewFields(editorialSource),
