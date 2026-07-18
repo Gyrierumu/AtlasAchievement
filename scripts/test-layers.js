@@ -161,7 +161,7 @@ function validateData() {
     'Para os troféus, basta rank S; S+ é opcional e possui regras próprias. O limite de saves pertence ao S+.',
     'Tempos de S rank deve manter somente a nota curta sobre S e limite de saves do S+'
   );
-  assert.strictEqual(sampleGames.find(game => game.slug === 'resident-evil-5')?.commonMythsGuide?.myths?.length, 8, 'Resident Evil 5 deve permanecer com seus 8 mitos');
+  assert.strictEqual(sampleGames.find(game => game.slug === 'resident-evil-5')?.commonMythsGuide?.myths?.length, 8, 'Resident Evil 5 deve manter os 8 mitos publicos, incluindo o custo zero dos trajes');
   const re5Related = cardModel.buildRelatedGames(residentEvilGuide, sampleGames, 4);
   assert(
     re5Related.some(item => item?.game?.slug === 'resident-evil-5' && /Resident Evil 5/i.test(item.reason || '')),
@@ -557,13 +557,28 @@ async function validateGuide(slug = '') {
     assert.deepStrictEqual(dlcPackagesById.versus.roadmap.map(step => step.title), ['Sessão 1 — Slayers / Survivors', 'Sessão 2 — Team Slayers / Team Survivors', 'Sessão 3 — limpeza'], 'Rota de boost de Versus deve separar as 3 sessoes');
     assert(dlcText.includes('15 vitórias em Slayers') && dlcText.includes('15 vitórias em Survivors') && dlcText.includes('15 vitórias em Team Slayers') && dlcText.includes('15 vitórias em Team Survivors'), 'Versus deve manter 15 vitorias por modo');
     assert(dlcText.includes('50 eliminações físicas') && !dlcText.includes('100 eliminações'), 'Versus deve manter 50 eliminacoes fisicas e nao usar 100 como regra principal');
+    assert(dlcText.includes('combo quebra se o contador entre kills zerar ou se você morrer') && dlcText.includes('matar jogadores não alimenta a corrente'), 'Keep the Good Times Rolling deve explicar manutencao e quebra do combo');
+    assert(dlcText.includes('O combo de 40 é compartilhado pela dupla') && dlcText.includes('alternem kills'), 'It Takes Two to Tango deve trazer boost operacional em dupla');
+    assert(dlcText.includes('Dano recebido reduz sua pontuação') && dlcText.includes('Public Assembly'), 'Survivors deve explicar origem/perda de pontos e mapa de boost');
+    assert(dlcText.includes('A meta de 80.000 é a soma da equipe') && dlcText.includes('organize 4 jogadores'), 'Team Survivors deve explicar placar da equipe e organizacao 2v2');
+    assert(dlcText.includes('total 134.000') && dlcText.includes('Wesker (S.T.A.R.S.) 50.000'), 'Personagens de Versus devem listar os oito pagos e custo total');
+    assert(dlcText.includes('aparentemente disponível') && dlcText.includes('Não presuma matchmaking público ativo'), 'Status online deve permanecer inferencia e nao promessa de matchmaking');
     assert.strictEqual(dlcPackagesById['lost-in-nightmares']?.roadmapTitle, 'Rota segura', 'Lost in Nightmares deve ter Rota segura');
     assert.strictEqual((dlcPackagesById['lost-in-nightmares']?.roadmap || []).length, 5, 'Lost in Nightmares deve manter 5 passos compactos');
-    assert(dlcText.includes('Faça as 18 Score Stars em uma única jogada') && dlcText.includes('Score Stars não são BSAA Emblems') && dlcText.includes('Não exige Professional para S rank'), 'Lost in Nightmares deve separar Score Stars, BSAA, S rank e Professional');
+    assert(dlcText.includes('Faça as 18 Score Stars em uma única jogada') && dlcText.includes('Score Stars não são BSAA Emblems') && dlcText.includes('S rank não exige Professional'), 'Lost in Nightmares deve separar Score Stars, BSAA, S rank e Professional');
     assert(dlcText.includes('Parceiro humano pode ajudar em Professional e Kung Fu Fighting') && !dlcText.includes('Coop/parceiro humano pode ajudar'), 'Lost in Nightmares deve usar microcopy publica de parceiro humano');
+    assert(dlcText.includes('cinco fatores: precisão, inimigos derrotados, dano recebido, pontos de Score Stars coletados e tempo') && dlcText.includes('80.000 pontos agregados como alvo prático'), 'Lost in Nightmares deve documentar fatores e alvo pratico do S rank');
+    assert(dlcText.includes('conclua Lost in Nightmares no Veteran') && dlcText.includes('quatro crests') && dlcText.includes('não busque Kung Fu Fighting'), 'Night Terrors deve separar unlock, labirinto e Wesker');
     assert.strictEqual(dlcPackagesById['desperate-escape']?.roadmapTitle, 'Rota segura', 'Desperate Escape deve ter Rota segura');
     assert.strictEqual((dlcPackagesById['desperate-escape']?.roadmap || []).length, 4, 'Desperate Escape deve manter 4 passos compactos');
     assert(dlcText.includes('Derrotar 150 inimigos em uma única jogada') && dlcText.includes('Derrotar os 3 Agitator Majini na mesma jogada') && dlcText.includes('Jogando em dupla, o jogador que precisa do troféu deve fazer a maior parte das kills'), 'Desperate Escape deve tratar 150 kills e 3 Agitator na mesma run');
+    assert(dlcText.includes('mire 80.000 pontos agregados') && dlcText.includes('Rocket Launchers encontrados nos assist jumps'), 'The Great Escape deve documentar alvo e rota pratica do S rank');
+    assert(dlcText.includes('conclua Desperate Escape no Veteran') && dlcText.includes('Final/landing pad') && dlcText.includes('Agitator Majini não é requisito de Run the Gauntlet'), 'Run the Gauntlet deve separar unlock, rota Professional e Agitators');
+    const allDressedUp = viewModel.trophies.find(trophy => trophy.name === 'All Dressed Up');
+    const bonusFeaturesCategory = platinumCategories.find(category => category.id === 'bonus-features-outfits-figures');
+    const bonusFeaturesText = JSON.stringify(bonusFeaturesCategory);
+    assert(allDressedUp?.tip.includes('Chris Outfit (Safari)') && allDressedUp.tip.includes('30 BSAA Emblems') && allDressedUp.tip.includes('0 Exchange Points'), 'All Dressed Up deve listar quatro trajes, emblemas e custo zero');
+    assert(bonusFeaturesText.includes('re5-bonus-features-infinite-ammo') && bonusFeaturesText.includes('Special Settings') && bonusFeaturesText.includes('abaixo de 5 horas'), 'Bonus Features deve documentar Infinite Ammo e Infinite Rocket Launcher separadamente');
     const bsaaCategory = platinumCategories.find(category => category.id === 'bsaa-emblems');
     const treasuresCategory = platinumCategories.find(category => category.id === 'treasures');
     const emblem29 = (bsaaCategory?.items || []).find(item => item.number === 29);
@@ -647,7 +662,7 @@ async function validateGuide(slug = '') {
     ['Soul Gem', 'Lion Hearts', 'Power Stones', 'Heart of Africa', 'Exchange Points', 'Infinite Rocket Launcher'].forEach(text => {
       assert(farmText.includes(text), `Rotas de Farm deve cobrir ${text}`);
     });
-    assert(farmText.includes('Dinheiro da campanha compra armas e upgrades') && farmText.includes('pontos de Bonus Features/Exchange Points'), 'Rotas de Farm deve separar dinheiro de pontos de Bonus Features');
+    assert(farmText.includes('Dinheiro da campanha compra armas e upgrades') && farmText.includes('Exchange Points compram figuras e Infinite Ammo') && farmText.includes('trajes de All Dressed Up custam 0 pontos'), 'Rotas de Farm deve separar dinheiro, Exchange Points e trajes gratuitos');
     assert(farmText.includes('Mercenaries pode render pontos de Bonus Features') && farmText.includes('opcional') && farmText.includes('não é requisito'), 'Rotas de Farm deve tratar Mercenaries como opcional');
     assert(farmText.includes('DLCs não entram nessa tabela de farm da platina base'), 'Rotas de Farm deve separar DLCs da tabela da platina base');
     assert(farmText.includes('Não farme por farminho'), 'Rotas de Farm deve conter o texto curto obrigatorio');
@@ -655,7 +670,7 @@ async function validateGuide(slug = '') {
       assert(!farmText.includes(text), `Rotas de Farm nao deve conter DLC, lista longa ou frase interna: ${text}`);
     });
     assert.strictEqual(mythsGuide.title, 'Mitos e erros comuns', 'Resident Evil 5 deve ter secao Mitos e erros comuns');
-    assert.strictEqual(commonMyths.length, 8, 'Mitos e erros comuns de Resident Evil 5 deve manter no maximo 8 mitos');
+    assert.strictEqual(commonMyths.length, 8, 'Mitos e erros comuns de Resident Evil 5 deve manter 8 mitos publicos');
     commonMyths.forEach((item, index) => {
       assert(item.myth && item.correction && item.where, `Mito ${index + 1} deve ter Mito, Correcao e Onde conferir`);
       assert(String(item.myth).length <= 90, `Mito ${index + 1} deve ser curto`);
@@ -674,7 +689,8 @@ async function validateGuide(slug = '') {
       'S&W M500',
       'Score Stars são coletáveis da DLC Lost in Nightmares',
       'S ranks podem ser buscados separadamente em dificuldade baixa',
-      'Não venda o primeiro Rotten Egg',
+      'trajes de All Dressed Up custam Exchange Points',
+      '0 pontos',
       'Night Terrors',
       'Run the Gauntlet'
     ].forEach(text => {
@@ -1768,7 +1784,8 @@ async function validateGuide(slug = '') {
       assert(html.includes('/jogo/resident-evil-6'), 'Resident Evil 5 deve manter link interno natural para guia relacionado da franquia');
       const re5Sitemap = await fetchText(`${baseUrl}/sitemap.xml`);
       assert(re5Sitemap.includes('<loc>https://atlasachievement.com.br/jogo/resident-evil-5</loc>') || re5Sitemap.includes(`<loc>${baseUrl}/jogo/resident-evil-5</loc>`), 'Sitemap deve incluir canonical de Resident Evil 5');
-      assert(/resident-evil-5<\/loc><lastmod>2026-07-11T/.test(re5Sitemap), 'Sitemap deve usar updated_at de Resident Evil 5 como lastmod');
+      const re5ExpectedLastmod = new Date(apiGame.updated_at).toISOString();
+      assert(re5Sitemap.includes(`resident-evil-5</loc><lastmod>${re5ExpectedLastmod}</lastmod>`), 'Sitemap deve usar updated_at de Resident Evil 5 como lastmod');
       re5DlcAnchorIds.forEach(anchorId => {
         assert(guideIdSet.has(anchorId), `Resident Evil 5 deve renderizar anchor ${anchorId}`);
         assert.strictEqual(guideIds.filter(id => id === anchorId).length, 1, `Anchor ${anchorId} deve ser unico no HTML`);
@@ -1783,7 +1800,7 @@ async function validateGuide(slug = '') {
       assert(dlcPanelHtml.includes('href="#re5-versus-dlc"') && /href="#re5-versus-dlc"[^>]*>[^<]*Versus[^<]*10/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Versus com anchor text descritivo');
       assert(dlcPanelHtml.includes('href="#re5-lost-in-nightmares-score-stars"') && /href="#re5-lost-in-nightmares-score-stars"[^>]*>[^<]*Lost in Nightmares[^<]*Score Stars/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Score Stars com anchor text descritivo');
       assert(dlcPanelHtml.includes('href="#re5-desperate-escape-agitator-majini"') && /href="#re5-desperate-escape-agitator-majini"[^>]*>[^<]*Desperate Escape[^<]*Agitator Majini/i.test(dlcPanelHtml), 'Intro de DLCs deve linkar Agitator Majini com anchor text descritivo');
-      assert.strictEqual((quickPlanHtml.match(/<li>/g) || []).length, 7, 'Plano rapido de Resident Evil 5 deve renderizar 7 etapas');
+      assert.strictEqual((quickPlanHtml.match(/<li><span>/g) || []).length, 7, 'Plano rapido de Resident Evil 5 deve renderizar 7 etapas numeradas');
       assert(quickPlanHtml.includes('Professional e revisão final') || quickPlanHtml.includes('Professional e revisÃ£o final'), 'Plano rapido de Resident Evil 5 deve incluir etapa final Professional');
       assert(quickPlanHtml.includes('Complete todos os capítulos no Professional') || quickPlanHtml.includes('Complete todos os capÃ­tulos no Professional'), 'Plano rapido de Resident Evil 5 deve descrever Professional e revisao final');
       assert((roadmapPanelHtml.match(/atlas-roadmap-step/g) || []).length >= 7 || (roadmapPanelHtml.match(/<article/g) || []).length >= 7, 'Roadmap SSR de Resident Evil 5 deve manter 7 etapas');
@@ -1823,7 +1840,7 @@ async function validateGuide(slug = '') {
         assert(farmPanelHtml.includes(text), `Rotas de Farm SSR deve renderizar ${text}`);
       });
       assert(farmPanelHtml.includes('Dinheiro da campanha compra armas e upgrades'), 'Rotas de Farm SSR deve explicar dinheiro da campanha');
-      assert(farmPanelHtml.includes('pontos de Bonus Features/Exchange Points'), 'Rotas de Farm SSR deve explicar pontos de Bonus Features');
+      assert(farmPanelHtml.includes('Exchange Points compram figuras e Infinite Ammo') && farmPanelHtml.includes('trajes de All Dressed Up custam 0 pontos'), 'Rotas de Farm SSR deve separar pontos pagos e trajes gratuitos');
       assert(farmPanelHtml.includes('Mercenaries pode render pontos de Bonus Features'), 'Rotas de Farm SSR deve citar Mercenaries como opcional');
       assert(farmPanelHtml.includes('opcional') && (farmPanelHtml.includes('não é requisito') || farmPanelHtml.includes('nÃ£o Ã© requisito')), 'Rotas de Farm SSR deve manter Mercenaries/Infinite Rocket opcionais');
       assert(farmPanelHtml.includes('DLCs não entram nessa tabela de farm da platina base') || farmPanelHtml.includes('DLCs nÃ£o entram nessa tabela de farm da platina base'), 'Rotas de Farm SSR deve separar DLCs');
@@ -1836,14 +1853,14 @@ async function validateGuide(slug = '') {
       assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Mito<\/dt>/g) || []).length, 8, 'Mitos e erros comuns SSR deve renderizar 8 campos Mito');
       assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Correção<\/dt>/g) || []).length, 8, 'Mitos e erros comuns SSR deve renderizar 8 campos Correcao');
       assert.strictEqual((mythsPanelHtml.match(/<dt class="font-bold text-white">Onde conferir<\/dt>/g) || []).length, 8, 'Mitos e erros comuns SSR deve renderizar 8 campos Onde conferir');
-      ['Versus', '51 base + 20 DLC', 'Hand Grenade', 'Proximity Bomb', 'M93R', 'Hydra', 'S&amp;W M500', 'Score Stars', 'BSAA Emblems', 'Rotten Egg', 'Night Terrors', 'Run the Gauntlet'].forEach(text => {
+      ['Versus', '51 base + 20 DLC', 'Hand Grenade', 'Proximity Bomb', 'M93R', 'Hydra', 'S&amp;W M500', 'Score Stars', 'BSAA Emblems', 'All Dressed Up', '0 pontos', 'Night Terrors', 'Run the Gauntlet'].forEach(text => {
         assert(mythsPanelHtml.includes(text), `Mitos e erros comuns SSR deve renderizar ${text}`);
       });
       ['Checklist BSAA 01/30', 'Checklist tesouro 01/50', 'Checklist upgrade 01/18', 'Checklist Brutal', 'guia brutal', '100% da base', 'Checklist Completo', 'NOME ORIGINAL', '[object Object]', 'Não dizer', 'Não colocar', 'Não misturar', 'Não marcar', 'Não tratar', 'Não transformar'].forEach(text => {
         assert(!mythsPanelHtml.includes(text), `Mitos e erros comuns SSR nao deve conter lista longa ou termo proibido: ${text}`);
       });
       assert(extrasPanelHtml.includes('Platina base'), 'Extras da Platina de Resident Evil 5 deve ser marcado como platina base');
-      assert(extrasPanelHtml.includes('8 categoria(s)'), 'Extras da Platina de Resident Evil 5 deve renderizar 8 categorias');
+      assert(extrasPanelHtml.includes('8 categorias') || extrasPanelHtml.includes('8 categoria(s)'), 'Extras da Platina de Resident Evil 5 deve renderizar 8 categorias');
       assert(extrasPanelHtml.includes('BSAA Emblems') && extrasPanelHtml.includes('Tesouros') && extrasPanelHtml.includes('Troféus situacionais'), 'Extras da Platina de Resident Evil 5 deve manter categorias operacionais da base');
       ['Vídeo: BSAA Emblems — 30 localizações', 'Vídeo: BSAA Emblem #29 — Chapter 6-1', 'Vídeo: Heart of Africa — Chapter 5-3'].forEach(label => {
         assert(extrasPanelHtml.includes(label), `Extras da Platina deve renderizar link claro: ${label}`);
@@ -1852,7 +1869,7 @@ async function validateGuide(slug = '') {
       assert(dlcPanelHtml.includes('DLCs e 100% da Lista'), 'Resident Evil 5 deve renderizar secao separada de DLCs e 100% da Lista');
       assert(dlcPanelHtml.includes('Versus') && dlcPanelHtml.includes('Lost in Nightmares') && dlcPanelHtml.includes('Desperate Escape'), 'Resident Evil 5 deve manter os 3 pacotes DLC separados');
       assert(dlcPanelHtml.includes('Parceiro humano pode ajudar em Professional e Kung Fu Fighting') && !dlcPanelHtml.includes('Coop/parceiro humano pode ajudar'), 'DLCs SSR deve usar microcopy publica de parceiro humano em Lost in Nightmares');
-      assert(html.includes('Observações finais') || html.includes('ObservaÃ§Ãµes finais'), 'FAQ de Resident Evil 5 deve usar rotulo publico Observacoes finais');
+      assert(html.includes('Perguntas frequentes'), 'FAQ de Resident Evil 5 deve manter rotulo publico Perguntas frequentes');
       assert(!guideScopedHtml.includes('Notas editoriais'), 'Resident Evil 5 nao deve exibir rotulo publico Notas editoriais');
       assert(dlcPanelHtml.includes('20 troféus') || dlcPanelHtml.includes('20 trofÃ©us'), 'DLCs de Resident Evil 5 devem manter total DLC de 20 trofeus');
       assert.strictEqual(apiGame.dlcCompletionGuide?.packages?.find(pack => pack.id === 'versus')?.roadmap?.length, 3, 'API de RE5 deve expor 3 sessoes de boost de Versus');

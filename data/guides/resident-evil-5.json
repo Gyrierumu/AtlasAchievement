@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
     "time_sort_hours": 35,
-    "updated_at": "2026-07-17 04:45:54",
+    "updated_at": "2026-07-18 15:41:17",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "verification_status": "verified",
     "walkthrough": null
@@ -59,7 +59,7 @@
       "step_order": 3
     },
     {
-      "content": "{\"title\":\"Ranks S e Bonus Features\",\"focus\":\"Rank S e figuras\",\"objective\":\"Garanta rank S em todos os capítulos em qualquer dificuldade e compre tudo que libera figuras/costumes.\",\"actions\":[\"Faça S rank em Amateur com munição infinita: priorize tempo baixo, alta precisão, muitas mortes e zero deaths.\",\"Capítulos curtos podem ser repetidos para pontos de Bonus Features\",\"6-2 com Rocket Launcher é uma rota rápida para pontos.\",\"Compre costumes em Bonus Features conforme forem liberados e deixe figuras para depois de todos os emblemas + ranks S.\"],\"warning\":\"O S rank não precisa ser todo na mesma dificuldade. Se um capítulo já tem S em qualquer dificuldade, siga para o próximo.\",\"result\":\"Base de They’re ACTION Figures!, All Dressed Up e pontuação suficiente para comprar extras.\"}",
+      "content": "{\"title\":\"Ranks S e Bonus Features\",\"focus\":\"Rank S e figuras\",\"objective\":\"Garanta rank S em todos os capítulos em qualquer dificuldade e conclua as liberações de figuras e trajes.\",\"actions\":[\"Faça S rank em Amateur com munição infinita: priorize tempo baixo, alta precisão, muitas mortes e zero deaths.\",\"Capítulos curtos podem ser repetidos para pontos de Bonus Features\",\"6-2 com Rocket Launcher é uma rota rápida para pontos.\",\"Adquira os quatro trajes gratuitos em Bonus Features conforme forem liberados e deixe as figuras pagas para depois de todos os emblemas + ranks S.\"],\"warning\":\"O S rank não precisa ser todo na mesma dificuldade. Se um capítulo já tem S em qualquer dificuldade, siga para o próximo.\",\"result\":\"Base de They’re ACTION Figures!, All Dressed Up e pontuação suficiente para comprar extras.\"}",
       "step_order": 4
     },
     {
@@ -709,9 +709,9 @@
           "where": "Extras da Platina > Ranks S e Professional e IA — Preparação para War Hero."
         },
         {
-          "correction": "Não venda o primeiro Rotten Egg antes de concluir Egg Hunt e Egg on Your Face. Guarde pelo menos um para derrotar um Majini.",
-          "myth": "Rotten Egg pode ser vendido assim que pegar.",
-          "where": "Extras da Platina > Ovos — Egg Hunt e Egg on Your Face."
+          "correction": "Não no PS4/Remaster. Safari, S.T.A.R.S., Clubbin’ e Tribal aparecem por 0 pontos depois de cumprir campanha e marcos de 25/30 BSAA Emblems.",
+          "myth": "Os quatro trajes de All Dressed Up custam Exchange Points.",
+          "where": "Extras da Platina > Bonus Features > All Dressed Up."
         },
         {
           "correction": "Não. Night Terrors e Run the Gauntlet são Professional de DLCs. Eles contam para 100% completo, não alteram a platina base.",
@@ -793,7 +793,7 @@
             "Online",
             "Versus"
           ],
-          "tip": "Pode ser combinado com o farm de vitórias em Slayers."
+          "tip": "Modo: Slayers. As 20 derrotas são Majini/inimigos do mapa em uma única corrente; matar jogadores não alimenta a corrente. O combo quebra se o contador entre kills zerar ou se você morrer. Boost recomendado: 2 jogadores, Public Assembly, o oponente fica longe e não rouba spawns; use arma de uma hit kill, mantenha um Majini vivo e só o mate quando o contador piscar, para dar tempo de novos spawns. Se a corrente cair, não há perda permanente: recomece do 1 na mesma partida ou abra outra e tente antes de voltar ao farm de 15 vitórias."
         },
         {
           "name": "It Takes Two to Tango",
@@ -807,7 +807,7 @@
             "Versus",
             "Equipe"
           ],
-          "tip": "Fazer com parceiros organizados, mantendo o combo vivo entre eliminações."
+          "tip": "Modo: Team Slayers; são necessários 4 jogadores para iniciar 2v2. O combo de 40 é compartilhado pela dupla e conta kills de Majini, não eliminações da equipe rival. Boost: use o mapa The Village/Temple, deixe a equipe adversária sem atacar e posicione um jogador na ponte/caverna e outro na porta/escadas; alternem kills para que um sempre renove o contador enquanto o outro recarrega. Guardem um inimigo para salvar a corrente quando ela piscar. Se quebrar ou alguém morrer, recomecem a contagem na própria partida; depois troquem a equipe que faz o combo."
         },
         {
           "name": "It’s All About the Points",
@@ -820,7 +820,7 @@
             "Online",
             "Versus"
           ],
-          "tip": "Buscar durante as vitórias de Survivors; em boost, controlar eliminações e bônus."
+          "tip": "Modo: Survivors. Pontos vêm do dano causado a jogadores e de eliminações; um finalizador físico no oponente em DYING rende um bônus grande. Dano recebido reduz sua pontuação, até o mínimo de zero. Boost recomendado: 2 jogadores em Public Assembly, feche as outras vagas, deixe o caçador ferir e finalizar repetidamente o parceiro e use os spawns próximos; o parceiro-alvo não revida. Confira a pontuação durante a rodada e pare de trocar funções só depois de 40.000. Se ficar abaixo do alvo, use o tempo restante para mais ciclos ou reinicie a sessão antes de contabilizar as 15 vitórias."
         },
         {
           "name": "There’s no “I” in Team",
@@ -834,7 +834,7 @@
             "Versus",
             "Equipe"
           ],
-          "tip": "Fazer com equipe coordenada; combinar pontuação com vitórias."
+          "tip": "Modo: Team Survivors; organize 4 jogadores em duas duplas. A meta de 80.000 é a soma da equipe. Boost: a dupla perdedora se reúne em Public Assembly e não ataca; os dois vencedores alternam dano e finalizadores físicos nos dois alvos, evitando fogo amigo/confusão e mantendo ambos perto dos respawns. Confiram o total da equipe antes de trocar a vitória. Se o ritmo estiver baixo, concentrem as armas fortes e finalizadores em um alvo por vez; se a rodada terminar abaixo de 80.000, repitam antes de seguir para as 15 vitórias da outra dupla."
         },
         {
           "name": "Let’s Get This Party Started!",
@@ -848,7 +848,7 @@
             "Versus",
             "Grind"
           ],
-          "tip": "Usar pontos do Bonus Features/Versus conforme a estrutura do jogo; conferir a loja antes de achar que bugou."
+          "tip": "Versus tem 10 personagens: Chris (BSAA) e Sheva (BSAA) são padrão; compre os outros oito no Bonus Features: Jill (BSAA) 5.000, Sheva (Clubbin') 6.000, Jill (Battle Suit) 7.000, Chris (Safari) 8.000, Chris (S.T.A.R.S.) 13.000, Sheva (Tribal) 15.000, Wesker (Midnight) 30.000 e Wesker (S.T.A.R.S.) 50.000 Exchange Points — total 134.000. Pontos vêm de capítulos/ranks da campanha e de partidas online. Ordem editorial: compre do mais barato ao mais caro para ganhar opções cedo e deixe os dois Wesker para o fim. O troféu cai após a oitava compra; personagens já liberados em Mercenaries não transferem para Versus."
         },
         {
           "name": "Bringing the Pain",
@@ -887,7 +887,8 @@
           "tags": [
             "DLC",
             "Rank S"
-          ]
+          ],
+          "tip": "Faça uma run separada em Amateur. O resultado usa cinco fatores: precisão, inimigos derrotados, dano recebido, pontos de Score Stars coletados e tempo. Use 80.000 pontos agregados como alvo prático documentado (não como limiar oficial publicado pela Capcom): pegue as Score Stars do caminho, mate pelo menos seis Guardians mirando o olho nas costas, evite dano e avance sem explorar salas vazias. No labirinto, use as armadilhas de espinhos para kills rápidas; no Wesker, sobreviva ao cronômetro em vez de arriscar dano. Coop humano divide busca e armadilhas; com IA, dê a ordem para operar o crank. Se terminar abaixo de S, a DLC não tem seleção de trechos: repita em Amateur corrigindo o fator pior da tela final. S rank não exige Professional nem as 18 Score Stars."
         },
         {
           "name": "Night Terrors",
@@ -899,7 +900,8 @@
           "tags": [
             "DLC",
             "Dificuldade"
-          ]
+          ],
+          "tip": "Desbloqueio local: conclua Lost in Nightmares no Veteran; não basta terminar a campanha principal. Entre depois de uma run de reconhecimento. Na mansão, recolha armas, munição e curas, evite Guardians opcionais e prepare-se para spawns extras após o piano e a armadilha de teto. Ao cair no labirinto você perde as armas: são quatro crests, quatro Guardians e nenhuma marca deles no mapa; um jogador/IA ergue a armadilha e o outro atrai o alvo, sempre confirmando a saída antes de soltar os espinhos. No corredor final, pegue as pistolas e mantenha os dois juntos contra Wesker: não busque Kung Fu Fighting, apenas corra, use cobertura, acerte QTEs e resgate o parceiro até a cena terminar. Um humano torna cranks e resgates muito mais consistentes; com IA, use comandos curtos e não se afaste. Mortes comuns: agarrão/execução do Guardian, parceiro preso longe e investida de Wesker. Ao morrer, use o checkpoint para ajustar a rota; se recursos chegarem ruins à transição, reinicie o trecho/run e conserve mais."
         },
         {
           "name": "Kung Fu Fighting",
@@ -951,7 +953,7 @@
             "DLC",
             "Rank S"
           ],
-          "tip": "Buscar boa velocidade, muitas kills, pontuação alta e pouco dano."
+          "tip": "Faça uma run separada em Amateur e mire 80.000 pontos agregados. O resultado combina precisão, inimigos derrotados, dano recebido, Score Stars/itens de pontuação e tempo. Limpe grupos com shotgun sem desperdiçar tiros, pegue estrelas/tesouros do caminho, evite mortes e use Rocket Launchers encontrados nos assist jumps para abrir portões mais rápido em vez de operar toda turret. A run de 150 kills ajuda muito a pontuação, mas Way of the Warrior continua sendo objetivo separado e individual. Coop humano divide coleta, portões e cobertura; com IA, mantenha Josh perto e concentre as kills. Se fechar abaixo de S, veja o fator pior e repita em Amateur; S rank não exige Professional nem os três Agitators."
         },
         {
           "name": "Run the Gauntlet",
@@ -964,7 +966,7 @@
             "DLC",
             "Dificuldade"
           ],
-          "tip": "Parceiro humano ajuda, mas continua sendo apoio opcional."
+          "tip": "Desbloqueio local: conclua Desperate Escape no Veteran. Faça antes uma run de reconhecimento e deixe 150 kills/Agitators para Amateur. Área inicial: use cobertura contra armas de fogo, limpe apenas o necessário para achar a Transportation Area Key e guarde granadas/rockets. Área dos portões: divida tarefas — um jogador cobre inimigos/ranged e o outro usa turrets, pega launcher nos assist jumps ou abre a rota; não avancem separados. Final/landing pad: chegue com curas, shotgun e explosivos, priorize atiradores e bosses, lute perto do parceiro e use escadas/níveis para criar distância enquanto os cronômetros terminam. Agitator Majini não é requisito de Run the Gauntlet. Um humano é fortemente recomendado; com IA, dê recursos simples, vigie sua posição e resgate imediatamente. Checkpoints ficam entre grandes áreas e fases do final; após morte, ajuste alvo/posição, e reinicie a área/run se chegar ao helipad sem cura ou munição suficiente."
         },
         {
           "name": "Way of the Warrior",
@@ -999,10 +1001,11 @@
       "introduction": "Esta seção é para quem quer o 100% da lista completa de Resident Evil 5. A platina base continua exigindo apenas os 51 troféus do jogo principal. Os troféus de Versus, Lost in Nightmares e Desperate Escape são extras de DLC: contam para 100% da lista, mas não são necessários para desbloquear a platina.",
       "packages": [
         {
+          "availabilityNote": "Situação verificada em julho de 2026: há pedidos recentes de boost e registros recentes de conclusão da lista PS4, então o online está aparentemente disponível. Isso é uma inferência por atividade observada, não um anúncio oficial de status. Não presuma matchmaking público ativo; monte um grupo de 2 jogadores para os modos solo e 4 para os modos em equipe.",
           "bestMoment": "Depois da platina base ou depois de montar a seção de DLCs/100%.",
           "fullListRequired": true,
           "id": "versus",
-          "introduction": "Versus é DLC/multiplayer competitivo e conta apenas para o 100% da lista completa. Ele não é necessário para a platina base. No PS4/Remaster, os troféus de vitórias pedem 15 vitórias por modo, e Bringing the Pain pede 50 eliminações com ataques físicos. Como depende de online/multiplayer, o ideal é fazer com boosting organizado.",
+          "introduction": "Versus é DLC/multiplayer competitivo e conta apenas para o 100% da lista completa. Ele não é necessário para a platina base. No PS4/Remaster, os troféus de vitórias pedem 15 vitórias por modo, e Bringing the Pain pede 50 eliminações com ataques físicos. Em julho de 2026 há pedidos recentes de boost e conclusões da lista, então o serviço está aparentemente disponível; isso é inferência de atividade observada, não anúncio oficial. Não presuma matchmaking público ativo: organize boosting com 2 jogadores nos modos solo e 4 nos modos em equipe.",
           "mainRisks": [
             "Grind de vitórias.",
             "Organização de jogadores.",
@@ -1022,22 +1025,24 @@
                 "2 jogadores já ajudam nos modos solo.",
                 "Faça 15 vitórias em Slayers para Army of One.",
                 "Faça 15 vitórias em Survivors para Eye of the Tiger.",
-                "Aproveite para Keep the Good Times Rolling, It’s All About the Points e Bringing the Pain."
+                "Em Slayers, faça a corrente de 20 Majini sem deixar o contador zerar; em Survivors, deixe o vencedor chegar a 40.000 com dano + finalizadores.",
+                "Aproveite as derrubadas em Survivors para Bringing the Pain e troque funções só depois de confirmar as metas."
               ],
               "title": "Sessão 1 — Slayers / Survivors"
             },
             {
               "actions": [
-                "Ideal com 4 jogadores.",
+                "Team Slayers e Team Survivors precisam de 4 jogadores em duas duplas.",
                 "Faça 15 vitórias em Team Slayers.",
                 "Faça 15 vitórias em Team Survivors.",
-                "Aproveite para It Takes Two to Tango e There’s no “I” in Team."
+                "Em Team Slayers, a dupla alterna kills de Majini até combo 40 enquanto os rivais não interferem.",
+                "Em Team Survivors, os dois vencedores alternam dano/finalizadores até o placar da equipe passar de 80.000."
               ],
               "title": "Sessão 2 — Team Slayers / Team Survivors"
             },
             {
               "actions": [
-                "Compre/desbloqueie todos os personagens do Versus.",
+                "Compre os oito personagens pagos do Versus por 134.000 Exchange Points; Chris (BSAA) e Sheva (BSAA) já são padrão.",
                 "Finalize Bringing the Pain com 50 eliminações físicas, se ainda faltar.",
                 "Confira se todos os 10 troféus do pacote desbloquearam."
               ],
@@ -1147,15 +1152,19 @@
             },
             {
               "actions": [
-                "Faça It’s Just a Bad Dream! em dificuldade baixa se quiser reduzir risco.",
-                "Não exige Professional para S rank."
+                "Faça It’s Just a Bad Dream! em Amateur; S rank não exige Professional.",
+                "O resultado combina precisão, inimigos derrotados, dano recebido, Score Stars/pontos coletados e tempo.",
+                "Use 80.000 agregados como alvo prático, mate Guardians pelo olho/armadilhas, pegue estrelas da rota e evite dano.",
+                "Se falhar, revise o fator pior na tela final e repita a DLC; não é preciso coletar as 18 Score Stars para este troféu."
               ],
               "title": "Run de S rank"
             },
             {
               "actions": [
-                "Faça Night Terrors separadamente.",
-                "Parceiro humano recomendado pode ajudar, mas não é obrigatório."
+                "Conclua Lost in Nightmares no Veteran para liberar Professional localmente e faça Night Terrors separadamente.",
+                "Na mansão, conserve munição e espere Guardians extras; no labirinto sem marcadores, elimine os quatro com cranks/armadilhas.",
+                "Contra Wesker, jogue para sobreviver ao tempo: cobertura, QTEs, proximidade e resgate imediato; não misture Kung Fu Fighting.",
+                "Parceiro humano é recomendado para dividir cranks, iscas e resgates; com IA, use os comandos de posição/armadilha."
               ],
               "title": "Run Professional"
             },
@@ -1260,8 +1269,10 @@
             },
             {
               "actions": [
-                "Faça The Great Escape em dificuldade baixa.",
-                "Não exige Professional para S rank."
+                "Faça The Great Escape em Amateur; S rank não exige Professional.",
+                "Mire 80.000 pontos agregados equilibrando precisão, inimigos, dano, Score Stars/itens e tempo.",
+                "Use shotgun para limpar grupos e Rocket Launchers dos assist jumps para derrubar portões rapidamente.",
+                "Se falhar, revise o fator pior na tela final e repita; 150 kills e três Agitators são objetivos separados."
               ],
               "title": "Run de S rank"
             },
@@ -1277,8 +1288,10 @@
             },
             {
               "actions": [
-                "Faça Run the Gauntlet separadamente.",
-                "Parceiro humano pode ajudar, mas não é obrigatório.",
+                "Conclua Desperate Escape no Veteran para liberar Professional localmente e faça Run the Gauntlet separado.",
+                "Use cobertura na área inicial, divida entre cobertura e portões/turrets na segunda área e guarde curas/explosivos para o landing pad.",
+                "No final, fique perto do parceiro, elimine ranged/bosses primeiro e use níveis/escadas para controlar as ondas até os cronômetros terminarem.",
+                "Agitator Majini e 150 kills não são requisitos desta run; parceiro humano é fortemente recomendado, mas não obrigatório.",
                 "Professional da DLC não muda a dificuldade/flags da platina base."
               ],
               "title": "Run Professional"
@@ -1390,12 +1403,24 @@
         "question": "Por que a lista aparece com 71 troféus?"
       },
       {
+        "answer": "Chris Safari e Sheva Clubbin' liberam ao concluir a campanha; Chris S.T.A.R.S. exige também 25 BSAA Emblems; Sheva Tribal exige também 30. Os quatro custam 0 Exchange Points e o troféu cai ao adquirir o quarto no Bonus Features.",
+        "question": "Quais trajes e quantos pontos All Dressed Up exige no PS4?"
+      },
+      {
+        "answer": "Conclua a campanha, maximize a arma com dinheiro, compre o Infinite Ammo individual dela com Exchange Points, ligue Infinite Ammo em Special Settings e confirme YES antes da partida. A Infinite Rocket Launcher é separada: some menos de 5 horas nos melhores tempos de todos os capítulos de uma mesma dificuldade.",
+        "question": "Como ativar Infinite Ammo?"
+      },
+      {
         "answer": "Não. Versus é DLC e conta apenas para o 100% da lista completa.",
         "question": "Versus é obrigatório para a platina?"
       },
       {
         "answer": "Não para a platina base. Online/multiplayer é obrigatório apenas para os troféus de Versus no 100% completo.",
         "question": "Versus deixa o guia com online obrigatório?"
+      },
+      {
+        "answer": "Em julho de 2026 há sessões e pedidos recentes de boost, o que indica que o modo segue aparentemente acessível. Isso não prova matchmaking público ativo nem garante disponibilidade futura: organize quatro jogadores antes de começar o bloco em equipe.",
+        "question": "O online de Versus ainda funciona no PS4?"
       },
       {
         "answer": "15 vitórias em Slayers, 15 em Survivors, 15 em Team Slayers e 15 em Team Survivors.",
@@ -1485,7 +1510,7 @@
     "farmRoutesGuide": {
       "introduction": "Use esta seção quando faltar dinheiro, pontos de Bonus Features ou upgrades. Ela não substitui Extras da Platina; serve para escolher a rota certa sem repetir capítulos aleatórios.",
       "notes": [
-        "Dinheiro da campanha compra armas e upgrades; pontos de Bonus Features/Exchange Points compram figuras, costumes e Infinite Ammo.",
+        "Dinheiro da campanha compra armas e upgrades; Exchange Points compram figuras e Infinite Ammo. Os quatro trajes de All Dressed Up custam 0 pontos no PS4/Remaster.",
         "Mercenaries pode render pontos de Bonus Features, mas é opcional e não é requisito da platina base.",
         "DLCs não entram nessa tabela de farm da platina base.",
         "Não farme por farminho: se você já comprou todas as armas, evoluiu os 18 upgrades e comprou figuras/costumes, siga para Professional e revisão final."
@@ -1535,11 +1560,11 @@
         {
           "bestFor": [
             "Exchange Points / pontos de Bonus Features",
-            "compras de figuras/costumes",
+            "compras de figuras e Infinite Ammo",
             "apoio para They’re ACTION Figures!"
           ],
           "caution": "É rota de pontos, não de dinheiro principal.",
-          "note": "Boa para comprar figuras, costumes e Infinite Ammo. Não confundir pontos de Bonus Features com dinheiro da campanha.",
+          "note": "Boa para comprar figuras e Infinite Ammo. Os quatro trajes de All Dressed Up custam 0 pontos no PS4/Remaster; não confunda Exchange Points com dinheiro da campanha.",
           "route": "Chapter 6-2 — Bonus Features",
           "when": "Depois de ter Rocket Launcher/Infinite Rocket Launcher ou dano suficiente para limpar o capítulo rápido."
         },
@@ -1701,7 +1726,7 @@
   "slug": "resident-evil-5",
   "trophies": [
     {
-      "description": "Earn all trophies.",
+      "description": "Congratulations! You've overcome all your fears in RESIDENT EVIL 5!",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "RESIDENT EVIL 5 Platinum Trophy",
@@ -1926,7 +1951,7 @@
       "is_spoiler": 0,
       "name": "All Dressed Up",
       "name_pt": "Todo Produzido",
-      "tip": "Compre todos os trajes liberados em Bonus Features. Termine a campanha e colete emblemas BSAA suficientes para liberar os trajes extras de Chris e Sheva; se algum não aparecer, revise Badge of Honor e avance a campanha/dificuldade pendente. Custa pontos de Bonus Features, não dinheiro da campanha.",
+      "tip": "Depois de concluir a campanha, abra Bonus Features e selecione os quatro trajes alternativos: Chris Outfit (Safari) e Sheva Outfit (Clubbin') liberam ao terminar a história; Chris Outfit (S.T.A.R.S.) exige também 25 BSAA Emblems; Sheva Outfit (Tribal) exige também os 30 BSAA Emblems. No PS4/Remaster, os quatro aparecem por 0 Exchange Points: confirme cada compra gratuita no menu. O troféu desbloqueia assim que o quarto traje é adquirido; não há requisito de dificuldade e dinheiro da campanha não é usado.",
       "trophy_code": "re5_all_dressed_up",
       "type": "Prata"
     },
@@ -2001,7 +2026,7 @@
       "type": "Bronze"
     },
     {
-      "description": "Defeat 20 enemies with headshots.",
+      "description": "Pull off 20 headshots.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "Exploding Heads",
@@ -2061,7 +2086,7 @@
       "type": "Bronze"
     },
     {
-      "description": "Chain the maximum number of combos in one attack.",
+      "description": "Chain the maximum number of combos together in one go.",
       "is_missable": 0,
       "is_spoiler": 0,
       "name": "The Works",
@@ -2161,7 +2186,7 @@
       "type": "Bronze"
     },
     {
-      "description": "Inflict a set amount of damage to your greatest enemy.",
+      "description": "During the first fight with Wesker, damage him a set number of times.",
       "is_missable": 0,
       "is_spoiler": 1,
       "name": "Bad Blood",
