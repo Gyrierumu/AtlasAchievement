@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "guide": "resident-evil-5",
+  "status": "PASS_WITH_WARNING",
+  "freshness": {
+    "lastTechnicalCheck": "2026-07-21T23:42:43.709Z",
+    "lastEditorialReview": "2026-07-18",
+    "dateModified": "2026-07-18",
+    "nextVolatileReview": "2026-08-17",
+    "technicalCheckChangedEditorialDates": false
+  },
+  "counts": {
+    "baseTrophies": 51,
+    "dlcTrophies": 20,
+    "uniqueTotal": 71,
+    "faq": 36,
+    "attention": 12,
+    "bosses": 22,
+    "bsaa": 30,
+    "treasures": 50,
+    "scoreStars": 18,
+    "agitators": 3,
+    "chapters": 16,
+    "roadmapStages": 7,
+    "instructionalFigures": 5,
+    "tabs": 6
+  },
+  "claims": {
+    "total": 17,
+    "confidence": {
+      "HIGH": 9,
+      "MEDIUM": 7,
+      "LOW": 1
+    }
+  },
+  "sources": {
+    "total": 11,
+    "public": 6
+  },
+  "links": {
+    "total": 11,
+    "ok": 5,
+    "redirectValid": 0,
+    "blocked": 6,
+    "rateLimited": 0,
+    "inconclusive": 0,
+    "broken": 0,
+    "contentMismatch": 0,
+    "deterministicFailures": 0,
+    "warnings": 6
+  },
+  "feedback": {
+    "openCount": 0,
+    "contentRead": false,
+    "contactRead": false
+  },
+  "snapshot": {
+    "schemaVersion": 1,
+    "sha256": "75281e7d54cbbf8911f3ff409e6c84aa444d9807bf14cce45f6675028fa1fb07",
+    "bytes": 393254
+  },
+  "audits": {
+    "structural": "PASS",
+    "links": "PASS_WITH_WARNINGS",
+    "browser": "PASS"
+  },
+  "divergences": [],
+  "obsolescence": [],
+  "warnings": [
+    {
+      "code": "GLOBAL_REGRESSION_BASELINE",
+      "detail": "> master-trophy-guide-pro@4.0.0 test\n> node scripts/regression-smoke.js\n\n\nAssertionError [ERR_ASSERTION]: catalogo precisa organizar filtros pelo grupo Duração\n    at C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:728:5\n    at Array.forEach (<anonymous>)\n    at assertCatalogModule (C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:727:80)\n    at main (C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:14350:3)\n    at Object.<anonymous> (C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:14408:1)\n    at Module._compile (node:internal/modules/cjs/loader:1812:14)\n    at Object..js (node:internal/modules/cjs/loader:1943:10)\n    at Module.load (node:internal/modules/cjs/loader:1533:32)\n    at Module._load (node:internal/modules/cjs/loader:1335:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}",
+      "scope": "catálogo global; separado dos checks determinísticos RE5"
+    }
+  ],
+  "tests": [
+    {
+      "id": "governance-simulations",
+      "command": "npm run test:re5:governance",
+      "exitCode": 0,
+      "status": "PASS",
+      "outputTail": "> master-trophy-guide-pro@4.0.0 test:re5:governance\n> node scripts/test-re5-phase9-governance.js\n\nFase 9 governance/security simulations passed (claims, links, feedback, workflow, rollback)."
+    },
+    {
+      "id": "guide-layer",
+      "command": "npm run test:guide -- resident-evil-5",
+      "exitCode": 0,
+      "status": "PASS",
+      "outputTail": "> master-trophy-guide-pro@4.0.0 test:guide\n> node scripts/test-layers.js guide resident-evil-5\n\ntest:guide passed (resident-evil-5)\n\n(node:12708) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+    },
+    {
+      "id": "seo-layer",
+      "command": "npm run test:seo",
+      "exitCode": 0,
+      "status": "PASS",
+      "outputTail": "> master-trophy-guide-pro@4.0.0 test:seo\n> node scripts/test-layers.js seo\n\ntest:seo passed (12 guias indexaveis + noindex + rotas isoladas + sitemap)\n\n(node:16548) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.\n(Use `node --trace-deprecation ...` to show where the warning was created)"
+    },
+    {
+      "id": "build",
+      "command": "npm run build",
+      "exitCode": 0,
+      "status": "PASS",
+      "outputTail": "> master-trophy-guide-pro@4.0.0 build\n> npm run check:runtime && npm run test:quick\n\n\n> master-trophy-guide-pro@4.0.0 check:runtime\n> node -e \"const major=Number(process.versions.node.split('.')[0]); if(major!==20){console.warn('Aviso: recomendado Node 20.x; atual = '+process.versions.node)}\"\n\n\n> master-trophy-guide-pro@4.0.0 test:quick\n> node scripts/test-layers.js quick\n\ntest:data passed (105 jogos)\ntest:roadmap passed (105 roadmaps)\ntest:cache passed (headers + app version static)\ntest:quick passed (data + roadmap + cache)\n\nAviso: recomendado Node 20.x; atual = 24.14.1"
+    },
+    {
+      "id": "global-regression",
+      "command": "npm test",
+      "exitCode": 1,
+      "status": "FAIL",
+      "outputTail": "> master-trophy-guide-pro@4.0.0 test\n> node scripts/regression-smoke.js\n\n\nAssertionError [ERR_ASSERTION]: catalogo precisa organizar filtros pelo grupo Duração\n    at C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:728:5\n    at Array.forEach (<anonymous>)\n    at assertCatalogModule (C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:727:80)\n    at main (C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:14350:3)\n    at Object.<anonymous> (C:\\Users\\guilh\\Downloads\\Projeto AtlasAchievement\\Testes\\atlasachievement-clair-obscur-expedition-33-added\\atlasachievement-beta-clean\\scripts\\regression-smoke.js:14408:1)\n    at Module._compile (node:internal/modules/cjs/loader:1812:14)\n    at Object..js (node:internal/modules/cjs/loader:1943:10)\n    at Module.load (node:internal/modules/cjs/loader:1533:32)\n    at Module._load (node:internal/modules/cjs/loader:1335:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: false,\n  expected: true,\n  operator: '==',\n  diff: 'simple'\n}"
+    }
+  ],
+  "publicChangelog": [
+    {
+      "date": "2026-07-18",
+      "change": "Revisão factual dos 71 troféus, com reconciliação da lista base de PS4 e dos quatro pacotes de DLC."
+    },
+    {
+      "date": "2026-07-18",
+      "change": "Paridade pública revisada entre compêndio, Score Stars, Guardians, Agitators, SVGs responsivos, seed e snapshot."
+    },
+    {
+      "date": "2026-07-18",
+      "change": "Autoria, metodologia, fontes, limitações, metadados sociais e dados estruturados publicados."
+    }
+  ],
+  "generatedAt": "2026-07-21T23:42:48.091Z"
+}

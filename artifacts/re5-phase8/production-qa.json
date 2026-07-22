@@ -1,0 +1,367 @@
+{
+  "generatedAt": "2026-07-21T22:45:21.666Z",
+  "safeMode": true,
+  "realAdCalls": 0,
+  "realAdClicks": 0,
+  "serverOffPid": 46888,
+  "flagsOff": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": false,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": false,
+      "adsEnabled": false,
+      "placeholderMode": false,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 0,
+    "resources": [],
+    "events": 0
+  },
+  "serverTestPid": 15900,
+  "consentAbsent": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": true,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": true,
+      "adsEnabled": false,
+      "placeholderMode": true,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 4,
+    "resources": [],
+    "events": 0
+  },
+  "consentDenied": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": true,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": true,
+      "adsEnabled": false,
+      "placeholderMode": true,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 4,
+    "resources": [],
+    "events": 0
+  },
+  "filterInteraction": {
+    "event": {
+      "eventType": "guide_filter_change",
+      "page": "/jogo/resident-evil-5",
+      "gameSlug": "resident-evil-5",
+      "metadata": {
+        "filter": "density",
+        "value": "comfortable"
+      }
+    },
+    "density": "comfortable",
+    "trophies": 51
+  },
+  "consentGranted": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": true,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": true,
+      "adsEnabled": false,
+      "placeholderMode": true,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 4,
+    "resources": [],
+    "events": [
+      {
+        "eventType": "guide_view",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "entry_context": "direct",
+          "initial_tab": "summary",
+          "visit_type": "first"
+        }
+      },
+      {
+        "eventType": "roadmap_start",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "source": "tab"
+        }
+      },
+      {
+        "eventType": "checklist_open",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "source": "tab"
+        }
+      },
+      {
+        "eventType": "guide_internal_search",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "query_length_bucket": "11-20",
+          "result_count_bucket": "0"
+        }
+      },
+      {
+        "eventType": "guide_internal_search",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "query_length_bucket": "0",
+          "result_count_bucket": "51+"
+        }
+      },
+      {
+        "eventType": "checklist_first_toggle",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "progress_bucket": "1-24%"
+        }
+      },
+      {
+        "eventType": "guide_filter_change",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "filter": "density",
+          "value": "comfortable"
+        }
+      },
+      {
+        "eventType": "guide_tab_open",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "tab": "summary",
+          "interaction": "keyboard"
+        }
+      },
+      {
+        "eventType": "versus_route_open",
+        "page": "/jogo/resident-evil-5",
+        "gameSlug": "resident-evil-5",
+        "metadata": {
+          "source": "anchor"
+        }
+      }
+    ],
+    "piiLeak": false
+  },
+  "keyboard": {
+    "focused": "guideTabButton-roadmap",
+    "roadmapVisible": true,
+    "summarySelected": "false",
+    "roadmapSelected": "true"
+  },
+  "placeholders": {
+    "count": 4,
+    "placements": [
+      "roadmap",
+      "summary",
+      "extras",
+      "dlc"
+    ],
+    "labels": [
+      "Publicidade — espaço de teste roadmap",
+      "Publicidade — espaço de teste summary",
+      "Publicidade — espaço de teste extras",
+      "Publicidade — espaço de teste dlc"
+    ],
+    "focusables": 0,
+    "prohibitedParents": [],
+    "checklistSlots": 0,
+    "adsEnabled": false,
+    "overflow": false
+  },
+  "desktopScreenshot": "artifacts/re5-phase8/screenshots/re5-phase8-placeholder-desktop-1440.png",
+  "mobileState": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": true,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": true,
+      "adsEnabled": false,
+      "placeholderMode": true,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 4,
+    "resources": []
+  },
+  "mobileScreenshot": "artifacts/re5-phase8/screenshots/re5-phase8-placeholder-mobile-390.png",
+  "slowNetwork": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": true,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": true,
+      "adsEnabled": false,
+      "placeholderMode": true,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 4,
+    "resources": [],
+    "loadElapsedMs": 5046
+  },
+  "noFill": {
+    "before": 112,
+    "changed": true,
+    "hidden": true,
+    "after": 0,
+    "trophies": 51
+  },
+  "errorMonitoring": {
+    "results": [
+      true,
+      false,
+      true
+    ],
+    "captured": [
+      {
+        "kind": "tab",
+        "component": "tabs",
+        "page": "/jogo/resident-evil-5",
+        "frontendVersion": "4.0.0"
+      },
+      {
+        "kind": "api",
+        "component": "api",
+        "page": "/jogo/resident-evil-5",
+        "frontendVersion": "4.0.0"
+      }
+    ]
+  },
+  "productionScriptBlocked": {
+    "h1": 1,
+    "trophies": 51,
+    "faq": 36,
+    "tabs": 6,
+    "overflow": false,
+    "adsScripts": [],
+    "gaScripts": [],
+    "config": {
+      "analyticsEnabled": true,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": true,
+      "adsEnabled": false,
+      "placeholderMode": true,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "slots": 0,
+    "resources": [],
+    "tabWorks": true
+  },
+  "regressions": [
+    {
+      "slug": "inside",
+      "h1": 1,
+      "re5Script": false,
+      "re5Config": false,
+      "slots": 0,
+      "overflow": false,
+      "tabs": 6
+    },
+    {
+      "slug": "resident-evil-village",
+      "h1": 1,
+      "re5Script": false,
+      "re5Config": false,
+      "slots": 0,
+      "overflow": false,
+      "tabs": 6
+    },
+    {
+      "slug": "resident-evil-6",
+      "h1": 1,
+      "re5Script": false,
+      "re5Config": false,
+      "slots": 0,
+      "overflow": false,
+      "tabs": 6
+    }
+  ]
+}

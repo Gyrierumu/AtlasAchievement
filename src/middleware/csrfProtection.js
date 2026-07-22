@@ -49,8 +49,33 @@ function requireCsrf(req, _res, next) {
   return next();
 }
 
+function requirePublicFormCsrf(req, _res, next) {
+  const method = String(req.method || 'GET').toUpperCase();
+  if (['GET', 'HEAD', 'OPTIONS'].includes(method)) return next();
+
+  const origin = req.get('origin');
+  const host = req.get('host');
+  if (origin) {
+    try {
+      if (new URL(origin).host !== host) {
+        return next(new AppError('Origem inválida para esta operação.', 403, null, 'CSRF_ORIGIN_MISMATCH'));
+      }
+    } catch (_error) {
+      return next(new AppError('Cabeçalho Origin inválido.', 403, null, 'CSRF_INVALID_ORIGIN'));
+    }
+  }
+
+  const requestToken = req.get('x-csrf-token');
+  const sessionToken = ensureCsrfToken(req);
+  if (!requestToken || !sessionToken || requestToken !== sessionToken) {
+    return next(new AppError('Token de segurança ausente ou inválido.', 403, null, 'CSRF_TOKEN_INVALID'));
+  }
+  return next();
+}
+
 module.exports = {
   ensureCsrfToken,
   issueCsrfToken,
-  requireCsrf
+  requireCsrf,
+  requirePublicFormCsrf
 };

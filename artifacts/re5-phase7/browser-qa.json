@@ -1,0 +1,321 @@
+{
+  "generatedAt": "2026-07-21T21:59:30.536Z",
+  "url": "http://127.0.0.1:4319/jogo/resident-evil-5",
+  "mode": "qa",
+  "browser": "msedge.exe headless via local CDP (in-app browser unavailable: missing sandboxPolicy)",
+  "screenshots": [
+    "re5-phase7-320.png",
+    "re5-phase7-360.png",
+    "re5-phase7-390.png",
+    "re5-phase7-768.png",
+    "re5-phase7-1024.png",
+    "re5-phase7-1280.png",
+    "re5-phase7-1440.png"
+  ],
+  "viewports": [
+    {
+      "width": 320,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    },
+    {
+      "width": 360,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    },
+    {
+      "width": 390,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    },
+    {
+      "width": 768,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    },
+    {
+      "width": 1024,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    },
+    {
+      "width": 1280,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    },
+    {
+      "width": 1440,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "tabCount": 6,
+      "trophyCount": 51,
+      "faqCount": 36,
+      "attentionCount": 12,
+      "bossCount": 22,
+      "figureCount": 5,
+      "chapterCount": 16,
+      "roadmapCount": 7,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "undersizedTargets": []
+    }
+  ],
+  "keyboard": {
+    "arrowRight": {
+      "selected": "roadmap",
+      "focused": "roadmap",
+      "hash": "#guideTab-roadmap"
+    },
+    "end": "attention",
+    "home": "summary"
+  },
+  "deepLinks": {
+    "summary": {
+      "selected": "summary",
+      "panelVisible": true,
+      "hash": "#guideTab-summary"
+    },
+    "roadmap": {
+      "selected": "roadmap",
+      "panelVisible": true,
+      "hash": "#guideTab-roadmap"
+    },
+    "checklist": {
+      "selected": "checklist",
+      "panelVisible": true,
+      "hash": "#guideTab-checklist"
+    },
+    "extras": {
+      "selected": "extras",
+      "panelVisible": true,
+      "hash": "#guideTab-extras"
+    },
+    "dlc": {
+      "selected": "dlc",
+      "panelVisible": true,
+      "hash": "#guideTab-dlc"
+    },
+    "attention": {
+      "selected": "attention",
+      "panelVisible": true,
+      "hash": "#guideTab-attention"
+    }
+  },
+  "internalLinks": {
+    "chapter-route-chapter-4-1": {
+      "exists": true,
+      "selected": "roadmap",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": "false",
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": false,
+      "closestSectionDisplay": "block"
+    },
+    "guideProfessionalAiPanel": {
+      "exists": true,
+      "selected": "roadmap",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": null,
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": null,
+      "closestSectionDisplay": null
+    },
+    "extras-bsaa-emblems": {
+      "exists": true,
+      "selected": "extras",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": "false",
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": false,
+      "closestSectionDisplay": "block"
+    },
+    "extras-tesouros": {
+      "exists": true,
+      "selected": "extras",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": "false",
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": false,
+      "closestSectionDisplay": "block"
+    },
+    "re5-lost-in-nightmares-score-stars": {
+      "exists": true,
+      "selected": "dlc",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": null,
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": null,
+      "closestSectionDisplay": null
+    },
+    "re5-desperate-escape-agitator-majini": {
+      "exists": true,
+      "selected": "dlc",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": null,
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": null,
+      "closestSectionDisplay": null
+    },
+    "re5-versus-dlc": {
+      "exists": true,
+      "selected": "dlc",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": null,
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": null,
+      "closestSectionDisplay": null
+    },
+    "fontes-e-metodologia": {
+      "exists": true,
+      "selected": "summary",
+      "visible": true,
+      "display": "block",
+      "collapsedValue": null,
+      "hasHiddenAttribute": false,
+      "closestSectionHidden": null,
+      "closestSectionDisplay": null
+    }
+  },
+  "checklist": {
+    "before": "false",
+    "after": "true",
+    "restored": "false",
+    "persisted": true,
+    "filtered": 1
+  },
+  "roadmap": {
+    "before": "false",
+    "after": "true",
+    "persisted": true
+  },
+  "extras": {
+    "visible": 2,
+    "status": "51 itens em 2 categorias"
+  },
+  "dlc": {
+    "before": false,
+    "after": true,
+    "progress": "10/10 troféus100%"
+  },
+  "zoom200": {
+    "width": 640,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "tabCount": 6,
+    "trophyCount": 51,
+    "faqCount": 36,
+    "attentionCount": 12,
+    "bossCount": 22,
+    "figureCount": 5,
+    "chapterCount": 16,
+    "roadmapCount": 7,
+    "duplicateIds": [],
+    "brokenAriaReferences": [],
+    "undersizedTargets": []
+  },
+  "zoom400": {
+    "width": 640,
+    "horizontalOverflow": false,
+    "h1Count": 1,
+    "tabCount": 6,
+    "trophyCount": 51,
+    "faqCount": 36,
+    "attentionCount": 12,
+    "bossCount": 22,
+    "figureCount": 5,
+    "chapterCount": 16,
+    "roadmapCount": 7,
+    "duplicateIds": [],
+    "brokenAriaReferences": [],
+    "undersizedTargets": []
+  },
+  "preferences": {
+    "reducedMotion": true,
+    "forcedColors": true
+  },
+  "noJavaScript": {
+    "panels": 6,
+    "visiblePanels": 6,
+    "hiddenSections": 0,
+    "filtersVisible": true,
+    "methodology": true
+  },
+  "diagnostics": {
+    "consoleErrors": [],
+    "exceptions": [],
+    "failedRequests": []
+  }
+}

@@ -296,6 +296,28 @@ async function ensureTrophyColumns() {
   }
 }
 
+async function ensureFeedbackGovernanceColumns() {
+  const columns = await all('PRAGMA table_info(feedbacks)');
+  const names = new Set(columns.map(column => column.name));
+  const definitions = {
+    guide_slug: 'TEXT',
+    category: 'TEXT',
+    section_anchor: 'TEXT',
+    platform_version: 'TEXT',
+    source_url: 'TEXT',
+    frontend_version: 'TEXT',
+    report_date: 'TEXT',
+    viewport_bucket: 'TEXT',
+    active_tab: 'TEXT',
+    workflow_state: "TEXT NOT NULL DEFAULT 'NEW'"
+  };
+  for (const [name, definition] of Object.entries(definitions)) {
+    if (!names.has(name)) await exec(`ALTER TABLE feedbacks ADD COLUMN ${name} ${definition}`);
+  }
+  await exec('CREATE INDEX IF NOT EXISTS idx_feedbacks_guide_slug ON feedbacks(guide_slug)');
+  await exec('CREATE INDEX IF NOT EXISTS idx_feedbacks_workflow_state ON feedbacks(workflow_state)');
+}
+
 async function ensureUserTables() {
   await exec(`
     CREATE TABLE IF NOT EXISTS users (
@@ -1606,6 +1628,16 @@ async function migrate(options = {}) {
       message TEXT NOT NULL,
       nickname TEXT,
       email TEXT,
+      guide_slug TEXT,
+      category TEXT,
+      section_anchor TEXT,
+      platform_version TEXT,
+      source_url TEXT,
+      frontend_version TEXT,
+      report_date TEXT,
+      viewport_bucket TEXT,
+      active_tab TEXT,
+      workflow_state TEXT NOT NULL DEFAULT 'NEW',
       status TEXT NOT NULL DEFAULT 'new' CHECK (status IN ('new', 'reviewed', 'archived')),
       created_at TEXT DEFAULT CURRENT_TIMESTAMP
     );
@@ -1739,6 +1771,7 @@ async function migrate(options = {}) {
 
   const gameColumnChanges = await ensureGameColumns();
   await ensureTrophyColumns();
+  await ensureFeedbackGovernanceColumns();
   await backfillTrophyTypeAliases();
   await ensureUserTables();
   await ensureUserProgressTables();

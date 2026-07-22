@@ -1,0 +1,1743 @@
+/* Resident Evil 5 — Fase 6
+ * Redesign editorial e operacional. Todo o escopo depende simultaneamente da
+ * rota RE5 e do marcador de página para não atingir outros guias.
+ */
+
+body[data-re5-phase6="true"] {
+  --re5-bg: #071018;
+  --re5-surface: #0d1721;
+  --re5-surface-raised: #111d28;
+  --re5-surface-soft: #15222d;
+  --re5-line: rgba(203, 213, 225, .14);
+  --re5-line-strong: rgba(203, 213, 225, .24);
+  --re5-text: #f4f7f9;
+  --re5-muted: #a9b4bf;
+  --re5-accent: #5eead4;
+  --re5-accent-soft: rgba(94, 234, 212, .11);
+  --re5-info: #7dd3fc;
+  --re5-warning: #fbbf24;
+  --re5-critical: #fb7185;
+  color: var(--re5-text);
+  background: var(--re5-bg);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 {
+  --platinum-accent: var(--re5-accent);
+  --guide-anchor-offset: calc(var(--guide-topbar-offset, var(--atlas-sticky-offset, 88px)) + var(--guide-tabs-height, 64px) + 18px);
+  color: var(--re5-text);
+}
+
+html.re5-js body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-re5-collapsed="true"]:not([hidden]) {
+  display: block;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(p, li, dd) {
+  line-height: 1.62;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(h2, h3, h4) {
+  text-wrap: balance;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 h2 {
+  color: var(--re5-text);
+  font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+  font-weight: 850;
+  letter-spacing: -.025em;
+  line-height: 1.16;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 h3 {
+  color: var(--re5-text);
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-section-kicker,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-eyebrow {
+  color: var(--re5-accent);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-panel {
+  border-color: var(--re5-line);
+  border-radius: 14px;
+  background: var(--re5-surface);
+  box-shadow: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-panel--support {
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-panel--quiet {
+  background: transparent;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(.atlas-btn, .atlas-text-action, .atlas-guide-layer-nav__button, .atlas-section-toggle, .atlas-re5-stage-toggle, a) {
+  transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease, opacity 150ms ease;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(button, a, input, summary):focus-visible {
+  outline: 3px solid var(--re5-info);
+  outline-offset: 3px;
+}
+
+/* Hero compacto */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero {
+  padding: 22px;
+  overflow: clip;
+  border-color: rgba(94, 234, 212, .2);
+  background:
+    linear-gradient(115deg, rgba(94, 234, 212, .055), transparent 38%),
+    var(--re5-surface);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__layout {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-cover--hero {
+  width: 132px;
+  min-width: 132px;
+  aspect-ratio: 2 / 3;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__body {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, .52fr);
+  align-items: end;
+  gap: 18px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero h1 {
+  max-width: 16ch;
+  margin-top: 4px;
+  color: var(--re5-text);
+  font-size: clamp(2.1rem, 4.2vw, 3.45rem);
+  font-weight: 900;
+  letter-spacing: -.05em;
+  line-height: .98;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__platform {
+  margin-top: 8px;
+  color: var(--re5-muted);
+  font-size: .83rem;
+  font-weight: 750;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__scope-copy {
+  max-width: 48ch;
+  color: var(--re5-muted);
+  font-size: .94rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__summary {
+  margin: 0;
+  max-width: 92ch;
+  color: var(--re5-muted);
+  font-size: .78rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--re5-line);
+  border-radius: 10px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 12px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope > div + div {
+  border-left: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope dt {
+  color: var(--re5-accent);
+  font-size: .7rem;
+  font-weight: 850;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope dd {
+  color: var(--re5-muted);
+  font-size: .86rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope dd strong {
+  color: var(--re5-text);
+  font-size: 1.05rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__facts {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--re5-line);
+  border-radius: 10px;
+  background: var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__fact {
+  min-width: 0;
+  padding: 9px 10px;
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__fact dt {
+  color: #8996a3;
+  font-size: .63rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__fact dd {
+  margin-top: 3px;
+  color: var(--re5-text);
+  font-size: .78rem;
+  font-weight: 760;
+  line-height: 1.28;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust--authority {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust__authority {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 14px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust__authority > p {
+  flex: 1 1 360px;
+  margin: 0;
+  color: var(--re5-muted);
+  font-size: .78rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust__meta {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  gap: 5px 14px;
+  color: var(--re5-muted);
+  font-size: .72rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust__method-link {
+  min-height: 0;
+  color: var(--re5-accent);
+  font-size: .75rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__action-row,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__main-actions,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__utility-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__action-row {
+  justify-content: space-between;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__main-actions .atlas-btn {
+  min-width: 180px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-text-action {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 6px 8px;
+  border: 0;
+  color: var(--re5-muted);
+  background: transparent;
+  font-size: .82rem;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-text-action:hover {
+  color: var(--re5-accent);
+  text-decoration-color: currentColor;
+}
+
+/* Navegação principal */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideTabsSlot {
+  z-index: 40;
+  width: min(100%, 1180px);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav {
+  gap: 0;
+  padding: 5px 8px;
+  border-color: var(--re5-line);
+  border-radius: 12px;
+  background: rgba(7, 16, 24, .96);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+  backdrop-filter: blur(12px);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--re5-muted);
+  background: transparent;
+  white-space: nowrap;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button + .atlas-guide-layer-nav__button::before {
+  content: '';
+  position: absolute;
+  inset: 12px auto 12px 0;
+  width: 1px;
+  background: var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button.is-active {
+  color: var(--re5-text);
+  background: var(--re5-accent-soft);
+  box-shadow: inset 0 -3px 0 var(--re5-accent);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button.is-active::after {
+  content: '•';
+  margin-left: 2px;
+  color: var(--re5-accent);
+  font-size: 1rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideContent,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-flow {
+  width: min(100%, 1180px);
+  max-width: 1180px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideDecisionStack:empty,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #sidebarInfo:empty,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideSectionIndexSlot:empty,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideFaqSlot:empty,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideFeedbackSlot:empty {
+  display: none;
+}
+
+@media (min-width: 1280px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 > :is(#guideContent, #guideTabsSlot) {
+    grid-column: 1;
+  }
+}
+
+/* Resumo orientado a execução */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary {
+  display: grid;
+  gap: 20px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary > .atlas-panel,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(#guideRoadmapPanel, #guideChapterRoutePanel, #guideProfessionalAiPanel, #guideFarmRoutesPanel, #guideCommonMythsPanel, #guideChecklistPanel, #guidePlatinumExtrasPanel, #guideDlcCompletionPanel) {
+  padding: clamp(18px, 2.6vw, 30px) !important;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-section-head p,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary > .atlas-panel > p {
+  max-width: 72ch;
+  margin-top: 8px;
+  color: var(--re5-muted);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 20px;
+  border-top: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid > div {
+  padding: 14px 16px 14px 0;
+  border-bottom: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid > div:nth-child(even) {
+  padding-left: 16px;
+  border-left: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid dt {
+  color: #8794a1;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid dd {
+  margin-top: 4px;
+  color: var(--re5-text);
+  font-size: .9rem;
+  font-weight: 680;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-next-action {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 22px;
+  border-left: 4px solid var(--re5-accent);
+  background: linear-gradient(90deg, var(--re5-accent-soft), transparent 46%), var(--re5-surface);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-next-action p {
+  max-width: 68ch;
+  margin-top: 7px;
+  color: var(--re5-muted);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route__list {
+  margin-top: 20px;
+  border-top: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route__list > li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 2px;
+  border-bottom: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route__number {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--re5-line-strong);
+  border-radius: 50%;
+  color: var(--re5-accent);
+  font-size: .8rem;
+  font-weight: 850;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route h3 {
+  font-size: .98rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route p {
+  max-width: 70ch;
+  margin-top: 2px;
+  color: var(--re5-muted);
+  font-size: .82rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-state {
+  min-width: 82px;
+  color: var(--re5-muted);
+  font-size: .72rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-roadmap-summary-stage].is-complete .atlas-re5-quick-route__number,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-roadmap-summary-stage].is-complete .atlas-re5-state {
+  color: #86efac;
+  border-color: rgba(134, 239, 172, .38);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-essential-alerts__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 22px;
+  margin-top: 18px;
+  border-top: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-alert {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-alert h3 {
+  padding-left: 11px;
+  border-left: 3px solid var(--re5-info);
+  font-size: .98rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-alert--warning h3 {
+  border-left-color: var(--re5-warning);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-alert--online h3 {
+  border-left-color: var(--re5-accent);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-alert p {
+  margin-top: 7px;
+  color: var(--re5-muted);
+  font-size: .86rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-alert a,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-related-link,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item > a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 7px;
+  color: var(--re5-accent);
+  font-size: .8rem;
+  font-weight: 780;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid var(--re5-line);
+  border-radius: 10px;
+  background: var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid button {
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 17px;
+  border: 0;
+  color: var(--re5-text);
+  background: var(--re5-surface-raised);
+  text-align: left;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid button:hover {
+  background: var(--re5-accent-soft);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid button > span {
+  color: var(--re5-accent);
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid strong {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid small {
+  margin-top: 6px;
+  color: var(--re5-muted);
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary-progress {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary-progress p {
+  margin-top: 5px;
+  color: var(--re5-muted);
+  font-size: .84rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary-progress .atlas-sidebar-progress {
+  height: 7px;
+  margin-top: 12px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary-progress nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+/* Roadmap e capítulos */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-roadmap-index {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 16px;
+  margin: -4px 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-roadmap-index strong {
+  color: var(--re5-text);
+  font-size: .76rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-roadmap-index a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--re5-muted);
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-panel > .atlas-section-head .atlas-section-toggle {
+  display: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-timeline {
+  margin-top: 24px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step {
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 16px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__body {
+  padding: 0 0 26px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step:not(:last-child)::after {
+  background: var(--re5-line-strong);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__marker {
+  border-color: var(--re5-line-strong);
+  background: var(--re5-surface-raised);
+  box-shadow: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step.is-complete .atlas-roadmap-step__marker {
+  border-color: #86efac;
+  color: #86efac;
+  background: rgba(22, 101, 52, .22);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__head-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-stage-toggle {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--re5-line);
+  border-radius: 8px;
+  color: var(--re5-muted);
+  background: transparent;
+  font-size: .76rem;
+  font-weight: 750;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-stage-toggle[aria-pressed="true"] {
+  border-color: rgba(134, 239, 172, .35);
+  color: #86efac;
+  background: rgba(22, 101, 52, .16);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__when,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__objective {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 12px;
+  max-width: 78ch;
+  margin-top: 12px;
+  color: var(--re5-muted);
+  font-size: .88rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__when strong,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__objective > span {
+  color: #8996a3;
+  font-size: .7rem;
+  font-weight: 820;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel > .space-y-3,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideProfessionalAiPanel > .space-y-3,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guidePlatinumExtrasPanel > .space-y-3,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideDlcCompletionPanel > .space-y-3 {
+  margin-top: 20px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel > .space-y-3 > article,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideProfessionalAiPanel > .space-y-3 > article,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guidePlatinumExtrasPanel > .space-y-3 > article {
+  padding: 0 !important;
+  overflow: clip;
+  border-color: var(--re5-line);
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel .atlas-section-toggle,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideProfessionalAiPanel .atlas-section-toggle,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guidePlatinumExtrasPanel .atlas-section-toggle {
+  width: 100%;
+  min-height: 58px;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel [data-guide-section-content],
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideProfessionalAiPanel [data-guide-section-content],
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guidePlatinumExtrasPanel [data-guide-section-content] {
+  padding: 0 16px 16px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-chapter-heading {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-chapter-heading > strong {
+  font-size: .96rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-chapter-heading small {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 14px;
+  color: var(--re5-muted);
+  font-size: .72rem;
+  font-weight: 650;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-chapter-heading .is-warning {
+  color: var(--re5-warning);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-re5-chapter].is-complete [data-chapter-state] {
+  color: #86efac;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-chapter-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2px 0 10px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChapterRoutePanel [data-guide-section-content] .atlas-panel--quiet {
+  padding: 12px !important;
+  border: 0;
+  border-left: 2px solid var(--re5-line-strong);
+  border-radius: 0;
+}
+
+/* Checklist como ferramenta */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideTab-checklist {
+  gap: 12px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChecklistPanel {
+  display: grid;
+  grid-template-columns: minmax(220px, .7fr) minmax(0, 1.8fr);
+  align-items: end;
+  gap: 12px 20px;
+  background: rgba(13, 23, 33, .98);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-head {
+  display: contents;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-title h2 {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-head__aside {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-density-toggle {
+  flex: 0 0 auto;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-toolbar {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-search,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-search .atlas-input {
+  width: 100%;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-filter-drawer,
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-filter-secondary {
+  grid-column: 1 / -1;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-filter-drawer > summary {
+  display: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-filter-primary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-filter-group {
+  min-width: 0;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .filter-btn.atlas-pill {
+  min-height: 38px;
+  padding: 6px 10px;
+  border-color: var(--re5-line);
+  border-radius: 8px;
+  color: var(--re5-muted);
+  background: transparent;
+  font-size: .74rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .filter-btn.atlas-pill-active {
+  border-color: rgba(94, 234, 212, .38);
+  color: var(--re5-text);
+  background: var(--re5-accent-soft);
+  box-shadow: inset 0 -2px 0 var(--re5-accent);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideResults {
+  grid-column: 1 / -1;
+  min-height: 20px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #trophyList {
+  display: grid;
+  gap: 8px !important;
+  padding-right: 0;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card {
+  padding: 0;
+  overflow: clip;
+  border-color: var(--re5-line);
+  border-radius: 10px;
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__layout {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__headline {
+  align-items: center;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card h3 {
+  font-size: .94rem;
+  line-height: 1.28;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__title-translation {
+  margin-top: 2px;
+  font-size: .72rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__meta {
+  gap: 6px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(.atlas-trophy-type, .atlas-trophy-state, .atlas-risk-chip) {
+  border-radius: 6px;
+  font-size: .68rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-risk-list {
+  margin-top: 7px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-details {
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-description {
+  max-width: 74ch;
+  color: var(--re5-muted);
+  font-size: .82rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-details-toggle {
+  min-height: 40px;
+  margin-top: 5px;
+  padding-inline: 8px;
+  border: 0;
+  color: var(--re5-muted);
+  background: transparent;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__actions {
+  align-self: center;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-trophy-toggle {
+  min-width: 104px;
+  min-height: 44px;
+  padding: 7px 10px;
+  border-color: var(--re5-line-strong);
+  color: var(--re5-muted);
+  background: transparent;
+  font-size: .75rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card.completed {
+  border-color: rgba(134, 239, 172, .22);
+  background: rgba(22, 101, 52, .08);
+  opacity: .8;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card.completed .atlas-re5-trophy-toggle {
+  border-color: rgba(134, 239, 172, .34);
+  color: #86efac;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-type="Platina"] {
+  border-left: 3px solid #d8b4fe;
+}
+
+/* Extras */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extras-tools {
+  display: grid;
+  grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+  gap: 12px 20px;
+  padding: 16px;
+  border: 1px solid var(--re5-line);
+  border-radius: 10px;
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extras-search {
+  display: grid;
+  gap: 6px;
+  color: var(--re5-muted);
+  font-size: .75rem;
+  font-weight: 760;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extras-tools nav {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extras-tools nav a {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--re5-muted);
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #extrasSearchStatus {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extra-heading {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extra-heading strong {
+  color: var(--re5-text);
+  font-size: .96rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extra-heading small {
+  max-width: 72ch;
+  overflow: hidden;
+  color: var(--re5-muted);
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-category-progress {
+  flex: 0 0 auto;
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  color: var(--re5-muted);
+  font-size: .68rem;
+  font-weight: 750;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-platinum-extra-item] {
+  padding: 12px 2px !important;
+  border: 0;
+  border-bottom: 1px solid var(--re5-line);
+  border-radius: 0;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-platinum-extra-item] > label {
+  color: var(--re5-text);
+  font-size: .86rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-platinum-extra-item] .text-sm {
+  max-width: 76ch;
+  color: var(--re5-muted);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 [data-platinum-extra-check] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--re5-accent);
+}
+
+/* DLC */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid rgba(94, 234, 212, .24);
+  border-radius: 10px;
+  background: var(--re5-accent-soft);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope > div {
+  padding: 16px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope > div + div {
+  border-left: 1px solid rgba(94, 234, 212, .2);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope span {
+  display: block;
+  color: var(--re5-accent);
+  font-size: .7rem;
+  font-weight: 850;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--re5-text);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope p {
+  margin-top: 5px;
+  color: var(--re5-muted);
+  font-size: .8rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope > p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 11px 16px;
+  border-top: 1px solid rgba(94, 234, 212, .2);
+  color: var(--re5-text);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-package {
+  padding: 17px !important;
+  border-top: 3px solid var(--re5-line-strong);
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-package--versus {
+  border-top-color: var(--re5-warning);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-package__progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-block: 1px solid var(--re5-line);
+  color: var(--re5-muted);
+  font-size: .74rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideDlcCompletionPanel > .space-y-3 > article {
+  padding: 18px !important;
+  border-color: var(--re5-line);
+  background: var(--re5-surface-raised);
+}
+
+/* Alertas */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention__count {
+  color: var(--re5-muted);
+  font-size: .8rem;
+  font-weight: 750;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention__groups {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group {
+  overflow: clip;
+  border: 1px solid var(--re5-line);
+  border-left: 4px solid var(--re5-line-strong);
+  border-radius: 10px;
+  background: var(--re5-surface-raised);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group--critical {
+  border-left-color: var(--re5-critical);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group--important {
+  border-left-color: var(--re5-warning);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group summary {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 15px;
+  cursor: pointer;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group summary > span:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group summary small {
+  color: var(--re5-muted);
+  font-size: .74rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 20px;
+  padding: 0 15px 15px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item {
+  padding: 16px 0;
+  border-top: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item h3 {
+  font-size: 1rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item dl {
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item dl > div {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 9px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item dt {
+  color: #8996a3;
+  font-size: .68rem;
+  font-weight: 820;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item dd {
+  color: var(--re5-muted);
+  font-size: .8rem;
+}
+
+/* FAQ e metodologia */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-faq-list {
+  display: grid;
+  gap: 0;
+  margin-top: 18px;
+  border-top: 1px solid var(--re5-line);
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-faq-row {
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--re5-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-faq-toggle {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 2px;
+  border: 0;
+  color: var(--re5-text);
+  background: transparent;
+  text-align: left;
+  font-weight: 760;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-faq-answer {
+  max-width: 74ch;
+  padding: 0 2px 14px;
+  color: var(--re5-muted);
+  font-size: .86rem;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__grid {
+  gap: 0 24px;
+  margin-top: 18px;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__card {
+  padding: 16px 0;
+  border: 0;
+  border-top: 1px solid var(--re5-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+@media (min-width: 900px) {
+  html.re5-tab-checklist body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChecklistPanel {
+    position: sticky;
+    top: calc(var(--guide-topbar-offset, var(--atlas-sticky-offset, 88px)) + var(--guide-tabs-height, 64px) + 8px);
+    z-index: 30;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .28);
+  }
+}
+
+@media (max-width: 1100px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__layout {
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-cover--hero {
+    width: 108px;
+    min-width: 108px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__facts,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust--authority,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__action-row {
+    grid-column: 1 / -1;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-essential-alerts__grid,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-group__items {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-paths__grid button {
+    min-height: 104px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #guideChecklistPanel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-head__aside {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 900px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-cover--hero {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    position: relative;
+    inset: auto;
+    height: 162px !important;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__body {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 {
+    --guide-tabs-height: 64px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero {
+    padding: 14px !important;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav {
+    justify-content: flex-start;
+    gap: 2px;
+    padding-right: 40px;
+    border-radius: 10px;
+    scroll-snap-type: x proximity;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button {
+    flex: 0 0 auto;
+    min-width: max-content;
+    scroll-snap-align: start;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button + .atlas-guide-layer-nav__button::before {
+    display: none;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary > .atlas-panel,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(#guideRoadmapPanel, #guideChapterRoutePanel, #guideProfessionalAiPanel, #guideFarmRoutesPanel, #guideCommonMythsPanel, #guideChecklistPanel, #guidePlatinumExtrasPanel, #guideDlcCompletionPanel) {
+    padding: 16px !important;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-next-action,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary-progress {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-summary-progress nav {
+    justify-content: flex-start;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route__list > li {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 9px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-quick-route__list .atlas-text-action {
+    grid-column: 2 / -1;
+    min-height: 38px;
+    justify-self: start;
+    padding: 2px 0;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-roadmap-index {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step {
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__head {
+    display: grid;
+    gap: 10px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__head-actions {
+    justify-content: flex-start;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__when,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-roadmap-step__objective {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 3px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-search {
+    grid-column: 1 / -1;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-filter-drawer {
+    grid-column: 1;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-filter-drawer > summary {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 11px;
+    border: 1px solid var(--re5-line-strong);
+    border-radius: 8px;
+    color: var(--re5-text);
+    background: var(--re5-surface-raised);
+    cursor: pointer;
+    font-size: .82rem;
+    font-weight: 780;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-filter-drawer .atlas-filter-primary {
+    display: grid;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid var(--re5-line);
+    border-radius: 8px;
+    background: var(--re5-surface-raised);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-filter-secondary {
+    grid-column: 1 / -1;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__layout {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 11px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__headline {
+    display: grid;
+    gap: 8px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__meta {
+    justify-content: flex-start;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-trophy-toggle {
+    min-width: 44px;
+    width: 44px;
+    padding: 6px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-trophy-toggle > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extras-tools {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 12px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extras-tools nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 #extrasSearchStatus {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__layout {
+    grid-template-columns: minmax(0, 1fr) 72px;
+    gap: 10px 14px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-cover--hero {
+    grid-column: 2;
+    grid-row: 1;
+    width: 72px;
+    min-width: 72px;
+    border-radius: 8px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__body {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 72px;
+    gap: 12px 14px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__heading {
+    grid-column: 1;
+    padding-right: 2px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__scope-copy {
+    display: none;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero h1 {
+    font-size: clamp(1.9rem, 10vw, 2.55rem);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__facts,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-guide-hero__summary,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust--authority,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__action-row {
+    grid-column: 1 / -1;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-scope > div + div {
+    border-top: 1px solid var(--re5-line);
+    border-left: 0;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust__authority > p {
+    flex-basis: 100%;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero .atlas-editorial-trust__meta {
+    display: grid;
+    gap: 4px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__main-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    width: 100%;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__main-actions .atlas-btn {
+    min-width: 0;
+    padding-inline: 8px;
+    font-size: .76rem;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__utility-actions {
+    width: 100%;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-overview__grid > div:nth-child(even),
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope > div + div {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope > div {
+    padding: 14px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-dlc-scope > div + div {
+    padding-left: 14px;
+    border-top: 1px solid rgba(94, 234, 212, .2);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-extra-heading small {
+    max-width: 36ch;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-category-progress {
+    display: none;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-attention-item dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__main-actions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__utility-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-hero__utility-actions .atlas-text-action {
+    padding-inline: 2px;
+    font-size: .74rem;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-checklist-head__aside {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-density-toggle {
+    width: 100%;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-density-option {
+    flex: 1 1 0;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__layout {
+    grid-template-columns: minmax(0, 1fr) 44px;
+    gap: 8px;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-trophy-card__actions {
+    width: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 *,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 *::before,
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 :is(.atlas-panel, .atlas-re5-scope, .atlas-re5-hero__facts, .atlas-re5-attention-group, .atlas-trophy-card) {
+    border: 1px solid CanvasText;
+  }
+
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button.is-active {
+    border-bottom: 3px solid Highlight;
+  }
+}
+
+/* Fase 8: slots manuais de teste. Nenhum anúncio real é carregado por este CSS. */
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-ad-slot {
+  width: min(100%, 970px);
+  min-height: 160px;
+  margin: 28px auto;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  border: 1px dashed rgba(148, 163, 184, 0.55);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.72);
+  color: rgba(226, 232, 240, 0.82);
+  text-align: center;
+  contain: layout paint;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-ad-slot[hidden] {
+  display: none;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-ad-slot__label {
+  color: #f8fafc;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-ad-slot__note {
+  max-width: 56ch;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  body[data-re5-phase6="true"] #view-guide.atlas-guide--resident-evil-5 .atlas-re5-ad-slot {
+    min-height: 112px;
+    margin: 20px auto;
+    padding: 18px 14px;
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "capturedAt": "2026-07-19",
+  "lighthouseVersion": "12.8.2",
+  "url": "http://127.0.0.1:4319/jogo/resident-evil-5",
+  "runsPerProfile": 3,
+  "mobile": {
+    "files": [
+      "local/mobile-content-visibility-probe.json",
+      "local/mobile-final-2.json",
+      "local/mobile-final-3.json"
+    ],
+    "runs": [
+      { "performance": 99, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcpMs": 1757.416, "cls": 0.001627, "tbtMs": 0, "speedIndexMs": 2706.296 },
+      { "performance": 94, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcpMs": 2836.054, "cls": 0.00004, "tbtMs": 0, "speedIndexMs": 2574.279 },
+      { "performance": 97, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcpMs": 2458.894, "cls": 0.00004, "tbtMs": 0, "speedIndexMs": 2144.179 }
+    ],
+    "median": {
+      "performance": 97,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 2458.894,
+      "cls": 0.00004,
+      "tbtMs": 0,
+      "speedIndexMs": 2574.279,
+      "requests": 10,
+      "transferBytes": 455344,
+      "resourceBytes": 1331070,
+      "domNodes": 8589
+    }
+  },
+  "desktop": {
+    "files": [
+      "local/desktop-final-1.json",
+      "local/desktop-final-2.json",
+      "local/desktop-final-3.json"
+    ],
+    "runs": [
+      { "performance": 99, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcpMs": 906.164, "cls": 0.001729, "tbtMs": 0, "speedIndexMs": 1051.351 },
+      { "performance": 98, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcpMs": 932.076, "cls": 0.001729, "tbtMs": 0, "speedIndexMs": 1101.807 },
+      { "performance": 99, "accessibility": 100, "bestPractices": 100, "seo": 100, "lcpMs": 888.72, "cls": 0.001729, "tbtMs": 0, "speedIndexMs": 1055.248 }
+    ],
+    "median": {
+      "performance": 99,
+      "accessibility": 100,
+      "bestPractices": 100,
+      "seo": 100,
+      "lcpMs": 906.164,
+      "cls": 0.001729,
+      "tbtMs": 0,
+      "speedIndexMs": 1055.248,
+      "requests": 10,
+      "transferBytes": 455349,
+      "resourceBytes": 1331070,
+      "domNodes": 8589
+    }
+  },
+  "medianBytesByType": {
+    "Document": { "requests": 1, "transferBytes": 91462, "resourceBytes": 680241 },
+    "Stylesheet": { "requests": 2, "transferBytes": 56773, "resourceBytes": 327768 },
+    "Image": { "requests": 2, "transferBytes": 128814, "resourceBytes": 127258 },
+    "Script": { "requests": 1, "transferBytes": 9776, "resourceBytes": 31986 },
+    "Manifest": { "requests": 1, "transferBytes": 2077, "resourceBytes": 689 },
+    "Font": { "requests": 1, "transferBytes": 127640, "resourceBytes": 126828 },
+    "Other": { "requests": 2, "transferBytes": 38889, "resourceBytes": 36300 }
+  },
+  "lcpElement": {
+    "selector": "section.atlas-panel > div.atlas-guide-hero__layout > div.atlas-guide-hero__body > h1",
+    "label": "Resident Evil 5 — Guia de platina e troféus",
+    "type": "text"
+  },
+  "fieldInp": "sem dados de campo disponíveis",
+  "notes": [
+    "Os seis relatórios selecionados possuem métricas LCP válidas.",
+    "O Lighthouse no Windows por vezes terminou com EPERM apenas durante a remoção do perfil temporário; os JSONs foram validados após cada execução.",
+    "O DOM permanece completo por exigência editorial e progressive enhancement; content-visibility adia somente layout/pintura fora da viewport."
+  ]
+}

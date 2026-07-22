@@ -293,7 +293,14 @@ window.UI = (() => {
       : 'Guias de platina em português com roadmap, checklist, filtros por risco e progresso salvo para escolher sua próxima platina.';
     const canonical = game?.slug ? `${publicOrigin}/jogo/${game.slug}` : `${publicOrigin}/`;
     const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
-    const image = isResidentEvil2
+    const isResidentEvil5 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
+    const re5Authority = isResidentEvil5 && game?.editorialAuthority && typeof game.editorialAuthority === 'object'
+      ? game.editorialAuthority
+      : {};
+    const re5SocialImage = re5Authority?.socialImage || {};
+    const image = isResidentEvil5 && re5SocialImage.src
+      ? `${publicOrigin}${re5SocialImage.src}`
+      : isResidentEvil2
       ? `${publicOrigin}/assets/brand/atlasachievement-og.png`
       : !game?.image
       ? `${publicOrigin}/assets/brand/atlasachievement-og.png`
@@ -301,9 +308,91 @@ window.UI = (() => {
         ? game.image
         : `${publicOrigin}${game.image}`;
     const faqItems = game ? buildContextualFaq(game, { trophies: game.trophies || [], roadmap: game.roadmap || [] }) : [];
-    const structuredData = game
+    const defaultStructuredData = game
       ? { '@context': 'https://schema.org', '@graph': [{ '@type': 'VideoGame', name: game.name, image, description, url: canonical, additionalProperty: [{ '@type': 'PropertyValue', name: 'Status editorial', value: statusBadge?.label || 'Publicado' }, { '@type': 'PropertyValue', name: 'Cobertura', value: game.coverage_level || 'partial' }, { '@type': 'PropertyValue', name: 'Verificado manualmente', value: game.is_verified ? 'sim' : 'não' }] }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Início', item: `${publicOrigin}/` }, { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${publicOrigin}/catalogo` }, { '@type': 'ListItem', position: 3, name: game.name, item: canonical }] }, ...(faqItems.length ? [{ '@type': 'FAQPage', url: canonical, mainEntity: faqItems.map(item => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) }] : [])] }
       : { '@context': 'https://schema.org', '@type': 'WebSite', name: 'AtlasAchievement', description, url: canonical };
+    const re5OrganizationId = `${publicOrigin}/#organization`;
+    const re5BreadcrumbSchema = {
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumbs`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${publicOrigin}/` },
+        { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${publicOrigin}/catalogo` },
+        { '@type': 'ListItem', position: 3, name: game?.name, item: canonical }
+      ]
+    };
+    const structuredData = isResidentEvil5
+      ? {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebPage',
+              '@id': canonical,
+              name: title,
+              url: canonical,
+              description,
+              image,
+              inLanguage: 'pt-BR',
+              mainEntity: { '@id': `${canonical}#article` },
+              breadcrumb: { '@id': `${canonical}#breadcrumbs` },
+              isPartOf: { '@type': 'WebSite', name: 'AtlasAchievement', url: `${publicOrigin}/` },
+              publisher: { '@id': re5OrganizationId }
+            },
+            {
+              '@type': 'Article',
+              '@id': `${canonical}#article`,
+              headline: 'Resident Evil 5 — Guia de platina e troféus',
+              description,
+              url: canonical,
+              image: {
+                '@type': 'ImageObject',
+                url: image,
+                width: Number(re5SocialImage.width || 1200),
+                height: Number(re5SocialImage.height || 630)
+              },
+              dateModified: String(re5Authority.reviewedAt || game?.last_reviewed_at || '').slice(0, 10),
+              inLanguage: 'pt-BR',
+              mainEntityOfPage: { '@id': canonical },
+              author: {
+                '@type': 'Organization',
+                '@id': `${publicOrigin}/#editorial-team`,
+                name: re5Authority.authorName || 'Equipe Editorial AtlasAchievement',
+                url: `${publicOrigin}${re5Authority.authorUrl || '/sobre'}`
+              },
+              publisher: { '@id': re5OrganizationId },
+              about: { '@id': `${canonical}#game` },
+              isAccessibleForFree: true
+            },
+            {
+              '@type': 'VideoGame',
+              '@id': `${canonical}#game`,
+              name: game?.name,
+              description,
+              image,
+              url: canonical,
+              gamePlatform: 'PlayStation 4'
+            },
+            {
+              '@type': 'Organization',
+              '@id': re5OrganizationId,
+              name: 'AtlasAchievement',
+              url: `${publicOrigin}/`,
+              logo: { '@type': 'ImageObject', url: `${publicOrigin}/assets/brand/atlasachievement-logo.png` }
+            },
+            re5BreadcrumbSchema,
+            {
+              '@type': 'FAQPage',
+              '@id': `${canonical}#faq`,
+              url: canonical,
+              mainEntity: faqItems.map(item => ({
+                '@type': 'Question',
+                name: item.question,
+                acceptedAnswer: { '@type': 'Answer', text: item.answer }
+              }))
+            }
+          ]
+        }
+      : defaultStructuredData;
 
     document.title = title;
 
@@ -337,10 +426,17 @@ window.UI = (() => {
     ensureMeta('meta[property="og:type"]', 'content', game ? 'article' : 'website');
     ensureMeta('meta[property="og:url"]', 'content', canonical);
     ensureMeta('meta[property="og:image"]', 'content', image);
+    if (isResidentEvil5) {
+      ensureMeta('meta[property="og:locale"]', 'content', 'pt_BR');
+      ensureMeta('meta[property="og:image:width"]', 'content', String(re5SocialImage.width || 1200));
+      ensureMeta('meta[property="og:image:height"]', 'content', String(re5SocialImage.height || 630));
+      ensureMeta('meta[property="og:image:alt"]', 'content', re5SocialImage.alt || title);
+    }
     ensureMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     ensureMeta('meta[name="twitter:title"]', 'content', title);
     ensureMeta('meta[name="twitter:description"]', 'content', description);
     ensureMeta('meta[name="twitter:image"]', 'content', image);
+    if (isResidentEvil5) ensureMeta('meta[name="twitter:image:alt"]', 'content', re5SocialImage.alt || title);
 
     const guideBreadcrumbs = qs('#guideBreadcrumbs');
     if (guideBreadcrumbs) guideBreadcrumbs.innerHTML = game ? buildBreadcrumbsHtml([{ label: 'Início', href: '/' }, { label: 'Catálogo', href: '/catalogo' }, { label: game.name }]) : '';

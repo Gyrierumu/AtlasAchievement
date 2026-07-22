@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T20:06:10.704Z",
+  "generatedAt": "2026-07-18T22:14:04.961Z",
   "url": "http://127.0.0.1:3210/jogo/resident-evil-5",
   "ssrVisualCount": 5,
   "apiVisualCount": 5,
@@ -16,51 +16,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": true,
+            "minTextCssPx": 16
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": true,
+            "minTextCssPx": 16
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       },
@@ -74,51 +121,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": true,
+            "minTextCssPx": 16
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": true,
+            "minTextCssPx": 16
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       },
@@ -132,51 +226,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": true,
+            "minTextCssPx": 16
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": true,
+            "minTextCssPx": 16
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 232,
+            "renderedHeight": 275.5,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 5.8
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 232,
+            "renderedHeight": 275.5,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 232,
+            "renderedHeight": 326.25,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       }
@@ -193,51 +334,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": true,
+            "minTextCssPx": 16
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": true,
+            "minTextCssPx": 16
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       },
@@ -251,51 +439,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": true,
+            "minTextCssPx": 16
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": true,
+            "minTextCssPx": 16
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       },
@@ -309,51 +544,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": true,
+            "minTextCssPx": 16
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": true,
+            "minTextCssPx": 16
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 262,
+            "renderedHeight": 311.125,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 6.55
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 262,
+            "renderedHeight": 311.125,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
+            "renderedWidth": 262,
+            "renderedHeight": 368.4375,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "",
             "complete": false,
             "naturalWidth": 0,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       }
@@ -370,51 +652,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": false,
+            "minTextCssPx": 0
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
-            "complete": true,
-            "naturalWidth": 640,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
-            "complete": true,
-            "naturalWidth": 640,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       },
@@ -428,51 +757,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": false,
+            "minTextCssPx": 0
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/score-stars-route.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 571,
+            "renderedHeight": 1338.28125,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 14.28
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/agitator-triggers.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 571,
+            "renderedHeight": 936.796875,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 14.28
           }
         ]
       },
@@ -486,51 +862,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": false,
+            "minTextCssPx": 0
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 605,
+            "renderedHeight": 718.4375,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 15.13
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 605,
+            "renderedHeight": 718.4375,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 605,
+            "renderedHeight": 850.78125,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/score-stars-route.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/agitator-triggers.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       }
@@ -547,51 +970,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": false,
+            "minTextCssPx": 0
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/score-stars-route.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/agitator-triggers.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       },
@@ -605,51 +1075,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": false,
+            "minTextCssPx": 0
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 0,
+            "renderedHeight": 0,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/score-stars-route.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 640,
+            "renderedHeight": 1500,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 16
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/agitator-triggers.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 640,
+            "renderedHeight": 1050,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 16
           }
         ]
       },
@@ -663,51 +1180,98 @@
         "duplicateDocumentIds": [],
         "visualLinksKeyboardReachable": true,
         "reducedMotionSafe": true,
+        "mobileLayouts": [
+          {
+            "id": "re5-visual-bsaa-29-container",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-heart-of-africa",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-wesker-volcano",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-score-stars-route",
+            "visible": false,
+            "minTextCssPx": 0
+          },
+          {
+            "id": "re5-visual-agitator-triggers",
+            "visible": false,
+            "minTextCssPx": 0
+          }
+        ],
         "images": [
           {
             "id": "re5-visual-bsaa-29-container",
             "src": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/bsaa-29-container.svg",
             "complete": true,
             "naturalWidth": 640,
+            "renderedWidth": 640,
+            "renderedHeight": 760,
             "alt": "Vista lateral do jogador na plataforma lançando uma granada em arco para o contêiner aberto à esquerda, onde o BSAA Emblem 29 fica fora da linha de tiro direta.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 16
           },
           {
             "id": "re5-visual-heart-of-africa",
             "src": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 640,
+            "renderedHeight": 760,
             "alt": "Planta simplificada da Monarch Room com duas escadarias e o Heart of Africa marcado no centro entre elas, após causar dano suficiente a Wesker.",
             "width": "640",
-            "height": "760"
+            "height": "760",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-wesker-volcano",
             "src": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
-            "complete": true,
-            "naturalWidth": 640,
+            "currentSrc": "",
+            "complete": false,
+            "naturalWidth": 0,
+            "renderedWidth": 640,
+            "renderedHeight": 900,
             "alt": "Fluxo em quatro fases da luta final: Chris atrai Wesker, Sheva sobe com cobertura, Chris empurra a pedra para reunir a dupla e ambos atacam o núcleo antes do QTE final.",
             "width": "640",
-            "height": "900"
+            "height": "900",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-score-stars-route",
             "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/score-stars-route.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
             "width": "640",
-            "height": "1500"
+            "height": "1500",
+            "minInternalTextCssPx": 0
           },
           {
             "id": "re5-visual-agitator-triggers",
             "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+            "currentSrc": "http://127.0.0.1:3210/assets/guides/resident-evil-5/agitator-triggers.svg",
             "complete": true,
             "naturalWidth": 640,
-            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
+            "renderedWidth": 0,
+            "renderedHeight": 0,
+            "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
             "width": "640",
-            "height": "1050"
+            "height": "1050",
+            "minInternalTextCssPx": 0
           }
         ]
       }
@@ -716,63 +1280,51 @@
   "screenshots": [
     {
       "id": "re5-visual-score-stars-route",
+      "file": "360-score-stars.png",
+      "width": 230,
+      "height": 2896
+    },
+    {
+      "id": "re5-visual-agitator-triggers",
+      "file": "360-agitators.png",
+      "width": 230,
+      "height": 2596
+    },
+    {
+      "id": "re5-visual-score-stars-route",
       "file": "390-score-stars.png",
       "width": 260,
-      "height": 1310
+      "height": 2496
     },
     {
       "id": "re5-visual-agitator-triggers",
       "file": "390-agitators.png",
       "width": 260,
-      "height": 1150
+      "height": 2147
     },
     {
-      "id": "re5-visual-bsaa-29-container",
-      "file": "390-bsaa-29.png",
-      "width": 294,
-      "height": 884
+      "id": "re5-visual-score-stars-route",
+      "file": "768-score-stars.png",
+      "width": 619,
+      "height": 1951
     },
     {
-      "id": "re5-visual-heart-of-africa",
-      "file": "390-heart-of-africa.png",
-      "width": 294,
-      "height": 926
-    },
-    {
-      "id": "re5-visual-wesker-volcano",
-      "file": "390-wesker-volcano.png",
-      "width": 294,
-      "height": 1003
+      "id": "re5-visual-agitator-triggers",
+      "file": "768-agitators.png",
+      "width": 634,
+      "height": 1439
     },
     {
       "id": "re5-visual-score-stars-route",
       "file": "1280-score-stars.png",
       "width": 720,
-      "height": 2007
+      "height": 2072
     },
     {
       "id": "re5-visual-agitator-triggers",
       "file": "1280-agitators.png",
       "width": 720,
-      "height": 1426
-    },
-    {
-      "id": "re5-visual-bsaa-29-container",
-      "file": "1280-bsaa-29.png",
-      "width": 720,
-      "height": 1116
-    },
-    {
-      "id": "re5-visual-heart-of-africa",
-      "file": "1280-heart-of-africa.png",
-      "width": 720,
-      "height": 1116
-    },
-    {
-      "id": "re5-visual-wesker-volcano",
-      "file": "1280-wesker-volcano.png",
-      "width": 720,
-      "height": 1276
+      "height": 1528
     }
   ],
   "diagnostics": {

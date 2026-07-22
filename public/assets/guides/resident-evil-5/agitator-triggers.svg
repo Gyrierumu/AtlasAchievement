@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1050" width="640" height="1050" role="img" aria-labelledby="title desc">
   <title id="title">Rota e gatilhos dos três Agitator Majini</title>
-  <desc id="desc">Fluxo vertical de Desperate Escape: cinco grupos e Assist Jump no primeiro alvo, duas rocket turrets no segundo e bosses do elevador antes do fim do cronômetro no terceiro.</desc>
+  <desc id="desc">Fluxo vertical de Desperate Escape: cinco grupos e Assist Jump no primeiro alvo, rocket turrets até a cutscene no segundo e rota variável com referências práticas de 1:40 e 0:30 no terceiro.</desc>
   <rect width="640" height="1050" rx="24" fill="#0f172a"/>
   <rect x="20" y="20" width="600" height="100" rx="16" fill="#172033" stroke="#5eead4" stroke-width="2"/>
   <text x="44" y="58" fill="#f8fafc" font-family="Arial, sans-serif" font-size="25" font-weight="700">Desperate Escape — 3 Agitator Majini</text>
@@ -32,11 +32,12 @@
   <text x="64" y="542" fill="#fff" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">2</text>
   <text x="104" y="534" fill="#eff6ff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Communication Facility</text>
   <g font-family="Arial, sans-serif">
-    <rect x="104" y="568" width="130" height="54" rx="12" fill="#1e3a8a"/><text x="169" y="590" fill="#dbeafe" font-size="16" font-weight="700" text-anchor="middle">Rocket turret A</text><text x="169" y="611" fill="#bfdbfe" font-size="14" text-anchor="middle">fique nela</text>
-    <rect x="250" y="568" width="130" height="54" rx="12" fill="#1e3a8a"/><text x="315" y="590" fill="#dbeafe" font-size="16" font-weight="700" text-anchor="middle">Rocket turret B</text><text x="315" y="611" fill="#bfdbfe" font-size="14" text-anchor="middle">IA/coop</text>
+    <rect x="104" y="568" width="130" height="54" rx="12" fill="#1e3a8a"/><text x="169" y="590" fill="#dbeafe" font-size="16" font-weight="700" text-anchor="middle">Rocket turret A</text><text x="169" y="611" fill="#bfdbfe" font-size="16" text-anchor="middle">fique nela</text>
+    <rect x="250" y="568" width="130" height="54" rx="12" fill="#1e3a8a"/><text x="315" y="590" fill="#dbeafe" font-size="16" font-weight="700" text-anchor="middle">Rocket turret B</text><text x="315" y="611" fill="#bfdbfe" font-size="16" text-anchor="middle">IA/coop</text>
     <text x="394" y="602" fill="#94a3b8" font-size="24">→</text>
-    <rect x="430" y="568" width="138" height="54" rx="12" fill="#3f1d45"/><text x="499" y="590" fill="#fae8ff" font-size="15" font-weight="700" text-anchor="middle">2 duplas + cena</text><text x="499" y="611" fill="#f5d0fe" font-size="14" text-anchor="middle">rocket no grupo</text>
-    <text x="104" y="660" fill="#fde68a" font-size="16">Não atravesse a porta norte antes de confirmar a kill.</text>
+    <rect x="430" y="568" width="138" height="54" rx="12" fill="#3f1d45"/><text x="499" y="590" fill="#fae8ff" font-size="16" font-weight="700" text-anchor="middle">Elimine duplas</text><text x="499" y="611" fill="#f5d0fe" font-size="16" text-anchor="middle">até a cutscene</text>
+    <text x="104" y="650" fill="#fde68a" font-size="16">Use as rocket turrets e continue eliminando as duplas</text>
+    <text x="104" y="678" fill="#fde68a" font-size="16">até disparar a cutscene; confirme a kill antes de sair.</text>
   </g>
 
   <rect x="36" y="734" width="568" height="276" rx="18" fill="#321c24" stroke="#fb7185" stroke-width="2"/>
@@ -45,11 +46,11 @@
   <text x="104" y="776" fill="#fff1f2" font-family="Arial, sans-serif" font-size="22" font-weight="700">Landing Pad — 5:00</text>
   <g font-family="Arial, sans-serif">
     <rect x="104" y="812" width="464" height="54" rx="12" fill="#4c1d2b"/>
-    <text x="336" y="835" fill="#ffe4e6" font-size="17" font-weight="700" text-anchor="middle">Elevador → concentre cada boss → próxima saída</text>
-    <text x="336" y="857" fill="#fecdd3" font-size="15" text-anchor="middle">Gatilho usual após 4 kills; algumas rotas mostram após 3</text>
-    <rect x="104" y="886" width="214" height="56" rx="12" fill="#7f1d1d"/><text x="211" y="910" fill="#fee2e2" font-size="16" font-weight="700" text-anchor="middle">CUTSCENE + 2 Big Man</text><text x="211" y="932" fill="#fecaca" font-size="14" text-anchor="middle">Agitator saiu</text>
+    <text x="336" y="835" fill="#ffe4e6" font-size="16" font-weight="700" text-anchor="middle">Chegue rápido → elimine minibosses → vermelho perto de 1:40</text>
+    <text x="336" y="857" fill="#fecdd3" font-size="16" text-anchor="middle">Continue as kills → procure o Agitator perto de 0:30</text>
+    <rect x="104" y="886" width="214" height="56" rx="12" fill="#7f1d1d"/><text x="211" y="910" fill="#fee2e2" font-size="16" font-weight="700" text-anchor="middle">AGITATOR + 2 BIG MAN</text><text x="211" y="932" fill="#fecaca" font-size="16" text-anchor="middle">disposição variável</text>
     <text x="332" y="920" fill="#94a3b8" font-size="24">→</text>
-    <rect x="366" y="886" width="202" height="56" rx="12" fill="#78350f" stroke="#fbbf24" stroke-width="2"/><text x="467" y="910" fill="#fef3c7" font-size="16" font-weight="700" text-anchor="middle">Mate antes de 0:00</text><text x="467" y="932" fill="#fde68a" font-size="14" text-anchor="middle">flash se virar Cephalo</text>
-    <text x="104" y="978" fill="#fecdd3" font-size="16">O timer zerou com ele vivo? Nova run completa.</text>
+    <rect x="366" y="886" width="202" height="56" rx="12" fill="#78350f" stroke="#fbbf24" stroke-width="2"/><text x="467" y="910" fill="#fef3c7" font-size="16" font-weight="700" text-anchor="middle">Mate antes de 0:00</text><text x="467" y="932" fill="#fde68a" font-size="16" text-anchor="middle">flash se virar Cephalo</text>
+    <text x="104" y="978" fill="#fecdd3" font-size="16">1:40 e 0:30 são referências práticas; mate antes de zero.</text>
   </g>
 </svg>

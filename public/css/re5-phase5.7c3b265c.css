@@ -1,0 +1,145 @@
+/*
+ * Resident Evil 5 — Fase 5
+ * Progressive enhancement and WCAG safeguards only. Editorial presentation
+ * remains in guide.css and responsive.css.
+ */
+
+html.re5-js #view-guide.atlas-guide--resident-evil-5 [data-guide-tab-panel]:not(#guideTab-summary),
+html.re5-js #view-guide.atlas-guide--resident-evil-5 [data-re5-collapsed="true"] {
+  display: none;
+}
+
+html.re5-js.re5-tab-roadmap #view-guide.atlas-guide--resident-evil-5 #guideTab-summary,
+html.re5-js.re5-tab-checklist #view-guide.atlas-guide--resident-evil-5 #guideTab-summary,
+html.re5-js.re5-tab-extras #view-guide.atlas-guide--resident-evil-5 #guideTab-summary,
+html.re5-js.re5-tab-dlc #view-guide.atlas-guide--resident-evil-5 #guideTab-summary,
+html.re5-js.re5-tab-attention #view-guide.atlas-guide--resident-evil-5 #guideTab-summary {
+  display: none;
+}
+
+html.re5-js.re5-tab-roadmap #view-guide.atlas-guide--resident-evil-5 #guideTab-roadmap,
+html.re5-js.re5-tab-checklist #view-guide.atlas-guide--resident-evil-5 #guideTab-checklist,
+html.re5-js.re5-tab-extras #view-guide.atlas-guide--resident-evil-5 #guideTab-extras,
+html.re5-js.re5-tab-dlc #view-guide.atlas-guide--resident-evil-5 #guideTab-dlc,
+html.re5-js.re5-tab-attention #view-guide.atlas-guide--resident-evil-5 #guideTab-attention {
+  display: block;
+}
+
+#view-guide.atlas-guide--resident-evil-5 #guideContent {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 8000px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 [id],
+#view-guide.atlas-guide--resident-evil-5 [data-guide-tab-panel] {
+  scroll-margin-top: calc(var(--guide-tabs-height, 76px) + 112px);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button,
+#view-guide.atlas-guide--resident-evil-5 button,
+#view-guide.atlas-guide--resident-evil-5 .atlas-btn,
+body[data-re5-phase5="true"] .atlas-mobile-nav .atlas-nav-link,
+body[data-re5-phase5="true"] .atlas-header-actions button {
+  min-height: 44px;
+}
+
+body[data-re5-phase5="true"] :is(.fas, .fa-solid, .fa-regular) {
+  display: inline-block;
+  min-width: 1em;
+  text-align: center;
+}
+
+#view-guide.atlas-guide--resident-evil-5 :focus-visible,
+body[data-re5-phase5="true"] dialog :focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-storage-status {
+  margin-top: 0.75rem;
+  color: #fef3c7;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+body[data-re5-phase5="true"] .atlas-lite-dialog {
+  width: min(92vw, 32rem);
+  max-height: min(88vh, 48rem);
+  overflow: auto;
+  border: 1px solid rgba(148, 163, 184, 0.42);
+  border-radius: 1.25rem;
+  padding: 0;
+  color: #f8fafc;
+  background: #101827;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+body[data-re5-phase5="true"] .atlas-lite-dialog::backdrop {
+  background: rgba(2, 6, 23, 0.82);
+}
+
+body[data-re5-phase5="true"] .atlas-lite-dialog__body {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+body[data-re5-phase5="true"] .atlas-lite-dialog__head,
+body[data-re5-phase5="true"] .atlas-lite-dialog__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+body[data-re5-phase5="true"] .atlas-lite-dialog label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+body[data-re5-phase5="true"] .atlas-lite-dialog [role="status"] {
+  min-height: 1.5rem;
+}
+
+@media (max-width: 390px) {
+  #view-guide.atlas-guide--resident-evil-5 .atlas-guide-layer-nav__button,
+  #view-guide.atlas-guide--resident-evil-5 .atlas-btn,
+  #view-guide.atlas-guide--resident-evil-5 button {
+    min-width: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #view-guide.atlas-guide--resident-evil-5 *,
+  #view-guide.atlas-guide--resident-evil-5 *::before,
+  #view-guide.atlas-guide--resident-evil-5 *::after,
+  body[data-re5-phase5="true"] .atlas-back-to-top {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  #view-guide.atlas-guide--resident-evil-5 .atlas-panel,
+  #view-guide.atlas-guide--resident-evil-5 .atlas-pill,
+  #view-guide.atlas-guide--resident-evil-5 .atlas-btn {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media (forced-colors: active) {
+  #view-guide.atlas-guide--resident-evil-5 .atlas-panel,
+  #view-guide.atlas-guide--resident-evil-5 .atlas-pill,
+  #view-guide.atlas-guide--resident-evil-5 .atlas-btn,
+  body[data-re5-phase5="true"] .atlas-lite-dialog {
+    border: 1px solid CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 :focus-visible,
+  body[data-re5-phase5="true"] dialog :focus-visible {
+    outline-color: Highlight;
+  }
+}

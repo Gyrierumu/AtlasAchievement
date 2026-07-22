@@ -1,0 +1,278 @@
+{
+  "generatedAt": "2026-07-19T21:19:07.093Z",
+  "url": "http://127.0.0.1:4319/jogo/resident-evil-5",
+  "browser": "Microsoft Edge headless via local CDP (in-app browser unavailable: missing sandboxPolicy)",
+  "viewports": [
+    {
+      "viewport": 320,
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "horizontalOverflow": false,
+      "h1": "Resident Evil 5 — Guia de platina e troféus",
+      "h1Count": 1,
+      "tabCount": 6,
+      "activeTab": "summary",
+      "activePanelVisible": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "attentionCount": 0,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "minInstructionalTextPx": 16,
+      "primaryTargetBelow24": [],
+      "primaryTargetBelow44Height": 0,
+      "ready": true
+    },
+    {
+      "viewport": 360,
+      "clientWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "h1": "Resident Evil 5 — Guia de platina e troféus",
+      "h1Count": 1,
+      "tabCount": 6,
+      "activeTab": "summary",
+      "activePanelVisible": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "attentionCount": 0,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "minInstructionalTextPx": 16,
+      "primaryTargetBelow24": [],
+      "primaryTargetBelow44Height": 0,
+      "ready": true
+    },
+    {
+      "viewport": 390,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "horizontalOverflow": false,
+      "h1": "Resident Evil 5 — Guia de platina e troféus",
+      "h1Count": 1,
+      "tabCount": 6,
+      "activeTab": "summary",
+      "activePanelVisible": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "attentionCount": 0,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "minInstructionalTextPx": 16,
+      "primaryTargetBelow24": [],
+      "primaryTargetBelow44Height": 0,
+      "ready": true
+    },
+    {
+      "viewport": 768,
+      "clientWidth": 753,
+      "scrollWidth": 753,
+      "horizontalOverflow": false,
+      "h1": "Resident Evil 5 — Guia de platina e troféus",
+      "h1Count": 1,
+      "tabCount": 6,
+      "activeTab": "summary",
+      "activePanelVisible": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "attentionCount": 0,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "minInstructionalTextPx": 13.28,
+      "primaryTargetBelow24": [],
+      "primaryTargetBelow44Height": 0,
+      "ready": true
+    },
+    {
+      "viewport": 1280,
+      "clientWidth": 1265,
+      "scrollWidth": 1265,
+      "horizontalOverflow": false,
+      "h1": "Resident Evil 5 — Guia de platina e troféus",
+      "h1Count": 1,
+      "tabCount": 6,
+      "activeTab": "summary",
+      "activePanelVisible": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "attentionCount": 0,
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "minInstructionalTextPx": 13.28,
+      "primaryTargetBelow24": [],
+      "primaryTargetBelow44Height": 0,
+      "ready": true
+    }
+  ],
+  "screenshots": [
+    "re5-phase5-360.png",
+    "re5-phase5-390.png",
+    "re5-phase5-768.png",
+    "re5-phase5-1280.png"
+  ],
+  "keyboard": {
+    "arrowRight": {
+      "selected": "roadmap",
+      "hash": "#guideTab-roadmap",
+      "focused": "roadmap"
+    },
+    "end": "attention",
+    "home": "summary"
+  },
+  "deepLinks": {
+    "summary": {
+      "selected": "summary",
+      "panelVisible": true,
+      "hash": "#guideTab-summary"
+    },
+    "roadmap": {
+      "selected": "roadmap",
+      "panelVisible": true,
+      "hash": "#guideTab-roadmap"
+    },
+    "checklist": {
+      "selected": "checklist",
+      "panelVisible": true,
+      "hash": "#guideTab-checklist"
+    },
+    "extras": {
+      "selected": "extras",
+      "panelVisible": true,
+      "hash": "#guideTab-extras"
+    },
+    "dlc": {
+      "selected": "dlc",
+      "panelVisible": true,
+      "hash": "#guideTab-dlc"
+    },
+    "attention": {
+      "selected": "attention",
+      "panelVisible": true,
+      "hash": "#guideTab-attention"
+    }
+  },
+  "checklist": {
+    "before": "false",
+    "after": "true",
+    "counter": "1/51 concluídos",
+    "restored": "false"
+  },
+  "filters": {
+    "searchCount": 1,
+    "clearedCount": 51,
+    "status": "51 troféus visíveis"
+  },
+  "accordion": {
+    "before": {
+      "expanded": "false",
+      "hidden": true
+    },
+    "opened": {
+      "expanded": "true",
+      "hidden": false
+    },
+    "closed": {
+      "expanded": "false",
+      "hidden": true
+    }
+  },
+  "zoom200": {
+    "viewport": 640,
+    "clientWidth": 640,
+    "scrollWidth": 640,
+    "horizontalOverflow": false,
+    "h1": "Resident Evil 5 — Guia de platina e troféus",
+    "h1Count": 1,
+    "tabCount": 6,
+    "activeTab": "summary",
+    "activePanelVisible": true,
+    "figureCount": 5,
+    "faqCount": 36,
+    "attentionCount": 0,
+    "duplicateIds": [],
+    "brokenAriaReferences": [],
+    "minInstructionalTextPx": 13.28,
+    "primaryTargetBelow24": [],
+    "primaryTargetBelow44Height": 0,
+    "ready": true
+  },
+  "zoom400": {
+    "viewport": 640,
+    "clientWidth": 640,
+    "scrollWidth": 640,
+    "horizontalOverflow": false,
+    "h1": "Resident Evil 5 — Guia de platina e troféus",
+    "h1Count": 1,
+    "tabCount": 6,
+    "activeTab": "summary",
+    "activePanelVisible": true,
+    "figureCount": 5,
+    "faqCount": 36,
+    "attentionCount": 0,
+    "duplicateIds": [],
+    "brokenAriaReferences": [],
+    "minInstructionalTextPx": 13.28,
+    "primaryTargetBelow24": [],
+    "primaryTargetBelow44Height": 0,
+    "ready": true
+  },
+  "preferences": {
+    "reducedMotion": true,
+    "moreContrast": true,
+    "forcedColors": true,
+    "transitionDuration": "0s"
+  },
+  "textSpacing": {
+    "horizontalOverflow": false,
+    "h1Visible": true
+  },
+  "failures": {
+    "noJavaScript": {
+      "panels": 6,
+      "visiblePanels": 6,
+      "hiddenEssentialSections": 0,
+      "methodology": true
+    },
+    "hydrationScript": {
+      "linear": true,
+      "visiblePanels": 6,
+      "h1": true
+    },
+    "apiAndComments": {
+      "h1": true,
+      "tabs": 6,
+      "checklist": 51,
+      "comments": true
+    },
+    "localStorage": {
+      "before": "false",
+      "after": "true",
+      "status": "",
+      "ready": true
+    },
+    "cover": {
+      "h1": true,
+      "fallback": true
+    },
+    "svg": {
+      "fallbackText": 815,
+      "caption": 263,
+      "guideUsable": true
+    },
+    "externalLink": {
+      "h1": true,
+      "methodology": true
+    },
+    "slowConnection": {
+      "elapsedMs": 3901,
+      "h1": true,
+      "tabs": 6,
+      "ready": true
+    }
+  },
+  "normalDiagnostics": {
+    "consoleErrors": [],
+    "exceptions": [],
+    "failedRequests": []
+  }
+}

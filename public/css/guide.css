@@ -2904,6 +2904,15 @@ body[data-page="public"].atlas-guide-dock-active:has(
   margin-inline: auto;
 }
 
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__asset picture {
+  display: block;
+  width: 100%;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__mobile {
+  display: none;
+}
+
 #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual figcaption {
   color: rgba(226, 232, 240, .72);
   font-size: .82rem;
@@ -2959,6 +2968,47 @@ body[data-page="public"].atlas-guide-dock-active:has(
   #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__type {
     width: fit-content;
     white-space: normal;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__asset.has-mobile-layout picture {
+    display: none;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__mobile {
+    display: grid;
+    gap: 12px;
+    padding: 10px;
+    color: rgba(226, 232, 240, .9);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__mobile section {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid rgba(125, 211, 252, .18);
+    border-radius: 12px;
+    background: rgba(15, 23, 42, .78);
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__mobile h5 {
+    margin: 0;
+    color: rgba(255, 255, 255, .96);
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__mobile ol {
+    display: grid;
+    gap: 8px;
+    margin: 10px 0 0;
+    padding-left: 22px;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-instructional-visual__mobile li {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -3992,5 +4042,153 @@ body[data-page="public"].atlas-guide-dock-active:has(
   #view-guide .atlas-guide-layer-nav__button {
     min-height: 46px;
     font-size: .76rem;
+  }
+}
+
+/* Resident Evil 5 — autoridade editorial e transparência da Fase 4 */
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust--authority {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(94, 234, 212, .2);
+  border-radius: 13px;
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, .09), transparent 58%),
+    rgba(255, 255, 255, .025);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__authority {
+  min-width: 0;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__authority > p {
+  margin: 8px 0 0;
+  color: rgba(241, 245, 249, .88);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin-top: 8px;
+  color: rgba(203, 213, 225, .76);
+  font-size: .78rem;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta span,
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta i {
+  color: rgba(94, 234, 212, .8);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta a,
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__method-link,
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-source-list a {
+  color: #99f6e4;
+  text-decoration: underline;
+  text-decoration-color: rgba(153, 246, 228, .45);
+  text-underline-offset: 3px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__method-link {
+  display: inline-flex;
+  margin-top: 9px;
+  font-size: .8rem;
+  font-weight: 750;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology {
+  margin-top: 20px;
+  scroll-margin-top: 104px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, .14);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, .42);
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__card h3 {
+  margin: 0 0 10px;
+  color: rgba(248, 250, 252, .94);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__card ul,
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__card ol {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(203, 213, 225, .8);
+  font-size: .88rem;
+  line-height: 1.58;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-source-list li {
+  min-width: 0;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-source-list p {
+  margin: 3px 0 0;
+  color: rgba(148, 163, 184, .76);
+  font-size: .8rem;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-history {
+  list-style: none;
+  padding: 0;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-history li {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 10px;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-history time {
+  color: rgba(94, 234, 212, .84);
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+}
+
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta a:focus-visible,
+#view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__method-link:focus-visible,
+#view-guide.atlas-guide--resident-evil-5 .atlas-re5-source-list a:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid #5eead4;
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  #view-guide.atlas-guide--resident-evil-5 .atlas-re5-methodology__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-editorial-trust__meta {
+    display: grid;
+    gap: 7px;
+  }
+
+  #view-guide.atlas-guide--resident-evil-5 .atlas-re5-history li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
   }
 }

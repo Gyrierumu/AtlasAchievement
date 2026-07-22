@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Resident Evil 5 — Guia de platina PS4 e DLCs</title>
+  <desc id="description">Card social do AtlasAchievement para o guia de Resident Evil 5.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071018"/>
+      <stop offset="0.54" stop-color="#0b1722"/>
+      <stop offset="1" stop-color="#101923"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" fill="none" stroke="#5eead4" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="1040" cy="116" r="170" fill="#14b8a6" fill-opacity=".10" filter="url(#softGlow)"/>
+  <circle cx="1120" cy="560" r="210" fill="#22c55e" fill-opacity=".055" filter="url(#softGlow)"/>
+  <path d="M838 0h362v630H738c71-108 124-218 156-330 29-102 10-202-56-300Z" fill="#0f2027" fill-opacity=".68"/>
+  <path d="M893 0c72 111 94 219 66 325-30 113-82 214-155 305" fill="none" stroke="#5eead4" stroke-opacity=".13" stroke-width="2"/>
+  <path d="M988 0c42 94 57 188 43 282-18 119-66 235-145 348" fill="none" stroke="#a7f3d0" stroke-opacity=".08" stroke-width="2"/>
+  <rect x="72" y="64" width="314" height="46" rx="23" fill="#102a31" stroke="#2dd4bf" stroke-opacity=".38"/>
+  <circle cx="101" cy="87" r="9" fill="#2dd4bf"/>
+  <text x="124" y="95" fill="#d5fbf4" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing=".4">ATLASACHIEVEMENT</text>
+  <text x="72" y="223" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" letter-spacing="-2">Resident Evil 5</text>
+  <rect x="72" y="255" width="678" height="8" rx="4" fill="url(#accent)"/>
+  <text x="72" y="351" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">Guia de platina</text>
+  <text x="72" y="414" fill="#94a3b8" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500">Roadmap, 51 troféus base e 20 de DLC</text>
+  <g transform="translate(72 474)">
+    <rect width="214" height="62" rx="16" fill="#13313a" stroke="#5eead4" stroke-opacity=".34"/>
+    <text x="107" y="40" fill="#ccfbf1" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800">PS4 / REMASTER</text>
+    <rect x="230" width="156" height="62" rx="16" fill="#17242e" stroke="#94a3b8" stroke-opacity=".25"/>
+    <text x="308" y="40" fill="#e2e8f0" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800">+ DLCs</text>
+  </g>
+  <g transform="translate(921 179)">
+    <path d="M112 0 224 64v128l-112 64L0 192V64Z" fill="#102d33" stroke="#5eead4" stroke-opacity=".52" stroke-width="4"/>
+    <path d="M112 32 196 80v96l-84 48-84-48V80Z" fill="none" stroke="#2dd4bf" stroke-opacity=".36" stroke-width="3"/>
+    <path d="m112 70 47 27v54l-47 27-47-27V97Z" fill="#2dd4bf" fill-opacity=".16"/>
+    <path d="m87 126 18 18 36-43" fill="none" stroke="#a7f3d0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="1033" y="470" fill="#99f6e4" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="1.4">GUIA REVISADO</text>
+  <text x="1033" y="501" fill="#64748b" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18">atlasachievement.com.br</text>
+  <rect x="0" y="620" width="1200" height="10" fill="url(#accent)"/>
+</svg>

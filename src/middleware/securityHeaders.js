@@ -5,7 +5,7 @@ function securityHeaders(req, res, next) {
     "object-src 'none'",
     "frame-ancestors 'none'",
     "form-action 'self'",
-    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com",
+    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://stats.g.doubleclick.net",
     "img-src 'self' data: https:",
     "font-src 'self' https://cdnjs.cloudflare.com data:",
     "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",

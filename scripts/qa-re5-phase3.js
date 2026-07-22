@@ -1,12 +1,23 @@
+const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUTPUT_DIR = path.join(ROOT, 'artifacts', 're5-phase3');
-const APP_URL = 'http://127.0.0.1:3210/jogo/resident-evil-5';
-const CDP_LIST_URL = 'http://127.0.0.1:9333/json/list';
+const APP_URL = process.env.RE5_QA_URL || 'http://127.0.0.1:3210/jogo/resident-evil-5';
+const APP_ORIGIN = new URL(APP_URL).origin;
+const CDP_LIST_URL = process.env.RE5_QA_CDP_LIST_URL || 'http://127.0.0.1:9333/json/list';
 const BREAKPOINTS = [360, 390, 768, 1280];
-const SCREENSHOT_BREAKPOINTS = new Set([390, 1280]);
+const SCREENSHOT_BREAKPOINTS = new Set(BREAKPOINTS);
+const SCREENSHOT_VISUAL_IDS = new Set([
+  're5-visual-score-stars-route',
+  're5-visual-agitator-triggers'
+]);
+
+function logProgress(message) {
+  const line = `${new Date().toISOString()} ${message}`;
+  console.log(line);
+}
 const VISUALS = [
   {
     id: 're5-visual-score-stars-route',
@@ -172,16 +183,32 @@ async function inspectLayout(client) {
         const animationsStopped = style.animationDuration.split(',').every(value => Number.parseFloat(value) === 0);
         return style.animationName === 'none' && transitionsStopped && animationsStopped;
       }),
+      mobileLayouts: visuals.map(node => {
+        const layout = node.querySelector('[data-instructional-mobile-layout]');
+        const visible = Boolean(layout && getComputedStyle(layout).display !== 'none');
+        const textNodes = visible ? [...layout.querySelectorAll('h5, li')] : [];
+        return {
+          id: node.id,
+          visible,
+          minTextCssPx: textNodes.length ? Math.min(...textNodes.map(item => Number.parseFloat(getComputedStyle(item).fontSize))) : 0
+        };
+      }),
       images: visuals.map(node => {
         const image = node.querySelector('img');
         return {
           id: node.id,
           src: image?.getAttribute('src') || '',
+          currentSrc: image?.currentSrc || '',
           complete: Boolean(image?.complete),
           naturalWidth: Number(image?.naturalWidth || 0),
+          renderedWidth: Number(image?.getBoundingClientRect().width || 0),
+          renderedHeight: Number(image?.getBoundingClientRect().height || 0),
           alt: image?.getAttribute('alt') || '',
           width: image?.getAttribute('width') || '',
-          height: image?.getAttribute('height') || ''
+          height: image?.getAttribute('height') || '',
+          minInternalTextCssPx: image?.naturalWidth
+            ? Number((16 * Math.min(1, image.getBoundingClientRect().width / image.naturalWidth)).toFixed(2))
+            : 0
         };
       })
     };
@@ -190,6 +217,19 @@ async function inspectLayout(client) {
 
 async function revealAllModuleContainers(client) {
   await openTab(client, 'dlc');
+  const viewportWidth = await evaluate(client, 'window.innerWidth');
+  if (viewportWidth > 520) {
+    for (const visualId of ['re5-visual-score-stars-route', 're5-visual-agitator-triggers']) {
+      await evaluate(client, `document.getElementById(${JSON.stringify(visualId)})?.scrollIntoView({ block: 'center' })`);
+      await waitFor(
+        client,
+        `(() => {
+          const image = document.querySelector(${JSON.stringify(`#${visualId} img`)});
+          return Boolean(image?.complete && image.naturalWidth > 0);
+        })()`
+      );
+    }
+  }
   const dlcLayout = await inspectLayout(client);
   await openTab(client, 'extras');
   for (const toggle of ['extras-bsaa-emblems', 'extras-tesouros', 'extras-bosses-critical-encounters']) {
@@ -211,6 +251,8 @@ async function captureVisual(client, visual, width) {
     return true;
   })()`);
   await waitFor(client, `(() => {
+    const mobile = document.querySelector(${JSON.stringify(selector + ' [data-instructional-mobile-layout]')});
+    if (mobile && getComputedStyle(mobile).display !== 'none') return true;
     const image = document.querySelector(${JSON.stringify(selector + ' img')});
     return Boolean(image?.complete && image.naturalWidth > 0);
   })()`);
@@ -246,7 +288,7 @@ async function main() {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   const targets = await fetch(CDP_LIST_URL).then(response => response.json());
   const target = targets.find(item => item.type === 'page' && item.url.startsWith(APP_URL))
-    || targets.find(item => item.type === 'page' && item.url.startsWith('http://127.0.0.1:3210/jogo/'))
+    || targets.find(item => item.type === 'page' && item.url.startsWith(`${APP_ORIGIN}/jogo/`))
     || targets.find(item => item.type === 'page' && item.url === 'about:blank');
   if (!target?.webSocketDebuggerUrl) throw new Error('No Edge CDP page target available');
 
@@ -267,6 +309,7 @@ async function main() {
   });
 
   await client.connect();
+  logProgress(`QA connected: ${target.url}`);
   await Promise.all([
     client.send('Page.enable'),
     client.send('Runtime.enable'),
@@ -276,7 +319,7 @@ async function main() {
   await client.send('Log.clear');
 
   const ssrHtml = await fetch(APP_URL).then(response => response.text());
-  const apiGame = await fetch('http://127.0.0.1:3210/api/games/slug/resident-evil-5').then(response => response.json());
+  const apiGame = await fetch(`${APP_ORIGIN}/api/games/slug/resident-evil-5`).then(response => response.json());
   const report = {
     generatedAt: new Date().toISOString(),
     url: APP_URL,
@@ -288,6 +331,7 @@ async function main() {
   };
 
   for (const width of BREAKPOINTS) {
+    logProgress(`QA viewport ${width}px`);
     await client.send('Emulation.setDeviceMetricsOverride', {
       width,
       height: 900,
@@ -306,6 +350,7 @@ async function main() {
 
     const initialLayout = await inspectLayout(client);
     const tabLayouts = await revealAllModuleContainers(client);
+    logProgress(`QA layout ${width}px ready`);
     report.breakpoints.push({
       width,
       initialLayout,
@@ -322,23 +367,68 @@ async function main() {
         screenWidth: width,
         screenHeight: 1700
       });
-      for (const visual of VISUALS) {
+      for (const visual of VISUALS.filter(item => SCREENSHOT_VISUAL_IDS.has(item.id))) {
+        logProgress(`QA screenshot ${width}px ${visual.id}`);
         report.screenshots.push(await captureVisual(client, visual, width));
       }
     }
   }
 
-  await client.send('Page.navigate', { url: 'http://127.0.0.1:3210/jogo/resident-evil-6' });
+  await client.send('Page.navigate', { url: `${APP_ORIGIN}/jogo/resident-evil-6` });
   await waitFor(client, `document.readyState === 'complete'`);
   await delay(500);
   report.nonRe5VisualCount = await evaluate(client, `document.querySelectorAll('[data-instructional-visual]').length`);
 
+  assert.strictEqual(report.ssrVisualCount, 5, 'SSR deve conter cinco figuras instrucionais');
+  assert.strictEqual(report.apiVisualCount, 5, 'API deve conter cinco figuras instrucionais');
+  assert.strictEqual(report.screenshots.length, 8, 'Devem existir oito screenshots dos dois diagramas prioritários');
+  assert.strictEqual(report.nonRe5VisualCount, 0, 'A microcorreção não pode alterar visuais de outros jogos');
+  assert.deepStrictEqual(report.diagnostics.logErrors, [], 'Console não pode conter erros');
+  assert.deepStrictEqual(report.diagnostics.exceptions, [], 'Página não pode lançar exceções');
+  assert.deepStrictEqual(report.diagnostics.networkFailures, [], 'Assets não podem falhar na rede');
+
+  for (const breakpoint of report.breakpoints) {
+    const layout = breakpoint.dlcLayout;
+    assert.strictEqual(layout.horizontalOverflow, false, `${breakpoint.width}px não pode ter overflow horizontal`);
+    assert.strictEqual(layout.visualCount, 5, `${breakpoint.width}px deve manter cinco figuras no DOM hidratado`);
+    assert.strictEqual(layout.uniqueVisualCount, 5, `${breakpoint.width}px deve manter cinco IDs visuais únicos`);
+    assert.deepStrictEqual(layout.duplicateDocumentIds, [], `${breakpoint.width}px não pode conter IDs duplicados`);
+    assert.strictEqual(layout.visualLinksKeyboardReachable, true, `${breakpoint.width}px deve manter os links acessíveis por teclado`);
+    assert.strictEqual(layout.reducedMotionSafe, true, `${breakpoint.width}px deve respeitar prefers-reduced-motion`);
+
+    const priorityIds = ['re5-visual-score-stars-route', 're5-visual-agitator-triggers'];
+    const priorityMobileLayouts = layout.mobileLayouts.filter(entry => priorityIds.includes(entry.id));
+
+    if (breakpoint.width <= 520) {
+      assert.strictEqual(priorityMobileLayouts.length, 2, `${breakpoint.width}px deve expor duas variantes mobile`);
+      assert.strictEqual(
+        priorityMobileLayouts.every(entry => entry.visible && entry.minTextCssPx >= 16),
+        true,
+        `${breakpoint.width}px deve manter texto essencial com pelo menos 16 CSS px`
+      );
+    } else {
+      assert.strictEqual(
+        priorityMobileLayouts.every(entry => !entry.visible),
+        true,
+        `${breakpoint.width}px deve preservar os SVGs desktop`
+      );
+      const priorityImages = layout.images.filter(entry => priorityIds.includes(entry.id));
+      assert.strictEqual(priorityImages.length, 2, `${breakpoint.width}px deve renderizar os dois SVGs prioritários`);
+      assert.strictEqual(
+        priorityImages.every(entry => entry.complete && entry.naturalWidth > 0 && entry.minInternalTextCssPx >= 14),
+        true,
+        `${breakpoint.width}px deve manter SVGs carregados e texto interno legível`
+      );
+    }
+  }
+
   fs.writeFileSync(path.join(OUTPUT_DIR, 'qa-results.json'), `${JSON.stringify(report, null, 2)}\n`, 'utf8');
   client.close();
   console.log(JSON.stringify(report, null, 2));
+  process.exit(0);
 }
 
 main().catch(error => {
   console.error(error);
-  process.exitCode = 1;
+  process.exit(1);
 });

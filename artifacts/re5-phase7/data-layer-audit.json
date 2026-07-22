@@ -1,0 +1,82 @@
+{
+  "generatedAt": "2026-07-21T21:58:59.521Z",
+  "counts": {
+    "baseTrophies": 51,
+    "dlcTrophies": 20,
+    "uniqueTotal": 71,
+    "faq": 36,
+    "attention": 12,
+    "bosses": 22,
+    "bsaa": 30,
+    "treasures": 50,
+    "ranks": 16,
+    "scoreStars": 18,
+    "agitators": 3,
+    "chapters": 16,
+    "roadmapStages": 7,
+    "instructionalFigures": 5,
+    "tabsSsr": 6,
+    "trophyCardsSsr": 51,
+    "faqSsr": 36,
+    "attentionSsr": 12
+  },
+  "uniqueness": {
+    "htmlIds": 508,
+    "duplicateHtmlIds": [],
+    "baseIds": 51,
+    "uniqueBaseIds": 51,
+    "dlcIds": 20,
+    "uniqueDlcIds": 20,
+    "databaseTrophies": 51,
+    "uniqueDatabaseTrophyCodes": 51
+  },
+  "hashes": {
+    "roadmap": {
+      "seed": "6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978",
+      "snapshot": "6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978",
+      "database": "6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978",
+      "api": "6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978"
+    },
+    "editorial": {
+      "seed": "692c43a8e4f5b4763df84650a97c757c2123a84d0ec4bde88a858a5d7d593b08",
+      "snapshot": "692c43a8e4f5b4763df84650a97c757c2123a84d0ec4bde88a858a5d7d593b08",
+      "api": "692c43a8e4f5b4763df84650a97c757c2123a84d0ec4bde88a858a5d7d593b08"
+    },
+    "trophies": {
+      "snapshot": "c8fe29498021f46a7e64605da9af4109fd7a1e81c78d312b421c96d85e21b381",
+      "database": "c8fe29498021f46a7e64605da9af4109fd7a1e81c78d312b421c96d85e21b381"
+    }
+  },
+  "parity": {
+    "roadmapSeedSnapshot": true,
+    "roadmapSeedDatabase": true,
+    "roadmapSeedApi": true,
+    "editorialSeedSnapshot": true,
+    "editorialSeedApi": true,
+    "trophiesSnapshotDatabase": true,
+    "reviewDateSeedSnapshotApi": true
+  },
+  "seo": {
+    "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+    "hasNoindex": false,
+    "sitemapOccurrences": 1,
+    "graphTypes": [
+      "WebPage",
+      "Article",
+      "VideoGame",
+      "Organization",
+      "BreadcrumbList",
+      "FAQPage"
+    ],
+    "faqSchemaCount": 36,
+    "articleAuthor": "Equipe Editorial AtlasAchievement",
+    "articleDateModified": "2026-07-18"
+  },
+  "databaseGame": {
+    "id": 16,
+    "slug": "resident-evil-5",
+    "name": "Resident Evil 5",
+    "last_reviewed_at": "2026-07-18",
+    "verification_status": "verified"
+  }
+}

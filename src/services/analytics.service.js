@@ -1,5 +1,9 @@
 const { all, run, get } = require('../db/db');
 const sampleGames = require('../data/sampleGames');
+const env = require('../config/env');
+const re5ProductionContract = require('../../public/js/re5-production');
+
+const RE5_EVENT_TYPES = new Set(Object.keys(re5ProductionContract.EVENT_PROPERTIES));
 
 const PUBLIC_EVENT_TYPES = new Set([
   'guide_view',
@@ -9,7 +13,8 @@ const PUBLIC_EVENT_TYPES = new Set([
   'checklist_toggle',
   'feedback_submit',
   'guide_tab_change',
-  'seo_page_view'
+  'seo_page_view',
+  ...RE5_EVENT_TYPES
 ]);
 
 const SEO_PAGE_TYPES = new Map([
@@ -144,7 +149,16 @@ async function createPublicEvent(payload = {}) {
 
   const page = normalizePagePath(payload.page || payload.page_path || payload.pagePath || '/');
   const gameSlug = normalizeSlug(payload.gameSlug || payload.game_slug || '');
-  const metadata = sanitizeMetadata(eventType, payload.metadata || {});
+  const isResidentEvil5Event = gameSlug === 'resident-evil-5' || page === '/jogo/resident-evil-5';
+  if (isResidentEvil5Event) {
+    if (!RE5_EVENT_TYPES.has(eventType) || env.re5ProductAnalyticsEnabled !== true) return { stored: false };
+    if (gameSlug !== 'resident-evil-5' || page !== '/jogo/resident-evil-5') return { stored: false };
+  } else if (RE5_EVENT_TYPES.has(eventType) && eventType !== 'guide_view') {
+    return { stored: false };
+  }
+  const metadata = isResidentEvil5Event
+    ? (re5ProductionContract.normalizeProperties(eventType, payload.metadata || {}) || {})
+    : sanitizeMetadata(eventType, payload.metadata || {});
 
   if (eventType === 'catalog_search' && !metadata.search_term) {
     return { stored: false };
@@ -226,6 +240,116 @@ function aggregateEventMetrics(events = []) {
       unchecked: checklistUncheckedTotal,
       topGames: topFromMap(checklistByGame, 10, (gameSlug, count) => ({ gameSlug, count })),
       topTrophies: topFromMap(trophies, 10, (trophy, count) => ({ trophy, count }))
+    }
+  };
+}
+
+function residentEvil5Rate(count, guideViews) {
+  if (!guideViews) return null;
+  return Number(((count / guideViews) * 100).toFixed(1));
+}
+
+function percentile75(values = []) {
+  if (!values.length) return null;
+  const sorted = values.slice().sort((a, b) => a - b);
+  return sorted[Math.max(0, Math.ceil(sorted.length * 0.75) - 1)];
+}
+
+function aggregateResidentEvil5Metrics(events = []) {
+  const re5Events = events.filter(event => (
+    event.game_slug === 'resident-evil-5'
+    && normalizePagePath(event.page) === '/jogo/resident-evil-5'
+    && RE5_EVENT_TYPES.has(event.event_type)
+  ));
+  const eventCounts = new Map();
+  const tabCounts = new Map();
+  const dlcCounts = new Map();
+  const vitalGroups = new Map();
+  let returningViews = 0;
+
+  re5Events.forEach(event => {
+    const metadata = parseMetadata(event.metadata_json);
+    increment(eventCounts, event.event_type);
+    if (event.event_type === 'guide_view' && metadata.visit_type === 'returning') returningViews += 1;
+    if (event.event_type === 'guide_tab_open') increment(tabCounts, compactText(metadata.tab, 24));
+    if (event.event_type === 'dlc_package_open') increment(dlcCounts, compactText(metadata.package, 40));
+
+    if (event.event_type === 'guide_web_vital') {
+      const metric = compactText(metadata.metric, 8);
+      const deviceClass = compactText(metadata.device_class, 16);
+      const adState = compactText(metadata.ad_state, 16);
+      const rawValue = metric === 'CLS' ? metadata.value : metadata.value_ms;
+      const value = Number(rawValue);
+      if (!['LCP', 'INP', 'CLS', 'TTFB', 'FCP'].includes(metric)
+        || !['mobile', 'desktop'].includes(deviceClass)
+        || !['none', 'reserved', 'loaded'].includes(adState)
+        || !Number.isFinite(value)
+        || value < 0) return;
+
+      const key = `${metric}|${deviceClass}|${adState}`;
+      if (!vitalGroups.has(key)) {
+        vitalGroups.set(key, { metric, deviceClass, adState, values: [], dates: [] });
+      }
+      const group = vitalGroups.get(key);
+      group.values.push(value);
+      const date = new Date(event.created_at);
+      if (Number.isFinite(date.getTime())) group.dates.push(date);
+    }
+  });
+
+  const count = eventType => eventCounts.get(eventType) || 0;
+  const guideViews = count('guide_view');
+  const roadmapOrChecklist = count('roadmap_start') + count('checklist_open');
+  const firstUsefulInteraction = count('checklist_first_toggle')
+    + count('guide_internal_search')
+    + count('guide_filter_change')
+    + count('next_action_open');
+  const progressMilestones = count('checklist_progress_milestone');
+  const fieldVitals = Array.from(vitalGroups.values()).map(group => {
+    const distinctDays = new Set(group.dates.map(date => date.toISOString().slice(0, 10))).size;
+    const timestamps = group.dates.map(date => date.getTime());
+    const spanDays = timestamps.length
+      ? ((Math.max(...timestamps) - Math.min(...timestamps)) / 86400000) + 1
+      : 0;
+    const sufficient = group.values.length >= 200 && distinctDays >= 3 && spanDays >= 7;
+    return {
+      metric: group.metric,
+      deviceClass: group.deviceClass,
+      adState: group.adState,
+      samples: group.values.length,
+      distinctDays,
+      collectionSpanDays: Number(spanDays.toFixed(1)),
+      status: sufficient ? 'ready' : 'dados insuficientes',
+      p75: sufficient ? percentile75(group.values) : null
+    };
+  }).sort((a, b) => `${a.metric}|${a.deviceClass}|${a.adState}`.localeCompare(`${b.metric}|${b.deviceClass}|${b.adState}`));
+  const readyVitalMetrics = new Set(fieldVitals.filter(item => item.status === 'ready').map(item => item.metric));
+  const allRequiredVitalsReady = ['LCP', 'INP', 'CLS', 'TTFB', 'FCP'].every(metric => readyVitalMetrics.has(metric))
+    && fieldVitals.every(item => item.status === 'ready');
+
+  return {
+    windowDays: 90,
+    totalEvents: re5Events.length,
+    eventCounts: Object.fromEntries(Array.from(eventCounts.entries()).sort()),
+    funnel: {
+      guideViews,
+      roadmapOrChecklist: { count: roadmapOrChecklist, ratePercent: residentEvil5Rate(roadmapOrChecklist, guideViews) },
+      firstUsefulInteraction: { count: firstUsefulInteraction, ratePercent: residentEvil5Rate(firstUsefulInteraction, guideViews) },
+      progressMilestones: { count: progressMilestones, ratePercent: residentEvil5Rate(progressMilestones, guideViews) },
+      returningViews: { count: returningViews, ratePercent: residentEvil5Rate(returningViews, guideViews) }
+    },
+    tabs: Object.fromEntries(Array.from(tabCounts.entries()).sort()),
+    dlcPackages: Object.fromEntries(Array.from(dlcCounts.entries()).sort()),
+    searches: count('guide_internal_search'),
+    filters: count('guide_filter_change'),
+    sourceLinks: count('source_link_open'),
+    videoLinks: count('video_link_open'),
+    instructionalVisuals: count('instructional_visual_view'),
+    problemReportsOpened: count('report_problem_open'),
+    fieldVitals: {
+      minimum: { samplesPerMetricSegment: 200, collectionDays: 7, distinctDays: 3 },
+      status: allRequiredVitalsReady ? 'ready' : 'dados insuficientes',
+      segments: fieldVitals
     }
   };
 }
@@ -351,12 +475,16 @@ async function getBetaMetrics() {
     },
     search: eventMetrics.search,
     seo: eventMetrics.seo,
-    checklist: eventMetrics.checklist
+    checklist: eventMetrics.checklist,
+    residentEvil5: aggregateResidentEvil5Metrics(events)
   };
 }
 
 module.exports = {
   createPublicEvent,
   getBetaMetrics,
-  PUBLIC_EVENT_TYPES: Array.from(PUBLIC_EVENT_TYPES)
+  sanitizeMetadata,
+  aggregateResidentEvil5Metrics,
+  PUBLIC_EVENT_TYPES: Array.from(PUBLIC_EVENT_TYPES),
+  RE5_EVENT_TYPES: Array.from(RE5_EVENT_TYPES)
 };

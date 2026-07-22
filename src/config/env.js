@@ -6,6 +6,12 @@ const hasSessionSecret = typeof process.env.SESSION_SECRET === 'string' && proce
 const hasAdminUsername = typeof process.env.ADMIN_USERNAME === 'string' && process.env.ADMIN_USERNAME.trim().length >= 3;
 const hasAdminPassword = typeof process.env.ADMIN_PASSWORD === 'string' && process.env.ADMIN_PASSWORD.length >= 8;
 
+function envFlag(name, fallback = false) {
+  const value = process.env[name];
+  if (value === undefined || value === null || String(value).trim() === '') return fallback;
+  return /^(1|true|yes|on)$/i.test(String(value).trim());
+}
+
 const config = {
   port: Number(process.env.PORT || 3000),
   nodeEnv,
@@ -31,6 +37,17 @@ const config = {
     || process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID
     || (isProduction ? 'G-QNPM6F50XY' : '')
   ).trim(),
+  re5ProductAnalyticsEnabled: envFlag('RE5_PRODUCT_ANALYTICS_ENABLED', false),
+  re5CoreWebVitalsEnabled: envFlag('RE5_CWV_ENABLED', false),
+  re5ErrorMonitoringEnabled: envFlag('RE5_ERROR_MONITORING_ENABLED', false),
+  re5AdsEnabled: envFlag('RE5_ADS_ENABLED', false),
+  re5AdsTestPlaceholders: envFlag('RE5_ADS_TEST_PLACEHOLDERS', false),
+  re5AdsPlacements: {
+    summary: envFlag('RE5_ADS_PLACEMENT_SUMMARY_ENABLED', true),
+    roadmap: envFlag('RE5_ADS_PLACEMENT_ROADMAP_ENABLED', true),
+    extras: envFlag('RE5_ADS_PLACEMENT_EXTRAS_ENABLED', true),
+    dlc: envFlag('RE5_ADS_PLACEMENT_DLC_ENABLED', true)
+  },
   corsAllowedOrigins: (process.env.CORS_ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean),
   sessionMaxAgeHours: Number(process.env.SESSION_MAX_AGE_HOURS || 8),
   sessionCleanupIntervalMinutes: Number(process.env.SESSION_CLEANUP_INTERVAL_MINUTES || 30),

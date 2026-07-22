@@ -288,6 +288,27 @@ window.UIGuide = (() => {
       ? sharedEditorial.getEditorialStatusMessage(game, badge)
       : (badge.detail || 'Este guia ainda está passando por revisão editorial.');
     const badgeLabel = badge.label || 'Em revisão';
+    if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+      const authority = game?.editorialAuthority || {};
+      const authorName = authority.authorName || 'Equipe Editorial AtlasAchievement';
+      const authorUrl = authority.authorUrl || '/sobre';
+      const platformScope = authority.platformScope || 'PS4/Remaster';
+      const summary = authority.verificationSummary || `Conteúdo pesquisado e revisado pela ${authorName} para a versão ${platformScope}.`;
+      const reviewedDate = String(authority.reviewedAt || reviewedAt || '2026-07-18').slice(0, 10);
+      return `
+        <aside class="atlas-editorial-trust atlas-editorial-trust--authority" aria-label="Responsabilidade editorial">
+          <div class="atlas-editorial-trust__authority">
+            <span class="atlas-editorial-badge atlas-editorial-badge--${escapeAttribute(badge.status || badge.badge || badge.tone || 'verified')}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(badgeLabel)}</span>
+            <p>${escapeHtml(summary)}</p>
+            <div class="atlas-editorial-trust__meta">
+              <span><i class="fas fa-user-check" aria-hidden="true"></i>Responsável: <a href="${escapeAttribute(authorUrl)}">${escapeHtml(authorName)}</a></span>
+              <span><i class="fas fa-gamepad" aria-hidden="true"></i>Escopo: ${escapeHtml(platformScope)}</span>
+              <time datetime="${escapeAttribute(reviewedDate)}"><i class="fas fa-calendar-check" aria-hidden="true"></i>Revisado em ${escapeHtml(formatGuideReviewDate(reviewedDate))}</time>
+            </div>
+            <a class="atlas-editorial-trust__method-link" href="#fontes-e-metodologia">Como verificamos este guia</a>
+          </div>
+        </aside>`;
+    }
     return `
       <div class="atlas-editorial-trust">
         <div class="atlas-editorial-trust__row">
@@ -1279,6 +1300,9 @@ window.UIGuide = (() => {
       const src = String(visual.src || '').trim();
       const width = Number(visual.width || 640);
       const height = Number(visual.height || 640);
+      const mobileSections = Array.isArray(visual.mobileSections)
+        ? visual.mobileSections.filter(section => section?.title && Array.isArray(section.items) && section.items.length)
+        : [];
       const relatedAnchor = /^#[A-Za-z][\w:.-]*$/.test(String(visual.relatedAnchor || ''))
         ? String(visual.relatedAnchor)
         : '';
@@ -1295,8 +1319,18 @@ window.UIGuide = (() => {
             </div>
             <span class="atlas-instructional-visual__type">SVG original</span>
           </div>
-          <div class="atlas-instructional-visual__asset">
-            <img src="${escapeAttribute(src)}" alt="${escapeAttribute(visual.alt)}" width="${escapeAttribute(String(width))}" height="${escapeAttribute(String(height))}" loading="lazy" decoding="async">
+          <div class="atlas-instructional-visual__asset${mobileSections.length ? ' has-mobile-layout' : ''}">
+            <picture>
+              <img src="${escapeAttribute(src)}" alt="${escapeAttribute(visual.alt)}" width="${escapeAttribute(String(width))}" height="${escapeAttribute(String(height))}" loading="lazy" decoding="async">
+            </picture>
+            ${mobileSections.length ? `
+              <div class="atlas-instructional-visual__mobile" data-instructional-mobile-layout="${escapeAttribute(id)}">
+                ${mobileSections.map(section => `
+                  <section>
+                    <h5>${escapeHtml(section.title)}</h5>
+                    <ol>${section.items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+                  </section>`).join('')}
+              </div>` : ''}
           </div>
           <figcaption id="${escapeAttribute(id)}-caption">${escapeHtml(visual.caption)}</figcaption>
           <div id="${escapeAttribute(id)}-text" class="atlas-instructional-visual__fallback">
@@ -2284,6 +2318,52 @@ window.UIGuide = (() => {
       </section>`;
   }
 
+  function renderResidentEvil5Methodology(game = {}) {
+    const authority = game?.editorialAuthority && typeof game.editorialAuthority === 'object'
+      ? game.editorialAuthority
+      : {};
+    const methodology = Array.isArray(authority.methodology) ? authority.methodology : [];
+    const sources = Array.isArray(authority.sources)
+      ? authority.sources.filter(source => /^https?:\/\//i.test(String(source?.url || '').trim()))
+      : [];
+    const limitations = Array.isArray(authority.limitations) ? authority.limitations : [];
+    const publicHistoryLimit = Math.max(1, Number(authority.governance?.publicHistoryLimit || 3));
+    const history = Array.isArray(authority.history) ? authority.history.slice(0, publicHistoryLimit) : [];
+    return `
+      <section id="fontes-e-metodologia" class="atlas-panel atlas-panel--support atlas-re5-methodology p-5 md:p-6" aria-labelledby="re5MethodologyTitle">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <span class="atlas-section-kicker">Transparência editorial</span>
+            <h2 id="re5MethodologyTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Fontes e metodologia</h2>
+            <p class="text-white/58 mt-2 max-w-4xl">Como o conteúdo da versão PS4/Remaster foi pesquisado, reconciliado e mantido.</p>
+          </div>
+        </div>
+        <div class="atlas-re5-methodology__grid">
+          <section class="atlas-re5-methodology__card" aria-labelledby="re5VerificationTitle">
+            <h3 id="re5VerificationTitle">Como verificamos este guia</h3>
+            <ul>${methodology.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+          </section>
+          <section class="atlas-re5-methodology__card" aria-labelledby="re5SourcesTitle">
+            <h3 id="re5SourcesTitle">Fontes principais</h3>
+            <ul class="atlas-re5-source-list">${sources.map(source => `
+              <li id="re5-source-${escapeAttribute(source.id || '')}">
+                <a href="${escapeAttribute(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name || 'Fonte externa')}</a>
+                <p>${escapeHtml(source.purpose || '')}</p>
+              </li>`).join('')}</ul>
+          </section>
+          <section class="atlas-re5-methodology__card" aria-labelledby="re5LimitationsTitle">
+            <h3 id="re5LimitationsTitle">Limitações e dados sujeitos a mudança</h3>
+            <ul>${limitations.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+          </section>
+          <section class="atlas-re5-methodology__card" aria-labelledby="re5HistoryTitle">
+            <h3 id="re5HistoryTitle">Histórico editorial</h3>
+            <ol class="atlas-re5-history">${history.map(item => `
+              <li><time datetime="${escapeAttribute(item.date || '')}">${escapeHtml(formatGuideReviewDate(item.date || ''))}</time><span>${escapeHtml(item.change || '')}</span></li>`).join('')}</ol>
+          </section>
+        </div>
+      </section>`;
+  }
+
   function renderGuideEditorialNotes(game = {}, viewModel = {}) {
     const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
     const editorialDisplay = game?.editorialDisplay && typeof game.editorialDisplay === 'object'
@@ -2367,7 +2447,11 @@ window.UIGuide = (() => {
           return `<article class="atlas-faq-item atlas-faq-row"><h3><button type="button" class="atlas-faq-toggle" data-guide-section-toggle="${answerId}" aria-expanded="false" aria-controls="${answerId}"><span>${escapeHtml(item.question)}</span><i class="fas fa-chevron-down" aria-hidden="true"></i></button></h3><div id="${answerId}" class="atlas-faq-answer is-collapsed" data-guide-section-content aria-hidden="true" hidden><p>${renderGuideFaqAnswer(item, normalizedSlug)}</p></div></article>`;
         }).join('')}</div>
       </section>`;
-    return { attention, faq };
+    return {
+      attention,
+      faq,
+      methodology: normalizedSlug === 'resident-evil-5' ? renderResidentEvil5Methodology(game) : ''
+    };
   }
 
   function getGuideCoverModel(game = {}, viewModel = {}) {
@@ -2922,7 +3006,7 @@ window.UIGuide = (() => {
 
     const editorialSections = renderGuideEditorialNotes(game, viewModel);
     if (editorialNotesEl) editorialNotesEl.innerHTML = editorialSections.attention;
-    if (faqEl) faqEl.innerHTML = editorialSections.faq;
+    if (faqEl) faqEl.innerHTML = `${editorialSections.faq}${editorialSections.methodology || ''}`;
 
     if (relatedEl) {
       relatedEl.innerHTML = renderGuideRelatedOverview(game, relatedGames, comparisonModel);

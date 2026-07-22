@@ -674,6 +674,9 @@ function normalizeGame(row, roadmapRows, trophyRows) {
     editorialDisplay: seedGame?.editorialDisplay && typeof seedGame.editorialDisplay === 'object'
       ? { ...seedGame.editorialDisplay }
       : {},
+    editorialAuthority: seedGame?.editorialAuthority && typeof seedGame.editorialAuthority === 'object'
+      ? JSON.parse(JSON.stringify(seedGame.editorialAuthority))
+      : null,
     disableGeneratedVideoSearch: seedGame?.disableGeneratedVideoSearch === true,
     usefulVideos: Array.isArray(seedGame?.usefulVideos) ? JSON.parse(JSON.stringify(seedGame.usefulVideos)) : [],
     videoAudit: Array.isArray(seedGame?.videoAudit) ? JSON.parse(JSON.stringify(seedGame.videoAudit)) : [],

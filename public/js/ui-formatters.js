@@ -38,7 +38,7 @@ window.UIFormatters = (() => {
       return 'Guia de platina de Resident Evil 2 Remake no PS4 com roadmap, checklist dos 42 troféus base, 58 Files, Mr. Raccoons, ranks S, Hardcore e DLCs separadas.';
     }
     if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
-      return 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.';
+      return 'Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.';
     }
     const parts = [];
     const time = String(game?.time || '').trim();

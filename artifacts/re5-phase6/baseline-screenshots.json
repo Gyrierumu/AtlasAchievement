@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-07-21T20:35:53.297Z",
+  "url": "http://127.0.0.1:4319/jogo/resident-evil-5",
+  "mode": "baseline",
+  "browser": "msedge.exe headless via local CDP (in-app browser unavailable: missing sandboxPolicy)",
+  "screenshots": [
+    "re5-phase5-before-320.png",
+    "re5-phase5-before-360.png",
+    "re5-phase5-before-390.png",
+    "re5-phase5-before-768.png",
+    "re5-phase5-before-1024.png",
+    "re5-phase5-before-1280.png",
+    "re5-phase5-before-1440.png"
+  ],
+  "viewports": [],
+  "keyboard": {},
+  "deepLinks": {},
+  "internalLinks": {},
+  "checklist": {},
+  "roadmap": {},
+  "extras": {},
+  "dlc": {},
+  "zoom200": {},
+  "zoom400": {},
+  "preferences": {},
+  "noJavaScript": {},
+  "diagnostics": {
+    "consoleErrors": [],
+    "exceptions": [],
+    "failedRequests": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "lastChecked": "2026-07-21T23:42:43.709Z",
+  "browser": "msedge.exe headless via CDP; fallback após browser integrado indisponível",
+  "desktop": {
+    "fields": {
+      "feedbackCategory": "Informação incorreta",
+      "feedbackSectionAnchor": "#guideTab-dlc",
+      "feedbackPlatformVersion": "PS4/Remaster",
+      "feedbackSourceUrl": "",
+      "feedbackGuideSlug": "resident-evil-5",
+      "feedbackFrontendVersion": "web-4.0.0",
+      "feedbackReportDate": "2026-07-21",
+      "feedbackViewportBucket": "large",
+      "feedbackActiveTab": "dlc"
+    },
+    "labels": [
+      "Categoria obrigatório\n              \n                Informação incorreta\n                In trução incompleta\n                Link quebrado\n                Problema vi ual\n                Ace ibilidade\n                Checkli t/progre o\n                Problema mobile\n                Outro",
+      "Seção ou âncora obrigatório",
+      "Plataforma/ver ão obrigatório",
+      "Fonte de apoio opcional\n              \n              A equipe não abre URL  automaticamente; toda fonte pa a por triagem  egura."
+    ],
+    "pageUrl": "http://127.0.0.1:4626/jogo/resident-evil-5",
+    "message": "Guia: Resident Evil 5\nSlug: resident-evil-5\nURL: http://127.0.0.1:4626/jogo/resident-evil-5\nContexto: Página de guia\nSeção: Página de guia\nTipo: Erro no guia\n\nDescreva aqui o problema encontrado:",
+    "sourceRequestBefore": 0,
+    "visible": true,
+    "noChecklistFields": true,
+    "overflow": false,
+    "config": {
+      "analyticsEnabled": false,
+      "cwvEnabled": false,
+      "errorMonitoringEnabled": false,
+      "adsEnabled": false,
+      "placeholderMode": false,
+      "placements": {
+        "summary": true,
+        "roadmap": true,
+        "extras": true,
+        "dlc": true
+      },
+      "frontendVersion": "4.0.0"
+    },
+    "sourceRequestAfter": 0,
+    "screenshot": "artifacts/re5-phase9/screenshots/feedback-governance-desktop-1440.png",
+    "missingCsrfStatus": 403
+  },
+  "mobile": {
+    "viewport": "small",
+    "visible": true,
+    "overflow": false,
+    "sourceHint": "Fonte de apoio opcional\n              \n              A equipe não abre URL  automaticamente; toda fonte pa a por triagem  egura.",
+    "screenshot": "artifacts/re5-phase9/screenshots/feedback-governance-mobile-390.png"
+  },
+  "regression": {
+    "h1": 1,
+    "governanceBlock": {},
+    "governanceVisible": false,
+    "overflow": false
+  },
+  "status": "PASS"
+}

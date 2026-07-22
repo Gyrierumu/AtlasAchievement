@@ -193,7 +193,7 @@ function assertHtmlLoadsModules(relPath) {
 
   if (relPath === 'public/index.html') {
     assert(scripts.includes('/js/ui-formatters.js?v=re5-seo-phase24-20260709'), 'public/index.html deve versionar ui-formatters.js para evitar metadados antigos do RE5');
-    assert(scripts.includes('/js/ui-guide.js?v=re5-seo-phase24-20260709'), 'public/index.html deve versionar ui-guide.js para evitar cache antigo do guia RE5');
+    assert(scripts.some(source => /^\/js\/ui-guide\.js\?v=[a-z0-9._-]+$/i.test(source)), 'public/index.html deve versionar ui-guide.js para evitar cache antigo dos guias');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
     assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');

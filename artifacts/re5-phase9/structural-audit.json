@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "audit": "resident-evil-5-structural-governance",
+  "lastChecked": "2026-07-21T23:41:25.693Z",
+  "status": "PASS",
+  "summary": {
+    "total": 24,
+    "passed": 24,
+    "failed": 0
+  },
+  "counts": {
+    "baseTrophies": 51,
+    "dlcTrophies": 20,
+    "uniqueTotal": 71,
+    "faq": 36,
+    "attention": 12,
+    "bosses": 22,
+    "bsaa": 30,
+    "treasures": 50,
+    "scoreStars": 18,
+    "agitators": 3,
+    "chapters": 16,
+    "roadmapStages": 7,
+    "instructionalFigures": 5,
+    "tabs": 6
+  },
+  "expectedCounts": {
+    "baseTrophies": 51,
+    "dlcTrophies": 20,
+    "uniqueTotal": 71,
+    "faq": 36,
+    "attention": 12,
+    "bosses": 22,
+    "bsaa": 30,
+    "treasures": 50,
+    "scoreStars": 18,
+    "agitators": 3,
+    "chapters": 16,
+    "roadmapStages": 7,
+    "instructionalFigures": 5,
+    "tabs": 6
+  },
+  "editorialDates": {
+    "reviewedAt": "2026-07-18",
+    "dateModified": "2026-07-18",
+    "sitemap": "2026-07-18T00:00:00.000Z"
+  },
+  "snapshot": {
+    "file": "data/guides/resident-evil-5.json",
+    "sha256": "75281e7d54cbbf8911f3ff409e6c84aa444d9807bf14cce45f6675028fa1fb07",
+    "bytes": 393254
+  },
+  "manifest": {
+    "file": "resident-evil-5.json",
+    "name": "Resident Evil 5",
+    "roadmaps": 7,
+    "slug": "resident-evil-5",
+    "status": "verified",
+    "trophies": 51
+  },
+  "registry": {
+    "sources": 11,
+    "publicSources": 6,
+    "claims": 17,
+    "errors": [],
+    "warnings": [
+      {
+        "code": "SOURCE_D_REQUIRES_REVIEW",
+        "message": "Fonte D só pode ser pista temporária com revisão humana.",
+        "id": "psnprofiles-sessions-re5",
+        "severity": "warning"
+      },
+      {
+        "code": "CLAIM_D_ONLY_UNCONFIRMED",
+        "message": "Claim volátil sustentada apenas por pista D permanece não confirmada.",
+        "id": "re5-online-status",
+        "severity": "warning"
+      }
+    ]
+  },
+  "freshness": {
+    "errors": [],
+    "valid": true
+  },
+  "obsolescence": [],
+  "checks": [
+    {
+      "id": "COUNTS_CANONICAL",
+      "ok": true,
+      "detail": "{\"baseTrophies\":51,\"dlcTrophies\":20,\"uniqueTotal\":71,\"faq\":36,\"attention\":12,\"bosses\":22,\"bsaa\":30,\"treasures\":50,\"scoreStars\":18,\"agitators\":3,\"chapters\":16,\"roadmapStages\":7,\"instructionalFigures\":5,\"tabs\":6}"
+    },
+    {
+      "id": "BASE_IDS_UNIQUE",
+      "ok": true,
+      "detail": "51/51 IDs únicos"
+    },
+    {
+      "id": "DLC_IDS_UNIQUE",
+      "ok": true,
+      "detail": "20/20 IDs únicos"
+    },
+    {
+      "id": "TROPHY_NAMES_UNIQUE",
+      "ok": true,
+      "detail": "base=51; DLC=20; total=71"
+    },
+    {
+      "id": "DB_TROPHIES_UNIQUE",
+      "ok": true,
+      "detail": "51 linhas"
+    },
+    {
+      "id": "MANIFEST_ENTRY",
+      "ok": true,
+      "detail": "{\"file\":\"resident-evil-5.json\",\"name\":\"Resident Evil 5\",\"roadmaps\":7,\"slug\":\"resident-evil-5\",\"status\":\"verified\",\"trophies\":51}"
+    },
+    {
+      "id": "SEED_SNAPSHOT_EDITORIAL_PARITY",
+      "ok": true,
+      "detail": "429e0b424ac27a147f7841403b25c794c134b0cb6dbdbb5dfbb7f05db6401c65 / 429e0b424ac27a147f7841403b25c794c134b0cb6dbdbb5dfbb7f05db6401c65"
+    },
+    {
+      "id": "SEED_API_EDITORIAL_PARITY",
+      "ok": true,
+      "detail": "429e0b424ac27a147f7841403b25c794c134b0cb6dbdbb5dfbb7f05db6401c65 / 429e0b424ac27a147f7841403b25c794c134b0cb6dbdbb5dfbb7f05db6401c65"
+    },
+    {
+      "id": "ROADMAP_LAYER_PARITY",
+      "ok": true,
+      "detail": "6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978 / 6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978 / 6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978 / 6ec72227289d4acb197e47f3c16e2b7ca39deafa5077a6923dad9796abf9e978"
+    },
+    {
+      "id": "SOURCE_REGISTRY_VALID",
+      "ok": true,
+      "detail": "11 fontes; 0 erros"
+    },
+    {
+      "id": "CLAIM_REGISTRY_VALID",
+      "ok": true,
+      "detail": "17 claims; 0 erros"
+    },
+    {
+      "id": "FRESHNESS_HONEST",
+      "ok": true,
+      "detail": "datas coerentes"
+    },
+    {
+      "id": "PUBLIC_SOURCES_DERIVED",
+      "ok": true,
+      "detail": "6 fontes públicas"
+    },
+    {
+      "id": "SENSITIVE_SURFACES_CONSISTENT",
+      "ok": true,
+      "detail": "sem divergências"
+    },
+    {
+      "id": "SENSITIVE_SURFACES_EXPECTED",
+      "ok": true,
+      "detail": "{\"re5-all-dressed-up\":{\"faq\":true,\"checklist\":true},\"re5-score-stars-18\":{\"checklist\":18,\"alt\":18,\"fallback\":18,\"svg\":18},\"re5-agitators-3\":{\"checklist\":3,\"alt\":3,\"fallback\":3,\"svg\":3},\"re5-counts\":{\"seed\":\"51/20\",\"api\":\"51/20\",\"hero\":\"51/20\",\"html\":\"51/20\",\"jsonLd\":\"51/20\"}}"
+    },
+    {
+      "id": "DESCRIPTIONS_MATCH",
+      "ok": true,
+      "detail": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%. / Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%. / Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%."
+    },
+    {
+      "id": "EDITORIAL_DATE_SURFACES",
+      "ok": true,
+      "detail": "seed=2026-07-18; html=true; schema=2026-07-18; sitemap=2026-07-18T00:00:00.000Z"
+    },
+    {
+      "id": "JSON_LD_AUTHORSHIP",
+      "ok": true,
+      "detail": "Equipe Editorial AtlasAchievement; FAQ=36"
+    },
+    {
+      "id": "ONLINE_CAVEAT_PRESENT",
+      "ok": true,
+      "detail": "Situação verificada em julho de 2026: há pedidos recentes de boost e registros recentes de conclusão da lista PS4, então o online está aparentemente disponível. Isso é uma inferência por atividade observada, não um anúncio oficial de status. Não presuma matchm"
+    },
+    {
+      "id": "SSR_IDS_UNIQUE",
+      "ok": true,
+      "detail": "0 duplicados"
+    },
+    {
+      "id": "SSR_SURFACE",
+      "ok": true,
+      "detail": "troféus=51; FAQ=36"
+    },
+    {
+      "id": "DOM_BROWSER_COMPLETED",
+      "ok": true,
+      "detail": "730695 bytes"
+    },
+    {
+      "id": "DOM_HYDRATED_SURFACE",
+      "ok": true,
+      "detail": "troféus=51; tabs=6"
+    },
+    {
+      "id": "API_AND_HTML_OK",
+      "ok": true,
+      "detail": "200/200/200"
+    }
+  ]
+}

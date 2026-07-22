@@ -1,0 +1,550 @@
+{
+  "generatedAt": "2026-07-21T21:46:34.941Z",
+  "runs": [
+    {
+      "profile": "mobile",
+      "run": 1,
+      "lighthouseVersion": "13.4.1",
+      "fetchTime": "2026-07-21T21:43:09.643Z",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1372.426,
+        "lcpMs": 2488.3365,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexMs": 1586.1732114453357,
+        "transferBytes": 467604,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 2,
+        "longTaskDurationMs": 261,
+        "mainThreadWorkMs": 891.6600000000008,
+        "bootupMs": 65.792
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93809,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62890,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128988,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12883,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2250,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39239,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127545,
+          "resourceBytes": 126828
+        }
+      },
+      "a11yFailures": []
+    },
+    {
+      "profile": "mobile",
+      "run": 2,
+      "lighthouseVersion": "13.4.1",
+      "fetchTime": "2026-07-21T21:43:23.018Z",
+      "scores": {
+        "performance": 92,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1409.348,
+        "lcpMs": 2872.696,
+        "tbtMs": 51,
+        "cls": 0,
+        "speedIndexMs": 4396.232325329953,
+        "transferBytes": 467639,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 3,
+        "longTaskDurationMs": 408,
+        "mainThreadWorkMs": 1222.3080000000086,
+        "bootupMs": 57.395999999999994
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93809,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62887,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128988,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12883,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2252,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39239,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127581,
+          "resourceBytes": 126828
+        }
+      },
+      "a11yFailures": []
+    },
+    {
+      "profile": "mobile",
+      "run": 3,
+      "lighthouseVersion": "13.4.1",
+      "fetchTime": "2026-07-21T21:43:39.881Z",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1376.1,
+        "lcpMs": 2449.0505000000003,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexMs": 1544.6926014887927,
+        "transferBytes": 467627,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 3,
+        "longTaskDurationMs": 286,
+        "mainThreadWorkMs": 921.8960000000003,
+        "bootupMs": 62.504
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93807,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62894,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128987,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12881,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2254,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39235,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127569,
+          "resourceBytes": 126828
+        }
+      },
+      "a11yFailures": []
+    },
+    {
+      "profile": "desktop",
+      "run": 1,
+      "lighthouseVersion": "13.4.1",
+      "fetchTime": "2026-07-21T21:43:53.167Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 304.318,
+        "lcpMs": 679.837,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 650.1502139532577,
+        "transferBytes": 467652,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 0,
+        "longTaskDurationMs": 0,
+        "mainThreadWorkMs": 200.0390000000006,
+        "bootupMs": 2.0409999999999995
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93813,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62889,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128993,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12887,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2254,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39247,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127569,
+          "resourceBytes": 126828
+        }
+      },
+      "a11yFailures": []
+    },
+    {
+      "profile": "desktop",
+      "run": 2,
+      "lighthouseVersion": "13.4.1",
+      "fetchTime": "2026-07-21T21:44:06.388Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 312.88599999999997,
+        "lcpMs": 412.88599999999997,
+        "tbtMs": 0,
+        "cls": 0.0004507872212089657,
+        "speedIndexMs": 670.6814179702161,
+        "transferBytes": 467660,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 0,
+        "longTaskDurationMs": 0,
+        "mainThreadWorkMs": 222.47500000000034,
+        "bootupMs": 3.2489999999999997
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93815,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62892,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128995,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12889,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2254,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39251,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127564,
+          "resourceBytes": 126828
+        }
+      },
+      "a11yFailures": []
+    },
+    {
+      "profile": "desktop",
+      "run": 3,
+      "lighthouseVersion": "13.4.1",
+      "fetchTime": "2026-07-21T21:44:20.366Z",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 336.012,
+        "lcpMs": 676.789,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 651.7527205247168,
+        "transferBytes": 467615,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 0,
+        "longTaskDurationMs": 0,
+        "mainThreadWorkMs": 291.9270000000003,
+        "bootupMs": 2.3249999999999993
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93809,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62884,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128989,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12883,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2252,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39239,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127559,
+          "resourceBytes": 126828
+        }
+      },
+      "a11yFailures": []
+    }
+  ],
+  "medians": {
+    "mobile": {
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1376.1,
+        "lcpMs": 2488.3365,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexMs": 1586.1732114453357,
+        "transferBytes": 467627,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 3,
+        "longTaskDurationMs": 286,
+        "mainThreadWorkMs": 921.8960000000003,
+        "bootupMs": 62.504
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93809,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62890,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128988,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12883,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2252,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39239,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127569,
+          "resourceBytes": 126828
+        }
+      }
+    },
+    "desktop": {
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 312.88599999999997,
+        "lcpMs": 676.789,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 651.7527205247168,
+        "transferBytes": 467652,
+        "requests": 10,
+        "domNodes": 9203,
+        "longTasks": 0,
+        "longTaskDurationMs": 0,
+        "mainThreadWorkMs": 222.47500000000034,
+        "bootupMs": 2.3249999999999993
+      },
+      "resources": {
+        "Document": {
+          "requests": 1,
+          "transferBytes": 93813,
+          "resourceBytes": 720459
+        },
+        "Stylesheet": {
+          "requests": 2,
+          "transferBytes": 62889,
+          "resourceBytes": 382605
+        },
+        "Image": {
+          "requests": 2,
+          "transferBytes": 128993,
+          "resourceBytes": 127258
+        },
+        "Script": {
+          "requests": 1,
+          "transferBytes": 12887,
+          "resourceBytes": 46609
+        },
+        "Manifest": {
+          "requests": 1,
+          "transferBytes": 2254,
+          "resourceBytes": 689
+        },
+        "Other": {
+          "requests": 2,
+          "transferBytes": 39247,
+          "resourceBytes": 36300
+        },
+        "Font": {
+          "requests": 1,
+          "transferBytes": 127564,
+          "resourceBytes": 126828
+        }
+      }
+    }
+  },
+  "phase5": {
+    "mobile": {
+      "performance": 97,
+      "lcpMs": 2459,
+      "cls": 0.00004,
+      "tbtMs": 0,
+      "requests": 10,
+      "transferBytes": 455344,
+      "domNodes": 8589
+    },
+    "desktop": {
+      "performance": 99,
+      "lcpMs": 906,
+      "cls": 0.001729,
+      "tbtMs": 0,
+      "requests": 10,
+      "transferBytes": 455349,
+      "domNodes": 8589
+    }
+  },
+  "comparison": {
+    "mobile": {
+      "performanceDelta": 0,
+      "lcpDeltaMs": 29.336499999999887,
+      "clsDelta": -0.00004,
+      "tbtDeltaMs": 0,
+      "requestDelta": 0,
+      "transferDeltaBytes": 12283,
+      "domDelta": 614
+    },
+    "desktop": {
+      "performanceDelta": 1,
+      "lcpDeltaMs": -229.211,
+      "clsDelta": -0.0012703965084583787,
+      "tbtDeltaMs": 0,
+      "requestDelta": 0,
+      "transferDeltaBytes": 12303,
+      "domDelta": 614
+    }
+  },
+  "inpNote": "INP não foi certificado: Lighthouse local não substitui dados de campo."
+}

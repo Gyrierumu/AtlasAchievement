@@ -1,0 +1,434 @@
+{
+  "generatedAt": "2026-07-21T21:59:00.282Z",
+  "url": "http://127.0.0.1:4319/jogo/resident-evil-5",
+  "browser": "msedge.exe headless via CDP; browser integrado indisponível por sandboxPolicy ausente",
+  "journeys": [
+    {
+      "id": "new-player",
+      "label": "1 — Novo jogador",
+      "target": ".atlas-re5-hero",
+      "timeLimitSeconds": 30,
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 0,
+      "measuredMs": 20,
+      "usedSearch": false,
+      "finalAnchor": ".atlas-re5-hero",
+      "blocker": null,
+      "located": {
+        "hash": "",
+        "selectedTab": "summary",
+        "documentY": 206,
+        "heading": "Resident Evil 5",
+        "visible": true
+      }
+    },
+    {
+      "id": "platinum-vs-100",
+      "label": "2 — Platina versus 100%",
+      "target": "#re5-versus-dlc",
+      "timeLimitSeconds": 10,
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 111,
+      "usedSearch": false,
+      "finalAnchor": "#re5-versus-dlc",
+      "blocker": null,
+      "located": {
+        "hash": "#re5-versus-dlc",
+        "selectedTab": "dlc",
+        "documentY": 6526,
+        "heading": "Versus — 10 troféus",
+        "visible": true
+      }
+    },
+    {
+      "id": "resume-progress",
+      "label": "3 — Retomar progresso",
+      "target": "#guideChecklistPanel",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 104,
+      "usedSearch": false,
+      "finalAnchor": "#guideChecklistPanel",
+      "blocker": null,
+      "located": {
+        "hash": "#guideTab-checklist",
+        "selectedTab": "checklist",
+        "documentY": 1299,
+        "heading": "Checklist da platina base",
+        "visible": true
+      }
+    },
+    {
+      "id": "bsaa-29",
+      "label": "4 — BSAA Emblem #29",
+      "target": "#re5-bsaa-emblem-29",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 105,
+      "usedSearch": false,
+      "finalAnchor": "#re5-bsaa-emblem-29",
+      "blocker": null,
+      "located": {
+        "hash": "#extras-bsaa-emblems",
+        "selectedTab": "extras",
+        "documentY": 26901,
+        "heading": "",
+        "visible": true
+      }
+    },
+    {
+      "id": "heart-of-africa",
+      "label": "5 — Heart of Africa",
+      "target": "#re5-treasure-50-heart-of-africa",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 104,
+      "usedSearch": false,
+      "finalAnchor": "#re5-treasure-50-heart-of-africa",
+      "blocker": null,
+      "located": {
+        "hash": "#extras-tesouros",
+        "selectedTab": "extras",
+        "documentY": 25699,
+        "heading": "",
+        "visible": true
+      }
+    },
+    {
+      "id": "all-dressed-up",
+      "label": "6 — All Dressed Up",
+      "target": "#re5-bonus-features-all-dressed-up",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 105,
+      "usedSearch": false,
+      "finalAnchor": "#re5-bonus-features-all-dressed-up",
+      "blocker": null,
+      "located": {
+        "hash": "#extras-bonus-features-outfits-figures",
+        "selectedTab": "extras",
+        "documentY": 2964,
+        "heading": "",
+        "visible": true
+      }
+    },
+    {
+      "id": "infinite-ammo",
+      "label": "7 — Infinite Ammo",
+      "target": "#re5-bonus-features-infinite-ammo",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 106,
+      "usedSearch": false,
+      "finalAnchor": "#re5-bonus-features-infinite-ammo",
+      "blocker": null,
+      "located": {
+        "hash": "#extras-bonus-features-outfits-figures",
+        "selectedTab": "extras",
+        "documentY": 13041,
+        "heading": "",
+        "visible": true
+      }
+    },
+    {
+      "id": "professional",
+      "label": "8 — Professional",
+      "target": "#guideProfessionalAiPanel",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 128,
+      "usedSearch": false,
+      "finalAnchor": "#guideProfessionalAiPanel",
+      "blocker": null,
+      "located": {
+        "hash": "#guideTab-roadmap",
+        "selectedTab": "roadmap",
+        "documentY": 9894,
+        "heading": "Professional e IA — Preparação para War Hero",
+        "visible": true
+      }
+    },
+    {
+      "id": "score-stars",
+      "label": "9 — Score Stars",
+      "target": "#re5-lost-in-nightmares-score-stars",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 120,
+      "usedSearch": false,
+      "finalAnchor": "#re5-lost-in-nightmares-score-stars",
+      "blocker": null,
+      "located": {
+        "hash": "#re5-lost-in-nightmares-score-stars",
+        "selectedTab": "dlc",
+        "documentY": 14952,
+        "heading": "Rota das 18 Score Stars",
+        "visible": true
+      }
+    },
+    {
+      "id": "agitators",
+      "label": "10 — Agitators",
+      "target": "#re5-desperate-escape-agitator-majini",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 110,
+      "usedSearch": false,
+      "finalAnchor": "#re5-desperate-escape-agitator-majini",
+      "blocker": null,
+      "located": {
+        "hash": "#re5-desperate-escape-agitator-majini",
+        "selectedTab": "dlc",
+        "documentY": 31450,
+        "heading": "Rota e gatilhos dos 3 Agitator Majini",
+        "visible": true
+      }
+    },
+    {
+      "id": "versus",
+      "label": "11 — Versus",
+      "target": "#re5-versus-dlc",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 1,
+      "measuredMs": 115,
+      "usedSearch": false,
+      "finalAnchor": "#re5-versus-dlc",
+      "blocker": null,
+      "located": {
+        "hash": "#re5-versus-dlc",
+        "selectedTab": "dlc",
+        "documentY": 6526,
+        "heading": "Versus — 10 troféus",
+        "visible": true
+      }
+    },
+    {
+      "id": "mobile",
+      "label": "12 — Mobile 360/390 px",
+      "target": ".atlas-re5-hero",
+      "startPoint": "entrada orgânica simulada na URL canônica",
+      "clicks": 0,
+      "measuredMs": 2,
+      "usedSearch": false,
+      "finalAnchor": ".atlas-re5-hero",
+      "blocker": null,
+      "located": {
+        "hash": "",
+        "selectedTab": "summary",
+        "documentY": 206,
+        "heading": "Resident Evil 5",
+        "visible": true
+      }
+    }
+  ],
+  "accessibility": {
+    "semantics": {
+      "lang": "pt-BR",
+      "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement",
+      "h1": 1,
+      "headingCount": 295,
+      "skippedHeadingLevels": [],
+      "landmarks": {
+        "main": 1,
+        "nav": 10,
+        "header": 1,
+        "footer": 1
+      },
+      "skipLink": "#mainContent",
+      "liveRegions": 4,
+      "visibleLabelsMissing": [],
+      "hiddenFocusable": []
+    },
+    "tabSequence": [
+      "summary",
+      "roadmap",
+      "checklist",
+      "extras",
+      "dlc",
+      "attention",
+      "summary"
+    ],
+    "focusVisibility": {
+      "checked": 80,
+      "failures": []
+    }
+  },
+  "resilience": {
+    "apiAndCommentsFailure": {
+      "h1": 1,
+      "trophies": 51,
+      "faq": 36,
+      "tabs": 6,
+      "methodology": true,
+      "enhanced": true,
+      "overflow": false
+    },
+    "enhancementScriptFailure": {
+      "h1": 1,
+      "trophies": 51,
+      "faq": 36,
+      "tabs": 6,
+      "methodology": true,
+      "enhanced": false,
+      "overflow": false,
+      "visiblePanels": 6
+    },
+    "localStorageBlocked": {
+      "h1": 1,
+      "trophies": 51,
+      "faq": 36,
+      "tabs": 6,
+      "methodology": true,
+      "enhanced": true,
+      "overflow": false,
+      "tabWorks": true
+    },
+    "coverSvgVideoFailure": {
+      "h1": 1,
+      "trophies": 51,
+      "faq": 36,
+      "tabs": 6,
+      "methodology": true,
+      "enhanced": true,
+      "overflow": false
+    },
+    "slowNetwork": {
+      "h1": 1,
+      "trophies": 51,
+      "faq": 36,
+      "tabs": 6,
+      "methodology": true,
+      "enhanced": true,
+      "overflow": false,
+      "measuredMs": 1447
+    },
+    "persistence": {
+      "trophy": {
+        "id": "re5_platinum",
+        "before": "false",
+        "changed": "true",
+        "afterReload": "true"
+      },
+      "roadmap": {
+        "before": "false",
+        "changed": "true",
+        "afterReload": "true"
+      }
+    }
+  },
+  "intermediateLayout": {
+    "innerWidth": 768,
+    "domNodes": 9203,
+    "visualViewport": {
+      "width": 753,
+      "scale": 1
+    },
+    "layout": {
+      "x": 31,
+      "y": 226,
+      "width": 691,
+      "height": 892
+    },
+    "body": {
+      "x": 157,
+      "y": 226,
+      "width": 565,
+      "height": 892
+    },
+    "cover": {
+      "x": 31,
+      "y": 226,
+      "width": 108,
+      "height": 162
+    },
+    "scope": {
+      "x": 157,
+      "y": 533,
+      "width": 565,
+      "height": 72
+    },
+    "facts": {
+      "x": 157,
+      "y": 651,
+      "width": 565,
+      "height": 137
+    },
+    "layoutColumns": "108px 565px",
+    "bodyColumns": "565px"
+  },
+  "regressions": [
+    {
+      "slug": "inside",
+      "profile": "curto",
+      "url": "http://127.0.0.1:4319/jogo/inside?phase7_regression=1",
+      "before": {
+        "h1": 1,
+        "tabCount": 6,
+        "selectedTab": "guideTabButton-summary",
+        "re5Body": null,
+        "re5Css": false,
+        "overflow": false,
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "graphTypes": [
+          "VideoGame",
+          "BreadcrumbList",
+          "FAQPage"
+        ]
+      },
+      "after": {
+        "id": "guideTabButton-roadmap",
+        "selected": "true",
+        "panelVisible": true
+      }
+    },
+    {
+      "slug": "resident-evil-village",
+      "profile": "médio",
+      "url": "http://127.0.0.1:4319/jogo/resident-evil-village?phase7_regression=1",
+      "before": {
+        "h1": 1,
+        "tabCount": 6,
+        "selectedTab": "guideTabButton-summary",
+        "re5Body": null,
+        "re5Css": false,
+        "overflow": false,
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-village",
+        "graphTypes": [
+          "VideoGame",
+          "BreadcrumbList",
+          "FAQPage"
+        ]
+      },
+      "after": {
+        "id": "guideTabButton-roadmap",
+        "selected": "true",
+        "panelVisible": true
+      }
+    },
+    {
+      "slug": "resident-evil-6",
+      "profile": "com DLC/modos extras",
+      "url": "http://127.0.0.1:4319/jogo/resident-evil-6?phase7_regression=1",
+      "before": {
+        "h1": 1,
+        "tabCount": 6,
+        "selectedTab": "guideTabButton-summary",
+        "re5Body": null,
+        "re5Css": false,
+        "overflow": false,
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-6",
+        "graphTypes": [
+          "VideoGame",
+          "BreadcrumbList",
+          "FAQPage"
+        ]
+      },
+      "after": {
+        "id": "guideTabButton-roadmap",
+        "selected": "true",
+        "panelVisible": true
+      }
+    }
+  ]
+}

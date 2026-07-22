@@ -92,6 +92,7 @@ function getSeedExtrasBySlug() {
       ...(game.editorialDisplay && typeof game.editorialDisplay === 'object' ? {
         editorialDisplay: game.editorialDisplay,
         lastReviewedAt: game.lastReviewedAt || null,
+        editorialAuthority: game.editorialAuthority || null,
         platinumBaseChecklist: game.platinumBaseChecklist || null,
         videoAudit: game.videoAudit || null,
         instructionalVisuals: game.instructionalVisuals || null

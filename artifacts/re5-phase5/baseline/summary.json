@@ -1,0 +1,106 @@
+{
+  "capturedAt": "2026-07-18",
+  "lighthouseVersion": "12.8.2",
+  "runsPerProfile": 3,
+  "local": {
+    "url": "http://127.0.0.1:4319/jogo/resident-evil-5",
+    "mobile": {
+      "runs": [
+        { "performance": 53, "accessibility": 95, "bestPractices": 93, "seo": 100, "lcpMs": 15189.44, "cls": 0, "tbtMs": 224, "speedIndexMs": 8082.22 },
+        { "performance": 54, "accessibility": 95, "bestPractices": 93, "seo": 100, "lcpMs": 15400.37, "cls": 0, "tbtMs": 189, "speedIndexMs": 8063.46 },
+        { "performance": 54, "accessibility": 95, "bestPractices": 93, "seo": 100, "lcpMs": 15771.21, "cls": 0, "tbtMs": 219, "speedIndexMs": 8078.40 }
+      ],
+      "median": {
+        "performance": 54,
+        "accessibility": 95,
+        "bestPractices": 93,
+        "seo": 100,
+        "lcpMs": 15400.37,
+        "cls": 0,
+        "tbtMs": 219,
+        "speedIndexMs": 8078.40,
+        "requests": 62,
+        "transferBytes": 2968868,
+        "resourceBytes": 3343148,
+        "domNodes": 7707
+      },
+      "lcpElement": {
+        "node": "H1",
+        "type": "text",
+        "trace": "local/lcp-probe-0.trace.json",
+        "evidence": "largestContentfulPaint::Candidate, candidateIndex 2, nodeId 482"
+      }
+    },
+    "desktop": {
+      "runs": [
+        { "performance": 76, "accessibility": 92, "bestPractices": 93, "seo": 100, "lcpMs": 2924.17, "cls": 0.00054484, "tbtMs": 5, "speedIndexMs": 1742.99 },
+        { "performance": 76, "accessibility": 92, "bestPractices": 93, "seo": 100, "lcpMs": 3061.255, "cls": 0.00054484, "tbtMs": 1.5, "speedIndexMs": 1604.71 },
+        { "performance": 76, "accessibility": 92, "bestPractices": 93, "seo": 100, "lcpMs": 3085.484, "cls": 0.00054484, "tbtMs": 2, "speedIndexMs": 1565.56 }
+      ],
+      "median": {
+        "performance": 76,
+        "accessibility": 92,
+        "bestPractices": 93,
+        "seo": 100,
+        "lcpMs": 3061.255,
+        "cls": 0.00054484,
+        "tbtMs": 2,
+        "speedIndexMs": 1604.71,
+        "requests": 62,
+        "transferBytes": 2968875,
+        "resourceBytes": 3343148,
+        "domNodes": 7707
+      }
+    }
+  },
+  "public": {
+    "url": "https://atlasachievement.com.br/jogo/resident-evil-5",
+    "mobile": {
+      "runs": [
+        { "performance": 56, "accessibility": 95, "bestPractices": 93, "seo": 100, "lcpMs": 8035.82, "cls": 0, "tbtMs": 258, "speedIndexMs": 6244.17 },
+        { "performance": 72, "accessibility": 95, "bestPractices": 93, "seo": 100, "lcpMs": 4094.204, "cls": 0, "tbtMs": 188.5, "speedIndexMs": 6356.27 },
+        { "performance": 50, "accessibility": 95, "bestPractices": 93, "seo": 100, "lcpMs": 8075, "cls": 0, "tbtMs": 380.5, "speedIndexMs": 7864.75 }
+      ],
+      "median": {
+        "performance": 56,
+        "accessibility": 95,
+        "bestPractices": 93,
+        "seo": 100,
+        "lcpMs": 8035.82,
+        "cls": 0,
+        "tbtMs": 258,
+        "speedIndexMs": 6356.27,
+        "requests": 62,
+        "transferBytes": 1024567,
+        "resourceBytes": 3305849,
+        "domNodes": 7599
+      }
+    },
+    "desktop": {
+      "runs": [
+        { "performance": 85, "accessibility": 92, "bestPractices": 93, "seo": 100, "lcpMs": 1494.967, "cls": 0.000338, "tbtMs": 2.5, "speedIndexMs": 2413.37 },
+        { "performance": 78, "accessibility": 92, "bestPractices": 93, "seo": 100, "lcpMs": 2175.416, "cls": 0, "tbtMs": 1.5, "speedIndexMs": 2484.93 },
+        { "performance": 81, "accessibility": 92, "bestPractices": 93, "seo": 100, "lcpMs": 1799.599, "cls": 0.000338, "tbtMs": 2, "speedIndexMs": 2568.2 }
+      ],
+      "median": {
+        "performance": 81,
+        "accessibility": 92,
+        "bestPractices": 93,
+        "seo": 100,
+        "lcpMs": 1799.599,
+        "cls": 0.000338,
+        "tbtMs": 2,
+        "speedIndexMs": 2484.93,
+        "requests": 62,
+        "transferBytes": 1024341,
+        "resourceBytes": 3305849,
+        "domNodes": 7599
+      }
+    }
+  },
+  "notes": [
+    "INP: sem dados de campo disponíveis; Lighthouse local não substitui CrUX.",
+    "Todos os relatórios JSON foram gravados apesar de o processo Lighthouse no Windows terminar com EPERM apenas ao remover o perfil temporário.",
+    "O servidor local ainda não aplicava compressão no baseline; a URL pública aplicava compressão na borda."
+  ]
+}

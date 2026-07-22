@@ -39,7 +39,7 @@
     "time_min_hours": 35,
     "time_reason": "35-45 horas: 8-12h na primeira campanha, 5-8h para emblemas/tesouros/armas, 4-6h para ranks S e troféus situacionais, 6-10h de farm/upgrades/figuras e 5-8h para Professional preparado.",
     "time_sort_hours": 35,
-    "updated_at": "2026-07-18 19:49:50",
+    "updated_at": "2026-07-21 22:45:34",
     "verification_note": "Guia revisado com foco na lista base, ausência de perdíveis definitivos, Seleção de Capítulos, coletáveis, armas, upgrades, ranks S e Professional.",
     "verification_status": "verified",
     "walkthrough": null
@@ -47,7 +47,7 @@
   "redirects": [],
   "roadmaps": [
     {
-      "content": "{\"title\":\"Primeira campanha: Normal ou Veteran\",\"focus\":\"Campanha e preparação\",\"objective\":\"Termine a história uma vez, aprenda arenas/chefes e comece os checklists sem tentar perfeição.\",\"actions\":[\"Escolha Normal se estiver jogando pela primeira vez\",\"escolha Veteran se já conhece o jogo e quer desbloquear Professional mais cedo.\",\"Pegue armas encontradas em baús/cenários, atire em emblemas visíveis e colete tesouros naturais, mas não reinicie capítulos longos por um único item.\",\"Guarde ovos diferentes, primeiros sprays e munição de Magnum/Rifle. Venda tesouros duplicados para melhorar uma arma principal.\",\"Use a campanha para adiantar A Friend in Need, Lifeguard, Exploding Heads, Get Physical, A Cut Above e Who Do You Trust?\"],\"warning\":\"Não gaste todo o dinheiro em muitas armas medianas. Uma arma forte bem evoluída ajuda mais que cinco armas parcialmente melhoradas.\",\"result\":\"Campanha concluída, capítulos abertos na Seleção de Capítulos e base de inventário para cleanup.\"}",
+      "content": "{\"title\":\"Primeira campanha: Normal ou Veteran\",\"focus\":\"Campanha e preparação\",\"objective\":\"Termine a história uma vez, aprenda arenas/chefes e comece os checklists sem tentar perfeição.\",\"actions\":[\"Escolha Normal se estiver jogando pela primeira vez\",\"escolha Veteran se já conhece o jogo e quer desbloquear Professional mais cedo.\",\"Pegue armas encontradas em baús/cenários, atire em emblemas visíveis e colete tesouros naturais, mas não reinicie capítulos longos por um único item.\",\"Use Rota por Capítulo para saber o que observar em cada capítulo sem abrir todos os checklists.\",\"Guarde ovos diferentes, primeiros sprays e munição de Magnum/Rifle. Venda tesouros duplicados para melhorar uma arma principal.\",\"Use a campanha para adiantar A Friend in Need, Lifeguard, Exploding Heads, Get Physical, A Cut Above e Who Do You Trust?\"],\"warning\":\"Não gaste todo o dinheiro em muitas armas medianas. Uma arma forte bem evoluída ajuda mais que cinco armas parcialmente melhoradas.\",\"result\":\"Campanha concluída, capítulos abertos na Seleção de Capítulos e base de inventário para cleanup.\"}",
       "step_order": 1
     },
     {
@@ -55,23 +55,23 @@
       "step_order": 2
     },
     {
-      "content": "{\"title\":\"Limpeza de emblemas BSAA e tesouros\",\"focus\":\"Coletáveis\",\"objective\":\"Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum.\",\"actions\":[\"Emblemas BSAA: 1-2 tem 3\",\"2-1 tem 5\",\"2-2 tem 3\",\"3-1 tem 4\",\"3-2 tem 2\",\"3-3 tem 1\",\"4-1 tem 3\",\"4-2 tem 1\",\"5-1 tem 1\",\"5-2 tem 1\",\"5-3 tem 3\",\"6-1 tem 3.\",\"Capítulos sem emblemas: 1-1, 2-3, 6-2 e 6-3.\",\"Tesouros críticos: Soul Gem em 4-1, Heart of Africa em 5-3, Diamond Marquise em 6-3, Ruby Marquise em 2-1, Emerald Marquise em 3-3 e gemas Brilliant/Oval de 5-3.\",\"Você só precisa registrar cada tipo de tesouro\",\"depois pode vender para financiar upgrades.\"],\"warning\":\"Em 6-1, um emblema dentro de container só quebra com explosivo ou dinamite inimiga. Entre com granada/proximity bomb para não repetir.\",\"result\":\"Badge of Honor, grande parte de They Belong in a Museum e dinheiro extra para upgrades.\"}",
+      "content": "{\"title\":\"Limpeza de emblemas BSAA e tesouros\",\"focus\":\"Coletáveis\",\"objective\":\"Use Seleção de Capítulos em Amateur/Normal para fechar Badge of Honor e They Belong in a Museum; para o checklist detalhado da platina base, abra Extras da Platina.\",\"actions\":[\"Abra Extras da Platina para acompanhar os 30 BSAA Emblems e os 50 tipos de tesouro sem inflar o roadmap.\",\"Alerta principal: Soul Gem — Chapter 4-1, derrote Popokarimu em vez de apenas fugir/seguir pela sequência.\",\"Alerta principal: Heart of Africa — Chapter 5-3, cause dano suficiente a Wesker e colete entre as escadas.\",\"Alerta principal: BSAA Emblem do contêiner — Chapter 6-1, leve explosivo para quebrar o emblema escondido.\",\"Alerta principal: Diamond Marquise — Chapter 6-3, pegue na área final antes de concluir o capítulo.\"],\"warning\":\"São alertas de capítulo, não perdíveis permanentes: se passar por algum deles, use Seleção de Capítulos / Chapter Select para repetir o capítulo correspondente.\",\"result\":\"Badge of Honor, grande parte de They Belong in a Museum e dinheiro extra para upgrades.\"}",
       "step_order": 3
     },
     {
-      "content": "{\"title\":\"Ranks S e Bonus Features\",\"focus\":\"Rank S e figuras\",\"objective\":\"Garanta rank S em todos os capítulos em qualquer dificuldade e conclua as liberações de figuras e trajes.\",\"actions\":[\"Faça S rank em Amateur com munição infinita: priorize tempo baixo, alta precisão, muitas mortes e zero deaths.\",\"Capítulos curtos podem ser repetidos para pontos de Bonus Features\",\"6-2 com Rocket Launcher é uma rota rápida para pontos.\",\"Adquira os quatro trajes gratuitos em Bonus Features conforme forem liberados e deixe as figuras pagas para depois de todos os emblemas + ranks S.\"],\"warning\":\"O S rank não precisa ser todo na mesma dificuldade. Se um capítulo já tem S em qualquer dificuldade, siga para o próximo.\",\"result\":\"Base de They’re ACTION Figures!, All Dressed Up e pontuação suficiente para comprar extras.\"}",
+      "content": "{\"title\":\"Ranks S e Bonus Features\",\"focus\":\"Rank S e figuras\",\"objective\":\"Garanta rank S em todos os capítulos em qualquer dificuldade e conclua as liberações de figuras e trajes.\",\"actions\":[\"Faça S rank em Amateur com munição infinita: priorize tempo baixo, alta precisão, muitas mortes e zero deaths.\",\"Capítulos curtos podem ser repetidos para pontos de Bonus Features\",\"6-2 com Rocket Launcher é uma rota rápida para pontos.\",\"Use Extras da Platina para acompanhar os 16 S ranks e as figuras/Bonus Features.\",\"Adquira os quatro trajes gratuitos em Bonus Features conforme forem liberados e deixe as figuras pagas para depois de todos os emblemas + ranks S.\"],\"warning\":\"O S rank não precisa ser todo na mesma dificuldade. Se um capítulo já tem S em qualquer dificuldade, siga para o próximo.\",\"result\":\"Base de They’re ACTION Figures!, All Dressed Up e pontuação suficiente para comprar extras.\"}",
       "step_order": 4
     },
     {
-      "content": "{\"title\":\"Farm de dinheiro e upgrades\",\"focus\":\"Grind\",\"objective\":\"Comprar todas as armas, liberar armas especiais e evoluir todas as armas com upgrade.\",\"actions\":[\"Farm seguro: 4-1 com rota completa de gemas rende muito por run\",\"5-1 é bom para Lion Hearts dos Lickers\",\"5-2 rende Power Stones dos Reapers se você os mata rápido.\",\"Prioridade de desbloqueio: M92F libera M93R\",\"Ithaca M37 libera Hydra\",\"S&W M29 libera S&W M500\",\"VZ61 libera Gatling Gun\",\"S75 libera Longbow.\",\"Para Take It to the Max, evolua todos os handguns, shotguns, machine guns, rifles e magnums. Stun Rod, Rocket Launcher, Grenade Launcher, Gatling Gun e Longbow não têm upgrades tradicionais.\"],\"warning\":\"Não segure tesouros por apego: depois que o tipo foi registrado, vender é correto. O troféu de tesouros não exige inventário cheio.\",\"result\":\"Stockpile, Take It to the Max e arsenal pronto para War Hero.\"}",
+      "content": "{\"title\":\"Farm de dinheiro e upgrades\",\"focus\":\"Grind\",\"objective\":\"Comprar todas as armas, liberar armas especiais e evoluir todas as armas com upgrade.\",\"actions\":[\"Farm seguro: 4-1 com rota completa de gemas rende muito por run\",\"5-1 é bom para Lion Hearts dos Lickers\",\"5-2 rende Power Stones dos Reapers se você os mata rápido.\",\"Use Rotas de Farm para escolher entre dinheiro, Lion Hearts, Power Stones e pontos de Bonus Features sem repetir capítulos aleatórios.\",\"Prioridade de desbloqueio: M92F libera M93R\",\"Ithaca M37 libera Hydra\",\"S&W M29 libera S&W M500\",\"VZ61 libera Gatling Gun\",\"S75 libera Longbow.\",\"Para Take It to the Max, evolua todos os handguns, shotguns, machine guns, rifles e magnums. Stun Rod, Rocket Launcher, Grenade Launcher, Gatling Gun e Longbow não têm upgrades tradicionais.\"],\"warning\":\"Não segure tesouros por apego: depois que o tipo foi registrado, vender é correto. O troféu de tesouros não exige inventário cheio.\",\"result\":\"Stockpile, Take It to the Max e arsenal pronto para War Hero.\"}",
       "step_order": 5
     },
     {
-      "content": "{\"title\":\"Troféus situacionais\",\"focus\":\"Cleanup\",\"objective\":\"Limpe objetivos técnicos em capítulos fáceis antes de fechar a platina.\",\"actions\":[\"Faça Be the Knife em 2-1 contra arqueiros, Drive By em 2-3, Bad Blood/Heart of Africa em 5-3, Heart Stopper em 5-1, Egg Hunt em 3-1 + drops e Egg on Your Face em 1-1 Amateur.\",\"Use 1-1 Amateur para Gatling Gun, Longbow, Stun Rod, headshots, melee e explosivos em grupo.\",\"Use 3-2 para The Works contra Big Man Majini com parceiro humano ou IA bem posicionada.\"],\"warning\":\"Para troféus que dependem de parceiro, remova armas da IA quando ela estiver matando inimigos cedo demais.\",\"result\":\"Lista situacional limpa sem misturar objetivos técnicos com Professional.\"}",
+      "content": "{\"title\":\"Troféus situacionais\",\"focus\":\"Cleanup\",\"objective\":\"Limpe ovos e troféus situacionais por Chapter Select antes da revisão final.\",\"actions\":[\"Priorize Egg Hunt/Egg on Your Face antes de vender Rotten Egg.\",\"Faça os objetivos técnicos em capítulos curtos como 1-1, 2-1, 2-3, 3-2, 4-1, 5-1 e 5-3.\"],\"warning\":\"Para troféus que dependem de parceiro, remova armas da IA quando ela estiver matando inimigos cedo demais.\",\"result\":\"Lista situacional limpa sem misturar objetivos técnicos com Professional.\"}",
       "step_order": 6
     },
     {
-      "content": "{\"title\":\"Professional e revisão final\",\"focus\":\"War Hero\",\"objective\":\"Complete todos os capítulos no Professional e revise qualquer pendência pela Seleção de Capítulos.\",\"actions\":[\"Entre com armas infinitas, sprays, colete de proteção se quiser segurança e rota conhecida de chefes.\",\"Jogue devagar em arenas com instant kill, priorize resgatar o parceiro e deixe a IA com itens de cura.\",\"Depois de 6-3, confira 30 emblemas, 50 tesouros registrados, todas as armas, todos os upgrades, S rank por capítulo, figuras/costumes comprados e ovos.\"],\"warning\":\"Professional é o último bloco ideal porque qualquer falta de dano, cura ou conhecimento vira retrabalho. Preparar antes economiza horas.\",\"result\":\"War Hero e platina/100% da lista base.\"}",
+      "content": "{\"title\":\"Professional e revisão final\",\"focus\":\"War Hero\",\"objective\":\"Complete todos os capítulos no Professional e revise qualquer pendência pela Seleção de Capítulos.\",\"actions\":[\"Entre com armas infinitas, sprays, colete de proteção se quiser segurança e rota conhecida de chefes.\",\"Jogue devagar em arenas com instant kill, priorize resgatar o parceiro e deixe a IA com itens de cura.\",\"Depois de 6-3, confira 30 emblemas, 50 tesouros registrados, todas as armas, todos os upgrades, S rank por capítulo, figuras/costumes comprados e ovos.\"],\"warning\":\"Professional é o último bloco ideal porque qualquer falta de dano, cura ou conhecimento vira retrabalho. Preparar antes economiza horas.\",\"result\":\"War Hero e platina base.\"}",
       "step_order": 7
     }
   ],
@@ -901,7 +901,7 @@
             "DLC",
             "Dificuldade"
           ],
-          "tip": "Desbloqueio local: conclua Lost in Nightmares no Veteran; não basta terminar a campanha principal. Entre depois de uma run de reconhecimento. Na mansão, recolha armas, munição e curas, evite Guardians opcionais e prepare-se para spawns extras após o piano e a armadilha de teto. Ao cair no labirinto você perde as armas: são quatro crests, quatro Guardians e nenhuma marca deles no mapa; um jogador/IA ergue a armadilha e o outro atrai o alvo, sempre confirmando a saída antes de soltar os espinhos. No corredor final, pegue as pistolas e mantenha os dois juntos contra Wesker: não busque Kung Fu Fighting, apenas corra, use cobertura, acerte QTEs e resgate o parceiro até a cena terminar. Um humano torna cranks e resgates muito mais consistentes; com IA, use comandos curtos e não se afaste. Mortes comuns: agarrão/execução do Guardian, parceiro preso longe e investida de Wesker. Ao morrer, use o checkpoint para ajustar a rota; se recursos chegarem ruins à transição, reinicie o trecho/run e conserve mais."
+          "tip": "Desbloqueio local: conclua Lost in Nightmares no Veteran; não basta terminar a campanha principal. Entre depois de uma run de reconhecimento. Na mansão, recolha armas, munição e curas, evite Guardians opcionais e prepare-se para spawns extras após o piano e a armadilha de teto. Na prisão/área alagada, recolha Silver Crest e Gold Crest: inserir ambas abre o portão para a transição ao labirinto. Não confunda essas duas peças com os shards obtidos dos Guardians no labirinto posterior. Ao cair no labirinto você perde as armas; como Night Terrors é uma rota no Professional, são obrigatórios quatro shards dos quatro Guardians principais, sem marcas no mapa. Um jogador/IA ergue a armadilha e o outro atrai o alvo, sempre confirmando a saída antes de soltar os espinhos. No corredor final, pegue as pistolas e mantenha os dois juntos contra Wesker: não busque Kung Fu Fighting, apenas corra, use cobertura, acerte QTEs e resgate o parceiro até a cena terminar. Um humano torna cranks e resgates muito mais consistentes; com IA, use comandos curtos e não se afaste. Mortes comuns: agarrão/execução do Guardian, parceiro preso longe e investida de Wesker. Ao morrer, use o checkpoint para ajustar a rota; se recursos chegarem ruins à transição, reinicie o trecho/run e conserve mais."
         },
         {
           "name": "Kung Fu Fighting",
@@ -1070,7 +1070,7 @@
                 "Score Stars ficam no bloco de Lost in Nightmares, separado de Extras da Platina.",
                 "Fazer as 18 na mesma jogada.",
                 "Usar dificuldade baixa para facilitar.",
-                "Antes de descer para a prisão/celas, revisar as 11 primeiras estrelas da mansão.",
+                "Antes da descida definitiva, confirme #01–#10 nas salas principais da mansão e #11 na transição.",
                 "Score Star #18 fica perto do fim; não encerrar a DLC antes de conferi-la.",
                 "Se Wish Upon a Star não desbloquear, repetir uma run focada somente nas 18 Score Stars."
               ],
@@ -1406,8 +1406,8 @@
                     {
                       "action": "Atire através da grade da alcova.",
                       "angle": "Após o baú, continue pela parede esquerda; conte seis alcovas — é a segunda a partir do fundo.",
-                      "area": "Prison — área alagada das crests",
-                      "cleanup": "Nova run; recolha novamente as crests.",
+                      "area": "Prison — área alagada das Silver/Gold Crests",
+                      "cleanup": "Nova run; recolha novamente Silver Crest e Gold Crest. Essas duas peças não são os shards obtidos dos Guardians no labirinto posterior.",
                       "id": "re5-score-star-17",
                       "landmark": "Baú da Silver Crest no caminho esquerdo e sequência de alcovas gradeadas sob uma escada.",
                       "links": [
@@ -1417,14 +1417,14 @@
                         }
                       ],
                       "number": 17,
-                      "pointOfNoReturn": "Antes de colocar as quatro crests e abrir o portão de saída.",
+                      "pointOfNoReturn": "Antes de inserir Silver Crest e Gold Crest; depois de colocar ambas, o portão abre e conduz à transição para o labirinto.",
                       "relatedTrophy": "Wish Upon a Star",
                       "risk": "As 18 devem ser destruídas na mesma jogada; não há Chapter Select interno.",
                       "title": "Score Star #17",
                       "videoTimestampSeconds": 231
                     }
                   ],
-                  "title": "Prisão e área das crests — #11 a #17"
+                  "title": "Transição, prisão e área alagada — #11 a #17"
                 },
                 {
                   "items": [
@@ -1449,10 +1449,10 @@
                       "videoTimestampSeconds": 246
                     }
                   ],
-                  "title": "Library antes de Wesker — #18"
+                  "title": "Library depois do labirinto e antes de Wesker — #18"
                 }
               ],
-              "introduction": "Destrua as 18 Score Stars na mesma jogada. Siga a ordem abaixo: dez na mansão, sete na prisão/labirinto e a última na Library antes de Wesker. O texto é completo; o vídeo serve apenas como confirmação visual.",
+              "introduction": "Destrua as 18 Score Stars na mesma jogada. Siga esta sequência inequívoca: #01–#10 nas salas principais da mansão; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das Silver/Gold Crests; #18 na Library depois do labirinto e antes de Wesker. O texto é completo; o vídeo serve apenas como confirmação visual.",
               "links": [
                 {
                   "label": "Vídeo: Lost in Nightmares — 18 Score Stars",
@@ -1506,7 +1506,7 @@
             {
               "actions": [
                 "Conclua Lost in Nightmares no Veteran para liberar Professional localmente e faça Night Terrors separadamente.",
-                "Na mansão, conserve munição e espere Guardians extras; no labirinto sem marcadores, elimine os quatro com cranks/armadilhas.",
+                "Na área alagada, use Silver Crest e Gold Crest para abrir o portão; elas não são os shards do labirinto posterior. Como esta rota é no Professional, obtenha os quatro shards dos quatro Guardians principais com cranks/armadilhas; eles não aparecem no mapa.",
                 "Contra Wesker, jogue para sobreviver ao tempo: cobertura, QTEs, proximidade e resgate imediato; não misture Kung Fu Fighting.",
                 "Parceiro humano é recomendado para dividir cranks, iscas e resgates; com IA, use os comandos de posição/armadilha."
               ],
@@ -1563,7 +1563,7 @@
                       "trigger": "Ative e elimine cinco grupos: grupo inicial; grupo do prédio após cair ao piso baixo; grupo da crate do segundo andar ao subir uma escada; grupo do telhado ao pegar a key; grupo do telhado ao encostar no lado direito da grade. Não recolha a key antes de o terceiro grupo aparecer e morrer."
                     },
                     {
-                      "action": "Permaneça usando ao menos uma turret. Após duas duplas, uma cutscene mostra o Agitator com quatro Majini; acerte o grupo com rocket e confirme a morte antes de abrir a saída.",
+                      "action": "Use as rocket turrets e continue eliminando as duplas até disparar a cutscene. Acerte o grupo mostrado e confirme a morte do Agitator antes de abrir a saída.",
                       "area": "Communication Facility",
                       "cleanup": "Falhou ou saiu sem cutscene: repita a DLC desde o início para manter a contagem dos três.",
                       "id": "re5-agitator-02",
@@ -1577,7 +1577,7 @@
                       "trigger": "Depois que Jill remover a barra do portão norte, elimine os Majini restantes, suba às duas turrets e continue matando as duplas que saem da passarela."
                     },
                     {
-                      "action": "Guarde rocket/shotgun. Assim que sair, atire na perna e faça melee por trás; se virar Cephalo, use Flash Grenade ou arma forte e confirme a morte antes do zero.",
+                      "action": "Guarde rocket/shotgun. Assim que o Agitator sair, atire na perna e faça melee por trás; se virar Cephalo, use Flash Grenade ou arma forte e confirme a morte antes do zero.",
                       "area": "Landing Pad / heliport",
                       "cleanup": "Se não matar a tempo, uma nova run completa é necessária para registrar os três.",
                       "id": "re5-agitator-03",
@@ -1586,9 +1586,9 @@
                       "number": 3,
                       "pointOfNoReturn": "Zero no cronômetro dispara a cena final.",
                       "relatedTrophy": "Shoot the Messenger",
-                      "risk": "O cronômetro encerra a DLC mesmo com o alvo vivo; gastar tempo com adds ou deixar bosses vivos impede o spawn.",
+                      "risk": "O cronômetro encerra a DLC mesmo com o alvo vivo. Os marcos de 1:40 e 30 segundos finais são referências práticas de rota, não cronômetros oficiais garantidos.",
                       "title": "Agitator Majini #03",
-                      "trigger": "Derrote rapidamente as ondas e até quatro bosses que saem do elevador. O Agitator aparece em cutscene depois do quarto — ocasionalmente do terceiro — acompanhado por dois Big Man."
+                      "trigger": "O layout de minibosses pode variar. Elimine rapidamente os que saem do elevador, priorize o miniboss vermelho que aparece aproximadamente quando restam 1:40 e continue abatendo inimigos. O Agitator costuma surgir perto dos 30 segundos finais, acompanhado por dois Big Man."
                     }
                   ],
                   "title": "Rota única de Shoot the Messenger"
@@ -1738,6 +1738,860 @@
       "title": "DLCs e 100% da Lista",
       "totalTrophies": 71
     },
+    "editorialAuthority": {
+      "authorName": "Equipe Editorial AtlasAchievement",
+      "authorUrl": "/sobre",
+      "claims": [
+        {
+          "classification": "stable",
+          "confidence": "HIGH",
+          "id": "re5-base-dlc-counts",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "51 troféus base e 20 de DLC formam 71 troféus únicos.",
+          "supportingSources": [
+            "gamefaqs-list-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "roadmap",
+            "meta_description",
+            "json_ld"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-all-dressed-up",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "All Dressed Up exige os quatro trajes originais; os quatro trajes adicionais do relançamento PS4 não entram e os requisitos não são compra por pontos.",
+          "supportingSources": [
+            "gamefaqs-list-ps4",
+            "pst-guide-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-versus-requirements",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": "2026-08-17",
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "Versus é o bloco online do 100% e não altera a platina base.",
+          "supportingSources": [
+            "gamefaqs-list-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist",
+            "alertas"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-versus-wins-15",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "A versão PS4/Remaster pede 15 vitórias em cada modo de Versus aplicável.",
+          "supportingSources": [
+            "gamefaqs-list-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-versus-melee-50",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "Bringing the Pain usa 50 eliminações físicas no PS4/Remaster, não 100.",
+          "supportingSources": [
+            "gamefaqs-list-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist",
+            "alertas"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "MEDIUM",
+          "id": "re5-infinite-ammo",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-guide-ps4",
+          "summary": "Infinite Ammo comum exige campanha concluída, arma maximizada, compra individual e ativação nas configurações/partida.",
+          "supportingSources": [
+            "capcom-manual-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "MEDIUM",
+          "id": "re5-infinite-rocket-launcher",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-guide-ps4",
+          "summary": "Infinite Rocket Launcher é separada: soma dos melhores tempos abaixo de cinco horas numa mesma dificuldade.",
+          "supportingSources": [
+            "capcom-manual-ps4"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-score-stars-18",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "Wish Upon a Star exige destruir as 18 Score Stars de Lost in Nightmares; a rota recomenda uma única jogada.",
+          "supportingSources": [
+            "gamefaqs-lost-in-nightmares",
+            "youtube-score-stars-18"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist",
+            "visual",
+            "alt",
+            "fallback"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "MEDIUM",
+          "id": "re5-crests-shards",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "gamefaqs-lost-in-nightmares",
+          "summary": "Silver/Gold Crests abrem o portão e não são os shards posteriores; shards exigidos: 1/3/4/4 por dificuldade.",
+          "supportingSources": [
+            "pst-guide-ps4",
+            "youtube-score-stars-18"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "roadmap",
+            "checklist",
+            "visual",
+            "alt",
+            "fallback"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-dlc-s-ranks",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "S ranks das DLCs são objetivos separados e não exigem Professional.",
+          "supportingSources": [
+            "pst-guide-ps4",
+            "gamefaqs-lost-in-nightmares",
+            "gamefaqs-desperate-escape"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-dlc-professional",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "Night Terrors e Run the Gauntlet exigem Professional apenas nas respectivas DLCs e não mudam a platina base.",
+          "supportingSources": [
+            "pst-guide-ps4",
+            "gamefaqs-lost-in-nightmares",
+            "gamefaqs-desperate-escape"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "MEDIUM",
+          "id": "re5-agitators-3",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "gamefaqs-desperate-escape",
+          "summary": "Shoot the Messenger exige os três Agitator Majini na mesma jogada, com gatilhos de ondas específicos.",
+          "supportingSources": [
+            "pst-guide-ps4",
+            "youtube-agitators-3"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist",
+            "visual",
+            "alt",
+            "fallback"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "version_dependent",
+          "confidence": "HIGH",
+          "id": "re5-desperate-150-kills",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": null,
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-list-ps4",
+          "summary": "Way of the Warrior exige 150 inimigos em uma única jogada de Desperate Escape.",
+          "supportingSources": [
+            "gamefaqs-desperate-escape"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "checklist"
+          ],
+          "version": "PS4/Remaster"
+        },
+        {
+          "classification": "editorial",
+          "confidence": "MEDIUM",
+          "id": "re5-practical-score-80000",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": "2026-10-18",
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-guide-ps4",
+          "summary": "80.000 pontos é alvo prático editorial para tentativas de S rank, não limiar oficial da Capcom.",
+          "supportingSources": [
+            "gamefaqs-lost-in-nightmares",
+            "gamefaqs-desperate-escape"
+          ],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "roadmap",
+            "checklist",
+            "alertas"
+          ],
+          "version": "Rota editorial PS4/Remaster"
+        },
+        {
+          "classification": "volatile",
+          "confidence": "LOW",
+          "id": "re5-online-status",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": "2026-08-17",
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "psnprofiles-sessions-re5",
+          "summary": "Versus está aparentemente disponível segundo sinais comunitários temporários; atividade e matchmaking não são garantidos.",
+          "supportingSources": [],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "faq",
+            "roadmap",
+            "alertas"
+          ],
+          "version": "PS4/PSN — estado temporal"
+        },
+        {
+          "classification": "editorial",
+          "confidence": "MEDIUM",
+          "id": "re5-time-estimate",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": "2026-10-18",
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-guide-ps4",
+          "summary": "A duração publicada é uma estimativa editorial e varia com coop, habilidade e busca pelo 100%.",
+          "supportingSources": [],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "meta_description"
+          ],
+          "version": "Estimativa Atlas PS4/Remaster"
+        },
+        {
+          "classification": "editorial",
+          "confidence": "MEDIUM",
+          "id": "re5-difficulty-estimate",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": "2026-10-18",
+          "owner": "Equipe Editorial AtlasAchievement",
+          "primarySource": "pst-guide-ps4",
+          "summary": "A dificuldade 6/10 é avaliação editorial, não requisito oficial.",
+          "supportingSources": [],
+          "surfaces": [
+            "seed",
+            "snapshot",
+            "meta_description"
+          ],
+          "version": "Estimativa Atlas PS4/Remaster"
+        }
+      ],
+      "governance": {
+        "cadence": {
+          "byEvent": [
+            "Capcom notice",
+            "PSN change",
+            "server closure",
+            "source removal",
+            "report spike",
+            "production regression"
+          ],
+          "monthly": [
+            "online status",
+            "Versus",
+            "boost",
+            "blocked/inconclusive links",
+            "videos",
+            "feedback",
+            "volatile claims"
+          ],
+          "quarterly": [
+            "71-trophy matrix",
+            "version differences",
+            "estimates",
+            "routes",
+            "DLCs",
+            "selective source comparison"
+          ],
+          "weekly": [
+            "build",
+            "test:guide",
+            "counts",
+            "parity",
+            "assets",
+            "links",
+            "schemas",
+            "smoke"
+          ]
+        },
+        "dataClassification": [
+          {
+            "cadence": "por evento ou revisão ampla",
+            "examples": [
+              "51 troféus base",
+              "20 DLCs",
+              "capítulos",
+              "BSAA Emblems",
+              "tesouros",
+              "nomes e desbloqueios"
+            ],
+            "id": "stable",
+            "label": "A — estáveis"
+          },
+          {
+            "cadence": "trimestral e por mudança de plataforma",
+            "examples": [
+              "PS3/PS4",
+              "50 versus 100 eliminações",
+              "trajes",
+              "Bonus Features",
+              "Remaster"
+            ],
+            "id": "version_dependent",
+            "label": "B — dependentes de versão"
+          },
+          {
+            "cadence": "trimestral",
+            "examples": [
+              "6/10",
+              "horas",
+              "80.000",
+              "loadouts",
+              "farms",
+              "rotas"
+            ],
+            "id": "editorial",
+            "label": "C — práticas/editoriais"
+          },
+          {
+            "cadence": "mensal e por evento",
+            "examples": [
+              "online",
+              "matchmaking",
+              "boost",
+              "links",
+              "vídeos",
+              "políticas e integrações"
+            ],
+            "id": "volatile",
+            "label": "D — voláteis"
+          }
+        ],
+        "dateModified": "2026-07-18",
+        "feedbackPolicy": "Feedback é pista não confiável até triagem, evidência e verificação humana.",
+        "lastEditorialReview": "2026-07-18",
+        "nextVolatileReview": "2026-08-17",
+        "onlineStatus": {
+          "allowedStates": [
+            "CONFIRMED_AVAILABLE",
+            "APPARENTLY_AVAILABLE",
+            "DEGRADED",
+            "UNCONFIRMED",
+            "OFFLINE",
+            "UNKNOWN"
+          ],
+          "basis": "Sinais comunitários temporários; sem teste oficial conclusivo de matchmaking.",
+          "lastVerifiedAt": "2026-07-18",
+          "nextReviewAt": "2026-08-17",
+          "state": "APPARENTLY_AVAILABLE"
+        },
+        "publicHistoryLimit": 3,
+        "rollbackPolicy": "Snapshot editorial é revertido sem tocar progresso local ou tabelas de usuário.",
+        "schemaVersion": 1,
+        "technicalAuditUpdatesEditorialDates": false,
+        "workflowStates": [
+          "NEW",
+          "TRIAGED",
+          "NEEDS_EVIDENCE",
+          "ACCEPTED",
+          "REJECTED",
+          "IMPLEMENTED",
+          "VERIFIED",
+          "PUBLISHED"
+        ]
+      },
+      "history": [
+        {
+          "change": "Revisão factual dos 71 troféus, com reconciliação da lista base de PS4 e dos quatro pacotes de DLC.",
+          "date": "2026-07-18"
+        },
+        {
+          "change": "Paridade pública revisada entre compêndio, Score Stars, Guardians, Agitators, SVGs responsivos, seed e snapshot.",
+          "date": "2026-07-18"
+        },
+        {
+          "change": "Autoria, metodologia, fontes, limitações, metadados sociais e dados estruturados publicados.",
+          "date": "2026-07-18"
+        }
+      ],
+      "limitations": [
+        "A meta de 80.000 pontos nas rotas de rank S é uma referência prática, não um limiar oficial publicado pela Capcom.",
+        "O modo Versus é tratado como aparentemente disponível; atividade recente não equivale a matchmaking público garantido.",
+        "Disponibilidade de servidores, matchmaking e recursos online pode mudar após esta revisão.",
+        "Diferenças documentadas em versões anteriores não substituem os requisitos da versão PS4/Remaster."
+      ],
+      "methodology": [
+        "Os requisitos da lista de PS4 foram cruzados entre fontes independentes e o manual oficial, separando os 51 troféus base dos 20 troféus de DLC.",
+        "Diferenças de versões anteriores foram tratadas como contexto histórico e não substituem os requisitos da versão PS4/Remaster.",
+        "Seed, snapshot, API, SSR, DOM hidratado e JSON-LD são validados em conjunto para impedir divergências entre as superfícies públicas."
+      ],
+      "platformScope": "PS4/Remaster",
+      "reviewedAt": "2026-07-18",
+      "socialImage": {
+        "alt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+        "height": 630,
+        "src": "/assets/guides/resident-evil-5/resident-evil-5-social.png",
+        "width": 1200
+      },
+      "sourceRegistry": [
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-infinite-ammo",
+            "re5-infinite-rocket-launcher"
+          ],
+          "expectedTitleTerms": [
+            "resident evil 5"
+          ],
+          "id": "capcom-manual-ps4",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Fonte oficial de versão e controles; não substitui uma lista específica de troféus.",
+          "platform": "PS4",
+          "public": true,
+          "publisher": "Capcom",
+          "purpose": "Controles, modos e referência oficial da versão PS4/Remaster.",
+          "reliability": "A",
+          "status": "OK",
+          "title": "Capcom — manual oficial de Resident Evil 5 para PS4",
+          "type": "official_manual",
+          "url": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+          "version": "PS4/Remaster"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-base-dlc-counts",
+            "re5-all-dressed-up",
+            "re5-versus-requirements",
+            "re5-versus-wins-15",
+            "re5-versus-melee-50",
+            "re5-score-stars-18",
+            "re5-dlc-s-ranks",
+            "re5-dlc-professional",
+            "re5-desperate-150-kills"
+          ],
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "trophies"
+          ],
+          "id": "pst-list-ps4",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Conteúdo conferido editorialmente; auditor HTTP recebe proteção antibot e não tenta contorná-la.",
+          "platform": "PS4",
+          "public": true,
+          "publisher": "PlayStationTrophies",
+          "purpose": "Conferência da lista base, grupos de DLC e separação entre platina e 100%.",
+          "reliability": "B",
+          "status": "BLOCKED",
+          "title": "PlayStationTrophies — lista de troféus de Resident Evil 5",
+          "type": "trophy_list",
+          "url": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/trophies/",
+          "version": "PS4/Remaster"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-all-dressed-up",
+            "re5-infinite-ammo",
+            "re5-infinite-rocket-launcher",
+            "re5-score-stars-18",
+            "re5-crests-shards",
+            "re5-dlc-s-ranks",
+            "re5-dlc-professional",
+            "re5-agitators-3",
+            "re5-practical-score-80000",
+            "re5-time-estimate",
+            "re5-difficulty-estimate"
+          ],
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "trophy guide"
+          ],
+          "id": "pst-guide-ps4",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Estimativas e rotas desta fonte continuam editoriais, não requisitos oficiais.",
+          "platform": "PS4",
+          "public": true,
+          "publisher": "PlayStationTrophies",
+          "purpose": "Contraprova de requisitos, dificuldade, roadmap e observações práticas.",
+          "reliability": "B",
+          "status": "BLOCKED",
+          "title": "PlayStationTrophies — guia de troféus de Resident Evil 5",
+          "type": "editorial_guide",
+          "url": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/guide/",
+          "version": "PS4/Remaster"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-base-dlc-counts",
+            "re5-all-dressed-up",
+            "re5-versus-wins-15",
+            "re5-versus-melee-50"
+          ],
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "trophies"
+          ],
+          "id": "gamefaqs-list-ps4",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Proteção antibot observada no auditor HTTP; 403 não é tratado como link quebrado.",
+          "platform": "PS4",
+          "public": true,
+          "publisher": "GameFAQs",
+          "purpose": "Conferência independente dos 51 troféus base e dos pacotes adicionais.",
+          "reliability": "B",
+          "status": "BLOCKED",
+          "title": "GameFAQs — trophies da versão PlayStation 4",
+          "type": "trophy_list",
+          "url": "https://gamefaqs.gamespot.com/ps4/187184-resident-evil-5/trophies",
+          "version": "PS4/Remaster"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-score-stars-18",
+            "re5-crests-shards",
+            "re5-dlc-s-ranks",
+            "re5-dlc-professional"
+          ],
+          "expectedTitleTerms": [
+            "lost in nightmares",
+            "resident evil 5"
+          ],
+          "id": "gamefaqs-lost-in-nightmares",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Nunca usada sozinha para converter comportamento histórico em requisito da versão PS4.",
+          "platform": "PS3",
+          "public": true,
+          "publisher": "GameFAQs",
+          "purpose": "Referência da DLC original para Score Stars, Guardians e Night Terrors.",
+          "reliability": "C",
+          "status": "BLOCKED",
+          "title": "GameFAQs — Lost in Nightmares FAQ (PS3)",
+          "type": "community_guide",
+          "url": "https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192",
+          "version": "DLC original; reconferida no PS4/Remaster"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-agitators-3",
+            "re5-desperate-150-kills",
+            "re5-dlc-s-ranks",
+            "re5-dlc-professional"
+          ],
+          "expectedTitleTerms": [
+            "desperate escape",
+            "resident evil 5"
+          ],
+          "id": "gamefaqs-desperate-escape",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Gatilhos práticos são corroborados e permanecem linguagem editorial.",
+          "platform": "PS3",
+          "public": true,
+          "publisher": "GameFAQs",
+          "purpose": "Referência da DLC original para Agitator Majini e The Great Escape.",
+          "reliability": "C",
+          "status": "BLOCKED",
+          "title": "GameFAQs — Desperate Escape FAQ (PS3)",
+          "type": "community_guide",
+          "url": "https://gamefaqs.gamespot.com/ps3/991006-resident-evil-5-desperate-escape/faqs/59292",
+          "version": "DLC original; reconferida no PS4/Remaster"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [],
+          "durationSeconds": 559,
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "30 bsaa emblems"
+          ],
+          "id": "youtube-bsaa-30",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Vídeo de apoio; o texto do guia permanece autossuficiente.",
+          "platform": "Multiplataforma",
+          "public": false,
+          "publisher": "BossCollection",
+          "purpose": "Confirmação visual das 30 posições e timestamps dos BSAA Emblems.",
+          "reliability": "C",
+          "status": "OK",
+          "title": "Resident Evil 5 — All 30 BSAA Emblems Guide",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=qG94-12Nznk",
+          "version": "Compatível com PS4/Remaster",
+          "youtubeId": "qG94-12Nznk"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [],
+          "durationSeconds": 71,
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "heart of africa"
+          ],
+          "id": "youtube-heart-of-africa",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Apoio visual, não fonte única de requisito.",
+          "platform": "Multiplataforma",
+          "public": false,
+          "publisher": "Scotty Dogg",
+          "purpose": "Confirmação visual do gatilho e da posição do Heart of Africa.",
+          "reliability": "C",
+          "status": "OK",
+          "title": "Resident Evil 5 Treasure Guide — Heart of Africa",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=XKfQyYb_hBY",
+          "version": "Compatível com PS4/Remaster",
+          "youtubeId": "XKfQyYb_hBY"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-score-stars-18",
+            "re5-crests-shards"
+          ],
+          "durationSeconds": 271,
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "18 score star"
+          ],
+          "id": "youtube-score-stars-18",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Corrobora a rota; não substitui a lista de troféus da plataforma.",
+          "platform": "Multiplataforma",
+          "public": false,
+          "publisher": "BossCollection",
+          "purpose": "Confirmação visual e de timestamps das 18 Score Stars.",
+          "reliability": "C",
+          "status": "OK",
+          "title": "Resident Evil 5 — All 18 Score Star Locations",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc",
+          "version": "Compatível com PS4/Remaster",
+          "youtubeId": "4KAJ6zfUNxc"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-agitators-3"
+          ],
+          "durationSeconds": 370,
+          "expectedTitleTerms": [
+            "resident evil 5",
+            "3 agitator"
+          ],
+          "id": "youtube-agitators-3",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Os tempos são referências práticas e não garantias oficiais.",
+          "platform": "PS4",
+          "public": false,
+          "publisher": "factor747",
+          "purpose": "Corroboração visual dos três gatilhos de Agitator Majini.",
+          "reliability": "C",
+          "status": "OK",
+          "title": "Resident Evil 5 PS4 — Shoot the Messenger Trophy Guide",
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=Zxx5PkPYeuU",
+          "version": "PS4/Remaster",
+          "youtubeId": "Zxx5PkPYeuU"
+        },
+        {
+          "accessedAt": "2026-07-18",
+          "claims": [
+            "re5-online-status"
+          ],
+          "expectedTitleTerms": [
+            "gaming sessions"
+          ],
+          "id": "psnprofiles-sessions-re5",
+          "lastVerifiedAt": "2026-07-18",
+          "notes": "Exige revisão humana mensal e nunca pode sustentar mudança automática para CONFIRMED_AVAILABLE ou OFFLINE.",
+          "platform": "PlayStation Network",
+          "public": false,
+          "publisher": "PSNProfiles",
+          "purpose": "Sinal comunitário temporário para atividade de sessões; não comprova disponibilidade oficial nem matchmaking.",
+          "reliability": "D",
+          "status": "INCONCLUSIVE",
+          "title": "PSNProfiles — sessões de boosting",
+          "type": "temporary_status",
+          "url": "https://psnprofiles.com/sessions",
+          "version": "Estado temporal"
+        }
+      ],
+      "sources": [
+        {
+          "id": "capcom-manual-ps4",
+          "name": "Capcom — manual oficial de Resident Evil 5 para PS4",
+          "purpose": "Controles, modos e referência oficial da versão PS4/Remaster.",
+          "url": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf"
+        },
+        {
+          "id": "pst-list-ps4",
+          "name": "PlayStationTrophies — lista de troféus de Resident Evil 5",
+          "purpose": "Conferência da lista base, grupos de DLC e separação entre platina e 100%.",
+          "url": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/trophies/"
+        },
+        {
+          "id": "pst-guide-ps4",
+          "name": "PlayStationTrophies — guia de troféus de Resident Evil 5",
+          "purpose": "Contraprova de requisitos, dificuldade, roadmap e observações práticas.",
+          "url": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/guide/"
+        },
+        {
+          "id": "gamefaqs-list-ps4",
+          "name": "GameFAQs — trophies da versão PlayStation 4",
+          "purpose": "Conferência independente dos 51 troféus base e dos pacotes adicionais.",
+          "url": "https://gamefaqs.gamespot.com/ps4/187184-resident-evil-5/trophies"
+        },
+        {
+          "id": "gamefaqs-lost-in-nightmares",
+          "name": "GameFAQs — Lost in Nightmares FAQ (PS3)",
+          "purpose": "Referência da DLC original para Score Stars, Guardians e Night Terrors.",
+          "url": "https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192"
+        },
+        {
+          "id": "gamefaqs-desperate-escape",
+          "name": "GameFAQs — Desperate Escape FAQ (PS3)",
+          "purpose": "Referência da DLC original para Agitator Majini e The Great Escape.",
+          "url": "https://gamefaqs.gamespot.com/ps3/991006-resident-evil-5-desperate-escape/faqs/59292"
+        }
+      ],
+      "verificationSummary": "Conteúdo pesquisado e revisado pela Equipe Editorial AtlasAchievement para a versão PS4/Remaster."
+    },
     "editorialDisplay": {
       "attentionMode": "editorial",
       "faqMode": "all"
@@ -1791,7 +2645,7 @@
         "question": "Por que a lista aparece com 71 troféus?"
       },
       {
-        "answer": "Chris Safari e Sheva Clubbin' liberam ao concluir a campanha; Chris S.T.A.R.S. exige também 25 BSAA Emblems; Sheva Tribal exige também 30. Os quatro custam 0 Exchange Points e o troféu cai ao adquirir o quarto no Bonus Features.",
+        "answer": "Os quatro trajes originais são Chris Safari, Sheva Clubbin', Chris S.T.A.R.S. e Sheva Tribal. Safari e Clubbin' liberam ao concluir a campanha; S.T.A.R.S. exige também 25 BSAA Emblems; Tribal exige também 30. Os quatro custam 0 Exchange Points e o troféu cai ao adquirir o quarto no Bonus Features. Os quatro trajes adicionais do relançamento PS4 não entram no requisito.",
         "question": "Quais trajes e quantos pontos All Dressed Up exige no PS4?"
       },
       {
@@ -1972,10 +2826,41 @@
     },
     "instructionalVisuals": [
       {
-        "alt": "Rota vertical das 18 Score Stars: dez na Mansão Spencer, sete na prisão e área das crests e a última na Library antes de Wesker.",
-        "caption": "Siga a numeração da Mansão Spencer até a Library e confirme 18/18 antes de Wesker. Diagrama esquemático — não representa escala.",
+        "alt": "Rota vertical das 18 Score Stars: #01–#10 nas salas principais da Mansão Spencer; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das duas crests, Silver e Gold; #18 na Library depois do labirinto e antes de Wesker. No labirinto posterior, os shards exigidos são 1 no Amateur, 3 no Normal e 4 no Veteran ou Professional.",
+        "caption": "#01–#10 ficam na mansão; #11 na transição; #12–#17 na prisão e área alagada das duas crests; #18 na Library depois do labirinto. Silver Crest e Gold Crest abrem o portão; os shards posteriores dependem da dificuldade. Diagrama esquemático — não representa escala.",
         "height": 1500,
         "id": "re5-visual-score-stars-route",
+        "mobileSections": [
+          {
+            "items": [
+              "#01 lanterna sob a escadaria; #02 acima das portas; #03 parte traseira do lustre.",
+              "#04 gabinete com pratos; #05 galeria da Dining Room; #06 dentro do relógio.",
+              "#07 acima do mictório; #08 gaiola coberta; #09 teto do corredor; #10 acima do cofre antes de o teto baixar."
+            ],
+            "title": "#01–#10 — salas principais da mansão"
+          },
+          {
+            "items": [
+              "Depois do crank e antes da descida definitiva, olhe à esquerda acima das prateleiras."
+            ],
+            "title": "#11 — transição"
+          },
+          {
+            "items": [
+              "#12 quinta cela à direita; #13 parede alta depois do Guardian; #14 cela sob a escada.",
+              "#15 primeira cela do segundo andar; #16 prateleira baixa após a descida.",
+              "#17 fica na sexta alcova gradeada depois do baú da Silver Crest.",
+              "Silver Crest e Gold Crest são duas crests e abrem o portão. Os shards posteriores exigidos são Amateur 1, Normal 3, Veteran 4 e Professional 4."
+            ],
+            "title": "#12–#17 — prisão e área alagada"
+          },
+          {
+            "items": [
+              "Mire na parede alta ao fundo e confirme 18/18 antes de Wesker."
+            ],
+            "title": "#18 — Library depois do labirinto"
+          }
+        ],
         "placement": "dlc:re5-score-stars",
         "provenance": "SVG original AtlasAchievement, criado em 18/07/2026 a partir das localizações factualmente auditadas na Fase 2.",
         "relatedAnchor": "#re5-score-star-01",
@@ -1984,17 +2869,42 @@
         "src": "/assets/guides/resident-evil-5/score-stars-route.svg",
         "textFallback": [
           "Mansão Spencer: #01 sob a escadaria, #02 sobre a entrada, #03 no lustre, #04 no gabinete, #05 na galeria, #06 no relógio, #07 no restroom, #08 na gaiola coberta, #09 no corredor gradeado e #10 acima do cofre antes de o teto baixar.",
-          "Prisão e crests: #11 após crank e queda, #12 na quinta cela direita, #13 depois do Guardian, #14 sob a escada, #15 na primeira cela do segundo andar, #16 após a descida e #17 na sexta alcova depois da Silver Crest.",
-          "Library: #18 fica na parede alta ao fundo; confirme 18/18 antes da luta com Wesker."
+          "Transição: #11 fica depois do crank e antes da descida definitiva.",
+          "Prisão e área alagada: #12 na quinta cela direita, #13 depois do Guardian, #14 sob a escada, #15 na primeira cela do segundo andar, #16 após a descida e #17 na sexta alcova gradeada depois do baú da Silver Crest. Silver Crest e Gold Crest são duas crests e abrem o portão; elas não são os shards do labirinto posterior, cuja exigência é Amateur 1, Normal 3, Veteran 4 e Professional 4.",
+          "Library depois do labirinto: #18 fica na parede alta ao fundo; confirme 18/18 antes da luta com Wesker."
         ],
         "title": "Rota das 18 Score Stars",
         "width": 640
       },
       {
-        "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; duas rocket turrets no segundo; bosses do elevador e kill antes de zero no terceiro.",
-        "caption": "As três cutscenes e as três kills precisam ocorrer na mesma run. Diagrama esquemático — não representa escala.",
+        "alt": "Fluxo dos três Agitator Majini: cinco grupos, key e Assist Jump no primeiro; rocket turrets e duplas até a cutscene no segundo; Landing Pad variável, miniboss vermelho perto de 1:40, Agitator perto de 0:30 com dois Big Man Majini e morte antes de zero no terceiro.",
+        "caption": "As três cutscenes e kills precisam ocorrer na mesma run. No segundo alvo, use as rocket turrets e elimine duplas até a cutscene. No terceiro, a disposição varia: priorize o miniboss vermelho perto de 1:40, procure o Agitator perto de 0:30 com dois Big Man Majini e mate antes de zero; os tempos são referências práticas. Diagrama esquemático — não representa escala.",
         "height": 1050,
         "id": "re5-visual-agitator-triggers",
+        "mobileSections": [
+          {
+            "items": [
+              "Elimine os cinco grupos e não pegue a key antes do terceiro.",
+              "Use a key, faça o Assist Jump, espere a cutscene, volte pelo portão e confirme a morte."
+            ],
+            "title": "Agitator #1 — Transportation Area 1"
+          },
+          {
+            "items": [
+              "Use as rocket turrets e continue eliminando as duplas até disparar a cutscene. Confirme a morte antes de abrir a saída."
+            ],
+            "title": "Agitator #2 — Communication Facility"
+          },
+          {
+            "items": [
+              "Chegue rapidamente e elimine os minibosses que saem do elevador.",
+              "Priorize o miniboss vermelho por volta de 1:40 e continue eliminando inimigos.",
+              "Procure o Agitator próximo de 0:30, normalmente com dois Big Man Majini, e mate-o antes de zero.",
+              "A disposição pode variar; 1:40 e 0:30 são referências práticas."
+            ],
+            "title": "Agitator #3 — Landing Pad final"
+          }
+        ],
         "placement": "dlc:re5-agitators",
         "provenance": "SVG original AtlasAchievement, criado em 18/07/2026 a partir dos gatilhos confrontados na Fase 2.",
         "relatedAnchor": "#re5-agitator-01",
@@ -2003,8 +2913,8 @@
         "src": "/assets/guides/resident-evil-5/agitator-triggers.svg",
         "textFallback": [
           "Transportation Area 1: elimine os cinco grupos, não pegue a key antes do terceiro, use a key e faça o Assist Jump; só avance depois da cutscene e da kill.",
-          "Communication Facility: após abrir o portão norte, permaneça nas rocket turrets, mate as duplas e use rocket no grupo mostrado pela cutscene.",
-          "Landing Pad: mate rapidamente os bosses do elevador; o gatilho usual ocorre após quatro kills, algumas rotas mostram após três, e o Agitator deve morrer antes de o cronômetro zerar."
+          "Communication Facility: use as rocket turrets e continue eliminando as duplas até disparar a cutscene; acerte o grupo mostrado e confirme a morte antes de abrir a saída.",
+          "Landing Pad final: chegue rapidamente, elimine os minibosses, priorize o miniboss vermelho por volta de 1:40, continue eliminando inimigos e procure o Agitator próximo de 0:30, normalmente acompanhado por dois Big Man Majini. Mate-o antes de zero. A disposição pode variar e os tempos são referências práticas, não garantias oficiais."
         ],
         "title": "Rota e gatilhos dos 3 Agitator Majini",
         "width": 640
@@ -5400,23 +6310,23 @@
               "weakness": "Coração nas costas durante perseguição e núcleo frontal após o ataque tornado."
             },
             {
-              "area": "Prisão e labirinto das quatro crests.",
+              "area": "Prisão/área alagada das Silver e Gold Crests; depois, labirinto dos shards.",
               "chapter": "Lost in Nightmares",
-              "checkpoint": "Checkpoints ficam nas transições principais; se uma crest ficar inacessível, reinicie o trecho/run.",
+              "checkpoint": "Checkpoints ficam nas transições principais; se um shard obrigatório ficar inacessível, reinicie o trecho/run.",
               "coop": "Definam operador e isca em cada sala. A isca anuncia entrada na placa; o operador não abandona o crank cedo.",
               "group": "lost",
               "id": "re5-boss-19-lin-guardians",
-              "mechanics": "Um jogador levanta a grade/armadilha; o outro atrai o Guardian para a placa. Solte os espinhos quando o olho das costas estiver sob a armadilha e recolha a crest.",
+              "mechanics": "Um jogador levanta a grade/armadilha; o outro atrai o Guardian para a placa. Solte os espinhos quando o olho das costas estiver sob a armadilha e recolha o shard deixado pelo Guardian.",
               "name": "Guardians of Insanity",
               "number": 19,
-              "preparation": "Na mansão, conserve munição; após a queda no labirinto as armas são perdidas. Use cranks, portões e armadilhas de espinhos.",
-              "professional": "Guardians extras podem aparecer. Evite os opcionais, mantenha o parceiro perto e não busque S/Stars na mesma tentativa.",
+              "preparation": "Na área alagada, insira Silver Crest e Gold Crest para abrir o portão que leva à transição para o labirinto. Essas peças não são shards. Após a queda posterior no labirinto, as armas são perdidas; use cranks, portões e armadilhas de espinhos.",
+              "professional": "No Professional, os quatro shards são obrigatórios: elimine os quatro Guardians principais, mantenha o parceiro perto e não busque S/Stars na mesma tentativa.",
               "qte": "Agarrão e golpe do machado podem executar; espaço estreito e parceiro atrás de grade são causas comuns de wipe.",
-              "relatedTrophy": "Night Terrors; It’s Just a Bad Dream!; quatro crests.",
-              "requirement": "Os quatro Guardians do labirinto bloqueiam a rota; kills adicionais ajudam rank S, mas são separadas das 18 Score Stars.",
+              "relatedTrophy": "Night Terrors; It’s Just a Bad Dream!; shards do labirinto.",
+              "requirement": "Há quatro Guardians principais no labirinto, mas a quantidade obrigatória de kills/shards depende da dificuldade: Amateur 1, Normal 3, Veteran 4 e Professional 4. Kills adicionais ajudam rank S, mas são separadas das 18 Score Stars.",
               "solo": "Dê ordem à IA no crank e faça a atração você mesmo; confirme a rota de saída antes de baixar a armadilha.",
               "type": "Minibosses da DLC",
-              "warning": "Miniboss da DLC; não confundir com chefe da campanha nem com Score Star.",
+              "warning": "Miniboss da DLC; não confundir os shards do labirinto com Silver Crest e Gold Crest da área alagada, nem com Score Stars.",
               "weakness": "Olho nas costas e armadilha de teto/espinhos."
             },
             {
@@ -5446,7 +6356,7 @@
               "coop": "Um controla spawns/turret; o outro confirma que a área está vazia. Combinem quem dá o golpe final se apenas um perfil precisa do troféu.",
               "group": "desperate",
               "id": "re5-boss-21-de-agitators",
-              "mechanics": "Cada alvo exige gatilho próprio: limpar cinco ondas e usar a key; operar as duas rocket turrets até a cutscene; matar rapidamente até quatro bosses no helipad antes do fim do tempo.",
+              "mechanics": "Cada alvo exige uma rota própria: limpar cinco ondas e usar a key; operar as duas rocket turrets até a cutscene; no Landing Pad, eliminar rapidamente os minibosses do elevador, priorizar o vermelho perto de 1:40, continuar abatendo inimigos e matar o Agitator que costuma surgir nos 30 segundos finais com dois Big Man.",
               "name": "Três Agitator Majini",
               "number": 21,
               "preparation": "Amateur, rifle/shotgun, Flash Grenade e rota de spawns conhecida. Preserve rockets para o segundo e chefes do final.",
@@ -5466,14 +6376,14 @@
               "coop": "Um faz kite/cobertura de adds; outro concentra dano pesado. Troquem somente após cada boss cair.",
               "group": "desperate",
               "id": "re5-boss-22-de-landing-pad",
-              "mechanics": "Bosses saem do elevador em sequência variável — Executioner, Chainsaw ou Gatling vermelho — acompanhados por Majini. Foque um boss por vez; o gatilho usual do Agitator ocorre após a quarta kill, embora haja rotas que o mostram após a terceira.",
+              "mechanics": "O layout dos minibosses que saem do elevador pode variar. Elimine-os rapidamente, priorize o miniboss vermelho que aparece aproximadamente quando restam 1:40 e continue abatendo inimigos. O Agitator costuma surgir perto dos 30 segundos finais, acompanhado por dois Big Man; confirme a morte antes de o cronômetro zerar. 1:40 e 30 segundos são referências práticas de rota, não cronômetros oficiais garantidos.",
               "name": "Landing Pad — sequência cronometrada de bosses",
               "number": 22,
               "preparation": "Chegue com shotgun, explosivos, rockets e cura. Use escadas e níveis como rota de kiting.",
               "professional": "Ignore 150 kills e Agitators; sobreviva, use rockets cedo e reinicie o checkpoint se chegar sem cura.",
               "qte": "Motosserra e Executioner podem matar; Gatling fixa o jogador em cobertura. Ser separado impede resgate antes do fim.",
               "relatedTrophy": "Getaway; The Great Escape; Run the Gauntlet; terceiro Agitator.",
-              "requirement": "Sobreviver aos cronômetros e derrotar bosses suficientes para liberar a saída; matar rápido também dispara o terceiro Agitator.",
+              "requirement": "Sobreviver aos cronômetros e derrotar os inimigos necessários para liberar a saída. O terceiro Agitator é uma meta opcional cuja aparição não deve ser vinculada a uma contagem garantida de bosses.",
               "solo": "Mantenha a IA perto, dê arma simples e use o trajeto circular entre escadas. Não deixe a IA perseguir adds no andar oposto.",
               "type": "Encontro crítico final da DLC",
               "warning": "Não confundir a conclusão do final com a meta opcional de três Agitators.",
@@ -5620,11 +6530,11 @@
       }
     ],
     "seo": {
-      "description": "Guia completo da platina de Resident Evil 5 em português, com roadmap, Professional, emblemas BSAA, tesouros, armas, upgrades, rank S, farm de dinheiro e troféus situacionais.",
+      "description": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
       "keywords": "Resident Evil 5 troféus, Resident Evil 5 platina, Resident Evil 5 guia, RE5 trophy guide, Resident Evil 5 BSAA emblems, Resident Evil 5 treasures, Resident Evil 5 Professional, Resident Evil 5 Stockpile, Resident Evil 5 Take It to the Max",
       "ogDescription": "Roadmap seguro para platinar Resident Evil 5: sem perdíveis definitivos, com Seleção de Capítulos, coletáveis, armas, upgrades, rank S, Professional e cleanup.",
       "ogTitle": "Resident Evil 5: guia de troféus e platina",
-      "title": "Resident Evil 5: guia de troféus e platina"
+      "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement"
     },
     "tags": [],
     "videoAudit": [

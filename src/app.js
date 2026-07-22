@@ -1,10 +1,12 @@
 ﻿const fs = require('fs');
+const crypto = require('crypto');
+const compression = require('compression');
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const requestContext = require('./middleware/requestContext');
 const securityHeaders = require('./middleware/securityHeaders');
-const { issueCsrfToken, requireCsrf } = require('./middleware/csrfProtection');
+const { issueCsrfToken, requireCsrf, requirePublicFormCsrf } = require('./middleware/csrfProtection');
 const { escapeXml } = require('./utils/xml');
 const env = require('./config/env');
 const authRoutes = require('./routes/auth.routes');
@@ -33,6 +35,19 @@ app.set('trust proxy', 1);
 
 const publicIndexPath = path.join(__dirname, '../public/index.html');
 const publicIndexTemplate = fs.readFileSync(publicIndexPath, 'utf8');
+const residentEvil5Stylesheet = [
+  'utilities.css',
+  'tokens.css',
+  'base.css',
+  'layout.css',
+  'components.css',
+  'guide.css',
+  'responsive.css',
+  're5-phase5.7c3b265c.css',
+  're5-phase6.css'
+].map(file => fs.readFileSync(path.join(__dirname, '../public/css', file), 'utf8')).join('\n');
+const residentEvil5StylesheetHash = crypto.createHash('sha256').update(residentEvil5Stylesheet).digest('hex').slice(0, 12);
+const residentEvil5StylesheetUrl = `/css/re5-guide.${residentEvil5StylesheetHash}.css`;
 const catalogFacetPageMap = sharedCatalogModel.catalogFacetPageMap;
 const HOME_EDITORIAL_HIGHLIGHT_LIMIT = sharedCatalogModel.HOME_EDITORIAL_HIGHLIGHT_LIMIT || 3;
 const PUBLIC_CATALOG_PAGE_SIZE = 24;
@@ -327,7 +342,136 @@ function resolveMetaImage(origin, imagePath) {
 
 function resolveGuideMetaImage(game = {}) {
   const publicOrigin = PRODUCTION_CANONICAL_ORIGIN;
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+    return resolveMetaImage(publicOrigin, game?.editorialAuthority?.socialImage?.src);
+  }
   return resolveMetaImage(publicOrigin, firstSeoText(game?.image, game?.cover_image));
+}
+
+function enhanceResidentEvil5MetadataHtml(html = '', socialImageAlt = '') {
+  const alt = escapeHtml(socialImageAlt || 'Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement');
+  return String(html || '')
+    .replace(
+      /(<meta property="og:type" content="article">)/,
+      '$1\n  <meta property="og:locale" content="pt_BR">'
+    )
+    .replace(
+      /(<meta property="og:image:height" content="630">)/,
+      `$1\n  <meta property="og:image:alt" content="${alt}">`
+    )
+    .replace(
+      /(<meta name="twitter:image" content="[^"]+">)/,
+      `$1\n  <meta name="twitter:image:alt" content="${alt}">`
+    );
+}
+
+function enhanceResidentEvil5Phase5Html(html = '') {
+  const productionConfig = getResidentEvil5ProductionConfig();
+  const lightweightState = /<script>window\.__INITIAL_STATE__ = [\s\S]*?;<\/script>/;
+  const analyticsHead = /<!-- Google tag \(gtag\.js\) -->\s*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=[^"]+"><\/script>\s*<script>[\s\S]*?<\/script>/;
+  const localRuntimeScript = /\s*<script src="\/(?:js|shared)\/[^"]+" defer><\/script>/g;
+  const unusedGuideStyles = [
+    '/css/utilities.css',
+    '/css/tokens.css',
+    '/css/base.css',
+    '/css/layout.css',
+    '/css/components.css',
+    '/css/guide.css',
+    '/css/responsive.css',
+    '/css/home.css',
+    '/css/catalog.css',
+    '/css/checklist.css',
+    '/css/admin.css'
+  ];
+
+  let next = String(html || '')
+    .replace(analyticsHead, '')
+    .replace(localRuntimeScript, '')
+    .replace(lightweightState, match => match)
+    .replace(
+      '<html lang="pt-BR">',
+      `<html lang="pt-BR">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var match = window.location.hash.match(/^#guideTab-(summary|roadmap|checklist|extras|dlc|attention)$/);
+      var tab = match ? match[1] : 'summary';
+      root.classList.add('re5-js', 're5-tab-' + tab);
+      window.AtlasAnalyticsConfig = Object.freeze({ measurementId: '', initialPageViewSent: false });
+      window.AtlasRe5ProductionConfig = Object.freeze(${safeJsonForHtml(productionConfig)});
+      window.addEventListener('error', function (event) {
+        var source = String(event && event.filename || event && event.target && event.target.src || '');
+        if (source.indexOf('re5-guide-enhance.a30a6622.js') === -1) return;
+        var reveal = function () {
+          root.classList.remove('re5-js');
+          document.querySelectorAll('[data-guide-tab-panel], [data-guide-section-content]').forEach(function (node) {
+            node.hidden = false;
+            node.classList.remove('hidden', 'is-collapsed');
+            node.setAttribute('aria-hidden', 'false');
+          });
+        };
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal, { once: true });
+        else reveal();
+      }, true);
+    })();
+  </script>`
+    )
+    .replace(
+      '<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">',
+      '<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>'
+    )
+    .replace(
+      '</head>',
+      `  <link rel="stylesheet" href="${residentEvil5StylesheetUrl}">\n</head>`
+    )
+    .replace(
+      '</body>',
+      '  <script src="/js/re5-guide-enhance.a30a6622.js" defer></script>\n  <script src="/js/re5-production.js" defer></script>\n</body>'
+    )
+    .replace(
+      '<body class="atlas-body min-h-screen pb-10" data-page="public">',
+      '<body class="atlas-body min-h-screen pb-10" data-page="public" data-re5-phase5="true" data-re5-phase6="true">'
+    )
+    .replace(
+      'class="atlas-brand notranslate flex items-center gap-4 text-left shrink-0" translate="no" aria-label="AtlasAchievement"',
+      'class="atlas-brand notranslate flex items-center gap-4 text-left shrink-0" translate="no"'
+    )
+    .replace(
+      '<a id="backToTopBtn" href="#topo" class="atlas-back-to-top" data-scroll-top-global aria-label="Voltar ao topo">',
+      '<a id="backToTopBtn" href="#topo" class="atlas-back-to-top" data-scroll-top-global aria-label="Voltar ao topo" aria-hidden="true" tabindex="-1">'
+    );
+
+  unusedGuideStyles.forEach(source => {
+    next = next.replace(new RegExp(`\\s*<link rel="stylesheet" href="${source.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">`), '');
+  });
+
+  next = next.replace(/<section id="guideTab-(summary|roadmap|checklist|extras|dlc|attention)"[^>]*>/g, openingTag => openingTag
+    .replace(/class="([^"]*)"/, (_match, classNames) => `class="${classNames.split(/\s+/).filter(name => name && name !== 'hidden').join(' ')}"`)
+    .replace(/\s+hidden(?=[\s>])/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/aria-hidden="true"/g, 'aria-hidden="false"'));
+
+  next = next.replace(/<div[^>]*data-guide-section-content[^>]*>/g, openingTag => {
+    const wasCollapsed = /\bis-collapsed\b/.test(openingTag) || /\shidden(?:\s|>)/.test(openingTag);
+    if (!wasCollapsed) return openingTag;
+    return openingTag
+      .replace('data-guide-section-content', 'data-guide-section-content data-re5-collapsed="true"')
+      .replace(/\bis-collapsed\b/g, '')
+      .replace(/\s+hidden(?=[\s>])/g, '')
+      .replace(/aria-hidden="true"/g, 'aria-hidden="false"')
+      .replace(/\s{2,}/g, ' ');
+  });
+
+  next = next.replace(/<button[^>]*data-guide-section-toggle="[^"]+"[^>]*aria-expanded="false"[^>]*>/g, openingTag => openingTag
+    .replace('data-guide-section-toggle=', 'data-re5-collapsed-toggle="true" data-guide-section-toggle=')
+    .replace('aria-expanded="false"', 'aria-expanded="true"'));
+
+  next = next.replace(
+    /(<div class="atlas-filter-primary"[\s\S]*?<\/fieldset>\s*<\/div>)(\s*<details class="atlas-filter-more atlas-filter-secondary")/,
+    '<details class="atlas-re5-filter-drawer" open><summary><i class="fas fa-sliders" aria-hidden="true"></i>Filtros</summary>$1</details>$2'
+  );
+
+  return next;
 }
 
 
@@ -573,6 +717,23 @@ function buildGameSeoTitle(game = {}) {
   return `${name} – Guia de platina e troféus`;
 }
 
+function getResidentEvil5ProductionConfig() {
+  return {
+    analyticsEnabled: env.re5ProductAnalyticsEnabled === true,
+    cwvEnabled: env.re5ProductAnalyticsEnabled === true && env.re5CoreWebVitalsEnabled === true,
+    errorMonitoringEnabled: env.re5ErrorMonitoringEnabled === true,
+    adsEnabled: env.re5AdsEnabled === true,
+    placeholderMode: env.re5AdsTestPlaceholders === true,
+    placements: {
+      summary: env.re5AdsPlacements?.summary !== false,
+      roadmap: env.re5AdsPlacements?.roadmap !== false,
+      extras: env.re5AdsPlacements?.extras !== false,
+      dlc: env.re5AdsPlacements?.dlc !== false
+    },
+    frontendVersion: APP_VERSION
+  };
+}
+
 function truncateSeoDescription(value = '', maxLength = 155) {
   const text = String(value || '').replace(/\s+/g, ' ').trim();
   if (text.length <= maxLength) return text;
@@ -616,7 +777,7 @@ function buildGameSeoDescription(game = {}) {
     return 'Guia de platina de Resident Evil 2 Remake no PS4 com roadmap, checklist dos 42 troféus base, 58 Files, Mr. Raccoons, ranks S, Hardcore e DLCs separadas.';
   }
   if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
-    return 'Guia de Resident Evil 5 no PS4: roadmap, 51 troféus base, emblemas BSAA, tesouros, Professional e DLCs não obrigatórias para o 100% da lista.';
+    return 'Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.';
   }
   const parts = [];
   const time = String(game?.time || '').trim();
@@ -830,6 +991,8 @@ function getTrophyDisplayDescription(trophy = {}, game = {}) {
 }
 
 function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game = {}) {
+  const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+  const isResidentEvil5 = normalizedSlug === 'resident-evil-5';
   const done = completedIds.has(trophy.id);
   const description = getTrophyDisplayDescription(trophy, game);
   const tip = trophy.tip || '';
@@ -850,7 +1013,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
     : `${trophy.trophyNameOriginal || trophy.name || ''} ${trophy.trophyNamePtBr || trophy.name_pt || ''} ${description} ${tip} ${trophy.type || ''} ${riskTags.map(tag => `${tag.id} ${tag.label}`).join(' ')}`.trim().toLowerCase();
   const detailsId = buildTrophyDetailsId(trophy, index);
   const hasDetailsToggle = shouldShowTrophyDetailsToggle(trophy, description, tip);
-  const contextualDetailsAttributes = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake'
+  const contextualDetailsAttributes = normalizedSlug === 'resident-evil-2-remake'
     ? ` data-details-item-name="${escapeHtml(primaryName)}" aria-label="${escapeHtml(`Ver detalhes de ${primaryName}`)}"`
     : '';
   const detailsToggleHtml = hasDetailsToggle
@@ -859,7 +1022,7 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
   const toggleLabel = done ? 'Desmarcar' : 'Concluir';
   const toggleAria = `${toggleLabel} ${primaryName}`;
   const allowAutomaticYoutubeSearch = game?.disableGeneratedVideoSearch !== true
-    && String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5';
+    && normalizedSlug !== 'resident-evil-5';
   const youtubeSearchUrl = allowAutomaticYoutubeSearch && typeof sharedGuideViewModel.buildTrophyYoutubeSearchUrl === 'function'
     ? sharedGuideViewModel.buildTrophyYoutubeSearchUrl(game?.name || game?.title || '', trophy)
     : '';
@@ -873,26 +1036,26 @@ function renderTrophyCardHtml(trophy, completedIds = new Set(), index = 0, game 
         <div class="atlas-trophy-card__main">
           <div class="atlas-trophy-card__headline">
             <div class="atlas-trophy-card__title">
-              ${String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake'
+              ${['resident-evil-2-remake', 'resident-evil-5'].includes(normalizedSlug)
                 ? `<h3>${escapeHtml(primaryName)}</h3>`
                 : `<h4>${escapeHtml(primaryName)}</h4>`}
               ${editorialName ? `<p class="atlas-trophy-card__title-translation"><span>${escapeHtml(translationLabel)}</span>${escapeHtml(secondaryName)}</p>` : ''}
             </div>
             <div class="atlas-trophy-card__meta">
-              <span class="atlas-trophy-type">${escapeHtml(trophy.type || 'Bronze')}</span>
+              <span class="atlas-trophy-type">${isResidentEvil5 ? '<i class="fas fa-trophy" aria-hidden="true"></i>' : ''}${escapeHtml(trophy.type || 'Bronze')}</span>
               <span class="atlas-trophy-state ${done ? 'atlas-trophy-state--done' : ''}">${done ? 'Concluído' : 'Pendente'}</span>
             </div>
           </div>
           ${displayRiskTags.length ? `<div class="atlas-trophy-risk-list">${displayRiskTags.map(tag => `<span class="atlas-risk-chip atlas-risk-chip--${escapeHtml(tag.tone)}">${escapeHtml(tag.label)}</span>`).join('')}</div>` : ''}
           <div id="${escapeHtml(detailsId)}" class="atlas-trophy-details" data-trophy-details>
-            <p class="atlas-trophy-description">${String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake' ? '<strong>Requisito:</strong> ' : ''}${escapeHtml(description || 'Sem descrição.')}</p>
+            <p class="atlas-trophy-description">${normalizedSlug === 'resident-evil-2-remake' ? '<strong>Requisito:</strong> ' : ''}${escapeHtml(description || 'Sem descrição.')}</p>
             ${tip ? `<div class="atlas-tip-box atlas-trophy-tip"><div class="atlas-tip-label">${trophy.is_spoiler ? 'Dica com spoiler' : 'Dica'}</div><p class="text-sm mt-2">${escapeHtml(tip)}</p></div>` : ''}
             ${criticalGuideHtml}
           </div>
           ${detailsToggleHtml}
         </div>
         <div class="atlas-trophy-card__actions">
-          <button type="button" class="atlas-btn ${done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle" data-trophy-toggle="${escapeHtml(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeHtml(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}" aria-hidden="true"></i><span>${escapeHtml(toggleLabel)}</span></button>
+          <button type="button" class="atlas-btn ${isResidentEvil5 || done ? 'atlas-btn-secondary' : 'atlas-btn-primary'} atlas-trophy-toggle${isResidentEvil5 ? ' atlas-re5-trophy-toggle' : ''}" data-trophy-toggle="${escapeHtml(trophy.id || '')}" aria-pressed="${done ? 'true' : 'false'}" aria-label="${escapeHtml(toggleAria)}"><i class="fas ${done ? 'fa-rotate-left' : 'fa-check'}" aria-hidden="true"></i><span>${escapeHtml(toggleLabel)}</span></button>
           ${youtubeSearchUrl ? `<a class="atlas-btn atlas-btn-secondary atlas-btn-compact atlas-trophy-youtube-link" href="${escapeHtml(youtubeSearchUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(youtubeAriaLabel)}"><i class="fas fa-video" aria-hidden="true"></i><span>YouTube</span></a>` : ''}
         </div>
       </div>
@@ -1203,11 +1366,12 @@ function buildGuidePlayerFit(game = {}, viewModel = {}) {
   return sharedGuideViewModel.buildGuidePlayerFit(game, viewModel);
 }
 
-function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
+function buildGuideFaqStructuredData(canonicalUrl, viewModel, options = {}) {
   const faqItems = Array.isArray(viewModel?.contextualFaq) ? viewModel.contextualFaq : [];
   if (!faqItems.length) return [];
   return [{
     '@type': 'FAQPage',
+    ...(options.id ? { '@id': options.id } : {}),
     url: canonicalUrl,
     mainEntity: faqItems.map(item => ({
       '@type': 'Question',
@@ -1218,6 +1382,120 @@ function buildGuideFaqStructuredData(canonicalUrl, viewModel) {
       }
     }))
   }];
+}
+
+function renderResidentEvil5MethodologyHtml(game = {}) {
+  if (String(game?.slug || '').trim().toLowerCase() !== 'resident-evil-5') return '';
+  const authority = game?.editorialAuthority && typeof game.editorialAuthority === 'object'
+    ? game.editorialAuthority
+    : {};
+  const methodology = Array.isArray(authority.methodology) ? authority.methodology : [];
+  const sources = Array.isArray(authority.sources) ? authority.sources : [];
+  const limitations = Array.isArray(authority.limitations) ? authority.limitations : [];
+  const publicHistoryLimit = Math.max(1, Number(authority.governance?.publicHistoryLimit || 3));
+  const history = Array.isArray(authority.history) ? authority.history.slice(0, publicHistoryLimit) : [];
+  const safeSources = sources.filter(source => /^https?:\/\//i.test(String(source?.url || '').trim()));
+  return `
+    <section id="fontes-e-metodologia" class="atlas-panel atlas-panel--support atlas-re5-methodology p-5 md:p-6" aria-labelledby="re5MethodologyTitle">
+      <div class="atlas-section-head atlas-section-head--compact">
+        <div>
+          <span class="atlas-section-kicker">Transparência editorial</span>
+          <h2 id="re5MethodologyTitle" class="text-xl md:text-2xl font-extrabold tracking-tight mt-2">Fontes e metodologia</h2>
+          <p class="text-white/58 mt-2 max-w-4xl">Como o conteúdo da versão PS4/Remaster foi pesquisado, reconciliado e mantido.</p>
+        </div>
+      </div>
+      <div class="atlas-re5-methodology__grid">
+        <section class="atlas-re5-methodology__card" aria-labelledby="re5VerificationTitle">
+          <h3 id="re5VerificationTitle">Como verificamos este guia</h3>
+          <ul>${methodology.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+        </section>
+        <section class="atlas-re5-methodology__card" aria-labelledby="re5SourcesTitle">
+          <h3 id="re5SourcesTitle">Fontes principais</h3>
+          <ul class="atlas-re5-source-list">${safeSources.map(source => `
+            <li id="re5-source-${escapeHtml(source.id || '')}">
+              <a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.name || 'Fonte externa')}</a>
+              <p>${escapeHtml(source.purpose || '')}</p>
+            </li>`).join('')}</ul>
+        </section>
+        <section class="atlas-re5-methodology__card" aria-labelledby="re5LimitationsTitle">
+          <h3 id="re5LimitationsTitle">Limitações e dados sujeitos a mudança</h3>
+          <ul>${limitations.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+        </section>
+        <section class="atlas-re5-methodology__card" aria-labelledby="re5HistoryTitle">
+          <h3 id="re5HistoryTitle">Histórico editorial</h3>
+          <ol class="atlas-re5-history">${history.map(item => `
+            <li><time datetime="${escapeHtml(item.date || '')}">${escapeHtml(formatGuideReviewDate(item.date || ''))}</time><span>${escapeHtml(item.change || '')}</span></li>`).join('')}</ol>
+        </section>
+      </div>
+    </section>`;
+}
+
+function getResidentEvil5AttentionMeta(item = {}) {
+  const title = String(item.name || item.title || 'Ponto de atenção');
+  const critical = /Professional|Egg Hunt|Egg on Your Face/i.test(title);
+  const information = /Sem perdíveis|Platina base x 100%/i.test(title);
+  const targetMap = [
+    [/Sem perdíveis/i, ['guideChapterRoutePanel', 'Abrir rota por capítulo']],
+    [/Platina base x 100%/i, ['guideDlcCompletionPanel', 'Comparar platina e 100%']],
+    [/Stockpile/i, ['extras-weapons-stockpile', 'Abrir Armas e Stockpile']],
+    [/Soul Gem/i, ['extras-tesouros', 'Abrir Tesouros']],
+    [/Heart of Africa/i, ['re5-treasure-50-heart-of-africa', 'Abrir Heart of Africa']],
+    [/Emblema de 6-1/i, ['extras-bsaa-emblems', 'Abrir BSAA Emblems']],
+    [/Diamond \(Marquise\)/i, ['extras-tesouros', 'Abrir Tesouros']],
+    [/Professional/i, ['guideProfessionalAiPanel', 'Abrir preparação para Professional']],
+    [/Take It to the Max/i, ['extras-upgrades-take-it-to-the-max', 'Abrir Upgrades']],
+    [/ACTION Figures/i, ['extras-ranks-s-chapters', 'Abrir ranks S e figuras']],
+    [/The Works/i, ['extras-situational-trophies', 'Abrir troféus situacionais']],
+    [/Egg Hunt|Egg on Your Face/i, ['extras-eggs-egg-hunt-egg-on-your-face', 'Abrir checklist de ovos']]
+  ];
+  const target = targetMap.find(([pattern]) => pattern.test(title))?.[1] || ['guideAttentionPointsPanel', 'Revisar o alerta completo'];
+  const severity = critical ? 'critical' : information ? 'information' : 'important';
+  const impact = critical
+    ? 'Pode aumentar bastante o retrabalho ou comprometer a preparação de uma etapa exigente.'
+    : information
+      ? 'Muda a leitura correta do escopo e evita trabalho fora da rota da platina.'
+      : 'Pode exigir repetição de capítulo, farm extra ou revisão do inventário.';
+  return { title, severity, targetId: target[0], targetLabel: target[1], impact };
+}
+
+function renderResidentEvil5AttentionPanelHtml(routeTrophies = []) {
+  const groups = [
+    { id: 'critical', label: 'Crítico', description: 'Prepare antes de executar para não transformar a etapa em retrabalho pesado.' },
+    { id: 'important', label: 'Importante', description: 'Pontos que pedem conferência de rota, item ou capítulo.' },
+    { id: 'information', label: 'Informação', description: 'Leitura de escopo e recuperação que evita decisões erradas.' }
+  ];
+  const enriched = routeTrophies.map(item => ({ item, meta: getResidentEvil5AttentionMeta(item) }));
+  return `
+    <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes atlas-re5-attention" aria-labelledby="guideAttentionTitle">
+      <div class="atlas-section-head atlas-section-head--compact">
+        <div>
+          <span class="atlas-section-kicker">Prevenção e recuperação</span>
+          <h2 id="guideAttentionTitle">Pontos de atenção</h2>
+          <p>Os 12 alertas permanecem completos, agora organizados pelo impacto real na sua rota.</p>
+        </div>
+        <span class="atlas-re5-attention__count">${escapeHtml(String(routeTrophies.length))} alertas</span>
+      </div>
+      <div id="guideAttentionPointsPanel" class="atlas-re5-attention__groups">
+        ${groups.map(group => {
+          const items = enriched.filter(entry => entry.meta.severity === group.id);
+          return `<details class="atlas-re5-attention-group atlas-re5-attention-group--${escapeHtml(group.id)}" open>
+            <summary><span><strong>${escapeHtml(group.label)}</strong><small>${escapeHtml(group.description)}</small></span><span>${escapeHtml(String(items.length))}</span></summary>
+            <div class="atlas-re5-attention-group__items">
+              ${items.map(({ item, meta }) => `<article class="atlas-re5-attention-item">
+                <h3>${escapeHtml(meta.title)}</h3>
+                <dl>
+                  <div><dt>Problema</dt><dd>${escapeHtml(item.type || 'Risco de rota')}</dd></div>
+                  <div><dt>Impacto</dt><dd>${escapeHtml(meta.impact)}</dd></div>
+                  <div><dt>Prevenção</dt><dd>${escapeHtml(item.text || item.tip || '')}</dd></div>
+                  <div><dt>Recuperação</dt><dd>Abra a seção relacionada e aplique o cleanup, a repetição de capítulo ou a revisão de inventário indicada acima.</dd></div>
+                </dl>
+                <a href="#${escapeHtml(meta.targetId)}" data-guide-target="${escapeHtml(meta.targetId)}">${escapeHtml(meta.targetLabel)}<span aria-hidden="true">→</span></a>
+              </article>`).join('')}
+            </div>
+          </details>`;
+        }).join('')}
+      </div>
+    </section>`;
 }
 
 function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
@@ -1270,7 +1548,9 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
     : (normalizedSlug === 'final-fantasy-xvi'
       ? 'Materiais, Final Fantasy Mode, DLCs separadas e objetivos de cleanup que merecem acompanhamento durante a platina.'
       : 'Riscos, spoilers, runs condicionais e objetivos que merecem acompanhamento durante a platina.');
-  const attention = `
+  const attention = normalizedSlug === 'resident-evil-5'
+    ? renderResidentEvil5AttentionPanelHtml(routeTrophies)
+    : `
     <section id="guideEditorialNotesPanel" class="atlas-panel atlas-panel--editorial atlas-editorial-notes p-5 md:p-6" aria-labelledby="guideAttentionTitle">
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
@@ -1312,7 +1592,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
       </div>
       <div class="atlas-faq-list">
         ${faqItems.map((item, index) => {
-          if (normalizedSlug !== 'resident-evil-2-remake') {
+          if (!['resident-evil-2-remake', 'resident-evil-5'].includes(normalizedSlug)) {
             return `<article class="atlas-faq-item atlas-faq-row"><strong>${escapeHtml(item.question)}</strong><p>${renderGuideFaqAnswerHtml(item, normalizedSlug)}</p></article>`;
           }
           const answerId = `guideFaqAnswer-${index + 1}`;
@@ -1320,7 +1600,7 @@ function renderGuideEditorialNotesHtml(game = {}, viewModel = {}) {
         }).join('')}
       </div>
     </section>`;
-  return { attention, faq };
+  return { attention, faq, methodology: renderResidentEvil5MethodologyHtml(game) };
 }
 
 function buildRelatedGamesServer(currentGame, pool = [], limit = 4) {
@@ -1635,6 +1915,27 @@ function renderEditorialTrustHtml(game = {}, viewModel = {}) {
     ? sharedEditorialModel.getEditorialStatusMessage(game, badge)
     : (badge.detail || 'Este guia ainda está passando por revisão editorial.');
   const badgeLabel = badge.label || 'Em revisão';
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+    const authority = game?.editorialAuthority || {};
+    const authorName = authority.authorName || 'Equipe Editorial AtlasAchievement';
+    const authorUrl = authority.authorUrl || '/sobre';
+    const platformScope = authority.platformScope || 'PS4/Remaster';
+    const summary = authority.verificationSummary || `Conteúdo pesquisado e revisado pela ${authorName} para a versão ${platformScope}.`;
+    const reviewedDate = String(authority.reviewedAt || reviewedAt || '2026-07-18').slice(0, 10);
+    return `
+      <aside class="atlas-editorial-trust atlas-editorial-trust--authority" aria-label="Responsabilidade editorial">
+        <div class="atlas-editorial-trust__authority">
+          <span class="atlas-editorial-badge atlas-editorial-badge--${escapeHtml(badge.status || badge.badge || badge.tone || 'verified')}"><i class="fas fa-clipboard-check" aria-hidden="true"></i>${escapeHtml(badgeLabel)}</span>
+          <p>${escapeHtml(summary)}</p>
+          <div class="atlas-editorial-trust__meta">
+            <span><i class="fas fa-user-check" aria-hidden="true"></i>Responsável: <a href="${escapeHtml(authorUrl)}">${escapeHtml(authorName)}</a></span>
+            <span><i class="fas fa-gamepad" aria-hidden="true"></i>Escopo: ${escapeHtml(platformScope)}</span>
+            <time datetime="${escapeHtml(reviewedDate)}"><i class="fas fa-calendar-check" aria-hidden="true"></i>Revisado em ${escapeHtml(formatGuideReviewDate(reviewedDate))}</time>
+          </div>
+          <a class="atlas-editorial-trust__method-link" href="#fontes-e-metodologia">Como verificamos este guia</a>
+        </div>
+      </aside>`;
+  }
   return `
     <div class="atlas-editorial-trust">
       <div class="atlas-editorial-trust__row">
@@ -1671,7 +1972,67 @@ function renderGuideHeroCoverHtml(game = {}, viewModel = {}) {
   `;
 }
 
+function renderResidentEvil5HeaderHtml(game = {}, viewModel = {}) {
+  const authority = game?.editorialAuthority || {};
+  const stats = new Map(buildGuideHeroStats(game, viewModel).map(item => [item.id, item]));
+  const dlcGuide = getGuideDlcCompletion(game) || {};
+  const baseTrophies = Number(dlcGuide.baseTrophies || game?.trophies?.length || 51);
+  const dlcTrophies = Number(dlcGuide.dlcTrophies || 20);
+  const totalTrophies = Number(dlcGuide.totalTrophies || (baseTrophies + dlcTrophies));
+  const fact = (id, fallbackLabel, fallbackValue) => {
+    const item = stats.get(id) || {};
+    return `<div class="atlas-re5-hero__fact atlas-re5-hero__fact--${escapeHtml(id)}"><dt>${escapeHtml(item.label || fallbackLabel)}</dt><dd>${escapeHtml(item.value || fallbackValue)}</dd></div>`;
+  };
+  return `
+    <section class="atlas-panel atlas-panel--primary atlas-guide-hero atlas-re5-hero">
+      <div class="atlas-guide-hero__layout">
+        ${renderGuideHeroCoverHtml(game, viewModel)}
+        <div class="atlas-guide-hero__body">
+          <div class="atlas-re5-hero__heading">
+            <div>
+              <span class="atlas-section-kicker">Guia de platina e troféus</span>
+              <h1>${escapeHtml(game?.name || 'Resident Evil 5')}</h1>
+              <p class="atlas-re5-hero__platform">${escapeHtml(authority.platformScope || 'PS4/Remaster')}</p>
+            </div>
+            <p class="atlas-re5-hero__scope-copy">Rota completa da platina base, com cleanup por capítulos e uma área separada para os DLCs do 100%.</p>
+          </div>
+          <p class="atlas-guide-hero__summary">${escapeHtml(game?.runs_summary || game?.runs || '')}</p>
+
+          <dl class="atlas-re5-scope" aria-label="Diferença entre platina e 100 por cento">
+            <div class="atlas-re5-scope__base"><dt>Platina</dt><dd><strong>${escapeHtml(String(baseTrophies))}</strong> troféus base</dd></div>
+            <div class="atlas-re5-scope__full"><dt>100%</dt><dd><strong>${escapeHtml(String(totalTrophies))}</strong> troféus com ${escapeHtml(String(dlcTrophies))} DLCs · DLC não obrigatório</dd></div>
+          </dl>
+
+          <dl class="atlas-re5-hero__facts" aria-label="Indicadores essenciais do guia">
+            ${fact('difficulty', 'Dificuldade', `${escapeHtml(String(game?.difficulty || 6))}/10`)}
+            ${fact('time', 'Tempo', game?.time || '35–45 horas')}
+            <div class="atlas-re5-hero__fact atlas-re5-hero__fact--runs"><dt>Runs recomendadas</dt><dd>2 campanhas + cleanup</dd></div>
+            ${fact('missables', 'Perdíveis', 'Sem perdíveis')}
+            ${fact('online', 'Online da platina', 'Não obrigatório')}
+            ${fact('coop', 'Coop', 'Opcional')}
+          </dl>
+
+          ${renderEditorialTrustHtml(game, viewModel)}
+
+          <div class="atlas-re5-hero__action-row">
+            <div class="atlas-re5-hero__main-actions" aria-label="Ações principais do guia">
+              <button type="button" class="atlas-btn atlas-btn-primary" data-guide-action="roadmap"><i class="fas fa-route" aria-hidden="true"></i>Começar roadmap</button>
+              <button type="button" class="atlas-btn atlas-btn-secondary" data-guide-action="trophies"><i class="fas fa-list-check" aria-hidden="true"></i>Abrir checklist</button>
+            </div>
+            <div class="atlas-re5-hero__utility-actions" aria-label="Utilidades do guia">
+              <button type="button" class="atlas-text-action atlas-guide-hero__action--tertiary" data-toggle-save-game="true" aria-pressed="false"><i class="fas fa-bookmark" aria-hidden="true"></i><span>Salvar na biblioteca</span></button>
+              <button type="button" class="atlas-text-action atlas-guide-hero__action--tertiary atlas-guide-hero__action--report" data-guide-action="feedback"><i class="fas fa-flag" aria-hidden="true"></i><span>Reportar problema</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
 function renderGuideHeaderHtml(game, viewModel) {
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+    return renderResidentEvil5HeaderHtml(game, viewModel);
+  }
   const guideEyebrow = 'Resumo rápido do guia';
   const verdict = buildThirtySecondVerdict(game, viewModel);
   const heroStats = buildGuideHeroStats(game, viewModel);
@@ -1773,8 +2134,18 @@ function renderGuideSidebarHtml(game, viewModel, options = {}) {
     </section>`;
 }
 
-function renderGuideRoadmapTimelineHtml(roadmapStages = []) {
+function renderGuideRoadmapTimelineHtml(roadmapStages = [], options = {}) {
   if (!roadmapStages.length) return '<div class="atlas-inline-empty">Sem roadmap cadastrado.</div>';
+  const isResidentEvil5 = options.slug === 'resident-evil-5';
+  const relatedTargets = {
+    1: ['Rota por capítulo', 'guideChapterRoutePanel'],
+    2: ['Professional e IA', 'guideProfessionalAiPanel'],
+    3: ['BSAA e tesouros', 'guidePlatinumExtrasPanel'],
+    4: ['Ranks S e bônus', 'extras-ranks-s-chapters'],
+    5: ['Rotas de farm', 'guideFarmRoutesPanel'],
+    6: ['Checklist de troféus', 'guideChecklistPanel'],
+    7: ['Preparação para Professional', 'guideProfessionalAiPanel']
+  };
   return `
     <ol class="atlas-roadmap-timeline">
       ${roadmapStages.map(stage => {
@@ -1798,19 +2169,27 @@ function renderGuideRoadmapTimelineHtml(roadmapStages = []) {
             ].filter(Boolean);
         const hasWarning = Boolean(stage.warning || stage.risk);
         const hasResult = Boolean(stage.result);
+        const stageNumber = Number(stage.number || 0);
+        const stageId = isResidentEvil5 ? `re5-roadmap-stage-${stageNumber}` : '';
+        const relatedTarget = relatedTargets[stageNumber];
         return `
-        <li class="atlas-roadmap-step atlas-roadmap-step--${escapeHtml(category.id || 'plan')}${Number(stage.number) === 1 ? ' atlas-roadmap-step--first' : ''}${hasWarning ? ' atlas-roadmap-step--has-warning' : ''}${hasResult ? ' atlas-roadmap-step--has-result' : ''}">
+        <li${stageId ? ` id="${escapeHtml(stageId)}" data-roadmap-stage="${escapeHtml(String(stageNumber))}"` : ''} class="atlas-roadmap-step atlas-roadmap-step--${escapeHtml(category.id || 'plan')}${Number(stage.number) === 1 ? ' atlas-roadmap-step--first' : ''}${hasWarning ? ' atlas-roadmap-step--has-warning' : ''}${hasResult ? ' atlas-roadmap-step--has-result' : ''}">
           <div class="atlas-roadmap-step__marker" aria-hidden="true" data-roadmap-number="${escapeHtml(String(stage.number))}"></div>
           <article class="atlas-roadmap-step__body">
             <div class="atlas-roadmap-step__head">
               <div>
                 <h3>${escapeHtml(stage.title)}</h3>
               </div>
-              ${focusLabel ? `<span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeHtml(category.id || 'plan')}"><i class="fas ${escapeHtml(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>` : ''}
+              <div class="atlas-roadmap-step__head-actions">
+                ${focusLabel ? `<span class="atlas-roadmap-step__category atlas-roadmap-step__category--${escapeHtml(category.id || 'plan')}"><i class="fas ${escapeHtml(category.icon || 'fa-route')}" aria-hidden="true"></i>${escapeHtml(focusLabel)}</span>` : ''}
+                ${isResidentEvil5 ? `<button type="button" class="atlas-re5-stage-toggle" data-roadmap-toggle="${escapeHtml(String(stageNumber))}" aria-pressed="false"><span aria-hidden="true">✓</span><span data-roadmap-toggle-label>Marcar etapa</span></button>` : ''}
+              </div>
             </div>
+            ${isResidentEvil5 ? `<p class="atlas-roadmap-step__when"><strong>Quando fazer</strong>${escapeHtml(focusLabel || (stageNumber === 1 ? 'No início do projeto' : 'Depois da etapa anterior'))}</p>` : ''}
             <p class="atlas-roadmap-step__objective"><span>Objetivo</span>${escapeHtml(primaryText)}</p>
             ${actions.length ? `<ul class="atlas-roadmap-step__actions">${actions.map(action => `<li>${escapeHtml(action)}</li>`).join('')}</ul>` : ''}
             ${metaItems.length ? `<div class="atlas-roadmap-step__meta">${metaItems.join('')}</div>` : ''}
+            ${isResidentEvil5 && relatedTarget ? `<a class="atlas-re5-related-link" href="#${escapeHtml(relatedTarget[1])}" data-guide-target="${escapeHtml(relatedTarget[1])}">${escapeHtml(relatedTarget[0])}<span aria-hidden="true">→</span></a>` : ''}
           </article>
         </li>
       `;
@@ -1842,10 +2221,27 @@ function getGuideChapterRoute(game = {}) {
   return chapters.length ? { ...routeGuide, chapters } : null;
 }
 
+function buildResidentEvil5ChapterSignals(chapter = {}) {
+  const sections = Array.isArray(chapter.sections) ? chapter.sections : [];
+  const itemTexts = sections.flatMap(section => Array.isArray(section?.items) ? section.items : []).map(String);
+  const collectibleNotes = itemTexts.filter(item => /BSAA|tesouro/i.test(item)).length;
+  const trophyNotes = sections
+    .filter(section => /adiantar|trof[ée]u|situacional|chefe/i.test(String(section?.title || '')))
+    .reduce((total, section) => total + (Array.isArray(section.items) ? section.items.length : 0), 0);
+  const riskText = `${chapter.note || ''} ${itemTexts.join(' ')}`;
+  const hasRisk = /aten[çc][ãa]o|alerta|cuidado|antes de|n[ãa]o avance|repita|deixe para cleanup/i.test(riskText);
+  const coverage = [
+    collectibleNotes ? `${collectibleNotes} ${collectibleNotes === 1 ? 'nota de coletável' : 'notas de coletáveis'}` : '',
+    trophyNotes ? `${trophyNotes} ${trophyNotes === 1 ? 'objetivo associado' : 'objetivos associados'}` : ''
+  ].filter(Boolean).join(' · ') || `${itemTexts.length} pontos de rota`;
+  return { coverage, risk: hasRisk ? 'Risco: atenção' : 'Risco: baixo', riskTone: hasRisk ? 'warning' : 'neutral' };
+}
+
 function renderGuideChapterRoutePanelHtml(game = {}) {
   const routeGuide = getGuideChapterRoute(game);
   if (!routeGuide) return '';
   const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
+  const isResidentEvil5 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
   const intro = routeGuide.introduction || 'Use esta rota como visão rápida do que observar em cada capítulo. Ela não substitui as listas completas de Extras da Platina.';
   return `
     <section id="guideChapterRoutePanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
@@ -1861,15 +2257,17 @@ function renderGuideChapterRoutePanelHtml(game = {}) {
         ${routeGuide.chapters.map((chapter, index) => {
           const panelId = `chapter-route-${String(chapter.chapter || index).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
           const anchorId = String(chapter.anchorId || '').trim();
+          const chapterSignals = isResidentEvil5 ? buildResidentEvil5ChapterSignals(chapter) : null;
           return `
-          <article${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+          <article${anchorId ? ` id="${escapeHtml(anchorId)}"` : ''} class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4"${isResidentEvil5 ? ` data-re5-chapter="${escapeHtml(String(index + 1))}"` : ''}>
             <h3>
                 <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeHtml(panelId)}" aria-expanded="${index === 0 ? 'true' : 'false'}" aria-controls="${escapeHtml(panelId)}">
-                <span>${escapeHtml(chapter.chapter)}</span>
+                ${isResidentEvil5 ? `<span class="atlas-re5-chapter-heading"><strong>${escapeHtml(chapter.chapter)}</strong><small><span>${escapeHtml(chapterSignals.coverage)}</span><span class="is-${escapeHtml(chapterSignals.riskTone)}">${escapeHtml(chapterSignals.risk)}</span><span data-chapter-state>Pendente</span></small></span>` : `<span>${escapeHtml(chapter.chapter)}</span>`}
                 <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </button>
             </h3>
             <div id="${escapeHtml(panelId)}" class="${index === 0 ? '' : 'is-collapsed '}space-y-3" data-guide-section-content aria-hidden="${index === 0 ? 'false' : 'true'}"${index === 0 ? '' : ' hidden'}>
+              ${isResidentEvil5 ? `<div class="atlas-re5-chapter-actions"><button type="button" class="atlas-re5-stage-toggle" data-chapter-toggle="${escapeHtml(String(index + 1))}" aria-pressed="false"><span aria-hidden="true">✓</span><span data-chapter-toggle-label>Marcar capítulo concluído</span></button></div>` : ''}
               ${chapter.note ? `<p class="text-sm text-white/62">${escapeHtml(chapter.note)}</p>` : ''}
               ${renderUsefulVideoHtml(chapter.usefulVideo, { useStrongTitle: isResidentEvil2 })}
               <div class="grid md:grid-cols-2 gap-3">
@@ -2244,6 +2642,9 @@ function renderGuideInstructionalVisualsHtml(game = {}, placement = '') {
     const src = resolveLocalGuideImageSrc(visual.src || '');
     const width = Number(visual.width || 640);
     const height = Number(visual.height || 640);
+    const mobileSections = Array.isArray(visual.mobileSections)
+      ? visual.mobileSections.filter(section => section?.title && Array.isArray(section.items) && section.items.length)
+      : [];
     const relatedAnchor = /^#[A-Za-z][\w:.-]*$/.test(String(visual.relatedAnchor || ''))
       ? String(visual.relatedAnchor)
       : '';
@@ -2260,8 +2661,18 @@ function renderGuideInstructionalVisualsHtml(game = {}, placement = '') {
           </div>
           <span class="atlas-instructional-visual__type">SVG original</span>
         </div>
-        <div class="atlas-instructional-visual__asset">
-          <img src="${escapeHtml(src)}" alt="${escapeHtml(visual.alt)}" width="${escapeHtml(String(width))}" height="${escapeHtml(String(height))}" loading="lazy" decoding="async">
+        <div class="atlas-instructional-visual__asset${mobileSections.length ? ' has-mobile-layout' : ''}">
+          <picture>
+            <img src="${escapeHtml(src)}" alt="${escapeHtml(visual.alt)}" width="${escapeHtml(String(width))}" height="${escapeHtml(String(height))}" loading="lazy" decoding="async">
+          </picture>
+          ${mobileSections.length ? `
+            <div class="atlas-instructional-visual__mobile" data-instructional-mobile-layout="${escapeHtml(id)}">
+              ${mobileSections.map(section => `
+                <section>
+                  <h5>${escapeHtml(section.title)}</h5>
+                  <ol>${section.items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ol>
+                </section>`).join('')}
+            </div>` : ''}
         </div>
         <figcaption id="${escapeHtml(id)}-caption">${escapeHtml(visual.caption)}</figcaption>
         <div id="${escapeHtml(id)}-text" class="atlas-instructional-visual__fallback">
@@ -2392,6 +2803,7 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
       <p class="atlas-muted-copy">Este guia não possui checklists adicionais da platina cadastrados.</p>
     </section>`;
   const intro = extras.introduction || 'Esta aba reúne os checklists detalhados da platina base. DLCs ficam fora da platina base e devem ser tratados separadamente.';
+  const isResidentEvil5 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
   return `
     <section id="guidePlatinumExtrasPanel" class="atlas-panel atlas-panel--section p-5 md:p-6 space-y-5">
       <div class="atlas-section-head atlas-section-head--compact">
@@ -2402,15 +2814,27 @@ function renderGuidePlatinumExtrasPanelHtml(game = {}) {
         </div>
         <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(extras.categories.length))} ${extras.categories.length === 1 ? 'categoria' : 'categorias'}</span>
       </div>
+      ${isResidentEvil5 ? `<div class="atlas-re5-extras-tools">
+        <label class="atlas-re5-extras-search"><span>Buscar nos Extras</span><input id="extrasSearch" class="atlas-input" type="search" placeholder="Ex.: BSAA 6-1, Heart of Africa, Rotten Egg"></label>
+        <nav aria-label="Categorias dos Extras da Platina">
+          ${extras.categories.map((category, index) => {
+            const panelId = getPlatinumExtraCategoryPanelId(category, index);
+            return `<a href="#${escapeHtml(panelId)}" data-extra-category-link="${escapeHtml(panelId)}">${escapeHtml(category.name || getPlatinumExtraCategoryTitle(category))}</a>`;
+          }).join('')}
+          <a href="#guideFarmRoutesPanel" data-guide-action="farm" data-guide-target="guideFarmRoutesPanel">Farms</a>
+        </nav>
+        <p id="extrasSearchStatus" class="atlas-muted-copy" role="status" aria-live="polite">${escapeHtml(String(extras.categories.length))} categorias disponíveis</p>
+      </div>` : ''}
       <div class="space-y-3">
         ${extras.categories.map((category, index) => {
           const panelId = getPlatinumExtraCategoryPanelId(category, index);
           const title = getPlatinumExtraCategoryTitle(category);
+          const itemCount = Number(category.total || category.items?.length || 0);
           return `
-          <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4">
+          <article class="atlas-panel atlas-panel--support p-4 md:p-5 space-y-4"${isResidentEvil5 ? ` data-extra-category-card="${escapeHtml(category.id || panelId)}"` : ''}>
             <h3>
               <button type="button" class="atlas-section-toggle" data-guide-section-toggle="${escapeHtml(panelId)}" aria-expanded="false" aria-controls="${escapeHtml(panelId)}">
-                <span>${escapeHtml(title)}</span>
+                ${isResidentEvil5 ? `<span class="atlas-re5-extra-heading"><strong>${escapeHtml(category.name || title)}</strong><small>${escapeHtml(category.introduction || title)}</small></span><span class="atlas-re5-category-progress"><span data-extra-category-count="${escapeHtml(category.id || panelId)}">0/${escapeHtml(String(itemCount))}</span><span data-extra-category-state>Não iniciado</span></span>` : `<span>${escapeHtml(title)}</span>`}
                 <i class="fas fa-chevron-down" aria-hidden="true"></i>
               </button>
             </h3>
@@ -2580,16 +3004,22 @@ function renderGuideDlcCompletionPanelHtml(game = {}) {
           ? `${escapeHtml(String(baseTrophies))} troféus da base + ${escapeHtml(String(dlcTrophies))} extras = ${escapeHtml(String(totalTrophies))} no total`
           : `${escapeHtml(String(baseTrophies))} base + ${escapeHtml(String(dlcTrophies))} DLC = ${escapeHtml(String(totalTrophies))} totais`}</span>
       </div>
+      ${normalizedSlug === 'resident-evil-5' ? `<div class="atlas-re5-dlc-scope" role="note" aria-label="Separação entre platina e 100 por cento">
+        <div><span>Platina</span><strong>${escapeHtml(String(baseTrophies))} troféus base</strong><p>Termina antes de Versus, Lost in Nightmares e Desperate Escape.</p></div>
+        <div><span>100% da lista</span><strong>${escapeHtml(String(totalTrophies))} troféus</strong><p>Inclui os ${escapeHtml(String(dlcTrophies))} troféus dos três pacotes adicionais.</p></div>
+        <p><strong>Online:</strong> a dependência de jogadores está concentrada em Versus e não muda o requisito da platina base.</p>
+      </div>` : ''}
       ${!isResidentEvil2 && scopeNotes.length ? `<div class="atlas-tip-box"><div class="atlas-tip-label">Separação de escopo</div><ul class="text-sm mt-2 list-disc pl-5 space-y-1">${scopeNotes.map(note => `<li>${escapeHtml(note)}</li>`).join('')}</ul></div>` : ''}
       <div class="grid md:grid-cols-3 gap-4">
         ${dlcGuide.packages.filter(pack => !(isResidentEvil2 && pack.id === 'complete-list')).map(pack => `
-          <article class="atlas-panel atlas-panel--support p-4 space-y-3">
+          <article class="atlas-panel atlas-panel--support p-4 space-y-3${normalizedSlug === 'resident-evil-5' ? ` atlas-re5-dlc-package atlas-re5-dlc-package--${escapeHtml(pack.id || 'dlc')}` : ''}">
             <div class="flex items-center justify-between gap-2">
               ${isResidentEvil2 && pack.id !== 'platinum-base'
                 ? `<strong class="text-lg font-bold text-white">${escapeHtml(pack.name)}</strong>`
                 : `<h3 class="text-lg font-bold text-white">${escapeHtml(pack.name)}</h3>`}
               <span class="atlas-tag atlas-tag--soft">${escapeHtml(String(pack.trophyCount || 0))} ${Number(pack.trophyCount || 0) === 1 ? 'troféu' : 'troféus'}</span>
             </div>
+            ${normalizedSlug === 'resident-evil-5' ? `<div class="atlas-re5-dlc-package__progress"><span>Progresso</span><strong data-dlc-package-summary-progress="${escapeHtml(pack.id || '')}">0/${escapeHtml(String(pack.trophyCount || 0))}</strong></div>` : ''}
             ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Pacote:</strong> ${escapeHtml(pack.name || '')}</p>`}
             ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Troféus:</strong> ${escapeHtml(String(pack.trophyCount || 0))}</p>`}
             ${isResidentEvil2 ? '' : `<p class="text-sm text-white/70"><strong>Natureza:</strong> ${escapeHtml(pack.nature || '')}</p>`}
@@ -2826,9 +3256,18 @@ function splitGuideRoadmapActions(value = '') {
 function renderGuideRoadmapPanelHtml(viewModel = {}, game = {}) {
   const roadmapStages = Array.isArray(viewModel.roadmapStages) ? viewModel.roadmapStages : [];
   const isResidentEvil2 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-2-remake';
+  const isResidentEvil5 = String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5';
   return `
     <section id="guideRoadmapPanel" class="atlas-panel atlas-panel--section atlas-roadmap-panel p-5 md:p-6">
       <span id="roadmap" class="atlas-anchor-alias" aria-hidden="true"></span>
+      ${isResidentEvil5 ? `<nav class="atlas-re5-roadmap-index" aria-label="Índice do roadmap">
+        <strong>Nesta rota</strong>
+        <a href="#guideRoadmapPanel" data-guide-target="guideRoadmapPanel">7 etapas</a>
+        <a href="#guideChapterRoutePanel" data-guide-target="guideChapterRoutePanel">16 capítulos</a>
+        <a href="#guideProfessionalAiPanel" data-guide-target="guideProfessionalAiPanel">Professional e IA</a>
+        <a href="#guideFarmRoutesPanel" data-guide-target="guideFarmRoutesPanel">Farms</a>
+        <a href="#guideCommonMythsPanel" data-guide-target="guideCommonMythsPanel">Mitos e erros</a>
+      </nav>` : ''}
       <div class="atlas-section-head atlas-section-head--compact">
         <div>
           <div class="atlas-eyebrow">Roadmap da platina</div>
@@ -2838,7 +3277,7 @@ function renderGuideRoadmapPanelHtml(viewModel = {}, game = {}) {
         <button type="button" class="atlas-section-toggle" data-guide-section-toggle="guideRoadmapBody" data-expanded-label="Ocultar roadmap" data-collapsed-label="Mostrar roadmap" aria-expanded="true" aria-controls="guideRoadmapBody"><span data-toggle-label>Ocultar roadmap</span><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
         </div>
         <div id="guideRoadmapBody" data-guide-section-content>
-          ${renderGuideRoadmapTimelineHtml(roadmapStages)}
+          ${renderGuideRoadmapTimelineHtml(roadmapStages, { slug: String(game?.slug || '').trim().toLowerCase() })}
           ${renderGuideWalkthroughHtml(viewModel)}
           ${roadmapStages.length >= 4 ? `<div class="atlas-guide-return-row">${isResidentEvil2 ? '<a href="#topo" class="atlas-btn atlas-btn-secondary atlas-btn-compact"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</a>' : '<button type="button" class="atlas-btn atlas-btn-secondary atlas-btn-compact" data-scroll-top="true"><i class="fas fa-arrow-up" aria-hidden="true"></i>Voltar ao topo</button>'}</div>` : ''}
         </div>
@@ -3068,7 +3507,147 @@ function renderRe2CampaignPlanHtml(game = {}) {
     </div>`;
 }
 
-function renderGuideSummaryPanelHtml(game = {}, viewModel = {}) {
+function renderResidentEvil5SummaryPanelHtml(game = {}, viewModel = {}, editorialSections = {}) {
+  const quickPlanItems = typeof sharedGuideViewModel.buildGuideQuickPlan === 'function'
+    ? sharedGuideViewModel.buildGuideQuickPlan(game, viewModel)
+    : [];
+  const total = Number(viewModel.total || game?.trophies?.length || 51);
+  const nextTitle = 'Comece pela campanha em Normal ou Veteran';
+  const nextDetail = 'Abra a primeira etapa do roadmap, avance a história e use o checklist sem tentar limpar tudo na primeira passagem.';
+  const essentialAlerts = [
+    {
+      tone: 'info',
+      title: 'DLCs não bloqueiam a platina',
+      text: 'A platina termina nos 51 troféus base. Os 20 troféus adicionais entram somente no 100% da lista.',
+      label: 'Entender o escopo',
+      href: '#guideDlcCompletionPanel',
+      action: 'dlcs'
+    },
+    {
+      tone: 'warning',
+      title: 'Professional deve ser feito preparado',
+      text: 'Entre na campanha final com armas evoluídas, cura, munição infinita quando disponível e a rota já conhecida.',
+      label: 'Ver preparação',
+      href: '#guideProfessionalAiPanel',
+      action: 'professional'
+    },
+    {
+      tone: 'warning',
+      title: 'Guarde o primeiro Rotten Egg',
+      text: 'Use-o em um Majini fraco para Egg on Your Face antes de considerar a venda do item.',
+      label: 'Abrir checklist de ovos',
+      href: '#extras-eggs-egg-hunt-egg-on-your-face',
+      action: 'extras'
+    },
+    {
+      tone: 'online',
+      title: 'Versus é online apenas para o 100%',
+      text: 'Organização de jogadores e boost pertencem ao pacote Versus; a platina base continua sem online obrigatório.',
+      label: 'Abrir Versus',
+      href: '#re5-versus-dlc',
+      action: 'dlcs'
+    }
+  ];
+  return `
+    <div id="guideSummaryActions" class="atlas-re5-summary">
+      <section id="re5PlatinumOverview" class="atlas-panel atlas-panel--section atlas-re5-overview" aria-labelledby="re5OverviewTitle">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <span class="atlas-section-kicker">Visão geral</span>
+            <h2 id="re5OverviewTitle">O estado da platina</h2>
+            <p>Projeto de dificuldade moderada, sem perdíveis definitivos e com cleanup amplo por Seleção de Capítulos.</p>
+          </div>
+        </div>
+        <dl class="atlas-re5-overview__grid">
+          <div><dt>Campanhas</dt><dd>Normal ou Veteran, depois Professional</dd></div>
+          <div><dt>Cleanup</dt><dd>Capítulos, ranks S, coletáveis, farms e upgrades</dd></div>
+          <div><dt>Platina base</dt><dd>51 troféus, sem online obrigatório</dd></div>
+          <div><dt>Lista completa</dt><dd>71 troféus com Versus e expansões</dd></div>
+        </dl>
+      </section>
+
+      <section id="re5NextAction" class="atlas-panel atlas-panel--section atlas-re5-next-action" aria-labelledby="re5NextActionTitle" data-re5-next-action>
+        <div>
+          <span class="atlas-section-kicker">Próxima ação recomendada</span>
+          <h2 id="re5NextActionTitle" data-re5-next-title>${escapeHtml(nextTitle)}</h2>
+          <p data-re5-next-detail>${escapeHtml(nextDetail)}</p>
+        </div>
+        <button type="button" class="atlas-btn atlas-btn-primary" data-re5-next-button data-roadmap-jump="re5-roadmap-stage-1">Abrir etapa 1</button>
+      </section>
+
+      <section id="guideQuickPlan" class="atlas-panel atlas-panel--section atlas-re5-quick-route" aria-labelledby="re5QuickRouteTitle">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <span class="atlas-section-kicker">Rota resumida · sete etapas</span>
+            <h2 id="re5QuickRouteTitle">Plano rápido</h2>
+            <p>Use esta visão para se localizar; as ações e os riscos completos continuam no Roadmap.</p>
+          </div>
+        </div>
+        <ol class="atlas-re5-quick-route__list">
+          ${quickPlanItems.map((item, index) => {
+            const number = Number(item.number || index + 1);
+            return `<li data-roadmap-summary-stage="${escapeHtml(String(number))}">
+              <span class="atlas-re5-quick-route__number" aria-hidden="true">${escapeHtml(String(number))}</span>
+              <div><h3>${escapeHtml(item.title || '')}</h3>${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ''}</div>
+              <span class="atlas-re5-state" data-roadmap-summary-state>${number === 1 ? 'Próxima' : 'Pendente'}</span>
+              <button type="button" class="atlas-text-action" data-roadmap-jump="re5-roadmap-stage-${escapeHtml(String(number))}" aria-label="Abrir etapa ${escapeHtml(String(number))} no roadmap">Abrir</button>
+            </li>`;
+          }).join('')}
+        </ol>
+      </section>
+
+      <section id="re5EssentialAlerts" class="atlas-panel atlas-panel--section atlas-re5-essential-alerts" aria-labelledby="re5EssentialAlertsTitle">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div>
+            <span class="atlas-section-kicker">Alertas essenciais</span>
+            <h2 id="re5EssentialAlertsTitle">Quatro decisões para não começar errado</h2>
+            <p>Os 12 pontos completos, com prevenção e recuperação, permanecem na aba Pontos de atenção.</p>
+          </div>
+          <button type="button" class="atlas-text-action" data-guide-action="attention">Ver os 12 alertas</button>
+        </div>
+        <div class="atlas-re5-essential-alerts__grid">
+          ${essentialAlerts.map(alert => `<article class="atlas-re5-alert atlas-re5-alert--${escapeHtml(alert.tone)}">
+            <h3>${escapeHtml(alert.title)}</h3>
+            <p>${escapeHtml(alert.text)}</p>
+            <a href="${escapeHtml(alert.href)}" data-guide-action="${escapeHtml(alert.action)}" data-guide-target="${escapeHtml(alert.href.slice(1))}">${escapeHtml(alert.label)}</a>
+          </article>`).join('')}
+        </div>
+      </section>
+
+      <section id="guideUsagePanel" class="atlas-panel atlas-panel--support atlas-re5-paths" aria-labelledby="guideUsageTitle">
+        <div class="atlas-section-head atlas-section-head--compact">
+          <div><span class="atlas-section-kicker">Como usar o guia</span><h2 id="guideUsageTitle">Escolha seu momento</h2></div>
+        </div>
+        <div class="atlas-re5-paths__grid">
+          <button type="button" data-guide-action="roadmap"><span>Quero começar</span><strong>Roadmap em sete etapas</strong><small>Campanha, preparação e ordem completa.</small></button>
+          <button type="button" data-guide-action="extras"><span>Estou fazendo cleanup</span><strong>Extras da Platina</strong><small>BSAA, tesouros, armas, ranks e chefes.</small></button>
+          <button type="button" data-guide-action="dlcs"><span>Quero 100% com DLCs</span><strong>Versus e expansões</strong><small>20 troféus adicionais em três pacotes.</small></button>
+        </div>
+      </section>
+
+      <section id="re5SummaryProgress" class="atlas-panel atlas-panel--support atlas-re5-summary-progress" aria-labelledby="re5SummaryProgressTitle">
+        <div>
+          <span class="atlas-section-kicker">Progresso e atalhos</span>
+          <h2 id="re5SummaryProgressTitle"><span id="guideProgressLabel">0%</span> concluído</h2>
+          <p><strong id="guideCompletedCount">0</strong> de ${escapeHtml(String(total))} troféus marcados · <strong id="guideRemainingCount">${escapeHtml(String(total))}</strong> pendentes</p>
+          <div class="atlas-sidebar-progress" aria-hidden="true"><span id="guideProgressBar" style="width:0%"></span></div>
+        </div>
+        <nav aria-label="Atalhos de progresso">
+          <button type="button" class="atlas-text-action" data-guide-action="first-pending">Próximo troféu</button>
+          <button type="button" class="atlas-text-action" data-guide-action="extras">Buscar coletável</button>
+          <button type="button" class="atlas-text-action" data-guide-action="dlcs">Progresso dos DLCs</button>
+        </nav>
+      </section>
+
+      ${editorialSections.faq || ''}
+      ${editorialSections.methodology || ''}
+    </div>`;
+}
+
+function renderGuideSummaryPanelHtml(game = {}, viewModel = {}, options = {}) {
+  if (String(game?.slug || '').trim().toLowerCase() === 'resident-evil-5') {
+    return renderResidentEvil5SummaryPanelHtml(game, viewModel, options.editorialSections || {});
+  }
   const nextAction = viewModel.nextActionModel || {};
   const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
   const explicitEditorialParagraphs = Array.isArray(game?.editorial_summary)
@@ -3204,25 +3783,27 @@ function renderGuideDecisionStackHtmlV2(game, viewModel) {
 
 function buildSsrGuideMarkup(game, relatedGames = [], commentContext = {}) {
   const viewModel = buildGuideViewModel(game, []);
+  const normalizedSlug = String(game?.slug || '').trim().toLowerCase();
+  const isResidentEvil5 = normalizedSlug === 'resident-evil-5';
+  const editorialSections = renderGuideEditorialNotesHtml(game, viewModel);
   const header = renderGuideHeaderHtml(game, viewModel);
   const tabs = renderGuideLayerNavHtml(game);
-  const decisionStack = renderGuideDecisionStackHtmlV2(game, viewModel);
-  const summary = renderGuideSummaryPanelHtml(game, viewModel);
+  const decisionStack = isResidentEvil5 ? '' : renderGuideDecisionStackHtmlV2(game, viewModel);
+  const summary = renderGuideSummaryPanelHtml(game, viewModel, { editorialSections });
   const roadmap = `${renderGuideRoadmapPanelHtml(viewModel, game)}${renderGuideChapterRoutePanelHtml(game)}${renderGuideProfessionalAiPanelHtml(game)}${renderGuideFarmRoutesPanelHtml(game)}${renderGuideCommonMythsPanelHtml(game)}`;
   const platinumExtras = renderGuidePlatinumExtrasPanelHtml(game);
   const dlcCompletion = renderGuideDlcCompletionPanelHtml(game);
-  const sidebar = renderGuideSidebarHtml(game, viewModel);
+  const sidebar = isResidentEvil5 ? '' : renderGuideSidebarHtml(game, viewModel);
   const trophyList = viewModel.trophies.length
     ? viewModel.trophies.map((trophy, index) => renderTrophyCardHtml(trophy, viewModel.completedIds, index, game)).join('')
     : '<div class="text-white/60">Nenhum troféu cadastrado.</div>';
-  const editorialSections = renderGuideEditorialNotesHtml(game, viewModel);
   const relatedOverview = renderGuideRelatedOverviewServer(game, relatedGames);
-  const feedbackCta = renderGuideFeedbackCtaHtml(game);
+  const feedbackCta = isResidentEvil5 ? '' : renderGuideFeedbackCtaHtml(game);
   const comments = renderGuideCommentsHtml(game, commentContext.comments, commentContext.actor);
-  const sectionIndex = renderGuideSectionIndexHtml(game);
+  const sectionIndex = isResidentEvil5 ? '' : renderGuideSectionIndexHtml(game);
   const mobileSections = renderGuideMobileSectionsPanelHtml(game);
 
-  return { header, tabs, decisionStack, summary, roadmap, platinumExtras, dlcCompletion, sidebar, trophyList, editorialNotes: editorialSections.attention, faq: editorialSections.faq, relatedOverview, feedbackCta, comments, sectionIndex, mobileSections, viewModel };
+  return { header, tabs, decisionStack, summary, roadmap, platinumExtras, dlcCompletion, sidebar, trophyList, editorialNotes: editorialSections.attention, faq: isResidentEvil5 ? '' : `${editorialSections.faq}${editorialSections.methodology || ''}`, relatedOverview, feedbackCta, comments, sectionIndex, mobileSections, viewModel };
 }
 
 function applyTemplateDefaults(template) {
@@ -3438,58 +4019,104 @@ async function buildGamePageHtml(game, req) {
         actionLabel: 'Abrir guia'
       }, ...guideCollections.collectionLinks]
     : guideCollections.collectionLinks;
-  const structuredData = safeJsonForHtml({
-    '@context': 'https://schema.org',
-    '@graph': [{
+  const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    ...(normalizedSlug === 'resident-evil-5' ? { '@id': `${canonicalUrl}#breadcrumbs` } : {}),
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: `${PRODUCTION_CANONICAL_ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${PRODUCTION_CANONICAL_ORIGIN}/catalogo` },
+      { '@type': 'ListItem', position: 3, name: game.name, item: canonicalUrl }
+    ]
+  };
+  const defaultWebPageSchema = {
+    '@type': 'WebPage',
+    name: title,
+    url: canonicalUrl,
+    description,
+    image,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'AtlasAchievement',
+      url: PRODUCTION_CANONICAL_ORIGIN
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'AtlasAchievement',
+      url: PRODUCTION_CANONICAL_ORIGIN
+    }
+  };
+  const re5Authority = game?.editorialAuthority || {};
+  const re5OrganizationId = `${PRODUCTION_CANONICAL_ORIGIN}/#organization`;
+  const re5Graph = normalizedSlug === 'resident-evil-5' ? [
+    {
       '@type': 'WebPage',
+      '@id': canonicalUrl,
       name: title,
       url: canonicalUrl,
       description,
       image,
+      inLanguage: 'pt-BR',
+      mainEntity: { '@id': `${canonicalUrl}#article` },
+      breadcrumb: { '@id': `${canonicalUrl}#breadcrumbs` },
       isPartOf: {
         '@type': 'WebSite',
         name: 'AtlasAchievement',
-        url: PRODUCTION_CANONICAL_ORIGIN
+        url: `${PRODUCTION_CANONICAL_ORIGIN}/`
       },
-      publisher: {
-        '@type': 'Organization',
-        name: 'AtlasAchievement',
-        url: PRODUCTION_CANONICAL_ORIGIN
-      }
-    }, ...(normalizedSlug === 'resident-evil-5' ? [{
-      '@type': 'TechArticle',
+      publisher: { '@id': re5OrganizationId }
+    },
+    {
+      '@type': 'Article',
+      '@id': `${canonicalUrl}#article`,
       headline: 'Resident Evil 5 — Guia de platina e troféus',
       description,
-      image: [image],
-      datePublished: String(game.created_at || '').slice(0, 10),
-      dateModified: String(game.last_reviewed_at || game.updated_at || '').slice(0, 10),
-      inLanguage: 'pt-BR',
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': canonicalUrl
+      url: canonicalUrl,
+      image: {
+        '@type': 'ImageObject',
+        url: image,
+        width: Number(re5Authority?.socialImage?.width || 1200),
+        height: Number(re5Authority?.socialImage?.height || 630)
       },
+      dateModified: String(re5Authority.reviewedAt || game.last_reviewed_at || '').slice(0, 10),
+      inLanguage: 'pt-BR',
+      mainEntityOfPage: { '@id': canonicalUrl },
       author: {
         '@type': 'Organization',
-        name: 'AtlasAchievement',
-        url: PRODUCTION_CANONICAL_ORIGIN
+        '@id': `${PRODUCTION_CANONICAL_ORIGIN}/#editorial-team`,
+        name: re5Authority.authorName || 'Equipe Editorial AtlasAchievement',
+        url: `${PRODUCTION_CANONICAL_ORIGIN}${re5Authority.authorUrl || '/sobre'}`
       },
-      publisher: {
-        '@type': 'Organization',
-        name: 'AtlasAchievement',
-        url: PRODUCTION_CANONICAL_ORIGIN
-      },
-      about: {
-        '@type': 'VideoGame',
-        name: 'Resident Evil 5'
+      publisher: { '@id': re5OrganizationId },
+      about: { '@id': `${canonicalUrl}#game` },
+      isAccessibleForFree: true
+    },
+    {
+      '@type': 'VideoGame',
+      '@id': `${canonicalUrl}#game`,
+      name: game.name,
+      description,
+      image,
+      url: canonicalUrl,
+      gamePlatform: 'PlayStation 4'
+    },
+    {
+      '@type': 'Organization',
+      '@id': re5OrganizationId,
+      name: 'AtlasAchievement',
+      url: `${PRODUCTION_CANONICAL_ORIGIN}/`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${PRODUCTION_CANONICAL_ORIGIN}/assets/brand/atlasachievement-logo.png`
       }
-    }] : []), {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Início', item: `${PRODUCTION_CANONICAL_ORIGIN}/` },
-        { '@type': 'ListItem', position: 2, name: 'Catálogo', item: `${PRODUCTION_CANONICAL_ORIGIN}/catalogo` },
-        { '@type': 'ListItem', position: 3, name: game.name, item: canonicalUrl }
-      ]
-    }, ...buildGuideFaqStructuredData(canonicalUrl, viewModel)]
+    },
+    breadcrumbSchema,
+    ...buildGuideFaqStructuredData(canonicalUrl, viewModel, { id: `${canonicalUrl}#faq` })
+  ] : [];
+  const structuredData = safeJsonForHtml({
+    '@context': 'https://schema.org',
+    '@graph': re5Graph.length
+      ? re5Graph
+      : [defaultWebPageSchema, breadcrumbSchema, ...buildGuideFaqStructuredData(canonicalUrl, viewModel)]
   });
   const robotsMeta = isIndexablePublicGuide(game)
     ? ''
@@ -3502,8 +4129,8 @@ async function buildGamePageHtml(game, req) {
     .replace(/__PAGE_OG_TYPE__/g, 'article')
     .replace(/__PAGE_CANONICAL__/g, escapeHtml(canonicalUrl))
     .replace(/__PAGE_OG_IMAGE__/g, escapeHtml(image))
-    .replace(/__PAGE_OG_IMAGE_WIDTH__/g, normalizedSlug === 'resident-evil-5' ? '460' : '1200')
-    .replace(/__PAGE_OG_IMAGE_HEIGHT__/g, normalizedSlug === 'resident-evil-5' ? '215' : '630')
+    .replace(/__PAGE_OG_IMAGE_WIDTH__/g, '1200')
+    .replace(/__PAGE_OG_IMAGE_HEIGHT__/g, '630')
     .replace(/__PAGE_JSON_LD__/g, structuredData)
     .replace(/__HOME_VIEW_CLASS__/g, 'hidden')
     .replace(/__HOME_HERO_HEADING_TAG__/g, 'h2')
@@ -3533,8 +4160,22 @@ async function buildGamePageHtml(game, req) {
     .replace(/__GUIDE_RELATED_OVERVIEW__/g, ssrMarkup.relatedOverview)
     .replace(/__GUIDE_FEEDBACK_CTA__/g, ssrMarkup.feedbackCta)
     .replace(/__GUIDE_MOBILE_SECTIONS__/g, ssrMarkup.mobileSections)
-    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'guide', game: sanitizePublicGuideInitialStateGame(game) })))));
-  return normalizedSlug === 'resident-evil-2-remake' ? enhanceResidentEvil2FragmentLinks(pageHtml) : pageHtml;
+    .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript(normalizedSlug === 'resident-evil-5'
+      ? {
+          page: 'guide',
+          game: {
+            id: Number(game?.id || 0),
+            slug: normalizedSlug,
+            name: String(game?.name || 'Resident Evil 5')
+          },
+          actorAuthenticated: Boolean(actor.userId)
+        }
+      : { page: 'guide', game: sanitizePublicGuideInitialStateGame(game) })))));
+  if (normalizedSlug === 'resident-evil-2-remake') return enhanceResidentEvil2FragmentLinks(pageHtml);
+  if (normalizedSlug === 'resident-evil-5') {
+    return enhanceResidentEvil5Phase5Html(enhanceResidentEvil5MetadataHtml(pageHtml, re5Authority?.socialImage?.alt));
+  }
+  return pageHtml;
 }
 
 async function buildDefaultPageHtml(req) {
@@ -4484,6 +5125,9 @@ if (env.canonicalOrigin) {
 
 app.use(requestContext);
 app.use(securityHeaders);
+app.use(compression({
+  threshold: 1024
+}));
 app.use((req, res, next) => {
   const origin = req.get('origin');
   if (!origin) return next();
@@ -4556,6 +5200,11 @@ self.addEventListener('activate', event => {
   );
 });
 `);
+});
+app.get(residentEvil5StylesheetUrl, (req, res) => {
+  res.setHeader('Cache-Control', IMMUTABLE_CACHE_CONTROL);
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.type('text/css').send(residentEvil5Stylesheet);
 });
 app.use(express.static(path.join(__dirname, '../public'), {
   index: false,
@@ -4650,7 +5299,9 @@ app.get('/sitemap.xml', async (req, res, next) => {
       ...organicSeoUrls,
       ...indexableGames.map(game => ({
         loc: buildPublicUrl(req, `/jogo/${game.slug}`),
-        lastmod: game.updated_at || game.created_at || new Date().toISOString()
+        lastmod: game.slug === 'resident-evil-5'
+          ? (game.last_reviewed_at || game.updated_at || game.created_at || new Date().toISOString())
+          : (game.updated_at || game.created_at || new Date().toISOString())
       }))
     ];
     const uniqueUrls = Array.from(new Map(urls.map(item => [item.loc, item])).values());
@@ -4666,7 +5317,7 @@ app.use('/api/auth/login', loginRateLimit);
 app.use('/api/auth/register', registerRateLimit);
 app.use('/api/auth', authRoutes);
 app.use('/api/analytics', analyticsRoutes);
-app.use('/api/feedback', requireCsrf, feedbackRoutes);
+app.use('/api/feedback', requirePublicFormCsrf, feedbackRoutes);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);

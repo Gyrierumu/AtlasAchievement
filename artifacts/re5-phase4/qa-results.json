@@ -1,0 +1,448 @@
+{
+  "generatedAt": "2026-07-18T22:49:30.202Z",
+  "url": "http://127.0.0.1:4317/jogo/resident-evil-5",
+  "integratedBrowser": {
+    "attempted": true,
+    "available": false,
+    "fallback": "Microsoft Edge headless via local CDP"
+  },
+  "ssr": {
+    "status": 200,
+    "h1Count": 1,
+    "figureCount": 5,
+    "faqCount": 36,
+    "methodologyCount": 1
+  },
+  "trackingCanonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+  "breakpoints": [
+    {
+      "viewport": 360,
+      "lang": "pt-BR",
+      "mainCount": 1,
+      "clientWidth": 360,
+      "scrollWidth": 360,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "h1Text": "Resident Evil 5 — Guia de platina e troféus",
+      "tabCount": 6,
+      "tabsFunctional": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "methodologyCount": 1,
+      "authorityCount": 1,
+      "authorText": "Verificado Conteúdo pesquisado e revisado pela Equipe Editorial AtlasAchievement para a versão PS4/Remaster. Responsável: Equipe Editorial AtlasAchievement Escopo: PS4/Remaster Revisado em 18/07/2026 Como verificamos este guia",
+      "authorHref": "/sobre",
+      "reviewDatetime": "2026-07-18",
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "sourceLinks": [
+        {
+          "href": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/trophies/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/guide/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/trophies",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59192",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59292",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement",
+      "description": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "ogDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "twitterDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+      "canonicalCount": 1,
+      "ogLocale": "pt_BR",
+      "ogImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "ogImageWidth": "1200",
+      "ogImageHeight": "630",
+      "ogImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "twitterImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "twitterImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "articleDateModified": "2026-07-18",
+      "articleAuthor": "Equipe Editorial AtlasAchievement",
+      "articleHasDatePublished": false,
+      "faqStructuredCount": 36,
+      "graphTypes": [
+        "WebPage",
+        "Article",
+        "VideoGame",
+        "Organization",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "graphTopLevelIdsUnique": true
+    },
+    {
+      "viewport": 390,
+      "lang": "pt-BR",
+      "mainCount": 1,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "h1Text": "Resident Evil 5 — Guia de platina e troféus",
+      "tabCount": 6,
+      "tabsFunctional": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "methodologyCount": 1,
+      "authorityCount": 1,
+      "authorText": "Verificado Conteúdo pesquisado e revisado pela Equipe Editorial AtlasAchievement para a versão PS4/Remaster. Responsável: Equipe Editorial AtlasAchievement Escopo: PS4/Remaster Revisado em 18/07/2026 Como verificamos este guia",
+      "authorHref": "/sobre",
+      "reviewDatetime": "2026-07-18",
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "sourceLinks": [
+        {
+          "href": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/trophies/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/guide/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/trophies",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59192",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59292",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement",
+      "description": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "ogDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "twitterDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+      "canonicalCount": 1,
+      "ogLocale": "pt_BR",
+      "ogImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "ogImageWidth": "1200",
+      "ogImageHeight": "630",
+      "ogImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "twitterImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "twitterImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "articleDateModified": "2026-07-18",
+      "articleAuthor": "Equipe Editorial AtlasAchievement",
+      "articleHasDatePublished": false,
+      "faqStructuredCount": 36,
+      "graphTypes": [
+        "WebPage",
+        "Article",
+        "VideoGame",
+        "Organization",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "graphTopLevelIdsUnique": true
+    },
+    {
+      "viewport": 768,
+      "lang": "pt-BR",
+      "mainCount": 1,
+      "clientWidth": 768,
+      "scrollWidth": 768,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "h1Text": "Resident Evil 5 — Guia de platina e troféus",
+      "tabCount": 6,
+      "tabsFunctional": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "methodologyCount": 1,
+      "authorityCount": 1,
+      "authorText": "Verificado Conteúdo pesquisado e revisado pela Equipe Editorial AtlasAchievement para a versão PS4/Remaster. Responsável: Equipe Editorial AtlasAchievement Escopo: PS4/Remaster Revisado em 18/07/2026 Como verificamos este guia",
+      "authorHref": "/sobre",
+      "reviewDatetime": "2026-07-18",
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "sourceLinks": [
+        {
+          "href": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/trophies/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/guide/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/trophies",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59192",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59292",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement",
+      "description": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "ogDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "twitterDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+      "canonicalCount": 1,
+      "ogLocale": "pt_BR",
+      "ogImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "ogImageWidth": "1200",
+      "ogImageHeight": "630",
+      "ogImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "twitterImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "twitterImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "articleDateModified": "2026-07-18",
+      "articleAuthor": "Equipe Editorial AtlasAchievement",
+      "articleHasDatePublished": false,
+      "faqStructuredCount": 36,
+      "graphTypes": [
+        "WebPage",
+        "Article",
+        "VideoGame",
+        "Organization",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "graphTopLevelIdsUnique": true
+    },
+    {
+      "viewport": 1280,
+      "lang": "pt-BR",
+      "mainCount": 1,
+      "clientWidth": 1280,
+      "scrollWidth": 1280,
+      "horizontalOverflow": false,
+      "h1Count": 1,
+      "h1Text": "Resident Evil 5 — Guia de platina e troféus",
+      "tabCount": 6,
+      "tabsFunctional": true,
+      "figureCount": 5,
+      "faqCount": 36,
+      "methodologyCount": 1,
+      "authorityCount": 1,
+      "authorText": "Verificado Conteúdo pesquisado e revisado pela Equipe Editorial AtlasAchievement para a versão PS4/Remaster. Responsável: Equipe Editorial AtlasAchievement Escopo: PS4/Remaster Revisado em 18/07/2026 Como verificamos este guia",
+      "authorHref": "/sobre",
+      "reviewDatetime": "2026-07-18",
+      "duplicateIds": [],
+      "brokenAriaReferences": [],
+      "sourceLinks": [
+        {
+          "href": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/trophies/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://www.playstationtrophies.org/game/resident-evil-5/guide/",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/trophies",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59192",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "href": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59292",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement",
+      "description": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "ogDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "twitterDescription": "Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.",
+      "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+      "canonicalCount": 1,
+      "ogLocale": "pt_BR",
+      "ogImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "ogImageWidth": "1200",
+      "ogImageHeight": "630",
+      "ogImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "twitterImage": "https://atlasachievement.com.br/assets/guides/resident-evil-5/resident-evil-5-social.png",
+      "twitterImageAlt": "Resident Evil 5 — Guia de platina PS4 + DLCs | AtlasAchievement",
+      "articleDateModified": "2026-07-18",
+      "articleAuthor": "Equipe Editorial AtlasAchievement",
+      "articleHasDatePublished": false,
+      "faqStructuredCount": 36,
+      "graphTypes": [
+        "WebPage",
+        "Article",
+        "VideoGame",
+        "Organization",
+        "BreadcrumbList",
+        "FAQPage"
+      ],
+      "graphTopLevelIdsUnique": true
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "360-editorial-header.png",
+      "width": 360,
+      "height": 1100,
+      "focus": "#guideHeader .atlas-guide-hero",
+      "maxRequestedHeight": 1400
+    },
+    {
+      "file": "360-sources-methodology.png",
+      "width": 360,
+      "height": 1100,
+      "focus": "#fontes-e-metodologia",
+      "maxRequestedHeight": 1500
+    },
+    {
+      "file": "390-editorial-header.png",
+      "width": 390,
+      "height": 1100,
+      "focus": "#guideHeader .atlas-guide-hero",
+      "maxRequestedHeight": 1400
+    },
+    {
+      "file": "390-sources-methodology.png",
+      "width": 390,
+      "height": 1100,
+      "focus": "#fontes-e-metodologia",
+      "maxRequestedHeight": 1500
+    },
+    {
+      "file": "768-editorial-header.png",
+      "width": 768,
+      "height": 1100,
+      "focus": "#guideHeader .atlas-guide-hero",
+      "maxRequestedHeight": 1400
+    },
+    {
+      "file": "768-sources-methodology.png",
+      "width": 768,
+      "height": 1100,
+      "focus": "#fontes-e-metodologia",
+      "maxRequestedHeight": 1500
+    },
+    {
+      "file": "1280-editorial-header.png",
+      "width": 1280,
+      "height": 1100,
+      "focus": "#guideHeader .atlas-guide-hero",
+      "maxRequestedHeight": 1400
+    },
+    {
+      "file": "1280-sources-methodology.png",
+      "width": 1280,
+      "height": 1100,
+      "focus": "#fontes-e-metodologia",
+      "maxRequestedHeight": 1500
+    }
+  ],
+  "diagnostics": {
+    "logErrors": [],
+    "exceptions": [],
+    "networkFailures": []
+  },
+  "externalSources": [
+    {
+      "id": "capcom-manual-ps4",
+      "url": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+      "finalUrl": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+      "status": 200,
+      "notFound": false,
+      "serverError": false
+    },
+    {
+      "id": "pst-list-ps4",
+      "url": "https://www.playstationtrophies.org/game/resident-evil-5/trophies/",
+      "finalUrl": "https://www.playstationtrophies.org/game/resident-evil-5/trophies/",
+      "status": 403,
+      "notFound": false,
+      "serverError": false
+    },
+    {
+      "id": "pst-guide-ps4",
+      "url": "https://www.playstationtrophies.org/game/resident-evil-5/guide/",
+      "finalUrl": "https://www.playstationtrophies.org/game/resident-evil-5/guide/",
+      "status": 403,
+      "notFound": false,
+      "serverError": false
+    },
+    {
+      "id": "gamefaqs-list-ps4",
+      "url": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/trophies",
+      "finalUrl": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/trophies",
+      "status": 403,
+      "notFound": false,
+      "serverError": false
+    },
+    {
+      "id": "gamefaqs-lost-in-nightmares",
+      "url": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59192",
+      "finalUrl": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59192",
+      "status": 403,
+      "notFound": false,
+      "serverError": false
+    },
+    {
+      "id": "gamefaqs-desperate-escape",
+      "url": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59292",
+      "finalUrl": "https://gamefaqs.gamespot.com/ps4/184856-resident-evil-5/faqs/59292",
+      "status": 403,
+      "notFound": false,
+      "serverError": false
+    }
+  ]
+}

@@ -1,0 +1,444 @@
+{
+  "generatedAt": "2026-07-21T22:51:13.683Z",
+  "sampleType": "laboratory",
+  "fieldDataStatus": "dados insuficientes — nenhuma medição pós-deploy foi simulada",
+  "runs": [
+    {
+      "mode": "off",
+      "profile": "mobile",
+      "run": 1,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1376.7489999999998,
+        "lcpMs": 1901.7489999999998,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexMs": 1383.325484222098,
+        "transferBytes": 476384,
+        "requests": 11,
+        "javascriptTransferBytes": 21439,
+        "cssTransferBytes": 63131,
+        "longTasks": 2,
+        "longTaskDurationMs": 250
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "off",
+      "profile": "mobile",
+      "run": 2,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1431.2404999999999,
+        "lcpMs": 2570.4809999999998,
+        "tbtMs": 29,
+        "cls": 0,
+        "speedIndexMs": 1431.2404999999999,
+        "transferBytes": 476401,
+        "requests": 11,
+        "javascriptTransferBytes": 21447,
+        "cssTransferBytes": 63130,
+        "longTasks": 3,
+        "longTaskDurationMs": 409
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "off",
+      "profile": "mobile",
+      "run": 3,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1392.239,
+        "lcpMs": 1917.239,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexMs": 1392.239,
+        "transferBytes": 476365,
+        "requests": 11,
+        "javascriptTransferBytes": 21439,
+        "cssTransferBytes": 63123,
+        "longTasks": 1,
+        "longTaskDurationMs": 212
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "off",
+      "profile": "desktop",
+      "run": 1,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 350.2255,
+        "lcpMs": 691.1365000000001,
+        "tbtMs": 0,
+        "cls": 0.0004507872212089657,
+        "speedIndexMs": 548.7262661434722,
+        "transferBytes": 476463,
+        "requests": 11,
+        "javascriptTransferBytes": 21443,
+        "cssTransferBytes": 63125,
+        "longTasks": 0,
+        "longTaskDurationMs": 0
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "off",
+      "profile": "desktop",
+      "run": 2,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 344.1845,
+        "lcpMs": 510.369,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 521.1461777184481,
+        "transferBytes": 476372,
+        "requests": 11,
+        "javascriptTransferBytes": 21443,
+        "cssTransferBytes": 63126,
+        "longTasks": 0,
+        "longTaskDurationMs": 0
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "off",
+      "profile": "desktop",
+      "run": 3,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 324.875,
+        "lcpMs": 679.4770000000001,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 539.0354636174756,
+        "transferBytes": 476364,
+        "requests": 11,
+        "javascriptTransferBytes": 21435,
+        "cssTransferBytes": 63130,
+        "longTasks": 1,
+        "longTaskDurationMs": 60
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "placeholders",
+      "profile": "mobile",
+      "run": 1,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1376.518,
+        "lcpMs": 1751.518,
+        "tbtMs": 0,
+        "cls": 0,
+        "speedIndexMs": 1401.1153548099803,
+        "transferBytes": 476579,
+        "requests": 11,
+        "javascriptTransferBytes": 21435,
+        "cssTransferBytes": 63129,
+        "longTasks": 1,
+        "longTaskDurationMs": 206
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "placeholders",
+      "profile": "mobile",
+      "run": 2,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1542.5879999999997,
+        "lcpMs": 1897.5879999999997,
+        "tbtMs": 85.5,
+        "cls": 0,
+        "speedIndexMs": 1576.2211786091434,
+        "transferBytes": 476465,
+        "requests": 11,
+        "javascriptTransferBytes": 21435,
+        "cssTransferBytes": 63125,
+        "longTasks": 3,
+        "longTaskDurationMs": 273
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "placeholders",
+      "profile": "mobile",
+      "run": 3,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 1447.394,
+        "lcpMs": 2122.788,
+        "tbtMs": 13,
+        "cls": 0,
+        "speedIndexMs": 1447.394,
+        "transferBytes": 476486,
+        "requests": 11,
+        "javascriptTransferBytes": 21439,
+        "cssTransferBytes": 63137,
+        "longTasks": 3,
+        "longTaskDurationMs": 408
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "placeholders",
+      "profile": "desktop",
+      "run": 1,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 343.413,
+        "lcpMs": 679.7510000000001,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 591.0205896229452,
+        "transferBytes": 476472,
+        "requests": 11,
+        "javascriptTransferBytes": 21435,
+        "cssTransferBytes": 63126,
+        "longTasks": 0,
+        "longTaskDurationMs": 0
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "placeholders",
+      "profile": "desktop",
+      "run": 2,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 342.7815,
+        "lcpMs": 505.563,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 508.8121432903598,
+        "transferBytes": 476489,
+        "requests": 11,
+        "javascriptTransferBytes": 21439,
+        "cssTransferBytes": 63137,
+        "longTasks": 0,
+        "longTaskDurationMs": 0
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    },
+    {
+      "mode": "placeholders",
+      "profile": "desktop",
+      "run": 3,
+      "lighthouseVersion": "13.4.1",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "fcpMs": 311.26,
+        "lcpMs": 679.796,
+        "tbtMs": 0,
+        "cls": 0.00045860349154162124,
+        "speedIndexMs": 538.0725351316037,
+        "transferBytes": 476494,
+        "requests": 11,
+        "javascriptTransferBytes": 21443,
+        "cssTransferBytes": 63130,
+        "longTasks": 0,
+        "longTaskDurationMs": 0
+      },
+      "forbiddenRequests": [],
+      "a11yFailures": []
+    }
+  ],
+  "medians": {
+    "off": {
+      "mobile": {
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "fcpMs": 1392.239,
+          "lcpMs": 1917.239,
+          "tbtMs": 0,
+          "cls": 0,
+          "speedIndexMs": 1392.239,
+          "transferBytes": 476384,
+          "requests": 11,
+          "javascriptTransferBytes": 21439,
+          "cssTransferBytes": 63130,
+          "longTasks": 2,
+          "longTaskDurationMs": 250
+        }
+      },
+      "desktop": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "fcpMs": 344.1845,
+          "lcpMs": 679.4770000000001,
+          "tbtMs": 0,
+          "cls": 0.00045860349154162124,
+          "speedIndexMs": 539.0354636174756,
+          "transferBytes": 476372,
+          "requests": 11,
+          "javascriptTransferBytes": 21443,
+          "cssTransferBytes": 63126,
+          "longTasks": 0,
+          "longTaskDurationMs": 0
+        }
+      }
+    },
+    "placeholders": {
+      "mobile": {
+        "scores": {
+          "performance": 99,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "fcpMs": 1447.394,
+          "lcpMs": 1897.5879999999997,
+          "tbtMs": 13,
+          "cls": 0,
+          "speedIndexMs": 1447.394,
+          "transferBytes": 476486,
+          "requests": 11,
+          "javascriptTransferBytes": 21435,
+          "cssTransferBytes": 63129,
+          "longTasks": 3,
+          "longTaskDurationMs": 273
+        }
+      },
+      "desktop": {
+        "scores": {
+          "performance": 100,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "fcpMs": 342.7815,
+          "lcpMs": 679.7510000000001,
+          "tbtMs": 0,
+          "cls": 0.00045860349154162124,
+          "speedIndexMs": 538.0725351316037,
+          "transferBytes": 476489,
+          "requests": 11,
+          "javascriptTransferBytes": 21439,
+          "cssTransferBytes": 63130,
+          "longTasks": 0,
+          "longTaskDurationMs": 0
+        }
+      }
+    }
+  },
+  "comparison": {
+    "mobile": {
+      "performanceDelta": 0,
+      "lcpDeltaMs": -19.651000000000295,
+      "clsDelta": 0,
+      "tbtDeltaMs": 13,
+      "requestDelta": 0,
+      "transferDeltaBytes": 102,
+      "javascriptDeltaBytes": -4,
+      "cssDeltaBytes": -1
+    },
+    "desktop": {
+      "performanceDelta": 0,
+      "lcpDeltaMs": 0.2740000000000009,
+      "clsDelta": 0,
+      "tbtDeltaMs": 0,
+      "requestDelta": 0,
+      "transferDeltaBytes": 117,
+      "javascriptDeltaBytes": -4,
+      "cssDeltaBytes": 4
+    }
+  },
+  "inpNote": "INP requer dados de campo; Lighthouse/TBT não substituem INP."
+}

@@ -70,7 +70,7 @@ O compêndio possui 22 entradas. Inimigos comuns não foram promovidos a chefes;
 | 16 | 6-3 | Engine Room | Encontro crítico obrigatório | Reapers, Gatling Gun Majini e portões |
 | 17 | 6-3 | Wesker no hangar | Chefe obrigatório | Escuridão, foguetes e injeção |
 | 18 | 6-3 | Wesker no vulcão | Chefe final obrigatório | Separação da dupla, QTEs e núcleo |
-| 19 | Lost in Nightmares | Guardians of Insanity | Minibosses da DLC | Quatro crests e Night Terrors |
+| 19 | Lost in Nightmares | Guardians of Insanity | Minibosses da DLC | Shards exigidos por dificuldade: Amateur 1, Normal 3, Veteran 4 e Professional 4 |
 | 20 | Lost in Nightmares | Wesker final | Encontro crítico da DLC | Sobrevivência e Kung Fu Fighting |
 | 21 | Desperate Escape | Três Agitator Majini | Minibosses opcionais de troféu | Shoot the Messenger |
 | 22 | Desperate Escape | Landing Pad | Encontro crítico final da DLC | Cronômetro, bosses variáveis e terceiro Agitator |
@@ -99,18 +99,18 @@ Todas devem ser destruídas na mesma jogada de Lost in Nightmares. O texto públ
 | 14 | Base da primeira escada | Cela fechada sob a escada, parede esquerda | 03:16 |
 | 15 | Segundo andar | Primeira cela à direita após subir | 03:26 |
 | 16 | Retorno ao piso inferior | Prateleira baixa depois da descida | 03:37 |
-| 17 | Área da Silver Crest | Sexta alcova gradeada após o baú | 03:51 |
+| 17 | Área alagada das Silver/Gold Crests | Sexta alcova gradeada após o baú da Silver Crest; as duas peças abrem o portão | 03:51 |
 | 18 | Library | Parede alta ao fundo antes de Wesker | 04:06 |
 
 ## 5. Tabela dos 3 Agitator Majini
 
 Os três precisam morrer na mesma jogada de Desperate Escape.
 
-| # | Área | Gatilho confirmado | Ponto crítico/recuperação |
+| # | Área | Rota segura | Ponto crítico/recuperação |
 |---:|---|---|---|
 | 1 | Transportation Area 1 | Eliminar cinco grupos; não pegar a key antes da terceira onda; usar a key e fazer Assist Jump na broken ladder | Cutscene confirma o spawn. É sensível a avanço/onda viva; se falhar, reiniciar a DLC |
 | 2 | Communication Facility | Após destrancar o portão norte, limpar a área, permanecer nas duas rocket turrets e matar as duplas seguintes | Cutscene mostra o alvo; usar rocket e não atravessar a saída cedo |
-| 3 | Landing Pad | Matar rapidamente os bosses do elevador durante os cinco minutos; gatilho usual após quatro, com rotas mostrando após três | Matar antes de o cronômetro zerar; falha exige nova run completa |
+| 3 | Landing Pad | O layout de minibosses varia: eliminar rapidamente os que saem do elevador, priorizar o vermelho perto de 1:40, continuar abatendo inimigos e procurar o Agitator perto dos 30 segundos finais, com dois Big Man | 1:40 e 30 segundos são referências práticas, não garantias oficiais; confirmar a morte antes de zero, ou repetir a run completa |
 
 Não foram criados timestamps individuais para os Agitators, pois o vídeo não publica capítulos verificáveis.
 
@@ -234,3 +234,58 @@ Prioridade sugerida, sem implementação nesta fase:
 4. **Planta da Monarch Room:** posição do Heart of Africa, limite da luta cronometrada e transição para Jill.
 5. **Diagrama do final de Wesker no vulcão:** separação solo/coop, Partner Action, QTEs e núcleo exposto.
 6. **Mapa compacto do Landing Pad:** elevador, escadas, rota de kite, turrets/recursos e spawn do terceiro Agitator.
+
+## 13. Correção factual final
+
+Esta passagem final alterou somente texto factual e contratos de Resident Evil 5. CSS, layout, componentes, timestamps e dados de outros jogos permaneceram intactos.
+
+### 13.1 Score Star #17
+
+- A prisão/área alagada exige duas peças: `Silver Crest` e `Gold Crest`.
+- Depois de inserir ambas, o portão abre e conduz à transição para o labirinto.
+- Essas duas crests foram separadas explicitamente dos shards deixados pelos Guardians no labirinto posterior.
+- A introdução das Score Stars agora usa a sequência: #01–#10 nas salas principais da mansão; #11 na transição antes da descida definitiva; #12–#17 na prisão e área alagada das Silver/Gold Crests; #18 na Library depois do labirinto e antes de Wesker.
+
+Fontes:
+
+- https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192
+- https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59224
+
+### 13.2 Guardians e shards
+
+- O labirinto possui quatro Guardians principais, mas a quantidade obrigatória de kills/shards é `Amateur 1`, `Normal 3`, `Veteran 4` e `Professional 4`.
+- O compêndio, a rota de Lost in Nightmares, a dica de Night Terrors, o checklist de Score Stars, o seed e o snapshot agora distinguem crests de shards e evitam universalizar quatro kills.
+- Night Terrors preserva quatro Guardians/shards porque essa rota é especificamente no Professional.
+- FAQs e pontos de atenção foram auditados e não continham a generalização incorreta.
+
+Fontes:
+
+- https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192
+- https://www.neoseeker.com/resident-evil-5/faqs/205674-lost-in-nightmares.html
+
+### 13.3 Terceiro Agitator Majini
+
+- Foi removida a alegação de gatilho garantido após o terceiro ou quarto boss.
+- O texto agora informa que o layout de minibosses pode variar e recomenda: limpar rapidamente os que saem do elevador; priorizar o miniboss vermelho perto de 1:40; continuar eliminando inimigos; procurar o Agitator perto dos 30 segundos finais, acompanhado por dois Big Man; confirmar a morte antes de zero.
+- Os marcos de 1:40 e 30 segundos finais são apresentados como referências práticas, não como cronômetros oficiais garantidos.
+
+Fontes:
+
+- https://gamefaqs.gamespot.com/ps3/991006/resident-evil-5-desperate-escape/faqs/59292
+- https://www.trueachievements.com/a60010/shoot-the-messenger-achievement
+
+### 13.4 Regressões e invariantes
+
+Foram adicionados contratos que impedem o retorno de:
+
+- “quatro crests” na Score Star #17;
+- quatro Guardians obrigatórios em qualquer dificuldade;
+- terceiro/quarto boss como gatilho garantido do terceiro Agitator.
+
+Os contratos também preservam 51 troféus base, 20 DLC, 71 nomes únicos, 36 FAQs, 12 pontos de atenção, 22 encontros, 30 BSAA Emblems, 18 Score Stars, 3 Agitator Majini, timestamps, seis abas e paridade entre seed e snapshot.
+
+Resultados desta correção final:
+
+- `npm run test:guide -- resident-evil-5`: **passou**.
+- `npm run build`: **passou**.
+- `git diff --check`: **passou**; apenas avisos informativos de conversão LF/CRLF.

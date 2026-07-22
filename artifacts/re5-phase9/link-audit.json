@@ -1,0 +1,1022 @@
+{
+  "schemaVersion": 1,
+  "audit": "resident-evil-5-links",
+  "lastChecked": "2026-07-21T23:42:10.560Z",
+  "editorialReviewUnchanged": "2026-07-18",
+  "status": "PASS_WITH_WARNINGS",
+  "policy": {
+    "userAgent": "AtlasAchievementEditorialAudit/1.0 (+https://atlasachievement.com.br/sobre; contato editorial)",
+    "concurrency": 2,
+    "timeoutMs": 15000,
+    "maxRedirects": 4,
+    "maxBodyBytes": 65536,
+    "antiBotBypass": false
+  },
+  "summary": {
+    "total": 11,
+    "ok": 5,
+    "redirectValid": 0,
+    "blocked": 6,
+    "rateLimited": 0,
+    "inconclusive": 0,
+    "broken": 0,
+    "contentMismatch": 0,
+    "deterministicFailures": 0,
+    "warnings": 6
+  },
+  "sources": [
+    {
+      "id": "capcom-manual-ps4",
+      "sourceUrl": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+      "requestedUrl": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+      "finalUrl": "https://static.capcom.com/manuals/re5/RE5_PS4_DMNL_EN.pdf",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 200
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 206
+        }
+      ],
+      "redirects": [],
+      "status": 206,
+      "contentType": "application/pdf",
+      "title": "",
+      "bytesRead": 114392,
+      "error": null,
+      "classification": "OK",
+      "previousEditorialStatus": "OK",
+      "expectedTitleTerms": [
+        "resident evil 5"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "pst-list-ps4",
+      "sourceUrl": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/trophies/",
+      "requestedUrl": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/trophies/",
+      "finalUrl": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/trophies/",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 403
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 403
+        }
+      ],
+      "redirects": [],
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "bytesRead": 5840,
+      "error": null,
+      "classification": "BLOCKED",
+      "previousEditorialStatus": "BLOCKED",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "trophies"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "pst-guide-ps4",
+      "sourceUrl": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/guide/",
+      "requestedUrl": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/guide/",
+      "finalUrl": "https://www.playstationtrophies.org/game/resident-evil-5-ps4/guide/",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 403
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 403
+        }
+      ],
+      "redirects": [],
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "bytesRead": 5852,
+      "error": null,
+      "classification": "BLOCKED",
+      "previousEditorialStatus": "BLOCKED",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "trophy guide"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "gamefaqs-list-ps4",
+      "sourceUrl": "https://gamefaqs.gamespot.com/ps4/187184-resident-evil-5/trophies",
+      "requestedUrl": "https://gamefaqs.gamespot.com/ps4/187184-resident-evil-5/trophies",
+      "finalUrl": "https://gamefaqs.gamespot.com/ps4/187184-resident-evil-5/trophies",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 403
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 403
+        }
+      ],
+      "redirects": [],
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "bytesRead": 5858,
+      "error": null,
+      "classification": "BLOCKED",
+      "previousEditorialStatus": "BLOCKED",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "trophies"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "gamefaqs-lost-in-nightmares",
+      "sourceUrl": "https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192",
+      "requestedUrl": "https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192",
+      "finalUrl": "https://gamefaqs.gamespot.com/ps3/989571-resident-evil-5-lost-in-nightmares/faqs/59192",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 403
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 403
+        }
+      ],
+      "redirects": [],
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "bytesRead": 5942,
+      "error": null,
+      "classification": "BLOCKED",
+      "previousEditorialStatus": "BLOCKED",
+      "expectedTitleTerms": [
+        "lost in nightmares",
+        "resident evil 5"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "gamefaqs-desperate-escape",
+      "sourceUrl": "https://gamefaqs.gamespot.com/ps3/991006-resident-evil-5-desperate-escape/faqs/59292",
+      "requestedUrl": "https://gamefaqs.gamespot.com/ps3/991006-resident-evil-5-desperate-escape/faqs/59292",
+      "finalUrl": "https://gamefaqs.gamespot.com/ps3/991006-resident-evil-5-desperate-escape/faqs/59292",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 403
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 403
+        }
+      ],
+      "redirects": [],
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "bytesRead": 5979,
+      "error": null,
+      "classification": "BLOCKED",
+      "previousEditorialStatus": "BLOCKED",
+      "expectedTitleTerms": [
+        "desperate escape",
+        "resident evil 5"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "youtube-bsaa-30",
+      "sourceUrl": "https://www.youtube.com/watch?v=qG94-12Nznk",
+      "requestedUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqG94-12Nznk&format=json",
+      "finalUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqG94-12Nznk&format=json",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 200
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 200
+        }
+      ],
+      "redirects": [],
+      "status": 200,
+      "contentType": "application/json",
+      "title": "Resident Evil 5 – All 30 BSAA Emblems Guide [Chris & Sheva Costume Unlocks]",
+      "bytesRead": 912,
+      "error": null,
+      "classification": "OK",
+      "previousEditorialStatus": "OK",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "30 bsaa emblems"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "youtube-heart-of-africa",
+      "sourceUrl": "https://www.youtube.com/watch?v=XKfQyYb_hBY",
+      "requestedUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXKfQyYb_hBY&format=json",
+      "finalUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXKfQyYb_hBY&format=json",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 200
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 200
+        }
+      ],
+      "redirects": [],
+      "status": 200,
+      "contentType": "application/json",
+      "title": "Resident Evil 5 Treasure Guide - Heart of Africa",
+      "bytesRead": 829,
+      "error": null,
+      "classification": "OK",
+      "previousEditorialStatus": "OK",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "heart of africa"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "youtube-score-stars-18",
+      "sourceUrl": "https://www.youtube.com/watch?v=4KAJ6zfUNxc",
+      "requestedUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4KAJ6zfUNxc&format=json",
+      "finalUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4KAJ6zfUNxc&format=json",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 200
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 200
+        }
+      ],
+      "redirects": [],
+      "status": 200,
+      "contentType": "application/json",
+      "title": "Resident Evil 5 – All 18 Score Star Locations (Lost in Nightmares DLC) | Trophy Guide",
+      "bytesRead": 918,
+      "error": null,
+      "classification": "OK",
+      "previousEditorialStatus": "OK",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "18 score star"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "youtube-agitators-3",
+      "sourceUrl": "https://www.youtube.com/watch?v=Zxx5PkPYeuU",
+      "requestedUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZxx5PkPYeuU&format=json",
+      "finalUrl": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZxx5PkPYeuU&format=json",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 200
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 200
+        }
+      ],
+      "redirects": [],
+      "status": 200,
+      "contentType": "application/json",
+      "title": "Resident Evil 5 PS4 - Shoot the Messenger Trophy Guide (Kill 3 Agitator Majini in Desperate Escape)",
+      "bytesRead": 925,
+      "error": null,
+      "classification": "OK",
+      "previousEditorialStatus": "OK",
+      "expectedTitleTerms": [
+        "resident evil 5",
+        "3 agitator"
+      ],
+      "redirectLimitExceeded": false
+    },
+    {
+      "id": "psnprofiles-sessions-re5",
+      "sourceUrl": "https://psnprofiles.com/sessions",
+      "requestedUrl": "https://psnprofiles.com/sessions",
+      "finalUrl": "https://psnprofiles.com/sessions",
+      "methodSequence": [
+        {
+          "method": "HEAD",
+          "status": 403
+        },
+        {
+          "method": "GET_RANGE",
+          "status": 403
+        }
+      ],
+      "redirects": [],
+      "status": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "Just a moment...",
+      "bytesRead": 5729,
+      "error": null,
+      "classification": "BLOCKED",
+      "previousEditorialStatus": "INCONCLUSIVE",
+      "expectedTitleTerms": [
+        "gaming sessions"
+      ],
+      "redirectLimitExceeded": false
+    }
+  ],
+  "videoTimestamps": {
+    "occurrences": 61,
+    "withTimestamp": 49,
+    "invalid": 0,
+    "checks": [
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": null,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=XKfQyYb_hBY",
+        "youtubeId": "XKfQyYb_hBY",
+        "timestampSeconds": null,
+        "durationSeconds": 71,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": null,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Zxx5PkPYeuU",
+        "youtubeId": "Zxx5PkPYeuU",
+        "timestampSeconds": null,
+        "durationSeconds": 370,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": null,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=7s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 7,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=27s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 27,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=48s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 48,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=63s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 63,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=72s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 72,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=91s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 91,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=106s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 106,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=126s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 126,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=142s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 142,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=165s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 165,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=179s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 179,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=204s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 204,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=222s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 222,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=230s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 230,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=243s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 243,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=255s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 255,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=270s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 270,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=289s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 289,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=302s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 302,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=324s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 324,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=340s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 340,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=365s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 365,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=402s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 402,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=419s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 419,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=435s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 435,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=448s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 448,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=470s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 470,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=487s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 487,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=520s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 520,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=542s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 542,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=XKfQyYb_hBY",
+        "youtubeId": "XKfQyYb_hBY",
+        "timestampSeconds": null,
+        "durationSeconds": 71,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": null,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=6s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 6,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=17s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 17,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=30s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 30,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=45s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 45,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=54s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 54,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=70s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 70,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=90s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 90,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=104s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 104,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=137s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 137,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=150s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 150,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=161s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 161,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=174s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 174,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=185s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 185,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=196s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 196,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=206s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 206,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=217s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 217,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=231s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 231,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc&t=246s",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": 246,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Zxx5PkPYeuU",
+        "youtubeId": "Zxx5PkPYeuU",
+        "timestampSeconds": null,
+        "durationSeconds": 370,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": null,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qG94-12Nznk&t=520s",
+        "youtubeId": "qG94-12Nznk",
+        "timestampSeconds": 520,
+        "durationSeconds": 559,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=XKfQyYb_hBY",
+        "youtubeId": "XKfQyYb_hBY",
+        "timestampSeconds": null,
+        "durationSeconds": 71,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4KAJ6zfUNxc",
+        "youtubeId": "4KAJ6zfUNxc",
+        "timestampSeconds": null,
+        "durationSeconds": 271,
+        "valid": true
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Zxx5PkPYeuU",
+        "youtubeId": "Zxx5PkPYeuU",
+        "timestampSeconds": null,
+        "durationSeconds": 370,
+        "valid": true
+      }
+    ]
+  },
+  "internalFragments": {
+    "occurrences": 82,
+    "unique": 41,
+    "valid": [
+      "mainContent",
+      "fontes-e-metodologia",
+      "guideTab-summary",
+      "guideTab-roadmap",
+      "guideTab-checklist",
+      "guideTab-extras",
+      "guideTab-dlc",
+      "guideTab-attention",
+      "guideRoadmapPanel",
+      "guideChapterRoutePanel",
+      "guideProfessionalAiPanel",
+      "guideFarmRoutesPanel",
+      "guideCommonMythsPanel",
+      "guidePlatinumExtrasPanel",
+      "extras-ranks-s-chapters",
+      "guideChecklistPanel",
+      "re5-versus-dlc",
+      "re5-lost-in-nightmares-score-stars",
+      "guideDlcCompletionPanel",
+      "extras-eggs-egg-hunt-egg-on-your-face",
+      "re5-desperate-escape-agitator-majini",
+      "extras-bsaa-emblems",
+      "extras-tesouros",
+      "extras-weapons-stockpile",
+      "extras-upgrades-take-it-to-the-max",
+      "extras-bonus-features-outfits-figures",
+      "extras-situational-trophies",
+      "extras-bosses-critical-encounters",
+      "re5-bsaa-emblem-29",
+      "re5-treasure-50-heart-of-africa",
+      "re5-boss-18-wesker-volcano",
+      "re5-score-star-01",
+      "re5-agitator-01",
+      "guideUsagePanel",
+      "roadmap",
+      "guideQuickPlan",
+      "guideSummaryActions",
+      "guideAttentionPointsPanel",
+      "guideFaqPanel",
+      "guideCommentsPanel",
+      "topo"
+    ],
+    "broken": []
+  },
+  "localAssets": {
+    "checked": [
+      {
+        "asset": "/assets/guides/resident-evil-5/resident-evil-5-social.png",
+        "exists": true
+      },
+      {
+        "asset": "/assets/guides/resident-evil-5/score-stars-route.svg",
+        "exists": true
+      },
+      {
+        "asset": "/assets/guides/resident-evil-5/agitator-triggers.svg",
+        "exists": true
+      },
+      {
+        "asset": "/assets/guides/resident-evil-5/bsaa-29-container.svg",
+        "exists": true
+      },
+      {
+        "asset": "/assets/guides/resident-evil-5/heart-of-africa-arena.svg",
+        "exists": true
+      },
+      {
+        "asset": "/assets/guides/resident-evil-5/wesker-volcano-flow.svg",
+        "exists": true
+      }
+    ],
+    "broken": []
+  },
+  "history": [
+    {
+      "lastChecked": "2026-07-21T23:17:00.056Z",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": {
+        "total": 11,
+        "ok": 5,
+        "redirectValid": 0,
+        "blocked": 6,
+        "rateLimited": 0,
+        "inconclusive": 0,
+        "broken": 0,
+        "contentMismatch": 0,
+        "deterministicFailures": 0,
+        "warnings": 6
+      }
+    },
+    {
+      "lastChecked": "2026-07-21T23:34:37.150Z",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": {
+        "total": 11,
+        "ok": 5,
+        "redirectValid": 0,
+        "blocked": 6,
+        "rateLimited": 0,
+        "inconclusive": 0,
+        "broken": 0,
+        "contentMismatch": 0,
+        "deterministicFailures": 0,
+        "warnings": 6
+      },
+      "sources": [
+        {
+          "id": "capcom-manual-ps4",
+          "classification": "OK",
+          "status": 206
+        },
+        {
+          "id": "pst-list-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "pst-guide-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-list-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-lost-in-nightmares",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-desperate-escape",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "youtube-bsaa-30",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-heart-of-africa",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-score-stars-18",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-agitators-3",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "psnprofiles-sessions-re5",
+          "classification": "BLOCKED",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "lastChecked": "2026-07-21T23:42:10.560Z",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": {
+        "total": 11,
+        "ok": 5,
+        "redirectValid": 0,
+        "blocked": 6,
+        "rateLimited": 0,
+        "inconclusive": 0,
+        "broken": 0,
+        "contentMismatch": 0,
+        "deterministicFailures": 0,
+        "warnings": 6
+      },
+      "sources": [
+        {
+          "id": "capcom-manual-ps4",
+          "classification": "OK",
+          "status": 206
+        },
+        {
+          "id": "pst-list-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "pst-guide-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-list-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-lost-in-nightmares",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-desperate-escape",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "youtube-bsaa-30",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-heart-of-africa",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-score-stars-18",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-agitators-3",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "psnprofiles-sessions-re5",
+          "classification": "BLOCKED",
+          "status": 403
+        }
+      ]
+    }
+  ],
+  "obsolescenceAlerts": []
+}

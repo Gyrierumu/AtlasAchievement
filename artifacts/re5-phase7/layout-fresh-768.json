@@ -1,0 +1,49 @@
+{
+  "innerWidth": 768,
+  "visualViewport": {
+    "width": 753,
+    "scale": 1
+  },
+  "layout": {
+    "x": 31,
+    "y": 226,
+    "width": 691,
+    "height": 872
+  },
+  "body": {
+    "x": 157,
+    "y": 226,
+    "width": 565,
+    "height": 872
+  },
+  "cover": {
+    "x": 31,
+    "y": 226,
+    "width": 108,
+    "height": 162
+  },
+  "scope": {
+    "x": 157,
+    "y": 533,
+    "width": 565,
+    "height": 72
+  },
+  "facts": {
+    "x": 157,
+    "y": 651,
+    "width": 565,
+    "height": 137
+  },
+  "layoutColumns": "108px 565px",
+  "bodyColumns": "565px",
+  "media": {
+    "max560": false,
+    "max768": true,
+    "bodyGridColumn": "2",
+    "coverGridColumn": "1",
+    "coverPosition": "relative",
+    "coverTransform": "none",
+    "coverMargin": "0px",
+    "coverJustifySelf": "start"
+  }
+}
