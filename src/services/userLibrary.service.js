@@ -188,8 +188,11 @@ async function buildLibraryPayload(userId) {
     [userId]
   );
   const completedMap = await getCompletedMap(userId, rows.map(row => row.game_id));
-  const entries = await Promise.all(rows.map(async row => {
-    const game = await gamesService.getGameById(row.game_id);
+  const games = await gamesService.getGamesByIds(rows.map(row => row.game_id));
+  const gamesById = new Map(games.map(game => [Number(game.id), game]));
+  const entries = rows.map(row => {
+    const game = gamesById.get(Number(row.game_id));
+    if (!game) return null;
     const completed = completedMap.get(row.game_id) || [];
     return {
       ...game,
@@ -200,7 +203,7 @@ async function buildLibraryPayload(userId) {
       lastOpenedAt: row.last_opened_at || row.updated_at || row.created_at,
       lastActivityAt: row.updated_at || row.last_opened_at || row.created_at
     };
-  }));
+  }).filter(Boolean);
   const library = {};
   entries.forEach(entry => {
     const key = entry.slug || String(entry.id);

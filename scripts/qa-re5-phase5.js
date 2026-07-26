@@ -347,7 +347,7 @@ async function runFailureQa(client, report) {
   assert.deepStrictEqual(report.failures.noJavaScript, { panels: 6, visiblePanels: 6, hiddenEssentialSections: 0, methodology: true });
   await client.send('Emulation.setScriptExecutionDisabled', { value: false });
 
-  await client.send('Network.setBlockedURLs', { urls: ['*/js/re5-guide-enhance.a30a6622.js'] });
+  await client.send('Network.setBlockedURLs', { urls: ['*/js/re5-guide-enhance.b84f913c.js'] });
   process.stdout.write('QA: hydration script failure\n');
   await navigate(client, APP_URL);
   await delay(300);

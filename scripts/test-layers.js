@@ -1751,6 +1751,20 @@ async function validateGuide(slug = '') {
       ['attention', 'Pontos de atenção']
     ];
     const isResidentEvil2Guide = slug === 'resident-evil-2-remake';
+    if (!isResidentEvil2Guide) {
+      const hasPlatinumExtras = Array.isArray(seedGame.platinumBaseChecklist?.categories)
+        && seedGame.platinumBaseChecklist.categories.some(category => Array.isArray(category?.items) && category.items.length);
+      const hasDlcCompletion = Array.isArray(seedGame.dlcCompletionGuide?.packages)
+        && seedGame.dlcCompletionGuide.packages.length > 0;
+      const hasAttention = (Array.isArray(seedGame.attentionPoints) && seedGame.attentionPoints.length > 0)
+        || Boolean(String(seedGame.before_you_start || seedGame.editorial_notes || '').trim());
+      expectedGuideTabs[4][1] = 'DLCs e 100% da Lista';
+      if (!hasAttention) expectedGuideTabs.splice(5, 1);
+      if (!hasDlcCompletion) expectedGuideTabs.splice(4, 1);
+      if (!hasPlatinumExtras) expectedGuideTabs.splice(3, 1);
+      if (!viewModel.trophies.length) expectedGuideTabs.splice(2, 1);
+      if (!viewModel.roadmapStages.length) expectedGuideTabs.splice(1, 1);
+    }
     if (isResidentEvil2Guide) {
       const expectedQuickNavigation = [
         ['#guideSummaryActions', 'Resumo'], ['#guideRoadmapPanel', 'Roadmap'], ['#guideQuickPlan', 'Plano rápido'],
@@ -1766,7 +1780,7 @@ async function validateGuide(slug = '') {
       });
     } else {
       assert(globalLayerNavHtml.includes('role="tablist"'), `${slug} deve expor a navegacao principal como tablist`);
-      assert.strictEqual((globalLayerNavHtml.match(/role="tab"/g) || []).length, 6, `${slug} deve manter exatamente seis abas principais`);
+      assert.strictEqual((globalLayerNavHtml.match(/role="tab"/g) || []).length, expectedGuideTabs.length, `${slug} deve renderizar somente as abas principais com conteudo real`);
       assert(!/>\s*(?:FAQ|Comentários|Feedback)\s*</.test(globalLayerNavHtml), `${slug} nao deve manter FAQ, Comentarios ou Feedback no tablist`);
     }
     const tabDecorativeIcons = [...globalLayerNavHtml.matchAll(/<i\b[^>]*>/gi)].map(match => match[0]);
@@ -1803,7 +1817,8 @@ async function validateGuide(slug = '') {
     assert(html.indexOf('id="guideFaqSlot"') > html.indexOf('id="guideTab-attention"'), `${slug} deve posicionar FAQ depois dos paineis principais`);
     assert(html.indexOf('id="guideCommentsSlot"') > html.indexOf('id="guideFaqSlot"'), `${slug} deve posicionar Comentarios fora do tablist e abaixo do FAQ`);
     if (!seedGame.dlcCompletionGuide) {
-      assert(html.includes('Este guia não possui conteúdo adicional de DLC ou 100% da lista cadastrado.'), `${slug} sem DLC deve manter a aba global com estado vazio coerente`);
+      assert(!globalLayerNavHtml.includes('id="guideTabButton-dlc"'), `${slug} sem DLC nao deve exibir uma aba vazia de conteudo adicional`);
+      assert(!normalizeText(html).includes('este guia nao possui conteudo adicional de dlc ou 100% da lista cadastrado.'), `${slug} sem DLC nao deve renderizar placeholder editorial`);
     }
     if (slug === 'uncharted-legacy-of-thieves-collection') {
       assert(/atlas-editorial-badge[^>]*>[\s\S]*?Em revisão/.test(guideHeaderHtml), `${slug} deve preservar status editorial diferente de Verificado`);
@@ -1843,7 +1858,7 @@ async function validateGuide(slug = '') {
       const guideNavigationSource = `${guideControllerSource}\n${readProjectFile('public/js/ui-guide.js')}`;
       const guideClientSeoSource = `${readProjectFile('public/js/ui-formatters.js')}\n${readProjectFile('public/js/ui.js')}`;
       const guideCssSource = readProjectFile('public/css/guide.css');
-      const re5Phase5Source = readProjectFile('public/js/re5-guide-enhance.a30a6622.js');
+      const re5Phase5Source = readProjectFile('public/js/re5-guide-enhance.b84f913c.js');
       const re5Phase5CssSource = readProjectFile('public/css/re5-phase5.7c3b265c.css');
       const layerNavHtml = html.match(/<nav id="guideLayerNav"[\s\S]*?<\/nav>/)?.[0] || '';
       const quickPlanStart = html.indexOf('id="guideQuickPlan"');
@@ -1977,7 +1992,7 @@ async function validateGuide(slug = '') {
         ['Roadmap', 'data-guide-tab-target="roadmap"', 'data-guide-action="roadmap"', 'href="#guideTab-roadmap"'],
         ['Checklist', 'data-guide-tab-target="checklist"', 'data-guide-action="trophies"', 'href="#guideTab-checklist"'],
         ['Extras da Platina', 'data-guide-tab-target="extras"', 'data-guide-action="extras"', 'href="#guideTab-extras"'],
-        ['DLCs e 100%', 'data-guide-tab-target="dlc"', 'data-guide-action="dlcs"', 'href="#guideTab-dlc"'],
+        ['DLCs e 100% da Lista', 'data-guide-tab-target="dlc"', 'data-guide-action="dlcs"', 'href="#guideTab-dlc"'],
         ['Pontos de atenção', 'data-guide-tab-target="attention"', 'data-guide-action="attention"', 'href="#guideTab-attention"']
       ].forEach(([label, tabTarget, action, href]) => {
         const linkHtml = layerNavHtml.match(new RegExp(`<a[^>]*${tabTarget}[^>]*>[\\s\\S]*?<span>${label}<\\/span>[\\s\\S]*?<\\/a>`))?.[0] || '';
@@ -1995,7 +2010,7 @@ async function validateGuide(slug = '') {
       });
       assert.strictEqual((html.match(/<script src="\/(?:js|shared)\//g) || []).length, 2, 'Resident Evil 5 deve carregar somente o enhancement local e o modulo de producao da Fase 8');
       const phase5StylesheetPath = html.match(/href="(\/css\/re5-guide\.[a-f0-9]{12}\.css)"/)?.[1] || '';
-      assert(html.includes('src="/js/re5-guide-enhance.a30a6622.js"') && phase5StylesheetPath, 'Resident Evil 5 deve carregar assets versionados da Fase 5');
+      assert(html.includes('src="/js/re5-guide-enhance.b84f913c.js"') && phase5StylesheetPath, 'Resident Evil 5 deve carregar assets versionados da Fase 5');
       assert(html.includes('src="/js/re5-production.js"'), 'Resident Evil 5 deve carregar o modulo local de producao da Fase 8');
       ['/css/utilities.css', '/css/tokens.css', '/css/base.css', '/css/layout.css', '/css/components.css', '/css/guide.css', '/css/responsive.css'].forEach(source => {
         assert(!html.includes(`href="${source}"`), `Resident Evil 5 deve consolidar o CSS critico sem duplicar ${source}`);
@@ -2021,7 +2036,7 @@ async function validateGuide(slug = '') {
       assert.strictEqual((html.match(/fetchpriority="high"/g) || []).length, 1, 'Somente a capa critica pode usar fetchpriority high');
       assert.strictEqual((guideScopedHtml.match(/data-instructional-visual="[^"]+"/g) || []).length, 5, 'As cinco figuras instrucionais devem permanecer no SSR');
       assert.strictEqual((guideScopedHtml.match(/<img\b[^>]*\/assets\/guides\/resident-evil-5\/[^>]*loading="lazy"/g) || []).length, 5, 'As cinco figuras locais devem permanecer lazy e dimensionadas');
-      for (const assetPath of ['/js/re5-guide-enhance.a30a6622.js', phase5StylesheetPath]) {
+      for (const assetPath of ['/js/re5-guide-enhance.b84f913c.js', phase5StylesheetPath]) {
         const assetResponse = await fetch(`${baseUrl}${assetPath}`);
         assert(assetResponse.ok, `${assetPath} deve carregar sem 404`);
         assert(/public,\s*max-age=31536000,\s*immutable/i.test(assetResponse.headers.get('cache-control') || ''), `${assetPath} deve usar cache imutavel por nome versionado`);

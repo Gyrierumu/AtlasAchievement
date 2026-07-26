@@ -1241,6 +1241,8 @@ function normalizeListRow(row) {
     is_verified: Boolean(editorialSource.is_verified),
     verification_note: editorialSource.verification_note || '',
     verification_status: normalizeVerificationStatus(editorialSource.verification_status, editorialSource),
+    platforms: Array.isArray(listSeedGame?.platforms) ? listSeedGame.platforms.filter(Boolean) : [],
+    platform_base: firstText(listSeedGame?.platform_base, listSeedGame?.platformBase),
     cover_image: row.cover_image || null,
     catalogImage: CATALOG_IMAGE_BY_SLUG[normalizedSlug] || '',
     runs_summary: firstText(seedGame?.runs_summary, row.runs_summary, row.guide_runs),
@@ -1265,6 +1267,73 @@ function normalizeListRow(row) {
     slug: getCanonicalGameSlug(row.slug || row.name),
     time_bucket: row.time_bucket || null
   };
+}
+
+function isPublicCatalogListEligible(game = {}) {
+  if (catalogModel.isPublicGuideEligible(game)) return true;
+
+  const publicationStatus = String(game.editorial_status || game.publication_status || '')
+    .trim()
+    .toLowerCase();
+  const coverageLevel = String(game.coverage_level || '').trim().toLowerCase();
+  const verificationStatus = String(game.verification_status || '').trim().toLowerCase();
+  const reviewStatus = String(game.editorial_review_status || '').trim().toLowerCase();
+  const difficulty = Number(game.difficulty);
+  const time = String(game.time || '').trim();
+  const trophyCount = Number(game.trophy_count || 0);
+  const roadmapCount = Number(game.roadmap_count || 0);
+  const isPublishedForReview = ['published', 'review'].includes(publicationStatus);
+  const isUsableCoverage = ['strong', 'complete'].includes(coverageLevel);
+  const isReview = ['review', 'in_review'].includes(verificationStatus)
+    || ['in_review', 'review'].includes(reviewStatus)
+    || publicationStatus === 'review';
+  const hasUsableGuideShape = Number.isFinite(difficulty)
+    && difficulty > 0
+    && difficulty <= 10
+    && Boolean(time)
+    && !/em revis[aã]o|a definir|indispon[ií]vel|^[-–—]$|^n\/?a$/i.test(time)
+    && trophyCount > 0
+    && roadmapCount > 0;
+
+  return Boolean(
+    isPublishedForReview
+    && isUsableCoverage
+    && isReview
+    && hasUsableGuideShape
+    && !catalogModel.hasCatalogCriticalEditorialStatus(game)
+  );
+}
+
+function getCatalogPlatformText(game = {}) {
+  return [
+    ...(Array.isArray(game.platforms) ? game.platforms : []),
+    game.platform_base,
+    game.platformBase,
+    game.platform
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+}
+
+function matchesCatalogPlatform(game = {}, platform = 'all') {
+  const key = String(platform || 'all').trim().toLowerCase();
+  if (!key || key === 'all') return true;
+  const text = getCatalogPlatformText(game);
+  if (!text) return false;
+  if (key === 'ps5') return /\bps5\b|playstation\s*5/.test(text);
+  if (key === 'ps4') return /\bps4\b|playstation\s*4/.test(text);
+  if (key === 'pc') return /\bpc\b|windows|steam/.test(text);
+  if (key === 'xbox') return /xbox/.test(text);
+  if (key === 'nintendo') return /nintendo|switch/.test(text);
+  return true;
+}
+
+function matchesCatalogStatus(game = {}, status = 'all') {
+  const key = String(status || 'all').trim().toLowerCase();
+  if (!key || key === 'all') return true;
+  const verified = catalogModel.isCatalogVerified(game);
+  return key === 'verified' ? verified : !verified;
 }
 
 function getListOrderBy(sort = 'name-asc') {
@@ -1340,7 +1409,16 @@ async function ensureNoCanonicalSlugConflict(baseName, excludeGameId = null) {
 }
 
 async function listGames(options = {}) {
-  const { search = '', facet = 'all', sort = 'name-asc', page = 1, limit = 500, includeDrafts = false } = options;
+  const {
+    search = '',
+    facet = 'all',
+    platform = 'all',
+    status = 'all',
+    sort = 'name-asc',
+    page = 1,
+    limit = 500,
+    includeDrafts = false
+  } = options;
   const safeLimit = Math.min(Math.max(Number(limit) || 24, 1), 100);
   const requestedPage = Math.max(Number(page) || 1, 1);
   const { whereSql, params } = buildListFilters({ search, facet });
@@ -1420,7 +1498,9 @@ async function listGames(options = {}) {
     );
     const eligibleItems = rows
       .map(normalizeListRow)
-      .filter(catalogModel.isPublicGuideEligible);
+      .filter(isPublicCatalogListEligible)
+      .filter(game => matchesCatalogPlatform(game, platform))
+      .filter(game => matchesCatalogStatus(game, status));
     total = eligibleItems.length;
     totalPages = Math.max(Math.ceil(total / safeLimit), 1);
     safePage = total > 0 ? Math.min(requestedPage, totalPages) : 1;
@@ -1528,6 +1608,68 @@ async function getGameById(id, options = {}) {
   );
 
   return normalizeGame(row, roadmapRows, trophyRows);
+}
+
+async function getGamesByIds(ids = [], options = {}) {
+  const normalizedIds = [...new Set((Array.isArray(ids) ? ids : [])
+    .map(Number)
+    .filter(id => Number.isInteger(id) && id > 0))];
+  if (!normalizedIds.length) return [];
+
+  const placeholders = normalizedIds.map(() => '?').join(', ');
+  const rows = await all(
+    `SELECT id, name, slug, difficulty, time, time_min_hours, time_max_hours, time_sort_hours, time_bucket, missable, guide_runs, guide_online, guide_grind, guide_dlc, guide_ideal, guide_avoid, guide_best_moment, runs_summary, missable_summary, online_summary, grind_summary, dlc_scope, difficulty_reason, time_reason, first_run_advice, cleanup_advice, before_you_start, best_for, avoid_if, verification_status, editorial_status, coverage_level, is_verified, verification_note, editorial_review_status, last_reviewed_at, editorial_notes, quality_warnings, reviewed_by, walkthrough, image, cover_image, created_at, updated_at
+       FROM games
+      WHERE id IN (${placeholders})`,
+    normalizedIds
+  );
+  const publicRows = rows
+    .map(row => ensurePublicGame(row, options.includeDrafts))
+    .filter(Boolean);
+  if (!publicRows.length) return [];
+
+  const publicIds = publicRows.map(row => row.id);
+  const publicPlaceholders = publicIds.map(() => '?').join(', ');
+  const [roadmapRows, trophyRows] = await Promise.all([
+    all(
+      `SELECT game_id, content
+         FROM roadmaps
+        WHERE game_id IN (${publicPlaceholders})
+        ORDER BY game_id ASC, step_order ASC`,
+      publicIds
+    ),
+    all(
+      `SELECT game_id, trophy_code, name, name_pt, type, description, tip, is_missable, is_spoiler
+         FROM trophies
+        WHERE game_id IN (${publicPlaceholders})
+        ORDER BY game_id ASC,
+          CASE type
+            WHEN 'Platina' THEN 1
+            WHEN 'Ouro' THEN 2
+            WHEN 'Prata' THEN 3
+            ELSE 4
+          END,
+          name ASC`,
+      publicIds
+    )
+  ]);
+  const roadmapsByGame = new Map();
+  const trophiesByGame = new Map();
+  roadmapRows.forEach(row => {
+    const list = roadmapsByGame.get(row.game_id) || [];
+    list.push(row);
+    roadmapsByGame.set(row.game_id, list);
+  });
+  trophyRows.forEach(row => {
+    const list = trophiesByGame.get(row.game_id) || [];
+    list.push(row);
+    trophiesByGame.set(row.game_id, list);
+  });
+  const gamesById = new Map(publicRows.map(row => [
+    row.id,
+    normalizeGame(row, roadmapsByGame.get(row.id) || [], trophiesByGame.get(row.id) || [])
+  ]));
+  return normalizedIds.map(id => gamesById.get(id)).filter(Boolean);
 }
 
 async function getGameByName(name, options = {}) {
@@ -1943,6 +2085,7 @@ async function getAdminDashboardSummary() {
 module.exports = {
   listGames,
   getGameById,
+  getGamesByIds,
   getGameByName,
   getGameBySlug,
   slugifyGameName,

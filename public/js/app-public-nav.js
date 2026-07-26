@@ -174,7 +174,14 @@ window.AppPublicNav = (() => {
       if (page !== 'public') return;
 
       let path = '/';
-      if (view === 'library') path = '/biblioteca';
+      if (view === 'library') {
+        const params = new URLSearchParams();
+        if (String(state.librarySearch || '').trim()) params.set('q', String(state.librarySearch).trim());
+        if (state.libraryPlatform && state.libraryPlatform !== 'all') params.set('platform', state.libraryPlatform);
+        if (state.libraryStatus && state.libraryStatus !== 'all') params.set('status', state.libraryStatus);
+        if (state.librarySort && state.librarySort !== 'recent') params.set('sort', state.librarySort);
+        path = `/biblioteca${params.toString() ? `?${params.toString()}` : ''}`;
+      }
       if (view === 'profile') path = '/perfil';
       if (view === 'catalog') path = getCatalogPath(options.facet || state.catalogFacet || 'all');
       if (view === 'guide' && options.game) path = `/jogo/${getGameSlug(options.game)}`;
@@ -194,11 +201,22 @@ window.AppPublicNav = (() => {
           search: state.librarySearch,
           sort: state.librarySort,
           statusFilter: state.libraryStatus,
+          platform: state.libraryPlatform,
           availableGames: state.availableGames,
-          storageLabel: state.librarySource === 'account' ? 'Salvo na conta' : 'Salvo neste navegador'
+          storageLabel: state.librarySource === 'account' ? 'Salvo na conta' : 'Salvo neste navegador',
+          userSession: state.userSession
         });
       }
-      if (view === 'catalog') UI.renderCatalog(state.catalogResponse, { search: state.catalogSearch, sort: state.catalogSort, facet: options.facet || state.catalogFacet, compareSelection: state.catalogCompare, intent: state.catalogIntent, allGames: state.availableGames });
+      if (view === 'catalog') UI.renderCatalog(state.catalogResponse, {
+        search: state.catalogSearch,
+        sort: state.catalogSort,
+        facet: options.facet || state.catalogFacet,
+        platform: state.catalogPlatform,
+        status: state.catalogStatus,
+        compareSelection: state.catalogCompare,
+        intent: state.catalogIntent,
+        allGames: state.availableGames
+      });
       window.AtlasAnalytics?.trackPageView?.({ path, title: document.title });
       syncGuideQuickDock();
 
@@ -237,6 +255,7 @@ window.AppPublicNav = (() => {
     }
 
     if (pathname === '/biblioteca') {
+      if (typeof loadGames === 'function') await loadGames();
       navigate('library', { skipHistory: true });
       return;
     }
@@ -292,6 +311,9 @@ window.AppPublicNav = (() => {
       if (view === 'home' && typeof loadGames === 'function') {
         await loadGames();
       }
+      if (view === 'library' && typeof loadGames === 'function') {
+        await loadGames();
+      }
       if (view === 'catalog' && !(state.catalogResponse?.items || []).length) {
         state.catalogPage = 1;
         await loadCatalogPage({ page: 1, facet: state.catalogFacet || getCatalogFacetFromPath(window.location.pathname) || 'all' });
@@ -308,6 +330,9 @@ window.AppPublicNav = (() => {
           const path = getStaticViewPath(view, state, facet => window.AppCatalog?.getCatalogPath?.(facet) || '/catalogo');
           if (path) window.location.href = path;
           return;
+        }
+        if (view === 'library' && typeof loadGames === 'function') {
+          await loadGames();
         }
         navigate(view, { resetScroll: true });
         return;

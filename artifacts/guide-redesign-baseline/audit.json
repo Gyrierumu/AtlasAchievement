@@ -1,0 +1,2372 @@
+{
+  "generatedAt": "2026-07-26T03:11:01.048Z",
+  "games": {
+    "resident-evil-5": {
+      "320x568": {
+        "viewport": [
+          320,
+          568
+        ],
+        "document": [
+          320,
+          9774
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 160
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 160,
+            "right": 440
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-header-actions flex items-center gap-2 md:gap-3",
+            "left": 255,
+            "right": 326
+          },
+          {
+            "tag": "div",
+            "id": "publicAuthGuest",
+            "className": "atlas-auth-header atlas-auth-header--guest",
+            "left": 255,
+            "right": 326
+          },
+          {
+            "tag": "button",
+            "id": "",
+            "className": "atlas-text-action",
+            "left": 255,
+            "right": 326
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 309,
+            "right": 444
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-layer-group",
+            "left": 318,
+            "right": 327
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 335,
+            "right": 435
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 450,
+            "right": 565
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 459,
+            "right": 469
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 477,
+            "right": 556
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 571,
+            "right": 717
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 14,
+          "y": 190,
+          "width": 292,
+          "height": 1190
+        },
+        "tabs": {
+          "x": 14,
+          "y": 1400,
+          "width": 292,
+          "height": 60
+        },
+        "content": {
+          "x": 14,
+          "y": 1480,
+          "width": 292,
+          "height": 8000
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 9480,
+          "width": 320,
+          "height": 294
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "360x800": {
+        "viewport": [
+          360,
+          800
+        ],
+        "document": [
+          360,
+          13216
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 160
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 200,
+            "right": 480
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 314,
+            "right": 452
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 343,
+            "right": 443
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 458,
+            "right": 575
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 467,
+            "right": 479
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 487,
+            "right": 566
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 581,
+            "right": 730
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 590,
+            "right": 602
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 610,
+            "right": 721
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 14,
+          "y": 190,
+          "width": 332,
+          "height": 1149
+        },
+        "tabs": {
+          "x": 14,
+          "y": 1359,
+          "width": 332,
+          "height": 60
+        },
+        "content": {
+          "x": 14,
+          "y": 1439,
+          "width": 332,
+          "height": 11523
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 12962,
+          "width": 360,
+          "height": 254
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "390x844": {
+        "viewport": [
+          390,
+          844
+        ],
+        "document": [
+          390,
+          12830
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 160
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 230,
+            "right": 510
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 314,
+            "right": 452
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 343,
+            "right": 443
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 458,
+            "right": 575
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 467,
+            "right": 479
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 487,
+            "right": 566
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 581,
+            "right": 730
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 590,
+            "right": 602
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 610,
+            "right": 721
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 14,
+          "y": 190,
+          "width": 362,
+          "height": 1133
+        },
+        "tabs": {
+          "x": 14,
+          "y": 1343,
+          "width": 362,
+          "height": 60
+        },
+        "content": {
+          "x": 14,
+          "y": 1423,
+          "width": 362,
+          "height": 11153
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 12576,
+          "width": 390,
+          "height": 254
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "568x320": {
+        "viewport": [
+          568,
+          320
+        ],
+        "document": [
+          568,
+          9484
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 160
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 408,
+            "right": 688
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 466,
+            "right": 586
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 496,
+            "right": 577
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 592,
+            "right": 744
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 601,
+            "right": 613
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 621,
+            "right": 735
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 14,
+          "y": 190,
+          "width": 540,
+          "height": 1000
+        },
+        "tabs": {
+          "x": 14,
+          "y": 1210,
+          "width": 540,
+          "height": 60
+        },
+        "content": {
+          "x": 14,
+          "y": 1290,
+          "width": 540,
+          "height": 8000
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 9290,
+          "width": 568,
+          "height": 194
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "768x1024": {
+        "viewport": [
+          768,
+          1024
+        ],
+        "document": [
+          753,
+          11135
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 160
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 593,
+            "right": 873
+          },
+          {
+            "tag": "button",
+            "id": "",
+            "className": "atlas-section-toggle",
+            "left": 167,
+            "right": 854
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 16,
+          "y": 195,
+          "width": 721,
+          "height": 956
+        },
+        "tabs": {
+          "x": 16,
+          "y": 1171,
+          "width": 721,
+          "height": 70
+        },
+        "content": {
+          "x": 16,
+          "y": 1261,
+          "width": 721,
+          "height": 9680
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 10941,
+          "width": 753,
+          "height": 194
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "1024x768": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "document": [
+          1009,
+          10040
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 260
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 729,
+            "right": 1149
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 16,
+          "y": 262,
+          "width": 977,
+          "height": 846
+        },
+        "tabs": {
+          "x": 16,
+          "y": 1128,
+          "width": 977,
+          "height": 62
+        },
+        "content": {
+          "x": 16,
+          "y": 1210,
+          "width": 977,
+          "height": 8596
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 9806,
+          "width": 1009,
+          "height": 194
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "1280x720": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "document": [
+          1265,
+          10003
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 260
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 985,
+            "right": 1405
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 16,
+          "y": 168,
+          "width": 1233,
+          "height": 858
+        },
+        "tabs": {
+          "x": 16,
+          "y": 1060,
+          "width": 985,
+          "height": 62
+        },
+        "content": {
+          "x": 16,
+          "y": 1156,
+          "width": 985,
+          "height": 8579
+        },
+        "sidebar": {
+          "x": 1019,
+          "y": 9769,
+          "width": 230,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 9769,
+          "width": 1265,
+          "height": 194
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      },
+      "1440x900": {
+        "viewport": [
+          1440,
+          900
+        ],
+        "document": [
+          1425,
+          9919
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": -80,
+            "right": 260
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 1145,
+            "right": 1565
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 5",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-5",
+        "hero": {
+          "x": 69,
+          "y": 168,
+          "width": 1288,
+          "height": 858
+        },
+        "tabs": {
+          "x": 69,
+          "y": 1060,
+          "width": 1040,
+          "height": 62
+        },
+        "content": {
+          "x": 69,
+          "y": 1156,
+          "width": 1040,
+          "height": 8495
+        },
+        "sidebar": {
+          "x": 1127,
+          "y": 9685,
+          "width": 230,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 9685,
+          "width": 1425,
+          "height": 194
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 14,
+        "trophyCards": 51,
+        "consoleErrors": []
+      }
+    },
+    "resident-evil-2-remake": {
+      "320x568": {
+        "viewport": [
+          320,
+          568
+        ],
+        "document": [
+          320,
+          10304
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 144,
+            "right": 564
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 140,
+            "right": 500
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 213,
+            "right": 323
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 329,
+            "right": 403
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-map-location-dot",
+            "left": 338,
+            "right": 351
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 359,
+            "right": 394
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 409,
+            "right": 481
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 418,
+            "right": 430
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 438,
+            "right": 472
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-checklist",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 487,
+            "right": 582
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-list-check",
+            "left": 496,
+            "right": 508
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 516,
+            "right": 573
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 14,
+          "y": 204,
+          "width": 292,
+          "height": 755
+        },
+        "tabs": {
+          "x": 14,
+          "y": 979,
+          "width": 292,
+          "height": 62
+        },
+        "content": {
+          "x": 14,
+          "y": 1061,
+          "width": 292,
+          "height": 8382
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 9499,
+          "width": 320,
+          "height": 747
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "360x800": {
+        "viewport": [
+          360,
+          800
+        ],
+        "document": [
+          360,
+          9655
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 162,
+            "right": 582
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 180,
+            "right": 540
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 329,
+            "right": 403
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 359,
+            "right": 394
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 409,
+            "right": 481
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 418,
+            "right": 430
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 438,
+            "right": 472
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-checklist",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 487,
+            "right": 582
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-list-check",
+            "left": 496,
+            "right": 508
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 516,
+            "right": 573
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 588,
+            "right": 726
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-layer-group",
+            "left": 597,
+            "right": 609
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 14,
+          "y": 168,
+          "width": 332,
+          "height": 718
+        },
+        "tabs": {
+          "x": 14,
+          "y": 906,
+          "width": 332,
+          "height": 62
+        },
+        "content": {
+          "x": 14,
+          "y": 988,
+          "width": 332,
+          "height": 7821
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 8865,
+          "width": 360,
+          "height": 733
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "390x844": {
+        "viewport": [
+          390,
+          844
+        ],
+        "document": [
+          390,
+          9407
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 176,
+            "right": 596
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 210,
+            "right": 570
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 329,
+            "right": 403
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 359,
+            "right": 394
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 409,
+            "right": 481
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 418,
+            "right": 430
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 438,
+            "right": 472
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-checklist",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 487,
+            "right": 582
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-list-check",
+            "left": 496,
+            "right": 508
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 516,
+            "right": 573
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 588,
+            "right": 726
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-layer-group",
+            "left": 597,
+            "right": 609
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 14,
+          "y": 168,
+          "width": 362,
+          "height": 711
+        },
+        "tabs": {
+          "x": 14,
+          "y": 899,
+          "width": 362,
+          "height": 62
+        },
+        "content": {
+          "x": 14,
+          "y": 981,
+          "width": 362,
+          "height": 7580
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 8616,
+          "width": 390,
+          "height": 733
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "568x320": {
+        "viewport": [
+          568,
+          320
+        ],
+        "document": [
+          568,
+          8386
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 256,
+            "right": 676
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 388,
+            "right": 748
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-checklist",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 495,
+            "right": 592
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 524,
+            "right": 583
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 598,
+            "right": 739
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-layer-group",
+            "left": 607,
+            "right": 619
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 627,
+            "right": 730
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 745,
+            "right": 864
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 754,
+            "right": 767
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 775,
+            "right": 855
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 870,
+            "right": 1023
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 879,
+            "right": 892
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 14,
+          "y": 172,
+          "width": 540,
+          "height": 565
+        },
+        "tabs": {
+          "x": 14,
+          "y": 757,
+          "width": 540,
+          "height": 60
+        },
+        "content": {
+          "x": 14,
+          "y": 837,
+          "width": 540,
+          "height": 6703
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 7595,
+          "width": 568,
+          "height": 733
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "768x1024": {
+        "viewport": [
+          768,
+          1024
+        ],
+        "document": [
+          753,
+          7080
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 573,
+            "right": 933
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 751,
+            "right": 870
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 760,
+            "right": 773
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 781,
+            "right": 861
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 876,
+            "right": 1029
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 885,
+            "right": 898
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 906,
+            "right": 1020
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 1035,
+            "right": 1099
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-circle-question",
+            "left": 1044,
+            "right": 1057
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 1065,
+            "right": 1090
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 20,
+          "y": 166,
+          "width": 713,
+          "height": 548
+        },
+        "tabs": {
+          "x": 20,
+          "y": 734,
+          "width": 713,
+          "height": 70
+        },
+        "content": {
+          "x": 20,
+          "y": 824,
+          "width": 713,
+          "height": 5677
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 6501,
+          "width": 753,
+          "height": 580
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "1024x768": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "document": [
+          1009,
+          6260
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 829,
+            "right": 1189
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 1006,
+            "right": 1176
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 1017,
+            "right": 1031
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 1039,
+            "right": 1165
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 1184,
+            "right": 1255
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-circle-question",
+            "left": 1195,
+            "right": 1209
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 1217,
+            "right": 1244
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 40,
+          "y": 157,
+          "width": 929,
+          "height": 476
+        },
+        "tabs": {
+          "x": 40,
+          "y": 653,
+          "width": 929,
+          "height": 75
+        },
+        "content": {
+          "x": 40,
+          "y": 748,
+          "width": 929,
+          "height": 5165
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 5913,
+          "width": 1009,
+          "height": 347
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "1280x720": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "document": [
+          1265,
+          6045
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 1085,
+            "right": 1445
+          },
+          {
+            "tag": "a",
+            "id": "",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 1216,
+            "right": 1288
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 40,
+          "y": 106,
+          "width": 1185,
+          "height": 443
+        },
+        "tabs": {
+          "x": 73,
+          "y": 569,
+          "width": 1120,
+          "height": 75
+        },
+        "content": {
+          "x": 73,
+          "y": 664,
+          "width": 1120,
+          "height": 5034
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 5698,
+          "width": 1265,
+          "height": 347
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      },
+      "1440x900": {
+        "viewport": [
+          1440,
+          900
+        ],
+        "document": [
+          1425,
+          6045
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 1245,
+            "right": 1605
+          }
+        ],
+        "h1": 1,
+        "title": "Resident Evil 2 Remake — Guia de platina e troféus",
+        "canonical": "https://atlasachievement.com.br/jogo/resident-evil-2-remake",
+        "hero": {
+          "x": 40,
+          "y": 106,
+          "width": 1345,
+          "height": 443
+        },
+        "tabs": {
+          "x": 153,
+          "y": 569,
+          "width": 1120,
+          "height": 75
+        },
+        "content": {
+          "x": 153,
+          "y": 664,
+          "width": 1120,
+          "height": 5034
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 5698,
+          "width": 1425,
+          "height": 347
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 22,
+        "trophyCards": 42,
+        "consoleErrors": []
+      }
+    },
+    "inside": {
+      "320x568": {
+        "viewport": [
+          320,
+          568
+        ],
+        "document": [
+          320,
+          6425
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 144,
+            "right": 564
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 140,
+            "right": 500
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 314,
+            "right": 452
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-layer-group",
+            "left": 323,
+            "right": 335
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 343,
+            "right": 443
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 458,
+            "right": 575
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 467,
+            "right": 479
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 487,
+            "right": 566
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 581,
+            "right": 730
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 590,
+            "right": 602
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 610,
+            "right": 721
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 14,
+          "y": 168,
+          "width": 292,
+          "height": 665
+        },
+        "tabs": {
+          "x": 14,
+          "y": 853,
+          "width": 292,
+          "height": 62
+        },
+        "content": {
+          "x": 14,
+          "y": 935,
+          "width": 292,
+          "height": 4744
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 5679,
+          "width": 320,
+          "height": 747
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "360x800": {
+        "viewport": [
+          360,
+          800
+        ],
+        "document": [
+          360,
+          5963
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 162,
+            "right": 582
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 180,
+            "right": 540
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 314,
+            "right": 452
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 343,
+            "right": 443
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 458,
+            "right": 575
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 467,
+            "right": 479
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 487,
+            "right": 566
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 581,
+            "right": 730
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 590,
+            "right": 602
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 610,
+            "right": 721
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 14,
+          "y": 168,
+          "width": 332,
+          "height": 630
+        },
+        "tabs": {
+          "x": 14,
+          "y": 818,
+          "width": 332,
+          "height": 62
+        },
+        "content": {
+          "x": 14,
+          "y": 900,
+          "width": 332,
+          "height": 4331
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 5231,
+          "width": 360,
+          "height": 733
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "390x844": {
+        "viewport": [
+          390,
+          844
+        ],
+        "document": [
+          390,
+          5852
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 176,
+            "right": 596
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 210,
+            "right": 570
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-extras",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 314,
+            "right": 452
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 343,
+            "right": 443
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 458,
+            "right": 575
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-puzzle-piece",
+            "left": 467,
+            "right": 479
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 487,
+            "right": 566
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 581,
+            "right": 730
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 590,
+            "right": 602
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 610,
+            "right": 721
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 14,
+          "y": 168,
+          "width": 362,
+          "height": 615
+        },
+        "tabs": {
+          "x": 14,
+          "y": 803,
+          "width": 362,
+          "height": 62
+        },
+        "content": {
+          "x": 14,
+          "y": 885,
+          "width": 362,
+          "height": 4235
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 5120,
+          "width": 390,
+          "height": 733
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "568x320": {
+        "viewport": [
+          568,
+          320
+        ],
+        "document": [
+          568,
+          5313
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--one",
+            "left": 256,
+            "right": 676
+          },
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 388,
+            "right": 748
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-dlc",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 466,
+            "right": 586
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 496,
+            "right": 577
+          },
+          {
+            "tag": "a",
+            "id": "guideTabButton-attention",
+            "className": "atlas-guide-layer-nav__button",
+            "left": 592,
+            "right": 744
+          },
+          {
+            "tag": "i",
+            "id": "",
+            "className": "fas fa-triangle-exclamation",
+            "left": 601,
+            "right": 613
+          },
+          {
+            "tag": "span",
+            "id": "",
+            "className": "",
+            "left": 621,
+            "right": 735
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 14,
+          "y": 168,
+          "width": 540,
+          "height": 579
+        },
+        "tabs": {
+          "x": 14,
+          "y": 767,
+          "width": 540,
+          "height": 60
+        },
+        "content": {
+          "x": 14,
+          "y": 847,
+          "width": 540,
+          "height": 3733
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 4580,
+          "width": 568,
+          "height": 733
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "768x1024": {
+        "viewport": [
+          768,
+          1024
+        ],
+        "document": [
+          753,
+          4909
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 573,
+            "right": 933
+          },
+          {
+            "tag": "button",
+            "id": "",
+            "className": "atlas-section-toggle",
+            "left": 166,
+            "right": 845
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 20,
+          "y": 166,
+          "width": 713,
+          "height": 562
+        },
+        "tabs": {
+          "x": 20,
+          "y": 748,
+          "width": 713,
+          "height": 70
+        },
+        "content": {
+          "x": 20,
+          "y": 838,
+          "width": 713,
+          "height": 3492
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 4330,
+          "width": 753,
+          "height": 580
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "1024x768": {
+        "viewport": [
+          1024,
+          768
+        ],
+        "document": [
+          1009,
+          4807
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 829,
+            "right": 1189
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 40,
+          "y": 165,
+          "width": 929,
+          "height": 458
+        },
+        "tabs": {
+          "x": 40,
+          "y": 643,
+          "width": 929,
+          "height": 60
+        },
+        "content": {
+          "x": 40,
+          "y": 723,
+          "width": 929,
+          "height": 3737
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 4460,
+          "width": 1009,
+          "height": 347
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "1280x720": {
+        "viewport": [
+          1280,
+          720
+        ],
+        "document": [
+          1265,
+          4097
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 1085,
+            "right": 1445
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 40,
+          "y": 106,
+          "width": 1185,
+          "height": 458
+        },
+        "tabs": {
+          "x": 73,
+          "y": 584,
+          "width": 1120,
+          "height": 60
+        },
+        "content": {
+          "x": 73,
+          "y": 664,
+          "width": 1120,
+          "height": 3087
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 3750,
+          "width": 1265,
+          "height": 347
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      },
+      "1440x900": {
+        "viewport": [
+          1440,
+          900
+        ],
+        "document": [
+          1425,
+          4097
+        ],
+        "horizontalOverflow": false,
+        "overflow": [
+          {
+            "tag": "div",
+            "id": "",
+            "className": "atlas-bg-orb atlas-bg-orb--two",
+            "left": 1245,
+            "right": 1605
+          }
+        ],
+        "h1": 1,
+        "title": "INSIDE",
+        "canonical": "https://atlasachievement.com.br/jogo/inside",
+        "hero": {
+          "x": 40,
+          "y": 106,
+          "width": 1345,
+          "height": 458
+        },
+        "tabs": {
+          "x": 153,
+          "y": 584,
+          "width": 1120,
+          "height": 60
+        },
+        "content": {
+          "x": 153,
+          "y": 664,
+          "width": 1120,
+          "height": 3087
+        },
+        "sidebar": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "footer": {
+          "x": 0,
+          "y": 3750,
+          "width": 1425,
+          "height": 347
+        },
+        "visiblePanels": [
+          "summary"
+        ],
+        "sectionLinks": 0,
+        "trophyCards": 14,
+        "consoleErrors": []
+      }
+    }
+  }
+}

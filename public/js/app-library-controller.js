@@ -19,8 +19,10 @@ window.AppLibraryController = (() => {
         search: state.librarySearch,
         sort: state.librarySort,
         statusFilter: state.libraryStatus,
+        platform: state.libraryPlatform,
         availableGames: state.availableGames,
-        storageLabel: getStorageLabel()
+        storageLabel: getStorageLabel(),
+        userSession: state.userSession
       });
     }
 
@@ -147,6 +149,7 @@ window.AppLibraryController = (() => {
 
     async function refreshAccountLibrary(options = {}) {
       if (!isAccountLibrary()) return restoreLocalLibrary();
+      if (!options.silent) UI.renderLibraryLoading?.();
       try {
         const response = await ApiService.getUserLibrary();
         await applyAccountPayload(response);
@@ -154,9 +157,14 @@ window.AppLibraryController = (() => {
         return response;
       } catch (error) {
         if (error.status === 401) {
+          state.userSession = { authenticated: false, user: null };
           restoreLocalLibrary();
+          window.dispatchEvent?.(new CustomEvent('atlas:user-session-expired'));
+          UI.showToast('Sua sessão expirou. O progresso local deste dispositivo continua disponível.', 'error');
           return null;
         }
+        renderLibraryView();
+        UI.renderLibraryError?.();
         if (!options.silent) {
           UI.showToast(error.message || 'Não foi possível carregar biblioteca da conta.', 'error');
         }

@@ -47,22 +47,40 @@ window.AppCatalog = (() => {
     const previousFacetCounts = state.catalogResponse?.facetCounts
       || state.initialState?.catalog?.facetCounts
       || null;
-    state.catalogResponse = await apiService.getGames({
+    const incomingResponse = await apiService.getGames({
       q: options.search !== undefined ? options.search : state.catalogSearch,
       sort: options.sort || state.catalogSort,
       facet: options.facet || state.catalogFacet,
+      platform: options.platform || state.catalogPlatform,
+      status: options.status || state.catalogStatus,
       page: options.page || state.catalogPage,
-      limit: Number(options.limit || 24)
+      limit: Number(options.limit || 8)
     });
-    if (!state.catalogResponse.facetCounts && previousFacetCounts) {
-      state.catalogResponse.facetCounts = previousFacetCounts;
+    if (!incomingResponse.facetCounts && previousFacetCounts) {
+      incomingResponse.facetCounts = previousFacetCounts;
     }
+    if (options.append) {
+      const previousItems = Array.isArray(state.catalogResponse?.items) ? state.catalogResponse.items : [];
+      const seen = new Set(previousItems.map(game => String(game?.slug || '').trim()).filter(Boolean));
+      incomingResponse.items = [
+        ...previousItems,
+        ...(Array.isArray(incomingResponse.items) ? incomingResponse.items.filter(game => {
+          const slug = String(game?.slug || '').trim();
+          if (!slug || seen.has(slug)) return false;
+          seen.add(slug);
+          return true;
+        }) : [])
+      ];
+    }
+    state.catalogResponse = incomingResponse;
 
     state.catalogPage = state.catalogResponse.pagination?.page || 1;
     ui.renderCatalog(state.catalogResponse, {
       search: state.catalogSearch,
       sort: state.catalogSort,
       facet: state.catalogFacet,
+      platform: state.catalogPlatform,
+      status: state.catalogStatus,
       compareSelection: state.catalogCompare,
       intent: state.catalogIntent,
       allGames: state.availableGames

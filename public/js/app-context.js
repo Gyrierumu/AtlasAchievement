@@ -12,9 +12,13 @@ window.AppContextFactory = (() => {
       librarySearch: '',
       librarySort: 'recent',
       libraryStatus: 'all',
+      libraryPlatform: 'all',
       catalogSearch: '',
       catalogSort: 'recommended-desc',
       catalogFacet: 'all',
+      catalogPlatform: 'all',
+      catalogStatus: 'all',
+      catalogLoadingMore: false,
       catalogPage: 1,
       catalogResponse: { items: [], pagination: { page: 1, totalPages: 1, total: 0 } },
       catalogCompare: [],
@@ -45,6 +49,22 @@ window.AppContextFactory = (() => {
       state.catalogResponse = state.initialState.catalog;
       state.catalogPage = Number(state.catalogResponse?.pagination?.page || 1);
       state.availableGames = Array.isArray(state.catalogResponse?.items) ? state.catalogResponse.items : [];
+      const initialFilters = state.initialState.catalogFilters || {};
+      const routeParams = new URLSearchParams(window.location.search);
+      state.catalogSearch = String(initialFilters.search || routeParams.get('q') || '');
+      state.catalogPlatform = String(initialFilters.platform || routeParams.get('platform') || 'all');
+      state.catalogStatus = String(initialFilters.status || routeParams.get('status') || 'all');
+      state.catalogSort = String(initialFilters.sort || routeParams.get('sort') || 'recommended-desc');
+    }
+    if (window.location.pathname === '/biblioteca') {
+      const libraryParams = new URLSearchParams(window.location.search);
+      const libraryPlatform = String(libraryParams.get('platform') || 'all');
+      const libraryStatus = String(libraryParams.get('status') || 'all');
+      const librarySort = String(libraryParams.get('sort') || 'recent');
+      state.librarySearch = String(libraryParams.get('q') || '');
+      state.libraryPlatform = ['all', 'ps4', 'ps5', 'ps4-ps5'].includes(libraryPlatform) ? libraryPlatform : 'all';
+      state.libraryStatus = ['all', 'saved', 'in-progress', 'paused', 'completed'].includes(libraryStatus) ? libraryStatus : 'all';
+      state.librarySort = ['recent', 'added-desc', 'progress-desc', 'remaining-asc', 'name-asc'].includes(librarySort) ? librarySort : 'recent';
     }
 
     const noop = () => {};
@@ -272,6 +292,8 @@ window.AppContextFactory = (() => {
         search: state.catalogSearch,
         sort: state.catalogSort,
         facet: state.catalogFacet,
+        platform: state.catalogPlatform,
+        status: state.catalogStatus,
         compareSelection: state.catalogCompare,
         intent: state.catalogIntent,
         allGames: state.availableGames

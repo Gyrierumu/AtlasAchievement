@@ -32,12 +32,14 @@
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/catalog.css">
   <link rel="stylesheet" href="/css/guide.css">
   <link rel="stylesheet" href="/css/checklist.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
   <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/catalog.css">
+  <link rel="stylesheet" href="/css/library.css">
+  <link rel="stylesheet" href="/css/guide-vanguard.css">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
@@ -67,6 +69,13 @@
         <button type="button" data-feedback-open class="atlas-nav-link">Feedback</button>
       </nav>
 
+      <form id="catalogHeaderSearchForm" class="atlas-catalog-header-search" role="search">
+        <label class="sr-only" for="catalogHeaderSearch">Buscar guia no catálogo</label>
+        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+        <input id="catalogHeaderSearch" type="search" placeholder="Buscar guia..." autocomplete="off">
+        <button type="submit" class="sr-only">Buscar</button>
+      </form>
+
       <div class="atlas-header-actions flex items-center gap-2 md:gap-3">
         <div id="publicAuthGuest" class="atlas-auth-header atlas-auth-header--guest">
           <button type="button" class="atlas-text-action" data-auth-open="login">Entrar</button>
@@ -95,7 +104,6 @@
     </div>
   </header>
 
-  <span id="topo" class="sr-only" aria-hidden="true"></span>
   <main id="mainContent" tabindex="-1" class="atlas-main-shell max-w-[1320px] mx-auto px-4 lg:px-6 pt-6 space-y-6">
     <section id="view-home" class="atlas-view-shell __HOME_VIEW_CLASS__ space-y-4">
       <section class="atlas-home-hero atlas-panel atlas-panel--primary overflow-hidden">
@@ -240,55 +248,98 @@
 
     </section>
 
-    <section id="view-catalog" class="atlas-view-shell __CATALOG_VIEW_CLASS__ space-y-3 pt-1">
-      <div class="atlas-section-head atlas-section-head--catalog atlas-catalog-head">
-        <div>
-          <div id="catalogBreadcrumbs">__CATALOG_BREADCRUMBS__</div><div class="atlas-eyebrow atlas-catalog-eyebrow mt-3">Catálogo</div>
-          <__CATALOG_HEADING_TAG__ id="catalogTitle" class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">__CATALOG_TITLE__</__CATALOG_HEADING_TAG__>
-          <p id="catalogHeroDescription" class="atlas-catalog-hero-copy">__CATALOG_HERO_DESCRIPTION__</p>
-        </div>
-      </div>
+    <section id="view-catalog" class="atlas-view-shell __CATALOG_VIEW_CLASS__">
+      <div class="atlas-catalog-page">
+        <header class="atlas-catalog-head">
+          <div id="catalogBreadcrumbs" class="sr-only">__CATALOG_BREADCRUMBS__</div>
+          <__CATALOG_HEADING_TAG__ id="catalogTitle">__CATALOG_TITLE__</__CATALOG_HEADING_TAG__>
+          <p id="catalogHeroDescription">__CATALOG_HERO_DESCRIPTION__</p>
 
-      <div class="atlas-panel atlas-panel--plain atlas-catalog-shell p-3 md:p-4 space-y-2">
-        <div class="atlas-catalog-controls">
-          <label class="block atlas-catalog-search-field">
-            <span class="atlas-catalog-control-label">Buscar jogos</span>
-            <input id="catalogSearch" type="search" placeholder="Buscar jogos..." class="atlas-input min-h-[46px] h-[46px] py-3">
+          <form id="catalogMobileSearchForm" class="atlas-catalog-mobile-search" role="search">
+            <label class="sr-only" for="catalogSearch">Buscar jogos no catálogo</label>
+            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+            <input id="catalogSearch" type="search" placeholder="Buscar jogos..." autocomplete="off">
             <button type="button" class="atlas-catalog-search-clear" data-catalog-clear-search hidden aria-hidden="true" aria-label="Limpar busca"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+            <button type="submit" class="sr-only">Buscar jogos</button>
+          </form>
+        </header>
+
+        <section id="catalogSegments" class="atlas-catalog-filterbar" aria-label="Filtros do catálogo">
+          <span class="atlas-catalog-filterbar__label"><i class="fas fa-filter" aria-hidden="true"></i> Filtros:</span>
+
+          <label class="atlas-catalog-select">
+            <span class="sr-only">Filtrar por dificuldade</span>
+            <select id="catalogDifficultyFilter">
+              <option value="all">Dificuldade</option>
+              <option value="difficulty-low">Fácil</option>
+              <option value="difficulty-mid">Médio</option>
+              <option value="difficulty-high">Difícil</option>
+            </select>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </label>
-          <label class="block">
-            <span class="atlas-catalog-control-label">Ordenar</span>
-            <select id="catalogSort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
+
+          <label class="atlas-catalog-select">
+            <span class="sr-only">Filtrar por plataforma</span>
+            <select id="catalogPlatformFilter">
+              <option value="all">Plataforma</option>
+              <option value="ps5">PS5</option>
+              <option value="ps4">PS4</option>
+              <option value="pc">PC</option>
+              <option value="xbox">Xbox</option>
+              <option value="nintendo">Nintendo</option>
+            </select>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </label>
+
+          <label class="atlas-catalog-select">
+            <span class="sr-only">Filtrar por status editorial</span>
+            <select id="catalogStatusFilter">
+              <option value="all">Status</option>
+              <option value="verified">Verificado</option>
+              <option value="review">Em revisão</option>
+            </select>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </label>
+
+          <span class="atlas-catalog-filterbar__divider" aria-hidden="true"></span>
+          <div id="catalogActiveFilters" class="atlas-catalog-active-filters" aria-live="polite"></div>
+          <button type="button" class="atlas-catalog-clear-all" data-catalog-clear-filters hidden>Limpar tudo</button>
+
+          <label class="atlas-catalog-sort">
+            <span class="sr-only">Ordenar guias</span>
+            <select id="catalogSort">
               <option value="recommended-desc">Melhor para começar</option>
-              <option value="updated-desc">Atualizados recentemente</option>
-              <option value="created-desc">Mais novos no catálogo</option>
-              <option value="time-asc">Tempo: menor primeiro</option>
-              <option value="time-desc">Tempo: maior primeiro</option>
-              <option value="difficulty-asc">Dificuldade: menor primeiro</option>
-              <option value="difficulty-desc">Dificuldade: maior primeiro</option>
-              <option value="trophies-asc">Troféus: menos primeiro</option>
-              <option value="trophies-desc">Troféus: mais primeiro</option>
+              <option value="updated-desc">Revisados recentemente</option>
+              <option value="created-desc">Mais recentes</option>
+              <option value="time-asc">Menor duração</option>
+              <option value="time-desc">Maior duração</option>
+              <option value="difficulty-asc">Menor dificuldade</option>
+              <option value="difficulty-desc">Maior dificuldade</option>
+              <option value="trophies-asc">Menos troféus</option>
+              <option value="trophies-desc">Mais troféus</option>
               <option value="name-asc">Nome A–Z</option>
             </select>
+            <i class="fas fa-arrow-down-wide-short" aria-hidden="true"></i>
           </label>
-        </div>
+        </section>
 
-        <div id="catalogSegments" class="atlas-region atlas-catalog-chip-row" aria-label="Filtros principais de coleção"></div>
-        <div id="catalogIntentBar" class="atlas-region atlas-catalog-intent-bar" aria-label="Filtros por experiência"></div>
-        <div id="catalogActiveFilters" class="atlas-catalog-active-filters" aria-live="polite"></div>
-        <div id="catalogCompareTray" class="atlas-region hidden" aria-hidden="true"></div>
-        <div id="catalogStarterPicksSlot">__CATALOG_STARTER_PICKS__</div>
+        <div id="catalogIntentBar" class="hidden" aria-hidden="true"></div>
+        <div id="catalogCompareTray" class="hidden" aria-hidden="true"></div>
+        <div id="catalogStarterPicksSlot" class="hidden" aria-hidden="true"></div>
 
         <div class="atlas-catalog-listbar">
-          <p id="catalogSummary" class="atlas-catalog-listbar__summary">__CATALOG_SUMMARY__</p>
-          <div id="catalogVerificationNotice" class="atlas-catalog-verification" aria-live="polite">__CATALOG_VERIFICATION_NOTICE__</div>
+          <p id="catalogSummary" aria-live="polite">__CATALOG_SUMMARY__</p>
+          <div id="catalogVerificationNotice" class="sr-only" aria-live="polite">__CATALOG_VERIFICATION_NOTICE__</div>
         </div>
 
-        <div id="catalogList" class="atlas-region atlas-render-list catalog-grid">__CATALOG_SSR_LIST__</div>
-        <div id="catalogPagination" class="flex flex-wrap items-center gap-3">__CATALOG_SSR_PAGINATION__</div>
-        <div id="catalogFinalCta">__CATALOG_FINAL_CTA__</div>
+        <div id="catalogList" class="atlas-region catalog-grid">__CATALOG_SSR_LIST__</div>
+        <div id="catalogPagination">__CATALOG_SSR_PAGINATION__</div>
+        <div id="catalogLoadError" class="atlas-catalog-load-error" role="alert" hidden>
+          <p>Não foi possível carregar os guias agora.</p>
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-catalog-retry> Tentar novamente</button>
+        </div>
 
-        <details class="atlas-catalog-understanding">
+        <details id="catalogUnderstanding" class="atlas-catalog-understanding" __CATALOG_UNDERSTANDING_ATTR__>
           <summary class="atlas-catalog-understanding__summary">
             <span>
               <span class="atlas-section-kicker">Entenda esta coleção</span>
@@ -338,52 +389,139 @@
       __SEO_PAGE_CONTENT__
     </section>
 
-    <section id="view-library" class="atlas-view-shell hidden space-y-4 pt-2 is-library-loading">
-      <div class="atlas-section-head atlas-section-head--library">
-        <div>
-          <div class="atlas-eyebrow">Biblioteca</div>
-          <__LIBRARY_HEADING_TAG__ class="text-[36px] md:text-[52px] leading-none font-extrabold tracking-tight">Minha Biblioteca</__LIBRARY_HEADING_TAG__>
-        </div>
-        <div class="atlas-library-head-copy">
-          <p id="librarySummary" class="text-[15px] text-white/55 max-w-xl"></p>
-          <p id="librarySyncStatus" class="atlas-sync-status">Progresso salvo localmente neste navegador.</p>
-        </div>
-      </div>
-
-      <div class="library-toolbar atlas-panel atlas-panel--support">
-        <div class="library-toolbar__content">
-          <div>
-            <p class="text-white/58 mt-2 max-w-2xl">Continue de onde parou, filtre checklists em andamento e veja recomendações para manter sua próxima platina andando.</p>
+    <section id="view-library" class="atlas-view-shell hidden is-library-loading">
+      <div class="atlas-library-layout">
+        <aside class="atlas-library-sidebar" aria-label="Navegação da biblioteca">
+          <div id="librarySidebarIdentity" class="atlas-library-sidebar__identity">
+            <span class="atlas-library-sidebar__avatar" aria-hidden="true"><i class="fas fa-bookmark"></i></span>
+            <span>
+              <strong>Minha jornada</strong>
+              <small>Progresso salvo neste dispositivo</small>
+            </span>
           </div>
-          <div class="library-toolbar__controls">
-            <label class="library-toolbar__search">
-              <span class="sr-only">Buscar na biblioteca</span>
-              <input id="librarySearch" type="search" placeholder="Buscar jogo salvo" class="atlas-input min-h-[46px] h-[46px] py-3">
+
+          <nav class="atlas-library-sidebar__nav" aria-label="Seções da biblioteca">
+            <button type="button" class="is-active" data-library-status="all">
+              <i class="fas fa-layer-group" aria-hidden="true"></i><span>Minha biblioteca</span>
+            </button>
+            <button type="button" data-library-status="in-progress">
+              <i class="fas fa-route" aria-hidden="true"></i><span>Em andamento</span>
+            </button>
+            <button type="button" data-library-status="saved">
+              <i class="fas fa-bookmark" aria-hidden="true"></i><span>Salvos para depois</span>
+            </button>
+            <button type="button" data-library-status="completed">
+              <i class="fas fa-trophy" aria-hidden="true"></i><span>Concluídos</span>
+            </button>
+          </nav>
+
+          <a href="/perfil" data-view-link="profile" class="atlas-library-sidebar__profile hidden" data-library-profile-link>
+            <i class="fas fa-user-gear" aria-hidden="true"></i><span>Perfil e conta</span>
+          </a>
+        </aside>
+
+        <div class="atlas-library-content">
+          <section id="libraryOverview" class="atlas-library-summary-panel" aria-labelledby="libraryTitle">
+            <div class="atlas-library-summary-panel__intro">
+              <span class="atlas-section-kicker">Biblioteca</span>
+              <__LIBRARY_HEADING_TAG__ id="libraryTitle">Minha Biblioteca</__LIBRARY_HEADING_TAG__>
+              <p>Visão geral da sua jornada de platinas.</p>
+              <p id="librarySyncStatus" class="atlas-library-storage-note">Verificando onde seu progresso está salvo.</p>
+            </div>
+            <div id="libraryStats" class="atlas-library-stats" aria-live="polite">
+              <div class="atlas-library-stat-skeleton" aria-hidden="true"></div>
+              <div class="atlas-library-stat-skeleton" aria-hidden="true"></div>
+              <div class="atlas-library-stat-skeleton" aria-hidden="true"></div>
+            </div>
+          </section>
+
+          <section class="atlas-library-filters" aria-label="Pesquisar e filtrar biblioteca">
+            <label class="atlas-library-search">
+              <span class="sr-only">Filtrar na biblioteca</span>
+              <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+              <input id="librarySearch" type="search" placeholder="Filtrar na biblioteca..." autocomplete="off">
+              <button type="button" data-library-clear-search aria-label="Limpar busca na biblioteca" hidden><i class="fas fa-xmark" aria-hidden="true"></i></button>
             </label>
-            <label class="library-toolbar__sort">
-              <span class="sr-only">Ordenar biblioteca</span>
-              <select id="librarySort" class="atlas-input min-h-[46px] h-[46px] py-3 pr-10">
-                <option value="recent">Atividade recente</option>
-                <option value="best-next">Melhor para abrir hoje</option>
-                <option value="progress-desc">Maior progresso</option>
-                <option value="remaining-asc">Mais perto de 100%</option>
-                <option value="difficulty-desc">Maior dificuldade</option>
-                <option value="name-asc">Nome A–Z</option>
+
+            <label class="atlas-library-select">
+              <span class="sr-only">Filtrar por plataforma</span>
+              <select id="libraryPlatform">
+                <option value="all">Plataforma: Todas</option>
+                <option value="ps5">Plataforma: PS5</option>
+                <option value="ps4">Plataforma: PS4</option>
+                <option value="ps4-ps5">Plataforma: PS4 e PS5</option>
               </select>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
             </label>
-            <div id="libraryStatusTabs" class="library-shelf__tabs" aria-label="Filtrar biblioteca por status"></div>
+
+            <label class="atlas-library-select">
+              <span class="sr-only">Filtrar por status</span>
+              <select id="libraryStatus">
+                <option value="all">Status: Todos</option>
+                <option value="in-progress">Status: Em andamento</option>
+                <option value="saved">Status: Salvos para depois</option>
+                <option value="paused">Status: Pausados</option>
+                <option value="completed">Status: Concluídos</option>
+              </select>
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </label>
+
+            <label class="atlas-library-select">
+              <span class="sr-only">Ordenar biblioteca</span>
+              <select id="librarySort">
+                <option value="recent">Ordenar: Atividade recente</option>
+                <option value="added-desc">Ordenar: Adicionados recentemente</option>
+                <option value="progress-desc">Ordenar: Maior progresso</option>
+                <option value="remaining-asc">Ordenar: Mais perto da conclusão</option>
+                <option value="name-asc">Ordenar: Nome A–Z</option>
+              </select>
+              <i class="fas fa-arrow-down-wide-short" aria-hidden="true"></i>
+            </label>
+          </section>
+
+          <div id="libraryLoadError" class="atlas-library-error" role="alert" hidden>
+            <span><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span>
+            <div>
+              <strong>Não foi possível carregar sua biblioteca agora.</strong>
+              <p>Tente novamente sem perder o progresso que já está salvo.</p>
+            </div>
+            <button type="button" class="atlas-btn atlas-btn-secondary" data-library-retry>Tentar novamente</button>
           </div>
+
+          <p id="librarySummary" class="sr-only" aria-live="polite"></p>
+
+          <section id="libraryContinue" class="atlas-library-section" aria-labelledby="libraryContinueTitle">
+            <div class="atlas-library-section__head">
+              <h2 id="libraryContinueTitle"><span aria-hidden="true"></span>Continuando a caça</h2>
+              <button type="button" class="atlas-library-section__link" data-library-status="in-progress">Ver todos</button>
+            </div>
+            <div id="libraryContinueGrid" class="atlas-library-progress-grid">
+              <div class="atlas-library-progress-skeleton" aria-hidden="true"></div>
+              <div class="atlas-library-progress-skeleton" aria-hidden="true"></div>
+              <div class="atlas-library-progress-skeleton" aria-hidden="true"></div>
+            </div>
+          </section>
+
+          <section id="librarySaved" class="atlas-library-section" aria-labelledby="librarySavedTitle">
+            <div class="atlas-library-section__head">
+              <h2 id="librarySavedTitle"><span aria-hidden="true"></span>Salvos para depois</h2>
+              <small id="librarySavedCount"></small>
+            </div>
+            <div id="librarySavedGrid" class="atlas-library-saved-grid"></div>
+          </section>
+
+          <section id="libraryOther" class="atlas-library-section" aria-labelledby="libraryOtherTitle" hidden>
+            <div class="atlas-library-section__head">
+              <h2 id="libraryOtherTitle"><span aria-hidden="true"></span>Outros jogos</h2>
+              <small id="libraryOtherCount"></small>
+            </div>
+            <div id="libraryOtherGrid" class="atlas-library-saved-grid"></div>
+          </section>
+
+          <section id="libraryEmptyState" class="atlas-library-empty" hidden></section>
+          <div id="libraryStatusLive" class="sr-only" aria-live="polite" aria-atomic="true"></div>
         </div>
       </div>
-
-      <div class="library-shelf">
-        <div id="libraryList" class="library-shelf__grid">
-          <div class="library-shelf__loading" role="status">Seus jogos salvos aparecerão aqui.</div>
-        </div>
-      </div>
-
-      <div id="libraryFocus" class="atlas-region library-focus-strip"></div>
-      <div id="librarySuggestions" class="library-secondary-grid"></div>
     </section>
 
     <section id="view-guide" class="atlas-view-shell __GUIDE_VIEW_CLASS__ pt-2 space-y-5" data-ssr-game="__HAS_SSR_GAME__">

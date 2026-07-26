@@ -58,6 +58,8 @@ const ALLOWED_FACETS = [
   'editorial-verified',
   'editorial-review'
 ];
+const ALLOWED_CATALOG_PLATFORMS = ['all', 'ps5', 'ps4', 'pc', 'xbox', 'nintendo'];
+const ALLOWED_CATALOG_STATUSES = ['all', 'verified', 'review'];
 
 function isNonEmptyString(value) {
   return typeof value === 'string' && value.trim().length > 0;
@@ -581,6 +583,8 @@ function normalizeListQuery(query = {}) {
   return {
     search: searchValue.trim().slice(0, 100),
     facet: typeof query.facet === 'string' ? query.facet.trim() : 'all',
+    platform: typeof query.platform === 'string' ? query.platform.trim().toLowerCase() : 'all',
+    status: typeof query.status === 'string' ? query.status.trim().toLowerCase() : 'all',
     sort: typeof query.sort === 'string' ? query.sort.trim() : 'name-asc',
     page: Number(query.page) || 1,
     limit: Number(query.limit) || 24
@@ -596,6 +600,14 @@ function validateListQuery(query) {
 
   if (!ALLOWED_SORTS.includes(query.sort)) {
     errors.push('sort inválido.');
+  }
+
+  if (!ALLOWED_CATALOG_PLATFORMS.includes(query.platform)) {
+    errors.push('platform inválida.');
+  }
+
+  if (!ALLOWED_CATALOG_STATUSES.includes(query.status)) {
+    errors.push('status inválido.');
   }
 
   if (!Number.isInteger(query.page) || query.page < 1) {

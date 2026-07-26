@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "audit": "resident-evil-5-structural-governance",
-  "lastChecked": "2026-07-21T23:41:25.693Z",
+  "lastChecked": "2026-07-26T03:45:22.944Z",
   "status": "PASS",
   "summary": {
     "total": 24,
@@ -47,7 +47,7 @@
   },
   "snapshot": {
     "file": "data/guides/resident-evil-5.json",
-    "sha256": "75281e7d54cbbf8911f3ff409e6c84aa444d9807bf14cce45f6675028fa1fb07",
+    "sha256": "f820307bd8242db57e343c5538a2d970e5a6a4bec7e0daee25fd5ab03ee33b78",
     "bytes": 393254
   },
   "manifest": {
@@ -192,7 +192,7 @@
     {
       "id": "DOM_BROWSER_COMPLETED",
       "ok": true,
-      "detail": "730695 bytes"
+      "detail": "737018 bytes"
     },
     {
       "id": "DOM_HYDRATED_SURFACE",

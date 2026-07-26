@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "audit": "resident-evil-5-links",
-  "lastChecked": "2026-07-21T23:42:10.560Z",
+  "lastChecked": "2026-07-26T03:45:48.128Z",
   "editorialReviewUnchanged": "2026-07-18",
   "status": "PASS_WITH_WARNINGS",
   "policy": {
@@ -778,7 +778,7 @@
     ]
   },
   "internalFragments": {
-    "occurrences": 82,
+    "occurrences": 97,
     "unique": 41,
     "valid": [
       "mainContent",
@@ -814,10 +814,10 @@
       "re5-boss-18-wesker-volcano",
       "re5-score-star-01",
       "re5-agitator-01",
+      "guideSummaryActions",
       "guideUsagePanel",
       "roadmap",
       "guideQuickPlan",
-      "guideSummaryActions",
       "guideAttentionPointsPanel",
       "guideFaqPanel",
       "guideCommentsPanel",
@@ -855,22 +855,6 @@
     "broken": []
   },
   "history": [
-    {
-      "lastChecked": "2026-07-21T23:17:00.056Z",
-      "status": "PASS_WITH_WARNINGS",
-      "summary": {
-        "total": 11,
-        "ok": 5,
-        "redirectValid": 0,
-        "blocked": 6,
-        "rateLimited": 0,
-        "inconclusive": 0,
-        "broken": 0,
-        "contentMismatch": 0,
-        "deterministicFailures": 0,
-        "warnings": 6
-      }
-    },
     {
       "lastChecked": "2026-07-21T23:34:37.150Z",
       "status": "PASS_WITH_WARNINGS",
@@ -946,6 +930,79 @@
     },
     {
       "lastChecked": "2026-07-21T23:42:10.560Z",
+      "status": "PASS_WITH_WARNINGS",
+      "summary": {
+        "total": 11,
+        "ok": 5,
+        "redirectValid": 0,
+        "blocked": 6,
+        "rateLimited": 0,
+        "inconclusive": 0,
+        "broken": 0,
+        "contentMismatch": 0,
+        "deterministicFailures": 0,
+        "warnings": 6
+      },
+      "sources": [
+        {
+          "id": "capcom-manual-ps4",
+          "classification": "OK",
+          "status": 206
+        },
+        {
+          "id": "pst-list-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "pst-guide-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-list-ps4",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-lost-in-nightmares",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "gamefaqs-desperate-escape",
+          "classification": "BLOCKED",
+          "status": 403
+        },
+        {
+          "id": "youtube-bsaa-30",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-heart-of-africa",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-score-stars-18",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "youtube-agitators-3",
+          "classification": "OK",
+          "status": 200
+        },
+        {
+          "id": "psnprofiles-sessions-re5",
+          "classification": "BLOCKED",
+          "status": 403
+        }
+      ]
+    },
+    {
+      "lastChecked": "2026-07-26T03:45:48.128Z",
       "status": "PASS_WITH_WARNINGS",
       "summary": {
         "total": 11,

@@ -641,7 +641,7 @@ window.UILibrary = (() => {
             <div class="library-empty-visual">
               <article class="library-empty-example" aria-label="Exemplo visual de guia salvo">
                 <span>Exemplo de guia salvo</span>
-                <strong>Hades</strong>
+                <strong>Guia salvo</strong>
                 <div class="library-empty-example__progress" aria-hidden="true"><span style="width:0%"></span></div>
                 <p>0% concluído</p>
                 <small>Próxima etapa: começar pelo roadmap</small>
@@ -657,5 +657,446 @@ window.UILibrary = (() => {
     target.innerHTML = sorted.map(renderLibraryGame).join('');
   }
 
-  return { renderLibrary };
+  function normalizeLibraryPlatform(value = '') {
+    const normalized = String(value || '').trim().toLowerCase();
+    if (/(^|[^a-z0-9])ps5([^a-z0-9]|$)|playstation\s*5/.test(normalized)) return 'ps5';
+    if (/(^|[^a-z0-9])ps4([^a-z0-9]|$)|playstation\s*4/.test(normalized)) return 'ps4';
+    return '';
+  }
+
+  function getLibraryPlatforms(game = {}) {
+    const candidates = [
+      ...(Array.isArray(game.platforms) ? game.platforms : []),
+      game.platform,
+      game.platform_base,
+      game.platformBase
+    ];
+    const joined = candidates.flatMap(value => String(value || '').split(/[|,/;+]/));
+    return [...new Set(joined.map(normalizeLibraryPlatform).filter(Boolean))];
+  }
+
+  function getLibraryPlatformLabel(game = {}) {
+    const platforms = getLibraryPlatforms(game);
+    if (platforms.includes('ps4') && platforms.includes('ps5')) return 'PS4 e PS5';
+    if (platforms.includes('ps5')) return 'PS5';
+    if (platforms.includes('ps4')) return 'PS4';
+    return '';
+  }
+
+  function matchesLibraryPlatform(game = {}, platform = 'all') {
+    if (!platform || platform === 'all') return true;
+    const platforms = getLibraryPlatforms(game);
+    if (platform === 'ps4-ps5') return platforms.includes('ps4') && platforms.includes('ps5');
+    return platforms.includes(platform);
+  }
+
+  function isLibraryInProgress(game = {}) {
+    if (game.status === 'paused' || game.status === 'completed') return false;
+    return game.status === 'in-progress' || (game.progress > 0 && game.progress < 100);
+  }
+
+  function isLibraryCompleted(game = {}) {
+    return game.status === 'completed' || game.progress >= 100;
+  }
+
+  function isLibrarySaved(game = {}) {
+    return game.status === 'saved' && game.progress <= 0;
+  }
+
+  function isLibraryPaused(game = {}) {
+    return game.status === 'paused';
+  }
+
+  function matchesLibraryStatus(game = {}, status = 'all') {
+    if (!status || status === 'all') return true;
+    if (status === 'in-progress') return isLibraryInProgress(game);
+    if (status === 'completed') return isLibraryCompleted(game);
+    if (status === 'paused') return isLibraryPaused(game);
+    if (status === 'saved') return isLibrarySaved(game);
+    return true;
+  }
+
+  function matchesLibrarySearch(game = {}, search = '') {
+    const query = String(search || '').trim().toLocaleLowerCase('pt-BR');
+    if (!query) return true;
+    const searchable = [
+      game.name,
+      getLibraryPlatformLabel(game),
+      game.statusLabel,
+      game.status === 'saved' ? 'salvos para depois não iniciados' : '',
+      game.status === 'in-progress' ? 'em andamento' : '',
+      game.status === 'completed' ? 'concluídos' : '',
+      game.status === 'paused' ? 'pausados' : ''
+    ].filter(Boolean).join(' ').toLocaleLowerCase('pt-BR');
+    return searchable.includes(query);
+  }
+
+  function sortLibraryItemsVanguard(items = [], sort = 'recent') {
+    return [...items].sort((a, b) => {
+      if (sort === 'name-asc') return String(a.name || '').localeCompare(String(b.name || ''), 'pt-BR');
+      if (sort === 'progress-desc') return b.progress - a.progress || a.remaining - b.remaining;
+      if (sort === 'remaining-asc') return a.remaining - b.remaining || b.progress - a.progress;
+      if (sort === 'added-desc') return new Date(b.savedAt || 0) - new Date(a.savedAt || 0);
+      return new Date(b.lastActivityAt || b.lastOpenedAt || b.savedAt || 0)
+        - new Date(a.lastActivityAt || a.lastOpenedAt || a.savedAt || 0);
+    });
+  }
+
+  function getLibrarySummaryStats(items = []) {
+    const tracked = items.filter(game => game.total > 0);
+    const completedTrophies = items.reduce((total, game) => total + Number(game.done || 0), 0);
+    const averageProgress = tracked.length
+      ? Math.round(tracked.reduce((total, game) => total + Number(game.progress || 0), 0) / tracked.length)
+      : 0;
+    return {
+      inProgress: items.filter(isLibraryInProgress).length,
+      completed: items.filter(isLibraryCompleted).length,
+      completedTrophies,
+      averageProgress,
+      trackedGames: tracked.length
+    };
+  }
+
+  function renderLibraryStatsVanguard(items = []) {
+    const target = qs('#libraryStats');
+    if (!target) return;
+    const stats = getLibrarySummaryStats(items);
+    const metrics = [
+      {
+        icon: 'fa-route',
+        value: stats.inProgress,
+        label: 'Jogos em andamento',
+        hint: 'Checklists com progresso real'
+      },
+      {
+        icon: 'fa-trophy',
+        value: stats.completedTrophies,
+        label: 'Troféus marcados',
+        hint: 'Conquistados nos jogos acompanhados'
+      },
+      {
+        icon: 'fa-chart-line',
+        value: stats.trackedGames ? `${stats.averageProgress}%` : '—',
+        label: 'Conclusão média',
+        hint: stats.trackedGames ? `${stats.trackedGames} ${pluralize(stats.trackedGames, 'checklist acompanhado', 'checklists acompanhados')}` : 'Sem base suficiente para calcular'
+      }
+    ];
+    target.innerHTML = metrics.map(metric => `
+      <div class="atlas-library-stat">
+        <strong class="atlas-library-stat__value"><i class="fas ${escapeAttribute(metric.icon)}" aria-hidden="true"></i>${escapeHtml(String(metric.value))}</strong>
+        <span class="atlas-library-stat__label">${escapeHtml(metric.label)}</span>
+        <small class="atlas-library-stat__hint">${escapeHtml(metric.hint)}</small>
+      </div>`).join('');
+  }
+
+  function getLibraryInitials(user = {}) {
+    const source = String(user.display_name || user.username || '').trim();
+    if (!source) return 'MJ';
+    return source.split(/\s+/).slice(0, 2).map(part => part.charAt(0)).join('').toUpperCase() || 'MJ';
+  }
+
+  function renderLibrarySidebarVanguard(options = {}, activeStatus = 'all') {
+    const identity = qs('#librarySidebarIdentity');
+    const profileLink = qs('[data-library-profile-link]');
+    const session = options.userSession || {};
+    const user = session.user || {};
+    if (identity) {
+      if (session.authenticated) {
+        const name = String(user.display_name || user.username || 'Conta Atlas').trim();
+        const avatarUrl = String(user.avatar_url || '').trim();
+        identity.innerHTML = `
+          <span class="atlas-library-sidebar__avatar" aria-hidden="true">
+            ${avatarUrl ? `<img src="${escapeAttribute(avatarUrl)}" alt="" loading="lazy" decoding="async" onerror="this.remove();this.parentElement.textContent='${escapeAttribute(getLibraryInitials(user))}'">` : escapeHtml(getLibraryInitials(user))}
+          </span>
+          <span><strong>${escapeHtml(name)}</strong><small>Biblioteca sincronizada na sua conta</small></span>`;
+      } else {
+        identity.innerHTML = `
+          <span class="atlas-library-sidebar__avatar" aria-hidden="true"><i class="fas fa-bookmark"></i></span>
+          <span><strong>Minha jornada</strong><small>Progresso salvo neste dispositivo</small></span>`;
+      }
+    }
+    profileLink?.classList.toggle('hidden', !session.authenticated);
+    document.querySelectorAll('.atlas-library-sidebar__nav [data-library-status]').forEach(button => {
+      const active = button.dataset.libraryStatus === activeStatus;
+      button.classList.toggle('is-active', active);
+      if (active) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    });
+  }
+
+  function getCompletedTrophyBreakdown(game = {}) {
+    const completed = new Set((Array.isArray(game.completed) ? game.completed : []).map(String));
+    const counts = { Ouro: 0, Prata: 0, Bronze: 0 };
+    (Array.isArray(game.trophies) ? game.trophies : []).forEach(trophy => {
+      if (!completed.has(String(trophy?.id || ''))) return;
+      const type = String(trophy?.type || '');
+      if (Object.hasOwn(counts, type)) counts[type] += 1;
+    });
+    return counts;
+  }
+
+  function renderLibraryProgressCardVanguard(game = {}, index = 0) {
+    const title = game.name || 'Jogo';
+    const key = getLibraryKey(game);
+    const banner = getLibraryBannerImage(game);
+    const cover = getLibraryCoverImage(game);
+    const image = banner || cover;
+    const progress = clampProgress(game.progress);
+    const remainingCopy = game.total > 0
+      ? `${game.remaining} ${pluralize(game.remaining, 'troféu faltante', 'troféus faltantes')}`
+      : 'Checklist sem total informado';
+    const breakdown = getCompletedTrophyBreakdown(game);
+    const loading = index === 0 ? 'eager' : 'lazy';
+    return `
+      <article class="atlas-library-progress-card" data-library-game="${escapeAttribute(key)}">
+        <div class="atlas-library-progress-card__media${!banner && cover ? ' is-cover' : ''}">
+          <span class="atlas-library-progress-card__fallback">${escapeHtml(title)}</span>
+          ${image ? `<img src="${escapeAttribute(getGameImageSrc(image))}" alt="Arte de ${escapeAttribute(title)}" loading="${loading}" decoding="async" width="640" height="360" sizes="(min-width: 1280px) 23vw, (min-width: 900px) 31vw, (min-width: 600px) 48vw, 100vw" onerror="this.hidden=true;">` : ''}
+          <div class="atlas-library-progress-card__headline">
+            <h3>${escapeHtml(title)}</h3>
+            <p>${progress}% concluído · ${escapeHtml(remainingCopy)}</p>
+          </div>
+        </div>
+        <div class="atlas-library-progress-card__body">
+          <div class="atlas-library-progress-card__bar" role="progressbar" aria-label="Progresso de ${escapeAttribute(title)}: ${progress}%" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${progress}" style="--library-progress:${progress}%">
+            <span></span>
+          </div>
+          <div class="atlas-library-progress-card__footer">
+            <ul class="atlas-library-trophy-breakdown" aria-label="Troféus conquistados por raridade">
+              <li class="is-gold" aria-label="${breakdown.Ouro} ${pluralize(breakdown.Ouro, 'troféu de ouro conquistado', 'troféus de ouro conquistados')}">${breakdown.Ouro}</li>
+              <li class="is-silver" aria-label="${breakdown.Prata} ${pluralize(breakdown.Prata, 'troféu de prata conquistado', 'troféus de prata conquistados')}">${breakdown.Prata}</li>
+              <li class="is-bronze" aria-label="${breakdown.Bronze} ${pluralize(breakdown.Bronze, 'troféu de bronze conquistado', 'troféus de bronze conquistados')}">${breakdown.Bronze}</li>
+            </ul>
+            <button type="button" class="atlas-library-progress-card__continue" data-open-game="${escapeAttribute(title)}" data-open-slug="${escapeAttribute(game.slug || '')}" aria-label="Continuar guia de ${escapeAttribute(title)}" title="Continuar guia">
+              <i class="fas fa-play" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function getDifficultyClass(value) {
+    const difficulty = Number(value);
+    if (!Number.isFinite(difficulty) || difficulty <= 0) return '';
+    if (difficulty <= 3) return 'is-difficulty-low';
+    if (difficulty <= 6) return 'is-difficulty-medium';
+    return 'is-difficulty-high';
+  }
+
+  function renderLibrarySavedCardVanguard(game = {}, index = 0) {
+    const title = game.name || 'Jogo';
+    const key = getLibraryKey(game);
+    const elementKey = String(key || title).replace(/[^a-z0-9_-]+/gi, '-');
+    const menuId = `library-menu-${elementKey}`;
+    const cover = getLibraryCoverImage(game);
+    const platform = getLibraryPlatformLabel(game);
+    const difficulty = Number(game.difficulty);
+    const status = game.status === 'paused'
+      ? 'Pausado'
+      : isLibraryCompleted(game) ? 'Concluído' : 'Salvo';
+    return `
+      <article class="atlas-library-saved-card" data-library-game="${escapeAttribute(key)}" tabindex="0" role="link" aria-label="Abrir guia de ${escapeAttribute(title)}">
+        <div class="atlas-library-saved-card__cover">
+          <span class="atlas-library-saved-card__fallback">${escapeHtml(title)}</span>
+          ${cover ? `<img src="${escapeAttribute(getGameImageSrc(cover))}" alt="Capa de ${escapeAttribute(title)}" loading="lazy" decoding="async" width="320" height="480" sizes="(min-width: 1280px) 15vw, (min-width: 900px) 22vw, (min-width: 600px) 30vw, 46vw" onerror="this.hidden=true;">` : ''}
+          <button type="button" class="atlas-library-saved-card__menu-button" data-library-options aria-label="Abrir opções de ${escapeAttribute(title)}" aria-haspopup="menu" aria-expanded="false" aria-controls="${escapeAttribute(menuId)}">
+            <i class="fas fa-ellipsis" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="atlas-library-saved-card__body">
+          <h3>${escapeHtml(title)}</h3>
+          <div class="atlas-library-saved-card__meta">
+            <span class="${escapeAttribute(getDifficultyClass(difficulty))}"><i class="fas fa-gauge-high" aria-hidden="true"></i>${difficulty > 0 ? `${difficulty}/10` : 'Dificuldade não informada'}</span>
+            <span><i class="fas fa-clock" aria-hidden="true"></i>${escapeHtml(game.time || 'Estimativa indisponível')}</span>
+            ${platform ? `<span><i class="fab fa-playstation" aria-hidden="true"></i>${escapeHtml(platform)}</span>` : ''}
+            ${game.status !== 'saved' ? `<span>${escapeHtml(status)}</span>` : ''}
+          </div>
+          <button type="button" class="atlas-library-saved-card__action" data-open-game="${escapeAttribute(title)}" data-open-slug="${escapeAttribute(game.slug || '')}">
+            <i class="fas fa-book-open" aria-hidden="true"></i>Abrir guia
+          </button>
+        </div>
+        <div id="${escapeAttribute(menuId)}" class="library-game__options-menu auth-menu user-menu hidden" data-library-options-menu role="menu" aria-label="Opções de ${escapeAttribute(title)}">
+          <button type="button" class="auth-menu__item auth-menu__item--danger user-menu__item user-menu__item--danger" data-delete-game="${escapeAttribute(key)}" role="menuitem">
+            <i class="fas fa-trash" aria-hidden="true"></i><span>Remover da biblioteca</span>
+          </button>
+        </div>
+      </article>`;
+  }
+
+  function renderLibrarySectionEmpty(title, detail, action = '') {
+    return `
+      <div class="atlas-library-section-empty">
+        <div class="atlas-library-section-empty__copy">
+          <i class="fas fa-compass" aria-hidden="true"></i>
+          <strong>${escapeHtml(title)}</strong>
+          <p>${escapeHtml(detail)}</p>
+          ${action}
+        </div>
+      </div>`;
+  }
+
+  function renderLibraryFullEmpty({ hasItems = false, hasFilters = false } = {}) {
+    const target = qs('#libraryEmptyState');
+    if (!target) return;
+    target.hidden = false;
+    if (!hasItems) {
+      target.innerHTML = `
+        <div class="atlas-library-empty__copy">
+          <i class="fas fa-bookmark" aria-hidden="true"></i>
+          <strong>Sua biblioteca ainda está vazia</strong>
+          <p>Salve um guia ou comece uma platina para acompanhar seu progresso aqui.</p>
+          <div class="atlas-library-empty__actions">
+            <a class="atlas-btn atlas-btn-primary" href="/catalogo" data-library-catalog-link>Explorar guias</a>
+          </div>
+        </div>`;
+      return;
+    }
+    target.innerHTML = `
+      <div class="atlas-library-empty__copy">
+        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+        <strong>Nenhum jogo encontrado na biblioteca</strong>
+        <p>${hasFilters ? 'A combinação atual não corresponde aos jogos que você salvou.' : 'Tente outro termo para encontrar um jogo salvo.'}</p>
+        <div class="atlas-library-empty__actions">
+          <button type="button" class="atlas-btn atlas-btn-secondary" data-library-clear-filters>Limpar busca e filtros</button>
+        </div>
+      </div>`;
+  }
+
+  function renderLibraryLoadingVanguard() {
+    const view = qs('#view-library');
+    const stats = qs('#libraryStats');
+    const continuing = qs('#libraryContinueGrid');
+    const saved = qs('#librarySavedGrid');
+    view?.classList.add('is-library-loading');
+    if (stats) stats.innerHTML = '<div class="atlas-library-stat-skeleton" aria-hidden="true"></div>'.repeat(3);
+    if (continuing) continuing.innerHTML = '<div class="atlas-library-progress-skeleton" aria-hidden="true"></div>'.repeat(3);
+    if (saved) saved.innerHTML = '<div class="atlas-library-saved-skeleton" aria-hidden="true"></div>'.repeat(5);
+  }
+
+  function renderLibraryErrorVanguard() {
+    const error = qs('#libraryLoadError');
+    qs('#view-library')?.classList.remove('is-library-loading');
+    if (error) error.hidden = false;
+  }
+
+  function renderLibraryVanguard(library = {}, options = {}) {
+    const view = qs('#view-library');
+    if (!view) return;
+    const continueSection = qs('#libraryContinue');
+    const continueGrid = qs('#libraryContinueGrid');
+    const savedSection = qs('#librarySaved');
+    const savedGrid = qs('#librarySavedGrid');
+    const otherSection = qs('#libraryOther');
+    const otherGrid = qs('#libraryOtherGrid');
+    const empty = qs('#libraryEmptyState');
+    const summary = qs('#librarySummary');
+    const live = qs('#libraryStatusLive');
+    const error = qs('#libraryLoadError');
+    const search = String(options.search || '').trim();
+    const platform = ['all', 'ps4', 'ps5', 'ps4-ps5'].includes(options.platform) ? options.platform : 'all';
+    const status = ['all', 'saved', 'in-progress', 'paused', 'completed'].includes(options.statusFilter) ? options.statusFilter : 'all';
+    const sort = ['recent', 'added-desc', 'progress-desc', 'remaining-asc', 'name-asc'].includes(options.sort) ? options.sort : 'recent';
+    const availableGames = Array.isArray(options.availableGames) ? options.availableGames : [];
+    const allItems = buildLibraryItems(library, '', availableGames);
+    const scopedItems = sortLibraryItemsVanguard(allItems
+      .filter(game => matchesLibrarySearch(game, search))
+      .filter(game => matchesLibraryPlatform(game, platform)), sort);
+    const matchedItems = scopedItems.filter(game => matchesLibraryStatus(game, status));
+    const inProgress = scopedItems.filter(isLibraryInProgress).slice(0, status === 'in-progress' ? scopedItems.length : 3);
+    const saved = scopedItems.filter(isLibrarySaved);
+    const completedOrPaused = scopedItems.filter(game => isLibraryCompleted(game) || isLibraryPaused(game));
+    const filtersActive = Boolean(search) || platform !== 'all' || status !== 'all' || sort !== 'recent';
+
+    view.classList.remove('is-library-loading');
+    view.classList.toggle('is-library-empty', allItems.length === 0);
+    if (error) error.hidden = true;
+    if (empty) {
+      empty.hidden = true;
+      empty.innerHTML = '';
+    }
+
+    renderLibraryStatsVanguard(allItems);
+    renderLibrarySidebarVanguard(options, status);
+
+    const syncStatus = qs('#librarySyncStatus');
+    if (syncStatus) {
+      syncStatus.textContent = options.userSession?.authenticated
+        ? 'Biblioteca e checklists sincronizados com sua conta.'
+        : 'Progresso salvo localmente neste dispositivo.';
+    }
+
+    const searchField = qs('#librarySearch');
+    const platformField = qs('#libraryPlatform');
+    const statusField = qs('#libraryStatus');
+    const sortField = qs('#librarySort');
+    const clearSearch = qs('[data-library-clear-search]');
+    if (searchField && searchField.value !== search) searchField.value = search;
+    if (platformField) platformField.value = platform;
+    if (statusField) statusField.value = status;
+    if (sortField) sortField.value = sort;
+    if (clearSearch) clearSearch.hidden = !search;
+
+    const resultCopy = `${matchedItems.length} ${pluralize(matchedItems.length, 'jogo encontrado', 'jogos encontrados')} na biblioteca`;
+    if (summary) summary.textContent = resultCopy;
+    if (live) live.textContent = resultCopy;
+
+    if (!allItems.length || !matchedItems.length) {
+      if (continueSection) continueSection.hidden = true;
+      if (savedSection) savedSection.hidden = true;
+      if (otherSection) otherSection.hidden = true;
+      renderLibraryFullEmpty({ hasItems: allItems.length > 0, hasFilters: filtersActive });
+      return;
+    }
+
+    const hasContextualFilter = Boolean(search) || platform !== 'all';
+    const showContinue = (status === 'all' || status === 'in-progress')
+      && (inProgress.length > 0 || !hasContextualFilter);
+    if (continueSection) continueSection.hidden = !showContinue;
+    if (continueGrid && showContinue) {
+      continueGrid.innerHTML = inProgress.length
+        ? inProgress.map(renderLibraryProgressCardVanguard).join('')
+        : renderLibrarySectionEmpty(
+          'Nenhuma platina em andamento',
+          'Abra um guia e marque seus primeiros troféus para acompanhar o progresso aqui.',
+          '<a class="atlas-btn atlas-btn-primary" href="/catalogo" data-library-catalog-link>Explorar guias</a>'
+        );
+    }
+
+    const showSaved = (status === 'all' || status === 'saved')
+      && (saved.length > 0 || !hasContextualFilter);
+    if (savedSection) savedSection.hidden = !showSaved;
+    if (savedGrid && showSaved) {
+      savedGrid.innerHTML = saved.length
+        ? saved.map(renderLibrarySavedCardVanguard).join('')
+        : renderLibrarySectionEmpty(
+          'Nenhum jogo salvo para depois',
+          'Salve um guia no catálogo para encontrá-lo rapidamente nesta seção.',
+          '<a class="atlas-btn atlas-btn-primary" href="/catalogo" data-library-catalog-link>Explorar catálogo</a>'
+        );
+      const count = qs('#librarySavedCount');
+      if (count) count.textContent = saved.length ? `${saved.length} ${pluralize(saved.length, 'jogo', 'jogos')}` : '';
+    }
+
+    const showOther = status === 'completed' || status === 'paused' || (status === 'all' && completedOrPaused.length > 0);
+    if (otherSection) otherSection.hidden = !showOther;
+    if (otherGrid && showOther) {
+      const items = status === 'completed'
+        ? scopedItems.filter(isLibraryCompleted)
+        : status === 'paused' ? scopedItems.filter(isLibraryPaused) : completedOrPaused;
+      const title = qs('#libraryOtherTitle');
+      if (title) {
+        const label = status === 'completed' ? 'Jogos concluídos' : status === 'paused' ? 'Jogos pausados' : 'Concluídos e pausados';
+        title.innerHTML = `<span aria-hidden="true"></span>${escapeHtml(label)}`;
+      }
+      otherGrid.innerHTML = items.map(renderLibrarySavedCardVanguard).join('');
+      const count = qs('#libraryOtherCount');
+      if (count) count.textContent = `${items.length} ${pluralize(items.length, 'jogo', 'jogos')}`;
+    }
+  }
+
+  return {
+    renderLibrary: renderLibraryVanguard,
+    renderLibraryLoading: renderLibraryLoadingVanguard,
+    renderLibraryError: renderLibraryErrorVanguard
+  };
 })();

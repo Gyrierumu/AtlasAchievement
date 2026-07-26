@@ -404,6 +404,12 @@ window.AppUserAuth = (() => {
       });
 
       bindAuthModalElements();
+      window.addEventListener('atlas:user-session-expired', () => {
+        state.userSession = { authenticated: false, user: null };
+        renderHeader(state);
+        renderProfile(state);
+        closeUserMenu();
+      });
       document.querySelector('#profileContent')?.addEventListener('submit', event => {
         if (event.target.id === 'profileEditForm') return handleProfileUpdate(event);
         if (event.target.id === 'profilePasswordForm') return handlePasswordChange(event);

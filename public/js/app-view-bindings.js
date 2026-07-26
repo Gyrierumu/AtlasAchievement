@@ -1,5 +1,5 @@
 window.AppViewBindings = (() => {
-  function bindLibraryView({ UI, state, deleteFromLibrary, loadGuideBySlug, loadFromLibrary, isCurrentGameSaved, removeCurrentGameFromLibrary, saveCurrentGameToLibrary, loadCatalogPage, navigate }) {
+  function bindLibraryView({ UI, state, deleteFromLibrary, loadGuideBySlug, loadFromLibrary, isCurrentGameSaved, removeCurrentGameFromLibrary, saveCurrentGameToLibrary, loadCatalogPage, navigate, refreshAccountLibrary }) {
     let activeRemoveConfirmResolve = null;
 
     function renderLibraryView() {
@@ -7,9 +7,22 @@ window.AppViewBindings = (() => {
         search: state.librarySearch,
         sort: state.librarySort,
         statusFilter: state.libraryStatus,
+        platform: state.libraryPlatform,
         availableGames: state.availableGames,
-        storageLabel: state.librarySource === 'account' ? 'Salvo na conta' : 'Salvo neste navegador'
+        storageLabel: state.librarySource === 'account' ? 'Salvo na conta' : 'Salvo neste navegador',
+        userSession: state.userSession
       });
+    }
+
+    function syncLibraryUrl() {
+      if (window.location.pathname !== '/biblioteca') return;
+      const params = new URLSearchParams();
+      if (String(state.librarySearch || '').trim()) params.set('q', String(state.librarySearch).trim());
+      if (state.libraryPlatform && state.libraryPlatform !== 'all') params.set('platform', state.libraryPlatform);
+      if (state.libraryStatus && state.libraryStatus !== 'all') params.set('status', state.libraryStatus);
+      if (state.librarySort && state.librarySort !== 'recent') params.set('sort', state.librarySort);
+      const nextUrl = `/biblioteca${params.toString() ? `?${params.toString()}` : ''}`;
+      window.history.replaceState({ view: 'library' }, '', nextUrl);
     }
 
     function isAccountLibraryView() {
@@ -139,7 +152,48 @@ window.AppViewBindings = (() => {
         if (searchInput) searchInput.value = '';
         closeLibraryMenus();
         renderLibraryView();
+        syncLibraryUrl();
         searchInput?.focus();
+        return;
+      }
+
+      const clearFiltersButton = event.target.closest('[data-library-clear-filters]');
+      if (clearFiltersButton) {
+        event.preventDefault();
+        state.librarySearch = '';
+        state.libraryPlatform = 'all';
+        state.libraryStatus = 'all';
+        state.librarySort = 'recent';
+        const searchInput = UI.qs('#librarySearch');
+        const platformInput = UI.qs('#libraryPlatform');
+        const statusInput = UI.qs('#libraryStatus');
+        const sortInput = UI.qs('#librarySort');
+        if (searchInput) searchInput.value = '';
+        if (platformInput) platformInput.value = 'all';
+        if (statusInput) statusInput.value = 'all';
+        if (sortInput) sortInput.value = 'recent';
+        closeLibraryMenus();
+        renderLibraryView();
+        syncLibraryUrl();
+        searchInput?.focus();
+        return;
+      }
+
+      const retryButton = event.target.closest('[data-library-retry]');
+      if (retryButton) {
+        event.preventDefault();
+        retryButton.disabled = true;
+        retryButton.setAttribute('aria-busy', 'true');
+        try {
+          if (typeof refreshAccountLibrary === 'function' && isAccountLibraryView()) {
+            await refreshAccountLibrary({ silent: false });
+          } else {
+            renderLibraryView();
+          }
+        } finally {
+          retryButton.disabled = false;
+          retryButton.removeAttribute('aria-busy');
+        }
         return;
       }
 
@@ -148,8 +202,12 @@ window.AppViewBindings = (() => {
         event.preventDefault();
         event.stopPropagation();
         state.libraryStatus = statusButton.dataset.libraryStatus || 'all';
+        const statusInput = UI.qs('#libraryStatus');
+        if (statusInput) statusInput.value = state.libraryStatus;
         closeLibraryMenus();
-        return renderLibraryView();
+        renderLibraryView();
+        syncLibraryUrl();
+        return;
       }
 
       const optionsButton = event.target.closest('[data-library-options]');
@@ -212,12 +270,28 @@ window.AppViewBindings = (() => {
       state.librarySearch = event.target.value || '';
       closeLibraryMenus();
       renderLibraryView();
+      syncLibraryUrl();
     });
 
     UI.qs('#librarySort')?.addEventListener('change', event => {
       state.librarySort = event.target.value || 'recent';
       closeLibraryMenus();
       renderLibraryView();
+      syncLibraryUrl();
+    });
+
+    UI.qs('#libraryPlatform')?.addEventListener('change', event => {
+      state.libraryPlatform = event.target.value || 'all';
+      closeLibraryMenus();
+      renderLibraryView();
+      syncLibraryUrl();
+    });
+
+    UI.qs('#libraryStatus')?.addEventListener('change', event => {
+      state.libraryStatus = event.target.value || 'all';
+      closeLibraryMenus();
+      renderLibraryView();
+      syncLibraryUrl();
     });
 
     document.addEventListener('click', event => {
@@ -237,26 +311,107 @@ window.AppViewBindings = (() => {
   }
 
   function bindCatalogView({ UI, state, loadCatalogPage, navigate, loadGuideBySlug, rerenderCatalogView, toggleCatalogCompare, clearCatalogCompare, setCatalogIntent }) {
+    let catalogSearchTimer = null;
+    const catalogSearchFields = () => [
+      UI.qs('#catalogSearch'),
+      UI.qs('#catalogHeaderSearch')
+    ].filter(Boolean);
+
+    const syncCatalogSearchFields = value => {
+      catalogSearchFields().forEach(field => {
+        if (field.value !== value) field.value = value;
+      });
+    };
+
     const syncCatalogSearchClear = () => {
-      const searchField = UI.qs('#catalogSearch');
       const clearButton = UI.qs('.atlas-catalog-search-clear');
-      if (!searchField || !clearButton) return;
-      const hasSearch = Boolean(String(searchField.value || '').trim());
+      if (!clearButton) return;
+      const hasSearch = Boolean(String(state.catalogSearch || '').trim());
       clearButton.hidden = !hasSearch;
       clearButton.setAttribute('aria-hidden', hasSearch ? 'false' : 'true');
     };
 
-    syncCatalogSearchClear();
+    const syncCatalogUrl = () => {
+      const path = window.AppCatalog?.getCatalogPath?.(state.catalogFacet || 'all') || '/catalogo';
+      const params = new URLSearchParams();
+      if (String(state.catalogSearch || '').trim()) params.set('q', String(state.catalogSearch).trim());
+      if (state.catalogPlatform && state.catalogPlatform !== 'all') params.set('platform', state.catalogPlatform);
+      if (state.catalogStatus && state.catalogStatus !== 'all') params.set('status', state.catalogStatus);
+      if (state.catalogSort && state.catalogSort !== 'recommended-desc') params.set('sort', state.catalogSort);
+      const query = params.toString();
+      window.history.replaceState(window.history.state, '', `${path}${query ? `?${query}` : ''}`);
+    };
 
-    UI.qs('#catalogSearch')?.addEventListener('input', async event => {
-      state.catalogSearch = event.target.value || '';
+    const loadNextCatalogPage = async trigger => {
+      if (state.catalogLoadingMore) return;
+      const currentPage = Number(state.catalogResponse?.pagination?.page || state.catalogPage || 1);
+      const totalPages = Number(state.catalogResponse?.pagination?.totalPages || currentPage);
+      if (currentPage >= totalPages) return;
+
+      const nextPage = Number(trigger?.dataset?.nextPage || currentPage + 1);
+      const originalText = trigger?.textContent || 'Carregar mais guias';
+      state.catalogLoadingMore = true;
+      if (trigger) {
+        trigger.setAttribute('aria-disabled', 'true');
+        trigger.setAttribute('aria-busy', 'true');
+        trigger.textContent = 'Carregando guias...';
+      }
+      UI.renderCatalogLoadingSkeletons?.(4);
+
+      try {
+        await loadCatalogPage({ page: nextPage, append: true });
+        syncCatalogUrl();
+      } catch (error) {
+        UI.clearCatalogLoadingSkeletons?.();
+        const errorState = UI.qs('#catalogLoadError');
+        if (errorState) errorState.hidden = false;
+      } finally {
+        state.catalogLoadingMore = false;
+        if (trigger?.isConnected) {
+          trigger.removeAttribute('aria-disabled');
+          trigger.removeAttribute('aria-busy');
+          trigger.textContent = originalText;
+        }
+      }
+    };
+
+    const loadCatalogSearch = async value => {
+      state.catalogSearch = String(value || '');
       state.catalogPage = 1;
       setCatalogIntent('all');
+      syncCatalogSearchFields(state.catalogSearch);
       syncCatalogSearchClear();
-      const response = await loadCatalogPage({ page: 1 });
+      const response = await loadCatalogPage({ page: 1, search: state.catalogSearch });
+      syncCatalogUrl();
       window.AtlasAnalytics?.trackCatalogSearch?.({
         searchTerm: state.catalogSearch,
-        resultsCount: response
+        resultsCount: Number(response?.pagination?.total || 0)
+      });
+    };
+
+    syncCatalogSearchFields(state.catalogSearch || '');
+    syncCatalogSearchClear();
+
+    catalogSearchFields().forEach(field => {
+      field.addEventListener('input', event => {
+        const value = event.target.value || '';
+        syncCatalogSearchFields(value);
+        window.clearTimeout(catalogSearchTimer);
+        catalogSearchTimer = window.setTimeout(() => {
+          loadCatalogSearch(value).catch(() => {
+            const error = UI.qs('#catalogLoadError');
+            if (error) error.hidden = false;
+          });
+        }, 350);
+      });
+    });
+
+    [UI.qs('#catalogMobileSearchForm'), UI.qs('#catalogHeaderSearchForm')].filter(Boolean).forEach(form => {
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        window.clearTimeout(catalogSearchTimer);
+        const field = form.querySelector('input[type="search"]');
+        await loadCatalogSearch(field?.value || '');
       });
     });
 
@@ -264,9 +419,80 @@ window.AppViewBindings = (() => {
       state.catalogSort = event.target.value || 'recommended-desc';
       state.catalogPage = 1;
       await loadCatalogPage({ page: 1 });
+      syncCatalogUrl();
+    });
+
+    UI.qs('#catalogDifficultyFilter')?.addEventListener('change', async event => {
+      setCatalogIntent('all');
+      state.catalogFacet = event.target.value || 'all';
+      state.catalogPage = 1;
+      await loadCatalogPage({ page: 1, facet: state.catalogFacet });
+      navigate('catalog', { facet: state.catalogFacet });
+      syncCatalogUrl();
+    });
+
+    UI.qs('#catalogPlatformFilter')?.addEventListener('change', async event => {
+      state.catalogPlatform = event.target.value || 'all';
+      state.catalogPage = 1;
+      await loadCatalogPage({ page: 1, platform: state.catalogPlatform });
+      syncCatalogUrl();
+    });
+
+    UI.qs('#catalogStatusFilter')?.addEventListener('change', async event => {
+      state.catalogStatus = event.target.value || 'all';
+      state.catalogPage = 1;
+      await loadCatalogPage({ page: 1, status: state.catalogStatus });
+      syncCatalogUrl();
     });
 
     UI.qs('#view-catalog')?.addEventListener('click', async event => {
+      const loadMoreButton = event.target.closest('[data-catalog-load-more]');
+      if (loadMoreButton) {
+        event.preventDefault();
+        await loadNextCatalogPage(loadMoreButton);
+        return;
+      }
+
+      const retryButton = event.target.closest('[data-catalog-retry]');
+      if (retryButton) {
+        event.preventDefault();
+        const errorState = UI.qs('#catalogLoadError');
+        if (errorState) errorState.hidden = true;
+        const currentPage = Number(state.catalogResponse?.pagination?.page || state.catalogPage || 1);
+        const totalPages = Number(state.catalogResponse?.pagination?.totalPages || currentPage);
+        if (currentPage < totalPages) {
+          await loadNextCatalogPage(UI.qs('[data-catalog-load-more]'));
+        } else {
+          await loadCatalogPage({ page: 1 });
+          syncCatalogUrl();
+        }
+        return;
+      }
+
+      const removeFilterButton = event.target.closest('[data-catalog-remove-filter]');
+      if (removeFilterButton) {
+        event.preventDefault();
+        const filter = removeFilterButton.dataset.catalogRemoveFilter;
+        if (filter === 'platform') {
+          state.catalogPlatform = 'all';
+          const field = UI.qs('#catalogPlatformFilter');
+          if (field) field.value = 'all';
+        }
+        if (filter === 'status') {
+          state.catalogStatus = 'all';
+          const field = UI.qs('#catalogStatusFilter');
+          if (field) field.value = 'all';
+        }
+        state.catalogPage = 1;
+        await loadCatalogPage({
+          page: 1,
+          platform: state.catalogPlatform,
+          status: state.catalogStatus
+        });
+        syncCatalogUrl();
+        return;
+      }
+
       const intentButton = event.target.closest('[data-catalog-intent]');
       if (intentButton) {
         event.preventDefault();
@@ -285,6 +511,7 @@ window.AppViewBindings = (() => {
           resultsCount: response
         });
         navigate('catalog', { facet });
+        syncCatalogUrl();
         return;
       }
 
@@ -308,11 +535,11 @@ window.AppViewBindings = (() => {
         event.preventDefault();
         state.catalogSearch = '';
         state.catalogPage = 1;
-        const searchField = UI.qs('#catalogSearch');
-        if (searchField) searchField.value = '';
+        syncCatalogSearchFields('');
         syncCatalogSearchClear();
         await loadCatalogPage({ page: 1, search: '' });
         navigate('catalog', { facet: state.catalogFacet || 'all' });
+        syncCatalogUrl();
         return;
       }
 
@@ -322,12 +549,30 @@ window.AppViewBindings = (() => {
         setCatalogIntent('all');
         state.catalogFacet = 'all';
         state.catalogSearch = '';
+        state.catalogPlatform = 'all';
+        state.catalogStatus = 'all';
+        state.catalogSort = 'recommended-desc';
         state.catalogPage = 1;
-        const searchField = UI.qs('#catalogSearch');
-        if (searchField) searchField.value = '';
+        syncCatalogSearchFields('');
+        const difficultyField = UI.qs('#catalogDifficultyFilter');
+        const platformField = UI.qs('#catalogPlatformFilter');
+        const statusField = UI.qs('#catalogStatusFilter');
+        const sortField = UI.qs('#catalogSort');
+        if (difficultyField) difficultyField.value = 'all';
+        if (platformField) platformField.value = 'all';
+        if (statusField) statusField.value = 'all';
+        if (sortField) sortField.value = 'recommended-desc';
         syncCatalogSearchClear();
-        await loadCatalogPage({ page: 1, facet: 'all', search: '' });
+        await loadCatalogPage({
+          page: 1,
+          facet: 'all',
+          search: '',
+          platform: 'all',
+          status: 'all',
+          sort: 'recommended-desc'
+        });
         navigate('catalog', { facet: 'all' });
+        syncCatalogUrl();
         return;
       }
 
@@ -357,7 +602,12 @@ window.AppViewBindings = (() => {
           facet: state.catalogFacet,
           resultsCount: response
         });
+        const difficultyField = UI.qs('#catalogDifficultyFilter');
+        if (difficultyField) difficultyField.value = ['difficulty-low', 'difficulty-mid', 'difficulty-high'].includes(state.catalogFacet)
+          ? state.catalogFacet
+          : 'all';
         navigate('catalog', { facet: state.catalogFacet });
+        syncCatalogUrl();
         return;
       }
 

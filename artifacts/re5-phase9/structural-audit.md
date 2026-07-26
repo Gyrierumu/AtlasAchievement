@@ -1,9 +1,9 @@
 # Audit estrutural RE5 — Fase 9
 
 - Resultado: **PASS**
-- Verificação técnica: 2026-07-21T23:41:25.693Z
+- Verificação técnica: 2026-07-26T03:45:22.944Z
 - Revisão editorial preservada: 2026-07-18
-- Snapshot: `75281e7d54cbbf8911f3ff409e6c84aa444d9807bf14cce45f6675028fa1fb07`
+- Snapshot: `f820307bd8242db57e343c5538a2d970e5a6a4bec7e0daee25fd5ab03ee33b78`
 - Erros determinísticos: 0
 - Alertas de obsolescência: 0
 
@@ -30,7 +30,7 @@
 | PASS | ONLINE_CAVEAT_PRESENT | Situação verificada em julho de 2026: há pedidos recentes de boost e registros recentes de conclusão da lista PS4, então o online está aparentemente disponível. Isso é uma inferência por atividade observada, não um anúncio oficial de status. Não presuma matchm |
 | PASS | SSR_IDS_UNIQUE | 0 duplicados |
 | PASS | SSR_SURFACE | troféus=51; FAQ=36 |
-| PASS | DOM_BROWSER_COMPLETED | 730695 bytes |
+| PASS | DOM_BROWSER_COMPLETED | 737018 bytes |
 | PASS | DOM_HYDRATED_SURFACE | troféus=51; tabs=6 |
 | PASS | API_AND_HTML_OK | 200/200/200 |
 

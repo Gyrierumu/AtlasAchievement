@@ -31,6 +31,7 @@
   let filterAnnouncementTimer = 0;
   let csrfToken = '';
   let scrollFrame = 0;
+  let sectionScrollFrame = 0;
 
   function normalize(value) {
     return String(value || '')
@@ -228,6 +229,15 @@
       if (window.location.hash !== hash) window.history.pushState({ guideTarget: target.id }, '', hash);
     }
     target.scrollIntoView({ block: 'start', behavior: 'auto' });
+    const extraLinks = Array.from(document.querySelectorAll('[data-extra-category-link]'));
+    if (extraLinks.length) {
+      extraLinks.forEach(link => {
+        const active = link.dataset.extraCategoryLink === target.id;
+        link.classList.toggle('is-active', active);
+        if (active) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
     return true;
   }
 
@@ -479,6 +489,7 @@
     }
     if (options?.focus) tabs.find(tab => tab.dataset.guideTabButton === nextName)?.focus({ preventScroll: true });
     if (options?.scroll) document.querySelector(`#guideTab-${nextName}`)?.scrollIntoView({ block: 'start', behavior: 'auto' });
+    window.requestAnimationFrame(syncSectionNavigation);
   }
 
   function revealHashTarget() {
@@ -1021,6 +1032,51 @@
     update();
   }
 
+  function setSectionNavigationActive(targetId) {
+    const links = Array.from(document.querySelectorAll('.atlas-guide-section-index [data-guide-section-link]'));
+    if (!links.length) return;
+    let selected = links.find(link => link.dataset.guideSectionLink === targetId);
+    if (!selected) {
+      const activePanel = document.querySelector('[data-guide-tab-panel]:not([hidden])');
+      selected = links.find(link => link.dataset.guideTabTarget === activePanel?.dataset.guideTabPanel) || links[0];
+    }
+    links.forEach(link => {
+      const active = link === selected;
+      link.classList.toggle('is-current', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  function syncSectionNavigation() {
+    sectionScrollFrame = 0;
+    const links = Array.from(document.querySelectorAll('.atlas-guide-section-index [data-guide-section-link]'));
+    const offset = Number.parseFloat(getComputedStyle(view).getPropertyValue('--guide-anchor-offset')) || 160;
+    const activePanelName = document.querySelector('[data-guide-tab-panel]:not([hidden])')?.dataset.guideTabPanel || 'summary';
+    const targets = links
+      .filter(link => !link.dataset.guideTabTarget || link.dataset.guideTabTarget === activePanelName)
+      .map(link => document.getElementById(link.dataset.guideSectionLink || ''))
+      .filter((target, index, list) => target && target.offsetParent !== null && list.indexOf(target) === index);
+    if (!targets.length) return;
+    let current = targets[0];
+    targets.forEach(target => {
+      if (target.getBoundingClientRect().top <= offset + 18) current = target;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 12) {
+      current = targets[targets.length - 1];
+    }
+    setSectionNavigationActive(current.id);
+  }
+
+  function initializeSectionNavigation() {
+    if (!document.querySelector('.atlas-guide-section-index [data-guide-section-link]')) return;
+    window.addEventListener('scroll', () => {
+      if (!sectionScrollFrame) sectionScrollFrame = window.requestAnimationFrame(syncSectionNavigation);
+    }, { passive: true });
+    window.addEventListener('resize', syncSectionNavigation);
+    syncSectionNavigation();
+  }
+
   function loadIconFontAfterPageLoad() {
     const load = () => {
       if (document.querySelector('link[data-re5-icon-font]')) return;
@@ -1045,6 +1101,7 @@
       initializePhase6State();
       bindDelegatedInteractions();
       initializeBackToTop();
+      initializeSectionNavigation();
       loadIconFontAfterPageLoad();
       root.classList.add('re5-ready');
     } catch (_error) {

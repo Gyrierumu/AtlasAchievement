@@ -241,6 +241,7 @@ window.UI = (() => {
     if (typeof document === 'undefined') return;
     replaceElementTag(qs('#homeHeroHeading'), viewId === 'home' ? 'h1' : 'h2');
     replaceElementTag(qs('#catalogTitle'), viewId === 'catalog' ? 'h1' : 'h2');
+    replaceElementTag(qs('#libraryTitle'), viewId === 'library' ? 'h1' : 'h2');
     if (viewId !== 'guide') qsa('#guideHeader h1').forEach(heading => replaceElementTag(heading, 'h2'));
   }
 

@@ -196,9 +196,12 @@ function assertHtmlLoadsModules(relPath) {
     assert(scripts.some(source => /^\/js\/ui-guide\.js\?v=[a-z0-9._-]+$/i.test(source)), 'public/index.html deve versionar ui-guide.js para evitar cache antigo dos guias');
     assert(html.includes('id="catalogIntentBar"'), 'public/index.html precisa do container de intenções do catálogo');
     assert(html.includes('id="catalogCompareTray"'), 'public/index.html precisa do tray de comparação do catálogo');
-    assert(html.includes('id="librarySuggestions"'), 'public/index.html precisa do bloco de sugestões da biblioteca');
-    assert(html.includes('id="libraryStatusTabs"'), 'public/index.html precisa dos filtros de status da biblioteca');
-    assert(html.includes('library-shelf__grid'), 'public/index.html precisa renderizar a biblioteca como estante');
+    assert(html.includes('class="atlas-library-sidebar"'), 'public/index.html precisa da navegação lateral desktop da biblioteca');
+    assert(html.includes('id="libraryStats"'), 'public/index.html precisa do painel de estatísticas reais da biblioteca');
+    assert(html.includes('id="libraryContinueGrid"'), 'public/index.html precisa da seção Continuando a caça');
+    assert(html.includes('id="librarySavedGrid"'), 'public/index.html precisa do grid Salvos para depois');
+    assert(html.includes('id="libraryPlatform"') && html.includes('id="libraryStatus"'), 'public/index.html precisa dos filtros reais de plataforma e status');
+    assert(html.includes('href="/css/library.css"'), 'public/index.html precisa carregar os estilos dedicados da biblioteca');
     assert(html.includes('id="userAuthModal"'), 'public/index.html precisa expor modal de login/cadastro publico');
     assert(html.includes('id="libraryImportModal"'), 'public/index.html precisa expor modal de importacao da biblioteca local');
     assert(html.includes('id="feedbackModal"'), 'public/index.html precisa expor modal publico de feedback');
@@ -357,6 +360,8 @@ function assertUIModules() {
   assert(libraryBindingCode.includes('keepProgress'), 'remocao pela biblioteca precisa enviar escolha de preservacao de progresso');
   assert(libraryBindingCode.includes('confirmLibraryRemoval'), 'remocao pela biblioteca precisa passar por confirmacao');
   assert(libraryBindingCode.includes("event.key === 'Escape'"), 'menu/confirmacao da biblioteca devem fechar com Escape');
+  const libraryControllerCode = read('public/js/app-library-controller.js');
+  assert(libraryControllerCode.includes('atlas:user-session-expired'), 'biblioteca da conta deve tratar sessao expirada sem perder a biblioteca local');
   [
     'showToast',
     'setLoading',
@@ -585,7 +590,8 @@ function assertUIModules() {
   assert(/\.atlas-checklist-list\[data-checklist-density="compact"\]\s+\.atlas-trophy-card[\s\S]*?padding:\s*9px\s+10px/.test(responsiveCss), 'modo compacto mobile precisa reduzir o cansaco visual dos cards');
   assert(/\.atlas-roadmap-step__marker[\s\S]*?width:\s*28px/.test(responsiveCss), 'roadmap mobile precisa usar marcadores compactos');
   assert(/\.atlas-quick-dock\.is-collapsed[\s\S]*?width:\s*min\(218px/.test(responsiveCss), 'dock colapsado mobile nao deve ocupar a largura inteira');
-  assert(/\.catalog-card__media[\s\S]*?height:\s*128px/.test(responsiveCss), 'cards do catalogo mobile precisam evitar capas altas demais');
+  const catalogCss = read('public/css/catalog.css');
+  assert(/#view-catalog \.catalog-card__media[\s\S]*?aspect-ratio:\s*2\s*\/\s*3/.test(catalogCss), 'cards do catalogo precisam usar capas verticais 2:3');
   assertGuideChecklistFiltering(ctx);
 }
 
@@ -724,18 +730,23 @@ function assertCatalogModule() {
   ].forEach(facet => {
     assert(uiCatalogCode.includes(`'${facet}'`), `catalogo precisa expor filtro ${facet} na UI`);
   });
-  ['Dificuldade', 'Duração', 'Requisitos', 'Status editorial', 'Mais filtros'].forEach(label => {
-    assert(uiCatalogCode.includes(label), `catalogo precisa organizar filtros pelo grupo ${label}`);
+  const publicIndexCode = read('public/index.html');
+  ['Dificuldade', 'Plataforma', 'Status'].forEach(label => {
+    assert(publicIndexCode.includes(label), `catalogo precisa organizar filtros pelo grupo ${label}`);
   });
   assert(uiCatalogCode.includes("label: 'Verificado'") && uiCatalogCode.includes("label: 'Em revisão'"), 'cards do catalogo devem normalizar o status editorial');
-  assert(uiCatalogCode.indexOf('catalog-card__title') < uiCatalogCode.indexOf('catalog-card__badges'), 'card do catalogo deve apresentar nome antes do status');
-  assert(uiCatalogCode.includes('catalog-card__risk-label') && uiCatalogCode.includes('Riscos e requisitos'), 'cards do catalogo precisam separar riscos e requisitos');
-  assert(uiCatalogCode.includes('catalog-card__signals'), 'cards do catalogo precisam mostrar sinais de decisao');
+  assert(uiCatalogCode.includes('catalog-card__status') && uiCatalogCode.includes('catalog-card__media'), 'card do catalogo deve sobrepor o status editorial na capa');
+  ['Dificuldade', 'Tempo', 'Troféus'].forEach(label => {
+    assert(uiCatalogCode.includes(`catalog-card__metric-label">${label}`), `card do catalogo precisa mostrar a metrica ${label}`);
+  });
+  assert(uiCatalogCode.includes('data-catalog-load-more') && uiCatalogCode.includes('Carregar mais guias'), 'catalogo precisa usar carregamento incremental');
   assert(uiCatalogCode.includes('data-catalog-clear-filters'), 'estado vazio do catalogo precisa permitir limpar filtros');
-  assert(uiCatalogCode.includes('Nenhum guia encontrado com esses filtros.'), 'estado vazio do catalogo precisa usar mensagem clara');
+  assert(uiCatalogCode.includes('Não encontramos guias com essa combinação de filtros.'), 'estado vazio do catalogo precisa usar mensagem clara');
 
   const bindingCode = read('public/js/app-view-bindings.js');
   assert(bindingCode.includes('data-catalog-clear-filters'), 'catalogo precisa tratar o botao de limpar filtros');
+  assert(bindingCode.includes('data-catalog-load-more') && bindingCode.includes('append: true'), 'catalogo precisa anexar a proxima pagina sem substituir os cards');
+  assert(bindingCode.includes("params.set('platform'") && bindingCode.includes("params.set('status'"), 'catalogo precisa preservar filtros combinados na URL');
   const catalogControllerCode = read('public/js/app-catalog.js');
   assert(catalogControllerCode.includes('previousFacetCounts'), 'catalogo precisa preservar contagens globais ao combinar busca e filtros');
 }
@@ -9968,13 +9979,13 @@ async function assertBackendEditorialConsistency() {
       canonical: `${baseUrl}/catalogo`,
       titleIncludes: 'AtlasAchievement',
       descriptionIncludes: 'cat',
-      h1Includes: 'Cat'
+      h1Includes: 'Explorar Guias'
     });
     assert.strictEqual(getHtmlTitle(catalogRootHtml), 'Catálogo de jogos | AtlasAchievement', '/catalogo deve ter title correto');
     assert.strictEqual(getCanonicalHref(catalogRootHtml), `${baseUrl}/catalogo`, '/catalogo deve ter canonical correto');
     const catalogRootH1s = getH1Texts(catalogRootHtml);
     assert.strictEqual(catalogRootH1s.length, 1, '/catalogo deve ter H1 unico');
-    assert(catalogRootH1s[0].includes('Catálogo de jogos'), '/catalogo deve usar H1 da colecao');
+    assert(catalogRootH1s[0].includes('Explorar Guias'), '/catalogo deve usar o H1 curto do redesign');
     const catalogRootJson = getStructuredData(catalogRootHtml);
     const catalogRootCollection = catalogRootJson['@graph'].find(item => item['@type'] === 'CollectionPage');
     assert(catalogRootCollection?.mainEntity?.itemListElement?.length > 0, '/catalogo deve listar jogos reais no ItemList');
@@ -9984,10 +9995,26 @@ async function assertBackendEditorialConsistency() {
       '/catalogo nao deve inflar numberOfItems'
     );
     assert(catalogRootHtml.includes('/jogo/'), '/catalogo deve linkar jogos publicados');
-    assert(catalogRootHtml.includes('catalog-card__signals'), '/catalogo deve mostrar sinais de decisao nos cards');
-    assert(/Sem online|Online/.test(catalogRootHtml), '/catalogo deve sinalizar online nos cards');
+    assert(catalogRootHtml.includes('catalog-card__metric-label">Dificuldade'), '/catalogo deve mostrar dificuldade nos cards');
+    assert(catalogRootHtml.includes('catalog-card__metric-label">Tempo'), '/catalogo deve mostrar tempo nos cards');
+    assert(catalogRootHtml.includes('catalog-card__metric-label">Troféus'), '/catalogo deve mostrar trofeus nos cards');
+    assert(catalogRootHtml.includes('data-catalog-load-more') && catalogRootHtml.includes('Carregar mais guias'), '/catalogo deve oferecer carregamento incremental');
     const emptyCatalogResponse = await httpGetJson(baseUrl, '/api/games?q=zzzz-sem-resultado&facet=online-required&limit=20&sort=name-asc');
     assert.strictEqual(emptyCatalogResponse.pagination.total, 0, 'catalogo deve permitir estado vazio por busca + filtro');
+    const reviewCatalogResponse = await httpGetJson(baseUrl, '/api/games?status=review&limit=100&sort=name-asc');
+    assert(Number(reviewCatalogResponse.pagination?.total || 0) >= 1, 'catalogo deve expor guias publicados e utilizaveis que ainda estao em revisao');
+    assertItemsMatch(
+      reviewCatalogResponse.items || [],
+      game => game.is_verified === false && ['strong', 'complete'].includes(game.coverage_level),
+      'filtro de status em revisao nao deve incluir rascunhos ou guias parciais'
+    );
+    const ps5VerifiedCatalogResponse = await httpGetJson(baseUrl, '/api/games?q=resident%20evil&platform=ps5&status=verified&limit=100');
+    assert(Number(ps5VerifiedCatalogResponse.pagination?.total || 0) >= 1, 'catalogo deve combinar busca, plataforma e status');
+    assertItemsMatch(
+      ps5VerifiedCatalogResponse.items || [],
+      game => game.is_verified === true && (game.platforms || []).some(platform => /ps5/i.test(platform)),
+      'catalogo deve respeitar plataforma e status combinados'
+    );
 
     const lowMissableRiskHtml = await httpGetHtml(baseUrl, '/colecoes/baixo-risco-de-perdiveis');
     assert(lowMissableRiskHtml.includes('/jogo/ghost-of-tsushima'), 'colecao de baixo risco de perdiveis deve incluir Ghost of Tsushima');
@@ -13038,8 +13065,8 @@ function assertClairObscurSampleData() {
   assert.strictEqual(game.time_sort_hours, 60, 'Clair Obscur deve preservar time_sort_hours');
   assert.strictEqual(game.editorial_status, 'published', 'Clair Obscur deve entrar publicado');
   assert.strictEqual(game.coverage_level, 'strong', 'Clair Obscur deve ter coverage strong');
-  assert.strictEqual(game.is_verified, false, 'Clair Obscur nao deve entrar como verificado');
-  assert.strictEqual(game.verification_status, 'review', 'Clair Obscur deve aguardar revisao editorial');
+  assert.strictEqual(game.is_verified, true, 'Clair Obscur deve respeitar a lista de guias verificados protegidos');
+  assert.strictEqual(game.verification_status, 'verified', 'Clair Obscur deve manter o status protegido de verificacao');
   assert.strictEqual(game.trophies.length, 56, 'Clair Obscur deve ter 56 trofeus da lista base');
   assert.strictEqual(new Set(game.trophies.map(trophy => trophy.id)).size, 56, 'Clair Obscur nao deve ter trophy_code duplicado');
   assert.deepStrictEqual(
