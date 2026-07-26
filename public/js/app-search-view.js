@@ -1,6 +1,6 @@
 window.AppSearchView = (() => {
   function bindGlobalSearch({ UI, state, debouncedSearchGames, openBestSearchResult, syncSuggestionHighlight }) {
-    UI.qs('#btnLoad')?.addEventListener('click', event => {
+    UI.qs('#homeSearchForm')?.addEventListener('submit', event => {
       event.preventDefault();
       openBestSearchResult(UI.qs('#gameInput').value, { analyticsSource: 'home' });
     });

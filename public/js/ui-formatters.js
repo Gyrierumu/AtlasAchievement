@@ -88,7 +88,11 @@ window.UIFormatters = (() => {
 
   function formatDisplayDate(value) {
     if (!value) return 'Sem data';
-    const date = new Date(value);
+    const normalized = String(value).trim();
+    const dateOnly = normalized.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    const date = dateOnly
+      ? new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]))
+      : new Date(value);
     if (Number.isNaN(date.getTime())) return 'Sem data';
     return date.toLocaleDateString('pt-BR');
   }

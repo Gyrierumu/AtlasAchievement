@@ -910,47 +910,28 @@
       || String(a?.name || '').localeCompare(String(b?.name || ''), 'pt-BR');
   }
 
-  function getHomeRevisionNote(game = {}) {
-    const slug = String(game?.slug || '').trim().toLowerCase();
-    const editorialNotes = {
-      'elden-ring': 'Roadmap revisado para organizar finais, pontos de atenção e cleanup por save.',
-      'ghost-of-tsushima': 'Revisão focada em campanha, colecionáveis e cleanup livre no pós-jogo.',
-      'hades': 'Checklist revisado para acompanhar diálogos, recursos e progresso entre runs.',
-      'hades-ii': 'Guia atualizado para ordenar profecias, relações e recursos ao longo das runs.',
-      'astro-bot': 'Revisão focada em colecionáveis, seleção de fases e limpeza pelo hub.',
-      'astros-playroom': 'Checklist ajustado para facilitar colecionáveis, fases e cleanup na CPU Plaza.',
-      'resident-evil-4-remake': 'Roadmap ajustado para separar campanha, restrições de run e finalização.',
-      'mortal-shell': 'Revisão concentrada nos desafios de run e nos pontos que pedem planejamento.',
-      'nioh-2': 'Guia revisado para organizar missões, proficiências e limpeza por replay.',
-      'nioh-3': 'Checklist atualizado para separar campanha, pós-jogo e pendências de exploração.',
-      'black-myth-wukong': 'Roadmap revisado para destacar perdíveis por capítulo e reduzir retrabalho.',
-      'heavy-rain': 'Checklist ajustado para organizar escolhas, finais e epílogos com Chapter Select.',
-      'hollow-knight-silksong': 'Guia atualizado com foco no desafio alto, finais e metas de tempo.',
-      'lego-batman-legacy-of-the-dark-knight': 'Roadmap revisto para organizar campanha, replay e cleanup durante o ajuste editorial.',
-      'clair-obscur-expedition-33': 'Revisão focada na ordem da campanha, nos riscos e na finalização da platina.',
-      'monster-hunter-world': 'Guia atualizado com foco em tempo estimado, grind e organização da lista.',
-      'dead-cells': 'Checklist revisado para organizar progressão, chefes e objetivos por run.',
-      'reanimal': 'Leitura editorial atualizada para destacar esforço, rota e pontos de atenção.',
-      'a-way-out': 'Revisão focada em coop obrigatório, capítulos e limpeza dos objetivos restantes.'
-    };
-    if (editorialNotes[slug]) return editorialNotes[slug];
+  function summarizeHomeEditorialText(value = '', maxLength = 180) {
+    const normalized = String(value || '')
+      .replace(/[\r\n]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!normalized || normalized === '[]') return '';
+    if (normalized.length <= maxLength) return normalized;
+    const clipped = normalized.slice(0, maxLength + 1);
+    const safeEnd = clipped.lastIndexOf(' ');
+    return `${clipped.slice(0, safeEnd > maxLength * .65 ? safeEnd : maxLength).trim()}…`;
+  }
 
-    const roadmapCount = getRoadmapCount(game);
-    const hasRisk = hasGuideRisk(game);
-    const slugSeed = [...slug].reduce((total, char) => total + char.charCodeAt(0), 0);
-    if (isCatalogVerified(game) && roadmapCount >= 3) {
-      const verifiedNotes = [
-        'Revisão recente da rota, dos alertas e da leitura rápida da platina.',
-        'Checklist editorial ajustado para deixar etapas e pontos de atenção mais claros.',
-        'Guia atualizado com foco em tempo, dificuldade e sequência recomendada.',
-        'Roadmap revisado para facilitar a consulta antes e durante a campanha.'
-      ];
-      return verifiedNotes[slugSeed % verifiedNotes.length];
-    }
-    if (isCatalogVerified(game)) return 'Leitura editorial atualizada para destacar esforço e pontos de atenção.';
-    if (hasRisk && roadmapCount >= 3) return 'Riscos e roadmap merecem leitura antes do primeiro save.';
-    if (roadmapCount >= 3) return 'Roadmap revisado para orientar a ordem da platina.';
-    return 'Leitura editorial recente para validar o próximo clique.';
+  function getHomeRevisionNote(game = {}) {
+    const recordedSummary = [
+      game?.revision_summary,
+      game?.revisionSummary,
+      game?.verification_note,
+      game?.verificationNote,
+      game?.editorial_notes,
+      game?.editorialNotes
+    ].map(value => summarizeHomeEditorialText(value)).find(Boolean);
+    return recordedSummary || 'Revisão editorial registrada no guia.';
   }
 
   function selectHomeShowcaseGames(games = [], limit = 6) {
@@ -967,6 +948,52 @@
       .slice(0, requestedLimit);
   }
 
+  function selectHomeSpotlightGame(games = []) {
+    return selectHomeShowcaseGames(games, 1)[0] || null;
+  }
+
+  function selectHomeSearchExamples(games = [], limit = 4) {
+    const list = Array.isArray(games) ? games.filter(game => game?.slug && game?.name) : [];
+    const requestedLimit = Math.max(Number(limit || 0), 0);
+    if (!requestedLimit) return [];
+    const bySlug = new Map(list.map(game => [String(game.slug).trim().toLowerCase(), game]));
+    const preferredSlugs = [
+      'astro-bot',
+      'resident-evil-2-remake',
+      'elden-ring',
+      'hades',
+      'clair-obscur-expedition-33',
+      'marvels-spider-man-2'
+    ];
+    const preferred = preferredSlugs.map(slug => bySlug.get(slug)).filter(Boolean);
+    const fallback = selectHomeShowcaseGames(list, requestedLimit * 2)
+      .filter(game => !preferred.includes(game));
+    return [...preferred, ...fallback].slice(0, requestedLimit);
+  }
+
+  function getHomeReviewDate(game = {}) {
+    return String(
+      game?.last_reviewed_at
+      || game?.lastReviewedAt
+      || game?.updated_at
+      || game?.created_at
+      || ''
+    ).trim();
+  }
+
+  function selectLatestReviewedGames(games = [], limit = 3) {
+    const list = Array.isArray(games) ? games.filter(game => game?.slug && game?.name) : [];
+    const requestedLimit = Math.max(Number(limit || 0), 0);
+    if (!requestedLimit) return [];
+    const explicitlyReviewed = list.filter(game => String(game?.last_reviewed_at || game?.lastReviewedAt || '').trim());
+    const source = explicitlyReviewed.length ? explicitlyReviewed : list.filter(game => getHomeReviewDate(game));
+    return source
+      .slice()
+      .sort((a, b) => getHomeReviewDate(b).localeCompare(getHomeReviewDate(a))
+        || String(a.name).localeCompare(String(b.name), 'pt-BR'))
+      .slice(0, requestedLimit);
+  }
+
   function buildHomeIntentCardsModel(games = []) {
     const list = Array.isArray(games) ? games : [];
     const countOptions = value => `${value} ${value === 1 ? 'opção' : 'opções'}`;
@@ -977,42 +1004,46 @@
     return [
       {
         facet: 'time-short',
+        href: catalogFacetMeta['time-short'].path,
         count: shortCount,
         icon: 'fa-bolt',
         tone: 'short',
         tag: 'Curto',
         title: 'Curto e direto',
-        description: 'Até 15 horas para fechar sem virar compromisso.',
+        description: 'Até 15 horas para concluir sem transformar a platina em um projeto longo.',
         metric: countOptions(shortCount)
       },
       {
         facet: 'difficulty-low',
+        href: catalogFacetMeta['difficulty-low'].path,
         count: easyCount,
         icon: 'fa-shield-halved',
         tone: 'easy',
         tag: 'Fácil',
         title: 'Baixo atrito',
-        description: 'Dificuldade baixa para começar sem pressão.',
+        description: 'Dificuldade baixa para começar com menos pressão.',
         metric: countOptions(easyCount)
       },
       {
         facet: 'time-medium',
+        href: catalogFacetMeta['time-medium'].path,
         count: mediumCount,
         icon: 'fa-layer-group',
         tone: 'medium',
         tag: 'Médio',
         title: 'Projeto médio',
-        description: '16 a 40 horas para manter tração com calma.',
+        description: 'De 16 a 40 horas para quem procura um projeto equilibrado.',
         metric: countOptions(mediumCount)
       },
       {
         facet: 'difficulty-high',
+        href: catalogFacetMeta['difficulty-high'].path,
         count: hardCount,
         icon: 'fa-fire-flame-curved',
         tone: 'challenge',
         tag: 'Desafio',
         title: 'Alta exigência',
-        description: 'Para quando você quer execução e paciência.',
+        description: 'Alta exigência para quem procura execução, domínio e paciência.',
         metric: countOptions(hardCount)
       }
     ];
@@ -1219,6 +1250,10 @@
     getHomeFeaturedReason,
     getHomeRevisionNote,
     selectHomeShowcaseGames,
+    selectHomeSpotlightGame,
+    selectHomeSearchExamples,
+    getHomeReviewDate,
+    selectLatestReviewedGames,
     buildHomeIntentCardsModel,
     buildCatalogDiscoveryCards,
     buildCatalogCompareLabel,

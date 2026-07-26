@@ -55,9 +55,13 @@ window.AppUserAuth = (() => {
     const menu = document.querySelector('#publicUserMenu');
     const label = document.querySelector('#publicUserName');
     const avatar = document.querySelector('#publicUserAvatar');
+    const guestLibraryCta = document.querySelector('[data-home-library-guest]');
+    const userLibraryCta = document.querySelector('[data-home-library-user]');
 
     if (guest) guest.classList.toggle('hidden', Boolean(session.authenticated));
     if (menu) menu.classList.toggle('hidden', !session.authenticated);
+    if (guestLibraryCta) guestLibraryCta.classList.toggle('hidden', Boolean(session.authenticated));
+    if (userLibraryCta) userLibraryCta.classList.toggle('hidden', !session.authenticated);
 
     if (session.authenticated && session.user) {
       if (label) label.textContent = getDisplayName(session.user);

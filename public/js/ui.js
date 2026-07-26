@@ -34,9 +34,11 @@ window.UI = (() => {
     const target = qs(`#view-${viewId}`);
     if (target) target.classList.remove('hidden');
     setSinglePublicHeading(viewId);
-    qsa('[data-view-link]').forEach(button => {
+    qsa('.atlas-nav-link[data-view-link]').forEach(button => {
       const isActive = button.dataset.viewLink === viewId;
       button.classList.toggle('is-active', isActive);
+      if (isActive) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
     });
   }
 

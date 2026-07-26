@@ -114,7 +114,7 @@ window.UIHome = (() => {
     target.innerHTML = stats.map(stat => `
       <span class="atlas-home-proof__item">
         <i class="fas ${escapeAttribute(stat.icon)}" aria-hidden="true"></i>
-        <strong>${escapeHtml(String(stat.value))}</strong>
+        <strong>${escapeHtml(Number(stat.value || 0).toLocaleString('pt-BR'))}</strong>
         <span>${escapeHtml(stat.label)}</span>
       </span>`).join('');
   }
@@ -122,18 +122,9 @@ window.UIHome = (() => {
   function renderHomeSearchChips(games = []) {
     const target = qs('#homeSearchChips');
     if (!target) return;
-    const gamesBySlug = new Map((Array.isArray(games) ? games : []).map(game => [normalizeSlug(game.slug), game]));
-    const preferredSlugs = [
-      'astro-bot',
-      'hades',
-      'elden-ring',
-      'resident-evil-4-remake',
-      'resident-evil-2-remake',
-      'star-wars-jedi-survivor'
-    ];
-    const preferredGames = preferredSlugs.map(slug => gamesBySlug.get(slug)).filter(Boolean);
-    const fallbackGames = (Array.isArray(games) ? games : []).filter(game => game?.slug && !preferredSlugs.includes(normalizeSlug(game.slug)));
-    const chipGames = [...preferredGames, ...fallbackGames].slice(0, 4);
+    const chipGames = typeof sharedCatalog.selectHomeSearchExamples === 'function'
+      ? sharedCatalog.selectHomeSearchExamples(games, 4)
+      : (Array.isArray(games) ? games : []).filter(game => game?.slug && game?.name).slice(0, 4);
     if (!chipGames.length) {
       target.innerHTML = '';
       return;
@@ -187,6 +178,9 @@ window.UIHome = (() => {
   }
 
   function selectEditorialSpotlight(games = []) {
+    if (typeof sharedCatalog.selectHomeSpotlightGame === 'function') {
+      return sharedCatalog.selectHomeSpotlightGame(games);
+    }
     return [...(Array.isArray(games) ? games : [])]
       .filter(game => game?.slug && game?.name)
       .sort((a, b) => {
@@ -227,6 +221,18 @@ window.UIHome = (() => {
     const hasRiskSignal = Boolean(model.hasRisk || Number(game.missable_count || 0) > 0 || hasMissableRiskText(game.missable || game.missable_summary || ''));
     const riskLabel = hasRiskSignal ? 'Atenção cedo' : 'Baixo risco';
     const riskTone = hasRiskSignal ? 'risk' : 'safe';
+    const facts = [
+      model.time && !/^tempo não informado$/i.test(model.time)
+        ? `<span><i class="fas fa-clock" aria-hidden="true"></i><strong>${escapeHtml(model.time)}</strong><small>Tempo estimado</small></span>`
+        : '',
+      Number(model.difficulty) > 0
+        ? `<span><i class="fas fa-gauge-high" aria-hidden="true"></i><strong>${escapeHtml(String(model.difficulty))}/10</strong><small>Dificuldade</small></span>`
+        : '',
+      `<span data-risk="${escapeAttribute(riskTone)}"><i class="fas ${hasRiskSignal ? 'fa-triangle-exclamation' : 'fa-shield-halved'}" aria-hidden="true"></i><strong>${escapeHtml(riskLabel)}</strong><small>Riscos</small></span>`,
+      Number(model.trophies || 0) > 0
+        ? '<span><i class="fas fa-list-check" aria-hidden="true"></i><strong>Checklist</strong><small>Progresso salvo</small></span>'
+        : ''
+    ].filter(Boolean).join('');
     target.innerHTML = `
       <div class="atlas-home-hero-preview__shell">
         <div class="atlas-home-hero-preview__head">
@@ -234,14 +240,9 @@ window.UIHome = (() => {
           <strong>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</strong>
         </div>
         <div class="atlas-home-hero-preview__cover atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
-          ${renderHomeImage(model, 'atlas-home-hero-preview__image', { width: 320, height: 480, sizes: '(min-width: 1024px) 240px, 70vw', loading: 'eager' })}
+          ${renderHomeImage(model, 'atlas-home-hero-preview__image', { width: 320, height: 480, sizes: '(min-width: 1024px) 148px, 34vw', loading: 'eager' })}
         </div>
-        <div class="atlas-home-hero-preview__facts">
-          <span><i class="fas fa-clock" aria-hidden="true"></i><strong>${escapeHtml(model.time || 'Tempo não informado')}</strong><small>Tempo estimado</small></span>
-          <span><i class="fas fa-gauge-high" aria-hidden="true"></i><strong>${escapeHtml(String(model.difficulty || '-'))}/10</strong><small>Dificuldade</small></span>
-          <span data-risk="${escapeAttribute(riskTone)}"><i class="fas ${hasRiskSignal ? 'fa-triangle-exclamation' : 'fa-shield-halved'}" aria-hidden="true"></i><strong>${escapeHtml(riskLabel)}</strong><small>Riscos</small></span>
-          <span><i class="fas fa-list-check" aria-hidden="true"></i><strong>Checklist</strong><small>Continue depois</small></span>
-        </div>
+        <div class="atlas-home-hero-preview__facts">${facts}</div>
         <a href="/jogo/${slug}" class="atlas-home-hero-preview__link" data-home-game="${escapeAttribute(model.name)}" data-open-guide-card="${slug}">
           Ver guia em destaque
           <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -365,9 +366,11 @@ window.UIHome = (() => {
       return `${gamesCount} jogos mapeados · ${totalTrophies} troféus · ${totalRoadmaps} etapas de roadmap`;
     });
     const getFeaturedReason = sharedCatalog.getHomeFeaturedReason || (() => 'Tempo, dificuldade e rota em bom equilíbrio.');
-    const getRevisionNote = sharedCatalog.getHomeRevisionNote || (() => 'Leitura editorial recente para validar o próximo clique.');
+    const getRevisionNote = sharedCatalog.getHomeRevisionNote || (() => 'Revisão editorial registrada no guia.');
     const byRecent = [...games].sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
-    const byUpdated = [...games].sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
+    const byUpdated = typeof sharedCatalog.selectLatestReviewedGames === 'function'
+      ? sharedCatalog.selectLatestReviewedGames(games, 3)
+      : [...games].sort((a, b) => String(b.last_reviewed_at || b.updated_at || '').localeCompare(String(a.last_reviewed_at || a.updated_at || ''))).slice(0, 3);
     const totalTrophies = games.reduce((sum, game) => sum + getTotal(game), 0);
     const totalRoadmaps = games.reduce((sum, game) => sum + getRoadmapCount(game), 0);
 
@@ -430,8 +433,11 @@ window.UIHome = (() => {
         target.innerHTML = `<div class="atlas-inline-empty">${emptyMessage}</div>`;
         return;
       }
-      target.innerHTML = items.slice(0, 5).map(game => {
-        const updatedLabel = formatDisplayDate(game.updated_at || game.created_at);
+      target.innerHTML = items.slice(0, 3).map(game => {
+        const reviewedAt = typeof sharedCatalog.getHomeReviewDate === 'function'
+          ? sharedCatalog.getHomeReviewDate(game)
+          : (game.last_reviewed_at || game.updated_at || game.created_at || '');
+        const updatedLabel = formatDisplayDate(reviewedAt);
         const slug = escapeAttribute(game.slug || '');
         const revisionBadges = [
           isGuideVerified(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--verified">Verificado</span>' : '',
@@ -439,7 +445,7 @@ window.UIHome = (() => {
         ].filter(Boolean).join('');
         return `
         <article class="atlas-editorial-update">
-          <time datetime="${escapeAttribute(game.updated_at || game.created_at || '')}">${escapeHtml(updatedLabel)}</time>
+          <time datetime="${escapeAttribute(reviewedAt)}">${escapeHtml(updatedLabel)}</time>
           <div class="atlas-editorial-update__body">
             <h3>${escapeHtml(stripMarkdownHeadingPrefix(game.name))}</h3>
             <div class="atlas-editorial-update__badges">${revisionBadges}</div>
@@ -463,16 +469,16 @@ window.UIHome = (() => {
         intentTarget.innerHTML = '<div class="atlas-inline-empty atlas-intent-empty">As faixas aparecem aqui quando houver jogos suficientes no catálogo.</div>';
       } else {
         intentTarget.innerHTML = visibleIntentConfigs.map(item => `
-        <button type="button" class="atlas-intent-card atlas-intent-card--${escapeAttribute(item.tone)}" data-home-facet="${escapeAttribute(item.facet)}">
+        <a href="${escapeAttribute(item.href || '/catalogo')}" class="atlas-intent-card atlas-intent-card--${escapeAttribute(item.tone)}" data-home-facet="${escapeAttribute(item.facet)}">
           <div class="atlas-intent-card__head">
             <span class="atlas-intent-card__label">${escapeHtml(item.tag)}</span>
-            <i class="fas ${escapeAttribute(item.icon)}"></i>
+            <i class="fas ${escapeAttribute(item.icon)}" aria-hidden="true"></i>
           </div>
           <strong>${escapeHtml(stripMarkdownHeadingPrefix(item.title))}</strong>
           <p>${escapeHtml(item.description)}</p>
           <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
           <span class="atlas-intent-card__action">Ver seleção <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
-        </button>`).join('');
+        </a>`).join('');
       }
     }
 

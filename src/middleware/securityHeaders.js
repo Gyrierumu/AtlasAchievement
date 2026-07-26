@@ -7,8 +7,8 @@ function securityHeaders(req, res, next) {
     "form-action 'self'",
     "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://stats.g.doubleclick.net",
     "img-src 'self' data: https:",
-    "font-src 'self' https://cdnjs.cloudflare.com data:",
-    "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
+    "font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:",
+    "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com",
     "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com",
     "script-src-attr 'self' 'unsafe-inline'",
     "upgrade-insecure-requests"

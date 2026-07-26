@@ -1113,6 +1113,45 @@ function formatHomeCatalogProof(gamesCount = 0, totalTrophies = 0, totalRoadmaps
   return sharedCatalogModel.formatHomeCatalogProof(gamesCount, totalTrophies, totalRoadmaps);
 }
 
+function renderHomeCatalogProofHtml(gamesCount = 0, totalTrophies = 0, totalRoadmaps = 0) {
+  const formatter = new Intl.NumberFormat('pt-BR');
+  const stats = [
+    { icon: 'fa-gamepad', value: gamesCount, label: Number(gamesCount) === 1 ? 'guia no catálogo' : 'guias no catálogo' },
+    { icon: 'fa-trophy', value: totalTrophies, label: Number(totalTrophies) === 1 ? 'troféu mapeado' : 'troféus mapeados' },
+    { icon: 'fa-route', value: totalRoadmaps, label: Number(totalRoadmaps) === 1 ? 'etapa de roadmap' : 'etapas de roadmap' }
+  ].filter(stat => Number(stat.value || 0) > 0);
+  if (!stats.length) return escapeHtml(formatHomeCatalogProof(0, 0, 0));
+  return stats.map(stat => `
+    <span class="atlas-home-proof__item">
+      <i class="fas ${escapeHtml(stat.icon)}" aria-hidden="true"></i>
+      <strong>${escapeHtml(formatter.format(Number(stat.value)))}</strong>
+      <span>${escapeHtml(stat.label)}</span>
+    </span>`).join('');
+}
+
+function renderHomeHeroPulseText(games = []) {
+  const verifiedCount = games.filter(game => sharedCatalogModel.isCatalogVerified(game)).length;
+  if (verifiedCount > 0) {
+    return `${verifiedCount} ${verifiedCount === 1 ? 'guia verificado' : 'guias verificados'} para escolher com mais confiança.`;
+  }
+  return 'Guias de platina com dados editoriais e status de revisão.';
+}
+
+function renderHomeSearchChipsHtml(games = []) {
+  const examples = typeof sharedCatalogModel.selectHomeSearchExamples === 'function'
+    ? sharedCatalogModel.selectHomeSearchExamples(games, 4)
+    : [];
+  return examples.map(game => {
+    const slug = escapeHtml(game.slug || '');
+    const name = stripMarkdownHeadingPrefix(game.name || 'Jogo');
+    return `
+      <a href="/jogo/${slug}" class="atlas-home-search-chip" data-home-game="${escapeHtml(name)}" data-open-guide-card="${slug}" aria-label="Abrir guia de ${escapeHtml(name)}">
+        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        <span>${escapeHtml(name)}</span>
+      </a>`;
+  }).join('');
+}
+
 function getHomeFeaturedReason(game = {}) {
   return sharedCatalogModel.getHomeFeaturedReason(game);
 }
@@ -1150,15 +1189,65 @@ function renderHomeIntentCardsHtml(games = []) {
   }
 
   return items.map(item => `
-    <button type="button" class="atlas-intent-card atlas-intent-card--${escapeHtml(item.tone)}" data-home-facet="${escapeHtml(item.facet)}">
+    <a href="${escapeHtml(item.href || '/catalogo')}" class="atlas-intent-card atlas-intent-card--${escapeHtml(item.tone)}" data-home-facet="${escapeHtml(item.facet)}">
       <div class="atlas-intent-card__head">
         <span class="atlas-intent-card__label">${escapeHtml(item.tag)}</span>
-        <i class="fas ${escapeHtml(item.icon)}"></i>
+        <i class="fas ${escapeHtml(item.icon)}" aria-hidden="true"></i>
       </div>
       <strong>${escapeHtml(stripMarkdownHeadingPrefix(item.title))}</strong>
       <p>${escapeHtml(item.description)}</p>
       <span class="atlas-intent-card__meta">${escapeHtml(item.metric)}</span>
-    </button>`).join('');
+      <span class="atlas-intent-card__action">Ver seleção <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+    </a>`).join('');
+}
+
+function renderHomeHeroPreviewHtml(games = []) {
+  const game = typeof sharedCatalogModel.selectHomeSpotlightGame === 'function'
+    ? sharedCatalogModel.selectHomeSpotlightGame(games)
+    : sharedCatalogModel.selectHomeShowcaseGames(games, 1)[0];
+  if (!game) {
+    return `
+      <div class="atlas-home-hero-preview__empty">
+        <span>Guia em destaque</span>
+        <strong>Escolha por tempo, dificuldade e risco</strong>
+      </div>`;
+  }
+
+  const model = sharedCardModel.buildStandardGameCardModel(game);
+  const slug = escapeHtml(model.slug || '');
+  const hasRiskSignal = Boolean(
+    model.hasRisk
+    || Number(game.missable_count || 0) > 0
+    || sharedEditorialModel.hasMissableRiskText?.(game.missable || game.missable_summary || '')
+  );
+  const facts = [
+    model.time && !/^tempo não informado$/i.test(model.time)
+      ? `<span><i class="fas fa-clock" aria-hidden="true"></i><strong>${escapeHtml(model.time)}</strong><small>Tempo estimado</small></span>`
+      : '',
+    Number(model.difficulty) > 0
+      ? `<span><i class="fas fa-gauge-high" aria-hidden="true"></i><strong>${escapeHtml(String(model.difficulty))}/10</strong><small>Dificuldade</small></span>`
+      : '',
+    `<span data-risk="${hasRiskSignal ? 'risk' : 'safe'}"><i class="fas ${hasRiskSignal ? 'fa-triangle-exclamation' : 'fa-shield-halved'}" aria-hidden="true"></i><strong>${hasRiskSignal ? 'Atenção cedo' : 'Baixo risco'}</strong><small>Riscos</small></span>`,
+    Number(model.trophies || 0) > 0
+      ? '<span><i class="fas fa-list-check" aria-hidden="true"></i><strong>Checklist</strong><small>Progresso salvo</small></span>'
+      : ''
+  ].filter(Boolean).join('');
+
+  return `
+    <div class="atlas-home-hero-preview__shell">
+      <div class="atlas-home-hero-preview__head">
+        <span>Guia em destaque</span>
+        <strong>${escapeHtml(stripMarkdownHeadingPrefix(model.name))}</strong>
+      </div>
+      <div class="atlas-home-hero-preview__cover atlas-home-image-shell${model.image ? '' : ' atlas-home-image-shell--fallback-visible'}">
+        ${renderHomeImageHtml(model, 'atlas-home-hero-preview__image', { width: 320, height: 480, sizes: '(min-width: 1024px) 148px, 34vw', loading: 'eager' })}
+      </div>
+      <div class="atlas-home-hero-preview__facts">${facts}</div>
+      <a href="/jogo/${slug}" class="atlas-home-hero-preview__link" data-home-game="${escapeHtml(model.name)}" data-open-guide-card="${slug}">
+        Ver guia em destaque
+        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
+    </div>`;
 }
 
 function renderHomeDiscoveryGuidesHtml(games = []) {
@@ -1217,7 +1306,10 @@ function renderHomeEditorialHistoryHtml(games = []) {
   }
 
   return games.slice(0, 5).map(game => {
-    const updatedLabel = formatDisplayDate(game.updated_at || game.created_at);
+    const reviewedAt = typeof sharedCatalogModel.getHomeReviewDate === 'function'
+      ? sharedCatalogModel.getHomeReviewDate(game)
+      : (game.last_reviewed_at || game.updated_at || game.created_at || '');
+    const updatedLabel = formatDisplayDate(reviewedAt);
     const slug = escapeHtml(game.slug || '');
     const revisionBadges = [
       sharedCatalogModel.isCatalogVerified(game) ? '<span class="atlas-editorial-update__badge atlas-editorial-update__badge--verified">Verificado</span>' : '',
@@ -1225,7 +1317,7 @@ function renderHomeEditorialHistoryHtml(games = []) {
     ].filter(Boolean).join('');
     return `
       <article class="atlas-editorial-update">
-        <time datetime="${escapeHtml(game.updated_at || game.created_at || '')}">${escapeHtml(updatedLabel)}</time>
+        <time datetime="${escapeHtml(reviewedAt)}">${escapeHtml(updatedLabel)}</time>
         <div class="atlas-editorial-update__body">
           <h3>${escapeHtml(stripMarkdownHeadingPrefix(game.name))}</h3>
           <div class="atlas-editorial-update__badges">${revisionBadges}</div>
@@ -3865,10 +3957,13 @@ function applyTemplateDefaults(template) {
     .replace(/__SEO_VIEW_CLASS__/g, 'hidden')
     .replace(/__SEO_PAGE_CONTENT__/g, '')
     .replace(/__HOME_CATALOG_PROOF__/g, formatHomeCatalogProof(0, 0, 0))
+    .replace(/__HOME_HERO_PULSE__/g, 'Guias de platina com dados editoriais e status de revisão.')
+    .replace(/__HOME_SEARCH_CHIPS__/g, '')
     .replace(/__HOME_INTENT_CARDS__/g, '')
     .replace(/__HOME_FEATURED_NOW__/g, '')
     .replace(/__HOME_RECENT_GUIDES__/g, '')
     .replace(/__HOME_UPDATED_GUIDES__/g, '')
+    .replace(/__CURRENT_YEAR__/g, String(new Date().getFullYear()))
     .replace(/__INITIAL_STATE_SCRIPT__/g, '<script>window.__INITIAL_STATE__ = null;</script>');
 }
 
@@ -4183,7 +4278,9 @@ async function buildDefaultPageHtml(req) {
   const games = await listAllHomeGames();
   const homeUpdate = gamesService.getWeeklyHomeUpdatePopup();
   const byRecent = [...games].sort((a, b) => String(b.created_at || '').localeCompare(String(a.created_at || '')));
-  const byUpdated = [...games].sort((a, b) => String(b.updated_at || '').localeCompare(String(a.updated_at || '')));
+  const byUpdated = typeof sharedCatalogModel.selectLatestReviewedGames === 'function'
+    ? sharedCatalogModel.selectLatestReviewedGames(games, 3)
+    : [...games].sort((a, b) => String(b.last_reviewed_at || b.updated_at || '').localeCompare(String(a.last_reviewed_at || a.updated_at || ''))).slice(0, 3);
   const totalTrophies = games.reduce((sum, game) => sum + getHomeTotal(game), 0);
   const totalRoadmaps = games.reduce((sum, game) => sum + getHomeRoadmapCount(game), 0);
 
@@ -4201,8 +4298,11 @@ async function buildDefaultPageHtml(req) {
       url: buildPublicUrl(req, '/'),
       description: HOME_SEO_DESCRIPTION
     }))
-    .replace(/__HOME_CATALOG_PROOF__/g, formatHomeCatalogProof(games.length, totalTrophies, totalRoadmaps))
+    .replace(/__HOME_HERO_PULSE__/g, renderHomeHeroPulseText(games))
+    .replace(/__HOME_SEARCH_CHIPS__/g, renderHomeSearchChipsHtml(games))
+    .replace(/__HOME_CATALOG_PROOF__/g, renderHomeCatalogProofHtml(games.length, totalTrophies, totalRoadmaps))
     .replace(/__HOME_INTENT_CARDS__/g, renderHomeIntentCardsHtml(games))
+    .replace(/__HOME_FEATURED_NOW__/g, renderHomeHeroPreviewHtml(games))
     .replace(/__HOME_RECENT_GUIDES__/g, renderHomeDiscoveryGuidesHtml(byRecent))
     .replace(/__HOME_UPDATED_GUIDES__/g, renderHomeEditorialHistoryHtml(byUpdated))
     .replace(/__INITIAL_STATE_SCRIPT__/g, buildInitialStateScript({ page: 'home', homeUpdate }))));

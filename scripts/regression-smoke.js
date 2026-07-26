@@ -210,7 +210,7 @@ function assertHtmlLoadsModules(relPath) {
     assert(html.includes('id="view-profile"'), 'public/index.html precisa expor a pagina/painel de perfil');
     assert(html.includes('id="homeBetaNotice"'), 'home precisa expor aviso beta no template');
     assert(html.includes('AtlasAchievement está em evolução'), 'aviso beta precisa comunicar evolução editorial no template');
-    assert(html.includes('Guias de platina, roadmaps e checklists em um só lugar.'), 'H1 da home deve apresentar diretamente guias, roadmaps e checklists');
+    assert(/Guias de platina, roadmaps e checklists\s*<span[^>]*>\s*em um só lugar\.<\/span>/.test(html), 'H1 da home deve apresentar diretamente guias, roadmaps e checklists com ênfase visual parcial');
     assert(!html.includes('Sua biblioteca de platinas, guias e checklists em um só lugar.'), 'home não deve manter cópia do H1 anterior');
     assert(!html.includes('id="homeEditorialSpotlight"') && !html.includes('Guia de platina recomendado agora') && !html.includes('Boa escolha para começar'), 'home não deve duplicar a recomendação do hero em uma seção independente');
     assert(/id="homeBetaNotice"[\s\S]*?<\/aside>\s*<section class="atlas-home-section atlas-home-section--moment"/.test(html), 'aviso beta deve ser seguido diretamente pela seção de escolha por tempo, risco e dificuldade');
@@ -222,10 +222,10 @@ function assertHtmlLoadsModules(relPath) {
     });
     assert(html.includes('placeholder="Digite o nome do jogo que você quer platinar"'), 'busca da home precisa explicar a intenção de platina');
     assert(html.includes('aria-label="Buscar um jogo pelo nome"'), 'busca da home precisa de nome acessível');
-    assert(html.includes('Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank'), 'busca da home precisa oferecer exemplos curtos');
+    assert(html.includes('__HOME_SEARCH_CHIPS__'), 'busca da home precisa reservar chips gerados a partir de guias reais');
     assert(html.includes('Explorar guias'), 'home precisa manter CTA principal claro para o catálogo');
     assert(html.includes('data-auth-open="register"') && html.includes('Criar minha biblioteca'), 'CTA secundário da home deve reutilizar o cadastro existente');
-    ['Ver sem spoiler', 'Checklist contínuo', 'Roadmap por etapas', 'Biblioteca pessoal'].forEach(label => {
+    ['Consulte com contexto', 'Checklist contínuo', 'Roadmap por etapas', 'Biblioteca pessoal'].forEach(label => {
       assert(html.includes(label), `home precisa manter o diferencial ${label}`);
     });
     assert(!html.includes('Melhor primeiro clique agora'), 'home não deve manter destaque isolado que duplica os cards editoriais');
@@ -292,7 +292,7 @@ function assertUIModules() {
   assert(homeUiCode.includes('selectHomeShowcaseGames(items, HOME_EDITORIAL_HIGHLIGHT_LIMIT)'), 'cliente da home deve respeitar o limite centralizado de destaques');
   assert(!homeUiCode.includes('Verificado recentemente') && !homeUiCode.includes('Revisão recente'), 'home não deve manter selos editoriais redundantes');
   assert(!homeUiCode.includes('atlas-home-risk-badge') && !homeCss.includes('.atlas-home-risk-badge'), 'destaques da home devem renderizar somente o status editorial verificado');
-  assert(homeCss.includes('#recentGamesOverview .atlas-discovery-card'), 'compactação dos destaques deve permanecer escopada à home');
+  assert(homeCss.includes('.atlas-discovery-card {'), 'home precisa manter o componente visual dos destaques editoriais');
   assert(!homeUiCode.includes('renderHomeEditorialSpotlight') && !homeUiCode.includes('#homeEditorialSpotlight'), 'ui-home não deve manter renderizador órfão da recomendação duplicada');
   assert(!homeCss.includes('.atlas-home-spotlight-card') && !homeCss.includes('.atlas-home-spotlight__slot'), 'home.css não deve manter estilos órfãos da recomendação duplicada');
   assert(homeUiCode.includes("document.createElement('aside')"), 'faixa de novidade deve usar semantica informativa');

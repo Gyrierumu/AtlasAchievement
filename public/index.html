@@ -23,23 +23,26 @@
   <script type="application/ld+json" id="gameStructuredData">__PAGE_JSON_LD__</script>
   __ANALYTICS_HEAD__
   <script>window.__APP_VERSION__=__ATLAS_APP_VERSION__;</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/utilities.css">
   <link rel="stylesheet" href="/css/tokens.css">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/components.css">
-  <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/catalog.css">
   <link rel="stylesheet" href="/css/guide.css">
   <link rel="stylesheet" href="/css/checklist.css">
   <link rel="stylesheet" href="/css/admin.css">
   <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/home.css">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 </head>
-<body class="atlas-body min-h-screen pb-10" data-page="public">
+<body id="topo" class="atlas-body min-h-screen pb-10" data-page="public">
   <a href="#mainContent" class="atlas-skip-link">Pular para o conteúdo principal</a>
   <div class="atlas-bg-orb atlas-bg-orb--one"></div>
   <div class="atlas-bg-orb atlas-bg-orb--two"></div>
@@ -57,10 +60,10 @@
         </div>
       </a>
 
-      <nav class="hidden xl:flex items-center gap-3 atlas-nav-shell atlas-nav-shell--desktop">
-        <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
-        <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
-        <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2">Biblioteca <span id="libraryBadge" class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden">0</span></button>
+      <nav class="hidden xl:flex items-center gap-3 atlas-nav-shell atlas-nav-shell--desktop" aria-label="Navegação principal">
+        <a href="/" data-view-link="home" class="atlas-nav-link is-active" aria-current="page">Início</a>
+        <a href="/catalogo" data-view-link="catalog" class="atlas-nav-link">Explorar</a>
+        <a href="/biblioteca" data-view-link="library" class="atlas-nav-link flex items-center gap-2">Biblioteca <span id="libraryBadge" class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden">0</span></a>
         <button type="button" data-feedback-open class="atlas-nav-link">Feedback</button>
       </nav>
 
@@ -83,10 +86,10 @@
       </div>
     </div>
     <div class="atlas-mobile-nav-wrap xl:hidden px-4 lg:px-6 pb-4">
-      <nav class="atlas-nav-shell atlas-mobile-nav">
-        <button type="button" data-view-link="home" class="atlas-nav-link is-active">Início</button>
-        <button type="button" data-view-link="catalog" class="atlas-nav-link">Explorar</button>
-        <button type="button" data-view-link="library" class="atlas-nav-link flex items-center gap-2 justify-center">Biblioteca <span class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden" data-mobile-library-badge>0</span></button>
+      <nav class="atlas-nav-shell atlas-mobile-nav" aria-label="Navegação principal no celular">
+        <a href="/" data-view-link="home" class="atlas-nav-link is-active" aria-current="page">Início</a>
+        <a href="/catalogo" data-view-link="catalog" class="atlas-nav-link">Explorar</a>
+        <a href="/biblioteca" data-view-link="library" class="atlas-nav-link flex items-center gap-2 justify-center">Biblioteca <span class="bg-atlas-500 text-white text-[10px] px-1.5 py-0.5 rounded-full hidden" data-mobile-library-badge>0</span></a>
         <button type="button" data-feedback-open class="atlas-nav-link">Feedback</button>
       </nav>
     </div>
@@ -98,40 +101,40 @@
       <section class="atlas-home-hero atlas-panel atlas-panel--primary overflow-hidden">
         <div class="atlas-home-hero__content">
           <div class="atlas-home-hero__main">
-            <div class="atlas-hero-kicker mb-4" translate="no"><span class="atlas-hero-kicker__medal"><img src="/assets/brand/atlasachievement-logo.png" alt="AtlasAchievement" class="atlas-hero-kicker__logo" width="28" height="28" decoding="async"></span><span class="notranslate" translate="no">AtlasAchievement</span></div>
-            <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading" class="text-[38px] md:text-[52px] xl:text-[64px] leading-[0.97] font-black tracking-tight max-w-[840px]">
-              Guias de platina, roadmaps e checklists em um só lugar.
+            <div class="atlas-home-pulse" data-home-pulse aria-live="polite">
+              <span class="atlas-home-pulse__icon" aria-hidden="true"><i class="fas fa-trophy"></i></span>
+              <span data-home-pulse-message>__HOME_HERO_PULSE__</span>
+            </div>
+            <__HOME_HERO_HEADING_TAG__ id="homeHeroHeading">
+              Guias de platina, roadmaps e checklists <span class="atlas-home-hero__accent">em um só lugar.</span>
             </__HOME_HERO_HEADING_TAG__>
-            <p class="mt-3 text-white/68 text-[17px] md:text-[18px] max-w-[680px] leading-relaxed">
+            <p class="atlas-home-hero__description">
               Salve guias para continuar de onde parou, acompanhar troféus pendentes e receber recomendações para decidir qual platina abrir depois.
             </p>
 
-            <div class="atlas-home-pulse" data-home-pulse aria-live="polite">
-              <span class="atlas-home-pulse__icon" aria-hidden="true"><i class="fas fa-star"></i></span>
-              <span data-home-pulse-message>Sua biblioteca guarda checklists, próximos passos e recomendações sem expor dados sensíveis.</span>
+            <div class="atlas-home-cta-row">
+              <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-primary atlas-home-primary-cta"><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</a>
+              <button type="button" data-auth-open="register" data-home-library-guest class="atlas-btn atlas-btn-secondary atlas-home-secondary-cta"><i class="fas fa-bookmark" aria-hidden="true"></i> Criar minha biblioteca</button>
+              <a href="/biblioteca" data-view-link="library" data-home-library-user class="atlas-btn atlas-btn-secondary atlas-home-secondary-cta hidden"><i class="fas fa-bookmark" aria-hidden="true"></i> Abrir minha biblioteca</a>
             </div>
 
-            <div class="mt-5 flex flex-wrap gap-3 max-w-[780px] atlas-home-cta-row">
-              <button type="button" data-view-link="catalog" class="atlas-btn atlas-btn-primary atlas-home-primary-cta"><i class="fas fa-compass" aria-hidden="true"></i> Explorar guias</button>
-              <button type="button" data-auth-open="register" class="atlas-btn atlas-btn-secondary atlas-home-secondary-cta"><i class="fas fa-bookmark" aria-hidden="true"></i> Criar minha biblioteca</button>
-            </div>
-
-            <div class="mt-4 atlas-search-wrap atlas-search-wrap--home">
+            <form id="homeSearchForm" class="atlas-search-wrap atlas-search-wrap--home" role="search">
+              <label class="sr-only" for="gameInput">Digite o nome do jogo que você quer platinar</label>
               <div class="relative atlas-search-control">
                 <input id="gameInput" type="text" placeholder="Digite o nome do jogo que você quer platinar" class="w-full atlas-search-input outline-none" autocomplete="off" role="combobox" aria-label="Buscar um jogo pelo nome" aria-autocomplete="list" aria-expanded="false" aria-controls="suggestions" aria-describedby="searchFeedback">
-                <button id="btnLoad" class="atlas-search-btn" aria-label="Buscar guia do jogo">
-                  <i class="fas fa-magnifying-glass"></i>
+                <button id="btnLoad" type="submit" class="atlas-search-btn" aria-label="Buscar guia do jogo">
+                  <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
                   <span>Buscar guia</span>
                 </button>
                 <div id="suggestions" class="absolute top-full left-0 right-0 atlas-suggestion-panel mt-3 hidden z-20 max-h-72 overflow-y-auto" role="listbox" aria-label="Sugestões de jogos"></div>
               </div>
-              <div id="homeSearchChips" class="atlas-home-search-chips" aria-label="Sugestões rápidas de busca"></div>
-              <div id="searchFeedback" class="mt-3 text-sm text-white/50" aria-live="polite">Exemplos: Spider-Man, Astro Bot, Life is Strange, Ratchet &amp; Clank</div>
-            </div>
+              <div id="homeSearchChips" class="atlas-home-search-chips" aria-label="Sugestões rápidas de busca">__HOME_SEARCH_CHIPS__</div>
+              <div id="searchFeedback" class="atlas-search-feedback" aria-live="polite">Escolha um exemplo do catálogo ou digite o nome de um jogo.</div>
+            </form>
 
-            <p id="homeCatalogProofText" class="mt-6 atlas-home-proof" aria-label="Resumo do catálogo">__HOME_CATALOG_PROOF__</p>
+            <div id="homeCatalogProofText" class="atlas-home-proof" aria-label="Resumo do catálogo">__HOME_CATALOG_PROOF__</div>
           </div>
-          <aside id="homeHeroPreview" class="atlas-home-hero-preview" aria-label="Prévia de guia em destaque"></aside>
+          <aside id="homeHeroPreview" class="atlas-home-hero-preview" aria-label="Prévia de guia em destaque">__HOME_FEATURED_NOW__</aside>
         </div>
       </section>
 
@@ -146,7 +149,7 @@
             <h2 id="homeMomentTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight">Escolha guias por tempo, risco e dificuldade</h2>
             <p class="text-white/58 mt-3 max-w-3xl">Entre pelo tipo de compromisso que combina com sua sessão de agora.</p>
           </div>
-          <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta"><i class="fas fa-compass"></i> Explorar todos</a>
+          <a href="/catalogo" data-view-link="catalog" class="atlas-home-section-cta">Explorar todos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
         <div id="intentOverview" class="atlas-region grid lg:grid-cols-4 md:grid-cols-2 gap-4">__HOME_INTENT_CARDS__</div>
       </section>
@@ -158,68 +161,81 @@
             <h2 id="homeBenefitsTitle" class="text-[28px] md:text-[34px] font-extrabold tracking-tight mt-2">Por que usar o AtlasAchievement para organizar sua platina</h2>
           </div>
         </div>
-        <div class="atlas-home-benefits__grid">
-          <article class="atlas-home-benefit">
-            <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
-            <div>
-              <h3>Ver sem spoiler</h3>
-              <p>Consulte objetivos sem abrir detalhes desnecessários logo de cara.</p>
+        <div class="atlas-home-benefits__layout">
+          <div class="atlas-home-benefits__grid">
+            <article class="atlas-home-benefit">
+              <i class="fa-regular fa-eye-slash" aria-hidden="true"></i>
+              <div>
+                <h3>Consulte com contexto</h3>
+                <p>Veja primeiro objetivos e alertas essenciais, abrindo detalhes quando precisar.</p>
+              </div>
+            </article>
+            <article class="atlas-home-benefit">
+              <i class="fas fa-list-check" aria-hidden="true"></i>
+              <div>
+                <h3>Checklist contínuo</h3>
+                <p>Marque troféus e retome o progresso localmente ou sincronizado à sua conta.</p>
+              </div>
+            </article>
+            <article class="atlas-home-benefit">
+              <i class="fas fa-route" aria-hidden="true"></i>
+              <div>
+                <h3>Roadmap por etapas</h3>
+                <p>Siga uma rota prática com pontos de atenção antes de cada avanço.</p>
+              </div>
+            </article>
+            <article class="atlas-home-benefit">
+              <i class="fas fa-bookmark" aria-hidden="true"></i>
+              <div>
+                <h3>Biblioteca pessoal</h3>
+                <p>Salve jogos e mantenha cada platina organizada no mesmo fluxo.</p>
+              </div>
+            </article>
+          </div>
+          <aside class="atlas-home-progress-demo" aria-label="Roadmap, checklist e biblioteca integrados">
+            <div class="atlas-home-progress-demo__columns" aria-hidden="true">
+              <span></span><span></span><span></span>
             </div>
-          </article>
-          <article class="atlas-home-benefit">
-            <i class="fas fa-list-check" aria-hidden="true"></i>
-            <div>
-              <h3>Checklist contínuo</h3>
-              <p>Marque troféus e volte exatamente onde parou, com o próximo pendente sempre à mão.</p>
+            <div class="atlas-home-progress-demo__card">
+              <span class="atlas-home-progress-demo__icon" aria-hidden="true"><i class="fas fa-list-check"></i></span>
+              <div>
+                <strong>Seu próximo passo fica salvo</strong>
+                <small>Roadmap, checklist e biblioteca no mesmo fluxo.</small>
+              </div>
+              <span class="atlas-home-progress-demo__status">Em andamento</span>
             </div>
-          </article>
-          <article class="atlas-home-benefit">
-            <i class="fas fa-route" aria-hidden="true"></i>
-            <div>
-              <h3>Roadmap por etapas</h3>
-              <p>Rota clara com alertas de perdíveis antes de avançar.</p>
-            </div>
-          </article>
-          <article class="atlas-home-benefit">
-            <i class="fas fa-bookmark" aria-hidden="true"></i>
-            <div>
-              <h3>Biblioteca pessoal</h3>
-              <p>Salve jogos, acompanhe o status da coleção e descubra recomendações pelo seu ritmo.</p>
-            </div>
-          </article>
+          </aside>
         </div>
       </section>
 
       <section id="homeRecentGuides" class="atlas-home-section atlas-home-section--feeds">
-        <div class="atlas-home-feed-grid">
-          <section class="atlas-home-feed atlas-home-feed--discovery" aria-labelledby="homeDiscoveryTitle">
-            <div class="atlas-home-feed__head">
-              <div class="atlas-home-feed__title-row">
-                <div>
-                  <span class="atlas-section-kicker">Destaques editoriais</span>
-                  <h2 id="homeDiscoveryTitle" class="text-[24px] md:text-[30px] font-extrabold tracking-tight mt-2">Guias para escolher a próxima platina</h2>
-                  <p class="text-white/55 mt-2 max-w-2xl">Uma seleção editorial para comparar ritmo, desafio e organização antes de começar.</p>
-                </div>
-                <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta">Ver catálogo completo</a>
+        <section class="atlas-home-feed atlas-home-feed--discovery" aria-labelledby="homeDiscoveryTitle">
+          <div class="atlas-home-feed__head">
+            <div class="atlas-home-feed__title-row">
+              <div>
+                <span class="atlas-section-kicker">Destaques editoriais</span>
+                <h2 id="homeDiscoveryTitle">Guias para escolher a próxima platina</h2>
+                <p>Uma seleção editorial para comparar ritmo, desafio e organização antes de começar.</p>
               </div>
+              <a href="/catalogo" data-view-link="catalog" class="atlas-home-section-cta">Ver catálogo completo <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <div id="recentGamesOverview" class="atlas-region atlas-discovery-grid">__HOME_RECENT_GUIDES__</div>
-          </section>
+          </div>
+          <div id="recentGamesOverview" class="atlas-region atlas-discovery-grid">__HOME_RECENT_GUIDES__</div>
+        </section>
 
-          <section class="atlas-home-feed atlas-home-feed--history" aria-labelledby="homeHistoryTitle">
-            <div class="atlas-home-feed__head">
-              <div class="atlas-home-feed__title-row">
-                <div>
-                  <span class="atlas-section-kicker">Histórico editorial</span>
-                  <h2 id="homeHistoryTitle" class="text-[26px] md:text-[32px] font-extrabold tracking-tight mt-3">Últimas revisões</h2>
-                  <p class="text-white/55 mt-2 max-w-xl">Ajustes recentes em roadmaps, checklists e pontos de atenção dos guias.</p>
-                </div>
-                <a href="/catalogo" data-view-link="catalog" class="atlas-btn atlas-btn-secondary atlas-home-section-cta">Ver guias revisados</a>
+        <section class="atlas-home-feed atlas-home-feed--history" aria-labelledby="homeHistoryTitle">
+          <div class="atlas-home-feed__head">
+            <div class="atlas-home-feed__title-row">
+              <div>
+                <span class="atlas-section-kicker">Histórico editorial</span>
+                <h2 id="homeHistoryTitle">Últimas revisões</h2>
+                <p>Guias com revisão editorial registrada e data verificável.</p>
               </div>
+              <a href="/catalogo" data-view-link="catalog" class="atlas-home-section-cta">Ver guias revisados <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-            <div id="updatedGamesOverview" class="atlas-region atlas-editorial-timeline">__HOME_UPDATED_GUIDES__</div>
-          </section>
-        </div>
+          </div>
+          <div id="updatedGamesOverview" class="atlas-region atlas-editorial-timeline">__HOME_UPDATED_GUIDES__</div>
+        </section>
       </section>
 
     </section>
@@ -505,20 +521,34 @@
     </section>
   </main>
 
-  <footer class="max-w-[1320px] mx-auto px-4 lg:px-6 mt-10 atlas-site-footer">
-    <div class="atlas-panel atlas-panel--flat atlas-site-footer__panel">
+  <footer class="atlas-site-footer">
+    <div class="atlas-site-footer__inner">
       <div class="atlas-site-footer__brand">
-        <strong class="notranslate" translate="no">AtlasAchievement</strong>
-        <span>Guias de platina com contexto editorial, roadmap e checklist contínuo.</span>
+        <a href="/" data-view-link="home" class="atlas-site-footer__logo notranslate" translate="no" aria-label="AtlasAchievement - Início">
+          <img src="/assets/brand/atlasachievement-logo.png" alt="" width="32" height="32" loading="lazy" decoding="async" aria-hidden="true">
+          <strong>AtlasAchievement</strong>
+        </a>
+        <p>Guias de platina com contexto editorial, roadmap e checklist contínuo.</p>
       </div>
-      <div class="atlas-site-footer__links" aria-label="Links do rodapé">
-        <a href="/catalogo" data-view-link="catalog" class="atlas-text-action text-sm">Explorar guias</a>
-        <a href="/biblioteca" data-view-link="library" class="atlas-text-action text-sm">Biblioteca</a>
-        <button type="button" data-feedback-open class="atlas-text-action text-sm">Enviar feedback</button>
-        <a href="/sobre" class="atlas-text-action text-sm">Sobre e metodologia</a>
-        <a href="/contato" class="atlas-text-action text-sm">Contato</a>
-        <a href="/privacidade" class="atlas-text-action text-sm">Política de Privacidade</a>
-        <a href="/termos" class="atlas-text-action text-sm">Termos de Uso</a>
+      <nav class="atlas-site-footer__group" aria-label="Plataforma">
+        <strong>Plataforma</strong>
+        <a href="/catalogo" data-view-link="catalog">Explorar guias</a>
+        <a href="/biblioteca" data-view-link="library">Biblioteca</a>
+        <button type="button" data-feedback-open>Enviar feedback</button>
+      </nav>
+      <nav class="atlas-site-footer__group" aria-label="Informações">
+        <strong>Informações</strong>
+        <a href="/sobre">Sobre e metodologia</a>
+        <a href="/contato">Contato</a>
+      </nav>
+      <nav class="atlas-site-footer__group" aria-label="Legal">
+        <strong>Legal</strong>
+        <a href="/privacidade">Política de Privacidade</a>
+        <a href="/termos">Termos de Uso</a>
+      </nav>
+      <div class="atlas-site-footer__bottom">
+        <span>© __CURRENT_YEAR__ AtlasAchievement. Todos os direitos reservados.</span>
+        <a href="#topo">Voltar ao topo <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
       </div>
     </div>
   </footer>
