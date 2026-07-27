@@ -4,6 +4,16 @@ const { slugifyGameName, getCanonicalGameSlug, buildSlugVariant } = require('../
 const { formatTimeMetadata, getTimeBucketFromHours } = require('../utils/time');
 const guideModel = require('../shared/guideViewModel');
 const editorialModel = require('../shared/editorialModel');
+const {
+  RE5_GAME_ID,
+  RE5_SLUG,
+  RE5_EXPECTED_COUNTS,
+  RE5_EXPECTED_TYPE_COUNTS,
+  RE5_BASE_TROPHY_CODES,
+  RE5_VERSION_SPECS,
+  RE5_PACKAGE_SPECS,
+  RE5_ADDITIONAL_TROPHIES
+} = require('../shared/re5V2Constants');
 
 const GAME_SLUG_ALIASES = {
   'astros-playroom': [
@@ -1501,6 +1511,614 @@ async function mergeAstrosPlayroomDuplicates() {
   await addAstrosPlayroomRedirects(canonical.id);
 }
 
+const DEFAULT_DATABASE = { exec, all, run, get };
+const RE5_V2_TROPHY_COLUMN_DEFINITIONS = Object.freeze({
+  version_id: 'INTEGER',
+  package_id: 'INTEGER',
+  display_order: 'INTEGER',
+  is_online: 'INTEGER NOT NULL DEFAULT 0',
+  is_coop: 'INTEGER NOT NULL DEFAULT 0',
+  is_cumulative: 'INTEGER NOT NULL DEFAULT 0',
+  is_missable: 'INTEGER NOT NULL DEFAULT 0',
+  category: 'TEXT',
+  source_trophy_code: 'TEXT'
+});
+
+async function tableExistsInDatabase(database, tableName) {
+  const row = await database.get(
+    `SELECT name FROM sqlite_master WHERE type = 'table' AND name = ?`,
+    [tableName]
+  );
+  return Boolean(row);
+}
+
+async function getTableColumnNames(database, tableName) {
+  const columns = await database.all(`PRAGMA table_info(${tableName})`);
+  return new Set(columns.map(column => column.name));
+}
+
+async function captureRe5Progress(database) {
+  if (!await tableExistsInDatabase(database, 'user_trophy_progress')) return [];
+  return database.all('SELECT * FROM user_trophy_progress ORDER BY id');
+}
+
+async function ensureRe5V2Tables(database) {
+  await database.exec(`
+    CREATE TABLE IF NOT EXISTS game_versions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      game_id INTEGER NOT NULL,
+      version_code TEXT NOT NULL,
+      platform TEXT NOT NULL,
+      region TEXT NOT NULL DEFAULT 'global',
+      release_kind TEXT NOT NULL,
+      display_order INTEGER NOT NULL,
+      is_native INTEGER NOT NULL DEFAULT 0,
+      native_trophy_list INTEGER NOT NULL DEFAULT 0,
+      save_transfer_supported INTEGER NOT NULL DEFAULT 0,
+      autopop_supported INTEGER NOT NULL DEFAULT 0,
+      upgrade_supported INTEGER NOT NULL DEFAULT 0,
+      source_version_id INTEGER,
+      notes TEXT,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (game_id) REFERENCES games(id) ON UPDATE CASCADE ON DELETE CASCADE,
+      FOREIGN KEY (source_version_id)
+        REFERENCES game_versions(id) ON UPDATE CASCADE ON DELETE RESTRICT,
+      UNIQUE (game_id, version_code),
+      UNIQUE (game_id, display_order),
+      CHECK (display_order > 0),
+      CHECK (is_native IN (0, 1)),
+      CHECK (native_trophy_list IN (0, 1)),
+      CHECK (save_transfer_supported IN (0, 1)),
+      CHECK (autopop_supported IN (0, 1)),
+      CHECK (upgrade_supported IN (0, 1)),
+      CHECK (release_kind IN ('native', 'backward_compatibility')),
+      CHECK (release_kind <> 'backward_compatibility' OR is_native = 0),
+      CHECK (native_trophy_list = 0 OR is_native = 1)
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_game_versions_game_id
+      ON game_versions(game_id);
+    CREATE INDEX IF NOT EXISTS idx_game_versions_platform
+      ON game_versions(platform);
+    CREATE INDEX IF NOT EXISTS idx_game_versions_source_version_id
+      ON game_versions(source_version_id);
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_game_versions_one_native_list
+      ON game_versions(game_id)
+      WHERE native_trophy_list = 1;
+    CREATE TRIGGER IF NOT EXISTS trg_game_versions_updated_at
+      AFTER UPDATE ON game_versions
+      FOR EACH ROW
+      BEGIN
+        UPDATE game_versions SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
+      END;
+
+    CREATE TABLE IF NOT EXISTS trophy_packages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      game_id INTEGER NOT NULL,
+      package_code TEXT NOT NULL,
+      name TEXT NOT NULL,
+      package_type TEXT NOT NULL,
+      display_order INTEGER NOT NULL,
+      expected_trophy_count INTEGER NOT NULL,
+      counts_for_platinum INTEGER NOT NULL DEFAULT 0,
+      counts_for_100_percent INTEGER NOT NULL DEFAULT 1,
+      is_online INTEGER NOT NULL DEFAULT 0,
+      is_coop INTEGER NOT NULL DEFAULT 0,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (game_id) REFERENCES games(id) ON UPDATE CASCADE ON DELETE CASCADE,
+      UNIQUE (game_id, package_code),
+      UNIQUE (game_id, display_order),
+      CHECK (display_order > 0),
+      CHECK (expected_trophy_count > 0),
+      CHECK (counts_for_platinum IN (0, 1)),
+      CHECK (counts_for_100_percent IN (0, 1)),
+      CHECK (is_online IN (0, 1)),
+      CHECK (is_coop IN (0, 1)),
+      CHECK (counts_for_platinum = 1 OR counts_for_100_percent = 1),
+      CHECK (package_type IN ('base', 'dlc', 'mode'))
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_trophy_packages_game_id
+      ON trophy_packages(game_id);
+    CREATE INDEX IF NOT EXISTS idx_trophy_packages_package_type
+      ON trophy_packages(package_type);
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_trophy_packages_one_base
+      ON trophy_packages(game_id)
+      WHERE package_type = 'base';
+    CREATE TRIGGER IF NOT EXISTS trg_trophy_packages_updated_at
+      AFTER UPDATE ON trophy_packages
+      FOR EACH ROW
+      BEGIN
+        UPDATE trophy_packages SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
+      END;
+
+    CREATE TABLE IF NOT EXISTS game_guide_payloads (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      game_id INTEGER NOT NULL,
+      schema_version INTEGER NOT NULL,
+      payload_json TEXT NOT NULL,
+      payload_hash TEXT NOT NULL,
+      validation_status TEXT NOT NULL,
+      created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      FOREIGN KEY (game_id) REFERENCES games(id) ON UPDATE CASCADE ON DELETE CASCADE,
+      UNIQUE (game_id, schema_version),
+      CHECK (schema_version > 0),
+      CHECK (validation_status IN ('valid', 'invalid', 'pending'))
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_game_guide_payloads_game_id
+      ON game_guide_payloads(game_id);
+    CREATE INDEX IF NOT EXISTS idx_game_guide_payloads_payload_hash
+      ON game_guide_payloads(payload_hash);
+    CREATE INDEX IF NOT EXISTS idx_game_guide_payloads_validation_status
+      ON game_guide_payloads(validation_status);
+    CREATE TRIGGER IF NOT EXISTS trg_game_guide_payloads_updated_at
+      AFTER UPDATE ON game_guide_payloads
+      FOR EACH ROW
+      BEGIN
+        UPDATE game_guide_payloads SET updated_at = CURRENT_TIMESTAMP WHERE id = OLD.id;
+      END;
+  `);
+}
+
+async function ensureRe5V2TrophyColumns(database) {
+  const columnNames = await getTableColumnNames(database, 'trophies');
+  for (const [columnName, definition] of Object.entries(RE5_V2_TROPHY_COLUMN_DEFINITIONS)) {
+    if (!columnNames.has(columnName)) {
+      await database.exec(`ALTER TABLE trophies ADD COLUMN ${columnName} ${definition}`);
+      columnNames.add(columnName);
+    }
+  }
+
+  // SQLite cannot add a complete package_id foreign key with ALTER TABLE.
+  // Referential integrity is enforced transactionally below; a global table
+  // rebuild requires a separate migration and full cross-game backup.
+  await database.exec(`
+    CREATE INDEX IF NOT EXISTS idx_trophies_version_id
+      ON trophies(version_id);
+    CREATE INDEX IF NOT EXISTS idx_trophies_package_id
+      ON trophies(package_id);
+    CREATE UNIQUE INDEX IF NOT EXISTS idx_trophies_game_package_display_order_unique
+      ON trophies(game_id, package_id, display_order)
+      WHERE package_id IS NOT NULL AND display_order IS NOT NULL;
+    CREATE INDEX IF NOT EXISTS idx_trophies_game_source_trophy_code
+      ON trophies(game_id, source_trophy_code);
+  `);
+  return columnNames;
+}
+
+async function requireRe5Game(database) {
+  const game = await database.get(
+    'SELECT id, slug FROM games WHERE id = ?',
+    [RE5_GAME_ID]
+  );
+  if (!game) {
+    throw new Error(`RE5_V2_GAME_NOT_FOUND: game ${RE5_GAME_ID} is required`);
+  }
+  if (game.slug !== RE5_SLUG) {
+    throw new Error(`RE5_V2_GAME_SLUG_MISMATCH: expected ${RE5_SLUG}`);
+  }
+}
+
+async function insertAndValidateRe5Versions(database) {
+  const ps4 = RE5_VERSION_SPECS[0];
+  await database.run(
+    `INSERT INTO game_versions
+      (game_id, version_code, platform, region, release_kind, display_order,
+       is_native, native_trophy_list, save_transfer_supported, autopop_supported,
+       upgrade_supported, source_version_id)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+     ON CONFLICT(game_id, version_code) DO NOTHING`,
+    [
+      RE5_GAME_ID,
+      ps4.versionCode,
+      ps4.platform,
+      ps4.region,
+      ps4.releaseKind,
+      ps4.displayOrder,
+      Number(ps4.isNative),
+      Number(ps4.nativeTrophyList),
+      Number(ps4.saveTransferSupported),
+      Number(ps4.autopopSupported),
+      Number(ps4.upgradeSupported)
+    ]
+  );
+  const ps4Row = await database.get(
+    'SELECT * FROM game_versions WHERE game_id = ? AND version_code = ?',
+    [RE5_GAME_ID, ps4.versionCode]
+  );
+  if (!ps4Row) throw new Error('RE5_V2_PS4_VERSION_MISSING');
+
+  const ps5 = RE5_VERSION_SPECS[1];
+  await database.run(
+    `INSERT INTO game_versions
+      (game_id, version_code, platform, region, release_kind, display_order,
+       is_native, native_trophy_list, save_transfer_supported, autopop_supported,
+       upgrade_supported, source_version_id)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+     ON CONFLICT(game_id, version_code) DO NOTHING`,
+    [
+      RE5_GAME_ID,
+      ps5.versionCode,
+      ps5.platform,
+      ps5.region,
+      ps5.releaseKind,
+      ps5.displayOrder,
+      Number(ps5.isNative),
+      Number(ps5.nativeTrophyList),
+      Number(ps5.saveTransferSupported),
+      Number(ps5.autopopSupported),
+      Number(ps5.upgradeSupported),
+      ps4Row.id
+    ]
+  );
+
+  const rows = await database.all(
+    'SELECT * FROM game_versions WHERE game_id = ? ORDER BY display_order',
+    [RE5_GAME_ID]
+  );
+  if (rows.length !== 2) throw new Error('RE5_V2_INVALID_VERSION_COUNT');
+
+  for (const spec of RE5_VERSION_SPECS) {
+    const row = rows.find(item => item.version_code === spec.versionCode);
+    const sourceVersionId = spec.sourceVersionCode ? ps4Row.id : null;
+    const expected = {
+      platform: spec.platform,
+      region: spec.region,
+      release_kind: spec.releaseKind,
+      display_order: spec.displayOrder,
+      is_native: Number(spec.isNative),
+      native_trophy_list: Number(spec.nativeTrophyList),
+      save_transfer_supported: Number(spec.saveTransferSupported),
+      autopop_supported: Number(spec.autopopSupported),
+      upgrade_supported: Number(spec.upgradeSupported),
+      source_version_id: sourceVersionId
+    };
+    if (!row) throw new Error(`RE5_V2_VERSION_MISSING: ${spec.versionCode}`);
+    for (const [field, value] of Object.entries(expected)) {
+      if (row[field] !== value) {
+        throw new Error(`RE5_V2_VERSION_CONFLICT: ${spec.versionCode}.${field}`);
+      }
+    }
+  }
+  return { ps4VersionId: ps4Row.id, rows };
+}
+
+async function insertAndValidateRe5Packages(database) {
+  for (const spec of RE5_PACKAGE_SPECS) {
+    await database.run(
+      `INSERT INTO trophy_packages
+        (game_id, package_code, name, package_type, display_order,
+         expected_trophy_count, counts_for_platinum, counts_for_100_percent,
+         is_online, is_coop)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(game_id, package_code) DO NOTHING`,
+      [
+        RE5_GAME_ID,
+        spec.packageCode,
+        spec.name,
+        spec.packageType,
+        spec.displayOrder,
+        spec.expectedTrophyCount,
+        Number(spec.countsForPlatinum),
+        Number(spec.countsFor100Percent),
+        Number(spec.isOnline),
+        Number(spec.isCoop)
+      ]
+    );
+  }
+
+  const rows = await database.all(
+    'SELECT * FROM trophy_packages WHERE game_id = ? ORDER BY display_order',
+    [RE5_GAME_ID]
+  );
+  if (rows.length !== 4) throw new Error('RE5_V2_INVALID_PACKAGE_COUNT');
+
+  for (const spec of RE5_PACKAGE_SPECS) {
+    const row = rows.find(item => item.package_code === spec.packageCode);
+    const expected = {
+      name: spec.name,
+      package_type: spec.packageType,
+      display_order: spec.displayOrder,
+      expected_trophy_count: spec.expectedTrophyCount,
+      counts_for_platinum: Number(spec.countsForPlatinum),
+      counts_for_100_percent: Number(spec.countsFor100Percent),
+      is_online: Number(spec.isOnline),
+      is_coop: Number(spec.isCoop)
+    };
+    if (!row) throw new Error(`RE5_V2_PACKAGE_MISSING: ${spec.packageCode}`);
+    for (const [field, value] of Object.entries(expected)) {
+      if (row[field] !== value) {
+        throw new Error(`RE5_V2_PACKAGE_CONFLICT: ${spec.packageCode}.${field}`);
+      }
+    }
+  }
+  return rows;
+}
+
+async function validateRe5LegacyTrophies(database) {
+  const rows = await database.all(
+    'SELECT id, trophy_code, type FROM trophies WHERE game_id = ? ORDER BY id',
+    [RE5_GAME_ID]
+  );
+  const counts = new Map();
+  for (const row of rows) {
+    counts.set(row.trophy_code, (counts.get(row.trophy_code) || 0) + 1);
+  }
+
+  const missing = RE5_BASE_TROPHY_CODES.filter(code => !counts.has(code));
+  const duplicated = RE5_BASE_TROPHY_CODES.filter(code => counts.get(code) !== 1);
+  if (missing.length) {
+    throw new Error(`RE5_V2_BASE_TROPHY_MISSING: ${missing.join(',')}`);
+  }
+  if (duplicated.length) {
+    throw new Error(`RE5_V2_BASE_TROPHY_DUPLICATED: ${duplicated.join(',')}`);
+  }
+
+  const allowedCodes = new Set([
+    ...RE5_BASE_TROPHY_CODES,
+    ...RE5_ADDITIONAL_TROPHIES.map(item => item.trophyCode)
+  ]);
+  const unexpected = rows.filter(row => !allowedCodes.has(row.trophy_code));
+  if (unexpected.length) {
+    throw new Error(`RE5_V2_CONFLICTING_TROPHY: ${unexpected.map(item => item.trophy_code).join(',')}`);
+  }
+
+  const additionalCount = rows.filter(row => !RE5_BASE_TROPHY_CODES.includes(row.trophy_code)).length;
+  if (additionalCount !== 0 && additionalCount !== RE5_ADDITIONAL_TROPHIES.length) {
+    throw new Error(`RE5_V2_PARTIAL_ADDITIONAL_SET: ${additionalCount}`);
+  }
+
+  const baseRows = RE5_BASE_TROPHY_CODES.map(code => rows.find(row => row.trophy_code === code));
+  return {
+    baseRows,
+    baseIds: baseRows.map(row => row.id),
+    additionalCount
+  };
+}
+
+async function backfillRe5BaseTrophies(database, packageId, ps4VersionId) {
+  for (let index = 0; index < RE5_BASE_TROPHY_CODES.length; index += 1) {
+    const result = await database.run(
+      `UPDATE trophies
+       SET package_id = ?,
+           version_id = ?,
+           display_order = ?,
+           is_online = 0,
+           category = COALESCE(category, 'base')
+       WHERE game_id = ? AND trophy_code = ?`,
+      [packageId, ps4VersionId, index + 1, RE5_GAME_ID, RE5_BASE_TROPHY_CODES[index]]
+    );
+    if (result.changes !== 1) {
+      throw new Error(`RE5_V2_BASE_BACKFILL_FAILED: ${RE5_BASE_TROPHY_CODES[index]}`);
+    }
+  }
+}
+
+function buildAdditionalTrophyInsert(columnNames, trophy, packageId, ps4VersionId) {
+  const valuesByColumn = {
+    game_id: RE5_GAME_ID,
+    trophy_code: trophy.trophyCode,
+    name: trophy.trophyCode,
+    name_pt: null,
+    type: trophy.type,
+    description: '',
+    tip: '',
+    is_spoiler: 0,
+    version_id: ps4VersionId,
+    package_id: packageId,
+    display_order: trophy.displayOrder,
+    is_online: Number(trophy.isOnline),
+    is_coop: 0,
+    is_cumulative: 0,
+    is_missable: 0,
+    category: trophy.packageCode,
+    source_trophy_code: null,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString()
+  };
+  const insertColumns = Object.keys(valuesByColumn).filter(column => columnNames.has(column));
+  return {
+    sql: `INSERT INTO trophies (${insertColumns.join(', ')})
+          VALUES (${insertColumns.map(() => '?').join(', ')})`,
+    values: insertColumns.map(column => valuesByColumn[column])
+  };
+}
+
+async function insertRe5AdditionalTrophies(
+  database,
+  columnNames,
+  packageRows,
+  ps4VersionId
+) {
+  const packageIds = new Map(packageRows.map(row => [row.package_code, row.id]));
+  let inserted = 0;
+  for (const trophy of RE5_ADDITIONAL_TROPHIES) {
+    const existing = await database.get(
+      'SELECT id FROM trophies WHERE game_id = ? AND trophy_code = ?',
+      [RE5_GAME_ID, trophy.trophyCode]
+    );
+    if (existing) continue;
+    const statement = buildAdditionalTrophyInsert(
+      columnNames,
+      trophy,
+      packageIds.get(trophy.packageCode),
+      ps4VersionId
+    );
+    const result = await database.run(statement.sql, statement.values);
+    if (result.changes !== 1) {
+      throw new Error(`RE5_V2_ADDITIONAL_INSERT_FAILED: ${trophy.trophyCode}`);
+    }
+    inserted += 1;
+  }
+  return inserted;
+}
+
+async function validateRe5V2MigrationIntegrity(
+  database,
+  preservedBaseIds,
+  preservedProgress
+) {
+  const versions = await database.all(
+    'SELECT * FROM game_versions WHERE game_id = ? ORDER BY display_order',
+    [RE5_GAME_ID]
+  );
+  if (versions.length !== 2) throw new Error('RE5_V2_POSTCHECK_VERSION_COUNT');
+  if (versions.filter(item => item.native_trophy_list === 1).length !== 1) {
+    throw new Error('RE5_V2_POSTCHECK_NATIVE_LIST_COUNT');
+  }
+  const ps4 = versions.find(item => item.version_code === 'ps4-native');
+  const ps5 = versions.find(item => item.version_code === 'ps5-backcompat-ps4');
+  if (
+    !ps4
+    || !ps5
+    || ps5.source_version_id !== ps4.id
+    || ps5.is_native !== 0
+    || ps5.native_trophy_list !== 0
+    || ps5.autopop_supported !== 0
+    || ps5.upgrade_supported !== 0
+  ) {
+    throw new Error('RE5_V2_POSTCHECK_BACKWARD_COMPATIBILITY');
+  }
+
+  const packages = await database.all(
+    'SELECT * FROM trophy_packages WHERE game_id = ? ORDER BY display_order',
+    [RE5_GAME_ID]
+  );
+  if (packages.length !== 4) throw new Error('RE5_V2_POSTCHECK_PACKAGE_COUNT');
+  if (packages.filter(item => item.package_type === 'base').length !== 1) {
+    throw new Error('RE5_V2_POSTCHECK_BASE_PACKAGE_COUNT');
+  }
+
+  const trophies = await database.all(
+    `SELECT t.id, t.trophy_code, t.type, t.package_id, t.version_id,
+            t.display_order, t.is_online, p.package_code
+     FROM trophies t
+     LEFT JOIN trophy_packages p ON p.id = t.package_id
+     WHERE t.game_id = ?
+     ORDER BY p.display_order, t.display_order`,
+    [RE5_GAME_ID]
+  );
+  if (trophies.length !== RE5_EXPECTED_COUNTS.total) {
+    throw new Error(`RE5_V2_POSTCHECK_TOTAL: ${trophies.length}`);
+  }
+  if (trophies.some(item => !item.package_id || !item.version_id || !item.display_order)) {
+    throw new Error('RE5_V2_POSTCHECK_NULL_RELATION');
+  }
+  if (new Set(trophies.map(item => item.trophy_code)).size !== trophies.length) {
+    throw new Error('RE5_V2_POSTCHECK_DUPLICATE_CODE');
+  }
+
+  for (const spec of RE5_PACKAGE_SPECS) {
+    const packageRow = packages.find(item => item.package_code === spec.packageCode);
+    const packageTrophies = trophies.filter(item => item.package_code === spec.packageCode);
+    if (
+      !packageRow
+      || packageTrophies.length !== spec.expectedTrophyCount
+      || packageRow.expected_trophy_count !== packageTrophies.length
+    ) {
+      throw new Error(`RE5_V2_POSTCHECK_PACKAGE_TOTAL: ${spec.packageCode}`);
+    }
+    if (new Set(packageTrophies.map(item => item.display_order)).size !== packageTrophies.length) {
+      throw new Error(`RE5_V2_POSTCHECK_DUPLICATE_ORDER: ${spec.packageCode}`);
+    }
+  }
+
+  for (const [type, expected] of Object.entries(RE5_EXPECTED_TYPE_COUNTS)) {
+    const count = trophies.filter(item => item.type === type).length;
+    if (count !== expected) {
+      throw new Error(`RE5_V2_POSTCHECK_TYPE_TOTAL: ${type}=${count}`);
+    }
+  }
+  const versus = trophies.filter(item => item.package_code === 'versus');
+  if (versus.length !== 10 || versus.some(item => item.is_online !== 1)) {
+    throw new Error('RE5_V2_POSTCHECK_VERSUS_ONLINE');
+  }
+
+  const currentBaseIds = RE5_BASE_TROPHY_CODES.map(code => (
+    trophies.find(item => item.trophy_code === code)?.id
+  ));
+  if (JSON.stringify(currentBaseIds) !== JSON.stringify(preservedBaseIds)) {
+    throw new Error('RE5_V2_POSTCHECK_BASE_IDS_CHANGED');
+  }
+  const currentProgress = await captureRe5Progress(database);
+  if (JSON.stringify(currentProgress) !== JSON.stringify(preservedProgress)) {
+    throw new Error('RE5_V2_POSTCHECK_PROGRESS_CHANGED');
+  }
+
+  const foreignKeyErrors = [];
+  for (const tableName of ['game_versions', 'trophy_packages', 'game_guide_payloads']) {
+    foreignKeyErrors.push(...await database.all(`PRAGMA foreign_key_check(${tableName})`));
+  }
+  if (foreignKeyErrors.length) throw new Error('RE5_V2_POSTCHECK_FOREIGN_KEY');
+
+  return {
+    versions: versions.length,
+    packages: packages.length,
+    trophies: trophies.length,
+    base: trophies.filter(item => item.package_code === 'base').length,
+    versus: versus.length,
+    lostInNightmares: trophies.filter(item => item.package_code === 'lost-in-nightmares').length,
+    desperateEscape: trophies.filter(item => item.package_code === 'desperate-escape').length
+  };
+}
+
+async function migrateGuideSchemaV2PackagesAndVersions(database = DEFAULT_DATABASE) {
+  if (
+    !database
+    || typeof database.exec !== 'function'
+    || typeof database.all !== 'function'
+    || typeof database.run !== 'function'
+    || typeof database.get !== 'function'
+  ) {
+    throw new TypeError('A database adapter with exec/all/run/get is required');
+  }
+
+  await database.exec('PRAGMA foreign_keys = ON');
+  await database.exec('BEGIN IMMEDIATE');
+  try {
+    await requireRe5Game(database);
+    const preservedProgress = await captureRe5Progress(database);
+    await ensureRe5V2Tables(database);
+    const trophyColumnNames = await ensureRe5V2TrophyColumns(database);
+    const { ps4VersionId } = await insertAndValidateRe5Versions(database);
+    const packageRows = await insertAndValidateRe5Packages(database);
+    const legacy = await validateRe5LegacyTrophies(database);
+    const basePackage = packageRows.find(item => item.package_code === 'base');
+
+    await backfillRe5BaseTrophies(database, basePackage.id, ps4VersionId);
+    const additionalInserted = await insertRe5AdditionalTrophies(
+      database,
+      trophyColumnNames,
+      packageRows,
+      ps4VersionId
+    );
+    const integrity = await validateRe5V2MigrationIntegrity(
+      database,
+      legacy.baseIds,
+      preservedProgress
+    );
+    await database.exec('COMMIT');
+
+    return {
+      gameId: RE5_GAME_ID,
+      baseFound: legacy.baseRows.length,
+      baseUpdated: RE5_BASE_TROPHY_CODES.length,
+      baseIdsPreserved: true,
+      trophyCodesPreserved: true,
+      progressPreserved: true,
+      additionalInserted,
+      ...integrity
+    };
+  } catch (error) {
+    await database.exec('ROLLBACK').catch(() => {});
+    throw error;
+  }
+}
+
 function shouldSyncSeedData(options = {}) {
   if (Object.prototype.hasOwnProperty.call(options, 'syncSeedData')) {
     return Boolean(options.syncSeedData);
@@ -1828,3 +2446,7 @@ async function migrate(options = {}) {
 }
 
 module.exports = migrate;
+module.exports.migrateGuideSchemaV2PackagesAndVersions =
+  migrateGuideSchemaV2PackagesAndVersions;
+module.exports.validateRe5V2MigrationIntegrity =
+  validateRe5V2MigrationIntegrity;

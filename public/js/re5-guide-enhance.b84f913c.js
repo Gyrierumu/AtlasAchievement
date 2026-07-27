@@ -2,6 +2,10 @@
   'use strict';
 
   const root = document.documentElement;
+  if (document.querySelector('[data-guide-v2]')) {
+    root.classList.remove('re5-js');
+    return;
+  }
   const view = document.querySelector('#view-guide.atlas-guide--resident-evil-5');
   if (!view) {
     root.classList.remove('re5-js');

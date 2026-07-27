@@ -13,8 +13,17 @@ const {
   ensureDirectory,
   createDatabaseBackup,
   openDatabase,
-  normalizeGuideFileName
+  normalizeGuideFileName,
+  normalizeGuideSnapshotV2,
+  hashGuideSnapshotV2
 } = require('./data-sync-utils');
+const {
+  assertGuideSnapshotV2
+} = require('../src/validators/guideSnapshotV2.validator');
+const {
+  RE5_GAME_ID,
+  RE5_SLUG
+} = require('../src/shared/re5V2Constants');
 
 const GAME_COLUMNS = [
   'name',
@@ -133,10 +142,196 @@ function applyProtectedVerificationStatus(game, slug) {
   };
 }
 
+function assertSameRelationalValue(pathLabel, current, expected) {
+  if (current !== expected) {
+    throw new Error(
+      `RE5_V2_RELATIONAL_DIVERGENCE: ${pathLabel} payload=${JSON.stringify(expected)} relation=${JSON.stringify(current)}`
+    );
+  }
+}
+
+async function exportGuideSnapshotV2(database, gameId = RE5_GAME_ID, options = {}) {
+  if (gameId && typeof gameId === 'object') {
+    options = gameId;
+    gameId = options.gameId || RE5_GAME_ID;
+  }
+  if (
+    !database
+    || typeof database.all !== 'function'
+    || typeof database.get !== 'function'
+  ) {
+    throw new TypeError('A database adapter with all/get is required');
+  }
+  const game = options.slug
+    ? await database.get('SELECT id, slug FROM games WHERE slug = ?', [options.slug])
+    : await database.get('SELECT id, slug FROM games WHERE id = ?', [gameId]);
+  if (!game || game.id !== RE5_GAME_ID || game.slug !== RE5_SLUG) {
+    throw new Error('RE5_V2_DATABASE_GAME_MISMATCH');
+  }
+
+  const payloadRow = await database.get(
+    `SELECT payload_json, payload_hash, validation_status
+       FROM game_guide_payloads
+      WHERE game_id = ? AND schema_version = 2`,
+    [game.id]
+  );
+  if (!payloadRow) throw new Error('RE5_V2_PAYLOAD_MISSING');
+  if (payloadRow.validation_status !== 'valid') throw new Error('RE5_V2_PAYLOAD_NOT_VALID');
+
+  let payload;
+  try {
+    payload = JSON.parse(payloadRow.payload_json);
+  } catch (error) {
+    throw new Error(`RE5_V2_PAYLOAD_INVALID_JSON: ${error.message}`);
+  }
+  const normalizedPayload = normalizeGuideSnapshotV2(payload);
+  if (hashGuideSnapshotV2(normalizedPayload) !== payloadRow.payload_hash) {
+    throw new Error('RE5_V2_PAYLOAD_HASH_MISMATCH');
+  }
+  if (
+    !Array.isArray(payload.sources)
+    || !payload.sources.length
+    || !Array.isArray(payload.claims)
+    || !payload.claims.length
+    || !payload.seo
+  ) {
+    throw new Error('RE5_V2_EDITORIAL_PAYLOAD_INCOMPLETE');
+  }
+
+  const versions = await database.all(
+    `SELECT v.*, source.version_code AS source_version_code
+       FROM game_versions v
+       LEFT JOIN game_versions source ON source.id = v.source_version_id
+      WHERE v.game_id = ?
+      ORDER BY v.display_order`,
+    [game.id]
+  );
+  if (versions.length !== payload.versions.length) {
+    throw new Error('RE5_V2_VERSION_COUNT_DIVERGENCE');
+  }
+  for (const expected of payload.versions) {
+    const current = versions.find(row => row.version_code === expected.versionCode);
+    if (!current) throw new Error(`RE5_V2_VERSION_MISSING_FROM_RELATION: ${expected.versionCode}`);
+    const comparisons = {
+      platform: expected.platform,
+      region: expected.region,
+      release_kind: expected.releaseKind,
+      display_order: expected.displayOrder,
+      is_native: Number(expected.isNative),
+      native_trophy_list: Number(expected.nativeTrophyList),
+      save_transfer_supported: Number(expected.saveTransferSupported),
+      autopop_supported: Number(expected.autopopSupported),
+      upgrade_supported: Number(expected.upgradeSupported),
+      source_version_code: expected.sourceVersionCode
+    };
+    for (const [field, value] of Object.entries(comparisons)) {
+      assertSameRelationalValue(`versions.${expected.versionCode}.${field}`, current[field], value);
+    }
+  }
+
+  const packages = await database.all(
+    'SELECT * FROM trophy_packages WHERE game_id = ? ORDER BY display_order',
+    [game.id]
+  );
+  if (packages.length !== payload.trophyPackages.length) {
+    throw new Error('RE5_V2_PACKAGE_COUNT_DIVERGENCE');
+  }
+  for (const expected of payload.trophyPackages) {
+    const current = packages.find(row => row.package_code === expected.packageCode);
+    if (!current) throw new Error(`RE5_V2_PACKAGE_MISSING_FROM_RELATION: ${expected.packageCode}`);
+    const comparisons = {
+      name: expected.name,
+      package_type: expected.packageType,
+      display_order: expected.displayOrder,
+      expected_trophy_count: expected.expectedTrophyCount,
+      counts_for_platinum: Number(expected.countsForPlatinum),
+      counts_for_100_percent: Number(expected.countsFor100Percent),
+      is_online: Number(expected.isOnline),
+      is_coop: Number(expected.isCoop)
+    };
+    for (const [field, value] of Object.entries(comparisons)) {
+      assertSameRelationalValue(`trophyPackages.${expected.packageCode}.${field}`, current[field], value);
+    }
+  }
+
+  const trophies = await database.all(
+    `SELECT t.*, p.package_code, v.version_code
+       FROM trophies t
+       LEFT JOIN trophy_packages p ON p.id = t.package_id
+       LEFT JOIN game_versions v ON v.id = t.version_id
+      WHERE t.game_id = ?
+      ORDER BY p.display_order, t.display_order`,
+    [game.id]
+  );
+  if (trophies.length !== 71 || payload.trophies.length !== trophies.length) {
+    throw new Error('RE5_V2_TROPHY_COUNT_DIVERGENCE');
+  }
+  const relationalByCode = new Map(trophies.map(trophy => [trophy.trophy_code, trophy]));
+  const payloadCodes = new Set(payload.trophies.map(trophy => trophy.trophyCode));
+  if (
+    relationalByCode.size !== payloadCodes.size
+    || [...relationalByCode.keys()].some(code => !payloadCodes.has(code))
+  ) {
+    throw new Error('RE5_V2_TROPHY_CODE_DIVERGENCE');
+  }
+
+  const exported = {
+    ...payload,
+    trophies: payload.trophies.map(expected => {
+      const current = relationalByCode.get(expected.trophyCode);
+      assertSameRelationalValue(
+        `trophies.${expected.trophyCode}.packageCode`,
+        current.package_code,
+        expected.packageCode
+      );
+      assertSameRelationalValue(
+        `trophies.${expected.trophyCode}.displayOrder`,
+        current.display_order,
+        expected.displayOrder
+      );
+      assertSameRelationalValue(
+        `trophies.${expected.trophyCode}.versionCode`,
+        current.version_code,
+        'ps4-native'
+      );
+      return {
+        ...expected,
+        sourceTrophyCode: current.source_trophy_code,
+        name: current.name ?? expected.name,
+        type: current.type ?? expected.type,
+        description: current.description ?? expected.description,
+        category: current.category,
+        isOnline: Boolean(current.is_online),
+        isCoop: Boolean(current.is_coop),
+        isCumulative: Boolean(current.is_cumulative),
+        isMissable: Boolean(current.is_missable)
+      };
+    })
+  };
+
+  const normalized = normalizeGuideSnapshotV2(exported);
+  assertGuideSnapshotV2(normalized, { mode: 'complete' });
+  const exportedHash = hashGuideSnapshotV2(normalized);
+  if (exportedHash !== payloadRow.payload_hash) {
+    throw new Error(`RE5_V2_EXPORTED_HASH_MISMATCH: stored=${payloadRow.payload_hash} exported=${exportedHash}`);
+  }
+  return normalized;
+}
+
 async function main() {
   const args = parseArgs();
   const dataDir = normalizeDataDir(args.dataDir);
   const databasePath = path.resolve(env.databasePath);
+  const previousManifestPath = path.join(dataDir, 'manifest.json');
+  const previousManifest = fs.existsSync(previousManifestPath)
+    ? JSON.parse(fs.readFileSync(previousManifestPath, 'utf8').replace(/^\uFEFF/, ''))
+    : null;
+  const previousRe5Entry = previousManifest?.games?.find(entry => entry.slug === RE5_SLUG) || null;
+  const previousRe5Path = path.join(dataDir, `${RE5_SLUG}.json`);
+  const previousRe5Snapshot = fs.existsSync(previousRe5Path)
+    ? JSON.parse(fs.readFileSync(previousRe5Path, 'utf8').replace(/^\uFEFF/, ''))
+    : null;
+  const preserveRe5V2 = previousRe5Snapshot?.schemaVersion === 2;
 
   if (!fs.existsSync(databasePath)) {
     throw new Error(`Banco nao encontrado em ${databasePath}. Rode npm run db:setup ou ajuste DATABASE_PATH.`);
@@ -225,6 +420,30 @@ async function main() {
 
     for (const row of games) {
       const slug = getCanonicalGameSlug(row.slug || row.name);
+      if (slug === RE5_SLUG && preserveRe5V2) {
+        assertGuideSnapshotV2(previousRe5Snapshot, { mode: 'complete' });
+        manifest.games.push(previousRe5Entry || {
+          slug: RE5_SLUG,
+          file: `${RE5_SLUG}.json`,
+          name: previousRe5Snapshot.game.name,
+          status: previousRe5Snapshot.review.status,
+          trophies: previousRe5Snapshot.trophies.length,
+          roadmaps: previousRe5Snapshot.roadmap.length,
+          schemaVersion: 2,
+          sourcePath: `data/guides/${RE5_SLUG}.json`,
+          payloadHash: hashGuideSnapshotV2(previousRe5Snapshot),
+          reviewedAt: previousRe5Snapshot.review.reviewedAt,
+          trophyCount: previousRe5Snapshot.trophies.length,
+          packageCounts: Object.fromEntries(previousRe5Snapshot.trophyPackages.map(pkg => [
+            pkg.packageCode,
+            previousRe5Snapshot.trophies.filter(trophy => trophy.packageCode === pkg.packageCode).length
+          ])),
+          sourceCount: previousRe5Snapshot.sources.length,
+          claimCount: previousRe5Snapshot.claims.length,
+          generatedAt: new Date().toISOString()
+        });
+        continue;
+      }
       const exportedGame = applyProtectedVerificationStatus({ ...row, slug }, slug);
       const guide = {
         schemaVersion: 1,
@@ -266,7 +485,13 @@ async function main() {
   }
 }
 
-main().catch(error => {
-  console.error(error.message || error);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  main().catch(error => {
+    console.error(error.message || error);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = {
+  exportGuideSnapshotV2
+};

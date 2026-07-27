@@ -9,7 +9,11 @@ const {
   DEFAULT_DATA_DIR,
   parseArgs,
   normalizeDataDir,
-  normalizeGuideFileName
+  normalizeGuideFileName,
+  stableStringify,
+  normalizeGuideSnapshotV2,
+  hashGuideSnapshotV2,
+  compareGuideSnapshotsV2
 } = require('./data-sync-utils');
 const {
   validateManifest,
@@ -17,6 +21,12 @@ const {
   assertNoGuideRecordConflicts,
   assertProtectedVerifiedGuideStatuses
 } = require('./import-data');
+const {
+  assertGuideSnapshotV2
+} = require('../src/validators/guideSnapshotV2.validator');
+const {
+  transformRe5ApprovedPackage
+} = require('./transform-re5-approved-package');
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, ''));
@@ -134,6 +144,14 @@ function collectDataGuideValidationErrors(manifest, records) {
     if (sampleSlug && sampleSlug !== record.slug) {
       errors.push(`sampleGames/data: "${name}" usa slug ${sampleSlug} no seed e ${record.slug} em data/guides.`);
     }
+    if (record.guide?.schemaVersion === 2) {
+      try {
+        assertGuideSnapshotV2(record.guide, { mode: 'complete' });
+      } catch (error) {
+        errors.push(`guia ${record.slug}: Snapshot V2 invalido (${error.message}).`);
+      }
+      continue;
+    }
 
     const redirects = Array.isArray(record.guide?.redirects) ? record.guide.redirects : [];
     for (const redirect of redirects) {
@@ -220,9 +238,98 @@ function summarizeChangedSlugs(records, changedFiles) {
   };
 }
 
+function buildRe5ManifestEntry(snapshot, payloadHash, generatedAt) {
+  return {
+    slug: snapshot.game.slug,
+    file: 'resident-evil-5.json',
+    name: snapshot.game.name,
+    status: snapshot.review.status,
+    trophies: snapshot.trophies.length,
+    roadmaps: snapshot.roadmap.length,
+    schemaVersion: snapshot.schemaVersion,
+    sourcePath: 'data/guides/resident-evil-5.json',
+    payloadHash,
+    reviewedAt: snapshot.review.reviewedAt,
+    trophyCount: snapshot.trophies.length,
+    packageCounts: Object.fromEntries(snapshot.trophyPackages.map(pkg => [
+      pkg.packageCode,
+      snapshot.trophies.filter(trophy => trophy.packageCode === pkg.packageCode).length
+    ])),
+    sourceCount: snapshot.sources.length,
+    claimCount: snapshot.claims.length,
+    generatedAt
+  };
+}
+
+async function prepareRe5GuideV2(options = {}) {
+  const dataDir = normalizeDataDir(options.dataDir || DEFAULT_DATA_DIR);
+  const snapshotPath = path.join(dataDir, 'resident-evil-5.json');
+  const manifestPath = path.join(dataDir, 'manifest.json');
+  const dryRun = Boolean(options.dryRun);
+  const transformed = await transformRe5ApprovedPackage({ importDir: options.importDir });
+  const snapshot = normalizeGuideSnapshotV2(transformed);
+  assertGuideSnapshotV2(snapshot, { mode: 'complete' });
+  const payloadHash = hashGuideSnapshotV2(snapshot);
+
+  let existingComparison = null;
+  if (fs.existsSync(snapshotPath)) {
+    existingComparison = compareGuideSnapshotsV2(readJson(snapshotPath), snapshot);
+  }
+  const manifest = fs.existsSync(manifestPath)
+    ? readJson(manifestPath)
+    : { schemaVersion: 1, dataKind: 'atlasachievement-guide-export', games: [], totals: {} };
+  validateManifest(manifest);
+  const previousEntry = manifest.games.find(entry => entry.slug === 'resident-evil-5');
+  const generatedAt = options.generatedAt
+    || (existingComparison?.equal ? previousEntry?.generatedAt : null)
+    || new Date().toISOString();
+  const entry = buildRe5ManifestEntry(snapshot, payloadHash, generatedAt);
+  const nextManifest = {
+    ...manifest,
+    games: manifest.games
+      .filter(item => item.slug !== 'resident-evil-5')
+      .concat(entry)
+      .sort((left, right) => left.slug.localeCompare(right.slug, 'en'))
+  };
+
+  if (!dryRun) {
+    fs.mkdirSync(dataDir, { recursive: true });
+    fs.writeFileSync(snapshotPath, `${JSON.stringify(snapshot, null, 2)}\n`, 'utf8');
+    fs.writeFileSync(manifestPath, stableStringify(nextManifest), 'utf8');
+    if (options.roundTrip) runNpmScript('test:re5:v2:roundtrip');
+  }
+
+  return {
+    ok: true,
+    mode: dryRun ? 'dry-run' : 'write',
+    snapshotPath,
+    manifestPath,
+    payloadHash,
+    changed: existingComparison ? !existingComparison.equal : true,
+    differences: existingComparison?.differences || [],
+    trophyCount: snapshot.trophies.length,
+    packageCounts: entry.packageCounts,
+    sourceCount: snapshot.sources.length,
+    claimCount: snapshot.claims.length
+  };
+}
+
 async function main() {
   const args = parseArgs();
   const dataDir = normalizeDataDir(args.dataDir || DEFAULT_DATA_DIR);
+  if (args.slug) {
+    if (args.slug !== 'resident-evil-5') {
+      throw new Error(`prepare:guides --slug nao suporta ${args.slug}`);
+    }
+    const result = await prepareRe5GuideV2({
+      dataDir,
+      importDir: args.importDir,
+      dryRun: args.dryRun,
+      roundTrip: args.roundTrip
+    });
+    console.log(JSON.stringify(result, null, 2));
+    return;
+  }
 
   runNpmScript('export:data');
   const { manifest, records } = validateGuideFiles(dataDir);
@@ -251,7 +358,14 @@ async function main() {
   console.log('Agora rode: git add data/guides && git commit -m "data: atualizar guias" && git push');
 }
 
-main().catch(error => {
-  console.error(error.stack || error.message || error);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  main().catch(error => {
+    console.error(error.stack || error.message || error);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = {
+  prepareRe5GuideV2,
+  validateGuideFiles
+};

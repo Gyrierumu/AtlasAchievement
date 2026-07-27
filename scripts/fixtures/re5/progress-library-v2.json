@@ -1,0 +1,58 @@
+{
+  "storageKey": "atlas:guide-progress:v2:resident-evil-5",
+  "value": {
+    "version": 2,
+    "slug": "resident-evil-5",
+    "updatedAt": "2026-07-26T12:00:00.000Z",
+    "source": "local",
+    "dirty": true,
+    "trophies": {
+      "re5_platinum": {
+        "completed": false,
+        "updatedAt": "2026-07-26T10:00:00.000Z"
+      },
+      "re5_ch1_1": {
+        "completed": true,
+        "updatedAt": "2026-07-26T10:10:00.000Z"
+      },
+      "re5_stockpile": {
+        "completed": true,
+        "updatedAt": "2026-07-26T10:20:00.000Z"
+      },
+      "re5_versus_contract_01": {
+        "completed": false,
+        "updatedAt": "2026-07-26T10:30:00.000Z"
+      }
+    },
+    "checklists": {
+      "re5-bsaa-emblem-01": {
+        "completed": true,
+        "updatedAt": "2026-07-26T10:40:00.000Z"
+      },
+      "re5-stockpile-item-01": {
+        "completed": false,
+        "updatedAt": "2026-07-26T10:50:00.000Z"
+      }
+    },
+    "migrations": {
+      "phase6": {
+        "status": "completed-with-ambiguous-dlc",
+        "completedAt": "2026-07-26T11:00:00.000Z",
+        "archiveKey": "atlas_re5_phase6_state_v1:archived:2026-07-26T11:00:00.000Z"
+      }
+    }
+  },
+  "timestampConflict": {
+    "local": {
+      "completed": false,
+      "updatedAt": "2026-07-26T12:00:00.000Z",
+      "source": "local"
+    },
+    "server": {
+      "completed": true,
+      "updatedAt": "2026-07-26T12:00:00.000Z",
+      "source": "server"
+    },
+    "expectedWinner": "server"
+  }
+}

@@ -12,6 +12,31 @@ function envFlag(name, fallback = false) {
   return /^(1|true|yes|on)$/i.test(String(value).trim());
 }
 
+function normalizeGuideV2Slug(value) {
+  const normalized = String(value || '')
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return normalized === '*' ? '' : normalized;
+}
+
+function getEnabledGuideV2Slugs(value = process.env.GUIDE_V2_ENABLED_SLUGS) {
+  return [...new Set(
+    String(value || '')
+      .split(',')
+      .map(normalizeGuideV2Slug)
+      .filter(Boolean)
+  )];
+}
+
+function isGuideV2EnabledForSlug(slug, value = process.env.GUIDE_V2_ENABLED_SLUGS) {
+  const normalizedSlug = normalizeGuideV2Slug(slug);
+  return Boolean(normalizedSlug) && getEnabledGuideV2Slugs(value).includes(normalizedSlug);
+}
+
 const config = {
   port: Number(process.env.PORT || 3000),
   nodeEnv,
@@ -42,6 +67,7 @@ const config = {
   re5ErrorMonitoringEnabled: envFlag('RE5_ERROR_MONITORING_ENABLED', false),
   re5AdsEnabled: envFlag('RE5_ADS_ENABLED', false),
   re5AdsTestPlaceholders: envFlag('RE5_ADS_TEST_PLACEHOLDERS', false),
+  guideV2EnabledSlugs: getEnabledGuideV2Slugs(),
   re5AdsPlacements: {
     summary: envFlag('RE5_ADS_PLACEMENT_SUMMARY_ENABLED', true),
     roadmap: envFlag('RE5_ADS_PLACEMENT_ROADMAP_ENABLED', true),
@@ -92,5 +118,8 @@ function getStartupWarnings() {
 module.exports = {
   ...config,
   assertRuntimeConfig,
-  getStartupWarnings
+  getStartupWarnings,
+  normalizeGuideV2Slug,
+  getEnabledGuideV2Slugs,
+  isGuideV2EnabledForSlug
 };

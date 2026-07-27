@@ -765,13 +765,19 @@ async function validateGuide(slug = '') {
     assert(seedGame.videoAudit.every(item => item.status === 'validated' && /^https:\/\/www\.youtube\.com\/watch\?v=/.test(item.url)), 'Cinco usos de video devem estar validados e apontar para URLs diretas');
     assert.strictEqual(seedGame.last_reviewed_at, '2026-07-18', 'Resident Evil 5 deve registrar a data real da Fase 2');
     assert.strictEqual(seedGame.lastReviewedAt, '2026-07-18T00:00:00.000-03:00', 'Resident Evil 5 deve manter lastReviewedAt sincronizado');
-    assert.strictEqual(re5Snapshot.game?.last_reviewed_at, seedGame.last_reviewed_at, 'Snapshot deve manter last_reviewed_at igual ao seed');
-    assert.strictEqual(re5Snapshot.seedExtras?.lastReviewedAt, seedGame.lastReviewedAt, 'Snapshot deve manter lastReviewedAt igual ao seed');
-    ['editorialDisplay', 'instructionalVisuals', 'platinumBaseChecklist', 'dlcCompletionGuide', 'videoAudit', 'faq', 'attentionPoints'].forEach(field => {
-      assert.deepStrictEqual(re5Snapshot.seedExtras?.[field], seedGame[field], `Snapshot deve manter ${field} em paridade com o seed`);
-    });
-    assert.strictEqual(re5Snapshot.trophies?.length, 51, 'Snapshot deve manter 51 trofeus base');
-    assert.strictEqual(re5Snapshot.roadmaps?.length, 7, 'Snapshot deve manter 7 etapas de roadmap');
+    if (re5Snapshot.schemaVersion === 2) {
+      assert.strictEqual(re5Snapshot.game?.id, 16, 'Snapshot V2 deve manter game.id 16');
+      assert.strictEqual(re5Snapshot.trophies?.length, 71, 'Snapshot V2 deve manter 71 trofeus');
+      assert.strictEqual(re5Snapshot.roadmap?.length, 9, 'Snapshot V2 deve manter 9 etapas de roadmap');
+    } else {
+      assert.strictEqual(re5Snapshot.game?.last_reviewed_at, seedGame.last_reviewed_at, 'Snapshot deve manter last_reviewed_at igual ao seed');
+      assert.strictEqual(re5Snapshot.seedExtras?.lastReviewedAt, seedGame.lastReviewedAt, 'Snapshot deve manter lastReviewedAt igual ao seed');
+      ['editorialDisplay', 'instructionalVisuals', 'platinumBaseChecklist', 'dlcCompletionGuide', 'videoAudit', 'faq', 'attentionPoints'].forEach(field => {
+        assert.deepStrictEqual(re5Snapshot.seedExtras?.[field], seedGame[field], `Snapshot deve manter ${field} em paridade com o seed`);
+      });
+      assert.strictEqual(re5Snapshot.trophies?.length, 51, 'Snapshot deve manter 51 trofeus base');
+      assert.strictEqual(re5Snapshot.roadmaps?.length, 7, 'Snapshot deve manter 7 etapas de roadmap');
+    }
     assert(dlcText.includes('Professional da DLC não muda a dificuldade/flags da platina base'), 'DLCs devem separar Professional da platina base');
     assert(re5FaqText.includes('Qual DLC é online?') && re5FaqText.includes('Qual DLC costuma dar mais trabalho?') && re5FaqText.includes('Professional das DLCs muda a platina?'), 'FAQ de RE5 deve cobrir micro-FAQ de DLC');
     ['30 vitórias', '100 eliminações', 'coop obrigatório', 'online obrigatório', 'Checklist Brutal', 'guia brutal', '100% da base', 'Checklist Completo', 'Não dizer', 'Não colocar', 'Não misturar', 'Não marcar', 'Não tratar', 'Não transformar'].forEach(text => {
@@ -1908,7 +1914,12 @@ async function validateGuide(slug = '') {
       assert.strictEqual(apiGame.editorialAuthority?.platformScope, 'PS4/Remaster', 'API deve expor o escopo editorial PS4/Remaster');
       assert.strictEqual(apiGame.editorialAuthority?.reviewedAt, '2026-07-18', 'API deve expor a data editorial real');
       assert.strictEqual(apiGame.editorialAuthority?.sources?.length, 6, 'API deve expor as seis fontes principais auditadas');
-      assert.deepStrictEqual(apiGame.editorialAuthority, re5Snapshot.seedExtras?.editorialAuthority, 'Seed/API e snapshot devem manter paridade da autoridade editorial');
+      if (re5Snapshot.schemaVersion === 2) {
+        assert.strictEqual(re5Snapshot.review?.status, 'approved', 'Snapshot V2 deve manter revisão aprovada');
+        assert(re5Snapshot.sources?.length >= 16, 'Snapshot V2 deve preservar as fontes aprovadas');
+      } else {
+        assert.deepStrictEqual(apiGame.editorialAuthority, re5Snapshot.seedExtras?.editorialAuthority, 'Seed/API e snapshot devem manter paridade da autoridade editorial');
+      }
       assert.strictEqual(getTitle(html), 'Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement', 'Resident Evil 5 deve usar title SEO especifico');
       const re5SeoDescription = 'Guia de platina de Resident Evil 5 no PS4: 51 troféus base formam a platina, com roadmap, BSAA e Professional; 20 troféus de DLC são só para o 100%.';
       assert.strictEqual(getMeta(html, 'description'), re5SeoDescription, 'Resident Evil 5 deve usar meta description especifica');
