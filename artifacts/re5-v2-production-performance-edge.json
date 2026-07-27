@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "checkedAt": "2026-07-27T16:12:06.662Z",
+  "browser": "msedge.exe",
+  "domNodes": 8559,
+  "parseMs": 21.1,
+  "domContentLoadedMs": 4173,
+  "loadMs": 4555,
+  "progressInitMs": 895.2,
+  "cls": 0,
+  "horizontalOverflow": false,
+  "heapBytes": 744828,
+  "networkRequests": 9,
+  "uniqueRequestUrls": 9,
+  "progressApiRequests": 0,
+  "scriptDurationMs": 10.51,
+  "taskDurationMs": 188.88,
+  "layoutCount": 2,
+  "apply71Ms": 16.6,
+  "completedAfterApply": 71
+}
