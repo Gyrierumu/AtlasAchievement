@@ -1,6 +1,7 @@
 const assert = require('node:assert/strict');
 const { after, before, test } = require('node:test');
 const { createApp } = require('../src/app');
+const env = require('../src/config/env');
 
 let baseUrl;
 let server;
@@ -144,7 +145,7 @@ test('SEO temporário indexa apenas a homepage', async () => {
   assert.match(robots, /Allow: \/\$/);
   assert.match(robots, /Disallow: \//);
   assert.equal(sitemapResponse.status, 200);
-  assert.match(sitemap, /<loc>http:\/\/localhost:3000\/<\/loc>/);
+  assert.ok(sitemap.includes(`<loc>${env.canonicalOrigin}/</loc>`));
   assert.doesNotMatch(sitemap, /catalogo|biblioteca|jogo/);
 });
 
