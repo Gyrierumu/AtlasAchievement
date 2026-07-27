@@ -6,30 +6,30 @@
 
 **BLOCO 8 BLOQUEADO — RELEASE NÃO EXECUTADO OU NÃO VALIDADO EM PRODUÇÃO**
 
-A release candidate foi preparada e validada localmente, mas não foi enviada ao pipeline de produção porque faltam três pré-condições bloqueadoras: execução oficial em Linux x64/Node 20, backup verificável do banco/volume de produção e acesso operacional ao Render para deploy, configuração, logs e rollback.
+O proprietário autorizou explicitamente prosseguir apesar dos bloqueios externos de backup e staging. A release foi promovida para `main`, o pipeline do Render foi acionado e a ativação isolada de `resident-evil-5` foi versionada. Todas as tentativas do Render terminaram em `failure` antes da troca de tráfego.
 
-Produção permaneceu inalterada e a rota pública continuou em V1 durante toda esta execução.
+O Render preservou a instância anterior. Em `2026-07-27T15:35:08Z`, a produção continuava saudável em V1, servindo o build `4.0.0-6cce3f3cf2dc97601275e421250a2874f0525a74`.
 
 ## Identificação
 
 | Campo | Valor |
 | --- | --- |
 | Branch | `release/resident-evil-5-v2-rc` |
-| Commit candidato | `51dac4594622f5626d83321a95f2388b1957e5e2` |
-| Tree candidata | `a6d148b308b7bd82966d08733a1e0b578ccdf1bc` |
-| Commit de conteúdo validado | `fbf682cfd990bbcb4b066b8aa99b677a787e866b` |
-| Integração de `origin/main` | árvore idêntica ao conteúdo validado |
-| Tag | `NOT_CREATED` — não houve publicação |
+| Commit inicialmente promovido | `f040a5f2ae9dab5f58c2ee6b05f0c95eb8e707d0` |
+| Commit de ativação | `69f5b48b58798c9cb5a3586e3f262bd1e4d5208a` |
+| Commit do gate Linux/Node 20 | `f79e39f3c4334e4a68142adf092e82b9c4cceca3` |
+| Commit final tentado | `798c56b898bfb39e9ad45f414c067f0592281e55` |
+| Tree final tentada | `9e8a12c1c3ab8bf1817b9195c81252abfa52031a` |
+| Tag | `NOT_CREATED` — não houve publicação bem-sucedida |
 | Artefato | `artifacts/re5-v2-final-validation.json` |
-| Build identifier | `re5-v2-rc-51dac459-2ae4c181` |
-| Node local | `v20.20.2` |
-| npm local | `10.8.2` |
-| Ambiente local | `win32-x64` |
-| Ambiente alvo | Render, Linux; acesso operacional indisponível |
+| Screenshot pós-falha | `artifacts/re5-v2-production-v1-preserved-2026-07-27.png` |
+| Node validado | `20.x`, Ubuntu Linux; patch local de referência `20.20.2` |
+| npm validado | npm fornecido por `actions/setup-node@v4` |
+| Ambiente alvo | Render, serviço `master-trophy-guide` |
 | releasedAt | `NOT_APPLICABLE` |
-| releasedBy | `Codex automation agent` — preparação/auditoria, não publicação |
+| releasedBy | `Codex automation agent` — promoção, diagnóstico e validação |
 | Remoto | `https://github.com/Gyrierumu/AtlasAchievement.git` |
-| `origin/main` observado | `6cce3f3cf2dc97601275e421250a2874f0525a74` |
+| Build público preservado | `4.0.0-6cce3f3cf2dc97601275e421250a2874f0525a74` |
 | package-lock SHA-256 | `34e15116850de34cf19239b15b34ce0801b1c7452c4f876d21ba8905704531c3` |
 | Snapshot semântico | `2ae4c181d580a624c980580e29910025c785391acd1a46d0601dc19773fc0f54` |
 | Snapshot arquivo | `23233937299e2a64cfe6197eb1c48127a1f88d3e3cd9e0591dc7cbd872598292` |
@@ -42,12 +42,12 @@ Produção permaneceu inalterada e a rota pública continuou em V1 durante toda 
 | Snapshot | 71 | 51 | 10 | 5 | 5 | `PASS` |
 | Manifesto | 71 | 51 | 10 | 5 | 5 | `PASS` |
 | Banco temporário | 71 | 51 | 10 | 5 | 5 | `PASS` |
-| Banco de produção | — | — | — | — | — | `BLOCKED` |
+| Banco de produção | — | — | — | — | — | `UNVERIFIED` — sem acesso ao volume/log |
 | View model | 71 | 51 | 10 | 5 | 5 | `PASS` |
 | SSR local V2 | 71 | 51 | 10 | 5 | 5 | `PASS` |
-| SSR público V2 | — | — | — | — | — | `BLOCKED` — produção ainda em V1 |
+| SSR público V2 | — | — | — | — | — | `BLOCKED` — build novo não recebeu tráfego |
 | DOM cliente local | 71 | 51 | 10 | 5 | 5 | `PASS` |
-| DOM cliente público V2 | — | — | — | — | — | `BLOCKED` — flag não ativada |
+| DOM cliente público V2 | — | — | — | — | — | `BLOCKED` — produção permaneceu em V1 |
 
 O Snapshot final também contém 1/1/16/53, 9 etapas, 31 seções, 30 emblemas, 50 tesouros, 27 itens, 18 upgrades, 18 Score Stars, 3 Agitators, 17 fontes, 29 claims, 71 IDs únicos, zero ID vazio e zero duplicação.
 
@@ -55,63 +55,69 @@ O Snapshot final também contém 1/1/16/53, 9 etapas, 31 seções, 30 emblemas, 
 
 | Etapa | Resultado | Evidência |
 | --- | --- | --- |
-| Backup | `BLOCKED` | sem shell/API do volume Render e sem hash/restore de produção |
-| Código com flag desligada | `NOT_EXECUTED` | pipeline não acionado |
-| V1 smoke pré-release | `PASS` | URL pública HTTP 200 e `sourceMode=relational-legacy` |
-| Migration | `BLOCKED` | necessária para sync autenticado dos 20 códigos adicionais; backup ausente |
-| Ativação da flag | `NOT_EXECUTED` | `GUIDE_V2_ENABLED_SLUGS` não alterada |
-| Cache | `NOT_EXECUTED` | nenhuma invalidação realizada |
-| V2 smoke | `BLOCKED` | V2 não publicada |
+| Override dos bloqueios externos | `AUTHORIZED` | instrução explícita do proprietário para fazer o deploy independentemente dos bloqueadores |
+| Backup oficial | `WAIVED_BY_OWNER` | não executado; risco aceito no override, sem alegação de backup |
+| Código com flag desligada | `FAILED` | commit `f040a5f2`; Render deploy `dep-d9jn3hmq1p3s738aek8g` terminou em `failure` |
+| V1 smoke após a fase A | `PASS_PRESERVED` | processo antigo permaneceu HTTP 200, `sourceMode=relational-legacy` |
+| Ativação isolada | `FAILED` | `GUIDE_V2_ENABLED_SLUGS=resident-evil-5` no commit `69f5b48`; não entrou em tráfego |
+| Gate Linux/Node 20 | `PASS` | GitHub Actions run `30278960669` e run final `30280271960` |
+| Pin do runtime Render | `FAILED` | `.node-version=20.20.2`; deploy `dep-d9jnisf9flrs73dlbdc0` terminou em `failure` |
+| Migration | `UNVERIFIED` | nenhum deploy concluiu; sem log autenticado ou hash do volume |
+| Cache | `NOT_EXECUTED` | a rota nunca mudou para V2 |
+| V2 smoke | `BLOCKED` | não houve V2 pública |
 | Progresso anônimo público | `BLOCKED` | V2 não publicada |
-| Progresso autenticado público | `BLOCKED_BY_PRODUCTION_POLICY` | sem conta técnica/procedimento e sem V2 publicada |
+| Progresso autenticado público | `BLOCKED_BY_PRODUCTION_POLICY` | sem conta técnica e sem V2 publicada |
 | SEO público V2 | `BLOCKED` | produção permanece em metadados V1 |
-| Outros jogos pós-release | `NOT_APPLICABLE` | não houve release; regressões locais passaram |
-| Logs/observabilidade | `BLOCKED` | acesso aos logs Render indisponível |
+| Outros jogos | `PASS_PRESERVED` | instância anterior permaneceu ativa; regressões locais passaram |
+| Logs do Render | `BLOCKED` | URLs de log exigem sessão autenticada |
 
-## Página pública antes do release
+Deployments observados no GitHub:
 
-Consulta sem cache executada em `https://atlasachievement.com.br/jogo/resident-evil-5`:
+| Commit | Deployment/Render | Estado |
+| --- | --- | --- |
+| `f040a5f2` | `5624672297` / `dep-d9jn3hmq1p3s738aek8g` | `failure` |
+| `69f5b48b` | `5624766196` / `dep-d9jn5q1bip4c73dli6cg` | `failure` |
+| `f79e39f3` | `5624954797` / `dep-d9jnb7kvikkc73dm7jb0` | `failure` |
+| `798c56b8` | `5625228176` / `dep-d9jnisf9flrs73dlbdc0` | `failure` |
+
+## Página pública depois das tentativas
+
+Consulta sem cache em `https://atlasachievement.com.br/jogo/resident-evil-5`, às `2026-07-27T15:35:08Z`:
 
 | Controle | Esperado V2 | Encontrado | Status |
 | --- | --- | --- | --- |
-| HTTP | 200 | 200 | `PASS` para V1 |
+| HTTP | 200 | 200 | `PASS` para V1 preservado |
+| Build | commit novo | `4.0.0-6cce3f3cf2dc97601275e421250a2874f0525a74` | `BLOCKED` |
 | sourceMode | `v2` | `relational-legacy` | `BLOCKED` |
 | H1 | Resident Evil 5 — Guia de Platina e 100% | Resident Evil 5 | `BLOCKED` |
 | Title | Resident Evil 5 — Guia de Platina, Troféus e 100% | Resident Evil 5 — Guia de Platina PS4 + DLCs \| AtlasAchievement | `BLOCKED` |
 | Revisão | 26/07/2026 | 18/07/2026 | `BLOCKED` |
-| Roadmap | 9 | 7 | `BLOCKED` |
-| Troféus V2 | 71 | marcadores V2 ausentes | `BLOCKED` |
-| Checkboxes V2 | 71 | 0 | `BLOCKED` |
-| Online platina | Não | resumo V1 não faz a distinção exigida | `BLOCKED` |
-| Online 100% | Sim | resumo V1 não faz a distinção exigida | `BLOCKED` |
-| PS5 retrocompatível | Sim | contexto V2 ausente | `BLOCKED` |
-| Aviso Versus | Presente | ausente no V1 público | `BLOCKED` |
+| Marcadores V2 | 71 | 0 | `BLOCKED` |
+| Script de progresso V2 | presente | ausente | `BLOCKED` |
+| Aviso Versus | presente | ausente no V1 | `BLOCKED` |
 | Canonical | URL de produção | correto | `PASS` |
-| Cache | no-cache/no-store | `no-cache, no-store, must-revalidate` | `PASS` |
 
-Essa é evidência de que nenhum deploy ou ativação acidental ocorreu. Não é evidência de V2 publicada.
+ETag observado: `W/"b18a9-WLq5JF8ZJRPhynOhFRd+npU9vYk"`.
 
 ## Testes
 
 | Comando/controle | Ambiente | Resultado | Observação |
 | --- | --- | --- | --- |
-| `npm ci` | Windows x64, Node 20 | `PASS` | lockfile permaneceu idêntico |
-| `npm run check:runtime` | Windows x64 | `PASS` | Node 20 |
-| `npm run test:security:production` | Windows x64 | `PASS` | 0 critical/0 high |
-| SQLite nativo/runtime | Windows x64 | `PASS` | `sqlite3@6.0.1` |
-| Snapshot/migration/round-trip | banco temporário | `PASS` | 71/51/10/5/5 |
-| Adapter/SSR/SEO/a11y/client | local isolado | `PASS` | contrato V2 integral |
-| Contratos | local isolado | `PASS` | 239.038 ms |
-| Visual | Chrome e Edge | `PASS` | 4 viewports, 200%, teclado, offline e rollback |
-| RE5 | local isolado | `PASS` | guia V2 |
-| RE2 | base + candidato | `PASS` isolado | falha global histórica reproduzida no base |
-| RE6, Stray, Inside | local isolado | `PASS` | com/sem DLC |
-| Build | Windows x64 | `PASS` | script presente |
-| Backup/restore local | temporário | `PASS` | hash e integridade preservados |
-| Linux x64 oficial | indisponível | `BLOCKED` | requisito de produção |
-| Staging | indisponível | `BLOCKED` | sem URL/credencial |
+| `npm ci` | Ubuntu Linux, Node 20 | `PASS` | GitHub Actions |
+| `npm run check:runtime` | Ubuntu Linux | `PASS` | Node 20 |
+| `npm run test:security:production` | Ubuntu Linux | `PASS` | 0 critical/0 high |
+| `npm run test:sqlite:native` | Ubuntu Linux | `PASS` | `sqlite3@6.0.1` |
+| `npm run test:sqlite:runtime` | Ubuntu Linux | `PASS` | install/reload/rollback |
+| Contratos RE5 V2 | Ubuntu Linux | `PASS` | snapshot, migration, round-trip, adapter, SSR, SEO, a11y, client, security e observabilidade |
+| Baseline RE5 | Ubuntu Linux | `PASS` | governance + guia |
+| Auditoria RE5 | Ubuntu Linux | `PASS` | gate de release |
+| Build | Ubuntu Linux | `PASS` | `npm run build --if-present` |
+| Visual | Chrome e Edge locais | `PASS` | viewports, zoom, teclado, offline e rollback |
+| `db:setup` em cópia do banco local | modo produção, isolado | `PASS` | original permaneceu intocado |
+| Staging | indisponível | `WAIVED_BY_OWNER` | override explícito |
+| Render deploy | Render | `FAIL` | causa detalhada inacessível sem log autenticado |
 
-Resultado completo: `TECHNICALLY_VALIDATED_EXTERNAL_BLOCKERS`.
+O teste nativo repetido no shell Windows/Node 24 foi corretamente recusado pelo próprio gate (`Node 20 is required`); ele não substitui nem invalida os runs Linux/Node 20 verdes.
 
 ## Segurança
 
@@ -133,29 +139,22 @@ bcrypt = 6.0.0
 tar = 7.5.22
 ```
 
-`npm audit` e `npm audit --omit=dev` retornam código 1 pelos achados moderados conhecidos; o gate específico de produção confirma zero crítica e zero alta na árvore de produção.
-
 ## Banco
 
 | Campo | Resultado |
 | --- | --- |
-| Hash de produção antes | `BLOCKED` |
-| Tamanho/mtime antes | `BLOCKED` |
-| WAL/journal/shm | `BLOCKED` |
-| Backup oficial | `BLOCKED` |
-| Hash do backup | `BLOCKED` |
-| Restore isolado do backup oficial | `BLOCKED` |
-| Hash de produção depois | `NOT_APPLICABLE` — deploy não ocorreu |
-| Migration aplicada | não |
-| Progresso de produção alterado | não |
+| Hash de produção antes/depois | `UNAVAILABLE` |
+| Tamanho/mtime/sidecars | `UNAVAILABLE` |
+| Backup oficial | `WAIVED_BY_OWNER` |
+| Migration em produção | `UNVERIFIED` — nenhum deploy concluiu |
+| Progresso de produção | nenhuma perda observada pela interface pública; verificação de volume indisponível |
+| Reprodução local | `PASS` em cópia isolada; hash de origem `e62a5b6a2f2435f7d08750b055e396b7699953108bab44a5b0a503e5fd406779` |
 
-A V2 renderiza a partir de Snapshot, porém a sincronização autenticada persiste por `trophy_code`. Os vinte códigos adicionais precisam existir na camada relacional quando a migration/backfill testada for exigida pelo runner. Portanto, não foi usado `MIGRATION_NOT_REQUIRED_FOR_ACTIVATION`: ativar a experiência completa sem inspecionar schema, fazer backup e executar o runner oficial seria inseguro.
+Nenhum SQL manual foi executado. O banco local original não foi alterado.
 
-O único backup/restore realizado foi local, com dados fictícios e diretório temporário. Nenhum banco real foi copiado, migrado ou editado.
+## Performance local V2
 
-## Performance local
-
-| Métrica V2 | Valor |
+| Métrica | Valor |
 | --- | ---: |
 | SSR p95 | 91,60 ms |
 | HTML | 300.572 bytes |
@@ -165,50 +164,27 @@ O único backup/restore realizado foi local, com dados fictícios e diretório t
 | Nós DOM | 8.559 |
 | Inicialização | 408,20 ms |
 | Aplicação de 71 estados | 58,40 ms |
-| Requisições observadas | 8 |
+| Requisições | 8 |
 | CLS | 0 |
-| Erros contínuos de console | 0 no harness |
-| Overflow horizontal | não |
+| Erros contínuos de console | 0 |
 
-Não há métrica pós-release porque não houve release.
+Não há métrica V2 pós-release porque o Render não publicou a nova instância.
 
 ## Rollback
 
 | Campo | Valor |
 | --- | --- |
-| Necessário | não |
-| Gatilho | release bloqueada antes do deploy |
-| Mecanismo primário planejado | remover somente `resident-evil-5` de `GUIDE_V2_ENABLED_SLUGS` |
-| Migration destrutiva planejada | não |
-| Resultado | produção permaneceu em V1 |
+| Necessário no tráfego | não |
+| Gatilho | todos os deployments novos falharam antes da troca |
+| Mecanismo efetivo | retenção automática do último deploy saudável pelo Render |
+| Resultado | V1 continuou HTTP 200 e `sourceMode=relational-legacy` |
 
-O rollback local V2→V1→V2 passou em 3.041 ms, preservando progresso local e sem duplicação. O rollback externo continua `BLOCKED`.
+Não houve rollback destrutivo de migration, exclusão de Snapshot, limpeza de progresso ou alteração de outro guia.
 
-## Observabilidade para o operador
+## Bloqueio remanescente
 
-Quando o acesso existir, o operador deve verificar imediatamente e nas janelas de 15, 30, 60 minutos e 24 horas:
+É necessário acesso autenticado ao deployment `dep-d9jnisf9flrs73dlbdc0` para obter a primeira linha de erro do Render e distinguir com evidência entre falha de instalação, configuração de runtime prevalente no painel, build ou predeploy. Repetir alterações sem esse log não é seguro.
 
-- `guide_v2_selected` presente para RE5;
-- zero fallback inesperado;
-- zero `guide_v2_invalid_snapshot`, `guide_v2_manifest_mismatch` e `guide_v2_adapter_error`;
-- zero 5xx;
-- progresso inicializado e sincronizado sem dados pessoais em log;
-- nenhum token, e-mail, ID PSN ou lista integral de progresso;
-- latência, falhas de sync e isolamento entre usuários;
-- RE2, RE6, Stray, home, busca, biblioteca, sitemap e 404.
+## Pendência factual não bloqueadora
 
-Qualquer 5xx, fallback inesperado, hash/manifesto divergente, total diferente de 71, perda de progresso, violação entre usuários, regressão grave de acessibilidade ou erro crítico de JavaScript exige remover a flag de RE5 imediatamente.
-
-## Bloqueios para uma nova tentativa
-
-1. Disponibilizar runner Linux x64 oficial com Node 20 e validar SQLite nesse ambiente.
-2. Disponibilizar acesso ao Render/serviço correto, sem expor credenciais.
-3. Registrar versão/artefato/configuração atualmente publicados.
-4. Criar backup oficial do volume/banco, registrar hash/tamanho/mtime/sidecars e provar restore isolado.
-5. Nomear operador da janela e responsável pelo rollback.
-6. Publicar primeiro com a flag vazia, executar smoke V1 e somente depois ativar `resident-evil-5`.
-7. Executar smoke V2, progresso, SEO, outros jogos e observabilidade diretamente em produção.
-
-## Pendência factual não bloqueadora por decisão editorial
-
-Versus permanece **NÃO VALIDADO CONTEMPORANEAMENTE**. O Snapshot final informa publicamente que o modo integra o 100%, não foi validado em partida real nesta revisão e pode variar em disponibilidade. Essa pendência factual foi autorizada pelo Bloco 8, mas não é convertida em evidência prática.
+Versus permanece **NÃO VALIDADO CONTEMPORANEAMENTE**. O Snapshot final informa publicamente que o modo integra o 100%, não foi validado em partida real nesta revisão e pode variar em disponibilidade. Essa pendência foi autorizada editorialmente e não é apresentada como evidência prática.
