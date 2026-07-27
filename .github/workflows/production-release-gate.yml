@@ -16,7 +16,7 @@ permissions:
 jobs:
   node-20-release-gate:
     name: Node 20 release gate
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 30
 
     steps:
@@ -31,6 +31,19 @@ jobs:
 
       - name: Install locked dependencies
         run: npm ci
+        env:
+          RENDER: "true"
+
+      - name: Validate SQLite GLIBC compatibility
+        shell: bash
+        run: |
+          binary="node_modules/sqlite3/build/Release/node_sqlite3.node"
+          test -f "$binary"
+          ldd --version | head -n 1
+          required_glibc="$(objdump -T "$binary" | grep -oE 'GLIBC_[0-9]+(\.[0-9]+)+' | sed 's/^GLIBC_//' | sort -Vu | tail -n 1)"
+          test -n "$required_glibc"
+          echo "Maximum required GLIBC: $required_glibc"
+          dpkg --compare-versions "$required_glibc" le "2.35"
 
       - name: Validate runtime
         run: npm run check:runtime

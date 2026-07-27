@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
+    "postinstall": "node scripts/rebuild-sqlite-for-render.js",
     "db:setup": "node scripts/setup-database.js",
     "export:data": "node scripts/export-data.js",
     "prepare:guides": "node scripts/prepare-guides.js",
