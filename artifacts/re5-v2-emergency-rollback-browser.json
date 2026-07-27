@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "checkedAt": "2026-07-27T17:54:53.272Z",
+  "browser": "msedge.exe",
+  "initial": {
+    "title": "Resident Evil 5 — Guia de Platina PS4 + DLCs | AtlasAchievement",
+    "h1": "Resident Evil 5",
+    "v1Shell": 1,
+    "roadmap": 7,
+    "v2Root": 0,
+    "v2Checkboxes": 0,
+    "v2Scripts": 0,
+    "horizontalOverflow": false,
+    "authTriggers": 2
+  },
+  "afterReload": {
+    "stored": "preserved-exactly",
+    "roadmap": 7,
+    "v2": 0
+  },
+  "login": {
+    "open": true,
+    "title": "Entrar",
+    "loginVisible": true,
+    "submitText": "Entrar"
+  },
+  "v2AssetRequests": [],
+  "exceptions": [],
+  "screenshots": [
+    "artifacts/re5-v2-emergency-rollback-login-edge-1440x900.png",
+    "artifacts/re5-v2-emergency-rollback-v1-edge-1440x900.png"
+  ]
+}
