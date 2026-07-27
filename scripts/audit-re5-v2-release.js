@@ -9,7 +9,8 @@ const ROOT = path.resolve(__dirname, '..');
 const SNAPSHOT_PATH = path.join(ROOT, 'data', 'guides', 'resident-evil-5.json');
 const MANIFEST_PATH = path.join(ROOT, 'data', 'guides', 'manifest.json');
 const DATABASE_PATH = path.join(ROOT, 'database.sqlite');
-const EXPECTED_HASH = 'ee4207786ae29cc4667de602a1a9dc0381c4dd1473d6202d3d6dace9f9ce5598';
+const EXPECTED_HASH = '2ae4c181d580a624c980580e29910025c785391acd1a46d0601dc19773fc0f54';
+const REQUIRED_VERSUS_NOTICE = 'O modo integra o 100%, mas não foi validado em uma partida real nesta revisão.';
 const EXPECTED_PACKAGES = Object.freeze({
   base: 51,
   versus: 10,
@@ -143,6 +144,12 @@ function main() {
   assert.strictEqual(snapshot.guideContent.length, 31);
   assert.strictEqual(snapshot.sources.length, 17);
   assert.strictEqual(snapshot.claims.length, 29);
+  assert.strictEqual(snapshot.online.requiredForPlatinum, false);
+  assert.strictEqual(snapshot.online.requiredFor100Percent, true);
+  assert(
+    snapshot.guideContent.some(section => String(section.content || '').includes(REQUIRED_VERSUS_NOTICE)),
+    'Public guide must disclose that Versus was not validated in a real match'
+  );
   assertExactCounts(countBy(snapshot.trophies, 'packageCode'), EXPECTED_PACKAGES, 'Snapshot');
   assertExactCounts(countBy(snapshot.trophies, 'type'), EXPECTED_TYPES, 'Snapshot trophy type');
 

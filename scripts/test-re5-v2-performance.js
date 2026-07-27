@@ -212,7 +212,8 @@ async function measureBrowser(baseUrl, executable) {
     if (process.platform === 'win32' && browser.pid) {
       spawnSync('taskkill', ['/PID', String(browser.pid), '/T', '/F'], {
         stdio: 'ignore',
-        windowsHide: true
+        windowsHide: true,
+        timeout: 15_000
       });
     }
     await delay(150);

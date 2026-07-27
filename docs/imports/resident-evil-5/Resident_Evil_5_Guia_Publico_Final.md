@@ -52,7 +52,7 @@ Os tempos são uma estimativa operacional. Habilidade, parceiro cooperativo e or
 
 6. **Lost in Nightmares e Desperate Escape possuem requisitos de passagem única.** As 18 Score Stars, as 150 eliminações pessoais e os três Agitator Majini não acumulam entre tentativas.
 
-7. **Versus depende de servidores e outros jogadores.** A funcionalidade ainda apresenta atividade verificável, mas não existe garantia oficial de permanência. Faça os dez troféus online antes das etapas offline de limpeza se o 100% for prioridade.
+7. **Versus depende de servidores e outros jogadores.** O modo integra o 100%, mas não foi validado em uma partida real nesta revisão. A disponibilidade online pode variar; confirme o acesso aos lobbies antes de iniciar essa etapa. Faça os dez troféus online antes das etapas offline de limpeza se o 100% for prioridade.
 
 ## Como o progresso funciona
 

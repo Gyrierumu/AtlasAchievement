@@ -19,7 +19,7 @@
 
 | Arquivo | Tamanho (bytes) | SHA-256 |
 |---|---:|---|
-| `Resident_Evil_5_Guia_Publico_Final.md` | 38678 | `81c09ffbea3f9b29b805bdc133755fd27f995aa05a134a182e5519356fd425de` |
+| `Resident_Evil_5_Guia_Publico_Final.md` | 38749 | `a8d9de746391d6e7701670890f72bc79231e1f88826921794567c441d744ed0e` |
 | `Resident_Evil_5_Matriz_Final_71.xlsx` | 101745 | `a678358d8953975e797f3beb091de43cf5cc8e75512f063c209d15f672570434` |
 | `Resident_Evil_5_Relatorio_Fontes.md` | 7555 | `c87e53b8b59f70f333fec508f1935420f5465e77e324e49ed2c8f95a61663fdb` |
 | `Resident_Evil_5_Incertezas.md` | 3001 | `bdcd17e3266d8309a910b595a7d01e156d32dede129966f847cd56f1cfd0dcec` |

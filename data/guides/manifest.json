@@ -636,7 +636,7 @@
     {
       "claimCount": 29,
       "file": "resident-evil-5.json",
-      "generatedAt": "2026-07-26T23:21:02.250Z",
+      "generatedAt": "2026-07-27T13:53:28.693Z",
       "name": "Resident Evil 5",
       "packageCounts": {
         "base": 51,
@@ -644,7 +644,7 @@
         "lost-in-nightmares": 5,
         "versus": 10
       },
-      "payloadHash": "ee4207786ae29cc4667de602a1a9dc0381c4dd1473d6202d3d6dace9f9ce5598",
+      "payloadHash": "2ae4c181d580a624c980580e29910025c785391acd1a46d0601dc19773fc0f54",
       "reviewedAt": "2026-07-26",
       "roadmaps": 9,
       "schemaVersion": 2,
