@@ -1,0 +1,57 @@
+name: Production release gate
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: production-release-gate
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  node-20-release-gate:
+    name: Node 20 release gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out release
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Validate runtime
+        run: npm run check:runtime
+
+      - name: Validate production dependency security
+        run: npm run test:security:production
+
+      - name: Validate native SQLite installation
+        run: npm run test:sqlite:native
+
+      - name: Validate SQLite runtime compatibility
+        run: npm run test:sqlite:runtime
+
+      - name: Validate Resident Evil 5 V2 contracts
+        run: npm run test:re5:v2:contracts
+
+      - name: Validate Resident Evil 5 baseline
+        run: npm run test:re5:v2:baseline
+
+      - name: Audit Resident Evil 5 release
+        run: npm run audit:re5:v2:release
+
+      - name: Build
+        run: npm run build --if-present
