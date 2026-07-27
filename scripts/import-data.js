@@ -13,8 +13,17 @@ const {
   createContentHash,
   createDatabaseBackup,
   openDatabase,
-  normalizeGuideFileName
+  normalizeGuideFileName,
+  normalizeGuideSnapshotV2,
+  hashGuideSnapshotV2
 } = require('./data-sync-utils');
+const {
+  assertGuideSnapshotV2
+} = require('../src/validators/guideSnapshotV2.validator');
+const {
+  RE5_GAME_ID,
+  RE5_SLUG
+} = require('../src/shared/re5V2Constants');
 
 const IMPORT_VERSION = 1;
 
@@ -99,8 +108,9 @@ function validateGuide(guide, expectedSlug, sourceFile) {
   if (!guide || typeof guide !== 'object') {
     throw new Error(`Guia invalido em ${sourceFile}: JSON deve ser um objeto.`);
   }
-  if (guide.slug !== expectedSlug) {
-    throw new Error(`Guia invalido em ${sourceFile}: slug esperado ${expectedSlug}, recebido ${guide.slug || '(vazio)'}.`);
+  const guideSlug = guide.schemaVersion === 2 ? guide.game?.slug : guide.slug;
+  if (guideSlug !== expectedSlug) {
+    throw new Error(`Guia invalido em ${sourceFile}: slug esperado ${expectedSlug}, recebido ${guideSlug || '(vazio)'}.`);
   }
   if (!guide.game || typeof guide.game !== 'object' || Array.isArray(guide.game)) {
     throw new Error(`Guia invalido em ${sourceFile}: campo game deve ser um objeto.`);
@@ -190,6 +200,7 @@ function assertNoStatusDowngrades(records, allowStatusDowngrade = false) {
 function buildProtectedVerifiedStatusErrors(records) {
   return records
     .map(record => {
+      if (record.guide?.schemaVersion === 2) return null;
       const expected = getProtectedVerifiedGuide(record.slug);
       if (!expected || expected.expectedStatus !== 'verified') return null;
       const game = record.guide?.game || {};
@@ -549,7 +560,15 @@ async function runImport(options = {}) {
   const manifest = readJson(manifestPath);
   validateManifest(manifest);
   const selectedSlugs = resolveSelectedSlugs(manifest, options.only || args.only);
-  const allRecords = loadGuideRecords(dataDir, manifest, selectedSlugs);
+  const loadedRecords = loadGuideRecords(dataDir, manifest, selectedSlugs);
+  const v2Records = loadedRecords.filter(record => record.guide?.schemaVersion === 2);
+  if (v2Records.length && options.only) {
+    throw new Error(
+      `Snapshot V2 selecionado (${v2Records.map(record => record.slug).join(', ')}). `
+      + 'Use importGuideSnapshotV2 após executar a migration V2.'
+    );
+  }
+  const allRecords = loadedRecords.filter(record => record.guide?.schemaVersion !== 2);
   assertProtectedVerifiedGuideStatuses(allRecords);
   assertNoGuideRecordConflicts(allRecords);
   const database = openDatabase(databasePath);
@@ -681,6 +700,381 @@ async function runImport(options = {}) {
   }
 }
 
+async function requireGuideSnapshotV2Schema(database) {
+  const rows = await database.all("SELECT name FROM sqlite_master WHERE type = 'table'");
+  const tables = new Set(rows.map(row => row.name));
+  for (const table of [
+    'games',
+    'trophies',
+    'game_versions',
+    'trophy_packages',
+    'game_guide_payloads'
+  ]) {
+    if (!tables.has(table)) {
+      throw new Error(`RE5_V2_MIGRATION_REQUIRED: missing table ${table}`);
+    }
+  }
+  const trophyColumns = await database.all('PRAGMA table_info(trophies)');
+  const columnNames = new Set(trophyColumns.map(column => column.name));
+  for (const column of [
+    'version_id',
+    'package_id',
+    'display_order',
+    'is_online',
+    'is_coop',
+    'is_cumulative',
+    'is_missable',
+    'category',
+    'source_trophy_code'
+  ]) {
+    if (!columnNames.has(column)) {
+      throw new Error(`RE5_V2_MIGRATION_REQUIRED: missing trophies.${column}`);
+    }
+  }
+  return columnNames;
+}
+
+async function captureUserTrophyProgress(database) {
+  const table = await database.get(
+    "SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'user_trophy_progress'"
+  );
+  return table ? database.all('SELECT * FROM user_trophy_progress ORDER BY id') : [];
+}
+
+function relationalDifference(current, expected) {
+  const differences = [];
+  for (const [field, value] of Object.entries(expected)) {
+    if (current?.[field] !== value) {
+      differences.push({ field, current: current?.[field] ?? null, expected: value });
+    }
+  }
+  return differences;
+}
+
+async function buildGuideSnapshotV2ImportPlan(database, snapshot, hash) {
+  const trophyColumns = new Set(
+    (await database.all('PRAGMA table_info(trophies)')).map(column => column.name)
+  );
+  const versionRows = await database.all(
+    'SELECT * FROM game_versions WHERE game_id = ? ORDER BY display_order',
+    [RE5_GAME_ID]
+  );
+  const packageRows = await database.all(
+    'SELECT * FROM trophy_packages WHERE game_id = ? ORDER BY display_order',
+    [RE5_GAME_ID]
+  );
+  const trophyRows = await database.all(
+    `SELECT t.*, p.package_code, v.version_code
+       FROM trophies t
+       LEFT JOIN trophy_packages p ON p.id = t.package_id
+       LEFT JOIN game_versions v ON v.id = t.version_id
+      WHERE t.game_id = ?
+      ORDER BY t.id`,
+    [RE5_GAME_ID]
+  );
+  const payload = await database.get(
+    'SELECT payload_hash FROM game_guide_payloads WHERE game_id = ? AND schema_version = 2',
+    [RE5_GAME_ID]
+  );
+
+  const versionByCode = new Map(versionRows.map(row => [row.version_code, row]));
+  const packageByCode = new Map(packageRows.map(row => [row.package_code, row]));
+  const trophyByCode = new Map(trophyRows.map(row => [row.trophy_code, row]));
+  const operations = [];
+
+  for (const version of snapshot.versions) {
+    const current = versionByCode.get(version.versionCode);
+    const expected = {
+      platform: version.platform,
+      region: version.region,
+      release_kind: version.releaseKind,
+      display_order: version.displayOrder,
+      is_native: Number(version.isNative),
+      native_trophy_list: Number(version.nativeTrophyList),
+      save_transfer_supported: Number(version.saveTransferSupported),
+      autopop_supported: Number(version.autopopSupported),
+      upgrade_supported: Number(version.upgradeSupported)
+    };
+    const differences = relationalDifference(current, expected);
+    operations.push({
+      entity: 'version',
+      code: version.versionCode,
+      action: !current ? 'insert' : (differences.length ? 'update' : 'unchanged'),
+      differences
+    });
+  }
+
+  for (const pkg of snapshot.trophyPackages) {
+    const current = packageByCode.get(pkg.packageCode);
+    const expected = {
+      name: pkg.name,
+      package_type: pkg.packageType,
+      display_order: pkg.displayOrder,
+      expected_trophy_count: pkg.expectedTrophyCount,
+      counts_for_platinum: Number(pkg.countsForPlatinum),
+      counts_for_100_percent: Number(pkg.countsFor100Percent),
+      is_online: Number(pkg.isOnline),
+      is_coop: Number(pkg.isCoop)
+    };
+    const differences = relationalDifference(current, expected);
+    operations.push({
+      entity: 'package',
+      code: pkg.packageCode,
+      action: !current ? 'insert' : (differences.length ? 'update' : 'unchanged'),
+      differences
+    });
+  }
+
+  for (const trophy of snapshot.trophies) {
+    const current = trophyByCode.get(trophy.trophyCode);
+    const expected = {
+      name: trophy.name,
+      type: trophy.type,
+      package_code: trophy.packageCode,
+      version_code: 'ps4-native',
+      display_order: trophy.displayOrder,
+      is_online: Number(trophy.isOnline),
+      is_coop: Number(trophy.isCoop),
+      is_cumulative: Number(trophy.isCumulative),
+      is_missable: Number(trophy.isMissable),
+      category: trophy.category,
+      source_trophy_code: trophy.sourceTrophyCode
+    };
+    if (trophyColumns.has('description')) expected.description = trophy.description;
+    const differences = relationalDifference(current, expected);
+    operations.push({
+      entity: 'trophy',
+      code: trophy.trophyCode,
+      action: !current ? 'insert' : (differences.length ? 'update' : 'unchanged'),
+      differences
+    });
+  }
+
+  operations.push({
+    entity: 'payload',
+    code: RE5_SLUG,
+    action: !payload ? 'insert' : (payload.payload_hash === hash ? 'unchanged' : 'update'),
+    differences: payload?.payload_hash === hash
+      ? []
+      : [{ field: 'payload_hash', current: payload?.payload_hash || null, expected: hash }]
+  });
+  return operations;
+}
+
+function summarizeGuideSnapshotV2Operations(operations) {
+  return operations.reduce((summary, operation) => {
+    summary[`${operation.action}s`] += 1;
+    return summary;
+  }, { inserts: 0, updates: 0, unchangeds: 0 });
+}
+
+async function importGuideSnapshotV2(database, snapshot, options = {}) {
+  if (
+    !database
+    || typeof database.exec !== 'function'
+    || typeof database.all !== 'function'
+    || typeof database.get !== 'function'
+    || typeof database.run !== 'function'
+  ) {
+    throw new TypeError('A database adapter with exec/all/get/run is required');
+  }
+  const settings = {
+    validate: options.validate !== false,
+    transaction: options.transaction !== false,
+    dryRun: Boolean(options.dryRun),
+    preserveExistingProgress: options.preserveExistingProgress !== false
+  };
+  if (settings.validate) assertGuideSnapshotV2(snapshot, { mode: 'complete' });
+  if (snapshot?.game?.id !== RE5_GAME_ID || snapshot?.game?.slug !== RE5_SLUG) {
+    throw new Error('RE5_V2_GAME_IDENTITY_MISMATCH');
+  }
+
+  const trophyColumnNames = await requireGuideSnapshotV2Schema(database);
+  const game = await database.get('SELECT id, slug FROM games WHERE id = ?', [RE5_GAME_ID]);
+  if (!game || game.slug !== RE5_SLUG) throw new Error('RE5_V2_DATABASE_GAME_MISMATCH');
+
+  const normalized = normalizeGuideSnapshotV2(snapshot);
+  const hash = hashGuideSnapshotV2(normalized);
+  const progressBefore = settings.preserveExistingProgress
+    ? await captureUserTrophyProgress(database)
+    : [];
+  const operations = await buildGuideSnapshotV2ImportPlan(database, normalized, hash);
+  const operationSummary = summarizeGuideSnapshotV2Operations(operations);
+  const resultBase = {
+    valid: true,
+    dryRun: settings.dryRun,
+    inserts: operationSummary.inserts,
+    updates: operationSummary.updates,
+    unchanged: operationSummary.unchangeds,
+    warnings: [],
+    hash,
+    operations
+  };
+  if (settings.dryRun) return resultBase;
+
+  let inTransaction = false;
+  try {
+    if (settings.transaction) {
+      await database.exec('BEGIN IMMEDIATE');
+      inTransaction = true;
+    }
+
+    for (const version of normalized.versions) {
+      await database.run(
+        `INSERT INTO game_versions
+          (game_id, version_code, platform, region, release_kind, display_order,
+           is_native, native_trophy_list, save_transfer_supported, autopop_supported,
+           upgrade_supported, source_version_id)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL)
+         ON CONFLICT(game_id, version_code) DO UPDATE SET
+           platform = excluded.platform,
+           region = excluded.region,
+           release_kind = excluded.release_kind,
+           display_order = excluded.display_order,
+           is_native = excluded.is_native,
+           native_trophy_list = excluded.native_trophy_list,
+           save_transfer_supported = excluded.save_transfer_supported,
+           autopop_supported = excluded.autopop_supported,
+           upgrade_supported = excluded.upgrade_supported`,
+        [
+          RE5_GAME_ID,
+          version.versionCode,
+          version.platform,
+          version.region,
+          version.releaseKind,
+          version.displayOrder,
+          Number(version.isNative),
+          Number(version.nativeTrophyList),
+          Number(version.saveTransferSupported),
+          Number(version.autopopSupported),
+          Number(version.upgradeSupported)
+        ]
+      );
+    }
+    const versionIds = new Map((await database.all(
+      'SELECT id, version_code FROM game_versions WHERE game_id = ?',
+      [RE5_GAME_ID]
+    )).map(row => [row.version_code, row.id]));
+    for (const version of normalized.versions) {
+      const sourceVersionId = version.sourceVersionCode
+        ? versionIds.get(version.sourceVersionCode)
+        : null;
+      await database.run(
+        'UPDATE game_versions SET source_version_id = ? WHERE game_id = ? AND version_code = ?',
+        [sourceVersionId, RE5_GAME_ID, version.versionCode]
+      );
+    }
+
+    for (const pkg of normalized.trophyPackages) {
+      await database.run(
+        `INSERT INTO trophy_packages
+          (game_id, package_code, name, package_type, display_order,
+           expected_trophy_count, counts_for_platinum, counts_for_100_percent,
+           is_online, is_coop)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON CONFLICT(game_id, package_code) DO UPDATE SET
+           name = excluded.name,
+           package_type = excluded.package_type,
+           display_order = excluded.display_order,
+           expected_trophy_count = excluded.expected_trophy_count,
+           counts_for_platinum = excluded.counts_for_platinum,
+           counts_for_100_percent = excluded.counts_for_100_percent,
+           is_online = excluded.is_online,
+           is_coop = excluded.is_coop`,
+        [
+          RE5_GAME_ID,
+          pkg.packageCode,
+          pkg.name,
+          pkg.packageType,
+          pkg.displayOrder,
+          pkg.expectedTrophyCount,
+          Number(pkg.countsForPlatinum),
+          Number(pkg.countsFor100Percent),
+          Number(pkg.isOnline),
+          Number(pkg.isCoop)
+        ]
+      );
+    }
+    const packageIds = new Map((await database.all(
+      'SELECT id, package_code FROM trophy_packages WHERE game_id = ?',
+      [RE5_GAME_ID]
+    )).map(row => [row.package_code, row.id]));
+    const ps4VersionId = versionIds.get('ps4-native');
+
+    for (const trophy of normalized.trophies) {
+      const relationalValues = {
+        name: trophy.name,
+        type: trophy.type,
+        description: trophy.description,
+        version_id: ps4VersionId,
+        package_id: packageIds.get(trophy.packageCode),
+        display_order: trophy.displayOrder,
+        is_online: Number(trophy.isOnline),
+        is_coop: Number(trophy.isCoop),
+        is_cumulative: Number(trophy.isCumulative),
+        is_missable: Number(trophy.isMissable),
+        category: trophy.category,
+        source_trophy_code: trophy.sourceTrophyCode
+      };
+      const updateColumns = Object.keys(relationalValues).filter(column => trophyColumnNames.has(column));
+      const update = await database.run(
+        `UPDATE trophies
+            SET ${updateColumns.map(column => `${column} = ?`).join(', ')}
+          WHERE game_id = ? AND trophy_code = ?`,
+        [
+          ...updateColumns.map(column => relationalValues[column]),
+          RE5_GAME_ID,
+          trophy.trophyCode
+        ]
+      );
+      if (update.changes !== 1) {
+        throw new Error(`RE5_V2_TROPHY_UPSERT_FAILED: ${trophy.trophyCode}`);
+      }
+    }
+
+    await database.run(
+      `INSERT INTO game_guide_payloads
+        (game_id, schema_version, payload_json, payload_hash, validation_status)
+       VALUES (?, 2, ?, ?, 'valid')
+       ON CONFLICT(game_id, schema_version) DO UPDATE SET
+         payload_json = excluded.payload_json,
+         payload_hash = excluded.payload_hash,
+         validation_status = excluded.validation_status`,
+      [RE5_GAME_ID, JSON.stringify(normalized), hash]
+    );
+
+    const counts = await database.all(
+      `SELECT p.package_code, COUNT(*) AS trophy_count
+         FROM trophies t
+         JOIN trophy_packages p ON p.id = t.package_id
+        WHERE t.game_id = ?
+        GROUP BY p.package_code`,
+      [RE5_GAME_ID]
+    );
+    const countByPackage = new Map(counts.map(row => [row.package_code, Number(row.trophy_count)]));
+    for (const pkg of normalized.trophyPackages) {
+      if (countByPackage.get(pkg.packageCode) !== pkg.expectedTrophyCount) {
+        throw new Error(`RE5_V2_IMPORT_COUNT_MISMATCH: ${pkg.packageCode}`);
+      }
+    }
+
+    if (settings.preserveExistingProgress) {
+      const progressAfter = await captureUserTrophyProgress(database);
+      if (JSON.stringify(progressAfter) !== JSON.stringify(progressBefore)) {
+        throw new Error('RE5_V2_IMPORT_PROGRESS_CHANGED');
+      }
+    }
+    if (inTransaction) {
+      await database.exec('COMMIT');
+      inTransaction = false;
+    }
+    return { ...resultBase, dryRun: false };
+  } catch (error) {
+    if (inTransaction) await database.exec('ROLLBACK').catch(() => {});
+    throw error;
+  }
+}
+
 async function main() {
   const args = parseArgs();
   await runImport({ args });
@@ -707,5 +1101,6 @@ module.exports = {
   buildStatusDowngradeErrors,
   buildProtectedVerifiedStatusErrors,
   isVerifiedGuideStatus,
-  describeGuideStatus
+  describeGuideStatus,
+  importGuideSnapshotV2
 };

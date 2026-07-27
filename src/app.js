@@ -18,10 +18,16 @@ const analyticsRoutes = require('./routes/analytics.routes');
 const commentsRoutes = require('./routes/comments.routes');
 const errorHandler = require('./middleware/errorHandler');
 const gamesService = require('./services/games.service');
+const userLibraryService = require('./services/userLibrary.service');
 const commentsService = require('./services/comments.service');
 const sharedEditorialModel = require('./shared/editorialModel');
 const sharedFeatureFlags = require('./shared/featureFlags');
 const sharedGuideViewModel = require('./shared/guideViewModel');
+const {
+  GuideV2RenderError,
+  renderGuideV2Page,
+  renderGuideV2ErrorPage
+} = require('./shared/guideRendererV2');
 const sharedCardModel = require('./shared/cardModel');
 const sharedCatalogModel = require('./shared/catalogModel');
 const { sanitizePublicGuideGame } = require('./shared/publicGuideSanitizer');
@@ -29,6 +35,8 @@ const { normalizeListQuery, validateListQuery } = require('./validators/game.val
 const { loginRateLimit, registerRateLimit, registerFailedLoginAttempt } = require('./middleware/loginRateLimit');
 const SqliteSessionStore = require('./services/sqliteSessionStore');
 const AppError = require('./utils/AppError');
+const asyncHandler = require('./middleware/asyncHandler');
+const requireUser = require('./middleware/requireUser');
 const packageJson = require('../package.json');
 
 const app = express();
@@ -5460,6 +5468,27 @@ app.use('/api/auth/register', registerRateLimit);
 app.use('/api/auth', authRoutes);
 app.use('/api/analytics', analyticsRoutes);
 app.use('/api/feedback', requirePublicFormCsrf, feedbackRoutes);
+app.get(
+  '/api/library/guides/:slug/progress',
+  requireUser,
+  asyncHandler(async (req, res) => {
+    const progress = await userLibraryService.getGuideProgressV2(req.userId, req.params.slug);
+    res.json(progress);
+  })
+);
+app.put(
+  '/api/library/guides/:slug/progress',
+  requireCsrf,
+  requireUser,
+  asyncHandler(async (req, res) => {
+    const progress = await userLibraryService.saveGuideProgressV2(
+      req.userId,
+      req.params.slug,
+      req.body || {}
+    );
+    res.json(progress);
+  })
+);
 app.use('/api/me', requireCsrf, meRoutes);
 app.use('/api/uploads', requireCsrf, uploadsRoutes);
 app.use('/api/games', requireCsrf, gamesRoutes);
@@ -5583,16 +5612,50 @@ app.use((req, res, next) => {
 
 app.get('/jogo/:slug', setHtmlRouteCacheHeaders, async (req, res, next) => {
   try {
-    const game = await gamesService.getGameBySlug(req.params.slug);
+    let guideViewModel = await gamesService.getGuideViewModelBySlug(req.params.slug);
 
+    if (guideViewModel.sourceMode === 'v2') {
+      if (guideViewModel.game?.slug && guideViewModel.game.slug !== req.params.slug) {
+        return res.redirect(301, `/jogo/${guideViewModel.game.slug}`);
+      }
+      try {
+        const html = renderGuideV2Page(guideViewModel, {
+          canonicalOrigin: PRODUCTION_CANONICAL_ORIGIN,
+          socialImagePath: '/assets/guides/resident-evil-5/resident-evil-5-social.png',
+          stylesheetHref: '/css/guide-v2.css'
+        });
+        res.setHeader('X-Guide-Source-Mode', 'v2');
+        return res.type('html').send(html);
+      } catch (renderError) {
+        if (!(renderError instanceof GuideV2RenderError)) throw renderError;
+        console.warn({
+          event: 'guide_v2_ssr_fallback',
+          slug: req.params.slug,
+          sourceMode: 'v2',
+          reasonCode: renderError.code,
+          featureFlagEnabled: true,
+          snapshotHash: guideViewModel.diagnostics?.snapshotHash || null
+        });
+        guideViewModel = await gamesService.getGuideViewModelBySlug(req.params.slug, {
+          featureFlagEnabled: false
+        });
+      }
+    }
+
+    if (guideViewModel.sourceMode === 'error' || !guideViewModel.legacyData) {
+      res.setHeader('X-Guide-Source-Mode', 'error');
+      return res.status(404).type('html').send(renderGuideV2ErrorPage());
+    }
+
+    const game = guideViewModel.legacyData;
     if (game.redirect_required && game.canonical_slug && game.canonical_slug !== req.params.slug) {
       return res.redirect(301, `/jogo/${game.canonical_slug}`);
     }
-
     if (!isIndexablePublicGuide(game)) {
       res.setHeader('X-Robots-Tag', 'noindex, follow');
     }
-    res.send(await buildGamePageHtml(game, req));
+    res.setHeader('X-Guide-Source-Mode', guideViewModel.sourceMode);
+    return res.send(await buildGamePageHtml(game, req));
   } catch (error) {
     next(error);
   }

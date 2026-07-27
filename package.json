@@ -9,6 +9,8 @@
     "db:setup": "node scripts/setup-database.js",
     "export:data": "node scripts/export-data.js",
     "prepare:guides": "node scripts/prepare-guides.js",
+    "prepare:re5:v2": "node scripts/prepare-guides.js --slug resident-evil-5",
+    "prepare:re5:v2:dry-run": "node scripts/prepare-guides.js --slug resident-evil-5 --dry-run",
     "import:data": "node scripts/import-data.js",
     "import:data:changed": "node scripts/import-data.js --changed",
     "build": "npm run check:runtime && npm run test:quick",
@@ -21,19 +23,49 @@
     "audit:guide": "node scripts/audit-guide-governance.js",
     "audit:links": "node scripts/audit-guide-links.js",
     "test:re5:governance": "node scripts/test-re5-phase9-governance.js",
+    "test:re5:v2:snapshot": "node scripts/test-re5-v2-snapshot.js",
+    "test:re5:v2:migration": "node scripts/test-re5-v2-migration.js",
+    "test:re5:v2:roundtrip": "node scripts/test-re5-v2-roundtrip.js",
+    "test:re5:v2:adapter": "node scripts/test-re5-v2-adapter.js",
+    "test:re5:v2:ssr": "node scripts/test-re5-v2-ssr.js",
+    "test:re5:v2:seo": "node scripts/test-re5-v2-seo.js",
+    "test:re5:v2:accessibility": "node scripts/test-re5-v2-accessibility.js",
+    "test:re5:v2:client": "node scripts/test-re5-v2-client.js",
+    "test:re5:v2:security": "node scripts/test-re5-v2-security.js",
+    "test:re5:v2:observability": "node scripts/test-re5-v2-observability.js",
+    "test:re5:v2:performance": "node --experimental-websocket scripts/test-re5-v2-performance.js",
+    "test:re5:v2:staging": "node scripts/test-re5-v2-staging.js",
+    "test:re5:v2:visual": "node --experimental-websocket scripts/test-re5-v2-visual.js",
+    "test:re5:v2:contracts": "node -e \"const{spawnSync}=require('child_process');const tests=['snapshot','migration','roundtrip','adapter','ssr','seo','accessibility','client','security','observability'];let failed=false;for(const test of tests){const result=spawnSync(process.execPath,['scripts/test-re5-v2-'+test+'.js'],{stdio:'inherit'});failed=failed||result.status!==0;}process.exit(failed?1:0)\"",
+    "test:re5:v2:baseline": "npm run test:re5:governance && npm run test:guide -- resident-evil-5",
+    "audit:re5:v2:release": "node scripts/audit-re5-v2-release.js",
+    "test:sqlite:runtime": "node scripts/test-sqlite-runtime-compatibility.js",
+    "test:sqlite:native": "node scripts/test-sqlite-native-install.js",
+    "test:security:production": "node scripts/test-dependency-security-gate.js",
+    "audit:dependency:remediation": "node scripts/audit-dependency-remediation.js",
     "test:quick": "node scripts/test-layers.js quick",
     "validate:new-guide": "node scripts/validate-new-guide.js",
     "test": "node scripts/regression-smoke.js",
     "check:runtime": "node -e \"const major=Number(process.versions.node.split('.')[0]); if(major!==20){console.warn('Aviso: recomendado Node 20.x; atual = '+process.versions.node)}\""
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcrypt": "6.0.0",
     "compression": "^1.8.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
     "multer": "^1.4.5-lts.2",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "6.0.1"
+  },
+  "devDependencies": {
+    "exceljs": "4.4.0",
+    "jszip": "3.10.1"
+  },
+  "overrides": {
+    "exceljs": {
+      "archiver": "8.0.0",
+      "uuid": "11.1.1"
+    }
   },
   "engines": {
     "node": "20.x",

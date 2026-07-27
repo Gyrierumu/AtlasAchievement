@@ -144,6 +144,159 @@ function createContentHash(value) {
     .digest('hex');
 }
 
+const V2_OPERATIONAL_FIELDS = new Set([
+  'generatedAt',
+  'createdAt',
+  'updatedAt',
+  'created_at',
+  'updated_at'
+]);
+
+const V2_ORDERED_ARRAYS = Object.freeze({
+  versions: 'displayOrder',
+  trophyPackages: 'displayOrder',
+  trophies: 'globalOrder',
+  roadmap: 'order',
+  guideContent: 'order',
+  collectibles: 'order',
+  inventoryRequirements: 'order',
+  upgradeRequirements: 'order',
+  sources: 'sourceCode',
+  claims: 'claimCode',
+  redirects: 'from'
+});
+
+const V2_CODE_ARRAY_FIELDS = new Set([
+  'packageCodes',
+  'trophyCodes',
+  'collectibleGroups',
+  'saveCodes',
+  'relatedTrophyCodes',
+  'sourceCodes'
+]);
+
+function normalizeSnapshotString(value) {
+  return value
+    .replace(/\r\n?/g, '\n')
+    .split('\n')
+    .map(line => line.replace(/[ \t]+$/g, ''))
+    .join('\n')
+    .trim();
+}
+
+function compareOrderedValues(left, right, field) {
+  const leftValue = left?.[field];
+  const rightValue = right?.[field];
+  if (typeof leftValue === 'number' && typeof rightValue === 'number') {
+    return leftValue - rightValue;
+  }
+  return String(leftValue ?? '').localeCompare(String(rightValue ?? ''), 'en');
+}
+
+function normalizeGuideSnapshotV2(snapshot, options = {}) {
+  const omitOperationalTimestamps = options.omitOperationalTimestamps !== false;
+  const omitGeneratedNumericIds = options.omitGeneratedNumericIds !== false;
+
+  function visit(value, pathSegments = [], parentKey = '') {
+    if (typeof value === 'string') return normalizeSnapshotString(value);
+    if (typeof value === 'number') {
+      return Number.isFinite(value) && Number.isInteger(value) ? value : value;
+    }
+    if (typeof value === 'boolean' || value === null) return value;
+    if (Array.isArray(value)) {
+      const normalized = value.map(item => visit(item, pathSegments, parentKey));
+      if (V2_CODE_ARRAY_FIELDS.has(parentKey)) {
+        return [...normalized].sort((left, right) => (
+          String(left ?? '').localeCompare(String(right ?? ''), 'en')
+        ));
+      }
+      const rootField = pathSegments.length === 1 ? pathSegments[0] : null;
+      const orderField = rootField ? V2_ORDERED_ARRAYS[rootField] : null;
+      return orderField
+        ? [...normalized].sort((left, right) => compareOrderedValues(left, right, orderField))
+        : normalized;
+    }
+    if (!value || typeof value !== 'object') return value;
+
+    return Object.keys(value)
+      .sort()
+      .reduce((result, key) => {
+        if (omitOperationalTimestamps && V2_OPERATIONAL_FIELDS.has(key)) return result;
+        if (
+          omitGeneratedNumericIds
+          && key === 'id'
+          && typeof value[key] === 'number'
+          && pathSegments[0] !== 'game'
+        ) {
+          return result;
+        }
+        if (value[key] === undefined) return result;
+        result[key] = visit(value[key], [...pathSegments, key], key);
+        return result;
+      }, {});
+  }
+
+  return visit(snapshot);
+}
+
+function hashGuideSnapshotV2(snapshot, options = {}) {
+  const normalized = normalizeGuideSnapshotV2(snapshot, options);
+  return crypto
+    .createHash('sha256')
+    .update(JSON.stringify(normalized), 'utf8')
+    .digest('hex');
+}
+
+function compareGuideSnapshotsV2(left, right, options = {}) {
+  const normalizedLeft = normalizeGuideSnapshotV2(left, options);
+  const normalizedRight = normalizeGuideSnapshotV2(right, options);
+  const differences = [];
+
+  function compare(leftValue, rightValue, currentPath) {
+    if (Object.is(leftValue, rightValue)) return;
+    if (Array.isArray(leftValue) || Array.isArray(rightValue)) {
+      if (!Array.isArray(leftValue) || !Array.isArray(rightValue)) {
+        differences.push({ path: currentPath, left: leftValue, right: rightValue });
+        return;
+      }
+      if (leftValue.length !== rightValue.length) {
+        differences.push({
+          path: `${currentPath}.length`,
+          left: leftValue.length,
+          right: rightValue.length
+        });
+      }
+      const length = Math.max(leftValue.length, rightValue.length);
+      for (let index = 0; index < length; index += 1) {
+        compare(leftValue[index], rightValue[index], `${currentPath}[${index}]`);
+      }
+      return;
+    }
+    const leftIsObject = leftValue && typeof leftValue === 'object';
+    const rightIsObject = rightValue && typeof rightValue === 'object';
+    if (leftIsObject || rightIsObject) {
+      if (!leftIsObject || !rightIsObject) {
+        differences.push({ path: currentPath, left: leftValue, right: rightValue });
+        return;
+      }
+      const keys = new Set([...Object.keys(leftValue), ...Object.keys(rightValue)]);
+      for (const key of [...keys].sort()) {
+        compare(leftValue[key], rightValue[key], currentPath ? `${currentPath}.${key}` : key);
+      }
+      return;
+    }
+    differences.push({ path: currentPath, left: leftValue, right: rightValue });
+  }
+
+  compare(normalizedLeft, normalizedRight, '');
+  return {
+    equal: differences.length === 0,
+    differences,
+    left: normalizedLeft,
+    right: normalizedRight
+  };
+}
+
 module.exports = {
   ROOT,
   DEFAULT_DATA_DIR,
@@ -155,5 +308,8 @@ module.exports = {
   ensureDirectory,
   createDatabaseBackup,
   openDatabase,
-  normalizeGuideFileName
+  normalizeGuideFileName,
+  normalizeGuideSnapshotV2,
+  hashGuideSnapshotV2,
+  compareGuideSnapshotsV2
 };

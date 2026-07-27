@@ -6653,6 +6653,73 @@
     return viewModel;
   }
 
+  function cloneUnifiedGuideValue(value) {
+    if (value === undefined) return undefined;
+    if (value === null || typeof value !== 'object') return value;
+    if (Array.isArray(value)) return value.map(cloneUnifiedGuideValue);
+    return Object.fromEntries(
+      Object.entries(value).map(([key, item]) => [key, cloneUnifiedGuideValue(item)])
+    );
+  }
+
+  function buildUnifiedGuideViewModel(input = {}) {
+    const sourceModes = new Set(['v2', 'relational-legacy', 'sample-legacy', 'error']);
+    const sourceMode = sourceModes.has(input?.sourceMode) ? input.sourceMode : 'error';
+    const trophies = input?.trophies && !Array.isArray(input.trophies)
+      ? input.trophies
+      : { all: [], base: [], byPackage: {} };
+    const collectibles = input?.collectibles && !Array.isArray(input.collectibles)
+      ? input.collectibles
+      : {};
+
+    return cloneUnifiedGuideValue({
+      ...input,
+      sourceMode,
+      game: input?.game || null,
+      versions: Array.isArray(input?.versions) ? input.versions : [],
+      nativeTrophyList: (
+        input?.nativeTrophyList
+        && typeof input.nativeTrophyList === 'object'
+        && !Array.isArray(input.nativeTrophyList)
+      ) ? input.nativeTrophyList : null,
+      packages: Array.isArray(input?.packages) ? input.packages : [],
+      baseTrophies: Array.isArray(input?.baseTrophies) ? input.baseTrophies : [],
+      additionalTrophies: Array.isArray(input?.additionalTrophies) ? input.additionalTrophies : [],
+      trophies: {
+        all: Array.isArray(trophies.all) ? trophies.all : [],
+        base: Array.isArray(trophies.base) ? trophies.base : [],
+        byPackage: trophies.byPackage && typeof trophies.byPackage === 'object'
+          ? trophies.byPackage
+          : {}
+      },
+      progress: input?.progress && typeof input.progress === 'object' ? input.progress : {
+        platinum: { completed: 0, total: 0 },
+        completion: { completed: 0, total: 0 },
+        byPackage: {}
+      },
+      roadmap: Array.isArray(input?.roadmap) ? input.roadmap : [],
+      sections: Array.isArray(input?.sections) ? input.sections : [],
+      collectibles: {
+        bsaaEmblems: Array.isArray(collectibles.bsaaEmblems) ? collectibles.bsaaEmblems : [],
+        treasures: Array.isArray(collectibles.treasures) ? collectibles.treasures : [],
+        scoreStars: Array.isArray(collectibles.scoreStars) ? collectibles.scoreStars : [],
+        agitators: Array.isArray(collectibles.agitators) ? collectibles.agitators : []
+      },
+      inventoryRequirements: Array.isArray(input?.inventoryRequirements) ? input.inventoryRequirements : [],
+      upgradeRequirements: Array.isArray(input?.upgradeRequirements) ? input.upgradeRequirements : [],
+      economy: input?.economy || null,
+      online: input?.online || null,
+      sources: Array.isArray(input?.sources) ? input.sources : [],
+      claims: Array.isArray(input?.claims) ? input.claims : [],
+      seo: input?.seo || null,
+      review: input?.review || null,
+      redirects: Array.isArray(input?.redirects) ? input.redirects : [],
+      diagnostics: input?.diagnostics && typeof input.diagnostics === 'object'
+        ? input.diagnostics
+        : {}
+    });
+  }
+
   return {
     firstGuideText,
     compactGuideText,
@@ -6709,6 +6776,7 @@
     buildCriticalTrophyAlerts,
     buildGuidanceCounts,
     buildExecutionProfile,
-    buildGuideViewModel
+    buildGuideViewModel,
+    buildUnifiedGuideViewModel
   };
 });

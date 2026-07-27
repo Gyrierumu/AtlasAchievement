@@ -12,6 +12,10 @@ const STATUS_RANK = {
   'in-progress': 3,
   completed: 4
 };
+const GUIDE_PROGRESS_V2_VERSION = 2;
+const GUIDE_PROGRESS_V2_MAX_ITEMS = 71;
+const GUIDE_PROGRESS_V2_SLUG = 'resident-evil-5';
+const DANGEROUS_PROGRESS_KEYS = new Set(['__proto__', 'prototype', 'constructor']);
 
 function normalizePositiveInteger(value, fieldName = 'id') {
   const number = Number(value);
@@ -53,6 +57,19 @@ function cleanTimestamp(value = null) {
   const date = new Date(text);
   if (Number.isNaN(date.getTime())) return null;
   return date.toISOString();
+}
+
+function requireIsoTimestamp(value, fieldName = 'updatedAt') {
+  const text = String(value || '').trim();
+  const normalized = cleanTimestamp(text);
+  if (
+    !normalized
+    || normalized !== text
+    || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(text)
+  ) {
+    throw new AppError(`${fieldName} inválido.`, 400, null, 'VALIDATION_ERROR');
+  }
+  return normalized;
 }
 
 function normalizeTrophyCode(value = '') {
@@ -392,6 +409,191 @@ async function bulkProgress(userId, gameId, payload = {}) {
   return getProgress(userId, game.id);
 }
 
+async function getGuideProgressContext(slug) {
+  const normalizedSlug = String(slug || '').trim().toLowerCase();
+  if (normalizedSlug !== GUIDE_PROGRESS_V2_SLUG) {
+    throw new AppError('Guia não disponível para progresso V2.', 404, null, 'GUIDE_PROGRESS_NOT_FOUND');
+  }
+  const guide = await gamesService.getGuideViewModelBySlug(normalizedSlug, {
+    featureFlagEnabled: true,
+    logger: null
+  });
+  const trophies = Array.isArray(guide?.trophies?.all) ? guide.trophies.all : [];
+  if (guide?.sourceMode !== 'v2' || trophies.length !== GUIDE_PROGRESS_V2_MAX_ITEMS) {
+    throw new AppError('Contrato de progresso do guia indisponível.', 503, null, 'GUIDE_PROGRESS_UNAVAILABLE');
+  }
+  const trophyCodes = new Set(trophies.map(item => String(item.trophyCode || '').trim()));
+  if (
+    trophyCodes.size !== GUIDE_PROGRESS_V2_MAX_ITEMS
+    || trophyCodes.has('')
+    || [...trophyCodes].some(code => DANGEROUS_PROGRESS_KEYS.has(code))
+  ) {
+    throw new AppError('Contrato de troféus do guia inválido.', 503, null, 'GUIDE_PROGRESS_UNAVAILABLE');
+  }
+  const game = await gamesService.getGameBySlug(normalizedSlug);
+  return { guide, game, trophyCodes };
+}
+
+function normalizeGuideProgressV2Items(payload = {}, context = {}) {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
+    throw new AppError('Documento de progresso inválido.', 400, null, 'VALIDATION_ERROR');
+  }
+  if (
+    Object.keys(payload).some(key => DANGEROUS_PROGRESS_KEYS.has(key))
+    || payload.version !== GUIDE_PROGRESS_V2_VERSION
+    || payload.slug !== GUIDE_PROGRESS_V2_SLUG
+  ) {
+    throw new AppError('Versão ou slug de progresso inválido.', 400, null, 'VALIDATION_ERROR');
+  }
+
+  let rawItems;
+  if (Array.isArray(payload.items)) {
+    rawItems = payload.items;
+  } else if (payload.trophies && typeof payload.trophies === 'object' && !Array.isArray(payload.trophies)) {
+    if (Object.keys(payload.trophies).some(key => DANGEROUS_PROGRESS_KEYS.has(key))) {
+      throw new AppError('Chave de progresso inválida.', 400, null, 'VALIDATION_ERROR');
+    }
+    rawItems = Object.entries(payload.trophies).map(([trophyCode, value]) => ({
+      trophyCode,
+      ...(value && typeof value === 'object' ? value : {})
+    }));
+  } else {
+    throw new AppError('Itens de progresso ausentes.', 400, null, 'VALIDATION_ERROR');
+  }
+
+  if (rawItems.length > GUIDE_PROGRESS_V2_MAX_ITEMS) {
+    throw new AppError('Limite de troféus excedido.', 400, null, 'VALIDATION_ERROR');
+  }
+  const seen = new Set();
+  return rawItems.map((item, index) => {
+    if (
+      !item
+      || typeof item !== 'object'
+      || Array.isArray(item)
+      || Object.keys(item).some(key => DANGEROUS_PROGRESS_KEYS.has(key))
+    ) {
+      throw new AppError(`Item de progresso ${index + 1} inválido.`, 400, null, 'VALIDATION_ERROR');
+    }
+    const trophyCode = normalizeTrophyCode(item.trophyCode || item.trophy_code);
+    if (DANGEROUS_PROGRESS_KEYS.has(trophyCode) || !context.trophyCodes?.has(trophyCode)) {
+      throw new AppError('Troféu não pertence a este guia.', 400, null, 'TROPHY_NOT_FOUND');
+    }
+    if (seen.has(trophyCode)) {
+      throw new AppError('Código de troféu duplicado.', 400, null, 'DUPLICATE_TROPHY_CODE');
+    }
+    if (typeof item.completed !== 'boolean') {
+      throw new AppError('Estado de conclusão inválido.', 400, null, 'VALIDATION_ERROR');
+    }
+    seen.add(trophyCode);
+    return {
+      trophyCode,
+      completed: item.completed,
+      updatedAt: requireIsoTimestamp(item.updatedAt || item.updated_at, `items[${index}].updatedAt`)
+    };
+  });
+}
+
+function toServerProgressDocument(rows, slug = GUIDE_PROGRESS_V2_SLUG) {
+  const trophies = {};
+  let updatedAt = '1970-01-01T00:00:00.000Z';
+  rows.forEach(row => {
+    const rowUpdatedAt = cleanTimestamp(row.updated_at || row.created_at) || updatedAt;
+    if (rowUpdatedAt > updatedAt) updatedAt = rowUpdatedAt;
+    trophies[row.trophy_code] = {
+      completed: Boolean(row.completed),
+      updatedAt: rowUpdatedAt,
+      source: 'server'
+    };
+  });
+  return {
+    version: GUIDE_PROGRESS_V2_VERSION,
+    slug,
+    updatedAt,
+    source: 'server',
+    dirty: false,
+    trophies,
+    checklists: {},
+    migrations: {
+      phase6Legacy: {
+        status: 'not-needed',
+        completedAt: null,
+        ambiguousDlcDetected: false,
+        warningAcknowledged: false
+      }
+    }
+  };
+}
+
+async function getGuideProgressV2(userId, slug) {
+  const normalizedUserId = normalizePositiveInteger(userId, 'user_id');
+  const context = await getGuideProgressContext(slug);
+  const rows = await all(
+    `SELECT trophy_code, completed, completed_at, created_at, updated_at
+       FROM user_trophy_progress
+      WHERE user_id = ? AND game_id = ?
+      ORDER BY trophy_code ASC`,
+    [normalizedUserId, context.game.id]
+  );
+  const safeRows = rows.filter(row => context.trophyCodes.has(row.trophy_code));
+  return toServerProgressDocument(safeRows, context.game.slug);
+}
+
+async function saveGuideProgressV2(userId, slug, payload = {}) {
+  const normalizedUserId = normalizePositiveInteger(userId, 'user_id');
+  const context = await getGuideProgressContext(slug);
+  const items = normalizeGuideProgressV2Items(payload, context);
+  const existingRows = await all(
+    `SELECT trophy_code, completed, completed_at, created_at, updated_at
+       FROM user_trophy_progress
+      WHERE user_id = ? AND game_id = ?`,
+    [normalizedUserId, context.game.id]
+  );
+  const existingByCode = new Map(existingRows.map(row => [row.trophy_code, row]));
+
+  await ensureLibraryEntry(normalizedUserId, context.game.id, {
+    status: items.some(item => item.completed) ? 'in_progress' : 'want_to_play'
+  });
+  for (const item of items) {
+    const existing = existingByCode.get(item.trophyCode);
+    const serverTimestamp = cleanTimestamp(existing?.updated_at || existing?.created_at);
+    if (existing && serverTimestamp && item.updatedAt <= serverTimestamp) {
+      continue;
+    }
+    if (existing) {
+      await run(
+        `UPDATE user_trophy_progress
+            SET completed = ?, completed_at = ?, updated_at = ?
+          WHERE user_id = ? AND game_id = ? AND trophy_code = ?`,
+        [
+          item.completed ? 1 : 0,
+          item.completed ? item.updatedAt : null,
+          item.updatedAt,
+          normalizedUserId,
+          context.game.id,
+          item.trophyCode
+        ]
+      );
+    } else {
+      await run(
+        `INSERT INTO user_trophy_progress
+          (user_id, game_id, trophy_code, completed, completed_at, created_at, updated_at)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        [
+          normalizedUserId,
+          context.game.id,
+          item.trophyCode,
+          item.completed ? 1 : 0,
+          item.completed ? item.updatedAt : null,
+          item.updatedAt,
+          item.updatedAt
+        ]
+      );
+    }
+  }
+  await inferAndApplyStatusFromProgress(normalizedUserId, context.game.id);
+  return getGuideProgressV2(normalizedUserId, context.game.slug);
+}
+
 module.exports = {
   normalizeStatus,
   toClientStatus,
@@ -404,5 +606,9 @@ module.exports = {
   removeLibraryGame,
   getProgress,
   updateProgress,
-  bulkProgress
+  bulkProgress,
+  normalizeGuideProgressV2Items,
+  toServerProgressDocument,
+  getGuideProgressV2,
+  saveGuideProgressV2
 };

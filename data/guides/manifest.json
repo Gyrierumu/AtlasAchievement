@@ -634,12 +634,26 @@
       "trophies": 40
     },
     {
+      "claimCount": 29,
       "file": "resident-evil-5.json",
+      "generatedAt": "2026-07-26T23:21:02.250Z",
       "name": "Resident Evil 5",
-      "roadmaps": 7,
+      "packageCounts": {
+        "base": 51,
+        "desperate-escape": 5,
+        "lost-in-nightmares": 5,
+        "versus": 10
+      },
+      "payloadHash": "ee4207786ae29cc4667de602a1a9dc0381c4dd1473d6202d3d6dace9f9ce5598",
+      "reviewedAt": "2026-07-26",
+      "roadmaps": 9,
+      "schemaVersion": 2,
       "slug": "resident-evil-5",
-      "status": "verified",
-      "trophies": 51
+      "sourceCount": 17,
+      "sourcePath": "data/guides/resident-evil-5.json",
+      "status": "approved",
+      "trophies": 71,
+      "trophyCount": 71
     },
     {
       "file": "resident-evil-6.json",

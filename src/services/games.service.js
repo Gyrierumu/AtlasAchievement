@@ -7,6 +7,13 @@ const editorialModel = require('../shared/editorialModel');
 const guideModel = require('../shared/guideViewModel');
 const catalogModel = require('../shared/catalogModel');
 const sampleGames = require('../data/sampleGames');
+const env = require('../config/env');
+const {
+  adaptGuideSnapshotV2,
+  adaptLegacyGuide,
+  adaptUnavailableGuide
+} = require('../shared/guideDataAdapter');
+const { resolveGuideSource } = require('../shared/guideSourceResolver');
 
 const PUBLIC_EDITORIAL_STATUSES = new Set(['review', 'published']);
 const COVERAGE_LEVELS = new Set(['partial', 'strong', 'complete']);
@@ -2082,6 +2089,75 @@ async function getAdminDashboardSummary() {
   };
 }
 
+async function loadRelationalLegacyGuide(slug, options = {}) {
+  try {
+    return await getGameBySlug(slug, options);
+  } catch (error) {
+    if (error?.code === 'GAME_NOT_FOUND' || error?.statusCode === 404) return null;
+    throw error;
+  }
+}
+
+function loadSampleLegacyGuide(slug) {
+  const normalizedSlug = getCanonicalGameSlug(slug);
+  return sampleGames.find(game => getCanonicalGameSlug(game?.slug) === normalizedSlug) || null;
+}
+
+async function getGuideViewModelBySlug(slug, options = {}) {
+  const normalizedSlug = getCanonicalGameSlug(slug);
+  const featureFlagEnabled = options.featureFlagEnabled === undefined
+    ? env.isGuideV2EnabledForSlug(normalizedSlug)
+    : options.featureFlagEnabled === true;
+  const callerValidateV2Candidate = options.validateV2Candidate;
+
+  const resolution = await resolveGuideSource({
+    ...options,
+    slug: normalizedSlug,
+    featureFlagEnabled,
+    logger: Object.prototype.hasOwnProperty.call(options, 'logger')
+      ? options.logger
+      : console,
+    loadRelationalLegacy: options.loadRelationalLegacy || (() => (
+      loadRelationalLegacyGuide(normalizedSlug, options.legacyOptions)
+    )),
+    loadSampleLegacy: options.loadSampleLegacy || (() => loadSampleLegacyGuide(normalizedSlug)),
+    validateV2Candidate: async snapshot => {
+      if (typeof callerValidateV2Candidate === 'function') {
+        await callerValidateV2Candidate(snapshot);
+      }
+      adaptGuideSnapshotV2(snapshot);
+    }
+  });
+
+  if (resolution.sourceMode === 'v2') {
+    return adaptGuideSnapshotV2(resolution.data, {
+      diagnostics: resolution.diagnostics
+    });
+  }
+  if (
+    resolution.sourceMode === 'relational-legacy'
+    || resolution.sourceMode === 'sample-legacy'
+  ) {
+    return adaptLegacyGuide(resolution.data, {
+      sourceMode: resolution.sourceMode,
+      diagnostics: resolution.diagnostics
+    });
+  }
+  return adaptUnavailableGuide({
+    game: {
+      slug: normalizedSlug,
+      name: null,
+      id: null,
+      scope: null
+    },
+    diagnostics: resolution.diagnostics
+  });
+}
+
+async function resolveResidentEvil5GuideSource(options = {}) {
+  return getGuideViewModelBySlug('resident-evil-5', options);
+}
+
 module.exports = {
   listGames,
   getGameById,
@@ -2097,6 +2173,8 @@ module.exports = {
   reserveUniqueSlug,
   duplicateGame,
   getWeeklyHomeHighlights,
-  getWeeklyHomeUpdatePopup
+  getWeeklyHomeUpdatePopup,
+  getGuideViewModelBySlug,
+  resolveResidentEvil5GuideSource
 };
 

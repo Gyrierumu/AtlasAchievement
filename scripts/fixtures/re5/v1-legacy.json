@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "game": {
+    "id": 16,
+    "slug": "resident-evil-5",
+    "name": "Resident Evil 5",
+    "platform": "PS4",
+    "url": "/jogo/resident-evil-5"
+  },
+  "versions": null,
+  "trophyPackages": null,
+  "trophies": [
+    { "id": 16001, "trophyCode": "re5_platinum" },
+    { "id": 16002, "trophyCode": "re5_ch1_1" },
+    { "id": 16003, "trophyCode": "re5_ch1_2" },
+    { "id": 16004, "trophyCode": "re5_ch2_1" },
+    { "id": 16005, "trophyCode": "re5_ch2_2" },
+    { "id": 16006, "trophyCode": "re5_ch2_3" },
+    { "id": 16007, "trophyCode": "re5_ch3_1" },
+    { "id": 16008, "trophyCode": "re5_ch3_2" },
+    { "id": 16009, "trophyCode": "re5_ch3_3" },
+    { "id": 16010, "trophyCode": "re5_ch4_1" },
+    { "id": 16011, "trophyCode": "re5_ch4_2" },
+    { "id": 16012, "trophyCode": "re5_ch5_1" },
+    { "id": 16013, "trophyCode": "re5_ch5_2" },
+    { "id": 16014, "trophyCode": "re5_ch5_3" },
+    { "id": 16015, "trophyCode": "re5_ch6_1" },
+    { "id": 16016, "trophyCode": "re5_ch6_2" },
+    { "id": 16017, "trophyCode": "re5_ch6_3" },
+    { "id": 16018, "trophyCode": "re5_recruit" },
+    { "id": 16019, "trophyCode": "re5_soldier" },
+    { "id": 16020, "trophyCode": "re5_veteran" },
+    { "id": 16021, "trophyCode": "re5_war_hero" },
+    { "id": 16022, "trophyCode": "re5_egg_hunt" },
+    { "id": 16023, "trophyCode": "re5_all_dressed_up" },
+    { "id": 16024, "trophyCode": "re5_stockpile" },
+    { "id": 16025, "trophyCode": "re5_take_it_to_the_max" },
+    { "id": 16026, "trophyCode": "re5_museum" },
+    { "id": 16027, "trophyCode": "re5_badge_of_honor" },
+    { "id": 16028, "trophyCode": "re5_action_figures" },
+    { "id": 16029, "trophyCode": "re5_friend_in_need" },
+    { "id": 16030, "trophyCode": "re5_lifeguard" },
+    { "id": 16031, "trophyCode": "re5_exploding_heads" },
+    { "id": 16032, "trophyCode": "re5_cut_above" },
+    { "id": 16033, "trophyCode": "re5_cattle_prod" },
+    { "id": 16034, "trophyCode": "re5_crowd_control" },
+    { "id": 16035, "trophyCode": "re5_bulls_eye" },
+    { "id": 16036, "trophyCode": "re5_get_physical" },
+    { "id": 16037, "trophyCode": "re5_the_works" },
+    { "id": 16038, "trophyCode": "re5_lead_aspirin" },
+    { "id": 16039, "trophyCode": "re5_fireworks" },
+    { "id": 16040, "trophyCode": "re5_be_the_knife" },
+    { "id": 16041, "trophyCode": "re5_meat_shower" },
+    { "id": 16042, "trophyCode": "re5_go_into_the_light" },
+    { "id": 16043, "trophyCode": "re5_ride_the_lightning" },
+    { "id": 16044, "trophyCode": "re5_stop_drop_roll" },
+    { "id": 16045, "trophyCode": "re5_baptism_by_fire" },
+    { "id": 16046, "trophyCode": "re5_masters_of_removing" },
+    { "id": 16047, "trophyCode": "re5_bad_blood" },
+    { "id": 16048, "trophyCode": "re5_drive_by" },
+    { "id": 16049, "trophyCode": "re5_egg_on_your_face" },
+    { "id": 16050, "trophyCode": "re5_heart_stopper" },
+    { "id": 16051, "trophyCode": "re5_who_do_you_trust" }
+  ],
+  "legacyDlc": {
+    "renderMode": "checkbox-list",
+    "declaredTrophyCount": 20,
+    "identity": "unreliable",
+    "items": [
+      {
+        "id": "",
+        "packageCode": "",
+        "declaredCount": 20
+      }
+    ]
+  },
+  "legacyMetadata": {
+    "title": "Resident Evil 5",
+    "platformLabel": "PS4",
+    "trophyTotal": 51,
+    "platinumTarget": 51
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 2,
+  "game": {
+    "id": 16,
+    "slug": "resident-evil-5",
+    "name": "Resident Evil 5",
+    "url": "/jogo/resident-evil-5"
+  },
+  "versions": [
+    {
+      "versionCode": "ps4-native",
+      "platform": "PS4",
+      "region": "global",
+      "releaseKind": "native",
+      "isNative": true,
+      "nativeTrophyList": true,
+      "saveTransferSupported": true,
+      "sourceVersionCode": null,
+      "autopopSupported": false,
+      "upgradeSupported": false,
+      "displayOrder": 1
+    },
+    {
+      "versionCode": "ps5-backcompat-ps4",
+      "platform": "PS5",
+      "region": "global",
+      "releaseKind": "backward_compatibility",
+      "isNative": false,
+      "nativeTrophyList": false,
+      "saveTransferSupported": true,
+      "sourceVersionCode": "ps4-native",
+      "autopopSupported": false,
+      "upgradeSupported": false,
+      "displayOrder": 2
+    }
+  ],
+  "trophyPackages": [
+    {
+      "packageCode": "base",
+      "name": "Jogo-base",
+      "packageType": "base",
+      "expectedTrophyCount": 51,
+      "countsForPlatinum": true,
+      "countsFor100Percent": true,
+      "isOnline": false,
+      "isCoop": true,
+      "displayOrder": 1
+    },
+    {
+      "packageCode": "versus",
+      "name": "Versus",
+      "packageType": "mode",
+      "expectedTrophyCount": 10,
+      "countsForPlatinum": false,
+      "countsFor100Percent": true,
+      "isOnline": true,
+      "isCoop": true,
+      "displayOrder": 2
+    },
+    {
+      "packageCode": "lost-in-nightmares",
+      "name": "Lost in Nightmares",
+      "packageType": "dlc",
+      "expectedTrophyCount": 5,
+      "countsForPlatinum": false,
+      "countsFor100Percent": true,
+      "isOnline": false,
+      "isCoop": true,
+      "displayOrder": 3
+    },
+    {
+      "packageCode": "desperate-escape",
+      "name": "Desperate Escape",
+      "packageType": "dlc",
+      "expectedTrophyCount": 5,
+      "countsForPlatinum": false,
+      "countsFor100Percent": true,
+      "isOnline": false,
+      "isCoop": true,
+      "displayOrder": 4
+    }
+  ],
+  "trophies": [
+    {
+      "trophyCode": "re5_platinum",
+      "packageCode": "base",
+      "name": "RESIDENT EVIL 5 Platinum Trophy",
+      "type": "Platina",
+      "description": "Conquiste todos os troféus do jogo-base.",
+      "isOnline": false,
+      "isCoop": false,
+      "isCumulative": false,
+      "isMissable": false,
+      "category": "platinum",
+      "sourceTrophyCode": null,
+      "displayOrder": 1
+    },
+    {
+      "trophyCode": "re5_versus_contract_01",
+      "packageCode": "versus",
+      "name": "Versus Contract Trophy",
+      "type": "Prata",
+      "description": "Troféu contratual mínimo do pacote Versus.",
+      "isOnline": true,
+      "isCoop": false,
+      "isCumulative": true,
+      "isMissable": false,
+      "category": "versus",
+      "sourceTrophyCode": null,
+      "displayOrder": 1
+    }
+  ],
+  "roadmap": [
+    {
+      "stepCode": "re5-roadmap-base",
+      "title": "Campanha e platina",
+      "displayOrder": 1
+    }
+  ],
+  "guideContent": [
+    {
+      "sectionCode": "re5-guide-overview",
+      "heading": "Visão geral",
+      "body": "Conteúdo contratual mínimo.",
+      "displayOrder": 1
+    }
+  ],
+  "collectibles": [
+    {
+      "collectibleCode": "re5-bsaa-emblem-01",
+      "kind": "bsaa-emblem",
+      "displayOrder": 1
+    }
+  ],
+  "inventoryRequirements": [
+    {
+      "itemCode": "re5-stockpile-item-01",
+      "requirementCode": "stockpile",
+      "displayOrder": 1
+    }
+  ],
+  "upgradeRequirements": [
+    {
+      "weaponCode": "re5-upgrade-weapon-01",
+      "fullyUpgradeable": true,
+      "displayOrder": 1
+    }
+  ],
+  "economy": {
+    "currencyCode": "gold",
+    "stockpileCost": 0,
+    "upgradeCost": 0,
+    "aggregateCost": 0
+  },
+  "online": {
+    "platform": "PS4",
+    "packageCode": "versus",
+    "slayersWins": 15,
+    "survivorsWins": 15,
+    "teamSlayersWins": 15,
+    "teamSurvivorsWins": 15,
+    "physicalEliminations": 50
+  },
+  "sources": [
+    {
+      "sourceCode": "re5-approved-contract",
+      "title": "Contrato aprovado de Resident Evil 5",
+      "url": "https://example.invalid/re5-approved-contract",
+      "accessedAt": "2026-07-26"
+    }
+  ],
+  "claims": [
+    {
+      "claimCode": "re5-platform-contract",
+      "sourceCodes": [
+        "re5-approved-contract"
+      ],
+      "statement": "A execução no PS5 usa retrocompatibilidade da lista PS4.",
+      "reviewedAt": "2026-07-26"
+    }
+  ],
+  "seo": {
+    "title": "Guia de troféus de Resident Evil 5",
+    "description": "Contrato mínimo do guia de troféus de Resident Evil 5.",
+    "canonicalPath": "/jogo/resident-evil-5",
+    "h1": "Guia de troféus de Resident Evil 5"
+  },
+  "review": {
+    "status": "contract-fixture",
+    "reviewedAt": "2026-07-26",
+    "reviewerCode": "atlas-contract"
+  },
+  "redirects": [
+    {
+      "from": "/jogos/resident-evil-5",
+      "to": "/jogo/resident-evil-5",
+      "displayOrder": 1
+    }
+  ]
+}
