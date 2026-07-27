@@ -4,8 +4,9 @@ services:
     env: node
     plan: starter
     buildCommand: if [ -f server.js ]; then npm ci && npm run build; else cd .. && npm ci && npm run build; fi
-    preDeployCommand: if [ -f server.js ]; then npm run db:setup; else cd .. && npm run db:setup; fi
+    preDeployCommand: if [ -f server.js ]; then npm run predeploy; else cd .. && npm run predeploy; fi
     startCommand: if [ -f server.js ]; then npm start; else cd .. && npm start; fi
+    healthCheckPath: /api/health
     autoDeploy: true
     envVars:
       - key: NODE_ENV

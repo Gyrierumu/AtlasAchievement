@@ -1,125 +1,40 @@
-const path = require('path');
+const DEFAULT_PORT = 3000;
+
+function parsePort(value) {
+  const port = Number(value || DEFAULT_PORT);
+  if (!Number.isInteger(port) || port < 0 || port > 65535) {
+    throw new Error('PORT deve ser um número inteiro entre 0 e 65535.');
+  }
+  return port;
+}
+
+function normalizeOrigin(value, fallback) {
+  try {
+    return new URL(value || fallback).origin;
+  } catch {
+    return fallback;
+  }
+}
 
 const nodeEnv = process.env.NODE_ENV || 'development';
-const isProduction = nodeEnv === 'production';
-const hasSessionSecret = typeof process.env.SESSION_SECRET === 'string' && process.env.SESSION_SECRET.trim().length >= 16;
-const hasAdminUsername = typeof process.env.ADMIN_USERNAME === 'string' && process.env.ADMIN_USERNAME.trim().length >= 3;
-const hasAdminPassword = typeof process.env.ADMIN_PASSWORD === 'string' && process.env.ADMIN_PASSWORD.length >= 8;
-
-function envFlag(name, fallback = false) {
-  const value = process.env[name];
-  if (value === undefined || value === null || String(value).trim() === '') return fallback;
-  return /^(1|true|yes|on)$/i.test(String(value).trim());
-}
-
-function normalizeGuideV2Slug(value) {
-  const normalized = String(value || '')
-    .trim()
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-  return normalized === '*' ? '' : normalized;
-}
-
-function getEnabledGuideV2Slugs(value = process.env.GUIDE_V2_ENABLED_SLUGS) {
-  return [...new Set(
-    String(value || '')
-      .split(',')
-      .map(normalizeGuideV2Slug)
-      .filter(Boolean)
-  )];
-}
-
-function isGuideV2EnabledForSlug(slug, value = process.env.GUIDE_V2_ENABLED_SLUGS) {
-  const normalizedSlug = normalizeGuideV2Slug(slug);
-  return Boolean(normalizedSlug) && getEnabledGuideV2Slugs(value).includes(normalizedSlug);
-}
-
-const config = {
-  port: Number(process.env.PORT || 3000),
-  nodeEnv,
-  isProduction,
-  sessionSecret: hasSessionSecret ? process.env.SESSION_SECRET.trim() : 'mtg-super-secret-change-me',
-  adminUsername: hasAdminUsername ? process.env.ADMIN_USERNAME.trim() : 'admin',
-  adminPassword: hasAdminPassword ? process.env.ADMIN_PASSWORD : 'admin123',
-  hasSessionSecret,
-  hasAdminUsername,
-  hasAdminPassword,
-  allowDefaultAdminBootstrap: process.env.ALLOW_DEFAULT_ADMIN_BOOTSTRAP === 'true' || !isProduction,
-  databasePath: process.env.DATABASE_PATH || path.join(__dirname, '../../database.sqlite'),
-  uploadDir: process.env.UPLOAD_DIR || path.join(__dirname, '../../public/uploads'),
-  maxUploadSizeBytes: Number(process.env.MAX_UPLOAD_SIZE_BYTES || 5 * 1024 * 1024),
-  loginRateLimitWindowMs: Number(process.env.LOGIN_RATE_LIMIT_WINDOW_MS || 15 * 60 * 1000),
-  loginRateLimitMaxAttempts: Number(process.env.LOGIN_RATE_LIMIT_MAX_ATTEMPTS || 8),
-  loginBlockDurationMs: Number(process.env.LOGIN_BLOCK_DURATION_MS || 15 * 60 * 1000),
-  appUrl: (process.env.APP_URL || '').trim(),
-  canonicalOrigin: (process.env.CANONICAL_ORIGIN || process.env.PUBLIC_SITE_URL || '').trim(),
-  autoImportGuidesOnStart: process.env.AUTO_IMPORT_GUIDES_ON_START === 'true',
-  googleAnalyticsMeasurementId: (
-    process.env.GA_MEASUREMENT_ID
-    || process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID
-    || (isProduction ? 'G-QNPM6F50XY' : '')
-  ).trim(),
-  re5ProductAnalyticsEnabled: envFlag('RE5_PRODUCT_ANALYTICS_ENABLED', false),
-  re5CoreWebVitalsEnabled: envFlag('RE5_CWV_ENABLED', false),
-  re5ErrorMonitoringEnabled: envFlag('RE5_ERROR_MONITORING_ENABLED', false),
-  re5AdsEnabled: envFlag('RE5_ADS_ENABLED', false),
-  re5AdsTestPlaceholders: envFlag('RE5_ADS_TEST_PLACEHOLDERS', false),
-  guideV2EnabledSlugs: getEnabledGuideV2Slugs(),
-  re5AdsPlacements: {
-    summary: envFlag('RE5_ADS_PLACEMENT_SUMMARY_ENABLED', true),
-    roadmap: envFlag('RE5_ADS_PLACEMENT_ROADMAP_ENABLED', true),
-    extras: envFlag('RE5_ADS_PLACEMENT_EXTRAS_ENABLED', true),
-    dlc: envFlag('RE5_ADS_PLACEMENT_DLC_ENABLED', true)
-  },
-  corsAllowedOrigins: (process.env.CORS_ALLOWED_ORIGINS || '').split(',').map(value => value.trim()).filter(Boolean),
-  sessionMaxAgeHours: Number(process.env.SESSION_MAX_AGE_HOURS || 8),
-  sessionCleanupIntervalMinutes: Number(process.env.SESSION_CLEANUP_INTERVAL_MINUTES || 30),
-  runSeedSync: !isProduction && process.env.RUN_SEED_SYNC === 'true',
-  allowStartupSeed: process.env.DISABLE_STARTUP_SEED !== 'true'
-};
+const port = parsePort(process.env.PORT);
+const fallbackOrigin = `http://localhost:${port}`;
+const canonicalOrigin = normalizeOrigin(
+  process.env.CANONICAL_ORIGIN || process.env.APP_URL,
+  fallbackOrigin
+);
 
 function assertRuntimeConfig() {
-  if (config.isProduction) {
-    if (!config.hasSessionSecret) {
-      throw new Error('SESSION_SECRET deve ser definido em produção com pelo menos 16 caracteres.');
-    }
-
-    if (config.allowDefaultAdminBootstrap && (!config.hasAdminUsername || !config.hasAdminPassword)) {
-      throw new Error('ADMIN_USERNAME e ADMIN_PASSWORD devem ser definidos em produção quando ALLOW_DEFAULT_ADMIN_BOOTSTRAP=true.');
-    }
+  parsePort(port);
+  if (nodeEnv === 'production' && !canonicalOrigin.startsWith('https://')) {
+    throw new Error('CANONICAL_ORIGIN deve usar HTTPS em produção.');
   }
-}
-
-function getStartupWarnings() {
-  const warnings = [];
-
-  if (!config.hasSessionSecret) {
-    warnings.push('SESSION_SECRET não definido. Usando valor padrão apenas para ambiente local.');
-  }
-
-  if (!config.hasAdminUsername || !config.hasAdminPassword) {
-    warnings.push('ADMIN_USERNAME/ADMIN_PASSWORD não definidos. Bootstrap automático de administrador fica desativado sem credenciais em produção.');
-  }
-
-  if (config.loginRateLimitMaxAttempts < 3) {
-    warnings.push('LOGIN_RATE_LIMIT_MAX_ATTEMPTS muito baixo pode bloquear testes locais com facilidade.');
-  }
-
-  if (config.sessionMaxAgeHours < 1) {
-    warnings.push('SESSION_MAX_AGE_HOURS muito baixo pode gerar expiração rápida demais para o admin.');
-  }
-
-  return warnings;
 }
 
 module.exports = {
-  ...config,
   assertRuntimeConfig,
-  getStartupWarnings,
-  normalizeGuideV2Slug,
-  getEnabledGuideV2Slugs,
-  isGuideV2EnabledForSlug
+  canonicalOrigin,
+  isProduction: nodeEnv === 'production',
+  nodeEnv,
+  port
 };

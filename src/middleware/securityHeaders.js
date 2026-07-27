@@ -1,28 +1,31 @@
-function securityHeaders(req, res, next) {
-  const cspDirectives = [
-    "default-src 'self'",
-    "base-uri 'self'",
-    "object-src 'none'",
-    "frame-ancestors 'none'",
-    "form-action 'self'",
-    "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://stats.g.doubleclick.net",
-    "img-src 'self' data: https:",
-    "font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com data:",
-    "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com",
-    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com",
-    "script-src-attr 'self' 'unsafe-inline'",
-    "upgrade-insecure-requests"
-  ].join('; ');
+const env = require('../config/env');
 
-  res.setHeader('Content-Security-Policy', cspDirectives);
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "connect-src 'self'",
+  "font-src 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'none'",
+  "img-src 'self' data:",
+  "object-src 'none'",
+  "script-src 'none'",
+  "style-src 'self'"
+].join('; ');
+
+function securityHeaders(req, res, next) {
+  res.setHeader('Content-Security-Policy', contentSecurityPolicy);
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  res.setHeader('Cross-Origin-Resource-Policy', 'same-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), geolocation=(), microphone=()');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('X-Frame-Options', 'DENY');
-  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  if (req.secure) {
-    res.setHeader('Strict-Transport-Security', 'max-age=15552000; includeSubDomains');
+
+  if (env.isProduction) {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
   }
+
   next();
 }
 
