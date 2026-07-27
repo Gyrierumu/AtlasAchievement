@@ -11,6 +11,8 @@ Este relatório registra a incorporação local da remediação e os gates que p
 | --- | --- |
 | Branch | `release/resident-evil-5-v2-rc` |
 | Commit-base | `3e5d557145f84a46ad10dc3cc59dc79ff2ce0732` |
+| Commit RC integrado | `937254c14895304d3d6412f69ee8bf0b5b41629e` |
+| Árvore Git integrada | `0a74ec0d3ef7556118167681a2f36e406e2d1d1b` |
 | Origem da remediação | `security/re5-v2-sqlite-audit-remediation` |
 | SHA-256 do lockfile | `34e15116850de34cf19239b15b34ce0801b1c7452c4f876d21ba8905704531c3` |
 | SHA-256 do Snapshot | `8fc7783dd04b8b4b785bfec98f2f4e59c3d8db93f28c6e0333dd2816ef4b1c6d` |

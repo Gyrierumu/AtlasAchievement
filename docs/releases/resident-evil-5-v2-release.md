@@ -15,6 +15,9 @@ O V2 usa Snapshot JSON canônico, manifesto com hash semântico, resolver de fon
 
 | Evidência | Valor |
 | --- | --- |
+| Branch RC | `release/resident-evil-5-v2-rc` |
+| Commit RC integrado | `937254c14895304d3d6412f69ee8bf0b5b41629e` |
+| Árvore Git integrada | `0a74ec0d3ef7556118167681a2f36e406e2d1d1b` |
 | Hash semântico do Snapshot | `ee4207786ae29cc4667de602a1a9dc0381c4dd1473d6202d3d6dace9f9ce5598` |
 | SHA-256 do arquivo Snapshot | `8fc7783dd04b8b4b785bfec98f2f4e59c3d8db93f28c6e0333dd2816ef4b1c6d` |
 | SHA-256 do manifesto | `214f83778f1ff52cd03bfb3deb05d6a11099ac5c903d86ec042fc331741aed85` |
