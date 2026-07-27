@@ -18,6 +18,8 @@ services:
         sync: false
       - key: AUTO_IMPORT_GUIDES_ON_START
         value: "true"
+      - key: GUIDE_V2_ENABLED_SLUGS
+        value: resident-evil-5
       - key: DATABASE_PATH
         value: /data/database.sqlite
       - key: UPLOAD_DIR
