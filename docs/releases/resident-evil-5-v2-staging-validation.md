@@ -127,3 +127,7 @@ Os contratos locais validam nomes e campos permitidos dos eventos. Consultas, fi
 **Decisão operacional: NO-GO para publicação ou produção.**
 
 **BLOCO 7B CONDICIONAL — RELEASE CANDIDATE INTEGRADA, VALIDAÇÕES DE STAGING PENDENTES**
+
+## Atualização do Bloco 7C
+
+O protocolo contemporâneo de Versus permanece `NÃO EXECUTADO` e a proposta de dispensa editorial permanece `NÃO APROVADA`, por ausência de teste e aprovação humana. Esse resultado não modifica nenhum gate deste relatório: Linux, staging, backup, restauração, progresso autenticado, rollback e observabilidade continuam pendentes.

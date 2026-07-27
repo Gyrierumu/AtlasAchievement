@@ -94,7 +94,9 @@ Automação, teclado, skip link, foco visível, labels, `aria-live`, barras de p
 
 Não existe alvo de staging configurado nem `STAGING_BASE_URL`; o único serviço em `render.yaml` é produção. O teste de staging foi repetido no Bloco 7B e encerrou com código 2 e status `NOT_EXECUTED`, sem tocar produção. Sem URL, contas, backup, logs e controle da flag de staging, V1/V2, progresso autenticado e rollback externo não foram executados.
 
-O protocolo manual de Versus está `NÃO EXECUTADO`: não foram fornecidos console/contas/PSN, jogo e participantes reais. A pendência impede ativar publicamente o conteúdo de 100% sem decisão editorial humana documentada.
+O Bloco 7C ampliou o protocolo manual de Versus e consultou fontes contemporâneas complementares. A PlayStation Store ainda lista a versão PS4, Versus, PS Plus e até quatro jogadores online; o status geral da PSN e relatos recentes não comprovam lobby ou partida de RE5. Sem console, contas, quatro participantes e evidência direta, a classificação permanece `NÃO EXECUTADO`.
+
+Foi criada uma proposta de dispensa com recomendação técnica de nível A — publicar platina e segurar 100% —, mas nenhum aprovador humano foi informado. A dispensa está `NÃO APROVADA`; portanto, o Versus continua pendente e nenhuma alteração pública, de Snapshot ou de manifesto foi feita.
 
 ## Observabilidade
 
@@ -107,6 +109,7 @@ Não há painel conectado. Os filtros reproduzíveis, limites iniciais e gatilho
 - Rollout: ver `resident-evil-5-v2-rollout.md`; não executado.
 - Rollback: ver `resident-evil-5-v2-rollback.md`; no gate limpo, o mecanismo local por flag foi ensaiado no Chrome (2,540 s) e Edge (1,331 s), preservando um estado V2 sem duplicação. O ensaio autenticado em staging não foi executado.
 - Versus: ver `resident-evil-5-v2-versus-validation.md`.
+- Dispensa editorial não aprovada: ver `resident-evil-5-v2-editorial-waiver.md`.
 
 Pendências que ainda impedem promoção: Linux x64/Node 20 não validado, staging não publicado, rollback real/autenticado não ensaiado, backup/restauração de staging não validado, Versus não executado ou formalmente dispensado e responsável pela janela ainda não designado. O bloqueador crítico de dependência permanece removido.
 
@@ -121,3 +124,9 @@ O Bloco 7 adiciona apenas auditoria/testes de release, documentação, comandos 
 O Bloco 7B criou a branch RC, incorporou os oito arquivos aprovados por hash, repetiu instalação/audit/suíte local e atualizou os runbooks. Linux e staging não foram simulados nem inventados. Ver `resident-evil-5-v2-staging-validation.md`.
 
 **BLOCO 7B CONDICIONAL — RELEASE CANDIDATE INTEGRADA, VALIDAÇÕES DE STAGING PENDENTES**
+
+## Alterações do Bloco 7C
+
+O Bloco 7C preparou o formulário contemporâneo de quatro modos, ataques físicos, PS4/PS5, estabilidade, evidências e privacidade; adicionou uma validação documental automatizada; e formalizou uma proposta de dispensa sem assinatura. Não houve console, partida, deploy, staging, alteração editorial do guia ou ação em produção.
+
+**BLOCO 7C BLOQUEADO — VERSUS NÃO VALIDADO E SEM DISPENSA EDITORIAL**

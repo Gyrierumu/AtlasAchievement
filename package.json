@@ -35,6 +35,7 @@
     "test:re5:v2:observability": "node scripts/test-re5-v2-observability.js",
     "test:re5:v2:performance": "node --experimental-websocket scripts/test-re5-v2-performance.js",
     "test:re5:v2:staging": "node scripts/test-re5-v2-staging.js",
+    "test:re5:versus:documentation": "node scripts/validate-re5-versus-evidence.js",
     "test:re5:v2:visual": "node --experimental-websocket scripts/test-re5-v2-visual.js",
     "test:re5:v2:contracts": "node -e \"const{spawnSync}=require('child_process');const tests=['snapshot','migration','roundtrip','adapter','ssr','seo','accessibility','client','security','observability'];let failed=false;for(const test of tests){const result=spawnSync(process.execPath,['scripts/test-re5-v2-'+test+'.js'],{stdio:'inherit'});failed=failed||result.status!==0;}process.exit(failed?1:0)\"",
     "test:re5:v2:baseline": "npm run test:re5:governance && npm run test:guide -- resident-evil-5",
